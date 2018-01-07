@@ -1,0 +1,76 @@
+{
+  "name": "Always-display-YouTube-control-bar",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Always show YouTube&#39;s control bar outside the video.",
+  "scripts": {
+    "start": "npm run dev:chrome",
+    "build": "npm run build:chrome",
+    "build:chrome": "gulp pack --production --vendor=chrome",
+    "build:firefox": "gulp pack --production --vendor=firefox",
+    "build:opera": "gulp pack --production --vendor=opera",
+    "build:edge": "gulp pack --production --vendor=edge",
+    "dev": "npm run dev:chrome",
+    "dev:chrome": "gulp --watch --vendor=chrome",
+    "dev:firefox": "gulp --watch --vendor=firefox",
+    "dev:opera": "gulp --watch --vendor=opera",
+    "dev:edge": "gulp --watch --vendor=edge",
+    "lint": "standard",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add"
+    ]
+  },
+  "standard": {
+    "globals": [
+      "chrome"
+    ],
+    "parser": "babel-eslint"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.x.x",
+    "babel-cli": "6.x.x",
+    "babel-core": "6.x.x",
+    "babel-loader": "7.x.x",
+    "babel-preset-env": "1.x.x",
+    "babili-webpack-plugin": "0.x.x",
+    "chromereload": "0.x.x",
+    "del": "3.x.x",
+    "gulp": "3.x.x",
+    "gulp-bump": "2.x.x",
+    "gulp-cache": "0.x.x",
+    "gulp-clean-css": "^3.x.x",
+    "gulp-filter": "5.x.x",
+    "gulp-git": "2.x.x",
+    "gulp-if": "2.x.x",
+    "gulp-imagemin": "3.x.x",
+    "gulp-json-transform": "0.x.x",
+    "gulp-less": "3.x.x",
+    "gulp-livereload": "3.x.x",
+    "gulp-plumber": "1.x.x",
+    "gulp-sass": "^3.x.x",
+    "gulp-sequence": "0.x.x",
+    "gulp-sourcemaps": "^2.x.x",
+    "gulp-tag-version": "1.x.x",
+    "gulp-util": "3.x.x",
+    "gulp-zip": "4.x.x",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.2",
+    "require-dir": "0.x.x",
+    "standard": "10.x.x",
+    "ts-loader": "^2.x.x",
+    "tslint": "^5.x.x",
+    "tslint-config-prettier": "^1.6.0",
+    "tslint-config-standard": "^7.0.0",
+    "tslint-plugin-prettier": "^1.3.0",
+    "typescript": "^2.6.2",
+    "vinyl-named": "1.x.x",
+    "webpack": "3.x.x",
+    "webpack-stream": "4.x.x",
+    "yargs": "9.x.x"
+  }
+}

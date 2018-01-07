@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "Always display YouTube control bar",
+    "description": "The name of the application"
+  },
+  "appShortName": {
+    "message": "displayYTbar",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+  },
+  "appDescription": {
+    "message": "Always show YouTube&#39;s control bar outside the video.",
+    "description": "The description of the application"
+  },
+  "browserActionTitle": {
+    "message": "Always display YouTube control bar",
+    "description": "The title of the browser action button"
+  }
+}
