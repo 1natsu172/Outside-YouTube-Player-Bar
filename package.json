@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@types/chrome": "^0.x.x",
+    "ava": "^0.24.0",
     "babel-cli": "6.x.x",
     "babel-core": "6.x.x",
     "babel-loader": "7.x.x",
@@ -61,6 +62,7 @@
     "lint-staged": "^6.0.0",
     "prettier": "^1.9.2",
     "require-dir": "0.x.x",
+    "sinon-chrome": "^2.2.1",
     "standard": "10.x.x",
     "ts-loader": "^2.x.x",
     "tslint": "^5.x.x",
