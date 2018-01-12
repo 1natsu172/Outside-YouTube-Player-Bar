@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "inlineSourceMap": true,
+    "outDir": "test/_dist"
+  },
+  "include": [
+    "test/**/*.ts"
+  ]
+}
