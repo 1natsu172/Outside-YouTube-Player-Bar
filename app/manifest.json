@@ -11,8 +11,9 @@
   },
   "background": {
     "scripts": [
-      "scripts/background.js"
-    ]
+      "scripts/eventPage.js"
+    ],
+    "persistent": false
   },
   "page_action": {
     "default_icon": {
@@ -27,8 +28,15 @@
     "page": "pages/options.html",
     "chrome_style": true
   },
+  "content_scripts": [
+    {
+      "matches": ["https://*.youtube.com/watch*"],
+      "css": ["styles/style.css"],
+      "js": ["scripts/main.js"]
+    }
+  ],
   "permissions": [
     "tabs",
-    "<all_urls>"
+    "declarativeContent"
   ]
 }
