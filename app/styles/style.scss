@@ -1,0 +1,61 @@
+// * Memo * //
+// `var(--oypb-**)` variables are unique to this extension.
+// * Memo * //
+
+
+.is-outsided-playerBar {
+
+  // Since the `top` value is dynamically given according to the size of the video container.
+  .html5-main-video {
+    top: 0 !important;
+  }
+
+  // When `.ended-mode`, the original took minus `top` value and hiding video element, but because `top` is interfering.
+  .ended-mode .html5-main-video {
+    visibility: hidden !important;
+  }
+
+  // Tool-tip's coord.
+  .ytp-tooltip {
+    bottom: calc(var(--oypb-player-bar-height) + 10.5px) !important;
+    top: auto !important;
+  }
+  
+  // player bar's gradient effect.
+  .ytp-gradient-bottom {
+    display: none;
+  }
+
+  //// * When the player bar auto-hides, prepare a pseudo background color.
+  // when player bar displaying = pseudo hiding
+  .html5-video-player:after {
+    content: "";
+    background-color: var(--yt-main-app-background);
+    width: 104%;
+    height: var(--oypb-player-bar-height);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    opacity: 0;
+    transition: opacity .1s cubic-bezier(0.4,0.0,1,1);
+  }
+  // when player bar hiding = pseudo displaying
+  .html5-video-player.ytp-autohide:after {
+    opacity: 1;
+    z-index: 1000;
+    transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+  }
+
+  // Info panels & sidebar container.
+  #main {
+    margin-top: var(--oypb-player-bar-height);
+  }
+  
+  // Sidebar related videos when Default view mode.
+  ytd-watch:not([theater]) #related {
+    top: calc(-1 * var(--oypb-player-bar-height));
+  }
+
+}
