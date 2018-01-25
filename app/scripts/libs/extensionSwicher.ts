@@ -23,6 +23,13 @@ const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
       console.log('is?', 'pause')
     }
   }
+
+  toggle = (): void => {
+    console.log('is?', this._isExtensionActioning)
+    document.body.classList.toggle('is-outsided-playerBar')
+    this._isExtensionActioning = this._isExtensionActioning ? false : true
+    console.log('is?', this._isExtensionActioning)
+  }
 }
 
 const extensionSwitcher = new ExtensionSwitcherWrapper()
