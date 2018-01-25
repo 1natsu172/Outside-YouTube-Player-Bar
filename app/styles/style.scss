@@ -15,6 +15,11 @@
     height: calc(100% - var(--oypb-player-bar-height)) !important;
     overflow: visible;
     contain: size style layout; // Removing `layput` from `strict`.
+    
+    // When fullscreen mode.
+    &.ytp-fullscreen {
+      height: 100% !important;
+    }
   }
 
   // Move player bar to container bottom.
@@ -52,9 +57,14 @@
     bottom: calc(49px - var(--oypb-player-bar-height)) !important;
   }
 
-  // Ad promotion link (bottom left): when playing promotional video.
+  // Ad promotion remaining time & link (bottom left): when playing promotional video.
   .iv-promo {
     bottom: 10px;
+  }
+
+  // Ad promotion collapse link (bottom left)
+  .html5-video-player.ad-interrupting .iv-promo {
+    bottom: 34px;
   }
 
   // Inner video contents area.
@@ -66,6 +76,11 @@
   .ytp-tooltip {
     top: auto !important;
     bottom: calc(10.5px) !important;
+  }
+
+  // Player Settings menu panel.
+  .ytp-settings-menu {
+    bottom: calc(49px - var(--oypb-player-bar-height));
   }
   
   // player bar's gradient effect.
