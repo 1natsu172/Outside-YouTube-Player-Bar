@@ -1,4 +1,4 @@
-function waitElement(mutationTarget, element, rejectTime = 0) {
+function WaitElement(mutationTarget, element, rejectTime = 0) {
   return new Promise((resolve, reject) => {
     let hasChanged = false
     const observerConfig = {
@@ -42,4 +42,4 @@ function waitElement(mutationTarget, element, rejectTime = 0) {
   })
 }
 
-module.exports = waitElement
+module.exports = WaitElement
