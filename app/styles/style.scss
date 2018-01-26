@@ -8,6 +8,7 @@
   // Resizing container size.
   #player-container {
     height: calc(100% + var(--oypb-player-bar-height)) !important;
+    background-color: var(--yt-main-app-background-tmp) !important;
   }
 
   // Revert original video size
@@ -22,9 +23,36 @@
     }
   }
 
-  // Move player bar to container bottom.
+  // Player bar
   .ytp-chrome-bottom {
-    bottom: calc(-1 * var(--oypb-player-bar-height));
+    // Declare player bar color.
+    --oypb-player-bar-color: rgb(35,35,35); // Default theme
+    [dark] & {
+      --oypb-player-bar-color: var(--yt-main-app-background-tmp); // Dark theme
+    }
+
+    bottom: calc(-1 * var(--oypb-player-bar-height)); // Move player bar to container bottom.
+    background-color: var(--oypb-player-bar-color);
+
+    @mixin ytp-controls-border() {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 12px;
+      position: absolute;
+      top: 0;
+      // background-color: var(--yt-swatch-primary);
+      background-color: var(--oypb-player-bar-color);
+      
+    }
+    .ytp-left-controls::before {
+      @include ytp-controls-border();
+      left: -12px;
+    }
+    .ytp-right-controls::after {
+      @include ytp-controls-border();
+      right: -12px;
+    }
   }
 
 
@@ -86,28 +114,6 @@
   // player bar's gradient effect.
   .ytp-gradient-bottom {
     display: none;
-  }
-
-  // * When the player bar auto-hides, prepare a pseudo background color.
-  // * when player bar displaying = pseudo hiding
-  .html5-video-player::after {
-    content: "";
-    background-color: var(--yt-main-app-background-tmp);
-    width: 100%;
-    height: var(--oypb-player-bar-height);
-    position: absolute;
-    bottom: calc(-1 * var(--oypb-player-bar-height));
-    // left: 50%;
-    // transform: translateX(-50%);
-    opacity: 0;
-    z-index: -1000;
-    transition: opacity .1s cubic-bezier(0.4,0.0,1,1);
-  }
-  // when player bar hiding = pseudo displaying
-  .html5-video-player.ytp-autohide::after {
-    opacity: 1;
-    z-index: 1000;
-    transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
   }
 
   // Info panels & sidebar container.
