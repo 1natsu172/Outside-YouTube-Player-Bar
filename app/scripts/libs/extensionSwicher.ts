@@ -5,13 +5,13 @@ const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
     this._isExtensionActioning = false
   }
 
-  action = (): void => {
+  active = (): void => {
     document.body.classList.add('oypb-is-outsided-playerBar')
     this._isExtensionActioning = true
     console.log('is?', this._isExtensionActioning)
   }
 
-  stop = (): void => {
+  inactive = (): void => {
     document.body.classList.remove('oypb-is-outsided-playerBar')
     this._isExtensionActioning = false
     console.log('is?', this._isExtensionActioning)
