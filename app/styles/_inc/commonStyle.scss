@@ -1,0 +1,16 @@
+// * Common styles * //
+
+.ytp-right-controls {
+  &__oypb-toggleExtensionButton {
+    text-align: center !important;
+    vertical-align: top;
+    
+    > svg {
+      vertical-align: middle;
+      width: 18px;
+      height: 16px;
+      // transition: transform .1s cubic-bezier(0.4,0.0,1,1) 0.15s !important;
+      transition: none !important;
+    }
+  }
+}
