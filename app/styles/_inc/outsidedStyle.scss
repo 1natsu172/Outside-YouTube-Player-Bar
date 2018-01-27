@@ -113,6 +113,16 @@
     bottom: calc(10.5px) !important;
   }
 
+  // Subtitles/caption
+  .caption-window.ytp-caption-window-bottom {
+    margin-bottom: 0;
+    
+    // When both caption and central advertisement are displayed.
+    .ytp-ad-overlay-open & {
+      margin-bottom: calc(139px - var(--oypb-player-bar-height));
+    }
+  }
+
   // Player Settings menu panel.
   .ytp-settings-menu {
     bottom: calc(49px - var(--oypb-player-bar-height));
