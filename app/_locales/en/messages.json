@@ -1,18 +1,24 @@
 {
   "appName": {
-    "message": "Always display YouTube control bar",
+    "message": "Outside YouTube player bar",
     "description": "The name of the application"
   },
   "appShortName": {
-    "message": "displayYTbar",
+    "message": "oypb",
     "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
   },
   "appDescription": {
-    "message": "Always show YouTube&#39;s control bar outside the video.",
+    "message": "Display YouTube's player bar outside the video.",
     "description": "The description of the application"
   },
   "browserActionTitle": {
-    "message": "Always display YouTube control bar",
+    "message": "Outside YouTube player bar",
     "description": "The title of the browser action button"
+  },
+  "tooltipText_active": {
+    "message": "Outside player bar"
+  },
+  "tooltipText_inactive": {
+    "message": "Inside player bar"
   }
 }
