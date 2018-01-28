@@ -1,5 +1,6 @@
 const waitElement = require('../libs/waitElement')
 import extension from '../libs/extensionSwicher'
+import toggleTooltip from '../libs/toggleTooltip'
 
 const tooltipText = {
   active: chrome.i18n.getMessage('tooltipText_active') as string,
@@ -22,37 +23,28 @@ const extensionToggleButton = `
   </button>
 `
 
-function toggleTooltipText(e: any, f: string, s: string) {
-  const element: HTMLElement = e.target || this
-  const firstText = f
-  const secondText = s
-  const currentText = element.getAttribute('data-oypb-tooltip')
+const setToggleExtensionEvent = () => {
+  const button = document.getElementById('oypb-toggleExtension') as HTMLElement
 
-  let text = firstText
-  if (currentText === firstText) {
-    text = secondText
-  }
-  element.setAttribute('data-oypb-tooltip', text)
+  button.addEventListener('click', extension.toggle)
+  button.addEventListener('click', e =>
+    toggleTooltip(e, tooltipText.active, tooltipText.inactive)
+  )
 }
 
 export const injectButton = async () => {
+  // Wait target node.
   const playerBar = document.querySelector('.ytp-chrome-bottom')
-  // inject button dom.
   const rightControls = await waitElement(playerBar, '.ytp-right-controls')
+
+  // Inject button dom.
   rightControls.insertAdjacentHTML('afterbegin', extensionToggleButton)
 
-  // regist listeners.
-  const toggleExtension = document.getElementById(
-    'oypb-toggleExtension'
-  ) as HTMLElement
-  toggleExtension.addEventListener('click', extension.toggle)
-  toggleExtension.addEventListener('click', e =>
-    toggleTooltipText(e, tooltipText.active, tooltipText.inactive)
-  )
+  // Set Events.
+  setToggleExtensionEvent()
 }
 
 export const removeButton = () => {
   const button = document.getElementById('oypb-toggleExtension')
-  if (!button) return
-  button.remove()
+  if (button) button.remove()
 }
