@@ -35,7 +35,7 @@ function toggleTooltipText(e: any, f: string, s: string) {
   element.setAttribute('data-oypb-tooltip', text)
 }
 
-export default async () => {
+export const injectButton = async () => {
   const playerBar = document.querySelector('.ytp-chrome-bottom')
   // inject button dom.
   const rightControls = await waitElement(playerBar, '.ytp-right-controls')
@@ -49,4 +49,10 @@ export default async () => {
   toggleExtension.addEventListener('click', e =>
     toggleTooltipText(e, tooltipText.active, tooltipText.inactive)
   )
+}
+
+export const removeButton = () => {
+  const button = document.getElementById('oypb-toggleExtension')
+  if (!button) return
+  button.remove()
 }
