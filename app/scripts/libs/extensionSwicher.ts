@@ -30,6 +30,10 @@ const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
     this._isExtensionActioning = this._isExtensionActioning ? false : true
     console.log('is?', this._isExtensionActioning)
   }
+
+  isExtensionActioning = (): Boolean => {
+    return this._isExtensionActioning
+  }
 }
 
 const extensionSwitcher = new ExtensionSwitcherWrapper()
