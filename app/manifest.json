@@ -34,13 +34,14 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*.youtube.com/watch*"],
+      "matches": ["https://*.youtube.com/*"],
       "css": ["styles/style.css"],
       "js": ["scripts/main.js"]
     }
   ],
   "permissions": [
     "tabs",
+    "storage",
     "declarativeContent"
   ]
 }
