@@ -1,4 +1,5 @@
 const waitElement = require('../libs/waitElement')
+import debugLog from '../libs/debugLog'
 import extension from './extensionSwicher'
 import state from '../libs/stateMap'
 import toggleTooltip from '../libs/toggleTooltip'
@@ -9,12 +10,12 @@ const tooltipText = {
 }
 
 const initialTooltipText = (): string => {
-  console.log('init-toopltip-hasinject?', state.get('hasInjected'))
+  debugLog('init-toopltip-hasinject?', state.get('hasInjected'))
 
   if (!state.get('hasInjected')) {
     return tooltipText.isActive
   } else {
-    console.log(state.get('isActive'))
+    debugLog(state.get('isActive'))
     return state.get('isActive') ? tooltipText.isActive : tooltipText.isInactive
   }
 }

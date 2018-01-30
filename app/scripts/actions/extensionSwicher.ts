@@ -1,3 +1,4 @@
+import debugLog from '../libs/debugLog'
 import state from '../libs/stateMap'
 import { injectButton, removeButton } from './extensionButton'
 import { injectStyle, removeStyle } from './extensionStyle'
@@ -17,8 +18,10 @@ const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
     if (!state.get('hasInjected')) {
       state.set('hasInjected', true)
     }
-    console.log('is?', state.get('isActive'))
-    console.log('hasinject?', state.get('hasInjected'))
+
+    debugLog('is?', state.get('isActive'))
+    debugLog('hasinject?', state.get('hasInjected'))
+    debugLog('hasinject?', state.get('hasInjected'))
   }
 
   inactive = (): void => {
@@ -28,28 +31,28 @@ const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
     state.clear()
 
     state.forEach((k: any, v: any) => {
-      console.log(v, k)
+      debugLog(v, k)
     })
   }
 
   pause = (): void => {
     if (state.get('isActive')) {
       document.body.classList.toggle('oypb-is-outside-playerBar')
-      console.log('is?', 'pause')
+      debugLog('is?', 'pause')
     }
   }
 
   // toggle means change inside/outside bar, when enable button in video page
   toggle = (): void => {
     state.forEach((k: any, v: any) => {
-      console.log(v, k)
+      debugLog(v, k)
     })
     document.body.classList.toggle('oypb-is-outside-playerBar')
     let toggleValue = state.get('isActive')
       ? state.set('isActive', false)
       : state.set('isActive', true)
     state.forEach((k: any, v: any) => {
-      console.log(v, k)
+      debugLog(v, k)
     })
   }
 }
