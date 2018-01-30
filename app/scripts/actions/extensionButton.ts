@@ -10,12 +10,11 @@ const tooltipText = {
 }
 
 const initialTooltipText = (): string => {
-  debugLog('init-toopltip-hasinject?', state.get('hasInjected'))
-
   if (!state.get('hasInjected')) {
+    debugLog('Tooltip: Init tooltip mode')
     return tooltipText.isActive
   } else {
-    debugLog(state.get('isActive'))
+    debugLog('Tooltip: NAVIGATING tooltip mode')
     return state.get('isActive') ? tooltipText.isActive : tooltipText.isInactive
   }
 }
@@ -38,6 +37,7 @@ const setExtensionButtonEvent = (): void => {
 }
 
 export const injectButton = async (): Promise<void> => {
+  debugLog('INJECTING BUTTON...')
   // Wait target node.
   const playerBar = document.querySelector('.ytp-chrome-bottom')
   const rightControls = await waitElement(playerBar, '.ytp-right-controls')
@@ -51,6 +51,7 @@ export const injectButton = async (): Promise<void> => {
 }
 
 export const removeButton = (): void => {
+  debugLog('REMOVING BUTTON...')
   const button = document.getElementById('oypb-toggleExtension')
   if (button) button.remove()
 }
