@@ -15,10 +15,10 @@
     "message": "Outside YouTube player bar",
     "description": "The title of the browser action button"
   },
-  "tooltipText_active": {
-    "message": "Outside player bar"
-  },
-  "tooltipText_inactive": {
+  "tooltipText_isActive": {
     "message": "Inside player bar"
+  },
+  "tooltipText_isInactive": {
+    "message": "Outside player bar"
   }
 }
