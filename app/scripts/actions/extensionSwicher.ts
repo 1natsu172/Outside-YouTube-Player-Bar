@@ -19,8 +19,8 @@ const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
       state.set('hasInjected', true)
     }
 
-    debugLog('Switch to active: isActive?', state.get('isActive'))
-    debugLog('Switch to active: hasInject?', state.get('hasInjected'))
+    debugLog('Extension is activing: isActive?', state.get('isActive'))
+    debugLog('Extension is activing: hasInject?', state.get('hasInjected'))
   }
 
   inactive = (): void => {
@@ -31,7 +31,7 @@ const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
     state.clear()
 
     state.forEach((value: any, key: any) => {
-      debugLog(key, value)
+      debugLog('Extension is inactived', key, value)
     })
   }
 
