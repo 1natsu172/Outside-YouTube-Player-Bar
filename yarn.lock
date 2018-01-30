@@ -7658,6 +7658,10 @@ text-table@^0.2.0, text-table@~0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
 
+then-chrome@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/then-chrome/-/then-chrome-1.0.7.tgz#be6afc25a6fd3bbb03e13c742806d656cc6b0597"
+
 through2-concurrent@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/through2-concurrent/-/through2-concurrent-1.1.1.tgz#11cb4ea4c9e31bca6e4c1e6dba48d1c728c3524b"
