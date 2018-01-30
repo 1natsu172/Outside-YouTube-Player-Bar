@@ -1,12 +1,85 @@
-const WaitElement = require('./libs/waitElement')
-import BarHeight from './libs/getPlayerBarHeight'
-console.log(BarHeight)
+import debugLog from './libs/debugLog'
+import extension from './actions/extensionSwicher'
+import state from './libs/stateMap'
+import { injectStyle } from './actions/extensionStyle'
+import { injectButton } from './actions/extensionButton'
 
-const getcontainer = async () => {
-  const observeTarget = document.body
-  const wait = await WaitElement(observeTarget, '#player-container')
-  console.log(wait)
+// document.addEventListener('yt-request-panel-mode-change', (e)=> {
+//   debugLog(e);
+// })
+// document.addEventListener('yt-service-request-completed', (e)=> {
+//   debugLog(e);
+// })
+// document.addEventListener('yt-navigate', (e)=> {
+//   debugLog(e);
+// })
+// document.addEventListener('yt-navigate-start', (e)=> {
+//   debugLog(e);
+// })
+// document.addEventListener('yt-navigate-finish', (e)=> {
+//   debugLog(e);
+// })
+// document.addEventListener('yt-page-data-updated', (e)=> {
+//   debugLog(e);
+// })
+// document.addEventListener('yt-navigate-set-page-offset', (e)=> {
+//   debugLog(e);
+// })
+// document.addEventListener('visibilitychange', (e)=> {
+//   debugLog(e);
+// })
+// document.addEventListener('yt-autonav-pause-focus', (e)=> {
+//   debugLog(e);
+// })
+// document.addEventListener('yt-visibility-refresh', (e)=> {
+//   debugLog(e);
+// })
+// document.addEventListener('yt-page-data-will-update', (e)=> {
+//   debugLog(e);
+// })
+// document.addEventListener('yt-page-manager-navigate-start', (e)=> {
+//   debugLog(e);
+// })
+// document.addEventListener('yt-navigate-start', (e)=> {
+//   debugLog(e);
+// })
+
+const registerListeners = (): void => {
+  const pageNavigateListener = document.addEventListener(
+    'yt-page-data-updated',
+    e => {
+      debugLog(e)
+      debugLog('PAGE UPDATED')
+      extension.active()
+    }
+  )
+
+  const videoLoadedListener = document.addEventListener(
+    'yt-navigate-finish',
+    e => {
+      debugLog(e)
+      debugLog('PAGE NAVIGATING...')
+      // extension.inactive()
+    }
+  )
+
+  const fullscreenListener = ((): void => {
+    const events = [
+      'fullscreenchange',
+      'webkitfullscreenchange',
+      'mozfullscreenchange',
+      'MSFullscreenChange'
+    ]
+    events.forEach(event => {
+      // Pause the extension when fullscreen mode.
+      document.addEventListener(event, extension.pause)
+    })
+  })()
 }
-getcontainer()
 
-// // `<style>:root{--oypb-player-bar-height: ${playerBarHeight};}</style>`
+const initExtension = (() => {
+  debugLog('EXTENSION INITIALIZING...')
+  state.set('hasInjected', false) // set init flag
+  debugLog('Init: hasInject?', state.get('hasInjected'))
+  registerListeners()
+})()
