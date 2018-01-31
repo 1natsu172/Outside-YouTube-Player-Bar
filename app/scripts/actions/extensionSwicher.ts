@@ -2,6 +2,7 @@ import debugLog from '../libs/debugLog'
 import state from '../libs/stateMap'
 import { injectButton, removeButton } from './extensionButton'
 import { injectStyle, removeStyle } from './extensionStyle'
+import { handle } from '../libs/handleCollection'
 
 const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
   constructor() {
@@ -9,30 +10,29 @@ const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
   }
 
   active = async (): Promise<void> => {
+    if (!handle.isActiveReady()) return
+
     debugLog('ACTIVING EXTENSION...')
     await injectStyle()
     await injectButton()
     document.body.classList.add('oypb-is-outside-playerBar')
     state.set('isActive', true)
+    state.set('hasInjected', true)
 
-    if (!state.get('hasInjected')) {
-      state.set('hasInjected', true)
-    }
-
-    debugLog('Extension is activing: isActive?', state.get('isActive'))
-    debugLog('Extension is activing: hasInject?', state.get('hasInjected'))
+    debugLog('Extension is activing now: isActive?', state.get('isActive'))
+    debugLog('Extension is activing now: hasInject?', state.get('hasInjected'))
   }
 
   inactive = (): void => {
+    if (!handle.isInactiveReady()) return
+
     debugLog('INACTIVING EXTENSION...')
     removeButton()
     removeStyle()
     document.body.classList.remove('oypb-is-outside-playerBar')
     state.clear()
 
-    state.forEach((value: any, key: any) => {
-      debugLog('Extension is inactived', key, value)
-    })
+    debugLog('EXTENSION IS INACTIVED')
   }
 
   pause = (): void => {

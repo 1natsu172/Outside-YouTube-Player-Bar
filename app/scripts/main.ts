@@ -1,8 +1,7 @@
 import debugLog from './libs/debugLog'
 import extension from './actions/extensionSwicher'
 import state from './libs/stateMap'
-import { injectStyle } from './actions/extensionStyle'
-import { injectButton } from './actions/extensionButton'
+import { handle } from './libs/handleCollection'
 
 // document.addEventListener('yt-request-panel-mode-change', (e)=> {
 //   debugLog(e);
@@ -46,20 +45,20 @@ import { injectButton } from './actions/extensionButton'
 
 const registerListeners = (): void => {
   const pageNavigateListener = document.addEventListener(
+    'yt-navigate-finish',
+    e => {
+      debugLog(e)
+      debugLog('PAGE NAVIGATING...')
+      extension.inactive()
+    }
+  )
+
+  const videoLoadedListener = document.addEventListener(
     'yt-page-data-updated',
     e => {
       debugLog(e)
       debugLog('PAGE UPDATED')
       extension.active()
-    }
-  )
-
-  const videoLoadedListener = document.addEventListener(
-    'yt-navigate-finish',
-    e => {
-      debugLog(e)
-      debugLog('PAGE NAVIGATING...')
-      // extension.inactive()
     }
   )
 
