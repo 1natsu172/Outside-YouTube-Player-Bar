@@ -142,7 +142,9 @@
       top: calc(-1 * var(--oypb-player-bar-height));
     }
     
-    #playlist.ytd-watch {
+    // playlist box(in video page) & live chat frame(in live page)
+    #playlist.ytd-watch,
+    #chat.ytd-watch {
       top: calc(-1 * var(--oypb-player-bar-height)) !important;
     }
   }
