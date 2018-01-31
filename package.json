@@ -92,5 +92,8 @@
     "webpack": "3.x.x",
     "webpack-stream": "4.x.x",
     "yargs": "9.x.x"
+  },
+  "dependencies": {
+    "then-chrome": "^1.0.7"
   }
 }
