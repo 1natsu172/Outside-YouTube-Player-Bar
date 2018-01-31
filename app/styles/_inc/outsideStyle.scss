@@ -137,8 +137,14 @@
   }
   
   // Sidebar related videos when Default view mode.
-  ytd-watch:not([theater]) #related {
-    top: calc(-1 * var(--oypb-player-bar-height));
+  ytd-watch:not([theater]) {
+    #related {
+      top: calc(-1 * var(--oypb-player-bar-height));
+    }
+    
+    #playlist.ytd-watch {
+      top: calc(-1 * var(--oypb-player-bar-height)) !important;
+    }
   }
 
 }
