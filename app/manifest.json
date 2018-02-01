@@ -27,11 +27,6 @@
     "default_title": "__MSG_browserActionTitle__",
     "default_popup": "pages/popup.html"
   },
-  "options_page": "pages/options.html",
-  "options_ui": {
-    "page": "pages/options.html",
-    "chrome_style": true
-  },
   "content_scripts": [
     {
       "matches": ["https://*.youtube.com/*"],
