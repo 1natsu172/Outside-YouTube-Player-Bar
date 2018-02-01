@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "Outside YouTube player bar",
+    "message": "Outside YouTube Player Bar",
     "description": "The name of the application"
   },
   "appShortName": {
@@ -12,13 +12,31 @@
     "description": "The description of the application"
   },
   "browserActionTitle": {
-    "message": "Outside YouTube player bar",
+    "message": "Outside YouTube Player Bar",
     "description": "The title of the browser action button"
   },
   "tooltipText_isActive": {
-    "message": "Inside player bar"
+    "message": "Inside player bar",
+    "description": "Tooltip text for toggle button when extension is active"
   },
   "tooltipText_isInactive": {
-    "message": "Outside player bar"
+    "message": "Outside player bar",
+    "description": "Tooltip text for toggle button when extension is inactive"
+  },
+  "popup_title": {
+    "message": "Thanks for using Outside YouTube Player Bar!",
+    "description": "popup.html's title"
+  },
+  "popup_description": {
+    "message": "If you have anything about this extension, please contact GitHub Issue or Google Forms.",
+    "description": "popup.html's description"
+  },
+  "popup_pleaseReview": {
+    "message": "Please review if you don't mind.",
+    "description": "popup.html's please review message"
+  },
+  "popup_footerAuthor": {
+    "message": "Author",
+    "description": "popup.html's footer author lead"
   }
 }

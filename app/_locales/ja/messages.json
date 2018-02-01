@@ -1,0 +1,42 @@
+{
+  "appName": {
+    "message": "Outside YouTube Player Bar - YouTubeの再生バーを動画の外側に表示",
+    "description": "The name of the application"
+  },
+  "appShortName": {
+    "message": "oypb",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+  },
+  "appDescription": {
+    "message": "YouTubeに再生バーを動画の外側に表示する機能を追加します",
+    "description": "The description of the application"
+  },
+  "browserActionTitle": {
+    "message": "Outside YouTube Player Bar",
+    "description": "The title of the browser action button"
+  },
+  "tooltipText_isActive": {
+    "message": "再生バーを内側にする",
+    "description": "トグルボタンのツールチップテキスト(拡張機能がアクティブ状態のとき)"
+  },
+  "tooltipText_isInactive": {
+    "message": "再生バーを外側にする",
+    "description": "トグルボタンのツールチップテキスト(拡張機能が非アクティブ状態のとき)"
+  },
+  "popup_title": {
+    "message": "Outside YouTube Player Barのご利用ありがとうございます！",
+    "description": "popup.html's title"
+  },
+  "popup_description": {
+    "message": "この拡張機能についてなにかありましたら、GitHub Issue もしくは Google Formsからご連絡ください。",
+    "description": "popup.html's description"
+  },
+  "popup_pleaseReview": {
+    "message": "もしよろしければレビューもお願いします",
+    "description": "popup.html's please review message"
+  },
+  "popup_footerAuthor": {
+    "message": "つくっているひと",
+    "description": "popup.html's footer author lead"
+  }
+}

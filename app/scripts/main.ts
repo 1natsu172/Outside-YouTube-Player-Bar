@@ -1,4 +1,5 @@
 import debugLog from './libs/debugLog'
+import './libs/gtag'
 import extension from './actions/extensionSwicher'
 import state from './libs/stateMap'
 import { handle } from './libs/handleCollection'
@@ -71,7 +72,14 @@ const registerListeners = (): void => {
     ]
     events.forEach(event => {
       // Pause the extension when fullscreen mode.
-      document.addEventListener(event, extension.pause)
+      document.addEventListener(event, () => {
+        const extensionButton = document.getElementById(
+          'oypb-toggleExtension'
+        ) as HTMLElement
+
+        extensionButton.classList.toggle('oypb-is-none')
+        extension.pause()
+      })
     })
   })()
 }
