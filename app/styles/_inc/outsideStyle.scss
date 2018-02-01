@@ -12,6 +12,7 @@
   #player-container {
     height: calc(100% + var(--oypb-player-bar-height)) !important;
     background-color: var(--yt-main-app-background-tmp) !important;
+    overflow: hidden; // Substitution of `html5-player-video`'s overflow (repair sideeffect: e.g. `ytp-ce-shadow`)
   }
 
   // Revert original video size
