@@ -1,6 +1,6 @@
-# Always display YouTube control bar
+# Outside YouTube Player Bar
 
-Always show YouTube&#39;s control bar outside the video.
+Display YouTube's player bar outside the video.
 
 ## Installation
 
@@ -69,8 +69,25 @@ if(process.env.NODE_ENV === 'development'){
 }
 ```
 
+or
 
+**more useful example** `./app/scripts/**.ts`
 
+```typescript
+import debugLog from './libs/debugLog'
 
+debugLog('We are in development mode!')
+```
 
+## i18n localization by translation
 
+### Guide
+
+* [chrome.i18n(https://developer.chrome.com/extensions/i18n)](https://developer.chrome.com/extensions/i18n)
+
+**Directory** `./app/_locales/*`
+
+Put on your locale files. 
+
+* List of languages supported by Chrome
+    * [https://developer.chrome.com/webstore/i18n?csw=1#localeTable](https://developer.chrome.com/webstore/i18n?csw=1#localeTable)
