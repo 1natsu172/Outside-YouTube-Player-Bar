@@ -17,8 +17,8 @@ chrome.runtime.onInstalled.addListener(function() {
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: {
               schemes: ['https'],
-              hostContains: '.youtube.com',
-              pathContains: '/watch'
+              hostContains: '.youtube.com'
+              // pathContains: '/watch'
             }
           })
         ],
@@ -29,5 +29,4 @@ chrome.runtime.onInstalled.addListener(function() {
   })
 })
 
-console.log(`'Allo 'Allo! Event Page for Page Action`)
 console.log(chrome.runtime.getManifest().name)
