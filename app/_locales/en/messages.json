@@ -35,6 +35,10 @@
     "message": "Please review if you don't mind.",
     "description": "popup.html's please review message"
   },
+  "popup_PleaseReviewLink": {
+    "message": "Write a review at the chrome web store",
+    "description": "popup.html's Please review link"
+  },
   "popup_footerAuthor": {
     "message": "Author",
     "description": "popup.html's footer author lead"

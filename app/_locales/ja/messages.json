@@ -35,6 +35,10 @@
     "message": "もしよろしければレビューもお願いします",
     "description": "popup.html's please review message"
   },
+  "popup_PleaseReviewLink": {
+    "message": "Chromeウェブストアでレビューする",
+    "description": "popup.html's Please review link"
+  },
   "popup_footerAuthor": {
     "message": "つくっているひと",
     "description": "popup.html's footer author lead"

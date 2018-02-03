@@ -33,6 +33,11 @@ const popupHtmlContent = `
       <p class="please__review">${chrome.i18n.getMessage(
         'popup_pleaseReview'
       )} 🙏</p>
+      <ul class="please__reviewLink">
+      <li class="please__reviewLink__item"><a href="" blank="_target">📝 ${chrome.i18n.getMessage(
+        'popup_pleaseReviewLink'
+      )}</a></li>
+      </ul>
     </div>
   </main>
   <footer class="globalFooter">
