@@ -1,5 +1,4 @@
 import debugLog from './libs/debugLog'
-import './libs/gtag'
 import extension from './actions/extensionSwicher'
 import state from './libs/stateMap'
 import { handle } from './libs/handleCollection'
