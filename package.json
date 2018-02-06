@@ -22,7 +22,7 @@
     "precommit": "lint-staged",
     "test": "run-s test:*",
     "test:tsc": "tsc -p ./tsconfig.test.json",
-    "test:ava": "ava --verbose",
+    "test:ava": "ava 'test/_dist/test/**/*.js' --verbose",
     "test:removeDist": "rimraf ./test/_dist"
   },
   "lint-staged": {
