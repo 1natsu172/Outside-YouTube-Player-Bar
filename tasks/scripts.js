@@ -27,7 +27,7 @@ gulp.task('scripts', (cb) => {
           'process.env.VENDOR': JSON.stringify(args.vendor)
         })
       ].concat(args.production ? [
-        new BabiliPlugin(),
+        new BabiliPlugin({ removeConsole: true }),
         new webpack.optimize.ModuleConcatenationPlugin()
       ] : []),
       module: {
