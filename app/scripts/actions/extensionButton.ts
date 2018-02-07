@@ -1,5 +1,4 @@
 const waitElement = require('../libs/waitElement')
-import debugLog from '../libs/debugLog'
 import extension from './extensionSwicher'
 import state from '../libs/stateMap'
 import toggleTooltip from '../libs/toggleTooltip'
@@ -11,10 +10,10 @@ const tooltipText = {
 
 const initialTooltipText = (): string => {
   if (!state.get('hasInjected')) {
-    debugLog('Tooltip: Init tooltip mode')
+    console.log('Tooltip: Init tooltip mode')
     return tooltipText.isActive
   } else {
-    debugLog('Tooltip: NAVIGATING tooltip mode')
+    console.log('Tooltip: NAVIGATING tooltip mode')
     return state.get('isActive') ? tooltipText.isActive : tooltipText.isInactive
   }
 }
@@ -37,7 +36,7 @@ const setExtensionButtonEvent = (): void => {
 }
 
 export const injectButton = async (): Promise<void> => {
-  debugLog('INJECTING BUTTON...')
+  console.log('INJECTING BUTTON...')
   // Wait target node.
   const playerBar = document.querySelector('.ytp-chrome-bottom')
   const rightControls = await waitElement(playerBar, '.ytp-right-controls')
@@ -51,7 +50,7 @@ export const injectButton = async (): Promise<void> => {
 }
 
 export const removeButton = (): void => {
-  debugLog('REMOVING BUTTON...')
+  console.log('REMOVING BUTTON...')
   const button = document.getElementById('oypb-toggleExtension')
   if (button) button.remove()
 }

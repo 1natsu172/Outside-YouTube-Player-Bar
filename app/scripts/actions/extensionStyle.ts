@@ -1,8 +1,7 @@
-import debugLog from '../libs/debugLog'
 import getPlayerBarSize from '../libs/getPlayerBarSize'
 
 export const injectStyle = async () => {
-  debugLog('INJECTING STYLE...')
+  console.log('INJECTING STYLE...')
   const playerBarHeight = await getPlayerBarSize()
   const extensionStyle = `<style scope="oypb-is-outside-playerBar">:root{--oypb-player-bar-height: ${playerBarHeight}px;}</style>`
 
@@ -10,7 +9,7 @@ export const injectStyle = async () => {
 }
 
 export const removeStyle = () => {
-  debugLog('REMOVING STYLE...')
+  console.log('REMOVING STYLE...')
   const style = document.querySelector(
     'style[scope="oypb-is-outside-playerBar"]'
   )

@@ -71,16 +71,6 @@ if(process.env.NODE_ENV === 'development'){
 }
 ```
 
-or
-
-**more useful example** `./app/scripts/**.ts`
-
-```typescript
-import debugLog from './libs/debugLog'
-
-debugLog('We are in development mode!')
-```
-
 ## i18n localization by translation
 
 ### Guide

@@ -1,54 +1,53 @@
-import debugLog from './libs/debugLog'
 import extension from './actions/extensionSwicher'
 import state from './libs/stateMap'
 import { handle } from './libs/handleCollection'
 
 // document.addEventListener('yt-request-panel-mode-change', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 // document.addEventListener('yt-service-request-completed', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 // document.addEventListener('yt-navigate', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 // document.addEventListener('yt-navigate-start', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 // document.addEventListener('yt-navigate-finish', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 // document.addEventListener('yt-page-data-updated', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 // document.addEventListener('yt-navigate-set-page-offset', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 // document.addEventListener('visibilitychange', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 // document.addEventListener('yt-autonav-pause-focus', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 // document.addEventListener('yt-visibility-refresh', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 // document.addEventListener('yt-page-data-will-update', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 // document.addEventListener('yt-page-manager-navigate-start', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 // document.addEventListener('yt-navigate-start', (e)=> {
-//   debugLog(e);
+//   console.log(e);
 // })
 
 const registerListeners = (): void => {
   const pageNavigateListener = document.addEventListener(
     'yt-navigate-finish',
     e => {
-      debugLog(e)
-      debugLog('PAGE NAVIGATING...')
+      console.log(e)
+      console.log('PAGE NAVIGATING...')
       extension.inactive()
     }
   )
@@ -56,8 +55,8 @@ const registerListeners = (): void => {
   const videoLoadedListener = document.addEventListener(
     'yt-page-data-updated',
     e => {
-      debugLog(e)
-      debugLog('PAGE UPDATED')
+      console.log(e)
+      console.log('PAGE UPDATED')
       extension.active()
     }
   )
@@ -84,8 +83,8 @@ const registerListeners = (): void => {
 }
 
 const initExtension = (() => {
-  debugLog('EXTENSION INITIALIZING...')
+  console.log('EXTENSION INITIALIZING...')
   state.set('hasInjected', false) // set init flag
-  debugLog('Init: hasInject?', state.get('hasInjected'))
+  console.log('Init: hasInject?', state.get('hasInjected'))
   registerListeners()
 })()
