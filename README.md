@@ -1,5 +1,7 @@
 # Outside YouTube Player Bar
 
+[![Build Status](https://travis-ci.org/1natsu172/Outside-YouTube-Player-Bar.svg?branch=master)](https://travis-ci.org/1natsu172/Outside-YouTube-Player-Bar)
+
 ![](https://raw.githubusercontent.com/1natsu172/Outside-YouTube-Player-Bar/master/promo/Screenshot_1280x800-hero.png)
 
 Display YouTube's player bar outside the video.
