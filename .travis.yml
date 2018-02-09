@@ -4,7 +4,6 @@ node_js:
 cache:
   yarn: true
 env:
-  # Chrome WebStore ITEM_ID
   - APP_ITEM_ID=gmlbhbdkhnfhhmhdjopdbcfliajcafde
 script:
   - yarn test
