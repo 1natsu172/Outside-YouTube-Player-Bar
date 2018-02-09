@@ -4,15 +4,14 @@ node_js:
 cache:
   yarn: true
 env:
+  # Chrome WebStore ITEM_ID
   - APP_ITEM_ID=gmlbhbdkhnfhhmhdjopdbcfliajcafde
 script:
   - yarn test
 deploy:
   provider: script
   script:
-    - yarn build
-    - yarn webstore:set-token
-    - yarn webstore:update
+    yarn build && yarn webstore:set-token && yarn webstore:update
   on:
     branch: master
     tags: true
