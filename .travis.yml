@@ -10,12 +10,12 @@ script:
   - yarn test
 before_deploy:
   script:
-    - env WEBSTORE_TOKEN=$(chrome-webstore-manager refresh_token --client_id $CLIENT_ID --client_secret $CLIENT_SECRET --refresh_token $REFRESH_TOKEN)
+    - echo "export WEBSTORE_TOKEN=$(chrome-webstore-manager refresh_token --client_id $CLIENT_ID --client_secret $CLIENT_SECRET --refresh_token $REFRESH_TOKEN)" > token.sh
 deploy:
   provider: script
   skip_cleanup: true
   script:
-    yarn run build && yarn run webstore:update
+    source token.sh yarn run build && yarn run webstore:update
   on:
     branch: master
     tags: true
