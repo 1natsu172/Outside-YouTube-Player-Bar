@@ -1,7 +1,7 @@
 {
   "name": "Outside-YouTube-Player-Bar",
   "private": true,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Display YouTube's control bar outside the video.",
   "scripts": {
     "start": "npm run dev:chrome",
