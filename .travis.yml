@@ -8,11 +8,14 @@ env:
   - APP_ITEM_ID=gmlbhbdkhnfhhmhdjopdbcfliajcafde
 script:
   - yarn test
+before_deploy:
+  script:
+    - env WEBSTORE_TOKEN=$(chrome-webstore-manager refresh_token --client_id $CLIENT_ID --client_secret $CLIENT_SECRET --refresh_token $REFRESH_TOKEN)
 deploy:
   provider: script
   skip_cleanup: true
   script:
-    env WEBSTORE_TOKEN=$(chrome-webstore-manager refresh_token --client_id $CLIENT_ID --client_secret $CLIENT_SECRET --refresh_token $REFRESH_TOKEN) yarn run build && yarn run webstore:update
+    yarn run build && yarn run webstore:update
   on:
     branch: master
     tags: true
