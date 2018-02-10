@@ -24,7 +24,8 @@
     "test:tsc": "tsc -p ./tsconfig.test.json",
     "test:ava": "ava 'test/_dist/test/**/*.js' --verbose",
     "test:remove-dist": "rimraf ./test/_dist",
-    "webstore:update": "chrome-webstore-manager update $APP_ITEM_ID ./packages/*.zip"
+    "webstore:update": "chrome-webstore-manager update $APP_ITEM_ID ./packages/*.zip",
+    "clean": "rimraf ./packages/*"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
