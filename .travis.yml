@@ -12,7 +12,8 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    yarn run build && yarn run webstore:set-token && yarn run webstore:update
+    #yarn run build && yarn run webstore:set-token && yarn run webstore:update
+    echo 'foo'
   on:
     branch: master
     tags: true
