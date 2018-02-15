@@ -12,7 +12,7 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-    yarn run build && env WEBSTORE_TOKEN=$(chrome-webstore-manager refresh_token --client_id $CLIENT_ID --client_secret $CLIENT_SECRET --refresh_token $REFRESH_TOKEN) yarn run webstore:update
+    yarn run build && env WEBSTORE_TOKEN=$(chrome-webstore-manager refresh_token --client_id $CLIENT_ID --client_secret $CLIENT_SECRET --refresh_token $REFRESH_TOKEN) yarn run webstore:update && yarn run webstore:publish
   on:
     branch: master
     tags: true
