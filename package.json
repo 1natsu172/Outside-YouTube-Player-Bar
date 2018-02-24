@@ -26,13 +26,19 @@
     "test:remove-dist": "rimraf ./test/_dist",
     "webstore:update": "chrome-webstore-manager update $APP_ITEM_ID ./packages/*.zip",
     "webstore:publish": "chrome-webstore-manager publish $APP_ITEM_ID",
-    "clean": "rimraf ./packages/*"
+    "clean": "rimraf ./packages/*",
+    "cz": "git-cz"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
       "tslint --fix",
       "git add"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog-atom"
+    }
   },
   "ava": {
     "require": [
@@ -62,6 +68,8 @@
     "browser-env": "^3.2.4",
     "chrome-webstore-manager": "^0.4.1",
     "chromereload": "0.x.x",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog-atom": "^0.0.2",
     "del": "3.x.x",
     "gulp": "3.x.x",
     "gulp-bump": "2.x.x",
