@@ -73,7 +73,6 @@
     "babel-preset-env": "1.x.x",
     "babili-webpack-plugin": "0.x.x",
     "browser-env": "^3.2.4",
-    "bumped": "^0.10.9",
     "chrome-webstore-manager": "^0.4.1",
     "chromereload": "0.x.x",
     "commitizen": "^2.9.6",
