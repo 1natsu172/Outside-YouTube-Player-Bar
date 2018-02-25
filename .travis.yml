@@ -27,7 +27,7 @@ jobs:
         provider: script
         skip_cleanup: true
         script:
-          - npx semantic-release
+          - yarn run release-git:ci
     # Define the WebStore-publish stage
     - stage: WebStore-publish
       script: skip # Don't re-execute the test.
