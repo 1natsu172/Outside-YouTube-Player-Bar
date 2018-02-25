@@ -1,11 +1,14 @@
 {
   "verbose": true,
   "src": {
-    "tagName": "v%s"
+    "tagName": "v%s",
+    "commitMessage": "Release v%s",
+    "tagAnnotation": "Release v%s"
   },
   "github": {
     "release": true,
-    "tokenRef": "GH_TOKEN"
+    "tokenRef": "GH_TOKEN",
+    "releaseName": "Release v%s"
   },
   "npm": {
     "publish": false
