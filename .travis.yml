@@ -12,6 +12,15 @@ env:
   - GIT_COMMITTER_NAME=release-it_by_travis-ci
   - GIT_AUTHOR_NAME=release-it_by_travis-ci
 
+matrix:
+  exclude:
+    - node_js: "node"
+      env: APP_ITEM_ID=gmlbhbdkhnfhhmhdjopdbcfliajcafde
+    - node_js: "node"
+      env: GIT_COMMITTER_NAME=release-it_by_travis-ci
+    - node_js: "node"
+      env: GIT_AUTHOR_NAME=release-it_by_travis-ci
+
 stages:
   - test
   - name: GitHub-release
