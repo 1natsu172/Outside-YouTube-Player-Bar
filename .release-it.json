@@ -2,7 +2,7 @@
   "verbose": true,
   "src": {
     "tagName": "v%s",
-    "commitMessage": "Release v%s",
+    "commitMessage": "Release v%s [ci skip]",
     "tagAnnotation": "Release v%s"
   },
   "github": {
