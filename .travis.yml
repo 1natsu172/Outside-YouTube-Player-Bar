@@ -29,9 +29,9 @@ jobs:
       # SSH settings for `git push`
       before_deploy:
         - openssl aes-256-cbc -K $encrypted_b82245545edd_key -iv $encrypted_b82245545edd_iv -in travis_ci_integrate_rsa.enc -out ~\/.ssh/GitHub/travis_ci_integrate_rsa -d
-        - chmod 600 ~/.ssh/GitHub/travis_ci_integrate_rsa
+        - chmod 600 travis_ci_integrate_rsa
         - eval `ssh-agent -s`
-        - ssh-add ~/.ssh/GitHub/travis_ci_integrate_rsa
+        - ssh-add travis_ci_integrate_rsa
       deploy:
         provider: script
         skip_cleanup: true
