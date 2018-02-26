@@ -8,7 +8,8 @@
   "github": {
     "release": true,
     "tokenRef": "GH_TOKEN",
-    "releaseName": "Release v%s"
+    "releaseName": "Release v%s",
+    "pushRepo": "git@github.com:1natsu172/Outside-YouTube-Player-Bar.git"
   },
   "npm": {
     "publish": false
