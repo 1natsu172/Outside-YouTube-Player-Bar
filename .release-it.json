@@ -1,9 +1,9 @@
 {
   "verbose": true,
   "src": {
-    "tagName": "%s",
+    "tagName": "v%s",
     "commitMessage": "Release v%s [ci skip]",
-    "tagAnnotation": "Release %s",
+    "tagAnnotation": "Release v%s",
     "beforeStartCommand": "git checkout master"
   },
   "github": {
