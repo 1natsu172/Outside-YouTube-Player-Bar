@@ -2,7 +2,7 @@
   "verbose": true,
   "src": {
     "tagName": "v%s",
-    "commitMessage": "Release v%s [ci skip]",
+    "commitMessage": ":arrow_up: Release: v%s [ci skip]",
     "tagAnnotation": "Release v%s",
     "beforeStartCommand": "git checkout master",
     "pushRepo": "git@github.com:1natsu172/Outside-YouTube-Player-Bar.git"
