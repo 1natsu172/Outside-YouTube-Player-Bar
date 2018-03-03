@@ -4,13 +4,13 @@
     "tagName": "v%s",
     "commitMessage": "Release v%s [ci skip]",
     "tagAnnotation": "Release v%s",
-    "beforeStartCommand": "git checkout master"
+    "beforeStartCommand": "git checkout master",
+    "pushRepo": "git@github.com:1natsu172/Outside-YouTube-Player-Bar.git"
   },
   "github": {
     "release": true,
     "tokenRef": "GH_TOKEN",
-    "releaseName": "Release v%s",
-    "pushRepo": "git@github.com:1natsu172/Outside-YouTube-Player-Bar.git"
+    "releaseName": "Release v%s"
   },
   "npm": {
     "publish": false
