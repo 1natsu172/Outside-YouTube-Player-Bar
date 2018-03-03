@@ -51,7 +51,9 @@ jobs:
       script: skip # Don't re-execute the test.
       before_deploy:
         # Dynamic generating the ENV variable.
-        export WEBSTORE_TOKEN=$(chrome-webstore-manager refresh_token --client_id $CLIENT_ID --client_secret $CLIENT_SECRET --refresh_token $REFRESH_TOKEN)
+        - export WEBSTORE_TOKEN=$(chrome-webstore-manager refresh_token --client_id $CLIENT_ID --client_secret $CLIENT_SECRET --refresh_token $REFRESH_TOKEN)
+        # Checkout to master from detached HEAD state to deploy in the latest version.
+        - git checkout master
       deploy:
         provider: script
         skip_cleanup: true
