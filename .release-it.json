@@ -1,9 +1,9 @@
 {
   "verbose": true,
   "src": {
-    "tagName": "%s",
+    "tagName": "v%s",
     "commitMessage": "Release v%s [ci skip]",
-    "tagAnnotation": "Release %s",
+    "tagAnnotation": "Release v%s",
     "beforeStartCommand": "git checkout master"
   },
   "github": {
@@ -16,7 +16,6 @@
     "publish": false
   },
   "pkgFiles": ["package.json", "app/manifest.json"],
-  "increment": "conventional:atom",
   "beforeChangelogCommand": "conventional-changelog -p atom -i CHANGELOG.md -s",
   "changelogCommand": "conventional-changelog -p atom | tail -n +3",
   "safeBump": false
