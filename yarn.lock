@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@1natsu/wait-element@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@1natsu/wait-element/-/wait-element-1.2.0.tgz#15894e0e1afe2f956ac11451a05f8f3d34aa983f"
+
 "@ava/babel-plugin-throws-helper@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@ava/babel-plugin-throws-helper/-/babel-plugin-throws-helper-2.0.0.tgz#2fc1fe3c211a71071a4eca7b8f7af5842cd1ae7c"
