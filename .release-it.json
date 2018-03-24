@@ -16,6 +16,7 @@
     "publish": false
   },
   "pkgFiles": ["package.json", "app/manifest.json"],
+  "increment": "conventional:atom",
   "beforeChangelogCommand": "conventional-changelog -p atom -i CHANGELOG.md -s",
   "changelogCommand": "conventional-changelog -p atom | tail -n +3",
   "safeBump": false

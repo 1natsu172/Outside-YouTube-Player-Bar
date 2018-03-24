@@ -20,7 +20,7 @@
     height: calc(100% - var(--oypb-player-bar-height)) !important;
     overflow: visible;
     contain: size style layout; // Removing `layput` from `strict`.
-    
+
     // When fullscreen mode.
     &.ytp-fullscreen {
       height: 100% !important;
@@ -115,7 +115,7 @@
   // Subtitles/caption
   .caption-window.ytp-caption-window-bottom {
     margin-bottom: 0;
-    
+
     // When both caption and central advertisement are displayed.
     .ytp-ad-overlay-open & {
       margin-bottom: calc(139px - var(--oypb-player-bar-height));
@@ -126,7 +126,7 @@
   .ytp-settings-menu {
     bottom: calc(49px - var(--oypb-player-bar-height));
   }
-  
+
   // player bar's gradient effect.
   .ytp-gradient-bottom {
     display: none;
@@ -136,13 +136,16 @@
   #container > #main {
     margin-top: var(--oypb-player-bar-height);
   }
-  
+
   // Sidebar related videos when Default view mode.
   ytd-watch:not([theater]) {
     #related {
       top: calc(-1 * var(--oypb-player-bar-height));
+      @include mq-max(999) {
+        top: auto;
+      }
     }
-    
+
     // playlist box(in video page) & live chat frame(in live page)
     #playlist.ytd-watch,
     #chat.ytd-watch {

@@ -1,4 +1,4 @@
-const waitElement = require('../libs/waitElement')
+import waitElement from '@1natsu/wait-element'
 import extension from './extensionSwicher'
 import state from '../libs/stateMap'
 import toggleTooltip from '../libs/toggleTooltip'
@@ -39,7 +39,9 @@ export const injectButton = async (): Promise<void> => {
   console.log('INJECTING BUTTON...')
   // Wait target node.
   const playerBar = document.querySelector('.ytp-chrome-bottom')
-  const rightControls = await waitElement(playerBar, '.ytp-right-controls')
+  const rightControls = await waitElement('.ytp-right-controls', {
+    target: playerBar
+  })
   const button = extensionToggleButton()
 
   // Inject button dom.
