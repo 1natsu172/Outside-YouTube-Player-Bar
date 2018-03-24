@@ -1,0 +1,17 @@
+@mixin mq-min($breakpoint) {
+  @media (min-width: $breakpoint + 'px') {
+    @content;
+  }
+}
+
+@mixin mq-max($breakpoint) {
+  @media (max-width: $breakpoint + 'px') {
+    @content;
+  }
+}
+
+@mixin mq-scope($breakpoint-min, $breakpoint-max) {
+  @media (min-width: $breakpoint-min + 'px') and (max-width: $breakpoint-max + 'px') {
+    @content;
+  }
+}
