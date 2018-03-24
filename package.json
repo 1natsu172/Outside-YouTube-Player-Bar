@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/1natsu172/Outside-YouTube-Player-Bar.git"
   },
-  "version": "1.2.11",
+  "version": "1.2.12",
   "description": "Display YouTube's control bar outside the video.",
   "scripts": {
     "start": "npm run dev:chrome",
