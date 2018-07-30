@@ -133,24 +133,14 @@
   }
 
   // Info panels & sidebar container.
-  #container > #main {
+  #info-contents, #secondary-inner {
     margin-top: var(--oypb-player-bar-height);
   }
 
   // Sidebar related videos when Default view mode.
-  ytd-watch:not([theater]) {
-    #related {
-      top: calc(-1 * var(--oypb-player-bar-height));
-      @include mq-max(999) {
-        top: auto;
-      }
-    }
-
-    // playlist box(in video page) & live chat frame(in live page)
-    #playlist.ytd-watch,
-    #chat.ytd-watch {
-      top: calc(-1 * var(--oypb-player-bar-height)) !important;
+  ytd-watch-flexy:not([theater]) {
+    #secondary-inner {
+      margin-top: auto;
     }
   }
-
 }
