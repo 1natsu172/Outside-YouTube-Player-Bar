@@ -2,7 +2,7 @@
   "name": "__MSG_appName__",
   "short_name": "__MSG_appShortName__",
   "description": "__MSG_appDescription__",
-  "version": "1.2.8",
+  "version": "1.2.14",
   "manifest_version": 2,
   "default_locale": "en",
   "icons": {
@@ -29,9 +29,15 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*.youtube.com/*"],
-      "css": ["styles/style.css"],
-      "js": ["scripts/main.js"]
+      "matches": [
+        "https://*.youtube.com/*"
+      ],
+      "css": [
+        "styles/style.css"
+      ],
+      "js": [
+        "scripts/main.js"
+      ]
     }
   ],
   "permissions": [
