@@ -6,7 +6,7 @@
 
 **Display YouTube's player bar outside the video.**
 
----
+---
 
 ## DOWNLOAD ON THE 
 
@@ -18,7 +18,7 @@
 
 ***
 
-# FOR DEVELOPER GUIDE (WIP)
+# FOR DEVELOPER GUIDE (WIP)
 
 ## Installation
 
