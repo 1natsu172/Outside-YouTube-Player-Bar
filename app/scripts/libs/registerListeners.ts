@@ -1,4 +1,5 @@
 import extension from '../actions/extensionSwicher'
+import { addFullScreenPlayerBarVariable } from '../actions/extensionStyle'
 
 const YT_EVENTS = [
   'yt-request-panel-mode-change',
@@ -40,21 +41,11 @@ const videoLoadedListener = () => {
 }
 
 const fullscreenListener = () => {
-  const events = [
-    'fullscreenchange',
-    'webkitfullscreenchange',
-    'mozfullscreenchange',
-    'MSFullscreenChange'
-  ]
+  const events = ['fullscreenchange', 'webkitfullscreenchange']
   events.forEach(event => {
     // Pause the extension when fullscreen mode.
     document.addEventListener(event, () => {
-      const extensionButton = document.getElementById(
-        'oypb-toggleExtension'
-      ) as HTMLElement
-
-      extensionButton.classList.toggle('oypb-is-none')
-      extension.pause()
+      addFullScreenPlayerBarVariable()
     })
   })
 }
@@ -62,7 +53,7 @@ const fullscreenListener = () => {
 const registerListeners = (): void => {
   pageNavigateListener()
   videoLoadedListener()
-  // fullscreenListener()
+  fullscreenListener()
 }
 
 export { registerListeners, DEBUG_YT_EVENTS }

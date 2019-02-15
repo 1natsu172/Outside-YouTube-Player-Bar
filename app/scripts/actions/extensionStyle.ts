@@ -15,3 +15,16 @@ export const removeStyle = () => {
   )
   if (style) style.remove()
 }
+
+export const addFullScreenPlayerBarVariable = async () => {
+  console.log('ADD FULLSCREEN PLAYER BAR HEIGHT SIZE...')
+
+  const fullScreenBarHeight = 58
+
+  const fullScreenCssVar = `:root{--oypb-fullscreen-player-bar-height: ${fullScreenBarHeight}px;}`
+
+  const style = document.querySelector(
+    'style[scope="oypb-is-outside-playerBar"]'
+  )
+  if (style) style.insertAdjacentText('beforeend', fullScreenCssVar)
+}
