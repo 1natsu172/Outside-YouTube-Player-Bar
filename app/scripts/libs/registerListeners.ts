@@ -1,5 +1,4 @@
 import extension from '../actions/extensionSwicher'
-import { addFullScreenPlayerBarVariable } from '../actions/extensionStyle'
 
 const YT_EVENTS = [
   'yt-request-panel-mode-change',
@@ -45,7 +44,7 @@ const fullscreenListener = () => {
   events.forEach(event => {
     // Pause the extension when fullscreen mode.
     document.addEventListener(event, () => {
-      addFullScreenPlayerBarVariable()
+      document.body.classList.toggle('oypb-is-fullscreen')
     })
   })
 }

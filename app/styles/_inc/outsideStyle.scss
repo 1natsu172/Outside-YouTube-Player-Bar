@@ -5,6 +5,17 @@
 // `var(--oypb-**)` variables are unique to this extension.
 // * Memo * //
 
+//**
+//* Declare vars
+//*
+:root{
+  --oypb-player-bar-height: 39px;
+
+  // when fullscreen mode
+  .oypb-is-fullscreen {
+    --oypb-player-bar-height: 58px;
+  }
+}
 
 .oypb-is-outside-playerBar {
 
