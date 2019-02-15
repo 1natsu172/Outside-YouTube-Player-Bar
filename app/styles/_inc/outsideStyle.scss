@@ -11,14 +11,17 @@
 :root{
   --oypb-player-bar-height: 39px;
 
+  // size of fillthe left and right gap of player bar.
+  --oypb-player-bar-fill-lr-gap-size: 12px;
+
   // when fullscreen mode
   .oypb-is-fullscreen {
+    --oypb-player-bar-fill-lr-gap-size: 24px;
     --oypb-player-bar-height: 58px;
   }
 }
 
 .oypb-is-outside-playerBar {
-
   // Move down the entire primary container
   #primary {
     transform: translate3d(0, var(--oypb-player-bar-height), 0);
@@ -37,11 +40,12 @@
 
   // Player bar
   .ytp-chrome-bottom {
-    // Declare player bar color.
-    --oypb-player-bar-color: rgb(35, 35, 35); // Default theme
+    // Declare player bar color of Default theme.
+    --oypb-player-bar-color: rgb(35, 35, 35);
 
+    // Declare player bar color of Dark theme.
     [dark] & {
-      --oypb-player-bar-color: var(--yt-main-app-background-tmp); // Dark theme
+      --oypb-player-bar-color: var(--yt-main-app-background-tmp);
     }
 
     transform: translate3d(0, var(--oypb-player-bar-height), 0);
@@ -51,7 +55,7 @@
       content: '';
       display: block;
       height: 100%;
-      width: 12px;
+      width: var(--oypb-player-bar-fill-lr-gap-size);
       position: absolute;
       top: 0;
       background-color: var(--oypb-player-bar-color);
@@ -59,12 +63,12 @@
 
     .ytp-left-controls::before {
       @include ytp-controls-border();
-      left: -12px;
+      left: calc(-1 * var(--oypb-player-bar-fill-lr-gap-size));
     }
 
     .ytp-right-controls::after {
       @include ytp-controls-border();
-      right: -12px;
+      right: calc(-1 * var(--oypb-player-bar-fill-lr-gap-size));
     }
   }
 
