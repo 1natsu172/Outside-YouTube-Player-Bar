@@ -27,6 +27,11 @@
     transform: translate3d(0, var(--oypb-player-bar-height), 0);
   }
 
+  // Hide scrollbar because the side effect of `#primary` translate.
+  #columns {
+    overflow-y: hidden;
+  }
+
   // Restore PlayerBox to original position
   #player {
     transform: translate3d(0, calc(-1 * var(--oypb-player-bar-height)), 0);
