@@ -120,12 +120,8 @@
 
   // Sidebar related videos when Theater mode.
   ytd-watch-flexy[theater] {
-    #secondary-inner {
+    #secondary {
       transform: translate3d(0, var(--oypb-player-bar-height), 0);
     }
-  }
-
-  &.oypb-is-fullscreen #secondary {
-    transform: translate3d(0, var(--oypb-player-bar-height), 0);
   }
 }
