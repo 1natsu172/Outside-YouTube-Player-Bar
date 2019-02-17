@@ -1,6 +1,7 @@
 import extension from './actions/extensionSwicher'
 import state from './libs/stateMap'
 import { DEBUG_YT_EVENTS, registerListeners } from './libs/registerListeners'
+import { observeNodes } from './actions/observeNodes'
 
 const IS_DEBUG_YT_EVENTS = false
 
@@ -11,4 +12,5 @@ const initExtension = (() => {
   state.set('hasInjected', false) // set init flag
   console.log('Init: hasInject?', state.get('hasInjected'))
   registerListeners()
+  observeNodes()
 })()
