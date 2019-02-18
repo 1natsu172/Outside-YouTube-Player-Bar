@@ -27,7 +27,7 @@
   }
 
   // when dark theme
-  [dark] {
+  &[dark] {
     --oypb-player-bar-color: var(--yt-main-app-background-tmp);
   }
 }
