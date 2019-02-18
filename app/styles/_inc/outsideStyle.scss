@@ -93,9 +93,9 @@
     visibility: hidden !important;
   }
 
-  // Inner video contents area.
+  // Inner video contents area. (e.g. right-bottom author icon)
   .ytp-iv-player-content {
-    transform: translate3d(0, var(--oypb-player-bar-height), 0);
+    bottom: 12px;
   }
 
   // Tool-tip's coord.
