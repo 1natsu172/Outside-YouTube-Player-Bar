@@ -8,23 +8,39 @@
 //**
 //* Declare vars
 //*
-:root{
+:root {
   --oypb-player-bar-height: 39px;
 
   // size of fillthe left and right gap of player bar.
   --oypb-player-bar-fill-lr-gap-size: 12px;
 
+  // player bar color of Default theme.
+  --oypb-player-bar-color: rgb(35, 35, 35);
+
+  --oypb-transition-in: .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+  --oypb-transition-out: 0s cubic-bezier(0.4, 0.0, 1, 1); // 本来YTでは`.1s`だけどシュッと消えるように`0s`に変更
+
   // when fullscreen mode
   .oypb-is-fullscreen {
-    --oypb-player-bar-fill-lr-gap-size: 24px;
     --oypb-player-bar-height: 58px;
+    --oypb-player-bar-fill-lr-gap-size: 24px;
+  }
+
+  // when dark theme
+  [dark] {
+    --oypb-player-bar-color: var(--yt-main-app-background-tmp);
   }
 }
 
-.oypb-is-outside-playerBar {
+.oypb-is-outside-playerBar.oypb-is-visible-playerBar {
   // Move down the entire primary container
   #primary {
-    transform: translate3d(0, var(--oypb-player-bar-height), 0);
+    @include translateBarHeight($direction: 'plus');
+    @include transitionOfTranslateBarHeight($pattern: 'in');
+
+    @at-root #{$isOutsidePlayerBar} #primary {
+      @include transitionOfTranslateBarHeight($pattern: 'out');
+    }
   }
 
   // Hide scrollbar because the side effect of `#primary` translate.
@@ -34,7 +50,12 @@
 
   // Restore PlayerBox to original position
   #player {
-    transform: translate3d(0, calc(-1 * var(--oypb-player-bar-height)), 0);
+    @include translateBarHeight($direction: 'minus');
+    @include transitionOfTranslateBarHeight($pattern: 'in');
+
+    @at-root #{$isOutsidePlayerBar} #player {
+      @include transitionOfTranslateBarHeight($pattern: 'out');
+    }
   }
 
   // Revert original video size
@@ -45,16 +66,13 @@
 
   // Player bar
   .ytp-chrome-bottom {
-    // Declare player bar color of Default theme.
-    --oypb-player-bar-color: rgb(35, 35, 35);
-
-    // Declare player bar color of Dark theme.
-    [dark] & {
-      --oypb-player-bar-color: var(--yt-main-app-background-tmp);
-    }
-
-    transform: translate3d(0, var(--oypb-player-bar-height), 0);
     background-color: var(--oypb-player-bar-color);
+    @include translateBarHeight($direction: 'plus');
+    @include transitionOfTranslateBarHeight('in');
+
+    @at-root #{$isOutsidePlayerBar} .ytp-chrome-bottom {
+      @include transitionOfTranslateBarHeight($pattern: 'out');
+    }
 
     @mixin ytp-controls-border() {
       content: '';
@@ -100,17 +118,22 @@
 
   // Tool-tip's coord.
   .ytp-tooltip {
-    transform: translate3d(0, var(--oypb-player-bar-height), 0) !important;
+    @include translateBarHeight($direction: 'plus',$important:true);
   }
 
   // Subtitles/caption
   .caption-window.ytp-caption-window-bottom {
-    transform: translate3d(0, var(--oypb-player-bar-height), 0);
+    @include translateBarHeight($direction: 'plus');
+    @include transitionOfTranslateBarHeight($pattern: 'in');
+
+    @at-root #{$isOutsidePlayerBar} .caption-window.ytp-caption-window-bottom {
+      @include transitionOfTranslateBarHeight($pattern: 'out');
+    }
   }
 
   // Player Settings menu panel.
   .ytp-settings-menu {
-    transform: translate3d(0, var(--oypb-player-bar-height), 0);
+    @include translateBarHeight($direction: 'plus');
   }
 
   // player bar's gradient effect.
@@ -122,7 +145,12 @@
   ytd-watch-flexy[theater],
   ytd-watch-flexy[fullscreen] {
     #secondary {
-      transform: translate3d(0, var(--oypb-player-bar-height), 0);
+      @include translateBarHeight($direction: 'plus');
+      @include transitionOfTranslateBarHeight($pattern: 'in');
+
+      @at-root #{$isOutsidePlayerBar} #secondary {
+        @include transitionOfTranslateBarHeight($pattern: 'out');
+      }
     }
   }
 }
