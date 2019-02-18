@@ -5,80 +5,59 @@
 // `var(--oypb-**)` variables are unique to this extension.
 // * Memo * //
 
-//**
-//* Declare vars
-//*
-:root{
-  --oypb-player-bar-height: 39px;
-
-  // size of fillthe left and right gap of player bar.
-  --oypb-player-bar-fill-lr-gap-size: 12px;
-
-  // when fullscreen mode
-  .oypb-is-fullscreen {
-    --oypb-player-bar-fill-lr-gap-size: 24px;
-    --oypb-player-bar-height: 58px;
-  }
-}
 
 .oypb-is-outside-playerBar {
-  // Move down the entire primary container
-  #primary {
-    transform: translate3d(0, var(--oypb-player-bar-height), 0);
-  }
 
-  // Hide scrollbar because the side effect of `#primary` translate.
-  #columns {
-    overflow-y: hidden;
-  }
-
-  // Restore PlayerBox to original position
-  #player {
-    transform: translate3d(0, calc(-1 * var(--oypb-player-bar-height)), 0);
+  // Resizing container size.
+  #player-container {
+    height: calc(100% + var(--oypb-player-bar-height)) !important;
+    overflow: hidden; // Substitution of `html5-player-video`'s overflow (repair sideeffect: e.g. `ytp-ce-shadow`)
   }
 
   // Revert original video size
   .html5-video-player {
+    height: calc(100% - var(--oypb-player-bar-height)) !important;
     overflow: visible;
     contain: size style layout; // Removing `layput` from `strict`.
+
+    // When fullscreen mode.
+    &.ytp-fullscreen {
+      height: 100% !important;
+    }
   }
 
   // Player bar
   .ytp-chrome-bottom {
-    // Declare player bar color of Default theme.
-    --oypb-player-bar-color: rgb(35, 35, 35);
-
-    // Declare player bar color of Dark theme.
+    // Declare player bar color.
+    --oypb-player-bar-color: rgb(35,35,35); // Default theme
     [dark] & {
-      --oypb-player-bar-color: var(--yt-main-app-background-tmp);
+      --oypb-player-bar-color: var(--yt-main-app-background-tmp); // Dark theme
     }
 
-    transform: translate3d(0, var(--oypb-player-bar-height), 0);
+    bottom: calc(-1 * var(--oypb-player-bar-height)); // Move player bar to container bottom.
     background-color: var(--oypb-player-bar-color);
 
     @mixin ytp-controls-border() {
       content: '';
       display: block;
       height: 100%;
-      width: var(--oypb-player-bar-fill-lr-gap-size);
+      width: 12px;
       position: absolute;
       top: 0;
       background-color: var(--oypb-player-bar-color);
     }
-
     .ytp-left-controls::before {
       @include ytp-controls-border();
-      left: calc(-1 * var(--oypb-player-bar-fill-lr-gap-size));
+      left: -12px;
     }
-
     .ytp-right-controls::after {
       @include ytp-controls-border();
-      right: calc(-1 * var(--oypb-player-bar-fill-lr-gap-size));
+      right: -12px;
     }
   }
 
-  .oypb-toggleExtensionButton>svg {
-    transform: rotateX(180deg);
+  .oypb-toggleExtensionButton > svg {
+      transform: rotateX(180deg);
   }
 
 
@@ -87,30 +66,64 @@
   ////
 
   // When `.ended-mode`, the original took minus `top` value and hiding video element, but because `top` is interfering.
-  // `.html5-video-player` で `overflow: hidden` しているせいでビデオ再生が終了したときに枠外に飛ばしているビデオコンテナが見えてしまう問題を対処
-  // https://gyazo.com/97bf9b42d40d058d1fa1841eb1d4e6f4
   .ended-mode .html5-main-video {
     visibility: hidden !important;
   }
 
+  // Long ad video when before starting video playback.
+  .videoAdUiRedesign {
+    // Ad property (bottom left)
+    .videoAdUiBottomBar {
+      bottom: 5px;
+    }
+
+    // Countdown to SkipAd button with thumbnail (bottom right)
+    .videoAdUiPreSkipContainer,
+    // SkipAd button (bottom right)
+    .videoAdUiSkipContainer {
+      bottom: 34px;
+    }
+  }
+
+  // Ad banner (bottom center): when playing few seconds then ad starting.
+  .ad-overlay {
+    bottom: calc(49px - var(--oypb-player-bar-height)) !important;
+  }
+
+  // Ad promotion remaining time & link (bottom left): when playing promotional video.
+  .iv-promo {
+    bottom: 10px;
+  }
+
+  // Ad promotion collapse link (bottom left)
+  .html5-video-player.ad-interrupting .iv-promo {
+    bottom: 34px;
+  }
+
   // Inner video contents area.
   .ytp-iv-player-content {
-    transform: translate3d(0, var(--oypb-player-bar-height), 0);
+    bottom: 12px;
   }
 
   // Tool-tip's coord.
   .ytp-tooltip {
-    transform: translate3d(0, var(--oypb-player-bar-height), 0) !important;
+    top: auto !important;
+    bottom: calc(10.5px) !important;
   }
 
   // Subtitles/caption
   .caption-window.ytp-caption-window-bottom {
-    transform: translate3d(0, var(--oypb-player-bar-height), 0);
+    margin-bottom: 0;
+
+    // When both caption and central advertisement are displayed.
+    .ytp-ad-overlay-open & {
+      margin-bottom: calc(139px - var(--oypb-player-bar-height));
+    }
   }
 
   // Player Settings menu panel.
   .ytp-settings-menu {
-    transform: translate3d(0, var(--oypb-player-bar-height), 0);
+    bottom: calc(49px - var(--oypb-player-bar-height));
   }
 
   // player bar's gradient effect.
@@ -118,10 +131,15 @@
     display: none;
   }
 
-  // Sidebar related videos when Theater mode.
-  ytd-watch-flexy[theater] {
-    #secondary {
-      transform: translate3d(0, var(--oypb-player-bar-height), 0);
+  // Info panels & sidebar container.
+  #info-contents, #secondary-inner {
+    margin-top: var(--oypb-player-bar-height);
+  }
+
+  // Sidebar related videos when Default view mode.
+  ytd-watch-flexy:not([theater]) {
+    #secondary-inner {
+      margin-top: auto;
     }
   }
 }
