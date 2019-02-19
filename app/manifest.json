@@ -43,6 +43,7 @@
   "permissions": [
     "tabs",
     "storage",
-    "declarativeContent"
+    "declarativeContent",
+    "notifications"
   ]
 }

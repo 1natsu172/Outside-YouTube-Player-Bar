@@ -1,8 +1,10 @@
 // Enable chromereload by uncommenting this line:
 import 'chromereload/devonly'
+import { notification } from './libs/extensionNotify/notifications'
 
 chrome.runtime.onInstalled.addListener(details => {
   console.log('previousVersion', details.previousVersion)
+  notification(details)
 })
 
 // // When the extension is installed or upgraded ...
