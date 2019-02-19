@@ -1,3 +1,9 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v1.2.15...v1.3.0) (2019-02-19)
+
+
+
+
 # Changelog for Outside YouTube Player Bar
 
 ## v2.1.0
