@@ -23,39 +23,39 @@ matrix:
 
 stages:
   - test
-  - name: GitHub-release
-    if: (NOT type IN (pull_request)) AND (branch = master)
-  - name: WebStore-publish
-    if: (NOT type IN (pull_request)) AND (branch = master)
+  # - name: GitHub-release
+  #   if: (NOT type IN (pull_request)) AND (branch = master)
+  # - name: WebStore-publish
+  #   if: (NOT type IN (pull_request)) AND (branch = master)
 
 jobs:
   include:
     # Define test stage
     - script: yarn test
     # Define the GitHub-release stage
-    - stage: GitHub-release
-      script: skip # Don't re-execute the test.
-      # SSH settings for `git push`
-      before_deploy:
-        - openssl aes-256-cbc -K $encrypted_b82245545edd_key -iv $encrypted_b82245545edd_iv -in travis_ci_integrate_rsa.enc -out travis_ci_integrate_rsa -d
-        - chmod 600 travis_ci_integrate_rsa
-        - eval `ssh-agent -s`
-        - ssh-add travis_ci_integrate_rsa
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          - yarn run release-git:ci
-    # Define the WebStore-publish stage
-    - stage: WebStore-publish
-      script: skip # Don't re-execute the test.
-      before_deploy:
-        # Dynamic generating the ENV variable.
-        - export WEBSTORE_TOKEN=$(chrome-webstore-manager refresh_token --client_id $CLIENT_ID --client_secret $CLIENT_SECRET --refresh_token $REFRESH_TOKEN)
-        # Checkout to master from detached HEAD state to deploy in the latest version.
-        - git checkout master
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script:
-          yarn run build && yarn run webstore:update && yarn run webstore:publish
+    # - stage: GitHub-release
+    #   script: skip # Don't re-execute the test.
+    #   # SSH settings for `git push`
+    #   before_deploy:
+    #     - openssl aes-256-cbc -K $encrypted_b82245545edd_key -iv $encrypted_b82245545edd_iv -in travis_ci_integrate_rsa.enc -out travis_ci_integrate_rsa -d
+    #     - chmod 600 travis_ci_integrate_rsa
+    #     - eval `ssh-agent -s`
+    #     - ssh-add travis_ci_integrate_rsa
+    #   deploy:
+    #     provider: script
+    #     skip_cleanup: true
+    #     script:
+    #       - yarn run release-git:ci
+    # # Define the WebStore-publish stage
+    # - stage: WebStore-publish
+    #   script: skip # Don't re-execute the test.
+    #   before_deploy:
+    #     # Dynamic generating the ENV variable.
+    #     - export WEBSTORE_TOKEN=$(chrome-webstore-manager refresh_token --client_id $CLIENT_ID --client_secret $CLIENT_SECRET --refresh_token $REFRESH_TOKEN)
+    #     # Checkout to master from detached HEAD state to deploy in the latest version.
+    #     - git checkout master
+    #   deploy:
+    #     provider: script
+    #     skip_cleanup: true
+    #     script:
+    #       yarn run build && yarn run webstore:update && yarn run webstore:publish
