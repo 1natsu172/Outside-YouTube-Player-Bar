@@ -1,5 +1,9 @@
+// Vars
+@import "./libs//variables/oypbGlobalVars";
+
 //mixin
 @import "./libs/mixin/mediaQuery";
+@import "./libs/mixin/oypbMixin";
 
 // mains
 @import "./_inc/commonStyle";

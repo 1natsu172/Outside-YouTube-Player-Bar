@@ -1,6 +1,5 @@
 import state from '../libs/stateMap'
 import { injectButton, removeButton } from './extensionButton'
-import { injectStyle, removeStyle } from './extensionStyle'
 import { handle } from '../libs/handleCollection'
 
 const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
@@ -12,7 +11,6 @@ const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
     if (!handle.isActiveReady()) return
 
     console.log('ACTIVING EXTENSION...')
-    await injectStyle()
     await injectButton()
     document.body.classList.add('oypb-is-outside-playerBar')
     state.set('isActive', true)
@@ -30,7 +28,6 @@ const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
 
     console.log('INACTIVING EXTENSION...')
     removeButton()
-    removeStyle()
     document.body.classList.remove('oypb-is-outside-playerBar')
     state.clear()
 

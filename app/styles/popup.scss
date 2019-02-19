@@ -27,7 +27,7 @@ a {
 }
 
 .globalHeader {
-  
+
   .title {
     color: $color-black;
     font-size: 28px;
@@ -53,7 +53,7 @@ a {
         margin-bottom: 0;
       }
       &:before {
-        content: "◇";
+        content: "";
         position: absolute;
         font-size: 10px;
         left: -17px;
@@ -67,7 +67,7 @@ a {
     }
     &__item a {
       color: $color-red;
-    }  
+    }
   }
 }
 
@@ -76,7 +76,7 @@ a {
     margin-bottom: 25px;
     font-size: 26px;
   }
-  
+
   &__review {
     margin-bottom: 8px;
   }

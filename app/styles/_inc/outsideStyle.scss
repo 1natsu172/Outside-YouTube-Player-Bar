@@ -5,59 +5,98 @@
 // `var(--oypb-**)` variables are unique to this extension.
 // * Memo * //
 
+//**
+//* Declare vars
+//*
+:root {
+  --oypb-player-bar-height: 39px;
 
-.oypb-is-outside-playerBar {
+  // size of fillthe left and right gap of player bar.
+  --oypb-player-bar-fill-lr-gap-size: 12px;
 
-  // Resizing container size.
-  #player-container {
-    height: calc(100% + var(--oypb-player-bar-height)) !important;
-    overflow: hidden; // Substitution of `html5-player-video`'s overflow (repair sideeffect: e.g. `ytp-ce-shadow`)
+  // player bar color of Default theme.
+  --oypb-player-bar-color: rgb(35, 35, 35);
+
+  --oypb-transition-in: .25s cubic-bezier(0.0, 0.0, 0.2, 1);
+  --oypb-transition-out: 0s cubic-bezier(0.4, 0.0, 1, 1); // 本来YTでは`.1s`だけどシュッと消えるように`0s`に変更
+
+  // when fullscreen mode
+  .oypb-is-fullscreen {
+    --oypb-player-bar-height: 58px;
+    --oypb-player-bar-fill-lr-gap-size: 24px;
+  }
+
+  // when dark theme
+  &[dark] {
+    --oypb-player-bar-color: var(--yt-main-app-background-tmp);
+  }
+}
+
+.oypb-is-outside-playerBar.oypb-is-visible-playerBar {
+  // Move down the entire primary container
+  #primary {
+    @include translateBarHeight($direction: 'plus');
+    @include transitionOfTranslateBarHeight($pattern: 'in');
+
+    @at-root #{$isOutsidePlayerBar} #primary {
+      @include transitionOfTranslateBarHeight($pattern: 'out');
+    }
+  }
+
+  // Hide scrollbar because the side effect of `#primary` translate.
+  #columns {
+    overflow-y: hidden;
+  }
+
+  // Restore PlayerBox to original position
+  #player {
+    @include translateBarHeight($direction: 'minus');
+    @include transitionOfTranslateBarHeight($pattern: 'in');
+
+    @at-root #{$isOutsidePlayerBar} #player {
+      @include transitionOfTranslateBarHeight($pattern: 'out');
+    }
   }
 
   // Revert original video size
   .html5-video-player {
-    height: calc(100% - var(--oypb-player-bar-height)) !important;
     overflow: visible;
     contain: size style layout; // Removing `layput` from `strict`.
-
-    // When fullscreen mode.
-    &.ytp-fullscreen {
-      height: 100% !important;
-    }
   }
 
   // Player bar
   .ytp-chrome-bottom {
-    // Declare player bar color.
-    --oypb-player-bar-color: rgb(35,35,35); // Default theme
-    [dark] & {
-      --oypb-player-bar-color: var(--yt-main-app-background-tmp); // Dark theme
-    }
-
-    bottom: calc(-1 * var(--oypb-player-bar-height)); // Move player bar to container bottom.
     background-color: var(--oypb-player-bar-color);
+    @include translateBarHeight($direction: 'plus');
+    @include transitionOfTranslateBarHeight('in');
+
+    @at-root #{$isOutsidePlayerBar} .ytp-chrome-bottom {
+      @include transitionOfTranslateBarHeight($pattern: 'out');
+    }
 
     @mixin ytp-controls-border() {
       content: '';
       display: block;
       height: 100%;
-      width: 12px;
+      width: var(--oypb-player-bar-fill-lr-gap-size);
       position: absolute;
       top: 0;
       background-color: var(--oypb-player-bar-color);
     }
+
     .ytp-left-controls::before {
       @include ytp-controls-border();
-      left: -12px;
+      left: calc(-1 * var(--oypb-player-bar-fill-lr-gap-size));
     }
+
     .ytp-right-controls::after {
       @include ytp-controls-border();
-      right: -12px;
+      right: calc(-1 * var(--oypb-player-bar-fill-lr-gap-size));
     }
   }
 
-  .oypb-toggleExtensionButton > svg {
-      transform: rotateX(180deg);
+  .oypb-toggleExtensionButton>svg {
+    transform: rotateX(180deg);
   }
 
 
@@ -66,64 +105,35 @@
   ////
 
   // When `.ended-mode`, the original took minus `top` value and hiding video element, but because `top` is interfering.
+  // `.html5-video-player` で `overflow: hidden` しているせいでビデオ再生が終了したときに枠外に飛ばしているビデオコンテナが見えてしまう問題を対処
+  // https://gyazo.com/97bf9b42d40d058d1fa1841eb1d4e6f4
   .ended-mode .html5-main-video {
     visibility: hidden !important;
   }
 
-  // Long ad video when before starting video playback.
-  .videoAdUiRedesign {
-    // Ad property (bottom left)
-    .videoAdUiBottomBar {
-      bottom: 5px;
-    }
-
-    // Countdown to SkipAd button with thumbnail (bottom right)
-    .videoAdUiPreSkipContainer,
-    // SkipAd button (bottom right)
-    .videoAdUiSkipContainer {
-      bottom: 34px;
-    }
-  }
-
-  // Ad banner (bottom center): when playing few seconds then ad starting.
-  .ad-overlay {
-    bottom: calc(49px - var(--oypb-player-bar-height)) !important;
-  }
-
-  // Ad promotion remaining time & link (bottom left): when playing promotional video.
-  .iv-promo {
-    bottom: 10px;
-  }
-
-  // Ad promotion collapse link (bottom left)
-  .html5-video-player.ad-interrupting .iv-promo {
-    bottom: 34px;
-  }
-
-  // Inner video contents area.
+  // Inner video contents area. (e.g. right-bottom author icon)
   .ytp-iv-player-content {
     bottom: 12px;
   }
 
   // Tool-tip's coord.
   .ytp-tooltip {
-    top: auto !important;
-    bottom: calc(10.5px) !important;
+    @include translateBarHeight($direction: 'plus',$important:true);
   }
 
   // Subtitles/caption
   .caption-window.ytp-caption-window-bottom {
-    margin-bottom: 0;
+    @include translateBarHeight($direction: 'plus');
+    @include transitionOfTranslateBarHeight($pattern: 'in');
 
-    // When both caption and central advertisement are displayed.
-    .ytp-ad-overlay-open & {
-      margin-bottom: calc(139px - var(--oypb-player-bar-height));
+    @at-root #{$isOutsidePlayerBar} .caption-window.ytp-caption-window-bottom {
+      @include transitionOfTranslateBarHeight($pattern: 'out');
     }
   }
 
   // Player Settings menu panel.
   .ytp-settings-menu {
-    bottom: calc(49px - var(--oypb-player-bar-height));
+    @include translateBarHeight($direction: 'plus');
   }
 
   // player bar's gradient effect.
@@ -131,15 +141,16 @@
     display: none;
   }
 
-  // Info panels & sidebar container.
-  #info-contents, #secondary-inner {
-    margin-top: var(--oypb-player-bar-height);
-  }
+  // Sidebar related videos when Theater mode.
+  ytd-watch-flexy[theater],
+  ytd-watch-flexy[fullscreen] {
+    #secondary {
+      @include translateBarHeight($direction: 'plus');
+      @include transitionOfTranslateBarHeight($pattern: 'in');
 
-  // Sidebar related videos when Default view mode.
-  ytd-watch-flexy:not([theater]) {
-    #secondary-inner {
-      margin-top: auto;
+      @at-root #{$isOutsidePlayerBar} #secondary {
+        @include transitionOfTranslateBarHeight($pattern: 'out');
+      }
     }
   }
 }
