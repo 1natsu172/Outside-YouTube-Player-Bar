@@ -1,8 +1,18 @@
 <a name="2.1.0"></a>
 
-# [2.1.0](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v1.2.15...v2.1.0) (2019-02-19)
+# [2.1.1](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v2.1.0...v2.1.1) (2019-02-19)
 
 # Changelog for Outside YouTube Player Bar
+
+## ## v2.1.1
+
+[EN]
+
+* Fix notification center bug
+
+[JA]
+
+* 通知センターのバグ修正
 
 ## v2.1.0
 
