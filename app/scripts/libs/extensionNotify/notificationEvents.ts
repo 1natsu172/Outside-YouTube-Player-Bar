@@ -3,8 +3,6 @@ const CHANGELOG_URL =
 
 export const onClickNotification = (id: string) => {
   chrome.notifications.onClicked.addListener(notificationId => {
-    console.log('ID~~~~~~~~~~', notificationId)
-
     if (notificationId === id) {
       window.open(CHANGELOG_URL, '_blank')
     }
