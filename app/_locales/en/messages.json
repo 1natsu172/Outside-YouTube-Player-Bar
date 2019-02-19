@@ -15,6 +15,7 @@
     "message": "Outside YouTube Player Bar",
     "description": "The title of the browser action button"
   },
+
   "tooltipText_isActive": {
     "message": "Inside player bar",
     "description": "Tooltip text for toggle button when extension is active"
@@ -23,12 +24,13 @@
     "message": "Outside player bar",
     "description": "Tooltip text for toggle button when extension is inactive"
   },
+
   "popup_title": {
-    "message": "Thanks for using Outside YouTube Player Bar!",
+    "message": "Welcome to Outside YouTube Player Bar!",
     "description": "popup.html's title"
   },
   "popup_description": {
-    "message": "If you have anything about this extension, please contact GitHub Issue or Google Forms.",
+    "message": "If you have anything about this extension, please contact Chrome Web Store or GitHub Issue.",
     "description": "popup.html's description"
   },
   "popup_pleaseReview": {

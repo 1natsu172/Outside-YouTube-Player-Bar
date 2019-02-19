@@ -15,6 +15,7 @@
     "message": "Outside YouTube Player Bar",
     "description": "The title of the browser action button"
   },
+
   "tooltipText_isActive": {
     "message": "再生バーを内側にする",
     "description": "トグルボタンのツールチップテキスト(拡張機能がアクティブ状態のとき)"
@@ -23,12 +24,13 @@
     "message": "再生バーを外側にする",
     "description": "トグルボタンのツールチップテキスト(拡張機能が非アクティブ状態のとき)"
   },
+
   "popup_title": {
-    "message": "Outside YouTube Player Barのご利用ありがとうございます！",
+    "message": "Outside YouTube Player Barへようこそ！",
     "description": "popup.html's title"
   },
   "popup_description": {
-    "message": "この拡張機能についてなにかありましたら、GitHub Issue もしくは Google Formsからご連絡ください。",
+    "message": "この拡張機能についてなにかありましたら、Chromeウェブストア もしくは GitHub Issueからご連絡ください。",
     "description": "popup.html's description"
   },
   "popup_pleaseReview": {
