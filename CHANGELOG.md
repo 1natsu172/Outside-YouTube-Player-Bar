@@ -1,3 +1,9 @@
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v1.3.0...v1.3.1) (2019-02-19)
+
+
+
+
 <a name="2.1.0"></a>
 
 # [2.1.1](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v2.1.0...v2.1.1) (2019-02-19)
