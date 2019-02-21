@@ -1,5 +1,5 @@
 // Enable chromereload by uncommenting this line:
-import 'chromereload/devonly'
+// import 'chromereload/devonly'
 import { notification } from './libs/extensionNotify/notifications'
 
 const WANNA_NOTIFY = true
