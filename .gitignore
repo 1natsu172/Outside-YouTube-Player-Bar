@@ -4,7 +4,10 @@
 node_modules
 *.log
 
-dist/
-packages/
-test/_dist/
-.cache
+.cache/*
+test/_dist/*
+
+# Management of empty directory.
+dist/*
+packages/*
+!.gitkeep
