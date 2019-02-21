@@ -12,7 +12,6 @@
     "dev": "parcel app/**/* app/manifest.json --no-hmr",
     "build": "parcel build app/**/* app/manifest.json",
     "lint": "standard",
-    "precommit": "lint-staged",
     "test": "run-s test:*",
     "test:tsc": "tsc -p ./tsconfig.test.json",
     "test:ava": "ava 'test/_dist/test/**/*.js' --verbose",
@@ -24,12 +23,6 @@
     "release-git:no-increment": "release-it --no-increment",
     "clean": "rimraf ./packages/*",
     "cz": "git-cz"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "tslint --fix",
-      "git add"
-    ]
   },
   "config": {
     "commitizen": {
