@@ -21,8 +21,8 @@
     "release-git": "release-it",
     "release-git:ci": "release-it -n",
     "release-git:no-increment": "release-it --no-increment",
-    "clean:dist:": "shx rm -rf dist .cache",
-    "clean:package:": "shx rm -rf package",
+    "clean:dist": "shx rm -rf dist/* .cache/*",
+    "clean:packages": "shx rm -rf packages/*",
     "cz": "git-cz"
   },
   "config": {
@@ -67,6 +67,7 @@
     "release-it": "^7.2.0",
     "rimraf": "^2.6.2",
     "sass": "^1.17.0",
+    "shelljs": "^0.8.3",
     "shx": "^0.3.2",
     "sinon-chrome": "^2.2.1",
     "standard": "10.x.x",
