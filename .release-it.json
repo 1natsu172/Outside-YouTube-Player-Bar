@@ -1,23 +1,25 @@
 {
   "verbose": true,
-  "src": {
-    "tagName": "v%s",
-    "commitMessage": ":arrow_up: Release: v%s [ci skip]",
-    "tagAnnotation": "Release v%s",
-    "beforeStartCommand": "git checkout master",
+  "pkgFiles": ["package.json", "app/manifest.json"],
+  "increment": "conventional:angular",
+  "scripts": {
+    "beforeStart": "git checkout master",
+    "afterBump": "node tasks/changelogTemplate.js",
+    "changelog": "git log --pretty=format:\"* %s (%h)\" [REV_RANGE]",
+    "afterRelease": "echo -e \"Successfully released ${name} v${version} to ${repo.repository}.\n\nNext: Let's write CHANGELOG :)\""
+  },
+  "git": {
+    "commitMessage": "chore(release): v${version} [ci skip]",
+    "tagName": "v${version}",
+    "tagAnnotation": "Release v${version}",
     "pushRepo": "git@github.com:1natsu172/Outside-YouTube-Player-Bar.git"
   },
   "github": {
     "release": true,
     "tokenRef": "GH_TOKEN",
-    "releaseName": "Release v%s"
+    "releaseName": "Release v${version}"
   },
   "npm": {
     "publish": false
-  },
-  "pkgFiles": ["package.json", "app/manifest.json"],
-  "increment": "conventional:atom",
-  "beforeChangelogCommand": "conventional-changelog -p atom -i CHANGELOG.md -s",
-  "changelogCommand": "conventional-changelog -p atom | tail -n +3",
-  "safeBump": false
+  }
 }
