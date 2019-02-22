@@ -11,6 +11,7 @@
     "start": "npm run dev",
     "dev": "parcel app/**/* app/manifest.json --no-hmr",
     "build": "parcel build app/**/* app/manifest.json",
+    "pack": "node tasks/pack.js",
     "lint": "standard",
     "test": "run-s test:*",
     "test:tsc": "tsc -p ./tsconfig.test.json",
