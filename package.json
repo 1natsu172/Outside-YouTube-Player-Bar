@@ -18,6 +18,7 @@
     "test:remove-dist": "shx rm -rf ./test/_dist",
     "prewebstore:update": "yarn clean:packages && yarn build:package",
     "webstore:update": "chrome-webstore-manager update $APP_ITEM_ID ./packages/*.zip",
+    "postwebstore:update": "open https://chrome.google.com/webstore/devconsole",
     "webstore:publish": "chrome-webstore-manager publish $APP_ITEM_ID",
     "release-git": "release-it",
     "release-git:ci": "release-it -n",
