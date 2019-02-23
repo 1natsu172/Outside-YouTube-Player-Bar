@@ -10,7 +10,7 @@
     "commitMessage": "chore(release): v${version} [ci skip]",
     "tagName": "v${version}",
     "tagAnnotation": "Release v${version}",
-    "pushRepo": "git@github.com:1natsu172/Outside-YouTube-Player-Bar.git"
+    "pushRepo": "https://github.com/1natsu172/Outside-YouTube-Player-Bar.git"
   },
   "github": {
     "release": true,
