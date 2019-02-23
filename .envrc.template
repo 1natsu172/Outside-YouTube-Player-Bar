@@ -1,0 +1,5 @@
+# source_up is load any .envrc higher up in the folder structure. cf.https://github.com/direnv/direnv#loading-layered-envrc
+source_up
+
+# use for release-it
+export GH_TOKEN=""

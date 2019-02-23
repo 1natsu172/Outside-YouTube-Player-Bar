@@ -13,7 +13,7 @@
   },
   "background": {
     "scripts": [
-      "scripts/eventPage.js"
+      "scripts/eventPage.ts"
     ],
     "persistent": false
   },
@@ -33,10 +33,10 @@
         "https://*.youtube.com/*"
       ],
       "css": [
-        "styles/style.css"
+        "styles/style.scss"
       ],
       "js": [
-        "scripts/main.js"
+        "scripts/main.ts"
       ]
     }
   ],

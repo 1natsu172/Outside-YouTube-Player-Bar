@@ -4,7 +4,7 @@
 
 # Changelog for Outside YouTube Player Bar
 
-## ## v2.1.1
+## v2.1.1
 
 [EN]
 
