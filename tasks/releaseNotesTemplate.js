@@ -1,5 +1,4 @@
 var gitSemverTags = require('git-semver-tags');
-const clipboardy = require('clipboardy')
 
 const gitTags = () => new Promise((resolve, reject) => {
   gitSemverTags((err, result) => {
@@ -40,6 +39,5 @@ compare code: [${prevVersion}...${currentVersion}](https://github.com/1natsu172/
 (async () => {
   const [currentVersion, prevVersion] = await gitTags()
   const template = makeTemplate(currentVersion, prevVersion)
-  // copyTemplate(template)
   process.stdout.write(template)
 })().catch(err => console.error(err));
