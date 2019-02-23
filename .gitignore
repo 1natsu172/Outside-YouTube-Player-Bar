@@ -7,6 +7,7 @@ node_modules
 .cache/*
 test/_dist/*
 .env
+.envrc
 
 # Management of empty directory.
 dist/*
