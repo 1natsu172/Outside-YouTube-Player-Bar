@@ -10,8 +10,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "parcel app/**/* app/manifest.json --no-hmr",
-    "build": "parcel build app/**/* app/manifest.json",
-    "pack": "node tasks/pack.js",
+    "build": "parcel build app/**/* app/manifest.json && yarn build:package",
+    "build:package": "node tasks/pack.js",
     "lint": "standard",
     "test": "run-s test:*",
     "test:tsc": "tsc -p ./tsconfig.test.json",
@@ -53,6 +53,7 @@
     "@types/sinon-chrome": "^2.2.0",
     "ava": "^0.24.0",
     "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "browser-env": "^3.2.4",
     "chrome-webstore-manager": "^0.4.1",
     "clipboardy": "^1.2.3",
