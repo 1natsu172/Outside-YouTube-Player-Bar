@@ -40,5 +40,6 @@ compare code: [${prevVersion}...${currentVersion}](https://github.com/1natsu172/
 (async () => {
   const [currentVersion, prevVersion] = await gitTags()
   const template = makeTemplate(currentVersion, prevVersion)
-  copyTemplate(template)
+  // copyTemplate(template)
+  process.stdout.write(template)
 })().catch(err => console.error(err));

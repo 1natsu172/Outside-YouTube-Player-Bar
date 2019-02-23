@@ -4,9 +4,7 @@
   "increment": "conventional:angular",
   "scripts": {
     "beforeStart": "git checkout master",
-    "afterBump": "node tasks/changelogTemplate.js",
-    "changelog": "git log --pretty=format:\"* %s (%h)\" [REV_RANGE]",
-    "afterRelease": "echo -e \"Successfully released ${name} v${version} to ${repo.repository}.\n\nNext: Let's write CHANGELOG :)\""
+    "afterRelease": "echo -e \"Successfully released ${name} v${version} to ${repo.repository}.\n\nNext: Let's write release notes on GitHub :)\"; open https://github.com/1natsu172/Outside-YouTube-Player-Bar/releases"
   },
   "git": {
     "commitMessage": "chore(release): v${version} [ci skip]",
@@ -17,7 +15,8 @@
   "github": {
     "release": true,
     "tokenRef": "GH_TOKEN",
-    "releaseName": "Release v${version}"
+    "releaseName": "Release v${version}",
+    "releaseNotes": "node tasks/releaseNotesTemplate.js"
   },
   "npm": {
     "publish": false
