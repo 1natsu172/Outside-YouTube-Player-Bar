@@ -4,8 +4,8 @@
   "increment": "conventional:angular",
   "scripts": {
     "beforeStart": "git checkout master",
-    "changelog": "npx conventional-changelog -p angular | tail -n +3",
-    "beforeStage": "npx conventional-changelog -p angular -i CHANGELOG.md -s",
+    "changelog": "conventional-changelog -p angular | tail -n +3",
+    "beforeStage": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "afterRelease": "echo -e \"Successfully released ${name} v${version} to ${repo.repository}.\n\nNext: Let's write release notes on GitHub :)\"; open https://github.com/1natsu172/Outside-YouTube-Player-Bar/releases"
   },
   "git": {
