@@ -1,3 +1,17 @@
+## [2.2.2](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v2.2.1...v2.2.2) (2019-02-24)
+
+
+### Bug Fixes
+
+* **log:** quit npx script in .release-it.json ([2fc864f](https://github.com/1natsu172/Outside-YouTube-Player-Bar/commit/2fc864f))
+
+
+### Reverts
+
+* revert notification navigation page to GitHubRelease ([1bb8b3a](https://github.com/1natsu172/Outside-YouTube-Player-Bar/commit/1bb8b3a))
+
+
+
 <a name="2.1.1"></a>
 
 # [2.1.1](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v2.1.0...v2.1.1) (2019-02-19)
