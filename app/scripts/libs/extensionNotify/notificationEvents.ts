@@ -1,5 +1,5 @@
 const CHANGELOG_URL =
-  'https://github.com/1natsu172/Outside-YouTube-Player-Bar/blob/master/CHANGELOG.md'
+  'https://github.com/1natsu172/Outside-YouTube-Player-Bar/releases'
 
 export const onClickNotification = (id: string) => {
   const onClickCallback = (notificationId: string) => {
