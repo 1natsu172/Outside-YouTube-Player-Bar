@@ -22,6 +22,7 @@
     "webstore:publish": "chrome-webstore-manager publish $APP_ITEM_ID",
     "release-git": "release-it",
     "release-git:ci": "release-it -n",
+    "release-git:dry": "release-it --dry-run",
     "release-git:no-increment": "release-it --no-increment",
     "clean:dist": "shx rm -rf dist/* .cache/*",
     "clean:packages": "shx rm -rf packages/*",

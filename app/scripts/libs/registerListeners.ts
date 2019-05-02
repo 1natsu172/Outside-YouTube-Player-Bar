@@ -1,4 +1,5 @@
 import extension from '../actions/extensionSwicher'
+import { willMouseEnterToPlayer } from '../actions/willMouseEnterToPlayer'
 
 const YT_EVENTS = [
   'yt-request-panel-mode-change',
@@ -49,10 +50,15 @@ const fullscreenListener = () => {
   })
 }
 
-const registerListeners = (): void => {
+const enhanceUXListener = async (): Promise<void> => {
+  await willMouseEnterToPlayer()
+}
+
+const registerListeners = async (): Promise<void> => {
   pageNavigateListener()
   videoLoadedListener()
   fullscreenListener()
+  await enhanceUXListener()
 }
 
 export { registerListeners, DEBUG_YT_EVENTS }
