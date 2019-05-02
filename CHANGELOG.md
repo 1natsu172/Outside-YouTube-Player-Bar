@@ -1,3 +1,12 @@
+# [2.3.0](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v2.2.2...v2.3.0) (2019-05-02)
+
+
+### Features
+
+* **ux:** enhance UserExperience ([92faf29](https://github.com/1natsu172/Outside-YouTube-Player-Bar/commit/92faf29))
+
+
+
 ## [2.2.2](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v2.2.1...v2.2.2) (2019-02-24)
 
 
