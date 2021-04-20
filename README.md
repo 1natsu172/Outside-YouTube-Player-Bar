@@ -22,55 +22,13 @@ Display YouTube's player bar outside the video.
 
 	$ npm install
 
-## Usage
+## Release
 
-Run `$ gulp --watch` and load the `dist`-directory into chrome.
+1. `yarn release-git` でmanifest.json含めてBumpしてくれます
+2. GitHub上でrelease noteを記述する
+3. ZIP生成してstoreに上げる
 
-## Entryfiles (bundles)
-
-There are two kinds of entryfiles that create bundles.
-
-1. All ts-files in the root of the `./app/scripts` directory
-2. All css-,scss- and less-files in the root of the `./app/styles` directory
-
-## Tasks
-
-### Build
-
-    $ gulp
-
-
-| Option         | Description                                                                                                                                           |
-|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `--watch`      | Starts a livereload server and watches all assets. <br>To reload the extension on change include `livereload.js` in your bundle.                      |
-| `--production` | Minifies all assets                                                                                                                                   |
-| `--verbose`    | Log additional data to the console.                                                                                                                   |
-| `--vendor`     | Compile the extension for different vendors (chrome, firefox, opera, edge)  Default: chrome                                                                 |
-| `--sourcemaps` | Force the creation of sourcemaps. Default: !production                                                                                                |
-
-
-### pack
-
-Zips your `dist` directory and saves it in the `packages` directory.
-
-    $ gulp pack --vendor=firefox
-
-### Version
-
-Increments version number of `manifest.json` and `package.json`,
-commits the change to git and adds a git tag.
-
-
-    $ gulp patch      // => 0.0.X
-
-or
-
-    $ gulp feature    // => 0.X.0
-
-or
-
-    $ gulp release    // => X.0.0
-
+※ webstoreの自動リリースまわり壊れています。直すコスパも悪いので`build:package`でzip生成してupするのでOKです。
 
 ## Globals
 
