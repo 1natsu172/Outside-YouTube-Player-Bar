@@ -1,3 +1,7 @@
+## [2.3.1](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v2.3.0...v2.3.1) (2021-04-20)
+
+
+
 # [2.3.0](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v2.2.2...v2.3.0) (2019-05-02)
 
 
