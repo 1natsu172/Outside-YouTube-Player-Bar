@@ -41,8 +41,6 @@
     }
   ],
   "permissions": [
-    "tabs",
-    "storage",
     "declarativeContent",
     "notifications"
   ]

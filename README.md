@@ -29,7 +29,6 @@ Display YouTube's player bar outside the video.
 3. ZIP生成してstoreに上げる
 
 ※ webstoreの自動リリースまわり壊れています。直すコスパも悪いので`build:package`でzip生成してupするのでOKです。
-
 ## Globals
 
 The build tool also defines a variable named `process.env.NODE_ENV` in your scripts. It will be set to `development` unless you use the `--production` option.
