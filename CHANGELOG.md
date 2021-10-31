@@ -1,3 +1,13 @@
+## [2.3.2](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v2.3.1...v2.3.2) (2021-10-31)
+
+
+### Bug Fixes
+
+* player bar height ([bd10dad](https://github.com/1natsu172/Outside-YouTube-Player-Bar/commit/bd10dad))
+* respond to the request for permission modify ([bbca5fd](https://github.com/1natsu172/Outside-YouTube-Player-Bar/commit/bbca5fd))
+
+
+
 ## [2.3.1](https://github.com/1natsu172/Outside-YouTube-Player-Bar/compare/v2.3.0...v2.3.1) (2021-04-20)
 
 
