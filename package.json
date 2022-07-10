@@ -9,8 +9,8 @@
   "description": "Display YouTube's control bar outside the video.",
   "scripts": {
     "start": "npm run dev",
-    "predev": "node ./scripts/copy-assets",
     "dev": "vite",
+    "postdev": "node ./scripts/copy-assets",
     "preview": "vite preview",
     "build": "tsc && vite build",
     "postbuild": "node ./scripts/copy-assets",
