@@ -30,7 +30,7 @@
     "description": "popup.html's title"
   },
   "popup_description": {
-    "message": "この拡張機能についてなにかありましたら、Chromeウェブストア もしくは GitHub Issueからご連絡ください。",
+    "message": "この拡張機能についてのご連絡は GitHub Issue へお願いします。メンテナンスはベストエフォート対応です。",
     "description": "popup.html's description"
   },
   "popup_pleaseReview": {

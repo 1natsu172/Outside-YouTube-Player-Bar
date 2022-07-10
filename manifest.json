@@ -23,7 +23,7 @@
       "128": "src/images/icon-128.png"
     },
     "default_title": "__MSG_browserActionTitle__",
-    "default_popup": "src/pages/popup.html"
+    "default_popup": "src/pages/popup/index.html"
   },
   "content_scripts": [
     {

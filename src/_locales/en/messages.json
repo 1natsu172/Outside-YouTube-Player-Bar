@@ -30,7 +30,7 @@
     "description": "popup.html's title"
   },
   "popup_description": {
-    "message": "If you have anything about this extension, please contact Chrome Web Store or GitHub Issue.",
+    "message": "Please contact GitHub Issue about this extension. Maintenance is handled on a best-effort basis.",
     "description": "popup.html's description"
   },
   "popup_pleaseReview": {
