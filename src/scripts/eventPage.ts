@@ -1,10 +1,8 @@
-// Enable chromereload by uncommenting this line:
-// import 'chromereload/devonly'
 import { notification } from './libs/extensionNotify/notifications'
 
 const WANNA_NOTIFY = true
 
-chrome.runtime.onInstalled.addListener(details => {
+chrome.runtime.onInstalled.addListener((details) => {
   const previousVersion = details.previousVersion
   const currentVersion = chrome.runtime.getManifest().version
   const isDiffVersion = previousVersion !== currentVersion
@@ -22,9 +20,9 @@ chrome.runtime.onInstalled.addListener(details => {
 })
 
 // // When the extension is installed or upgraded ...
-chrome.runtime.onInstalled.addListener(function() {
+chrome.runtime.onInstalled.addListener(function () {
   // Replace all rules ...
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
     // With a new rule ...
     chrome.declarativeContent.onPageChanged.addRules([
       {
@@ -33,14 +31,14 @@ chrome.runtime.onInstalled.addListener(function() {
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: {
               schemes: ['https'],
-              hostContains: '.youtube.com'
+              hostContains: '.youtube.com',
               // pathContains: '/watch'
-            }
-          })
+            },
+          }),
         ],
         // And shows the extension's page action.
-        actions: [new chrome.declarativeContent.ShowPageAction()]
-      }
+        actions: [new chrome.declarativeContent.ShowPageAction()],
+      },
     ])
   })
 })
