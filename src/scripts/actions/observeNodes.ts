@@ -1,4 +1,4 @@
-import waitElement from '@1natsu/wait-element'
+import { waitElement } from '@1natsu/wait-element'
 import { observeIsVisiblePlayerBar } from '../libs/observeIsVisiblePlayerBar'
 
 export const observeNodes = async () => {

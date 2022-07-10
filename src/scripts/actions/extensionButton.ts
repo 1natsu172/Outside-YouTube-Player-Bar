@@ -1,11 +1,12 @@
-import waitElement from '@1natsu/wait-element'
+import { waitElement } from '@1natsu/wait-element'
+import { NodeLike } from '@1natsu/wait-element/dist/types/options'
 import extension from './extensionSwicher'
 import state from '../libs/stateMap'
 import toggleTooltip from '../libs/toggleTooltip'
 
 const tooltipText = {
   isActive: chrome.i18n.getMessage('tooltipText_isActive') as string,
-  isInactive: chrome.i18n.getMessage('tooltipText_isInactive') as string
+  isInactive: chrome.i18n.getMessage('tooltipText_isInactive') as string,
 }
 
 const initialTooltipText = (): string => {
@@ -30,17 +31,17 @@ const setExtensionButtonEvent = (): void => {
   const button = document.getElementById('oypb-toggleExtension') as HTMLElement
 
   button.addEventListener('click', extension.toggle)
-  button.addEventListener('click', e =>
-    toggleTooltip(e, tooltipText.isActive, tooltipText.isInactive)
+  button.addEventListener('click', (e) =>
+    toggleTooltip(e, tooltipText.isActive, tooltipText.isInactive),
   )
 }
 
 export const injectButton = async (): Promise<void> => {
   console.log('INJECTING BUTTON...')
   // Wait target node.
-  const playerBar = document.querySelector('.ytp-chrome-bottom')
+  const playerBar = document.querySelector('.ytp-chrome-bottom') as NodeLike
   const rightControls = await waitElement('.ytp-right-controls', {
-    target: playerBar
+    target: playerBar,
   })
   const button = extensionToggleButton()
 

@@ -8,7 +8,7 @@
 //   }
 // }
 
-const popupHtmlContent = `
+export const popupHtmlContent = `
 <div class="l-globalWrapper">
   <header class="globalHeader">
     <h1 class="title">${chrome.i18n.getMessage('popup_title')} 😃</h1>
@@ -31,11 +31,11 @@ const popupHtmlContent = `
     <div class="please">
       <p class="please__and">&</p>
       <p class="please__review">${chrome.i18n.getMessage(
-        'popup_pleaseReview'
+        'popup_pleaseReview',
       )} 🙏</p>
       <ul class="please__reviewLink">
       <li class="please__reviewLink__item"><a href="https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde" target="_blank">📝 ${chrome.i18n.getMessage(
-        'popup_pleaseReviewLink'
+        'popup_pleaseReviewLink',
       )}</a></li>
       </ul>
     </div>

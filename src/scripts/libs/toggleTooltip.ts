@@ -1,5 +1,5 @@
 export default function toggleTooltipText(e: any, f: string, s: string) {
-  const element: HTMLElement = e.target || e || this
+  const element: HTMLElement = e.target || e
   const firstText = f
   const secondText = s
   const currentText = element.getAttribute('data-oypb-tooltip')

@@ -4,7 +4,9 @@ const NOTIFICATION_ID = chrome.runtime.getManifest().name
 
 type NotifyType = 'install' | 'update'
 
-const notifyOptions = (notifyType: NotifyType) => {
+const notifyOptions = (
+  notifyType: NotifyType,
+): chrome.notifications.NotificationOptions<true> => {
   const title =
     notifyType === 'install'
       ? chrome.i18n.getMessage('notifications_install_title')
@@ -15,14 +17,14 @@ const notifyOptions = (notifyType: NotifyType) => {
       ? chrome.i18n.getMessage('notifications_install_message')
       : chrome.i18n.getMessage('notifications_update_message_special')
           .length !== 0
-        ? chrome.i18n.getMessage('notifications_update_message_special')
-        : chrome.i18n.getMessage('notifications_update_message')
+      ? chrome.i18n.getMessage('notifications_update_message_special')
+      : chrome.i18n.getMessage('notifications_update_message')
 
   return {
     type: 'basic',
     title,
     message,
-    iconUrl: '../../../images/icon-128.png'
+    iconUrl: '../../../images/icon-128.png',
   }
 }
 
@@ -36,7 +38,7 @@ export const notification = (details: chrome.runtime.InstalledDetails) => {
       // Welcome notification.
       chrome.notifications.create(
         NOTIFICATION_ID,
-        notifyOptions(details.reason)
+        notifyOptions(details.reason),
       )
       onClickNotification(NOTIFICATION_ID)
     }
@@ -45,7 +47,7 @@ export const notification = (details: chrome.runtime.InstalledDetails) => {
       // Update infomation.
       chrome.notifications.create(
         NOTIFICATION_ID,
-        notifyOptions(details.reason)
+        notifyOptions(details.reason),
       )
       onClickNotification(NOTIFICATION_ID)
     }

@@ -1,7 +1,10 @@
+import style from '../styles/style.scss'
 import extension from './actions/extensionSwicher'
 import state from './libs/stateMap'
 import { DEBUG_YT_EVENTS, registerListeners } from './libs/registerListeners'
 import { observeNodes } from './actions/observeNodes'
+
+console.log(style)
 
 const IS_DEBUG_YT_EVENTS = false
 

@@ -1,4 +1,4 @@
-import waitElement from '@1natsu/wait-element'
+import { waitElement } from '@1natsu/wait-element'
 import { isActive } from '../libs/stateMap'
 
 export const willMouseEnterToPlayer = async () => {
@@ -12,6 +12,6 @@ export const willMouseEnterToPlayer = async () => {
           document.body.classList.add('oypb-is-visible-playerBar')
         }
       },
-      { passive: true }
+      { passive: true },
     )
 }
