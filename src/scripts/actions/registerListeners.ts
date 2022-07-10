@@ -1,4 +1,4 @@
-import extension from '../actions/extensionSwicher'
+import { extensionSwitcher } from '../controllers/extensionSwicher'
 
 const YT_EVENTS = [
   'yt-request-panel-mode-change',
@@ -27,7 +27,7 @@ const pageNavigateListener = () => {
   document.addEventListener('yt-navigate-finish', (e) => {
     console.log(e)
     console.log('PAGE NAVIGATING...')
-    extension.inactive()
+    extensionSwitcher.inactive()
   })
 }
 
@@ -35,14 +35,14 @@ const videoLoadedListener = () => {
   document.addEventListener('yt-page-data-updated', (e) => {
     console.log(e)
     console.log('PAGE UPDATED')
-    extension.active()
+    extensionSwitcher.active()
   })
 }
 
 const fullscreenListener = () => {
   const events = ['fullscreenchange', 'webkitfullscreenchange']
   events.forEach((event) => {
-    // Pause the extension when fullscreen mode.
+    // Pause the extensionSwitcher when fullscreen mode.
     document.addEventListener(event, () => {
       document.body.classList.toggle('oypb-is-fullscreen')
     })

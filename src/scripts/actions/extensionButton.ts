@@ -1,6 +1,6 @@
 import { waitElement } from '@1natsu/wait-element'
 import { NodeLike } from '@1natsu/wait-element/dist/types/options'
-import extension from './extensionSwicher'
+import { extensionSwitcher } from '../controllers/extensionSwicher'
 import state from '../infrastructure/stateMap'
 import toggleTooltip from '../libs/toggleTooltip'
 
@@ -30,7 +30,7 @@ const extensionToggleButton = (): string => `
 const setExtensionButtonEvent = (): void => {
   const button = document.getElementById('oypb-toggleExtension') as HTMLElement
 
-  button.addEventListener('click', extension.toggle)
+  button.addEventListener('click', extensionSwitcher.toggle)
   button.addEventListener('click', (e) =>
     toggleTooltip(e, tooltipText.isActive, tooltipText.isInactive),
   )

@@ -1,5 +1,6 @@
 import { waitElement } from '@1natsu/wait-element'
 import { isActive } from '../repository/extensionState'
+import { interventionDOM } from '../usecases/interventionDOM'
 
 /**
  * @deprecated v2までビデオタイトルのマウスホバーでプレイヤーバーの開閉機能を提供していたが提供停止した
@@ -12,7 +13,7 @@ export const willMouseEnterToPlayer = async () => {
       'mouseenter',
       () => {
         if (isActive()) {
-          document.body.classList.add('oypb-is-visible-playerBar')
+          interventionDOM.addVisiblePlayerBarClassName()
         }
       },
       { passive: true },
