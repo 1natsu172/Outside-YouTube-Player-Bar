@@ -35,10 +35,11 @@
 .oypb-is-outside-playerBar.oypb-is-visible-playerBar {
   // Move down the entire primary container
   #primary {
-    @include translateBarHeight($direction: 'plus');
+    // @include translateBarHeight($direction: 'plus');
     @include transitionOfTranslateBarHeight($pattern: 'in');
 
     @at-root #{$isOutsidePlayerBar} #primary {
+      @include translateBarHeight($direction: 'plus');
       @include transitionOfTranslateBarHeight($pattern: 'out');
     }
   }
@@ -50,10 +51,11 @@
 
   // Restore PlayerBox to original position
   #player {
-    @include translateBarHeight($direction: 'minus');
+    // @include translateBarHeight($direction: 'minus');
     @include transitionOfTranslateBarHeight($pattern: 'in');
 
     @at-root #{$isOutsidePlayerBar} #player {
+      @include translateBarHeight($direction: 'minus');
       @include transitionOfTranslateBarHeight($pattern: 'out');
     }
   }
@@ -67,10 +69,11 @@
   // Player bar
   .ytp-chrome-bottom {
     background-color: var(--oypb-player-bar-color);
-    @include translateBarHeight($direction: 'plus');
+    // @include translateBarHeight($direction: 'plus');
     @include transitionOfTranslateBarHeight('in');
 
     @at-root #{$isOutsidePlayerBar} .ytp-chrome-bottom {
+      @include translateBarHeight($direction: 'plus');
       @include transitionOfTranslateBarHeight($pattern: 'out');
     }
 
