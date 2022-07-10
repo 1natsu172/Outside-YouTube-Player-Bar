@@ -1,7 +1,7 @@
 import { waitElement } from '@1natsu/wait-element'
 import { NodeLike } from '@1natsu/wait-element/dist/types/options'
 import extension from './extensionSwicher'
-import state from '../libs/stateMap'
+import state from '../infrastructure/stateMap'
 import toggleTooltip from '../libs/toggleTooltip'
 
 const tooltipText = {

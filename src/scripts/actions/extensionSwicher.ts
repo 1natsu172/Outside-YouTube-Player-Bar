@@ -1,4 +1,4 @@
-import state from '../libs/stateMap'
+import state from '../infrastructure/stateMap'
 import { injectButton, removeButton } from './extensionButton'
 import { handle } from '../libs/handleCollection'
 
@@ -19,7 +19,7 @@ const ExtensionSwitcherWrapper = class ExtensionSwitcherWrapper {
     console.log('Extension is activing now: isActive?', state.get('isActive'))
     console.log(
       'Extension is activing now: hasInject?',
-      state.get('hasInjected')
+      state.get('hasInjected'),
     )
   }
 

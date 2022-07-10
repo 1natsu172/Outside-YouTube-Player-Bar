@@ -1,5 +1,5 @@
 import { isVideo } from './judgePage'
-import { hasInjected, isActive } from './stateMap'
+import { hasInjected, isActive } from '../repository/extensionState'
 
 export const handle = {
   // handle extension.active
@@ -10,5 +10,5 @@ export const handle = {
   // handle extension.inactive
   isInactiveReady() {
     return !isVideo() && hasInjected() && isActive()
-  }
+  },
 }

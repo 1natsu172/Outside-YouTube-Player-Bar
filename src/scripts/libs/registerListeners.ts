@@ -1,5 +1,4 @@
 import extension from '../actions/extensionSwicher'
-import { willMouseEnterToPlayer } from '../actions/willMouseEnterToPlayer'
 
 const YT_EVENTS = [
   'yt-request-panel-mode-change',
@@ -14,18 +13,18 @@ const YT_EVENTS = [
   'yt-visibility-refresh',
   'yt-page-data-will-update',
   'yt-page-manager-navigate-start',
-  'yt-navigate-start'
+  'yt-navigate-start',
 ]
 
 const DEBUG_YT_EVENTS = () =>
-  YT_EVENTS.forEach(eventName => {
-    document.addEventListener(eventName, e => {
+  YT_EVENTS.forEach((eventName) => {
+    document.addEventListener(eventName, (e) => {
       console.log(eventName, e)
     })
   })
 
 const pageNavigateListener = () => {
-  document.addEventListener('yt-navigate-finish', e => {
+  document.addEventListener('yt-navigate-finish', (e) => {
     console.log(e)
     console.log('PAGE NAVIGATING...')
     extension.inactive()
@@ -33,7 +32,7 @@ const pageNavigateListener = () => {
 }
 
 const videoLoadedListener = () => {
-  document.addEventListener('yt-page-data-updated', e => {
+  document.addEventListener('yt-page-data-updated', (e) => {
     console.log(e)
     console.log('PAGE UPDATED')
     extension.active()
@@ -42,7 +41,7 @@ const videoLoadedListener = () => {
 
 const fullscreenListener = () => {
   const events = ['fullscreenchange', 'webkitfullscreenchange']
-  events.forEach(event => {
+  events.forEach((event) => {
     // Pause the extension when fullscreen mode.
     document.addEventListener(event, () => {
       document.body.classList.toggle('oypb-is-fullscreen')
@@ -50,9 +49,7 @@ const fullscreenListener = () => {
   })
 }
 
-const enhanceUXListener = async (): Promise<void> => {
-  await willMouseEnterToPlayer()
-}
+const enhanceUXListener = async (): Promise<void> => {}
 
 const registerListeners = async (): Promise<void> => {
   pageNavigateListener()

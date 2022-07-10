@@ -1,5 +1,4 @@
-const state = new Map()
-export default state
+import state from '../infrastructure/stateMap'
 
 export const hasInjected = (): boolean => state.get('hasInjected')
 
