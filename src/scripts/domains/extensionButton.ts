@@ -1,8 +1,12 @@
 import { waitElement } from '@1natsu/wait-element'
 import { NodeLike } from '@1natsu/wait-element/dist/types/options'
 import { extensionSwitcher } from '../controllers/extensionSwicher'
-import state from '../infrastructure/stateMap'
 import toggleTooltip from '../libs/toggleTooltip'
+import { hasInjected, isActive } from '../repository/extensionState'
+
+/**
+ * about UIs
+ */
 
 const tooltipText = {
   isActive: chrome.i18n.getMessage('tooltipText_isActive') as string,
@@ -10,12 +14,12 @@ const tooltipText = {
 }
 
 const initialTooltipText = (): string => {
-  if (!state.get('hasInjected')) {
+  if (!hasInjected()) {
     console.log('Tooltip: Init tooltip mode')
     return tooltipText.isActive
   } else {
     console.log('Tooltip: NAVIGATING tooltip mode')
-    return state.get('isActive') ? tooltipText.isActive : tooltipText.isInactive
+    return isActive() ? tooltipText.isActive : tooltipText.isInactive
   }
 }
 
@@ -26,6 +30,10 @@ const extensionToggleButton = (): string => `
     </svg>
   </button>
 `
+
+/**
+ * META LOGICS
+ */
 
 const setExtensionButtonEvent = (): void => {
   const button = document.getElementById('oypb-toggleExtension') as HTMLElement

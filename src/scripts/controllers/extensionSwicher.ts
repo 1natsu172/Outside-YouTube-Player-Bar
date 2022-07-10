@@ -1,13 +1,13 @@
 import state from '../infrastructure/stateMap'
-import { injectButton, removeButton } from '../actions/extensionButton'
-import { handle } from '../libs/handleCollection'
+import { injectButton, removeButton } from '../domains/extensionButton'
+import { conditionsCollection } from '../presenters/conditionsCollection'
 import { interventionDOM } from '../usecases/interventionDOM'
 import { setHasInjected, setIsActive } from '../usecases/extensionBehavior'
 import { hasInjected, isActive } from '../repository/extensionState'
 
 class ExtensionSwitcher {
   active = async (): Promise<void> => {
-    if (!handle.isActiveReady()) return
+    if (!conditionsCollection.isActiveReady()) return
 
     console.log('ACTIVING EXTENSION...')
 
@@ -21,7 +21,7 @@ class ExtensionSwitcher {
   }
 
   inactive = (): void => {
-    if (!handle.isInactiveReady()) return
+    if (!conditionsCollection.isInactiveReady()) return
 
     console.log('INACTIVING EXTENSION...')
     removeButton()

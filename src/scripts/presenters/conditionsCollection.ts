@@ -1,7 +1,7 @@
 import { isVideo } from './judgePage'
 import { hasInjected, isActive } from '../repository/extensionState'
 
-export const handle = {
+export const conditionsCollection = {
   // handle extension.active
   isActiveReady() {
     return isVideo() && !hasInjected()
