@@ -1,4 +1,5 @@
 import { extensionSwitcher } from '../controllers/extensionSwicher'
+import { interventionDOM } from '../usecases/interventionDOM'
 
 const YT_EVENTS = [
   'yt-request-panel-mode-change',
@@ -44,7 +45,7 @@ const fullscreenListener = () => {
   events.forEach((event) => {
     // Pause the extensionSwitcher when fullscreen mode.
     document.addEventListener(event, () => {
-      document.body.classList.toggle('oypb-is-fullscreen')
+      interventionDOM.toggleIsFullScreenClassName()
     })
   })
 }

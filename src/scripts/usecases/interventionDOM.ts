@@ -16,4 +16,7 @@ export const interventionDOM = {
   toggleOutsidePlayerBarClassName() {
     document.body.classList.toggle(oypbClassNames['IS-OUTSIDE-PLAYERBAR'])
   },
+  toggleIsFullScreenClassName() {
+    document.body.classList.toggle(oypbClassNames['IS-FULLSCREEN'])
+  },
 }
