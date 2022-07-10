@@ -9,9 +9,9 @@
   "description": "Display YouTube's control bar outside the video.",
   "scripts": {
     "start": "npm run dev",
-    "dev": "vite & npm run build:assets",
+    "dev": "npm run build:assets && vite",
     "preview": "vite preview",
-    "build": "tsc && vite build & npm run build:assets",
+    "build": "npm run build:assets && tsc && vite build",
     "build:assets": "node ./scripts/copy-assets",
     "build:package": "yarn build && node tasks/pack.js",
     "test": "run-s test:*",
