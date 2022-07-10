@@ -1,4 +1,5 @@
 import { onClickNotification } from './notificationEvents'
+import iconUrl from '../../../images/icon-128.png'
 
 const NOTIFICATION_ID = chrome.runtime.getManifest().name
 
@@ -24,7 +25,7 @@ const notifyOptions = (
     type: 'basic',
     title,
     message,
-    iconUrl: '../../../images/icon-128.png',
+    iconUrl: iconUrl,
   }
 }
 
