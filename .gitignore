@@ -30,5 +30,5 @@ test/_dist/*
 
 # Management of empty directory.
 dist/*
-packages/*
+dist.zip
 !.gitkeep
