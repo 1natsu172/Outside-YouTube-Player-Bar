@@ -2,7 +2,7 @@
   "name": "__MSG_appName__",
   "short_name": "__MSG_appShortName__",
   "description": "__MSG_appDescription__",
-  "version": "2.3.2",
+  "version": "3.0.0",
   "manifest_version": 3,
   "default_locale": "en",
   "icons": {
@@ -27,10 +27,17 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*.youtube.com/*"],
-      "js": ["src/scripts/main.ts"]
+      "matches": [
+        "https://*.youtube.com/*"
+      ],
+      "js": [
+        "src/scripts/main.ts"
+      ]
     }
   ],
   "content_security_policy": {},
-  "permissions": ["declarativeContent", "notifications"]
+  "permissions": [
+    "declarativeContent",
+    "notifications"
+  ]
 }
