@@ -1,15 +1,14 @@
 # Publish manual.
 ## 1. Release to GitHub Release
 
-### use release-it
-
 when develop complete.
 
 1. `git checkout develop`
-2. `npm run release-to-git`
-3. Answering interactive...
-4. Complete, then open GitHub release page on broweser
-5. Handwrite Release notes
+2. `npm version`
+3. `npm run release-to-git`
+4. Answering interactive...
+5. Complete, then open GitHub release page on broweser
+6. Handwrite Release notes
 
 ## 2. Release to Chrome Web Store
 ### uploaded via CD
