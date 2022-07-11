@@ -3,6 +3,7 @@ import { injectButton, removeButton } from '../domains/extensionButton'
 import { conditionsCollection } from '../presenters/conditionsCollection'
 import { interventionDOM } from '../usecases/interventionDOM'
 import { setHasInjected, setIsActive } from '../usecases/extensionBehavior'
+import { displayPlayerBar } from './displayPlayerBar'
 import { hasInjected, isActive } from '../repository/extensionState'
 
 class ExtensionSwitcher {
@@ -18,6 +19,8 @@ class ExtensionSwitcher {
 
     console.log('Extension is activing now: isActive?', isActive())
     console.log('Extension is activing now: hasInject?', hasInjected())
+
+    await (await displayPlayerBar()).alwaysDisplay()
   }
 
   inactive = (): void => {
@@ -39,8 +42,17 @@ class ExtensionSwitcher {
   }
 
   // toggle means change inside/outside bar, when enable button in video page
-  toggle = (): void => {
+  toggle = async (): Promise<void> => {
     interventionDOM.toggleOutsidePlayerBarClassName()
+    // 内側になるときは `ForceDisplayPlayerBar` しなくなるようにする
+    if (isActive()) {
+      console.log('Extension order to disapper player bar mode')
+      await (await displayPlayerBar()).disappear()
+    } else {
+      console.log('Extension order to always display player bar mode')
+      await (await displayPlayerBar()).alwaysDisplay()
+    }
+
     isActive() ? setIsActive(false) : setIsActive(true)
     console.log('Extension toggled: isActive?', isActive())
   }

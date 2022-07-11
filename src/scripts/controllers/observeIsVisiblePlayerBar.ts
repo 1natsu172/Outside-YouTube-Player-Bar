@@ -1,3 +1,7 @@
+import {
+  isActive,
+  isAlwaysDisplayPlayerBar,
+} from '../repository/extensionState'
 import { interventionDOM } from '../usecases/interventionDOM'
 
 const observeConfig: MutationObserverInit = {
@@ -5,20 +9,35 @@ const observeConfig: MutationObserverInit = {
   attributeFilter: ['class'], // check only className attribute
 }
 
-const mutationCallback: MutationCallback = (mutations) => {
-  mutations.forEach((mutation) => {
-    const targetClassList = (mutation.target as HTMLElement).classList
-    const isVisiblePlayerBar =
-      targetClassList.contains('paused-mode') ||
-      !targetClassList.contains('ytp-autohide')
+type MutationProps = { forceDisplayPlayer: () => void }
 
-    if (isVisiblePlayerBar) {
-      interventionDOM.addVisiblePlayerBarClassName()
-    } else {
-      interventionDOM.removeVisiblePlayerBarClassName()
-    }
-  })
-}
+const mutationCallback =
+  (mutationProps: MutationProps): MutationCallback =>
+  (mutations) => {
+    mutations.forEach((mutation) => {
+      const targetClassList = (mutation.target as HTMLElement).classList
+      const isVisiblePlayerBar =
+        targetClassList.contains('paused-mode') ||
+        !targetClassList.contains('ytp-autohide')
 
-export const observeIsVisiblePlayerBar = (target: Node) =>
-  new MutationObserver(mutationCallback).observe(target, observeConfig)
+      if (isVisiblePlayerBar) {
+        interventionDOM.addVisiblePlayerBarClassName()
+      } else {
+        interventionDOM.removeVisiblePlayerBarClassName()
+
+        // NOTE: activeかつ常時表示モードの場合、フェードアウト抑制する
+        if (isActive() && isAlwaysDisplayPlayerBar()) {
+          mutationProps.forceDisplayPlayer()
+        }
+      }
+    })
+  }
+
+export const observeIsVisiblePlayerBar = (
+  target: Node,
+  mutationProps: MutationProps,
+) =>
+  new MutationObserver(mutationCallback(mutationProps)).observe(
+    target,
+    observeConfig,
+  )

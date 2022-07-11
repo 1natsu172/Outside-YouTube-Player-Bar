@@ -7,3 +7,13 @@ export const setHasInjected = (is: boolean) => {
 export const setIsActive = (is: boolean) => {
   state.set('isActive', is)
 }
+
+export const setIsAlwaysDisplayPlayerBar = (is: boolean) => {
+  state.set('isAlwaysDisplayPlayerBar', is)
+}
+
+export const setForceDisplayPlayerBarIntervalId = (
+  id: number | NodeJS.Timer,
+) => {
+  state.set('forceDisplayPlayerBarIntervalId', id)
+}
