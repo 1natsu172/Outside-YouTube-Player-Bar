@@ -18,29 +18,15 @@ Display YouTube's player bar outside the video.
 
 # FOR DEVELOPER GUIDE (WIP)
 
-## Installation
+## Installation & dev
 
-	$ npm install
+	$ npm install && npm run dev
 
 ## Release
 
-1. `yarn release-git` でmanifest.json含めてBumpしてくれます
-2. GitHub上でrelease noteを記述する
-3. ZIP生成してstoreに上げる
+[DEPLOY.md](./DEPLOY.md)
 
-※ webstoreの自動リリースまわり壊れています。直すコスパも悪いので`build:package`でzip生成してupするのでOKです。
-## Globals
-
-The build tool also defines a variable named `process.env.NODE_ENV` in your scripts. It will be set to `development` unless you use the `--production` option.
-
-
-**Example:** `./app/background.ts`
-
-```typescript
-if(process.env.NODE_ENV === 'development'){
-  console.log('We are in development mode!');
-}
-```
+SEE chrome devconsole: https://chrome.google.com/webstore/devconsole
 
 ## i18n localization by translation
 

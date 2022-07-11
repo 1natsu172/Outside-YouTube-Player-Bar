@@ -1,0 +1,90 @@
+/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,embed,iframe,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+
+// Popup styles
+$color-black: #232323;
+$color-black-p: rgba(17, 17, 17, 0.6);
+$color-white: #fff;
+$color-red: #ff0000;
+
+* {box-sizing: border-box;}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  color: #ff0000;
+}
+
+.l-globalWrapper {
+  width: 640px;
+  text-align: center;
+  color: $color-black-p;
+  background-color: $color-white;
+  padding: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.globalHeader {
+
+  .title {
+    color: $color-black;
+    font-size: 28px;
+    padding: 30px 0;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 1.2
+  }
+}
+
+.contact {
+  margin: 30px 0 30px;
+  &__list {
+    display: inline-block;
+
+    &__item {
+      text-align: left;
+      font-size: 16px;
+      margin-bottom: 15px;
+      position: relative;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        font-size: 10px;
+        left: -17px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    &__item img {
+      width: 20px;
+      vertical-align: sub;
+    }
+    &__item a {
+      color: $color-red;
+    }
+  }
+}
+
+.please {
+  &__and {
+    margin-bottom: 25px;
+    font-size: 26px;
+  }
+}
+
+.globalFooter {
+  margin-top: 50px;
+  &__author {
+    text-align: right;
+    small img {
+      vertical-align: middle;
+      width: 18px;
+    }
+  }
+}
