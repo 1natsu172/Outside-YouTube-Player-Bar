@@ -20,7 +20,7 @@
     "test:ava": "ava 'test/_dist/test/**/*.js' --verbose",
     "test:remove-dist": "shx rm -rf ./test/_dist",
     "preversion": "node ./scripts/bump-manifest $npm_new_version && git add manifest.json",
-    "release-to-git": "node ./scripts/releaseNotesTemplate | gh release create $npm_package_version --notes-file - && gh release view $npm_package_version --web",
+    "release-to-git": "node ./scripts/releaseNotesTemplate | gh release create v$npm_package_version --notes-file - && gh release view v$npm_package_version --web",
     "delivery": "npx chrome-webstore-upload-cli@2 upload --source dist.zip --auto-publish",
     "clean:dist": "shx rm -rf dist dist.zip"
   },
