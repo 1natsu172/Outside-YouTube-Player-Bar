@@ -3,7 +3,7 @@ name: Delivery
 on:
   push:
     tags:
-      - v*
+      - "*"
 
 jobs:
   delivery:
