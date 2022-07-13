@@ -1,7 +1,5 @@
 # Outside YouTube Player Bar
 
-[![Travis (.org) branch](https://img.shields.io/travis/1natsu172/Outside-YouTube-Player-Bar/master.svg?style=for-the-badge)](https://travis-ci.org/1natsu172/Outside-YouTube-Player-Bar)
-
 ![](https://raw.githubusercontent.com/1natsu172/Outside-YouTube-Player-Bar/master/promo/Screenshot_1280x800-hero.png)
 
 Display YouTube's player bar outside the video.
@@ -16,7 +14,7 @@ Display YouTube's player bar outside the video.
 
 ***
 
-# FOR DEVELOPER GUIDE (WIP)
+# FOR DEVELOPER GUIDE
 
 ## Installation & dev
 
@@ -34,7 +32,7 @@ SEE chrome devconsole: https://chrome.google.com/webstore/devconsole
 
 * [chrome.i18n(https://developer.chrome.com/extensions/i18n)](https://developer.chrome.com/extensions/i18n)
 
-**Directory** `./app/_locales/*`
+**Directory** `./src/_locales/*`
 
 Put on your locale files. 
 
