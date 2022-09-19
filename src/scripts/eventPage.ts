@@ -1,6 +1,6 @@
 import { notification } from './libs/extensionNotify/notifications'
 
-const WANNA_NOTIFY = true
+const WANNA_NOTIFY = false
 
 chrome.runtime.onInstalled.addListener((details) => {
   const previousVersion = details.previousVersion

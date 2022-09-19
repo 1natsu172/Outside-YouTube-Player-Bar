@@ -24,6 +24,7 @@
   .oypb-is-fullscreen {
     --oypb-player-bar-height: 58px;
     --oypb-player-bar-fill-lr-gap-size: 24px;
+    --oypb-player-ytp-chrome-top: 63px; // fix for: displaying the title,watch later, share icon - https://user-images.githubusercontent.com/32516842/180366697-195889de-cb42-4e28-9c34-7151589e8122.png
   }
 
   // when dark theme
@@ -154,6 +155,16 @@
       @at-root #{$isOutsidePlayerBar} #secondary {
         @include transitionOfTranslateBarHeight($pattern: 'out');
       }
+    }
+  }
+
+  // The fullscreen mode that titles, watch later, shared, of top area of player container.
+  &.oypb-is-fullscreen {
+    .ytp-chrome-top {
+      transform: translateY(calc(-1 * var(--oypb-player-ytp-chrome-top)));
+    }
+    .ytp-big-mode .ytp-gradient-top {
+      display: none;
     }
   }
 }
