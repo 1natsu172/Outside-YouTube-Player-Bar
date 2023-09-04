@@ -18,7 +18,7 @@ Display YouTube's player bar outside the video.
 
 ## Installation & dev
 
-	$ npm install && npm run dev
+	$ pnpm install && pnpm run dev
 
 ## Release
 
