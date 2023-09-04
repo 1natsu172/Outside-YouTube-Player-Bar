@@ -4,8 +4,8 @@
 when develop complete.
 
 1. `git checkout develop`
-2. `npm version`
-3. `npm run release-to-git`
+2. `pnpm version`
+3. `pnpm run release-to-git`
 4. Answering interactive...
 5. Complete, then open GitHub release page on broweser
 6. Handwrite Release notes

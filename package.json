@@ -8,14 +8,14 @@
   "version": "3.0.1",
   "description": "Display YouTube's control bar outside the video.",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "npm run build:assets && vite",
-    "prebuild": "npm run clean:dist",
-    "build": "tsc && vite build && npm run build:assets",
+    "start": "pnpm run dev",
+    "dev": "pnpm run build:assets && vite",
+    "prebuild": "pnpm run clean:dist",
+    "build": "tsc && vite build && pnpm run build:assets",
     "build:assets": "node ./scripts/copy-assets",
     "build:pack": "node ./scripts/pack",
-    "postbuild": "npm run build:pack",
-    "test": "run-s test:*",
+    "postbuild": "pnpm run build:pack",
+    "test": "pnpm run --sequential /^test:.*/",
     "test:tsc": "tsc -p ./tsconfig.test.json",
     "test:ava": "ava 'test/_dist/test/**/*.js' --verbose",
     "test:remove-dist": "shx rm -rf ./test/_dist",
@@ -37,7 +37,6 @@
     "chrome-webstore-upload-cli": "^2.1.0",
     "fs-extra": "^10.1.0",
     "git-semver-tags": "^4.1.1",
-    "npm-run-all": "^4.1.2",
     "prettier": "2.7.1",
     "sass": "1.53.0",
     "shelljs": "0.8.5",
@@ -53,5 +52,6 @@
   },
   "browserslist": [
     "Chrome >= 58"
-  ]
+  ],
+  "packageManager": "pnpm@8.7.3+sha1.ca69e7d6a8b4629560c6a76b42716caa612f44df"
 }
