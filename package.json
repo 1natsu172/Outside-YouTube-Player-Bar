@@ -29,6 +29,7 @@
     "@1natsu/wait-element": "3.0.0",
     "@crxjs/vite-plugin": "^1.0.12",
     "@types/chrome": "0.0.192",
+    "@types/node": "^20.5.9",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/sinon-chrome": "2.2.11",
