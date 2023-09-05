@@ -11,7 +11,7 @@
     "start": "pnpm run dev",
     "dev": "pnpm run build:assets && vite",
     "prebuild": "pnpm run clean:dist",
-    "build": "tsc && vite build && pnpm run build:assets",
+    "build": "pnpm run prebuild && vite build && pnpm run build:assets && pnpm run postbuild",
     "build:assets": "node ./scripts/copy-assets",
     "build:pack": "node ./scripts/pack",
     "postbuild": "pnpm run build:pack",
