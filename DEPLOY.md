@@ -4,7 +4,7 @@
 when develop complete.
 
 1. `git checkout develop`
-2. `pnpm version`
+2. `pnpm version <SEMVER-arg>`
 3. `pnpm run release-to-git`
 4. Answering interactive...
 5. Complete, then open GitHub release page on broweser
