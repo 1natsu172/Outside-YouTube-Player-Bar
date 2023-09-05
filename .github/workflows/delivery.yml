@@ -10,11 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
       - uses: actions/setup-node@v3
         with:
           node-version-file: '.tool-versions'
           cache: pnpm
-      - run: pnpm ci
+      - run: pnpm install
       - run: pnpm run build
       - run: pnpm run delivery
         env:
