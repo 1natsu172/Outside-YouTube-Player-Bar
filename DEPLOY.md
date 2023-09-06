@@ -3,7 +3,7 @@
 
 when develop complete.
 
-1. `git checkout develop`
+1. `git checkout develop && git pull`
 2. `pnpm version <SEMVER-arg>`
 3. `pnpm run release-to-git`
 4. Answering interactive...
