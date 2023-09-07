@@ -6,7 +6,7 @@ import { interventionDOM } from '../usecases/interventionDOM'
 
 export async function displayPlayerBar() {
   const moviePlayer = await waitElement('#movie_player')
-  const { mousemove } = await moviePlayerController(moviePlayer)
+  const { mousedown, mousemove } = await moviePlayerController(moviePlayer)
 
   return {
     alwaysDisplay() {
@@ -14,6 +14,8 @@ export async function displayPlayerBar() {
       //NOTE: メモリリーク避けるためにコールしておく
       clearInterval(getForceDisplayPlayerBarIntervalId() as number)
       const intervalId = setInterval(() => {
+        // NOTE: mousedownしておかないとmousemoveによるytp-autohideの解除が効かないので雑に呼んでおく
+        mousedown()
         mousemove()
       }, 3000)
       setForceDisplayPlayerBarIntervalId(intervalId)
