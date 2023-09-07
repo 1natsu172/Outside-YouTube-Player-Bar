@@ -1,3 +1,7 @@
+import {
+  isActive,
+  isAlwaysDisplayPlayerBar,
+} from '../repository/extensionState'
 import { interventionDOM } from '../usecases/interventionDOM'
 
 const observeConfig: MutationObserverInit = {
@@ -6,11 +10,11 @@ const observeConfig: MutationObserverInit = {
 }
 
 type MutationProps = {
-  // NOTE: またいつかmutation時に処理を入れたいとき用に残しておく
+  blockAutohide: () => void
 }
 
 const mutationCallback =
-  (_mutationProps: MutationProps): MutationCallback =>
+  (mutationProps: MutationProps): MutationCallback =>
   (mutations) => {
     mutations.forEach((mutation) => {
       const targetClassList = (mutation.target as HTMLElement).classList
@@ -18,12 +22,18 @@ const mutationCallback =
         targetClassList.contains('paused-mode') ||
         !targetClassList.contains('ytp-autohide')
 
+      // console.log('mutation')
       // console.log('mutation is', mutation)
 
       if (isVisiblePlayerBar) {
         interventionDOM.addVisiblePlayerBarClassName()
       } else {
-        interventionDOM.removeVisiblePlayerBarClassName()
+        // interventionDOM.removeVisiblePlayerBarClassName()
+      }
+
+      // NOTE: activeかつ常時表示かつプレイヤーバーが非表示のとき、autohideの場合があるので解除を試みる
+      if (isActive() && isAlwaysDisplayPlayerBar() && !isVisiblePlayerBar) {
+        mutationProps.blockAutohide()
       }
     })
   }
