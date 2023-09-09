@@ -22,7 +22,7 @@ const mutationCallback =
         targetClassList.contains('paused-mode') ||
         !targetClassList.contains('ytp-autohide')
 
-      // console.log('mutation')
+      // console.log('mutation', isVisiblePlayerBar)
       // console.log('mutation is', mutation)
 
       if (isVisiblePlayerBar) {

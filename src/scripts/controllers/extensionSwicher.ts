@@ -3,7 +3,7 @@ import { injectButton, removeButton } from '../domains/extensionButton'
 import { conditionsCollection } from '../presenters/conditionsCollection'
 import { interventionDOM } from '../usecases/interventionDOM'
 import { setHasInjected, setIsActive } from '../usecases/extensionBehavior'
-import { displayPlayerBar } from './displayPlayerBar'
+// import { displayPlayerBar } from './displayPlayerBar'
 import { hasInjected, isActive } from '../repository/extensionState'
 
 class ExtensionSwitcher {
@@ -20,7 +20,7 @@ class ExtensionSwitcher {
     console.log('Extension is activing now: isActive?', isActive())
     console.log('Extension is activing now: hasInject?', hasInjected())
 
-    await (await displayPlayerBar()).alwaysDisplay()
+    // await (await displayPlayerBar()).alwaysDisplayByHack()
   }
 
   inactive = (): void => {
@@ -47,10 +47,10 @@ class ExtensionSwitcher {
     // 内側になるときは `ForceDisplayPlayerBar` しなくなるようにする
     if (isActive()) {
       console.log('Extension order to disapper player bar mode')
-      await (await displayPlayerBar()).disappear()
+      // await (await displayPlayerBar()).disappear()
     } else {
       console.log('Extension order to always display player bar mode')
-      await (await displayPlayerBar()).alwaysDisplay()
+      // await (await displayPlayerBar()).alwaysDisplayByHack()
     }
 
     isActive() ? setIsActive(false) : setIsActive(true)

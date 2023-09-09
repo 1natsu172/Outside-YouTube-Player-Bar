@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@github/mini-throttle':
+    specifier: ^2.1.1
+    version: 2.1.1
   react:
     specifier: ^18.0.0
     version: 18.2.0
@@ -369,6 +372,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@github/mini-throttle@2.1.1:
+    resolution: {integrity: sha512-KtOPaB+FiKJ6jcKm9UKyaM5fPURHGf+xcp+b4Mzoi81hOc6M1sIGpMZMAVbNzfa2lW5+RPGKq888Px0j76OZ/A==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
