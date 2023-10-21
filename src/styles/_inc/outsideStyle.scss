@@ -67,6 +67,11 @@
     contain: size style layout; // Removing `layput` from `strict`.
   }
 
+  // Force display on default view. For some reason, 'hidden' is set only in default view. This style does not exist in cinema mode.
+  ytd-watch-flexy[rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
+    overflow: visible;
+  }
+
   // Player bar
   .ytp-chrome-bottom {
     background-color: var(--oypb-player-bar-color);
