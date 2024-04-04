@@ -2,7 +2,10 @@
 import '../styles/style.scss'
 import { DEBUG_YT_EVENTS, registerListeners } from './actions/registerListeners'
 import { observeNodes } from './actions/observeNodes'
-import { initialize } from './actions/inittialize'
+import {
+  initialize,
+  additionalInitializationOnVideoPage,
+} from './actions/inittialize'
 
 const IS_DEBUG_YT_EVENTS = false
 
@@ -11,9 +14,13 @@ if (IS_DEBUG_YT_EVENTS) {
 }
 
 const initExtension = () => {
-  initialize()
+  const { isInitializeOnVideoPage } = initialize()
   registerListeners()
   observeNodes()
+
+  if (isInitializeOnVideoPage) {
+    additionalInitializationOnVideoPage()
+  }
 }
 
 initExtension()
