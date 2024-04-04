@@ -54,6 +54,7 @@ const fullscreenListener = () => {
     // Pause the extensionSwitcher when fullscreen mode.
     document.addEventListener(event, () => {
       interventionDOM.toggleIsFullScreenClassName()
+      extensionSwitcher.toggle()
     })
   })
 }
