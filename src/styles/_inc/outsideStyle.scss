@@ -15,7 +15,7 @@
   --oypb-player-bar-fill-lr-gap-size: 12px;
 
   // player bar color of Default theme.
-  --oypb-player-bar-color: rgb(35, 35, 35);
+  --oypb-player-bar-color: rgb(15, 15, 15);
 
   --oypb-transition-in: .25s cubic-bezier(0.0, 0.0, 0.2, 1);
   --oypb-transition-out: 0s cubic-bezier(0.4, 0.0, 1, 1); // 本来YTでは`.1s`だけどシュッと消えるように`0s`に変更
@@ -29,7 +29,7 @@
 
   // when dark theme
   &[dark] {
-    --oypb-player-bar-color: var(--yt-main-app-background-tmp);
+    --oypb-player-bar-color: var(--yt-spec-base-background, rgb(15, 15, 15));
   }
 }
 
