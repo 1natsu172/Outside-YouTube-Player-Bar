@@ -16,13 +16,11 @@
     "build:pack": "node ./scripts/pack",
     "postbuild": "pnpm run build:pack",
     "test": "pnpm run --sequential /^test:.*/",
-    "test:tsc": "tsc -p ./tsconfig.test.json",
-    "test:ava": "ava 'test/_dist/test/**/*.js' --verbose",
-    "test:remove-dist": "shx rm -rf ./test/_dist",
+    "test:tsc": "tsc -p ./tsconfig.json",
     "preversion": "node ./scripts/bump-manifest $npm_new_version && git add manifest.json",
     "postversion": "git push origin v$npm_new_version",
     "release-to-git": "node ./scripts/releaseNotesTemplate | gh release create v$npm_package_version --notes-file - && gh release view v$npm_package_version --web",
-    "delivery": "pnpm dlx chrome-webstore-upload-cli@2 upload --source dist.zip --auto-publish",
+    "delivery": "pnpm dlx chrome-webstore-upload-cli@3 upload --source dist.zip --auto-publish",
     "clean:dist": "shx rm -rf dist dist.zip"
   },
   "devDependencies": {
@@ -32,18 +30,15 @@
     "@types/node": "^20.5.9",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@types/sinon-chrome": "2.2.11",
     "@vitejs/plugin-react": "^1.3.0",
-    "browser-env": "3.3.0",
-    "chrome-webstore-upload-cli": "^2.1.0",
+    "chrome-webstore-upload-cli": "^3.1.0",
     "fs-extra": "^10.1.0",
     "git-semver-tags": "^4.1.1",
     "prettier": "2.7.1",
     "sass": "1.53.0",
     "shelljs": "0.8.5",
     "shx": "0.3.4",
-    "sinon-chrome": "3.0.1",
-    "typescript": "^4.6.3",
+    "typescript": "^5.4.4",
     "vite": "^2.9.9",
     "vite-plugin-static-copy": "^0.6.1"
   },
@@ -55,5 +50,5 @@
   "browserslist": [
     "Chrome >= 58"
   ],
-  "packageManager": "pnpm@8.7.3+sha1.ca69e7d6a8b4629560c6a76b42716caa612f44df"
+  "packageManager": "pnpm@8.15.6+sha256.01c01eeb990e379b31ef19c03e9d06a14afa5250b82e81303f88721c99ff2e6f"
 }
