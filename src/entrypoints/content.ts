@@ -1,11 +1,14 @@
 // NOTE: viteがmanifestからのasset処理をせずJSからの参照がないとdistにコンパイルして吐いてくれないので、scssをsideEffect importしている
 import '../styles/style.scss'
-import { DEBUG_YT_EVENTS, registerListeners } from './actions/registerListeners'
-import { observeNodes } from './actions/observeNodes'
+import {
+  DEBUG_YT_EVENTS,
+  registerListeners,
+} from '../scripts/actions/registerListeners'
+import { observeNodes } from '../scripts/actions/observeNodes'
 import {
   initialize,
   additionalInitializationOnVideoPage,
-} from './actions/inittialize'
+} from '../scripts/actions/inittialize'
 
 const IS_DEBUG_YT_EVENTS = false
 
