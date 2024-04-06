@@ -1,5 +1,9 @@
 export const isVideo = () => {
   const pathName: any = location.pathname
   console.log('LocationPathName?', pathName)
-  return pathName === '/watch' ? true : false
+  const userLivePagePathnamePattern = /^\/@[^\/]+\/live$/
+
+  return pathName === '/watch' || userLivePagePathnamePattern.test(pathName)
+    ? true
+    : false
 }
