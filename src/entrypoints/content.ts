@@ -1,5 +1,5 @@
 // NOTE: viteがmanifestからのasset処理をせずJSからの参照がないとdistにコンパイルして吐いてくれないので、scssをsideEffect importしている
-import '../styles/style.scss'
+// import '../styles/style.scss'
 import {
   DEBUG_YT_EVENTS,
   registerListeners,
@@ -26,4 +26,12 @@ const initExtension = () => {
   }
 }
 
-initExtension()
+// initExtension()
+
+export default defineContentScript({
+  // matches: ['*://*.google.com/*'],
+  main() {
+    console.log('Hello content.')
+    initExtension()
+  },
+})

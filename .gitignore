@@ -33,5 +33,3 @@ dist/*
 dist.zip
 !.gitkeep
 tmp/*
-.wxt
-web-ext.config.ts
