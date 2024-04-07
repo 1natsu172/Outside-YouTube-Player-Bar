@@ -3,12 +3,12 @@
 import {
   DEBUG_YT_EVENTS,
   registerListeners,
-} from '../scripts/actions/registerListeners'
-import { observeNodes } from '../scripts/actions/observeNodes'
+} from '../core/actions/registerListeners'
+import { observeNodes } from '../core/actions/observeNodes'
 import {
   initialize,
   additionalInitializationOnVideoPage,
-} from '../scripts/actions/inittialize'
+} from '../core/actions/inittialize'
 
 const IS_DEBUG_YT_EVENTS = false
 
@@ -28,10 +28,15 @@ const initExtension = () => {
 
 // initExtension()
 
+// -----------------------------------------
+// WXT WORLD underconstructions
+//------------------------------------------
+// FIXME: WXTのimport対応待ち 二重管理をやめる
+export const YOUTUBE_MATCHES = ['https://*.youtube.com/*']
 export default defineContentScript({
-  // matches: ['*://*.google.com/*'],
+  matches: YOUTUBE_MATCHES,
   main() {
     console.log('Hello content.')
-    initExtension()
+    // initExtension()
   },
 })

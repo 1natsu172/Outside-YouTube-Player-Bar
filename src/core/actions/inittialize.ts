@@ -3,11 +3,11 @@ import { isVideo } from '../presenters/judgePage.js'
 import {
   hasInjected,
   isAlwaysDisplayPlayerBar,
-} from '../repository/extensionState'
+} from '../repository/extensionState.js'
 import {
   setHasInjected,
   setIsAlwaysDisplayPlayerBar,
-} from '../usecases/extensionBehavior'
+} from '../usecases/extensionBehavior.js'
 
 export function initialize() {
   console.log('EXTENSION INITIALIZING...')

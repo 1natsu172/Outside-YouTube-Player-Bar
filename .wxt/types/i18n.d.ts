@@ -74,5 +74,167 @@ Note: You can't use this message in a manifest file.
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;
+    /**
+     * The name of the application
+     *
+     * "Outside YouTube Player Bar"
+     */
+    getMessage(
+      messageName: "appName",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * The short_name (maximum of 12 characters recommended) is a short version of the app's name.
+     *
+     * "oypb"
+     */
+    getMessage(
+      messageName: "appShortName",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * The description of the application
+     *
+     * "Display YouTube's player bar outside the video."
+     */
+    getMessage(
+      messageName: "appDescription",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * The title of the browser action button
+     *
+     * "Outside YouTube Player Bar"
+     */
+    getMessage(
+      messageName: "browserActionTitle",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Tooltip text for toggle button when extension is active
+     *
+     * "Inside player bar"
+     */
+    getMessage(
+      messageName: "tooltipText_isActive",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Tooltip text for toggle button when extension is inactive
+     *
+     * "Outside player bar"
+     */
+    getMessage(
+      messageName: "tooltipText_isInactive",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * popup.html's title
+     *
+     * "Welcome to Outside YouTube Player Bar!"
+     */
+    getMessage(
+      messageName: "popup_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * popup.html's description
+     *
+     * "Please contact GitHub Issue about this extension. Maintenance is handled on a best-effort basis."
+     */
+    getMessage(
+      messageName: "popup_description",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * popup.html's please review message
+     *
+     * "Please review if you don't mind."
+     */
+    getMessage(
+      messageName: "popup_pleaseReview",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * popup.html's Please review link
+     *
+     * "Write a review at the chrome web store"
+     */
+    getMessage(
+      messageName: "popup_PleaseReviewLink",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * popup.html's footer author lead
+     *
+     * "Author"
+     */
+    getMessage(
+      messageName: "popup_footerAuthor",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * when onInstall notfications title
+     *
+     * "Outside YouTube Player Bar"
+     */
+    getMessage(
+      messageName: "notifications_install_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * when onInstall notfications message
+     *
+     * "Welcome to Outside YouTube Player Bar!
+Enjoy YouTube life.👋"
+     */
+    getMessage(
+      messageName: "notifications_install_message",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * when onUpdate notfications title
+     *
+     * "Outside YouTube Player Bar"
+     */
+    getMessage(
+      messageName: "notifications_update_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * when onUpdate notfications message
+     *
+     * "Chrome extension updated!
+Click to check updated contents!"
+     */
+    getMessage(
+      messageName: "notifications_update_message",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * If wanna write free custom message, write here.
+     *
+     * ""
+     */
+    getMessage(
+      messageName: "notifications_update_message_special",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
   }
 }
