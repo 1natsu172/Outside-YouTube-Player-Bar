@@ -18,7 +18,16 @@ Display YouTube's player bar outside the video.
 
 ## Installation & dev
 
-	$ pnpm install && pnpm run dev
+```
+pnpm install && pnpm run dev
+```
+
+Default dev browser is chrome. You can change other browser.
+
+- `pnpm run dev:firefox`
+- `pnpm run dev:edge`
+- `pnpm run dev:chrome`
+- `pnpm run dev:arc`
 
 ## Release
 
