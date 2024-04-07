@@ -1,4 +1,4 @@
-import popupStyle from '../../../../styles/popup.module.scss'
+import popupStyle from '@/assets/styles/popup.module.scss'
 
 export const MainContents = () => {
   return (
@@ -27,7 +27,7 @@ export const MainContents = () => {
               href="https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde"
               target="_blank"
             >
-              📝 {chrome.i18n.getMessage('popup_pleaseReviewLink')}
+              📝 {browser.i18n.getMessage('popup_pleaseReviewLink')}
             </a>
           </li>
         </ul>

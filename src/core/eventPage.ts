@@ -2,9 +2,9 @@ import { notification } from './libs/extensionNotify/notifications'
 
 const WANNA_NOTIFY = false
 
-chrome.runtime.onInstalled.addListener((details) => {
+browser.runtime.onInstalled.addListener((details) => {
   const previousVersion = details.previousVersion
-  const currentVersion = chrome.runtime.getManifest().version
+  const currentVersion = browser.runtime.getManifest().version
   const isDiffVersion = previousVersion !== currentVersion
 
   console.log('previousVersion', previousVersion)
@@ -20,15 +20,15 @@ chrome.runtime.onInstalled.addListener((details) => {
 })
 
 // // When the extension is installed or upgraded ...
-chrome.runtime.onInstalled.addListener(function () {
+browser.runtime.onInstalled.addListener(function () {
   // Replace all rules ...
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
+  browser.declarativeContent.onPageChanged.removeRules(undefined, function () {
     // With a new rule ...
-    chrome.declarativeContent.onPageChanged.addRules([
+    browser.declarativeContent.onPageChanged.addRules([
       {
         // That fires when a page's URL contains a 'g' ...
         conditions: [
-          new chrome.declarativeContent.PageStateMatcher({
+          new browser.declarativeContent.PageStateMatcher({
             pageUrl: {
               schemes: ['https'],
               hostContains: '.youtube.com',
@@ -37,10 +37,10 @@ chrome.runtime.onInstalled.addListener(function () {
           }),
         ],
         // And shows the extension's page action.
-        actions: [new chrome.declarativeContent.ShowPageAction()],
+        actions: [new browser.declarativeContent.ShowPageAction()],
       },
     ])
   })
 })
 
-console.log(chrome.runtime.getManifest().name)
+console.log(browser.runtime.getManifest().name)

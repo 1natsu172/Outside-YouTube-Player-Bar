@@ -9,8 +9,8 @@ import { hasInjected, isActive } from '../repository/extensionState'
  */
 
 const tooltipText = {
-  isActive: chrome.i18n.getMessage('tooltipText_isActive') as string,
-  isInactive: chrome.i18n.getMessage('tooltipText_isInactive') as string,
+  isActive: browser.i18n.getMessage('tooltipText_isActive') as string,
+  isInactive: browser.i18n.getMessage('tooltipText_isInactive') as string,
 }
 
 const initialTooltipText = (): string => {
@@ -40,7 +40,7 @@ const setExtensionButtonEvent = (): void => {
 
   button.addEventListener('click', extensionSwitcher.toggle)
   button.addEventListener('click', (e) =>
-    toggleTooltip(e, tooltipText.isActive, tooltipText.isInactive),
+    toggleTooltip(e, tooltipText.isActive, tooltipText.isInactive)
   )
 }
 

@@ -170,7 +170,7 @@ Note: You can't use this message in a manifest file.
      * "Write a review at the chrome web store"
      */
     getMessage(
-      messageName: "popup_PleaseReviewLink",
+      messageName: "popup_pleaseReviewLink",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;

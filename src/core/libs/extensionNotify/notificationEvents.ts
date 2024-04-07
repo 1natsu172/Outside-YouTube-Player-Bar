@@ -8,6 +8,6 @@ export const onClickNotification = (id: string) => {
     }
   }
 
-  chrome.notifications.onClicked.addListener(onClickCallback)
-  chrome.notifications.onButtonClicked.addListener(onClickCallback)
+  browser.notifications.onClicked.addListener(onClickCallback)
+  browser.notifications.onButtonClicked.addListener(onClickCallback)
 }

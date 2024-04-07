@@ -37,7 +37,7 @@
     "message": "もしよろしければレビューもお願いします",
     "description": "popup.html's please review message"
   },
-  "popup_PleaseReviewLink": {
+  "popup_pleaseReviewLink": {
     "message": "Chromeウェブストアでレビューする",
     "description": "popup.html's Please review link"
   },

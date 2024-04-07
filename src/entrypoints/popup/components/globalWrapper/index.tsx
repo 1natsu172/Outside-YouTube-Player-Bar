@@ -1,4 +1,4 @@
-import popupStyle from '../../../../styles/popup.module.scss'
+import popupStyle from '@/assets/styles/popup.module.scss'
 
 type Props = {
   children: React.ReactNode

@@ -21,7 +21,9 @@ export const manifestJsonConfig: UserConfig['manifest'] = (_configEnv) => ({
   name: '__MSG_appName__',
   short_name: '__MSG_appShortName__',
   description: '__MSG_appDescription__',
-  version: '3.0.8',
+  // FIXME あとで消す
+  version: '4.0.0',
+  // FIXME firefoxがmv2っぽいので明示指定いらないっぽい あとで消す
   // manifest_version: 3,
   default_locale: 'en',
   icons: {
