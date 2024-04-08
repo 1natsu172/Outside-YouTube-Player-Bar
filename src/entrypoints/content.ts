@@ -3,12 +3,12 @@
 import {
   DEBUG_YT_EVENTS,
   registerListeners,
-} from '../core/actions/registerListeners'
-import { observeNodes } from '../core/actions/observeNodes'
+} from '../core/actions(oldservices)/registerListeners'
+import { observeNodes } from '../core/actions(oldservices)/observeNodes'
 import {
   initialize,
   additionalInitializationOnVideoPage,
-} from '../core/actions/inittialize'
+} from '../core/actions(oldservices)/inittialize'
 
 const IS_DEBUG_YT_EVENTS = false
 

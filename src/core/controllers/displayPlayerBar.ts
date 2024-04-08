@@ -1,6 +1,6 @@
 import { waitElement } from '@1natsu/wait-element'
 import { moviePlayerController } from './moviePlayerController'
-import { getForceDisplayPlayerBarIntervalId } from '../repository/extensionState'
+import { getForceDisplayPlayerBarIntervalId } from '../infrastructures/repositories/extensionState'
 import { setForceDisplayPlayerBarIntervalId } from '../usecases/extensionBehavior'
 import { interventionDOM } from '../usecases/interventionDOM'
 

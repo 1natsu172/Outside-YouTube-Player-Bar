@@ -1,5 +1,5 @@
 import { waitElement } from '@1natsu/wait-element'
-import { isActive } from '../repository/extensionState'
+import { isActive } from '../infrastructures/repositories/extensionState'
 import { interventionDOM } from '../usecases/interventionDOM'
 
 /**

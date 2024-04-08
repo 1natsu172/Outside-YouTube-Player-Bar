@@ -1,10 +1,10 @@
-import state from '../infrastructure/stateMap'
+import state from '../infrastructures/stateMap'
 import { injectButton, removeButton } from '../domains/extensionButton'
 import { conditionsCollection } from '../presenters/conditionsCollection'
 import { interventionDOM } from '../usecases/interventionDOM'
 import { setHasInjected, setIsActive } from '../usecases/extensionBehavior'
 // import { displayPlayerBar } from './displayPlayerBar'
-import { hasInjected, isActive } from '../repository/extensionState'
+import { hasInjected, isActive } from '../infrastructures/repositories/extensionState'
 
 class ExtensionSwitcher {
   active = async (): Promise<void> => {

@@ -2,7 +2,10 @@ import { waitElement } from '@1natsu/wait-element'
 import { NodeLike } from '@1natsu/wait-element/dist/types/options'
 import { extensionSwitcher } from '../controllers/extensionSwicher'
 import toggleTooltip from '../usecases/toggleTooltip'
-import { hasInjected, isActive } from '../repository/extensionState'
+import {
+  hasInjected,
+  isActive,
+} from '../infrastructures/repositories/extensionState'
 
 /**
  * about UIs

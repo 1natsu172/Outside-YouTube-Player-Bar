@@ -41,7 +41,7 @@ export const manifestJsonConfig: UserConfig['manifest'] = (_configEnv) => ({
     },
     default_title: '__MSG_browserActionTitle__',
   },
-  permissions: ['declarativeContent', 'notifications'],
+  permissions: ['declarativeContent', 'notifications', 'storage'],
 })
 
 // polymer config

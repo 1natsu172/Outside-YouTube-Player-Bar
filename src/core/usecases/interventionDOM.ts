@@ -1,4 +1,4 @@
-import { oypbClassNames } from '../../interfaces'
+import { oypbClassNames } from '../interfaces'
 
 export const interventionDOM = {
   addVisiblePlayerBarClassName() {

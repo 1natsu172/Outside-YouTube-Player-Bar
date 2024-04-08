@@ -1,7 +1,7 @@
 import {
   isActive,
   isAlwaysDisplayPlayerBar,
-} from '../repository/extensionState'
+} from '../infrastructures/repositories/extensionState'
 import { interventionDOM } from '../usecases/interventionDOM'
 
 const observeConfig: MutationObserverInit = {

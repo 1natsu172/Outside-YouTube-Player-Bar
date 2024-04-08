@@ -3,7 +3,7 @@ import { isVideo } from '../presenters/judgePage.js'
 import {
   hasInjected,
   isAlwaysDisplayPlayerBar,
-} from '../repository/extensionState.js'
+} from '../infrastructures/repositories/extensionState.js'
 import {
   setHasInjected,
   setIsAlwaysDisplayPlayerBar,
