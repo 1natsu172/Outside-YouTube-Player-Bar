@@ -33,19 +33,19 @@
     "delivery": "pnpm dlx chrome-webstore-upload-cli@3 upload --source dist.zip --auto-publish"
   },
   "devDependencies": {
-    "@1natsu/wait-element": "3.0.0",
-    "@types/node": "^20.5.9",
+    "@1natsu/wait-element": "^3.0.0",
+    "@playwright/test": "^1.43.0",
+    "@types/node": "^20.12.5",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
-    "@playwright/test": "1.43.0",
     "chrome-webstore-upload-cli": "^3.1.0",
-    "fs-extra": "^10.1.0",
-    "git-semver-tags": "^4.1.1",
-    "prettier": "3.2.5",
-    "playwright": "1.43.0",
-    "sass": "1.74.1",
-    "shelljs": "0.8.5",
-    "shx": "0.3.4",
+    "fs-extra": "^11.2.0",
+    "git-semver-tags": "^7.0.1",
+    "playwright": "^1.43.0",
+    "prettier": "^3.2.5",
+    "sass": "^1.74.1",
+    "shelljs": "^0.8.5",
+    "shx": "^0.3.4",
     "typescript": "^5.4.4",
     "vitest": "^1.4.0",
     "wxt": "^0.17.0"
@@ -56,5 +56,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "packageManager": "pnpm@8.15.6+sha256.01c01eeb990e379b31ef19c03e9d06a14afa5250b82e81303f88721c99ff2e6f"
+  "packageManager": "pnpm@8.15.6+sha256.01c01eeb990e379b31ef19c03e9d06a14afa5250b82e81303f88721c99ff2e6f",
+  "pnpm": {
+    "overrides": {
+      "semver@>=7.0.0 <7.5.2": ">=7.5.2",
+      "semver@<5.7.2": ">=5.7.2",
+      "semver@>=6.0.0 <6.3.1": ">=6.3.1",
+      "minimatch@<3.0.5": ">=3.0.5"
+    }
+  }
 }
