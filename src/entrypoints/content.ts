@@ -37,6 +37,10 @@ const initExtension = () => {
 export const YOUTUBE_MATCHES = ['https://*.youtube.com/*']
 export default defineContentScript({
   matches: YOUTUBE_MATCHES,
+  /**
+   * Because CSS is injected or extracted based on the video page judgment results.
+   */
+  cssInjectionMode: 'manual',
   main() {
     console.log('Hello content.')
     // initExtension()
