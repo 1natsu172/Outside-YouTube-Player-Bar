@@ -1,0 +1,17 @@
+{
+  "globals": {
+    "ContentScriptContext": true,
+    "InvalidMatchPattern": true,
+    "MatchPattern": true,
+    "browser": true,
+    "createIframeUi": true,
+    "createIntegratedUi": true,
+    "createShadowRootUi": true,
+    "defineBackground": true,
+    "defineConfig": true,
+    "defineContentScript": true,
+    "defineUnlistedScript": true,
+    "fakeBrowser": true,
+    "storage": true
+  }
+}
