@@ -26,12 +26,14 @@ const initExtension = () => {
   }
 }
 
-// initExtension()
-
 // -----------------------------------------
 // WXT WORLD underconstructions
 //------------------------------------------
-// FIXME: WXTのimport対応待ち 二重管理をやめる
+/**
+ * FIXME: WXTのimport対応待ち manifestに寄せたい
+ * https://wxt.dev/guide/entrypoints.html#side-effects
+ * https://github.com/wxt-dev/wxt/issues/336
+ */
 export const YOUTUBE_MATCHES = ['https://*.youtube.com/*']
 export default defineContentScript({
   matches: YOUTUBE_MATCHES,
