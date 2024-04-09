@@ -30,6 +30,11 @@ export default [
   eslintjs.configs.recommended,
   ...tseslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
+  {
+    rules: {
+      '@typescript-eslint/consistent-type-imports': 'error',
+    },
+  },
   pluginReactConfig,
   {
     plugins: {
