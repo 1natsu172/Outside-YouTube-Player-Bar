@@ -1,4 +1,4 @@
-import { NestedValueOf, ValueOf } from '@/core/utils/typeUtils.js'
+import type { NestedValueOf, ValueOf } from '@/core/utils/typeUtils.js'
 
 /**
  * constants
@@ -38,13 +38,13 @@ export const storageKeysDict = {
   },
 }
 
-export type contentScriptStorageKeys = ValueOf<
+export type ContentScriptStorageKeys = ValueOf<
   typeof storageKeysDict.contentScriptStorageKeys
 >
-export type backgroundStorageKeys = ValueOf<
+export type BackgroundStorageKeys = ValueOf<
   typeof storageKeysDict.backgroundStorageKeys
 >
-export type optionStorageKeys = ValueOf<
+export type OptionStorageKeys = ValueOf<
   typeof storageKeysDict.optionStorageKeys
 >
 export type AllStorageKeys = NestedValueOf<typeof storageKeysDict>

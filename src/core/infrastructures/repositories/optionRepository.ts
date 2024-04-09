@@ -8,11 +8,12 @@ const { optionStorageKeys } = storageKeysDict
 /**
  * Define Items
  */
-type fullscreenBehaviorV1 = boolean
-const fullscreenBehavior = centralStorage.defineItem<fullscreenBehaviorV1>(
-  optionStorageKeys.fullscreenBehavior,
-  { defaultValue: false },
-)
+type FullscreenBehaviorV1 = 'outside' | 'inside'
+type FullscreenBehaviorMeta = Record<string, never>
+const fullscreenBehavior = centralStorage.defineItem<
+  FullscreenBehaviorV1,
+  FullscreenBehaviorMeta
+>(optionStorageKeys.fullscreenBehavior, { defaultValue: 'inside' })
 
 export const optionRepository = {
   fullscreenBehavior,
