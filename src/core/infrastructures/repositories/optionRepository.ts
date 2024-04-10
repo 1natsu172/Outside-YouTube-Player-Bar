@@ -10,11 +10,14 @@ const { optionStorageKeys } = storageKeysDict
  */
 type FullscreenBehaviorV1 = 'outside' | 'inside'
 type FullscreenBehaviorMeta = Record<string, never>
-const fullscreenBehavior = centralStorage.defineItem<
+export const fullscreenBehavior = centralStorage.defineItem<
   FullscreenBehaviorV1,
   FullscreenBehaviorMeta
 >(optionStorageKeys.fullscreenBehavior, { defaultValue: 'inside' })
 
-export const optionRepository = {
-  fullscreenBehavior,
-}
+type DebugModeV1 = boolean
+type DebugModeMeta = Record<string, never>
+export const debugMode = centralStorage.defineItem<DebugModeV1, DebugModeMeta>(
+  optionStorageKeys.debugMode,
+  { defaultValue: import.meta.env.PROD ? false : true },
+)

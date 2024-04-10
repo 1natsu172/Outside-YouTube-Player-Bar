@@ -33,6 +33,7 @@ export const storageKeysDict = {
    */
   optionStorageKeys: {
     fullscreenBehavior: 'local:option:fullscreenBehavior',
+    debugMode: 'local:option:debugMode',
   } as const satisfies {
     [Key in string]: `${typeof optionStorageArea}:${string}`
   },

@@ -1,8 +1,14 @@
-export const isVideo = () => {
-  const pathName: any = location.pathname
-  console.log('LocationPathName?', pathName)
+import { logger } from '@/core/utils/logger.js'
+
+export const isVideoPage = () => {
+  if (!location) {
+    throw Error('location object not found!')
+  }
+
+  const pathName = location.pathname
   const userLivePagePathnamePattern = /^\/@?[^\/]+\/live$/
 
+  logger.info('LocationPathName?', pathName)
   return pathName === '/watch' || userLivePagePathnamePattern.test(pathName)
     ? true
     : false

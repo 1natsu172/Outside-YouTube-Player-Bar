@@ -1,5 +1,5 @@
 import { extensionSwitcher } from '../controllers/extensionSwicher.js'
-import { isVideo } from '../presenters/judgePage.js'
+import { isVideoPage } from '../presenters/judgePage.js'
 import {
   hasInjected,
   isAlwaysDisplayPlayerBar,
@@ -17,7 +17,7 @@ export function initialize() {
   console.log('Init: isAlwaysDisplayPlayerBar?', isAlwaysDisplayPlayerBar())
 
   // NOTE: URL直打ちあるいは新規タブで動画ページを開いたかを判定する
-  const isInitializeOnVideoPage = isVideo()
+  const isInitializeOnVideoPage = isVideoPage()
   return { isInitializeOnVideoPage }
 }
 

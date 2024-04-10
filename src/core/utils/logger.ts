@@ -1,19 +1,24 @@
 import { LogLevels, consola } from 'consola/browser'
+import { debugMode } from '@/core/infrastructures/repositories/optionRepository.js'
+import { extensionNameSymbol } from '@/core/domains/constants.js'
 
-const _logger = () => {
-  const logger = consola
+export let logger = createLogger({ isDebug: debugMode.defaultValue })
 
-  // const isDEV = import.meta.env.DEV
-  // const isPROD = import.meta.env.PROD
-  const isDebug = true // TODO: オプションから取る
+// Support change option reacted.
+debugMode.watch((current, prev) => {
+  if (current !== prev) {
+    logger = createLogger({ isDebug: current })
+  }
+})
+
+function createLogger({ isDebug }: { isDebug: boolean }) {
+  const _logger = consola.withTag(extensionNameSymbol)
 
   if (isDebug) {
-    logger.level = LogLevels.debug
+    _logger.level = LogLevels.debug
   } else {
-    logger.level = LogLevels.silent
+    _logger.level = LogLevels.silent
   }
 
-  return logger
+  return _logger
 }
-
-export const logger = _logger()
