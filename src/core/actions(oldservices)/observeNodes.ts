@@ -1,8 +1,8 @@
 import { waitElement } from '@1natsu/wait-element'
 import { debounce } from 'mabiki'
-import { observeIsVisiblePlayerBar } from '../controllers/observeIsVisiblePlayerBar'
-import { observeHeightOfPlayerBar } from '../controllers/observeHeightOfPlayerBar.js'
-import { displayPlayerBar } from '../controllers/displayPlayerBar.js'
+import { observeIsVisiblePlayerBar } from '../controllers(deprecated)/observeIsVisiblePlayerBar'
+import { observeHeightOfPlayerBar } from '../controllers(deprecated)/observeHeightOfPlayerBar.js'
+import { displayPlayerBar } from '../controllers(deprecated)/displayPlayerBar.js'
 import { setPlayerBarHeight } from '../usecases/setCssVariables.js'
 
 export const observeNodes = async () => {

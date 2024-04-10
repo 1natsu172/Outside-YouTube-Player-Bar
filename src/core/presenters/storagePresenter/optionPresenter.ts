@@ -1,3 +1,3 @@
-import { debugMode } from '@/core/infrastructures/repositories/optionRepository.js'
+import { debugMode } from '@/core/repositories/optionRepository.js'
 
 export const isDebugMode = () => debugMode.getValue()

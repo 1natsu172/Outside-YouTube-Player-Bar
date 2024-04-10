@@ -1,7 +1,7 @@
 import {
   isActive,
   isAlwaysDisplayPlayerBar,
-} from '../infrastructures/repositories/extensionState'
+} from '../repositories/extensionState'
 import { interventionDOM } from '../usecases/interventionDOM'
 
 const observeConfig: MutationObserverInit = {
@@ -40,9 +40,9 @@ const mutationCallback =
 
 export const observeIsVisiblePlayerBar = (
   target: Node,
-  mutationProps: MutationProps
+  mutationProps: MutationProps,
 ) =>
   new MutationObserver(mutationCallback(mutationProps)).observe(
     target,
-    observeConfig
+    observeConfig,
   )

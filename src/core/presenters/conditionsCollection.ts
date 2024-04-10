@@ -1,8 +1,5 @@
 import { isVideoPage } from './judgePage'
-import {
-  hasInjected,
-  isActive,
-} from '../infrastructures/repositories/extensionState'
+import { hasInjected, isActive } from '../repositories/extensionState'
 
 export const conditionsCollection = {
   // handle extension.active

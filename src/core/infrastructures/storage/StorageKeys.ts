@@ -1,10 +1,13 @@
 import type { NestedValueOf, ValueOf } from '@/core/utils/typeUtils.js'
 
+// TODO: 再編して。
+
 /**
  * constants
  */
 const localStorageArea = 'local'
-const contentScriptStorageArea = `${localStorageArea}:contentScript` as const
+const sessionStorageArea = 'session'
+const contentScriptStorageArea = `${sessionStorageArea}:contentScript` as const
 const backgroundStorageArea = `${localStorageArea}:background` as const
 const optionStorageArea = `${localStorageArea}:option` as const
 

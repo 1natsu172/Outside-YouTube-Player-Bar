@@ -1,4 +1,5 @@
-import state, { StateMap } from '../stateMap'
+import type { StateMap } from '../infrastructures/stateMap'
+import state from '../infrastructures/stateMap'
 
 export const hasInjected = (): StateMap['hasInjected'] =>
   state.get('hasInjected')

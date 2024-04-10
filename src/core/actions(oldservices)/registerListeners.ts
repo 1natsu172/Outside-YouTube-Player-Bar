@@ -1,4 +1,4 @@
-import { extensionSwitcher } from '../controllers/extensionSwicher'
+import { extensionSwitcher } from '../controllers(deprecated)/extensionSwicher'
 import { interventionDOM } from '../usecases/interventionDOM'
 
 const YT_EVENTS = [

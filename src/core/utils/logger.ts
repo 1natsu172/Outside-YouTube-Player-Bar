@@ -1,17 +1,12 @@
 import { LogLevels, consola } from 'consola/browser'
-import { debugMode } from '@/core/infrastructures/repositories/optionRepository.js'
-import { extensionNameSymbol } from '@/core/domains/constants.js'
+import { debugMode } from '@/core/repositories/optionRepository.js'
+import { extensionNameSymbol } from '@/core/models/meta.js'
 
 export let logger = createLogger({ isDebug: debugMode.defaultValue })
+export default { logger }
+export type Logger = typeof logger
 
-// Support change option reacted.
-debugMode.watch((current, prev) => {
-  if (current !== prev) {
-    logger = createLogger({ isDebug: current })
-  }
-})
-
-function createLogger({ isDebug }: { isDebug: boolean }) {
+export function createLogger({ isDebug }: { isDebug: boolean }) {
   const _logger = consola.withTag(extensionNameSymbol)
 
   if (isDebug) {
@@ -21,4 +16,8 @@ function createLogger({ isDebug }: { isDebug: boolean }) {
   }
 
   return _logger
+}
+
+export function reCreateLoggerInstance(settings: { isDebug: boolean }) {
+  logger = createLogger(settings)
 }

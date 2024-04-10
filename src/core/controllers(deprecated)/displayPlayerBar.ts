@@ -1,14 +1,13 @@
 import { waitElement } from '@1natsu/wait-element'
 import { moviePlayerController } from './moviePlayerController'
-import { getForceDisplayPlayerBarIntervalId } from '../infrastructures/repositories/extensionState'
+import { getForceDisplayPlayerBarIntervalId } from '../repositories/extensionState'
 import { setForceDisplayPlayerBarIntervalId } from '../usecases/extensionBehavior'
 import { interventionDOM } from '../usecases/interventionDOM'
 
 export async function displayPlayerBar() {
   const moviePlayer = await waitElement('#movie_player')
-  const { mousedown, mousemove, mouseleave } = await moviePlayerController(
-    moviePlayer
-  )
+  const { mousedown, mousemove, mouseleave } =
+    await moviePlayerController(moviePlayer)
 
   return {
     // NOTE: ytp-autohideの解除がなぜかこのEvent操作でできる。

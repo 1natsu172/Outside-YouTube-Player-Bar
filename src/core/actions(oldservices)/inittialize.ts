@@ -1,9 +1,9 @@
-import { extensionSwitcher } from '../controllers/extensionSwicher.js'
+import { extensionSwitcher } from '../controllers(deprecated)/extensionSwicher.js'
 import { isVideoPage } from '../presenters/judgePage.js'
 import {
   hasInjected,
   isAlwaysDisplayPlayerBar,
-} from '../infrastructures/repositories/extensionState.js'
+} from '../repositories/extensionState.js'
 import {
   setHasInjected,
   setIsAlwaysDisplayPlayerBar,

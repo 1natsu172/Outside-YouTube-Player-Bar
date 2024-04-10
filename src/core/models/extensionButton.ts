@@ -1,19 +1,16 @@
 import { waitElement } from '@1natsu/wait-element'
-import { NodeLike } from '@1natsu/wait-element/dist/types/options'
-import { extensionSwitcher } from '../controllers/extensionSwicher'
+import type { NodeLike } from '@1natsu/wait-element/dist/types/options'
+import { extensionSwitcher } from '../controllers(deprecated)/extensionSwicher'
 import toggleTooltip from '../usecases/toggleTooltip'
-import {
-  hasInjected,
-  isActive,
-} from '../infrastructures/repositories/extensionState'
+import { hasInjected, isActive } from '../repositories/extensionState'
 
 /**
  * about UIs
  */
 
 const tooltipText = {
-  isActive: browser.i18n.getMessage('tooltipText_isActive') as string,
-  isInactive: browser.i18n.getMessage('tooltipText_isInactive') as string,
+  isActive: browser.i18n.getMessage('tooltipText_isActive'),
+  isInactive: browser.i18n.getMessage('tooltipText_isInactive'),
 }
 
 const initialTooltipText = (): string => {
@@ -43,7 +40,7 @@ const setExtensionButtonEvent = (): void => {
 
   button.addEventListener('click', extensionSwitcher.toggle)
   button.addEventListener('click', (e) =>
-    toggleTooltip(e, tooltipText.isActive, tooltipText.isInactive)
+    toggleTooltip(e, tooltipText.isActive, tooltipText.isInactive),
   )
 }
 
