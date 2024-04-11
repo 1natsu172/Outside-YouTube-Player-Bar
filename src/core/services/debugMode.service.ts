@@ -1,4 +1,4 @@
-import { debugMode } from '@/core/repositories/optionRepository.js'
+import { debugMode } from '@/core/repositories/optionsRepository.js'
 import { reCreateLoggerInstance } from '@/utils/logger.js'
 
 export const initializeDebugMode = () => {

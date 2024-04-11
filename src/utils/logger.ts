@@ -1,6 +1,6 @@
 import { LogLevels, consola } from 'consola/browser'
-import { debugMode } from '@/core/repositories/optionRepository.js'
-import { extensionNameSymbol } from '@/core/models/meta.js'
+import { debugMode } from '@/core/repositories/optionsRepository.js'
+import { extensionNameSymbol } from '@/core/mains/meta.js'
 
 export let logger = createLogger({ isDebug: debugMode.defaultValue })
 export type Logger = typeof logger

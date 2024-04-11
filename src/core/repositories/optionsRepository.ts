@@ -5,6 +5,17 @@ import {
 
 const { optionStorageKeys } = storageKeysDict
 
+export interface IOptionsRepository {
+  getOptions(): Promise<Options>
+  updateOptions(options: Options): Promise<void>
+}
+
+export class OptionsRepository implements IOptionsRepository {
+  constructor() {}
+
+  getOptions(): Promise<Option> {}
+}
+
 /**
  * Define Items
  */

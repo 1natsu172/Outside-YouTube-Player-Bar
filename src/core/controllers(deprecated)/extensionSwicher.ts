@@ -1,5 +1,5 @@
 import state from '../infrastructures/stateMap'
-import { injectButton, removeButton } from '../models/extensionButton'
+import { injectButton, removeButton } from '../mains/extensionButton'
 import { conditionsCollection } from '../presenters/conditionsCollection'
 import { interventionDOM } from '../usecases/interventionDOM'
 import { setHasInjected, setIsActive } from '../usecases/extensionBehavior'
