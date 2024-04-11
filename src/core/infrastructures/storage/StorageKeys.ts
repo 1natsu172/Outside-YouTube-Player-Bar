@@ -1,4 +1,4 @@
-import type { NestedValueOf, ValueOf } from '@/core/utils/typeUtils.js'
+import type { NestedValueOf, ValueOf } from '@/utils/typeUtils.js'
 
 // TODO: 再編して。
 

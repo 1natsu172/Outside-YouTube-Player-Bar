@@ -3,11 +3,15 @@ import { debugMode } from '@/core/repositories/optionRepository.js'
 import { extensionNameSymbol } from '@/core/models/meta.js'
 
 export let logger = createLogger({ isDebug: debugMode.defaultValue })
-export default { logger }
 export type Logger = typeof logger
 
-export function createLogger({ isDebug }: { isDebug: boolean }) {
-  const _logger = consola.withTag(extensionNameSymbol)
+type LoggerSettings = {
+  isDebug: boolean
+  tag?: string
+}
+
+export function createLogger({ isDebug, tag }: LoggerSettings) {
+  const _logger = consola.withTag(tag || extensionNameSymbol)
 
   if (isDebug) {
     _logger.level = LogLevels.debug
@@ -18,6 +22,6 @@ export function createLogger({ isDebug }: { isDebug: boolean }) {
   return _logger
 }
 
-export function reCreateLoggerInstance(settings: { isDebug: boolean }) {
+export function reCreateLoggerInstance(settings: LoggerSettings) {
   logger = createLogger(settings)
 }

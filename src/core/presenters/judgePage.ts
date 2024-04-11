@@ -1,4 +1,4 @@
-import { logger } from '@/core/utils/logger.js'
+import { logger } from '@/utils/logger.js'
 
 export const isVideoPage = () => {
   if (!location) {
