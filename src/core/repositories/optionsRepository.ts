@@ -30,5 +30,5 @@ type DebugModeV1 = boolean
 type DebugModeMeta = Record<string, never>
 export const debugMode = centralStorage.defineItem<DebugModeV1, DebugModeMeta>(
   optionStorageKeys.debugMode,
-  { defaultValue: import.meta.env.PROD ? false : true },
+  { defaultValue:  },
 )
