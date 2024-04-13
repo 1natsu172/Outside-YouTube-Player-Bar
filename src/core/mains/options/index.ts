@@ -1,3 +1,6 @@
-import type * as EX from './extensionMetaOptions.js'
+import * as EXT_META from './extensionMetaOptions.js'
+import type { ExtensionMetaOptions } from './extensionMetaOptions.js'
 
-export type AllOptions = typeof EX
+export type AllOptionDefs = ExtensionMetaOptions
+
+export const AllOptions = { ...EXT_META }
