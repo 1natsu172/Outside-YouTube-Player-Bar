@@ -3,7 +3,7 @@ import { centralStorage } from '@/core/infrastructures/storage/centralStorage.js
 import { AllOptions } from '@/core/mains/options/index.js'
 import type { ValueOf } from '@/utils/typeUtils.js'
 
-const getStorageKey = (Option: ValueOf<typeof AllOptions>) => {
+export const getStorageKey = (Option: ValueOf<typeof AllOptions>) => {
   const { storageArea, storageKey } = Option.config
   return `${storageArea}:${storageKey}`
 }
@@ -27,6 +27,21 @@ const defineItem = <Defs extends ValueOf<typeof AllOptions>>(
 
 /**
  * Define Items
+ * @description Extension Meta Options
  */
 export const debugMode = defineItem(AllOptions.DebugModeOption)
 export const forceDisable = defineItem(AllOptions.ForceDisableOption)
+
+/**
+ * Define Items
+ * @description User Options
+ */
+export const defaultViewBehaviorOption = defineItem(
+  AllOptions.DefaultViewBehaviorOption,
+)
+export const theaterModeBehaviorOption = defineItem(
+  AllOptions.TheaterModeBehaviorOption,
+)
+export const fullscreenBehaviorOption = defineItem(
+  AllOptions.FullscreenBehaviorOption,
+)
