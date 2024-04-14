@@ -5,6 +5,7 @@
 console.log('vitest.config.ts')
 import { defineConfig } from 'vitest/config'
 import { WxtVitest } from 'wxt/testing'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   // Configure test behavior however you like
@@ -13,7 +14,7 @@ export default defineConfig({
     restoreMocks: true,
   },
   // This is the line that matters!
-  plugins: [WxtVitest()],
+  plugins: [WxtVitest(), react()],
   // If any dependencies rely on webextension-polyfill, add them here to the `ssr.noExternal` option.
   // Example:
   // ssr: {
