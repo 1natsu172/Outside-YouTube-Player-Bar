@@ -16,7 +16,9 @@ export type Option<
   V,
   M extends Record<string, unknown> = Record<string, never>,
 > = {
-  __static__config: OptionConfig<CONST_KEY, V, M>
-  value: V
-  meta: M
+  config: OptionConfig<CONST_KEY, V, M>
+  entity: {
+    value: V
+    meta: M
+  }
 }

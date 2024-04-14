@@ -13,34 +13,20 @@ export type ExtensionMetaOptions<CK extends string = typeof CONST_KEY> = {
   >
 }
 
-type DebugModeOpt = ExtensionMetaOptions['debugModeV1']
-export class DebugModeOption {
-  static config: DebugModeOpt['__static__config'] = {
-    storageArea: 'local',
-    storageKey: `${CONST_KEY}:debugMode`,
-    version: 1,
-    defaultValue: import.meta.env.PROD ? false : true,
-    defaultMeta: {},
-  }
-  constructor(
-    public value: DebugModeOpt['value'],
-    public meta: DebugModeOpt['meta'],
-  ) {}
-}
+export const DebugModeOptionConfig = {
+  storageArea: 'local',
+  storageKey: `${CONST_KEY}:debugMode`,
+  version: 1,
+  defaultValue: import.meta.env.PROD ? false : true,
+  defaultMeta: {},
+} as const satisfies ExtensionMetaOptions['debugModeV1']['config']
 
-type ForceDisableOpt = ExtensionMetaOptions['forceDisableV1']
-export class ForceDisableOption {
-  static config: ForceDisableOpt['__static__config'] = {
-    storageArea: 'local',
-    storageKey: `${CONST_KEY}:forceDisable`,
-    version: 1,
-    defaultValue: false,
-    defaultMeta: {
-      extensionVersion: null,
-    },
-  }
-  constructor(
-    public value: ForceDisableOpt['value'],
-    public meta: ForceDisableOpt['meta'],
-  ) {}
-}
+export const ForceDisableOptionConfig = {
+  storageArea: 'local',
+  storageKey: `${CONST_KEY}:forceDisable`,
+  version: 1,
+  defaultValue: false,
+  defaultMeta: {
+    extensionVersion: null,
+  },
+} as const satisfies ExtensionMetaOptions['forceDisableV1']['config']

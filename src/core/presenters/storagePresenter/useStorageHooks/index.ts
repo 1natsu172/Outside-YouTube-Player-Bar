@@ -1,6 +1,6 @@
 import { useCallback, useRef, useSyncExternalStore, use } from 'react'
-import { centralStorage } from '@/core/infrastructures/storage/index.js'
-import type { AllStorageKeys } from '@/core/infrastructures/storage/index.js'
+import { centralStorage } from '@/core/infrastructures/storage/centralStorage.js'
+import type { AllStorageKeys } from '@/core/repositories/optionsRepository.js'
 
 type Subscribe = Parameters<typeof useSyncExternalStore>[0]
 

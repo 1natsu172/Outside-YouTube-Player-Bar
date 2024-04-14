@@ -1,26 +1,27 @@
 import type { StorageItemOptions } from '@/core/infrastructures/storage/centralStorage.js'
 import { centralStorage } from '@/core/infrastructures/storage/centralStorage.js'
-import { AllOptions } from '@/core/mains/options/index.js'
+import { allOptionsConfig } from '@/core/mains/options/index.js'
 import type { ValueOf } from '@/utils/typeUtils.js'
 
-export const getStorageKey = (Option: ValueOf<typeof AllOptions>) => {
-  const { storageArea, storageKey } = Option.config
-  return `${storageArea}:${storageKey}`
+export const getStorageKey = (config: ValueOf<typeof allOptionsConfig>) => {
+  const { storageArea, storageKey } = config
+  return `${storageArea}:${storageKey}` as const
 }
+export type AllStorageKeys = ReturnType<typeof getStorageKey>
 
-// util hands
-const defineItem = <Defs extends ValueOf<typeof AllOptions>>(
-  Option: Defs,
-  storageItemOptions?: Partial<StorageItemOptions<InstanceType<Defs>['value']>>,
+// util hands that think about migrations
+const defineItem = <Config extends ValueOf<typeof allOptionsConfig>>(
+  config: Config,
+  storageItemOptions?: Partial<StorageItemOptions<Config['defaultValue']>>,
 ) => {
-  const stoOpts: StorageItemOptions<InstanceType<Defs>['value']> = {
-    defaultValue: Option.config.defaultValue,
-    version: Option.config.version,
+  const stoOpts: StorageItemOptions<Config['defaultValue']> = {
+    defaultValue: config.defaultValue,
+    version: config.version,
     ...storageItemOptions,
   }
 
-  return centralStorage.defineItem<InstanceType<Defs>['value']>(
-    getStorageKey(Option),
+  return centralStorage.defineItem<Config['defaultValue']>(
+    getStorageKey(config),
     stoOpts,
   )
 }
@@ -29,19 +30,21 @@ const defineItem = <Defs extends ValueOf<typeof AllOptions>>(
  * Define Items
  * @description Extension Meta Options
  */
-export const debugMode = defineItem(AllOptions.DebugModeOption)
-export const forceDisable = defineItem(AllOptions.ForceDisableOption)
+export const debugMode = defineItem(allOptionsConfig.DebugModeOptionConfig)
+export const forceDisable = defineItem(
+  allOptionsConfig.ForceDisableOptionConfig,
+)
 
 /**
  * Define Items
  * @description User Options
  */
 export const defaultViewBehaviorOption = defineItem(
-  AllOptions.DefaultViewBehaviorOption,
+  allOptionsConfig.DefaultViewBehaviorOptionConfig,
 )
 export const theaterModeBehaviorOption = defineItem(
-  AllOptions.TheaterModeBehaviorOption,
+  allOptionsConfig.TheaterModeBehaviorOptionConfig,
 )
 export const fullscreenBehaviorOption = defineItem(
-  AllOptions.FullscreenBehaviorOption,
+  allOptionsConfig.FullscreenBehaviorOptionConfig,
 )

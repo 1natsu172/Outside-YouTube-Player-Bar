@@ -1,11 +1,11 @@
 import { describe, expect, test } from 'vitest'
 import { getStorageKey, debugMode } from './optionsRepository.js'
-import { AllOptions } from '@/core/mains/options/index.js'
+import { allOptionsConfig } from '@/core/mains/options/index.js'
 
 test(getStorageKey.name, () => {
-  expect(getStorageKey(AllOptions.DebugModeOption)).toMatchInlineSnapshot(
-    `"local:option:EXT_META:debugMode"`,
-  )
+  expect(
+    getStorageKey(allOptionsConfig.DebugModeOptionConfig),
+  ).toMatchInlineSnapshot(`"local:option:EXT_META:debugMode"`)
 })
 
 describe('repository', () => {
