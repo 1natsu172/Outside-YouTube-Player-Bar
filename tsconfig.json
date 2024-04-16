@@ -2,7 +2,7 @@
   "extends": "./.wxt/tsconfig.json",
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "types": ["react/canary", "react-dom/canary"]
   }
 }

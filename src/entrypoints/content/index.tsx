@@ -9,6 +9,8 @@ import {
   initialize,
   additionalInitializationOnVideoPage,
 } from '../../core/actions(oldservices)/inittialize'
+import { waitMountUITarget } from './App/libs/injectUI.js'
+import { mountUI } from './App/logics/mount.js'
 
 const IS_DEBUG_YT_EVENTS = false
 
@@ -39,10 +41,11 @@ export default defineContentScript({
   matches: YOUTUBE_MATCHES,
   /**
    * Because CSS is injected or extracted based on the video page judgment results.
+   * TODO: あとできめる
    */
   cssInjectionMode: 'manual',
-  main() {
-    console.log('Hello content.')
-    // initExtension()
+  async main(ctx) {
+    logger.log('Hello content.')
+    await mountUI(ctx)
   },
 })

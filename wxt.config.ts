@@ -1,4 +1,6 @@
-import { defineConfig, UserConfig } from 'wxt'
+import { defineConfig } from 'wxt'
+import type { UserConfig } from 'wxt'
+import react from '@vitejs/plugin-react'
 
 export const developConfig: UserConfig = {
   srcDir: 'src',
@@ -12,11 +14,15 @@ export const developConfig: UserConfig = {
     },
     openConsole: true,
   },
+  vite: () => ({
+    plugins: [react()],
+  }),
 }
 /**
  * @description manifest.json config
  * @returns Some explicit configuration of manifest.json
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const manifestJsonConfig: UserConfig['manifest'] = (_configEnv) => ({
   name: '__MSG_appName__',
   short_name: '__MSG_appShortName__',
