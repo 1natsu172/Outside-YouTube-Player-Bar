@@ -16,11 +16,11 @@
     "description": "The title of the browser action button"
   },
 
-  "tooltipText_isActive": {
+  "tooltipText_toInside": {
     "message": "Inside player bar",
     "description": "Tooltip text for toggle button when extension is active"
   },
-  "tooltipText_isInactive": {
+  "tooltipText_toOutside": {
     "message": "Outside player bar",
     "description": "Tooltip text for toggle button when extension is inactive"
   },

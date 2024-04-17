@@ -16,11 +16,11 @@
     "description": "The title of the browser action button"
   },
 
-  "tooltipText_isActive": {
+  "tooltipText_toInside": {
     "message": "再生バーを内側にする",
     "description": "トグルボタンのツールチップテキスト(拡張機能がアクティブ状態のとき)"
   },
-  "tooltipText_isInactive": {
+  "tooltipText_toOutside": {
     "message": "再生バーを外側にする",
     "description": "トグルボタンのツールチップテキスト(拡張機能が非アクティブ状態のとき)"
   },

@@ -7,7 +7,6 @@ declare module "wxt/browser" {
     | "/_locales/ja/messages.json"
     | "/background.js"
     | "/content-scripts/content.js"
-    | "/content-scripts/testing.js"
     | "/images/icon-128.png"
     | "/images/icon-16.png"
     | "/images/icon-32.png"

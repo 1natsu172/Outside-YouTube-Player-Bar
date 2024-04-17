@@ -120,7 +120,7 @@ Note: You can't use this message in a manifest file.
      * "Inside player bar"
      */
     getMessage(
-      messageName: "tooltipText_isActive",
+      messageName: "tooltipText_toInside",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;
@@ -130,7 +130,7 @@ Note: You can't use this message in a manifest file.
      * "Outside player bar"
      */
     getMessage(
-      messageName: "tooltipText_isInactive",
+      messageName: "tooltipText_toOutside",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;

@@ -9,8 +9,8 @@ import { hasInjected, isActive } from '../repositories/extensionState'
  */
 
 const tooltipText = {
-  isActive: browser.i18n.getMessage('tooltipText_isActive'),
-  isInactive: browser.i18n.getMessage('tooltipText_isInactive'),
+  isActive: browser.i18n.getMessage('tooltipText_toInside'),
+  isInactive: browser.i18n.getMessage('tooltipText_toOutside'),
 }
 
 const initialTooltipText = (): string => {

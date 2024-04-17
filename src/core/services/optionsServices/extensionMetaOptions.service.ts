@@ -1,4 +1,5 @@
 import { debugMode } from '@/core/repositories/optionsRepository.js'
+import * as usecases from '@/core/usecases/options.usecase.js'
 import { reCreateLoggerInstance } from '@/utils/logger.js'
 
 export const initializeDebugMode = () => {
@@ -8,4 +9,8 @@ export const initializeDebugMode = () => {
       reCreateLoggerInstance({ isDebug: current })
     }
   })
+}
+
+export const switchDebugMode = async (changeTo: boolean) => {
+  await usecases.changeDebugMode(changeTo)
 }
