@@ -1,6 +1,9 @@
+/// <reference types="vite-plugin-svgr/client" />
+
 import { useMemo } from 'react'
-import ToggleIcon from '@/public/images/oypb-toggle.svg'
+import ToggleIcon from '@/public/images/oypb-toggle.svg?react'
 import { useBarPosition } from '@/core/services/behaviorServices/index.service.js'
+import style from './style.module.css'
 
 export const OypbButton = () => {
   const currentBarPosition = useBarPosition()
@@ -13,12 +16,14 @@ export const OypbButton = () => {
   )
 
   return (
-    <button
-      id="oypb-toggleExtension"
-      className="ytp-button oypb-toggleExtensionButton oypb-tooltip"
-      data-oypb-tooltip={tooltipText}
-    >
-      <ToggleIcon />
-    </button>
+    <div>
+      <span className={style.tooltip}>{tooltipText}</span>
+      <button
+        id="oypb-toggleExtension"
+        className="ytp-button oypb-toggleExtensionButton oypb-tooltip"
+      >
+        <ToggleIcon />
+      </button>
+    </div>
   )
 }

@@ -1,6 +1,6 @@
 import { defineConfig } from 'wxt'
 import type { UserConfig } from 'wxt'
-import react from '@vitejs/plugin-react'
+import viteConfig from './vite.config'
 
 export const developConfig: UserConfig = {
   srcDir: 'src',
@@ -14,9 +14,7 @@ export const developConfig: UserConfig = {
     },
     openConsole: true,
   },
-  vite: () => ({
-    plugins: [react()],
-  }),
+  vite: () => viteConfig,
 }
 /**
  * @description manifest.json config
