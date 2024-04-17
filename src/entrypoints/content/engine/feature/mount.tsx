@@ -1,8 +1,8 @@
 import { extensionNameCustomElementName } from '@/core/mains/meta.js'
 import type { ContentScriptContext } from 'wxt/client'
 import ReactDOM from 'react-dom/client'
-import { waitMountUITarget } from '../libs/injectUI.js'
-import { App } from '../App.js'
+import { waitMountUITarget } from '../libs/mediateElement.js'
+import { App } from '../../UI/App.js'
 
 export const mountUI = async (ctx: ContentScriptContext) => {
   const targetElement = await waitMountUITarget()

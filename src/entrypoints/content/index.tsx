@@ -9,8 +9,8 @@ import {
   initialize,
   additionalInitializationOnVideoPage,
 } from '../../core/actions(oldservices)/inittialize'
-import { waitMountUITarget } from './App/libs/injectUI.js'
-import { mountUI } from './App/logics/mount.js'
+import { waitMountUITarget } from './engine/libs/mediateElement.js'
+import { mountUI } from './engine/feature/mount.js'
 
 const IS_DEBUG_YT_EVENTS = false
 

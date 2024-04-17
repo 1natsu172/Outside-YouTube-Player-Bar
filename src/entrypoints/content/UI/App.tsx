@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useNowRoute } from './hooks/router.js'
-import { OypbButton } from './components/parts/oypbButton/index.js'
+import { PlayerBarButton } from './feature/PlayerBarButton/index.js'
 
 export const App = () => {
   const { bl } = useNowRoute()
@@ -8,9 +8,5 @@ export const App = () => {
     logger.log(bl)
   }, [bl])
 
-  return (
-    <div>
-      <OypbButton />
-    </div>
-  )
+  return <PlayerBarButton />
 }
