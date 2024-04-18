@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
-import { useNowRoute } from './hooks/router.js'
+import { useBrowserLocation } from 'wouter/use-browser-location'
 import { PlayerBarButton } from './feature/PlayerBarButton/index.js'
 
 export const App = () => {
-  const { bl } = useNowRoute()
+  const location = useBrowserLocation()
   useEffect(() => {
-    logger.log(bl)
-  }, [bl])
+    logger.log(location)
+  }, [location])
 
   return <PlayerBarButton />
 }
