@@ -25,6 +25,7 @@ export const mountUI = async (ctx: ContentScriptContext) => {
     onRemove: (root) => {
       // Unmount the root when the UI is removed
       root?.unmount()
+      logger.log('UI unmounted.')
     },
   })
   ui.mount()
