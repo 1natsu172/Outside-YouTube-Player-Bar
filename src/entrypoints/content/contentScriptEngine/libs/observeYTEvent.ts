@@ -35,7 +35,7 @@ export const __DEBUG_YT_EVENTS = () =>
   })
 
 ///// YouTube does not use HistoryAPI navigation…… :(
-export const pageNavigateListener = (listener: Listener) => {
+export const observePageNavigate = (listener: Listener) => {
   const key = 'yt-navigate-finish'
   document.addEventListener(key, listener)
   return () => {
@@ -43,7 +43,7 @@ export const pageNavigateListener = (listener: Listener) => {
   }
 }
 
-export const videoLoadedListener = (listener: Listener) => {
+export const observeVideoLoaded = (listener: Listener) => {
   const key = 'yt-page-data-updated'
   document.addEventListener(key, listener)
   return () => {
