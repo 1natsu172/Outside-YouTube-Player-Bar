@@ -1,4 +1,4 @@
-import { debugMode } from "@/core/repositories/optionsRepository.js";
+import { debugMode } from "@/core/repositories/options.repository.js";
 import * as usecases from "@/core/usecases/options.usecase.js";
 import { reCreateLoggerInstance } from "@/utils/logger.js";
 

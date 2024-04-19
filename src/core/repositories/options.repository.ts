@@ -1,5 +1,5 @@
 import { allOptionsConfig } from "@/core/mains/options/index.js";
-import { defineItem } from "./index.js";
+import { defineItem } from "@/core/infrastructures/storage/index.js";
 
 /**
  * Define Items

@@ -1,5 +1,5 @@
 import { extensionNameSymbol } from "@/core/mains/meta.js";
-import { debugMode } from "@/core/repositories/optionsRepository.js";
+import { debugMode } from "@/core/repositories/options.repository.js";
 import { LogLevels, consola } from "consola/browser";
 
 export let logger = createLogger({ isDebug: debugMode.defaultValue });

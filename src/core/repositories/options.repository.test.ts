@@ -1,5 +1,7 @@
 import { describe, expect, test } from "vitest";
-import { debugMode } from "./optionsRepository.js";
+import { debugMode } from "./options.repository.js";
+
+console.log(import.meta.env.PROD, process.env);
 
 describe("repository", () => {
 	test("should defined storage item with defaultValue", async () => {
@@ -7,9 +9,9 @@ describe("repository", () => {
 	});
 
 	test("should get/set storage item value", async () => {
-		await expect(debugMode.getValue()).resolves.toBe(true);
-		await debugMode.setValue(false);
-		await expect(debugMode.getValue()).resolves.toBe(false);
+		await expect(debugMode.getValue()).resolves.toBe(debugMode.defaultValue);
+		await debugMode.setValue(!debugMode.defaultValue);
+		await expect(debugMode.getValue()).resolves.toBe(!debugMode.defaultValue);
 	});
 
 	test("should get/set storage item meta", async () => {

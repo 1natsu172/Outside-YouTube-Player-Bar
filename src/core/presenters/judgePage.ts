@@ -1,4 +1,4 @@
-export const isVideoPage = (pathName: string) => {
+export const isVideoPage = (pathName: string): boolean => {
 	const userLivePagePathnamePattern = /^\/@?[^/]+\/live$/;
 
 	return !!(

@@ -1,6 +1,6 @@
 import { defineConfig } from "wxt";
 import type { UserConfig } from "wxt";
-import viteConfig from "./vite.config";
+import viteConfig from "./vite.config.js";
 
 export const developConfig: UserConfig = {
 	srcDir: "src",

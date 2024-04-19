@@ -19,8 +19,8 @@ describe("judgePage presentation", () => {
 		${"/user-world/live/"} | ${false}
 	`(
 		`${isVideoPage.name} returns $expected when $pathName`,
-		({ a, b, expected }) => {
-			expect(a + b).toBe(expected);
+		({ pathName, expected }) => {
+			expect(isVideoPage(pathName)).toBe(expected);
 		},
 	);
 });
