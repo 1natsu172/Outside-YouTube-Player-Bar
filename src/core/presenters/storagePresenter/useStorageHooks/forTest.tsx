@@ -6,7 +6,6 @@ const _Component = (props: { storageKey: string }) => {
 	const store = useStorage(props.storageKey);
 	console.log(store);
 
-	// eslint-disable-next-line react/react-in-jsx-scope
 	return <div>{JSON.stringify(store, null, 2)}</div>;
 };
 

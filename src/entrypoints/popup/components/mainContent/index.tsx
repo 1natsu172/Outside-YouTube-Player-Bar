@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */
 import popupStyle from "@/assets/styles/popup.module.scss";
 
 export const MainContents = () => {

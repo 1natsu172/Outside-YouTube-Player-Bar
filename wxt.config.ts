@@ -20,7 +20,6 @@ export const developConfig: UserConfig = {
  * @description manifest.json config
  * @returns Some explicit configuration of manifest.json
  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const manifestJsonConfig: UserConfig["manifest"] = (_configEnv) => ({
 	name: "__MSG_appName__",
 	short_name: "__MSG_appShortName__",

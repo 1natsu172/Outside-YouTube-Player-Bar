@@ -45,7 +45,7 @@ const videoLoadedListener = () => {
 	document.addEventListener("yt-page-data-updated", (e) => {
 		console.log(e);
 		console.log("PAGE UPDATED");
-		// eslint-disable-next-line @typescript-eslint/no-floating-promises
+
 		extensionSwitcher.active();
 	});
 };
