@@ -1,3 +1,6 @@
 export const setPlayerBarHeight = (height: string) => {
-  document.documentElement.style.setProperty('--oypb-player-bar-height', height)
-}
+	document.documentElement.style.setProperty(
+		"--oypb-player-bar-height",
+		height,
+	);
+};

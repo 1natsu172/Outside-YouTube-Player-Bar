@@ -1,2 +1,2 @@
 // TODO
-export const extensionBehavior = {}
+export const extensionBehavior = {};

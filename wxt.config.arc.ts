@@ -1,6 +1,6 @@
-import { createWxtConfig, developConfig } from './wxt.config.js'
+import { createWxtConfig, developConfig } from "./wxt.config.js";
 
-developConfig.runner!.disabled = true
+developConfig.runner!.disabled = true;
 
 // See https://wxt.dev/api/config.html
-export default createWxtConfig({ developConfig })
+export default createWxtConfig({ developConfig });

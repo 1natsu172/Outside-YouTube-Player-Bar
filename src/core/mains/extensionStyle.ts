@@ -1,7 +1,7 @@
 /**
  * styleタグでインジェクトするメリットが無くなったのでまた使うときが来るまで一旦コードフリーズする
  */
-export default {}
+export default {};
 
 // import getPlayerBarSize from '../libs/getPlayerBarSize'
 

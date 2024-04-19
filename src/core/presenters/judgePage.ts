@@ -1,7 +1,7 @@
 export const isVideoPage = (pathName: string) => {
-  const userLivePagePathnamePattern = /^\/@?[^/]+\/live$/
+	const userLivePagePathnamePattern = /^\/@?[^/]+\/live$/;
 
-  return pathName === '/watch' || userLivePagePathnamePattern.test(pathName)
-    ? true
-    : false
-}
+	return !!(
+		pathName === "/watch" || userLivePagePathnamePattern.test(pathName)
+	);
+};

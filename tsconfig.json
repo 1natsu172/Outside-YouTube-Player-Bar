@@ -1,9 +1,9 @@
 {
-  "extends": "./.wxt/tsconfig.json",
-  "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "jsx": "react-jsx",
-    "types": ["react/canary", "react-dom/canary"], // use canary version
-    "plugins": [{ "name": "typescript-plugin-css-modules" }] // css modules support fot TSServer with VSCode(https://github.com/mrmckeb/typescript-plugin-css-modules)
-  }
+	"extends": "./.wxt/tsconfig.json",
+	"compilerOptions": {
+		"lib": ["DOM", "DOM.Iterable", "ESNext"],
+		"jsx": "react-jsx",
+		"types": ["react/canary", "react-dom/canary"], // use canary version
+		"plugins": [{ "name": "typescript-plugin-css-modules" }] // css modules support fot TSServer with VSCode(https://github.com/mrmckeb/typescript-plugin-css-modules)
+	}
 }

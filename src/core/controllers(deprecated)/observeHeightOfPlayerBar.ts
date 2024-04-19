@@ -1,26 +1,26 @@
-import { setPlayerBarHeight } from '../usecases/setCssVariables.js'
+import type { setPlayerBarHeight } from "../usecases/setCssVariables.js";
 
 const observeConfig: ResizeObserverOptions = {
-  box: 'border-box',
-}
+	box: "border-box",
+};
 
 type MutationProps = {
-  setPlayerBarHeight: typeof setPlayerBarHeight
-}
+	setPlayerBarHeight: typeof setPlayerBarHeight;
+};
 
 const callback =
-  (mutationProps: MutationProps): ResizeObserverCallback =>
-  (entries) => {
-    for (let entry of entries) {
-      const { borderBoxSize } = entry
+	(mutationProps: MutationProps): ResizeObserverCallback =>
+	(entries) => {
+		for (const entry of entries) {
+			const { borderBoxSize } = entry;
 
-      const [size] = borderBoxSize
-      const height = `${size.blockSize}px`
-      mutationProps.setPlayerBarHeight(height)
-    }
-  }
+			const [size] = borderBoxSize;
+			const height = `${size.blockSize}px`;
+			mutationProps.setPlayerBarHeight(height);
+		}
+	};
 
 export const observeHeightOfPlayerBar = (
-  target: Element,
-  mutationProps: MutationProps
-) => new ResizeObserver(callback(mutationProps)).observe(target, observeConfig)
+	target: Element,
+	mutationProps: MutationProps,
+) => new ResizeObserver(callback(mutationProps)).observe(target, observeConfig);

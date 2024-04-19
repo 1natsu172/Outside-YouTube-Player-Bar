@@ -1,4 +1,4 @@
 export type ExtensionBehavior = {
-  positionPlayerBar: 'inside' | 'outside'
-  alwaysDisplayPlayerBar: boolean
-}
+	positionPlayerBar: "inside" | "outside";
+	alwaysDisplayPlayerBar: boolean;
+};
