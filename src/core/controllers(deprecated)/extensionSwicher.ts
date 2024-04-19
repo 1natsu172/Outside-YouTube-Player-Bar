@@ -3,7 +3,7 @@ import { injectButton, removeButton } from "../mains/extensionButton";
 import { conditionsCollection } from "../presenters/conditionsCollection";
 // import { displayPlayerBar } from './displayPlayerBar'
 import { hasInjected, isActive } from "../repositories/extensionState";
-import { setHasInjected, setIsActive } from "../usecases/extensionBehavior";
+import { setHasInjected, setIsActive } from "../usecases/behavior.usecase";
 import { interventionDOM } from "../usecases/interventionDOM";
 
 class ExtensionSwitcher {

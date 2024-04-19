@@ -26,6 +26,9 @@ importers:
       react-dom:
         specifier: 18.3.0-canary-c3048aab4-20240326
         version: 18.3.0-canary-c3048aab4-20240326(react@18.3.0-canary-c3048aab4-20240326)
+      valtio:
+        specifier: ^1.13.2
+        version: 1.13.2(@types/react@18.2.79)(react@18.3.0-canary-c3048aab4-20240326)
     devDependencies:
       '@1natsu/wait-element':
         specifier: ^3.0.0
@@ -1319,6 +1322,11 @@ packages:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
 
+  derive-valtio@0.1.0:
+    resolution: {integrity: sha512-OCg2UsLbXK7GmmpzMXhYkdO64vhJ1ROUUGaTFyHjVwEdMEcTTRj7W1TxLbSBxdY8QLBPCcp66MTyaSy0RpO17A==}
+    peerDependencies:
+      valtio: '*'
+
   destr@2.0.3:
     resolution: {integrity: sha512-2N3BOUU4gYMpTP24s5rF5iP7BDr7uNTCs4ozw3kf/eKfvWSIu93GEBi5m427YoyJoeOzQ5smuu4nNAPGb8idSQ==}
 
@@ -2350,6 +2358,9 @@ packages:
   proto-list@1.2.4:
     resolution: {integrity: sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==}
 
+  proxy-compare@2.6.0:
+    resolution: {integrity: sha512-8xuCeM3l8yqdmbPoYeLbrAXCBWu19XEYc5/F28f5qOaoAIMyfmBUkl5axiK+x9olUvRlcekvnm98AP9RDngOIw==}
+
   prr@1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
 
@@ -2811,12 +2822,29 @@ packages:
     resolution: {integrity: sha512-EDxhTEVPZZRLWYcJ4ZXjGFN0oP7qYvbXWzEgRm/Yql4dHX5wDbvh89YHP6PK1lzZJYrMtXUuZZz8XGK+U6U1og==}
     engines: {node: '>=14.16'}
 
+  use-sync-external-store@1.2.0:
+    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
+
+  valtio@1.13.2:
+    resolution: {integrity: sha512-Qik0o+DSy741TmkqmRfjq+0xpZBXi/Y6+fXZLn0xNF1z/waFMbE3rkivv5Zcf9RrMUp6zswf2J7sbh2KBlba5A==}
+    engines: {node: '>=12.20.0'}
+    peerDependencies:
+      '@types/react': '>=16.8'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
 
   vite-node@1.5.0:
     resolution: {integrity: sha512-tV8h6gMj6vPzVCa7l+VGq9lwoJjW8Y79vst8QZZGiuRAfijU+EEWuc0kFpmndQrWhMMhet1jdSF+40KSZUqIIw==}
@@ -4134,6 +4162,10 @@ snapshots:
 
   dequal@2.0.3: {}
 
+  derive-valtio@0.1.0(valtio@1.13.2(@types/react@18.2.79)(react@18.3.0-canary-c3048aab4-20240326)):
+    dependencies:
+      valtio: 1.13.2(@types/react@18.2.79)(react@18.3.0-canary-c3048aab4-20240326)
+
   destr@2.0.3: {}
 
   diff-sequences@29.6.3: {}
@@ -5191,6 +5223,8 @@ snapshots:
 
   proto-list@1.2.4: {}
 
+  proxy-compare@2.6.0: {}
+
   prr@1.0.1:
     optional: true
 
@@ -5700,9 +5734,22 @@ snapshots:
       semver-diff: 4.0.0
       xdg-basedir: 5.1.0
 
+  use-sync-external-store@1.2.0(react@18.3.0-canary-c3048aab4-20240326):
+    dependencies:
+      react: 18.3.0-canary-c3048aab4-20240326
+
   util-deprecate@1.0.2: {}
 
   uuid@8.3.2: {}
+
+  valtio@1.13.2(@types/react@18.2.79)(react@18.3.0-canary-c3048aab4-20240326):
+    dependencies:
+      derive-valtio: 0.1.0(valtio@1.13.2(@types/react@18.2.79)(react@18.3.0-canary-c3048aab4-20240326))
+      proxy-compare: 2.6.0
+      use-sync-external-store: 1.2.0(react@18.3.0-canary-c3048aab4-20240326)
+    optionalDependencies:
+      '@types/react': 18.2.79
+      react: 18.3.0-canary-c3048aab4-20240326
 
   vite-node@1.5.0(@types/node@20.12.7)(less@4.2.0)(sass@1.75.0)(stylus@0.62.0):
     dependencies:
