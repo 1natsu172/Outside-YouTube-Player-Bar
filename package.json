@@ -30,7 +30,8 @@
 		"preversion": "node ./scripts/bump-manifest $npm_new_version && git add manifest.json",
 		"postversion": "git push origin v$npm_new_version",
 		"release-to-git": "node ./scripts/releaseNotesTemplate | gh release create v$npm_package_version --notes-file - && gh release view v$npm_package_version --web",
-		"delivery": "pnpm dlx chrome-webstore-upload-cli@3 upload --source dist.zip --auto-publish"
+		"delivery": "pnpm dlx chrome-webstore-upload-cli@3 upload --source dist.zip --auto-publish",
+    "biome": "biome check --apply ./src"
 	},
 	"devDependencies": {
 		"@1natsu/wait-element": "^3.0.0",
