@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@1natsu/wait-element": "^3.0.0",
+    "@biomejs/biome": "1.7.0",
     "@eslint/eslintrc": "^3.0.2",
     "@eslint/js": "^9.0.0",
     "@playwright/test": "^1.43.1",
@@ -73,7 +74,7 @@
     "react-dom": "18.3.0-canary-c3048aab4-20240326",
     "wouter": "^3.1.2"
   },
-  "packageManager": "pnpm@8.15.6+sha256.01c01eeb990e379b31ef19c03e9d06a14afa5250b82e81303f88721c99ff2e6f",
+  "packageManager": "pnpm@9.0.4+sha256.caa915eaae9d9aefccf50ee8aeda25a2f8684d8f9d5c6e367eaf176d97c1f89e",
   "pnpm": {
     "overrides": {
       "semver@>=7.0.0 <7.5.2": ">=7.5.2",
