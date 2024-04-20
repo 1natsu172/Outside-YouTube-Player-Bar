@@ -10,6 +10,7 @@ import {
 	registerListeners,
 } from "../../core/actions(oldservices)/registerListeners";
 import { mountUI } from "./contentScriptEngine/feature/mount.js";
+import { Executor } from "@/core/mains/executor.js";
 
 const IS_DEBUG_YT_EVENTS = false;
 
@@ -45,6 +46,7 @@ export default defineContentScript({
 	cssInjectionMode: "manual",
 	async main(ctx) {
 		logger.log("Hello content.");
-		await mountUI(ctx);
+		const executor = new Executor();
+		await Promise.all([mountUI(ctx), executor.initialization()]);
 	},
 });

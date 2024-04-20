@@ -17,6 +17,9 @@ importers:
       consola:
         specifier: ^3.2.3
         version: 3.2.3
+      derive-valtio:
+        specifier: ^0.1.0
+        version: 0.1.0(valtio@1.13.2(@types/react@18.2.79)(react@18.3.0-canary-c3048aab4-20240326))
       mabiki:
         specifier: ^1.0.1
         version: 1.0.1

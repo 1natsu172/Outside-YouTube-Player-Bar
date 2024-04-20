@@ -1,8 +1,8 @@
-import { extensionBehavior } from "@/core/repositories/contentScript.repository.js";
+import { behaviorState } from "@/core/repositories/contentScript.repository.js";
 
 // TODO
 export const useExtenstionBehavior = () => {
-	extensionBehavior.getValue();
+	behaviorState.getValue();
 };
 
 // todo
