@@ -6,7 +6,7 @@ import { waitMountUITarget } from "../libs/mediateElement.js";
 
 export const mountUI = async (ctx: ContentScriptContext) => {
 	const targetElement = await waitMountUITarget();
-	logger.log("Mount target is ready =>", targetElement);
+	logger.info("Mount target is ready =>", targetElement);
 
 	const ui = await createShadowRootUi(ctx, {
 		name: extensionNameCustomElementName,
@@ -25,9 +25,9 @@ export const mountUI = async (ctx: ContentScriptContext) => {
 		onRemove: (root) => {
 			// Unmount the root when the UI is removed
 			root?.unmount();
-			logger.log("UI unmounted.");
+			logger.info("UI unmounted.");
 		},
 	});
 	ui.mount();
-	logger.log("UI mounted.");
+	logger.success("UI mounted.");
 };

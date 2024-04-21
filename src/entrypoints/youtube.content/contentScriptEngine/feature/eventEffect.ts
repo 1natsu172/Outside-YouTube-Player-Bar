@@ -4,11 +4,11 @@ import {
 } from "../libs/observeYTEvent.js";
 
 const pageNavigateEffect = (event: unknown) => {
-	logger.log("page navigated", event);
+	logger.debug("page navigated", event);
 };
 
 const videoLoadedEffect = (event: unknown) => {
-	logger.log("video loaded", event);
+	logger.debug("video loaded", event);
 };
 
 const disposeList = new Set<() => void>();

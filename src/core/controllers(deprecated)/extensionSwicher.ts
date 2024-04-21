@@ -3,7 +3,7 @@ import { injectButton, removeButton } from "../mains/extensionButton";
 import { conditionsCollection } from "../presenters/conditionsCollection";
 // import { displayPlayerBar } from './displayPlayerBar'
 import { hasInjected, isActive } from "../repositories/extensionState";
-import { setHasInjected, setIsActive } from "../usecases/behavior.usecase";
+// import { setHasInjected, setIsActive } from "../usecases/behavior.usecase";
 import { interventionDOM } from "../usecases/interventionDOM";
 
 class ExtensionSwitcher {
@@ -14,8 +14,8 @@ class ExtensionSwitcher {
 
 		await injectButton();
 		interventionDOM.addOutsidePlayerBarClassName();
-		setIsActive(true);
-		setHasInjected(true);
+		// setIsActive(true);
+		// setHasInjected(true);
 
 		console.log("Extension is activing now: isActive?", isActive());
 		console.log("Extension is activing now: hasInject?", hasInjected());
@@ -53,7 +53,7 @@ class ExtensionSwitcher {
 			// await (await displayPlayerBar()).alwaysDisplayByHack()
 		}
 
-		isActive() ? setIsActive(false) : setIsActive(true);
+		// isActive() ? setIsActive(false) : setIsActive(true);
 		console.log("Extension toggled: isActive?", isActive());
 	};
 }

@@ -28,7 +28,7 @@ export async function displayPlayerBar() {
 				mousedown();
 				mousemove();
 			}, 3000);
-			setForceDisplayPlayerBarIntervalId(intervalId);
+			// setForceDisplayPlayerBarIntervalId(intervalId);
 		},
 		/**
 		 * @deprecated alwaysDisplayByHackと合わせて必要だったが不要になった

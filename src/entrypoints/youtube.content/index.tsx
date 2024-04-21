@@ -45,7 +45,7 @@ export default defineContentScript({
 	 */
 	cssInjectionMode: "manual",
 	async main(ctx) {
-		logger.log("Hello content.");
+		logger.success("Content-Script execute");
 		const executor = new Executor();
 		await Promise.all([mountUI(ctx), executor.initialization()]);
 	},

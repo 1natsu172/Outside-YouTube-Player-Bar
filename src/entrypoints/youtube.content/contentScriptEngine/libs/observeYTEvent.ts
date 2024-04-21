@@ -30,7 +30,7 @@ const YT_EVENTS = [
 export const __DEBUG_YT_EVENTS = () => {
 	for (const eventName of YT_EVENTS) {
 		document.addEventListener(eventName, (event) => {
-			logger.log(eventName, event);
+			logger.withTag("YT_EVENT").log(eventName, event);
 		});
 	}
 };

@@ -1,14 +1,14 @@
-import { behaviorState } from "@/core/repositories/contentScript.repository.js";
+import { currentBehaviorState } from "@/core/repositories/contentScript.repository.js";
 import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
 
 export const setPositionPlayerBar = (
-	to: ContentScriptState["behavior"]["positionPlayerBar"],
+	to: ContentScriptState["currentBehavior"]["positionPlayerBar"],
 ) => {
-	behaviorState.positionPlayerBar = to;
+	currentBehaviorState.positionPlayerBar = to;
 };
 
 export const setAlwaysDisplayPlayerBar = (
-	is: ContentScriptState["behavior"]["alwaysDisplayPlayerBar"],
+	is: ContentScriptState["currentBehavior"]["alwaysDisplayPlayerBar"],
 ) => {
-	behaviorState.alwaysDisplayPlayerBar = is;
+	currentBehaviorState.alwaysDisplayPlayerBar = is;
 };

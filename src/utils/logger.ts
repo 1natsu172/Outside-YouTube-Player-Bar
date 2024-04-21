@@ -14,7 +14,13 @@ export function createLogger({ isDebug, tag }: LoggerSettings) {
 	const _logger = consola.withTag(tag || extensionNameSymbol);
 
 	if (isDebug) {
+		/**
+		 * NOTE: https://github.com/unjs/consola?tab=readme-ov-file#log-level
+		 * > Consola only shows logs with configured log level or below. (Default is 3)
+		 * https://i.gyazo.com/cd2802a833f0817f52a0fabe2020c9d7.png
+		 * */
 		_logger.level = LogLevels.debug;
+		_logger.info("LogLevels of logger =>", _logger.level);
 	} else {
 		_logger.level = LogLevels.silent;
 	}

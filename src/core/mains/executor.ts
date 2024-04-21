@@ -9,7 +9,9 @@ export class Executor {
 	watch() {
 		watch((get) => {
 			const isDoneInit = get(operationState).doneInitialize;
-			logger.log(isDoneInit);
+			logger.debug("called executor's watch", {
+				isDoneInit,
+			});
 		});
 	}
 
@@ -19,7 +21,7 @@ export class Executor {
 			logger.warn("oops, initialize seems to have been called multiple times!");
 			return;
 		}
-		logger.log("execute initialization.");
+		logger.debug("execute initialization.");
 		this.watch();
 	}
 }
