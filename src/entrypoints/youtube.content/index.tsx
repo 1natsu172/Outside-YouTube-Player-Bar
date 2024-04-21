@@ -5,18 +5,10 @@ import {
 import { observeNodes } from "../../core/actions(oldservices)/observeNodes";
 // NOTE: viteがmanifestからのasset処理をせずJSからの参照がないとdistにコンパイルして吐いてくれないので、scssをsideEffect importしている
 // import '../styles/style.scss'
-import {
-	DEBUG_YT_EVENTS,
-	registerListeners,
-} from "../../core/actions(oldservices)/registerListeners";
-import { mountUI } from "./contentScriptEngine/feature/mount.js";
+import { registerListeners } from "../../core/actions(oldservices)/registerListeners";
+import { displayInfo } from "./Process/displayInfo.js";
+import { mountUI } from "./Process/mount.js";
 import { Executor } from "@/core/mains/executor.js";
-
-const IS_DEBUG_YT_EVENTS = false;
-
-if (IS_DEBUG_YT_EVENTS) {
-	DEBUG_YT_EVENTS();
-}
 
 const initExtension = () => {
 	const { isInitializeOnVideoPage } = initialize();
@@ -46,6 +38,7 @@ export default defineContentScript({
 	cssInjectionMode: "manual",
 	async main(ctx) {
 		logger.success("Content-Script execute");
+		displayInfo();
 		const executor = new Executor();
 		await Promise.all([mountUI(ctx), executor.initialization()]);
 	},

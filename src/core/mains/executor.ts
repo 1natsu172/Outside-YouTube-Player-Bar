@@ -1,9 +1,10 @@
-// Memo だいたいここでservice処理全般を実行する
+// TODO: だいたいここでservice処理全般を実行する
 import { subscribeKey, watch } from "valtio/utils";
 import {
 	operationState,
 	currentBehaviorState,
 } from "@/core/repositories/contentScript.repository.js";
+import { setupEventEffects } from "@/core/services/eventEffectServices/eventEffects.service.js";
 
 export class Executor {
 	watch() {
@@ -23,5 +24,10 @@ export class Executor {
 		}
 		logger.debug("execute initialization.");
 		this.watch();
+		await this.registerEffects();
+	}
+
+	async registerEffects() {
+		return setupEventEffects();
 	}
 }
