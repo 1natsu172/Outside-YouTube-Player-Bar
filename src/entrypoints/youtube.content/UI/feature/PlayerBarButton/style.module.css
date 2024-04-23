@@ -1,3 +1,9 @@
+/* custom element style */
+:host {
+  display: inline-block;
+}
+
 .player-bar-button {
   width: 20px;
 }
+

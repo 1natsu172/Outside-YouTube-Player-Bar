@@ -16,15 +16,15 @@ export const OypbButton = () => {
 	);
 
 	return (
-		<div>
-			<span className={style.tooltip}>{tooltipText}</span>
+		<div className={style.buttonWrapper}>
 			<button
 				type="button"
 				id="oypb-toggleExtension"
-				className="ytp-button oypb-toggleExtensionButton oypb-tooltip"
+				className={`ytp-button ${style.button}`}
 			>
 				<ToggleIcon />
 			</button>
+			<span className={style.tooltip}>{tooltipText}</span>
 		</div>
 	);
 };
