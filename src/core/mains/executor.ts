@@ -5,6 +5,7 @@ import {
 	currentBehaviorState,
 } from "@/core/repositories/contentScript.repository.js";
 import { setupEventEffects } from "@/core/services/eventEffectServices/eventEffects.service.js";
+import { applyCompatibilityStyles } from "../services/styleAffectServices/applyCompatibilityStyles.service.js";
 
 export class Executor {
 	watch() {
@@ -25,6 +26,7 @@ export class Executor {
 		logger.debug("execute initialization.");
 		this.watch();
 		await this.registerEffects();
+		await applyCompatibilityStyles();
 	}
 
 	async registerEffects() {

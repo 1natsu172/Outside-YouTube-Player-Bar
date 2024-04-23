@@ -32,10 +32,10 @@ export const YOUTUBE_MATCHES = ["https://*.youtube.com/*"];
 export default defineContentScript({
 	matches: YOUTUBE_MATCHES,
 	/**
-	 * Because CSS is injected or extracted based on the video page judgment results.
-	 * TODO: あとできめる
+	 * At here, focus on injecting UI components (shadow ui).
+	 * About the non-shadow page css that async manual injection.
 	 */
-	cssInjectionMode: "manual",
+	cssInjectionMode: "ui",
 	async main(ctx) {
 		logger.success("Content-Script execute");
 		displayInfo();

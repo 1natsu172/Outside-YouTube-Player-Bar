@@ -1,0 +1,16 @@
+/**
+ * for style compatibility
+ */
+
+@import "../_vars/_oypbVars.css";
+
+.oypb-enable.oypb-is-outside-playerBar {
+  .ytp-chrome-bottom {
+    background-color: var(--oypb-player-bar-color);
+    position: relative;
+  }
+
+  .ytp-tooltip {
+    transform: translate3d(0, calc(1 * var(--oypb-player-bar-height)), 0) !important
+  }
+}

@@ -2,7 +2,6 @@ import { elementQuery } from "@/core/mains/meta.js";
 import { waitElement } from "@1natsu/wait-element";
 import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
 import type { NonUndefined } from "@/utils/typeUtils.js";
-import { applyCompatibilityStyles } from "@/core/services/styleAffectServices/applyCompatibilityStyles.service.js";
 
 /**
  * @param InsertPosition that see reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement)
@@ -139,8 +138,7 @@ export const movePlayerBarElement = async (props: {
 	try {
 		await Promise.all([
 			movePlayerBar(playerMode, direction),
-			// TODO: 動的スタイル挿入
-			applyCompatibilityStyles(),
+			// TODO: classlistの変更の実行
 		]);
 	} catch (error) {}
 };
