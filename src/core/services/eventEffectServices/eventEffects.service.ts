@@ -1,5 +1,5 @@
 import { YT_EVENTS } from "./libs/YT_EVENTS.js";
-import { createEventEffect } from "./libs/eventEffect.js";
+import { type EventEffect, createEventEffect } from "./libs/eventEffect.js";
 
 const __DEBUG_YT_EVENTS = createEventEffect(YT_EVENTS, (key) => (event) => {
 	logger.withTag("YT_EVENT").log(key, event);
@@ -28,7 +28,7 @@ const fullscreenEffect = createEventEffect(
 
 ///////////////////////////////////////////
 export const setupEventEffects = async () => {
-	const effects = await Promise.all([
+	const effects = await Promise.all<EventEffect>([
 		pageNavigateEffect.observe(),
 		videoLoadedEffect.observe(),
 		fullscreenEffect.observe(),
@@ -36,4 +36,5 @@ export const setupEventEffects = async () => {
 			? [__DEBUG_YT_EVENTS.observe()]
 			: []),
 	]);
+	return effects;
 };

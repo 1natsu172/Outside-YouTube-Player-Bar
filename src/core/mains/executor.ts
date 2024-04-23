@@ -5,7 +5,9 @@ import {
 	currentBehaviorState,
 } from "@/core/repositories/contentScript.repository.js";
 import { setupEventEffects } from "@/core/services/eventEffectServices/eventEffects.service.js";
-import { applyCompatibilityStyles } from "../services/styleAffectServices/applyCompatibilityStyles.service.js";
+import { applyCompatibilityStyles } from "@/core/services/styleAffectServices/applyCompatibilityStyles.service.js";
+import { setupElementEffects } from "@/core/services/elementEffectServices/elementEffects.service.js";
+import type { EventEffect } from "../services/eventEffectServices/libs/eventEffect.js";
 
 export class Executor {
 	watch() {
@@ -25,11 +27,32 @@ export class Executor {
 		}
 		logger.debug("execute initialization.");
 		this.watch();
-		await this.registerEffects();
+		await this.setupEffects();
 		await applyCompatibilityStyles();
 	}
 
-	async registerEffects() {
-		return setupEventEffects();
+	public __registeredEffects: (
+		| EventEffect
+		| MutationObserver
+		| ResizeObserver
+	)[][] = [];
+	async setupEffects() {
+		const registeredEffects = await Promise.all([
+			setupEventEffects(),
+			setupElementEffects(),
+		]);
+		this.__registeredEffects = registeredEffects;
+	}
+
+	unregisterEffects() {
+		for (const __effects of this.__registeredEffects) {
+			for (const effect of __effects) {
+				if ("dispose" in effect) {
+					effect.dispose();
+				} else {
+					effect.disconnect();
+				}
+			}
+		}
 	}
 }

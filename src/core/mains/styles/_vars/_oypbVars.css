@@ -1,7 +1,7 @@
 /* TODO: varsの整理をする */
 
 :root {
-  /* TODO: 動的にするので消していいかも */
+  /* Initial value: change dynamic from JS */
   --oypb-player-bar-height: 51px;
 
   /* // size of fillthe left and right gap of player bar. */
