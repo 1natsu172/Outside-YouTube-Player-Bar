@@ -3,7 +3,7 @@ import { debounce } from "mabiki";
 import { displayPlayerBar } from "../controllers(deprecated)/displayPlayerBar.js";
 import { observeHeightOfPlayerBar } from "../controllers(deprecated)/observeHeightOfPlayerBar.js";
 import { observeIsVisiblePlayerBar } from "../controllers(deprecated)/observeIsVisiblePlayerBar";
-import { setPlayerBarHeight } from "../usecases/setCssVariables.js";
+import { setPlayerBarHeight } from "../usecases/cssVariables.usecase.js";
 
 export const observeNodes = async () => {
 	const player = await waitElement("#movie_player");

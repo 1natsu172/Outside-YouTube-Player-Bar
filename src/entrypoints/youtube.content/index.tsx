@@ -3,8 +3,6 @@ import {
 	initialize,
 } from "../../core/actions(oldservices)/inittialize";
 import { observeNodes } from "../../core/actions(oldservices)/observeNodes";
-// NOTE: viteがmanifestからのasset処理をせずJSからの参照がないとdistにコンパイルして吐いてくれないので、scssをsideEffect importしている
-// import '../styles/style.scss'
 import { registerListeners } from "../../core/actions(oldservices)/registerListeners";
 import { displayInfo } from "./Process/displayInfo.js";
 import { mountUI } from "./Process/mount.js";

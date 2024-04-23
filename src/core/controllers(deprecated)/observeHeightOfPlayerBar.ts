@@ -1,4 +1,4 @@
-import type { setPlayerBarHeight } from "../usecases/setCssVariables.js";
+import type { setPlayerBarHeight } from "../usecases/cssVariables.usecase.js";
 
 const observeConfig: ResizeObserverOptions = {
 	box: "border-box",
