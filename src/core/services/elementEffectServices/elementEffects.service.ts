@@ -15,7 +15,7 @@ const moviePlayerElementEffect = async () => {
 	const observer = new MutationObserver(
 		debounce(
 			(mutations) => {
-				logger.log("Effect of observing moviePlayerElement has occurred.");
+				logger.debug("moviePlayerElement", "Observing effect has occurred.");
 
 				for (const mutation of mutations) {
 					// const targetClassList = (mutation.target as HTMLElement).classList;
@@ -59,7 +59,7 @@ const playerBarElementEffect = async () => {
 	const observer = new ResizeObserver(
 		debounce(
 			(entries) => {
-				logger.log("Effect of observing playerBarElement has occurred.");
+				logger.debug("playerBarElement", "Observing effect has occurred.");
 				for (const entry of entries) {
 					const { borderBoxSize } = entry;
 

@@ -25,10 +25,12 @@ export class Executor {
 			logger.warn("oops, initialize seems to have been called multiple times!");
 			return;
 		}
-		logger.debug("execute initialization.");
+
+		logger.debug("initialization executing.");
 		this.watch();
 		await this.setupEffects();
 		await applyCompatibilityStyles();
+		logger.debug("initialization executed.");
 	}
 
 	public __registeredEffects: (
@@ -36,7 +38,8 @@ export class Executor {
 		| MutationObserver
 		| ResizeObserver
 	)[][] = [];
-	async setupEffects() {
+
+	private async setupEffects() {
 		const registeredEffects = await Promise.all([
 			setupEventEffects(),
 			setupElementEffects(),
@@ -44,7 +47,7 @@ export class Executor {
 		this.__registeredEffects = registeredEffects;
 	}
 
-	unregisterEffects() {
+	public unregisterEffects() {
 		for (const __effects of this.__registeredEffects) {
 			for (const effect of __effects) {
 				if ("dispose" in effect) {

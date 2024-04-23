@@ -3,7 +3,7 @@ import { PlayerBarButton } from "./feature/PlayerBarButton/index.js";
 
 export const App = () => {
 	useEffect(() => {
-		logger.log("I'm App");
+		logger.debug("I'm App");
 	}, []);
 
 	return <PlayerBarButton />;

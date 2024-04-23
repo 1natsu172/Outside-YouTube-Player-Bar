@@ -15,7 +15,7 @@ export const createBlockAutohideFn = (moviePlayer: Element) => {
 	const blockAutohide = () => {
 		mousedown();
 		mouseleave();
-		logger.log("blockAutoHide function fired.");
+		logger.debug("blockAutoHide function fired.");
 	};
 
 	return blockAutohide;
