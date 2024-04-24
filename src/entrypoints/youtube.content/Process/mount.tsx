@@ -14,11 +14,7 @@ export const mountUI = async (ctx: ContentScriptContext) => {
 		append: "first",
 		position: "inline",
 		onMount: (container) => {
-			// Container is a body, and React warns when creating a root on the body, so create a wrapper div
-			const app = document.createElement("div");
-			container.append(app);
-			// Create a root on the UI container and render a component
-			const root = ReactDOM.createRoot(app);
+			const root = ReactDOM.createRoot(container);
 			root.render(<App />);
 			return root;
 		},

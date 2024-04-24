@@ -1,12 +1,11 @@
 import { currentBehaviorState } from "@/core/repositories/contentScript.repository.js";
+import { useSnapshot } from "valtio";
 
-// TODO
-export const useExtenstionBehavior = () => {
-	currentBehaviorState.getValue();
+export const useBehaviorState = () => {
+	return useSnapshot(currentBehaviorState);
 };
 
-// todo
-export const useBarPosition = (): "outside" | "inside" => {
-	return "outside" as const;
-	// return extensionBehavior.getValue().barPosition
+export const useBarPosition = () => {
+	const state = useBehaviorState();
+	return state.positionPlayerBar;
 };

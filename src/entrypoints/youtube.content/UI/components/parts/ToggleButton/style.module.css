@@ -1,0 +1,52 @@
+.button {
+  /* resets */
+  background: transparent;
+  border: none;
+  padding: 0;
+  /* resets */
+
+  cursor: pointer;
+
+  >svg {
+    vertical-align: middle;
+    width: 18px;
+    height: 16px;
+  }
+
+  &[data-current-bar-position="outside"] {
+    >svg {
+      transform: rotateX(180deg);
+    }
+  }
+
+  &[data-video-player-mode="fullscreen"] {
+    >svg {
+      width: 25px;
+      height: 22.222px;
+    }
+  }
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  display: block;
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(28, 28, 28, 0.9);
+  border-radius: 4px;
+  padding: 5px 9px;
+  overflow: visible;
+  font-size: 118%;
+  font-weight: 500;
+  line-height: 15px;
+  white-space: nowrap;
+  transition: opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
+}
+
+.button:hover+.tooltip {
+  visibility: visible;
+  opacity: 1;
+}

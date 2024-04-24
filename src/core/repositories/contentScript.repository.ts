@@ -13,3 +13,9 @@ export const operationState = proxy<ContentScriptState["operation"]>({
 	uiMount: "unmounted",
 	doneInitialize: false,
 });
+
+export const siteMetaState = proxy<ContentScriptState["siteMeta"]>({
+	videoPlayerMode: "none",
+	colorTheme: "light",
+	siteVersion: undefined,
+});

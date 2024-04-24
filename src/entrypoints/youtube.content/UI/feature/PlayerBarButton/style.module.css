@@ -1,9 +1,18 @@
-/* custom element style */
-:host {
-  display: inline-block;
-}
-
 .player-bar-button {
-  width: 20px;
-}
+  opacity: .9;
+  width: 48px;
+  padding: 0 2px;
+  transition: opacity .1s cubic-bezier(.4, 0, 1, 1);
 
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &:hover {
+    opacity: 1;
+    transition: opacity .1s cubic-bezier(0, 0, .2, 1);
+  }
+}
