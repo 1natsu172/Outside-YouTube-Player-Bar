@@ -3,13 +3,16 @@ import { debounce } from "mabiki";
 import { setPlayerBarHeightVar } from "@/core/usecases/cssVariables.usecase.js";
 import { elementQuery } from "@/core/mains/meta.js";
 import { createBlockAutohideFn } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
+import { setVideoPlayerMode } from "@/core/usecases/siteMeta.usecase.js";
+import { elementAttributes } from "@/core/mains/meta.js";
+import { applyVideoPlayerModeToSiteMeta } from "../siteMetaServices/index.js";
 
 const moviePlayerElementEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER);
 	const blockAutoHide = createBlockAutohideFn(element);
 	const debounceBlockAutohide = debounce(blockAutoHide, 1000, {
-		trailing: true,
 		leading: true,
+		trailing: true,
 	});
 
 	const observer = new MutationObserver(
@@ -37,8 +40,8 @@ const moviePlayerElementEffect = async () => {
 			},
 			1000,
 			{
-				trailing: true,
 				leading: true,
+				trailing: true,
 			},
 		),
 	);
@@ -52,8 +55,8 @@ const moviePlayerElementEffect = async () => {
 const playerBarElementEffect = async () => {
 	const element = await waitElement(elementQuery.PLAYER_BAR);
 	// const debounceSetPlayerBarHeightVar = debounce(setPlayerBarHeightVar, 500, {
-	// 	trailing: true,
 	// 	leading: true,
+	// 	trailing: true,
 	// });
 
 	const observer = new ResizeObserver(
@@ -70,8 +73,8 @@ const playerBarElementEffect = async () => {
 			},
 			500,
 			{
-				trailing: true,
 				leading: true,
+				trailing: true,
 			},
 		),
 	);
@@ -81,11 +84,48 @@ const playerBarElementEffect = async () => {
 	return observer;
 };
 
+const pageManagerWatchFlexy_playerModeEffect = async () => {
+	const element = await waitElement(elementQuery.YTD_PAGE_MANAGER);
+	const debounceSetVideoPlayerMode = debounce(setVideoPlayerMode, 1000, {
+		leading: false,
+		trailing: true,
+	});
+
+	const observer = new MutationObserver(
+		debounce<MutationCallback>(
+			(_mutations) => {
+				logger.debug(
+					"pageManagerWatchFlexy_playerModeEffect",
+					"Observing effect has occurred.",
+					"This mutation fires when any of the attributeFilter changes",
+				);
+				const element = document.querySelector(elementQuery.YTD_PAGE_MANAGER);
+				if (element) {
+					requestIdleCallback(() => applyVideoPlayerModeToSiteMeta(element));
+				}
+			},
+			500,
+			{
+				leading: false,
+				trailing: true,
+			},
+		),
+	);
+	const { defaultView, theater, fullscreen } = elementAttributes.playerMode;
+	observer.observe(element, {
+		attributes: true, // check only attributes
+		attributeFilter: [defaultView, theater, fullscreen], // check only video modes attribute
+		attributeOldValue: true,
+	});
+	return observer;
+};
+
 ///////////////////////////////////////////
 export const setupElementEffects = async () => {
 	const effects = await Promise.all<ResizeObserver | MutationObserver>([
 		playerBarElementEffect(),
 		moviePlayerElementEffect(),
+		pageManagerWatchFlexy_playerModeEffect(),
 	]);
 	return effects;
 };

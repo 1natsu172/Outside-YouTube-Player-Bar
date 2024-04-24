@@ -1,8 +1,8 @@
 import { ToggleButton } from "../../components/parts/ToggleButton/index.js";
 import style from "./style.module.css";
 import { useMemo } from "react";
-import { useBarPosition } from "@/core/services/behaviorServices/index.service.js";
-import { useVideoPlayerMode } from "@/core/services/siteMetaServices/index.js";
+import { useBarPosition } from "@/core/presenters/statePresenter/behaviorState/index.js";
+import { useVideoPlayerMode } from "@/core/presenters/statePresenter/siteMetaState/index.js";
 
 export const PlayerBarButton = () => {
 	const currentBarPosition = useBarPosition();

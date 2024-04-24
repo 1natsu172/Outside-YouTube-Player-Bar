@@ -1,6 +1,6 @@
 import state from "../infrastructures/stateMap";
 import { injectButton, removeButton } from "../mains/extensionButton";
-import { conditionsCollection } from "../presenters/conditionsCollection";
+import { conditionsCollection } from "../presenters/____conditionsCollection";
 // import { displayPlayerBar } from './displayPlayerBar'
 import { hasInjected, isActive } from "../repositories/extensionState";
 // import { setHasInjected, setIsActive } from "../usecases/behavior.usecase";
