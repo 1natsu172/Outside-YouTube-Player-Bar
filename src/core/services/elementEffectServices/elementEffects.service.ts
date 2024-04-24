@@ -99,10 +99,9 @@ const pageManagerWatchFlexy_playerModeEffect = async () => {
 					"Observing effect has occurred.",
 					"This mutation fires when any of the attributeFilter changes",
 				);
-				const element = document.querySelector(elementQuery.YTD_PAGE_MANAGER);
-				if (element) {
-					requestIdleCallback(() => applyVideoPlayerModeToSiteMeta(element));
-				}
+				requestIdleCallback(() => {
+					applyVideoPlayerModeToSiteMeta();
+				});
 			},
 			500,
 			{

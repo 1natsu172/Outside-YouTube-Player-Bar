@@ -1,3 +1,4 @@
+import { applyVideoPlayerModeToSiteMeta } from "../siteMetaServices/index.js";
 import { YT_EVENTS } from "./libs/YT_EVENTS.js";
 import { type EventEffect, createEventEffect } from "./libs/eventEffect.js";
 
@@ -16,6 +17,10 @@ const videoLoadedEffect = createEventEffect(
 	["yt-page-data-updated"],
 	(_key) => (event) => {
 		logger.debug("video loaded", event);
+		/**
+		 * NOTE: a.k.a initialization detect mode
+		 */
+		applyVideoPlayerModeToSiteMeta();
 	},
 );
 
@@ -26,19 +31,22 @@ const videoLoadedEffect = createEventEffect(
  * https://developer.mozilla.org/ja/docs/Web/API/Document/fullscreenchange_event
  * https://developer.mozilla.org/ja/docs/Web/API/Document/fullscreenElement
  */
-// const fullscreenEffect = createEventEffect(
-// 	["fullscreenchange", "webkitfullscreenchange"],
-// 	(_key) => (event) => {
-// 		logger.debug("fullscreen event detected", event);
-//     if (document.fullscreenElement) {
-//       setVideoPlayerMode('fullscreen')
-//     } else {
-//       // ……
-//     }
-// 	},
-// );
+const fullscreenEffect = createEventEffect(
+	["fullscreenchange", "webkitfullscreenchange"],
+	(_key) => (event) => {
+		logger.debug("fullscreen event detected", event);
+		if (document.fullscreenElement) {
+			// setVideoPlayerMode('fullscreen')
+		} else {
+			// ……
+		}
+	},
+);
 
 ///////////////////////////////////////////
+/**
+ * setup event driven functions
+ */
 export const setupEventEffects = async () => {
 	const effects = await Promise.all<EventEffect>([
 		pageNavigateEffect.observe(),
