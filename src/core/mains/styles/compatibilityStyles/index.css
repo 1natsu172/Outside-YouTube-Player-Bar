@@ -4,7 +4,7 @@
 
 @import "../_vars/_oypbVars.css";
 
-.oypb-enable.oypb-is-outside-playerBar {
+[data-oypb-enable][data-oypb-is-outside] {
   .ytp-chrome-bottom {
     background-color: var(--oypb-player-bar-color);
     position: relative;

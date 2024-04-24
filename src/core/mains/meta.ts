@@ -17,4 +17,8 @@ export const elementAttributes = {
 		theater: "theater",
 		fullscreen: "fullscreen",
 	},
+	oypb: {
+		IS_OUTSIDE: "data-oypb-is-outside",
+		ENABLE: "data-oypb-enable",
+	},
 } as const;

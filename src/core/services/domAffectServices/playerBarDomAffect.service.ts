@@ -61,6 +61,9 @@ function __resolveAdjacentElement<Q extends string | undefined>(
 	}
 }
 
+/**
+ * @description Focus on moving Elements. This function is only called on request.
+ */
 export const movePlayerBarElement = async (props: {
 	direction: ContentScriptState["currentBehavior"]["positionPlayerBar"];
 	playerMode: ContentScriptState["siteMeta"]["videoPlayerMode"];
@@ -126,7 +129,7 @@ export const movePlayerBarElement = async (props: {
 		},
 	} as const satisfies ElementQueries;
 
-	const movePlayerBar = async (
+	const execMove = async (
 		playerMode: (typeof props)["playerMode"],
 		direction: (typeof props)["direction"],
 	) => {
@@ -135,10 +138,6 @@ export const movePlayerBarElement = async (props: {
 		return await exec();
 	};
 
-	try {
-		await Promise.all([
-			movePlayerBar(playerMode, direction),
-			// TODO: classlistの変更の実行
-		]);
-	} catch (error) {}
+	// TODO: valtioの副作用watchの実装からこの関数を呼ぶ。そのとき一緒にdomaffectのstyleアタッチも実装する
+	await execMove(playerMode, direction);
 };

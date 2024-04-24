@@ -4,7 +4,7 @@ import { conditionsCollection } from "../presenters/____conditionsCollection";
 // import { displayPlayerBar } from './displayPlayerBar'
 import { hasInjected, isActive } from "../repositories/extensionState";
 // import { setHasInjected, setIsActive } from "../usecases/behavior.usecase";
-import { interventionDOM } from "../usecases/interventionDOM";
+import { interventionDOM } from "../usecases/__interventionDOM";
 
 class ExtensionSwitcher {
 	active = async (): Promise<void> => {

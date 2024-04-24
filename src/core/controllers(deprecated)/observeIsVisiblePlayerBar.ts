@@ -2,7 +2,7 @@ import {
 	isActive,
 	isAlwaysDisplayPlayerBar,
 } from "../repositories/extensionState";
-import { interventionDOM } from "../usecases/interventionDOM";
+import { interventionDOM } from "../usecases/__interventionDOM";
 
 const observeConfig: MutationObserverInit = {
 	attributes: true, // check only attributes

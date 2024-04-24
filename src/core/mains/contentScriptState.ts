@@ -11,7 +11,7 @@ type OperationState = {
 	uiMount: "mounted" | "unmounted" | "failed";
 	scriptStatus: "standByVideoPage";
 	doneInitialize: boolean;
-	// TODO: memo operarioのmutexをするあるいはOperationのコレクションを抱えて逐次処理するための箱が必要になるかもしれない・あとで決める
+	// TODO: operarioのmutexをするあるいはOperationのコレクションを抱えて逐次処理するための箱が必要になるかもしれない・あとで決める
 };
 
 /**

@@ -1,5 +1,5 @@
 import { extensionSwitcher } from "../controllers(deprecated)/extensionSwicher";
-import { interventionDOM } from "../usecases/interventionDOM";
+import { interventionDOM } from "../usecases/__interventionDOM";
 
 const YT_EVENTS = [
 	"yt-request-panel-mode-change",
