@@ -1,24 +1,15 @@
-import { elementAttributes } from "@/core/mains/meta.js";
+import type { elementAttributes } from "@/core/mains/meta.js";
+import type { NestedValueOf } from "@/utils/typeUtils.js";
 
-// TODO:
-export const affectEnableAttr = (remove = false) => {
-	if (remove) {
-		document.documentElement.removeAttribute(elementAttributes.oypb.ENABLE);
-	} else {
-		document.documentElement.setAttribute(
-			elementAttributes.oypb.ENABLE,
-			"true",
-		);
-	}
-};
-
-export const affectIsOutsideAttr = (remove = false) => {
-	if (remove) {
-		document.documentElement.removeAttribute(elementAttributes.oypb.IS_OUTSIDE);
-	} else {
-		document.documentElement.setAttribute(
-			elementAttributes.oypb.IS_OUTSIDE,
-			"true",
-		);
-	}
+export const documentElementAttr = (
+	qualifiedName: NestedValueOf<typeof elementAttributes>,
+) => {
+	return {
+		set(value?: string) {
+			document.documentElement.setAttribute(qualifiedName, value ?? "");
+		},
+		remove() {
+			document.documentElement.removeAttribute(qualifiedName);
+		},
+	};
 };
