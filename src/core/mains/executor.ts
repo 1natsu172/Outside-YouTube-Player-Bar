@@ -6,16 +6,14 @@ import {
 import { setupEventEffects } from "@/core/services/eventEffectServices/eventEffects.service.js";
 import { applyCompatibilityStyles } from "@/core/services/styleAffectServices/applyCompatibilityStyles.service.js";
 import { setupElementEffects } from "@/core/services/elementEffectServices/elementEffects.service.js";
-import type { EventEffect } from "../services/eventEffectServices/libs/eventEffect.js";
+import type { EventEffect } from "@/core/services/eventEffectServices/libs/eventEffect.js";
+import { StateDriven } from "@/core/mains/stateDriven/index.js";
 
 export class Executor {
-	watch() {
-		watch((get) => {
-			const isDoneInit = get(operationState).doneInitialize;
-			logger.debug("called executor's watch", {
-				isDoneInit,
-			});
-		});
+	private stateDriven: StateDriven;
+
+	constructor() {
+		this.stateDriven = new StateDriven();
 	}
 
 	async initialization() {
@@ -26,8 +24,8 @@ export class Executor {
 		}
 
 		logger.debug("initialization executing.");
-		this.watch();
 		await this.setupEffects();
+		await this.stateDriven.initialization();
 		await applyCompatibilityStyles();
 		logger.debug("initialization executed.");
 	}
