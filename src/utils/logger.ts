@@ -11,6 +11,8 @@ type LoggerSettings = {
 };
 
 export function createLogger({ isDebug, tag }: LoggerSettings) {
+	const IS_RUN_ON_TESTING = process.env.RUN_ON_TESTING;
+
 	const _logger = consola.withTag(tag || extensionNameSymbol);
 
 	if (isDebug) {
@@ -20,11 +22,13 @@ export function createLogger({ isDebug, tag }: LoggerSettings) {
 		 * https://i.gyazo.com/cd2802a833f0817f52a0fabe2020c9d7.png
 		 * */
 		_logger.level = LogLevels.debug;
-		_logger.info("LogLevels of logger =>", _logger.level);
 	} else {
 		_logger.level = LogLevels.silent;
 	}
 
+	if (IS_RUN_ON_TESTING !== "true") {
+		_logger.info("LogLevels of logger =>", _logger.level);
+	}
 	return _logger;
 }
 

@@ -12,6 +12,9 @@ export default defineConfig({
 	test: {
 		mockReset: true,
 		restoreMocks: true,
+		env: {
+			RUN_ON_TESTING: "true",
+		},
 	},
 	// This is the line that matters!
 	plugins: [WxtVitest(), react()],

@@ -1,8 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { debugMode } from "./options.repository.js";
 
-console.log(import.meta.env.PROD, process.env);
-
 describe("repository", () => {
 	test("should defined storage item with defaultValue", async () => {
 		await expect(debugMode.getValue()).resolves.toBeTypeOf("boolean");
