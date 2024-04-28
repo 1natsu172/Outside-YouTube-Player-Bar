@@ -12,3 +12,7 @@ export const setAlwaysDisplayPlayerBar = (
 ) => {
 	currentBehaviorState.alwaysDisplayPlayerBar = is;
 };
+
+export const __forceReaction__ = () => {
+	++currentBehaviorState.__forForceReaction__;
+};

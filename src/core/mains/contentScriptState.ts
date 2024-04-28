@@ -11,7 +11,8 @@ type OperationState = {
 	uiMount: "mounted" | "unmounted" | "failed";
 	scriptStatus: "standByVideoPage";
 	doneInitialize: boolean;
-	// TODO: operarioのmutexをするあるいはOperationのコレクションを抱えて逐次処理するための箱が必要になるかもしれない・あとで決める
+	oypbEnable: boolean | undefined;
+	// TODO: operationのmutexをするあるいはOperationのコレクションを抱えて逐次処理するための箱が必要になるかもしれない・あとで決める
 };
 
 /**
@@ -25,7 +26,9 @@ export type ContentScriptState = {
 	 * @todo
 	 * When the player mode changes, user can set the option to force the behavior of the default option.
 	 */
-	currentBehavior: ExtensionBehavior;
+	currentBehavior: ExtensionBehavior & {
+		__forForceReaction__: number;
+	};
 	// TODO: storageの状態をcontent-script内にreactiveに持ち込む必要がどうしても出たらUserOptionをメモリストア上に同期させる必要がある 普通はstorageにgetValueすればいいはずだが…。
 	// userOptions: UserOptions;
 	operation: OperationState;

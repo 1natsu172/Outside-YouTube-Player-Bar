@@ -7,7 +7,7 @@ import {
 import {
 	// setHasInjected,
 	// setIsAlwaysDisplayPlayerBar,
-} from "../usecases/behavior.usecase.js";
+} from "../usecases/behaviorState.usecase.js";
 
 export function initialize() {
 	console.log("EXTENSION INITIALIZING...");

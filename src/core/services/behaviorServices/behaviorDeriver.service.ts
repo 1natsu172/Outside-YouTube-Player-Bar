@@ -1,5 +1,12 @@
-import { setPositionPlayerBar } from "@/core/usecases/behavior.usecase.js";
-import { defaultViewBehaviorOption } from "@/core/repositories/options.repository.js";
+import {
+	__forceReaction__,
+	setPositionPlayerBar,
+} from "@/core/usecases/behaviorState.usecase.js";
+import {
+	defaultViewBehaviorOption,
+	fullscreenBehaviorOption,
+	theaterModeBehaviorOption,
+} from "@/core/repositories/options.repository.js";
 import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
 
 export const derivePositionPlayerBar = async ({
@@ -14,9 +21,9 @@ export const derivePositionPlayerBar = async ({
 			case "defaultView":
 				return await defaultViewBehaviorOption.getValue();
 			case "theaterMode":
-				return await defaultViewBehaviorOption.getValue();
+				return await theaterModeBehaviorOption.getValue();
 			case "fullscreen":
-				return await defaultViewBehaviorOption.getValue();
+				return await fullscreenBehaviorOption.getValue();
 			default: {
 				const err = ["This log that should never be reached!", videoPlayerMode];
 				logger.warn(err);
@@ -27,4 +34,6 @@ export const derivePositionPlayerBar = async ({
 
 	const userOption = await resolveUserOption();
 	setPositionPlayerBar(userOption.positionPlayerBar);
+	// TODO: 誤作動起こすかもしれないので本当にここれやるか見直す
+	__forceReaction__();
 };

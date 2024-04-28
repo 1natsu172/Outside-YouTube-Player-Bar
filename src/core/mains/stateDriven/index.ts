@@ -6,7 +6,7 @@ import {
 import { snapshot, subscribe } from "valtio";
 // import {watch} from 'valtio/utils'
 import { currentBehaviorDriven } from "./behaviorStateDriven.js";
-// import {} from './operationStateDriven.js'
+import { oypbEnableDriven } from "./operationStateDriven.js";
 import { videoPlayerModeDriven } from "./siteMetaStateDriven.js";
 
 export class StateDriven {
@@ -15,6 +15,7 @@ export class StateDriven {
 		this.debugState();
 		currentBehaviorDriven();
 		videoPlayerModeDriven();
+		oypbEnableDriven();
 	}
 
 	debugState() {

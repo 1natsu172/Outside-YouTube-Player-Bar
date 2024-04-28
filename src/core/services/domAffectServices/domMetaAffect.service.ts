@@ -1,4 +1,5 @@
-import type { elementAttributes } from "@/core/mains/meta.js";
+import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
+import { elementAttributes } from "@/core/mains/meta.js";
 import type { NestedValueOf } from "@/utils/typeUtils.js";
 
 export const documentElementAttr = (
@@ -12,4 +13,15 @@ export const documentElementAttr = (
 			document.documentElement.removeAttribute(qualifiedName);
 		},
 	};
+};
+
+export const domAffectOypbEnable = (
+	enable: ContentScriptState["operation"]["oypbEnable"],
+) => {
+	const attr = documentElementAttr(elementAttributes.oypb.ENABLE);
+	if (enable) {
+		attr.set();
+	} else {
+		attr.remove();
+	}
 };

@@ -18,6 +18,7 @@ type ElementQueryMap<Q extends string | undefined> = {
 	playerBar: string;
 	parentElement: InsertInfo<Q>;
 	siblingElement: InsertInfo<Q>;
+	needCompatParentElement: boolean;
 };
 type ElementQueries<Q extends string | undefined = string | undefined> = Record<
 	ContentScriptState["siteMeta"]["videoPlayerMode"],
@@ -36,22 +37,60 @@ function __resolveAdjacentElement<Q extends string | undefined>(
 	const __createInsertElementFn = (
 		barQuery: string,
 		insertInfo: InsertInfo<string>,
+		needCompatParentElement: boolean,
 	): (() => Promise<Element | null>) => {
 		return async () => {
+			logger.debug("__resolveAdjacentElement", {
+				insertInfo,
+				needCompatParentElement,
+			});
 			const [targetQuery, position] = insertInfo;
+			const { COMPAT_ELEMENT_PREFIX } = elementAttributes.oypb;
+			const { PLAYER_BAR_PARENT_CLASSNAME } = elementAttributes.COMPAT_ELEMENT;
+			const COMPAT_ELEMENT_DATA_VALUE = "playerBarParentForStyle";
+			const existCompatParent = document.querySelector(
+				`[${COMPAT_ELEMENT_PREFIX}=${COMPAT_ELEMENT_DATA_VALUE}]`,
+			);
+
+			const pureBarEl = await waitElement(barQuery);
+			let barEl: Element = pureBarEl;
+			if (needCompatParentElement) {
+				// TODO: たぶんここplayermode切り替えたらvhrome-bottomごと消してしまう気がする
+				if (existCompatParent) {
+					existCompatParent.remove();
+				}
+				const compatParent = document.createElement("div");
+				compatParent.setAttribute(
+					COMPAT_ELEMENT_PREFIX,
+					COMPAT_ELEMENT_DATA_VALUE,
+				);
+
+				compatParent.className = PLAYER_BAR_PARENT_CLASSNAME; // this ytp style is exist at origin player contaier.
+				compatParent.appendChild(pureBarEl);
+				barEl = compatParent;
+			}
+
 			const targetEl = await waitElement(targetQuery);
-			const barEl = await waitElement(barQuery);
 			return targetEl.insertAdjacentElement(position, barEl);
 		};
 	};
 
-	const { playerBar, parentElement, siblingElement } = elementQueryMap;
+	const { playerBar, parentElement, siblingElement, needCompatParentElement } =
+		elementQueryMap;
 	switch (true) {
 		case !!parentElement[0]: {
-			return __createInsertElementFn(playerBar, parentElement);
+			return __createInsertElementFn(
+				playerBar,
+				parentElement,
+				needCompatParentElement,
+			);
 		}
 		case !!siblingElement[0]: {
-			return __createInsertElementFn(playerBar, siblingElement);
+			return __createInsertElementFn(
+				playerBar,
+				siblingElement,
+				needCompatParentElement,
+			);
 		}
 		default: {
 			return async () => {
@@ -79,11 +118,13 @@ export const movePlayerBarElement = async (props: {
 					`${elementQuery.MOVIE_PLAYER} > div.ytp-gradient-bottom`,
 					"afterend",
 				],
+				needCompatParentElement: false,
 			},
 			outside: {
 				playerBar: elementQuery.PLAYER_BAR,
 				parentElement: ["#player.ytd-watch-flexy", "beforeend"],
 				siblingElement: [undefined, undefined],
+				needCompatParentElement: true,
 			},
 		},
 		theaterMode: {
@@ -94,11 +135,13 @@ export const movePlayerBarElement = async (props: {
 					`${elementQuery.MOVIE_PLAYER} > div.ytp-gradient-bottom`,
 					"afterend",
 				],
+				needCompatParentElement: false,
 			},
 			outside: {
 				playerBar: elementQuery.PLAYER_BAR,
 				parentElement: [undefined, undefined],
 				siblingElement: ["#full-bleed-container.ytd-watch-flexy", "afterend"], // theater container is island element, so must move to sibling
+				needCompatParentElement: true,
 			},
 		},
 		fullscreen: {
@@ -109,11 +152,13 @@ export const movePlayerBarElement = async (props: {
 					`${elementQuery.MOVIE_PLAYER} > div.ytp-gradient-bottom`,
 					"afterend",
 				],
+				needCompatParentElement: false,
 			},
 			outside: {
 				playerBar: elementQuery.PLAYER_BAR,
 				parentElement: [undefined, undefined],
 				siblingElement: ["#full-bleed-container.ytd-watch-flexy", "afterend"], // theater container is island element, so must move to sibling
+				needCompatParentElement: true,
 			},
 		},
 		none: {
@@ -121,11 +166,13 @@ export const movePlayerBarElement = async (props: {
 				playerBar: "",
 				parentElement: [undefined, undefined],
 				siblingElement: [undefined, undefined],
+				needCompatParentElement: false,
 			},
 			outside: {
 				playerBar: "",
 				parentElement: [undefined, undefined],
 				siblingElement: [undefined, undefined],
+				needCompatParentElement: false,
 			},
 		},
 	} as const satisfies ElementQueries;

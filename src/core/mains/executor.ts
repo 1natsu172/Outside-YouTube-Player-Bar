@@ -1,10 +1,10 @@
-import { subscribeKey, watch } from "valtio/utils";
-import {
-	operationState,
-	currentBehaviorState,
-} from "@/core/repositories/contentScript.repository.js";
+import { operationState } from "@/core/repositories/contentScript.repository.js";
 import { setupEventEffects } from "@/core/services/eventEffectServices/eventEffects.service.js";
 import { applyCompatibilityStyles } from "@/core/services/styleAffectServices/applyCompatibilityStyles.service.js";
+import {
+	oypbEnableOperation,
+	doneInitializeOperation,
+} from "@/core/services/operationServices/index.js";
 import { setupElementEffects } from "@/core/services/elementEffectServices/elementEffects.service.js";
 import type { EventEffect } from "@/core/services/eventEffectServices/libs/eventEffect.js";
 import { StateDriven } from "@/core/mains/stateDriven/index.js";
@@ -27,6 +27,8 @@ export class Executor {
 		await this.setupEffects();
 		await applyCompatibilityStyles();
 		await this.stateDriven.setup();
+		oypbEnableOperation(true);
+		doneInitializeOperation();
 		logger.debug("initialization executed.");
 	}
 

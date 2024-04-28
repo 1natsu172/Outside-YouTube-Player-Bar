@@ -11,12 +11,13 @@ export const currentBehaviorDriven = () => {
 		const state = get(currentBehaviorState);
 		const playerMode = snapshot(siteMetaState).videoPlayerMode;
 
+		logger.info("currentBehaviorState reacted", state, playerMode);
+
 		if (playerMode !== "none") {
 			await movePlayerBarElement({
 				playerMode,
 				direction: state.positionPlayerBar,
 			});
 		}
-		logger.info("currentBehaviorState reacted", state);
 	});
 };
