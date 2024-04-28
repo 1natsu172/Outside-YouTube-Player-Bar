@@ -1,7 +1,7 @@
 // @vitest-environment happy-dom
 
 import { describe, test, expect, afterEach, vi } from "vitest";
-import { documentElementAttr } from "./metaAffect.service.js";
+import { documentElementAttr } from "./domMetaAffect.service.js";
 import { elementAttributes } from "@/core/mains/meta.js";
 
 const { oypb } = elementAttributes;

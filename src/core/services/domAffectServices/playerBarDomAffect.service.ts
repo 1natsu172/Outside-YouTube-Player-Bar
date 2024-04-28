@@ -1,7 +1,8 @@
-import { elementQuery } from "@/core/mains/meta.js";
+import { elementAttributes, elementQuery } from "@/core/mains/meta.js";
 import { waitElement } from "@1natsu/wait-element";
 import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
 import type { NonUndefined } from "@/utils/typeUtils.js";
+import { documentElementAttr } from "./domMetaAffect.service.js";
 
 /**
  * @param InsertPosition that see reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement)
@@ -138,6 +139,8 @@ export const movePlayerBarElement = async (props: {
 		return await exec();
 	};
 
-	// TODO: valtioの副作用watchの実装からこの関数を呼ぶ。そのとき一緒にdomaffectのstyleアタッチも実装する
-	await execMove(playerMode, direction);
+	const execAttr = documentElementAttr(elementAttributes.oypb.IS_OUTSIDE);
+
+	const movedElement = await execMove(playerMode, direction);
+	movedElement && direction === "outside" ? execAttr.set() : execAttr.remove();
 };

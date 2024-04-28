@@ -17,7 +17,7 @@ export class Executor {
 	}
 
 	async initialization() {
-		// todo
+		// todo operationstate
 		if (operationState.doneInitialize) {
 			logger.warn("oops, initialize seems to have been called multiple times!");
 			return;
@@ -25,8 +25,8 @@ export class Executor {
 
 		logger.debug("initialization executing.");
 		await this.setupEffects();
-		await this.stateDriven.initialization();
 		await applyCompatibilityStyles();
+		await this.stateDriven.setup();
 		logger.debug("initialization executed.");
 	}
 

@@ -11,7 +11,7 @@ type LoggerSettings = {
 };
 
 export function createLogger({ isDebug, tag }: LoggerSettings) {
-	const IS_RUN_ON_TESTING = process.env.RUN_ON_TESTING;
+	const IS_RUN_ON_TESTING = import.meta.env.RUN_ON_TESTING;
 
 	const _logger = consola.withTag(tag || extensionNameSymbol);
 

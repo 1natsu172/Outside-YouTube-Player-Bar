@@ -1,42 +1,36 @@
 import {
 	siteMetaState,
 	operationState,
+	currentBehaviorState,
 } from "@/core/repositories/contentScript.repository.js";
 import { snapshot, subscribe } from "valtio";
-import { watch, subscribeKey } from "valtio/utils";
+// import {watch} from 'valtio/utils'
+import { currentBehaviorDriven } from "./behaviorStateDriven.js";
+// import {} from './operationStateDriven.js'
+import { videoPlayerModeDriven } from "./siteMetaStateDriven.js";
 
 export class StateDriven {
-	async initialization() {
+	async setup() {
 		logger.debug("StateDriven initialization.");
-		if (import.meta.env.VITE_DEBUG_STATE_LOG === "true") {
-			this.debugState();
-		}
+		this.debugState();
+		currentBehaviorDriven();
+		videoPlayerModeDriven();
 	}
 
 	debugState() {
-		subscribe(siteMetaState, (op) => {
-			const s = snapshot(siteMetaState);
-			logger.debug("siteMetaState is mutated", s, op);
-		});
-	}
-
-	setup() {
-		this.videoModeDriven();
-	}
-
-	videoModeDriven() {
-		subscribeKey(siteMetaState, "videoPlayerMode", (value) => {
-			logger.info("videoModeなう", value);
-			// TODO: Behaviorを変更する
-			// repoの段階でbehaviorをderive で 追従させる？？
-		});
-	}
-
-	metaStateDriven() {
-		watch((get) => {
-			logger.fatal("not impl");
-			// const metaState = get(siteMetaState);
-			// metaState.videoPlayerMode
-		});
+		if (import.meta.env.VITE_DEBUG_STATE_LOG === "true") {
+			subscribe(siteMetaState, (op) => {
+				const s = snapshot(siteMetaState);
+				logger.debug("siteMetaState is mutated", s, op);
+			});
+			subscribe(currentBehaviorState, (op) => {
+				const s = snapshot(currentBehaviorState);
+				logger.debug("currentBehaviorState is mutated", s, op);
+			});
+			subscribe(operationState, (op) => {
+				const s = snapshot(operationState);
+				logger.debug("operationState is mutated", s, op);
+			});
+		}
 	}
 }
