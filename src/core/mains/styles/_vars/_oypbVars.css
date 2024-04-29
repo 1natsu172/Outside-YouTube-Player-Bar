@@ -1,22 +1,16 @@
-/* TODO: varsの整理をする */
-
 :root {
   /* Initial value: change dynamic from JS */
   --oypb-player-bar-height: 51px;
 
-  /* // size of fillthe left and right gap of player bar. */
-  /* TODO: 動的にできない？ */
-  --oypb-player-bar-fill-lr-gap-size: 12px;
-
   /* // player bar color of Default theme. */
   --oypb-player-bar-color: rgb(15, 15, 15);
 
+  /* // size of fillthe left and right gap of player bar. */
+  --oypb-player-bar-fill-lr-gap-size: 12px;
+
   /* // when fullscreen mode */
-  .oypb-is-fullscreen {
-    /* TODO: 動的にできない？ */
+  [fullscreen] {
     --oypb-player-bar-fill-lr-gap-size: 24px;
-    /* // fix for: displaying the title,watch later, share icon - https://user-images.githubusercontent.com/32516842/180366697-195889de-cb42-4e28-9c34-7151589e8122.png */
-    --oypb-player-ytp-chrome-top: 63px;
   }
 
   /* // when dark theme */

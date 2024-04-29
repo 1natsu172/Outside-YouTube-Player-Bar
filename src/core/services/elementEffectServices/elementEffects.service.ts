@@ -59,7 +59,7 @@ const playerBarElementEffect = async () => {
 	// });
 
 	const observer = new ResizeObserver(
-		debounce(
+		debounce<ResizeObserverCallback>(
 			(entries) => {
 				logger.debug("playerBarElement", "Observing effect has occurred.");
 				for (const entry of entries) {
