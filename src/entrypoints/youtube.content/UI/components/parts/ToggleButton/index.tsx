@@ -8,10 +8,11 @@ type P = {
 	currentBarPosition: ExtensionBehavior["positionPlayerBar"];
 	videoPlayerMode: SiteMetaState["videoPlayerState"]["mode"];
 	tooltip: string;
+	onToggle: () => void;
 };
 
 export const ToggleButton = (props: P) => {
-	const { currentBarPosition, videoPlayerMode, tooltip } = props;
+	const { currentBarPosition, videoPlayerMode, tooltip, onToggle } = props;
 
 	return (
 		<>
@@ -21,6 +22,7 @@ export const ToggleButton = (props: P) => {
 				className={`${style.button}`}
 				data-current-bar-position={currentBarPosition}
 				data-video-player-mode={videoPlayerMode}
+				onClick={onToggle}
 			>
 				<ToggleIcon />
 			</button>

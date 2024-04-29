@@ -13,4 +13,41 @@
   .ytp-tooltip {
     transform: translate3d(0, calc(1 * var(--oypb-player-bar-height)), 0) !important
   }
+
+  /* Fill the both sides of player bar */
+  .ytp-left-controls::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: var(--oypb-player-bar-fill-lr-gap-size);
+    position: absolute;
+    top: 0;
+    background-color: var(--oypb-player-bar-color);
+    left: calc(-1 * var(--oypb-player-bar-fill-lr-gap-size));
+  }
+
+  .ytp-right-controls::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: var(--oypb-player-bar-fill-lr-gap-size);
+    position: absolute;
+    top: 0;
+    background-color: var(--oypb-player-bar-color);
+    right: calc(-1 * var(--oypb-player-bar-fill-lr-gap-size));
+
+  }
+
+  /* compat hack the rounded style */
+  [rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
+    border-radius: 12px 12px 0 0;
+  }
+
+  [rounded-player-large][default-layout] .ytp-left-controls::before {
+    border-radius: 0 0 0 12px;
+  }
+
+  [rounded-player-large][default-layout] .ytp-right-controls::after {
+    border-radius: 0 0 12px 0;
+  }
 }
