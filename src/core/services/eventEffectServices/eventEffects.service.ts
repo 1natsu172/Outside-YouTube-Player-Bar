@@ -10,6 +10,7 @@ const pageNavigateEffect = createEventEffect(
 	["yt-navigate-finish"],
 	(_key) => (event) => {
 		logger.debug("page navigated", event);
+		// TODO: navigated operation実装する
 	},
 );
 
@@ -20,6 +21,7 @@ const videoLoadedEffect = createEventEffect(
 		/**
 		 * NOTE: a.k.a initialization detect mode
 		 */
+		// TODO: operationStateをカッチリさせてむこうのeffectに寄せる
 		applyVideoPlayerModeToSiteMeta();
 	},
 );

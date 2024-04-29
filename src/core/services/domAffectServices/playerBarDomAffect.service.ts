@@ -1,6 +1,9 @@
 import { elementAttributes, elementQuery } from "@/core/mains/meta.js";
 import { waitElement } from "@1natsu/wait-element";
-import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
+import type {
+	BehaviorState,
+	SiteMetaState,
+} from "@/core/mains/contentScriptState.js";
 import type { NonUndefined } from "@/utils/typeUtils.js";
 import { documentElementAttr } from "./domMetaAffect.service.js";
 
@@ -21,7 +24,7 @@ type ElementQueryMap<Q extends string | undefined> = {
 	needCompatParentElement: boolean;
 };
 type ElementQueries<Q extends string | undefined = string | undefined> = Record<
-	ContentScriptState["siteMeta"]["videoPlayerMode"],
+	SiteMetaState["videoPlayerState"]["mode"],
 	{
 		/**
 		 * "inside" means "origin"
@@ -31,7 +34,7 @@ type ElementQueries<Q extends string | undefined = string | undefined> = Record<
 	}
 >;
 
-function __resolveAdjacentElement<Q extends string | undefined>(
+function __resolveMoveLogic<Q extends string | undefined>(
 	elementQueryMap: ElementQueryMap<Q>,
 ): () => Promise<Element | null> {
 	const __createInsertElementFn = (
@@ -40,10 +43,6 @@ function __resolveAdjacentElement<Q extends string | undefined>(
 		needCompatParentElement: boolean,
 	): (() => Promise<Element | null>) => {
 		return async () => {
-			logger.debug("__resolveAdjacentElement", {
-				insertInfo,
-				needCompatParentElement,
-			});
 			const [targetQuery, position] = insertInfo;
 			const { COMPAT_ELEMENT_PREFIX } = elementAttributes.oypb;
 			const { PLAYER_BAR_PARENT_CLASSNAME } = elementAttributes.COMPAT_ELEMENT;
@@ -71,7 +70,15 @@ function __resolveAdjacentElement<Q extends string | undefined>(
 			}
 
 			const targetEl = await waitElement(targetQuery);
-			return targetEl.insertAdjacentElement(position, barEl);
+			const result = targetEl.insertAdjacentElement(position, barEl);
+			logger.debug("moved playerBar element.", {
+				insertInfo,
+				needCompatParentElement,
+				targetEl,
+				barEl,
+				result,
+			});
+			return result;
 		};
 	};
 
@@ -105,8 +112,8 @@ function __resolveAdjacentElement<Q extends string | undefined>(
  * @description Focus on moving Elements. This function is only called on request.
  */
 export const movePlayerBarElement = async (props: {
-	direction: ContentScriptState["currentBehavior"]["positionPlayerBar"];
-	playerMode: ContentScriptState["siteMeta"]["videoPlayerMode"];
+	direction: BehaviorState["positionPlayerBar"];
+	playerMode: SiteMetaState["videoPlayerState"]["mode"];
 }) => {
 	const { direction, playerMode } = props;
 	const query = {
@@ -182,7 +189,7 @@ export const movePlayerBarElement = async (props: {
 		direction: (typeof props)["direction"],
 	) => {
 		const queryMap = query[playerMode][direction];
-		const exec = __resolveAdjacentElement(queryMap);
+		const exec = __resolveMoveLogic(queryMap);
 		return await exec();
 	};
 

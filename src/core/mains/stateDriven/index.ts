@@ -1,21 +1,23 @@
 import {
 	siteMetaState,
 	operationState,
-	currentBehaviorState,
+	behaviorState,
 } from "@/core/repositories/contentScript.repository.js";
 import { snapshot, subscribe } from "valtio";
 // import {watch} from 'valtio/utils'
-import { currentBehaviorDriven } from "./behaviorStateDriven.js";
+import { behaviorDriven } from "./behaviorStateDriven.js";
 import { oypbEnableDriven } from "./operationStateDriven.js";
 import { videoPlayerModeDriven } from "./siteMetaStateDriven.js";
+import { reflectFunctionality } from "./__reflectFunctionality__.js";
 
 export class StateDriven {
 	async setup() {
 		logger.debug("StateDriven initialization.");
 		this.debugState();
-		currentBehaviorDriven();
+		behaviorDriven();
 		videoPlayerModeDriven();
 		oypbEnableDriven();
+		reflectFunctionality();
 	}
 
 	debugState() {
@@ -24,9 +26,9 @@ export class StateDriven {
 				const s = snapshot(siteMetaState);
 				logger.debug("siteMetaState is mutated", s, op);
 			});
-			subscribe(currentBehaviorState, (op) => {
-				const s = snapshot(currentBehaviorState);
-				logger.debug("currentBehaviorState is mutated", s, op);
+			subscribe(behaviorState, (op) => {
+				const s = snapshot(behaviorState);
+				logger.debug("behaviorState is mutated", s, op);
 			});
 			subscribe(operationState, (op) => {
 				const s = snapshot(operationState);

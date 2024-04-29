@@ -6,6 +6,10 @@ import { expect } from "vitest";
 const a = proxy({
 	aoo: 1,
 	aoo2: 2,
+	aoo3: {
+		color: "red",
+		sparkle: true,
+	},
 });
 
 const b = proxy({

@@ -17,8 +17,7 @@ export class Executor {
 	}
 
 	async initialization() {
-		// todo operationstate
-		if (operationState.doneInitialize) {
+		if (operationState.flagOps.doneInitialize) {
 			logger.warn("oops, initialize seems to have been called multiple times!");
 			return;
 		}

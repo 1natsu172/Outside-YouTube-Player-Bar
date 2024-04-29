@@ -1,4 +1,4 @@
-import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
+import type { OperationState } from "@/core/mains/contentScriptState.js";
 import { elementAttributes } from "@/core/mains/meta.js";
 import type { NestedValueOf } from "@/utils/typeUtils.js";
 
@@ -16,7 +16,7 @@ export const documentElementAttr = (
 };
 
 export const domAffectOypbEnable = (
-	enable: ContentScriptState["operation"]["oypbEnable"],
+	enable: OperationState["flagOps"]["oypbEnable"],
 ) => {
 	const attr = documentElementAttr(elementAttributes.oypb.ENABLE);
 	if (enable) {

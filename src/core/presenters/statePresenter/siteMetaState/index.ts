@@ -1,11 +1,11 @@
-import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
+import type { SiteMetaState } from "@/core/mains/contentScriptState.js";
 import { elementAttributes } from "@/core/mains/meta.js";
 import { siteMetaState } from "@/core/repositories/contentScript.repository.js";
 import { useSnapshot } from "valtio";
 
 export const useVideoPlayerMode = () => {
-	const state = useSnapshot(siteMetaState);
-	return state.videoPlayerMode;
+	const state = useSnapshot(siteMetaState.videoPlayerState).mode;
+	return state;
 };
 
 export const judgeCurrentVideoPlayerMode = (managerElement: Element) => {
@@ -23,7 +23,7 @@ export const judgeCurrentVideoPlayerMode = (managerElement: Element) => {
 
 export const convertAttrToVideoPlayerMode = (
 	attr: ValueOf<typeof elementAttributes.playerMode> | undefined,
-): ContentScriptState["siteMeta"]["videoPlayerMode"] => {
+): SiteMetaState["videoPlayerState"]["mode"] => {
 	switch (attr) {
 		case "default-layout":
 			return "defaultView";

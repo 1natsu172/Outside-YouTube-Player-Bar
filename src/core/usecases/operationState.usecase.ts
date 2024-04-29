@@ -1,14 +1,12 @@
 import { operationState } from "@/core/repositories/contentScript.repository.js";
-import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
+import type { OperationState } from "@/core/mains/contentScriptState.js";
 
 export const setDoneInitialize = (
-	is: ContentScriptState["operation"]["doneInitialize"],
+	is: OperationState["flagOps"]["doneInitialize"],
 ) => {
-	operationState.doneInitialize = is;
+	operationState.flagOps.doneInitialize = is;
 };
 
-export const setOypbEnable = (
-	is: ContentScriptState["operation"]["oypbEnable"],
-) => {
-	operationState.oypbEnable = is;
+export const setOypbEnable = (is: OperationState["flagOps"]["oypbEnable"]) => {
+	operationState.flagOps.oypbEnable = is;
 };

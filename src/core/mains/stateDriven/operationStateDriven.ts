@@ -3,7 +3,7 @@ import { domAffectOypbEnable } from "@/core/services/domAffectServices/domMetaAf
 import { subscribeKey } from "valtio/utils";
 
 export const oypbEnableDriven = () => {
-	return subscribeKey(operationState, "oypbEnable", (value) => {
+	return subscribeKey(operationState.flagOps, "oypbEnable", (value) => {
 		logger.info("oypbEnable changed", value);
 		domAffectOypbEnable(value);
 	});

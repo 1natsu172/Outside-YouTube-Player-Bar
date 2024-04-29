@@ -3,7 +3,6 @@ import { debounce } from "mabiki";
 import { setPlayerBarHeightVar } from "@/core/usecases/cssVariables.usecase.js";
 import { elementQuery } from "@/core/mains/meta.js";
 import { createBlockAutohideFn } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
-import { setVideoPlayerMode } from "@/core/usecases/siteMetaState.usecase.js";
 import { elementAttributes } from "@/core/mains/meta.js";
 import { applyVideoPlayerModeToSiteMeta } from "../siteMetaServices/index.js";
 
@@ -86,10 +85,6 @@ const playerBarElementEffect = async () => {
 
 const pageManagerWatchFlexy_playerModeEffect = async () => {
 	const element = await waitElement(elementQuery.YTD_PAGE_MANAGER);
-	const debounceSetVideoPlayerMode = debounce(setVideoPlayerMode, 1000, {
-		leading: false,
-		trailing: true,
-	});
 
 	const observer = new MutationObserver(
 		debounce<MutationCallback>(

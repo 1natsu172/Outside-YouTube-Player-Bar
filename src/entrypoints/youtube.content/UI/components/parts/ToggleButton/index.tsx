@@ -2,11 +2,11 @@
 import ToggleIcon from "@/public/images/oypb-toggle.svg?react";
 import style from "./style.module.css";
 import type { ExtensionBehavior } from "@/core/mains/extensionFeatures.js";
-import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
+import type { SiteMetaState } from "@/core/mains/contentScriptState.js";
 
 type P = {
 	currentBarPosition: ExtensionBehavior["positionPlayerBar"];
-	videoPlayerMode: ContentScriptState["siteMeta"]["videoPlayerMode"];
+	videoPlayerMode: SiteMetaState["videoPlayerState"]["mode"];
 	tooltip: string;
 };
 

@@ -1,23 +1,48 @@
 import { proxy } from "valtio";
+import { proxyWithHistory } from "valtio-history";
+import { derive } from "derive-valtio";
 import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
 
-export const currentBehaviorState = proxy<
-	ContentScriptState["currentBehavior"]
->({
+export const behaviorState = proxy<ContentScriptState["behavior"]>({
 	positionPlayerBar: "inside",
 	alwaysDisplayPlayerBar: false,
-	__forForceReaction__: 0,
 });
 
 export const operationState = proxy<ContentScriptState["operation"]>({
-	scriptStatus: "standByVideoPage",
-	uiMount: "unmounted",
-	doneInitialize: false,
-	oypbEnable: undefined,
+	uiOps: {
+		mount: "unmount",
+	},
+	processOps: {
+		scriptStatus: "standByVideoPage",
+	},
+	flagOps: {
+		doneInitialize: false,
+		oypbEnable: undefined,
+	},
 });
 
 export const siteMetaState = proxy<ContentScriptState["siteMeta"]>({
-	videoPlayerMode: "none",
-	colorTheme: "light",
-	siteVersion: undefined,
+	videoPlayerState: {
+		mode: "none",
+	},
+	appearanceState: {
+		colorTheme: undefined,
+	},
+	infoState: {
+		version: null,
+	},
+	navigationState: proxyWithHistory({
+		href: "",
+		origin: "",
+		pathname: "",
+		search: "",
+	}),
+});
+
+export const __reflectFunctionalityState__ = derive<
+	object,
+	ContentScriptState["__reflectFunctionality__"]
+>({
+	feature: (get) => ({ behavior: get(behaviorState) }),
+	context: (get) => ({ videoPlayerState: get(siteMetaState.videoPlayerState) }),
 });
