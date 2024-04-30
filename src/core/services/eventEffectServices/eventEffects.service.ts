@@ -11,6 +11,7 @@ const pageNavigateEffect = createEventEffect(
 	(_key) => (event) => {
 		logger.debug("page navigated", event);
 		// TODO: navigated operation実装する
+		// TODO: 新規タブで直接開いたときにyt-navigateイベント発火しないときがあるのでinitializeのためのonloadEffectを別途実装する（OperationStateにexecは寄せる）
 	},
 );
 
