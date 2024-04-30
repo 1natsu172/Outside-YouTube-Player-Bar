@@ -4,6 +4,7 @@
 
   /* // player bar color of Default theme. */
   --oypb-player-bar-color: rgb(15, 15, 15);
+  --oypb-player-bar-font-color: #eee;
 
   /* // size of fillthe left and right gap of player bar. */
   --oypb-player-bar-fill-lr-gap-size: 12px;

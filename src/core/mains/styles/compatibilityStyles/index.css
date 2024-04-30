@@ -7,6 +7,7 @@
 [data-oypb-enable][data-oypb-is-outside] {
   .ytp-chrome-bottom {
     background-color: var(--oypb-player-bar-color);
+    color: var(--oypb-player-bar-font-color);
     position: relative;
   }
 
