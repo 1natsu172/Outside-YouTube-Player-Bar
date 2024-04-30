@@ -11,8 +11,8 @@
 
   >svg {
     vertical-align: middle;
-    width: 18px;
-    height: 16px;
+    width: 22px;
+    height: 20px;
   }
 
   &[data-current-bar-position="outside"] {

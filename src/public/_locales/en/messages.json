@@ -24,6 +24,10 @@
 		"message": "Outside player bar",
 		"description": "Tooltip text for toggle button when extension is inactive"
 	},
+  "tooltipText_openSettings": {
+		"message": "Open settings",
+		"description": "Tooltip text for open settings"
+	},
 
 	"popup_title": {
 		"message": "Welcome to Outside YouTube Player Bar!",

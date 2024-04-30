@@ -135,6 +135,16 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
+     * Tooltip text for open settings
+     *
+     * "Open settings"
+     */
+    getMessage(
+      messageName: "tooltipText_openSettings",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
      * popup.html's title
      *
      * "Welcome to Outside YouTube Player Bar!"

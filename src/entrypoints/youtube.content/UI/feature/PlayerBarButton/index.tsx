@@ -5,19 +5,27 @@ import { useBarPosition } from "@/core/presenters/statePresenter/behaviorState/i
 import { useVideoPlayerMode } from "@/core/presenters/statePresenter/siteMetaState/index.js";
 import { changePositionPlayerBar } from "@/core/services/behaviorServices/positionPlayerBar.service.js";
 import type { BehaviorState } from "@/core/mains/contentScriptState.js";
+import { SettingsButton } from "../../components/parts/SettingsButton/index.js";
 
 type BarPosition = BehaviorState["positionPlayerBar"];
 
 export const PlayerBarButton = () => {
 	const currentBarPosition = useBarPosition();
 	const videoPlayerMode = useVideoPlayerMode();
-	const tooltip = useMemo(
+
+	const toggleTooltip = useMemo(
 		() =>
 			currentBarPosition === "outside"
 				? browser.i18n.getMessage("tooltipText_toInside")
 				: browser.i18n.getMessage("tooltipText_toOutside"),
 		[currentBarPosition],
 	);
+
+	const openSettingsTooltip = useMemo(
+		() => browser.i18n.getMessage("tooltipText_openSettings"),
+		[],
+	);
+
 	const onToggle = useCallback(() => {
 		const to: BarPosition =
 			currentBarPosition === "inside" ? "outside" : "inside";
@@ -30,8 +38,9 @@ export const PlayerBarButton = () => {
 				onToggle={onToggle}
 				currentBarPosition={currentBarPosition}
 				videoPlayerMode={videoPlayerMode}
-				tooltip={tooltip}
+				tooltip={toggleTooltip}
 			/>
+			<SettingsButton tooltip={openSettingsTooltip} />
 		</div>
 	);
 };

@@ -1,0 +1,38 @@
+.settings-button {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: 1px;
+  bottom: 7px;
+  fill: #fff;
+}
+
+.settings-button--is-outside {
+  right: 3px;
+  top: 5px;
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+  display: block;
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #eee;
+  background-color: rgba(28, 28, 28, 0.9);
+  border-radius: 4px;
+  padding: 5px 9px;
+  overflow: visible;
+  font-size: 118%;
+  font-weight: 500;
+  line-height: 15px;
+  white-space: nowrap;
+  transition: opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
+}
+
+.settings-button:hover+.tooltip {
+  visibility: visible;
+  opacity: 1;
+}

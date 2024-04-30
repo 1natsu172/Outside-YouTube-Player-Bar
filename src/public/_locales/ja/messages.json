@@ -24,6 +24,10 @@
 		"message": "再生バーを外側にする",
 		"description": "トグルボタンのツールチップテキスト(拡張機能が非アクティブ状態のとき)"
 	},
+	"tooltipText_openSettings": {
+		"message": "設定パネルを開く",
+		"description": "設定パネルアクセスのツールチップテキスト"
+	},
 
 	"popup_title": {
 		"message": "Outside YouTube Player Barへようこそ！",
