@@ -1,3 +1,4 @@
+import { setNavigationState } from "@/core/usecases/siteMetaState.usecase.js";
 import { applyVideoPlayerModeToSiteMeta } from "../siteMetaServices/index.js";
 import { YT_EVENTS } from "./libs/YT_EVENTS.js";
 import { type EventEffect, createEventEffect } from "./libs/eventEffect.js";
@@ -6,12 +7,16 @@ const __DEBUG_YT_EVENTS = createEventEffect(YT_EVENTS, (key) => (event) => {
 	logger.withTag("YT_EVENT").log(key, event);
 });
 
+const pageLoadedffect = createEventEffect(["load"], (_key) => (event) => {
+	logger.debug("page onloaded", event);
+	setNavigationState(location);
+});
+
 const pageNavigateEffect = createEventEffect(
 	["yt-navigate-finish"],
 	(_key) => (event) => {
 		logger.debug("page navigated", event);
-		// TODO: navigated operation実装する
-		// TODO: 新規タブで直接開いたときにyt-navigateイベント発火しないときがあるのでinitializeのためのonloadEffectを別途実装する（OperationStateにexecは寄せる）
+		setNavigationState(location);
 	},
 );
 
@@ -54,6 +59,7 @@ export const setupEventEffects = async () => {
 	const effects = await Promise.all<EventEffect>([
 		pageNavigateEffect.observe(),
 		videoLoadedEffect.observe(),
+		pageLoadedffect.observe(),
 		...(import.meta.env.VITE_DEBUG_YT_EVENTS === "true"
 			? [__DEBUG_YT_EVENTS.observe()]
 			: []),

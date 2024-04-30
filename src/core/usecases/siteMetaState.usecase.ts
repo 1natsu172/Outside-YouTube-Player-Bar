@@ -6,3 +6,13 @@ export const setVideoPlayerMode = (
 ) => {
 	siteMetaState.videoPlayerState.mode = mode;
 };
+
+export const setNavigationState = (location: Location) => {
+	const { href, origin, pathname, search } = location;
+	siteMetaState.navigationState.value = {
+		href,
+		origin,
+		pathname,
+		search,
+	};
+};

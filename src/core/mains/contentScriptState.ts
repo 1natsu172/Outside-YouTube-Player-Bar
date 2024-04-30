@@ -33,7 +33,8 @@ export type OperationState = {
 		mount: "mounted" | "unmount" | "failed";
 	};
 	processOps: {
-		scriptStatus: "standByVideoPage";
+		// TODO: 本当にいる？
+		scriptStatus: "standByVideoPage" | "pageNavigated";
 	};
 	flagOps: {
 		doneInitialize: boolean;

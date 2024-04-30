@@ -7,7 +7,10 @@ import { snapshot, subscribe } from "valtio";
 // import {watch} from 'valtio/utils'
 import { behaviorDriven } from "./behaviorStateDriven.js";
 import { oypbEnableDriven } from "./operationStateDriven.js";
-import { videoPlayerModeDriven } from "./siteMetaStateDriven.js";
+import {
+	navigationDriven,
+	videoPlayerModeDriven,
+} from "./siteMetaStateDriven.js";
 import { reflectFunctionality } from "./__reflectFunctionality__.js";
 
 export class StateDriven {
@@ -16,6 +19,7 @@ export class StateDriven {
 		this.debugState();
 		behaviorDriven();
 		videoPlayerModeDriven();
+		navigationDriven();
 		oypbEnableDriven();
 		reflectFunctionality();
 	}
