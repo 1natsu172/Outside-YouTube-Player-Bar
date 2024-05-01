@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { useStorage } from "./index.js";
+import { useStorage } from "./index.suspense.js";
 
 const _Component = (props: { storageKey: string }) => {
 	// @ts-expect-error for testing key

@@ -1,9 +1,8 @@
 // @vitest-environment happy-dom
 
 import { centralStorage } from "@/core/infrastructures/storage/centralStorage.js";
-import { act, render, waitFor } from "@testing-library/react";
+import { act, render, renderHook, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, test } from "vitest";
-import { TestComponent } from "./forTest.jsx";
 import { useStorage } from "./index.js";
 
 describe(`${useStorage.name}`, () => {
@@ -17,61 +16,34 @@ describe(`${useStorage.name}`, () => {
 		};
 	});
 
-	/**
-	 * Hack testing for React18 canary
-	 * @description https://github.com/testing-library/react-testing-library/issues/1209
-	 */
-	// Flakyすぎる
-	test.skip("test", async () => {
-		const { asFragment } = render(<TestComponent storageKey={TESTING_KEY} />);
-		// hack for React18 canary "use()" hook
-		await act(async () => {});
+	test("test", async () => {
+		// @ts-expect-error
+		const { result, rerender } = renderHook(() => useStorage(TESTING_KEY));
 
-		// debug()
+		expect(result.current).toEqual({
+			isLoading: true,
+			error: undefined,
+			store: null,
+		});
 
-		expect(asFragment()).toMatchInlineSnapshot(`
-      <DocumentFragment>
-        <div>
-          {
-        "name": "Alice"
-      }
-        </div>
-      </DocumentFragment>
-    `);
+		await waitFor(rerender);
+
+		expect(result.current).toEqual({
+			isLoading: false,
+			error: undefined,
+			store: { name: "Alice" },
+		});
 
 		await waitFor(() =>
 			centralStorage.setItem(TESTING_KEY, {
 				name: "bob",
 			}),
 		);
-		await act(async () => {});
 
-		expect(asFragment()).toMatchInlineSnapshot(`
-      <DocumentFragment>
-        <div
-          style="display: none !important;"
-        >
-          {
-        "name": "Alice"
-      }
-        </div>
-        loading
-      </DocumentFragment>
-    `);
-
-		await act(async () => {});
-
-		expect(asFragment()).toMatchInlineSnapshot(`
-      <DocumentFragment>
-        <div
-          style="display: none !important;"
-        >
-          {
-        "name": "Alice"
-      }
-        </div>
-        loading
-      </DocumentFragment>
-    `);
+		expect(result.current).toEqual({
+			isLoading: false,
+			error: undefined,
+			store: { name: "bob" },
+		});
 	});
 });

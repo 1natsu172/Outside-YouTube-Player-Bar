@@ -1,15 +1,27 @@
 import { centralStorage } from "@/core/infrastructures/storage/centralStorage.js";
 import type { AllStorageKeys } from "@/core/infrastructures/storage/index.js";
-import { use, useCallback, useRef, useSyncExternalStore } from "react";
+import {
+	useCallback,
+	useRef,
+	useSyncExternalStore,
+	useEffect,
+	useState,
+} from "react";
 
 type Subscribe = Parameters<typeof useSyncExternalStore>[0];
 
 export const useStorage = <VT = unknown>(key: AllStorageKeys) => {
-	const initialV = use(centralStorage.getItem<VT>(key));
-	const cachedV = useRef<VT | null>(initialV);
+	const [isLoading, setIsLoading] = useState(true);
+	const [error, setError] = useState();
+	const cachedV = useRef<VT | null>(null);
+	const fatalLog = useCallback(() => {
+		logger.fatal("Should not display this message!!! Something wrong!!!");
+	}, []);
+	const initOnStoreChange = useRef<() => void>(fatalLog);
 
 	const subscribe: Subscribe = useCallback(
 		(onStoreChange) => {
+			initOnStoreChange.current = onStoreChange;
 			const unSubscribe = centralStorage.watch<VT>(
 				key,
 				(newValue, oldValue) => {
@@ -19,9 +31,12 @@ export const useStorage = <VT = unknown>(key: AllStorageKeys) => {
 					onStoreChange();
 				},
 			);
-			return unSubscribe;
+			return () => {
+				initOnStoreChange.current = fatalLog;
+				unSubscribe();
+			};
 		},
-		[key],
+		[key, fatalLog],
 	);
 
 	// Must by sync method.
@@ -30,5 +45,21 @@ export const useStorage = <VT = unknown>(key: AllStorageKeys) => {
 	};
 
 	const store = useSyncExternalStore<VT | null>(subscribe, getSnapshot);
-	return store;
+
+	// resolve async value for getSnapshot. Replace fake initial value(`null`) with trueth initial value(got storage value)
+	useEffect(() => {
+		centralStorage
+			.getItem<VT>(key)
+			.then((value) => {
+				cachedV.current = value;
+				initOnStoreChange.current();
+				setIsLoading(false);
+			})
+			.catch((error) => {
+				setIsLoading(false);
+				setError(error);
+			});
+	}, [key]);
+
+	return { store, isLoading, error };
 };
