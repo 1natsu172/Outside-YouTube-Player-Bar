@@ -1,24 +1,42 @@
-import { createPortal } from "react-dom";
 import { SettingsPanel } from "@/sharedUI/Components/panels/SettingsPanel/index.js";
-import { useContext, useEffect, useState } from "react";
-import { ModalStateContext } from "@/sharedUI/Provider/ModalProvider/index.js";
-import { waitElement } from "@1natsu/wait-element";
-import { elementQuery } from "@/core/mains/meta.js";
+import { useContext } from "react";
+import {
+	ModalStateContext,
+	ModalHandlerContext,
+} from "@/sharedUI/Provider/ModalProvider/index.js";
+
+import { Dialog } from "primereact/dialog";
+
+const SettingsContainer = () => {
+	return (
+		<div>
+			<SettingsPanel />
+		</div>
+	);
+};
 
 export const SettingsModal = () => {
-	const [containerElement, setContainerElement] = useState<Element | null>(
-		null,
-	);
-
-	useEffect(() => {
-		waitElement(elementQuery.YTD_APP_CONTAINER).then((el) =>
-			setContainerElement(el),
-		);
-	}, []);
-
 	const { isShow } = useContext(ModalStateContext);
+	const { onClose } = useContext(ModalHandlerContext);
 
-	return isShow && containerElement
-		? createPortal(<SettingsPanel />, containerElement)
-		: null;
+	return (
+		<div className="card flex justify-content-center">
+			<Dialog
+				header="Header"
+				visible={isShow}
+				onHide={onClose}
+				style={{ width: "80vw" }}
+				maximizable
+				dismissableMask
+				// content={() => {
+				// 	return (
+				// 		<>
+				// 		</>
+				// 	);
+				// }}
+			>
+				<SettingsContainer />
+			</Dialog>
+		</div>
+	);
 };

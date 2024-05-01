@@ -1,10 +1,10 @@
 .player-bar-button {
   opacity: .9;
   width: 48px;
+  height: 48px;
   padding: 0 2px;
   transition: opacity .1s cubic-bezier(.4, 0, 1, 1);
 
-  height: 100%;
   cursor: pointer;
   display: flex;
   justify-content: center;

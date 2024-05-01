@@ -1,14 +1,8 @@
-@import './libs/normalize.css';
+@import "../../../sharedUI/libs/normalize.css";
 
 /* custom element style */
 /* <oypb-app> */
 :host {
   display: inline-block;
   vertical-align: top;
-  height: 100%;
-
-  html,
-  body {
-    height: 100%;
-  }
 }

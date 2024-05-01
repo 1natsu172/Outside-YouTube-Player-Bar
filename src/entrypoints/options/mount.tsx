@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { App } from "./App/index.js";
+import { App } from "./App/App.js";
 import { waitElement } from "@1natsu/wait-element";
 
 const mountTarget = await waitElement("#root");
