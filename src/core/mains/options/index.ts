@@ -5,4 +5,4 @@ import type { UserOptions } from "./userOptions.js";
 
 export type AllOptionsDefs = ExtensionMetaOptions & UserOptions;
 
-export const allOptionsConfig = { ...EXT_META, ...USER };
+export const allOptionsConfigInstance = { ...EXT_META, ...USER };

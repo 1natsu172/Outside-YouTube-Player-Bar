@@ -1,12 +1,21 @@
 // @vitest-environment happy-dom
 
 import { centralStorage } from "@/core/infrastructures/storage/centralStorage.js";
-import { act, render, renderHook, waitFor } from "@testing-library/react";
+import { renderHook, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, test } from "vitest";
 import { useStorage } from "./index.js";
+import { createStorageConfig } from "@/core/infrastructures/storage/index.js";
 
 describe(`${useStorage.name}`, () => {
-	const TESTING_KEY = "local:testing:useStorage";
+	const TESTING_STORAGE_CONFIG = createStorageConfig({
+		storageArea: "local",
+		itemKey: "testing:useStorage",
+		version: 1,
+		defaultValue: { name: "" },
+		defaultMeta: {},
+	});
+	const TESTING_KEY = TESTING_STORAGE_CONFIG.storageKey;
+
 	beforeEach(async () => {
 		await centralStorage.setItem(TESTING_KEY, { name: "Alice" });
 
@@ -17,8 +26,10 @@ describe(`${useStorage.name}`, () => {
 	});
 
 	test("test", async () => {
-		// @ts-expect-error
-		const { result, rerender } = renderHook(() => useStorage(TESTING_KEY));
+		const { result, rerender } = renderHook(() =>
+			// @ts-expect-error
+			useStorage(TESTING_STORAGE_CONFIG),
+		);
 
 		expect(result.current).toEqual({
 			isLoading: true,

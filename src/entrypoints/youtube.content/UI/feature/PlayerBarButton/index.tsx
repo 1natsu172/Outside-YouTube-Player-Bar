@@ -6,12 +6,23 @@ import { useVideoPlayerMode } from "@/core/presenters/statePresenter/siteMetaSta
 import { changePositionPlayerBar } from "@/core/services/behaviorServices/positionPlayerBar.service.js";
 import type { BehaviorState } from "@/core/mains/contentScriptState.js";
 import { SettingsButton } from "../../components/parts/SettingsButton/index.js";
+import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
+import { allOptionsConfigInstance } from "@/core/mains/options/index.js";
+
+import { ProgressSpinner } from "primereact/progressspinner";
 
 type BarPosition = BehaviorState["positionPlayerBar"];
 
 export const PlayerBarButton = () => {
 	const currentBarPosition = useBarPosition();
 	const videoPlayerMode = useVideoPlayerMode();
+	const {
+		store: isShowOpenSettingsIcon,
+		isLoading,
+		error,
+	} = useStorage(allOptionsConfigInstance.ShowOpenSettingsIconOptionConfig);
+
+	logger.info("TODO: isShowOpenSettingsIcon", isShowOpenSettingsIcon);
 
 	const toggleTooltip = useMemo(
 		() =>
@@ -32,6 +43,15 @@ export const PlayerBarButton = () => {
 		changePositionPlayerBar({ to });
 	}, [currentBarPosition]);
 
+	if (isLoading) {
+		return (
+			<ProgressSpinner
+				strokeWidth="8"
+				fill="var(--surface-ground)"
+				animationDuration=".5s"
+			/>
+		);
+	}
 	return (
 		<div className={style["player-bar-button"]}>
 			<ToggleButton
@@ -40,7 +60,9 @@ export const PlayerBarButton = () => {
 				videoPlayerMode={videoPlayerMode}
 				tooltip={toggleTooltip}
 			/>
-			<SettingsButton tooltip={openSettingsTooltip} />
+			{isShowOpenSettingsIcon && (
+				<SettingsButton tooltip={openSettingsTooltip} />
+			)}
 		</div>
 	);
 };

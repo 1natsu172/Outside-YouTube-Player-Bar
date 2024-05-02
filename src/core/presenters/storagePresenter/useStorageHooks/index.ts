@@ -1,5 +1,5 @@
 import { centralStorage } from "@/core/infrastructures/storage/centralStorage.js";
-import type { AllStorageKeys } from "@/core/infrastructures/storage/index.js";
+import type { AllStorageConfigInstance } from "@/core/repositories/repository.types.js";
 import {
 	useCallback,
 	useRef,
@@ -10,7 +10,14 @@ import {
 
 type Subscribe = Parameters<typeof useSyncExternalStore>[0];
 
-export const useStorage = <VT = unknown>(key: AllStorageKeys) => {
+// TODO: centralStorageとdefineItemsで領域が違う？？？？？？？？？？
+export const useStorage = <
+	ConfigInstance extends AllStorageConfigInstance,
+	VT = ConfigInstance["defaultValue"],
+>(
+	storageConfigInstance: ConfigInstance,
+) => {
+	const key = storageConfigInstance.storageKey;
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState();
 	const cachedV = useRef<VT | null>(null);

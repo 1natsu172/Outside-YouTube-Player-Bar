@@ -1,13 +1,15 @@
-import { allOptionsConfig } from "@/core/mains/options/index.js";
+import { allOptionsConfigInstance } from "@/core/mains/options/index.js";
 import { defineItem } from "@/core/infrastructures/storage/index.js";
 
 /**
  * Define Items
  * @description Extension Meta Options
  */
-export const debugMode = defineItem(allOptionsConfig.DebugModeOptionConfig);
+export const debugMode = defineItem(
+	allOptionsConfigInstance.DebugModeOptionConfig,
+);
 export const forceDisable = defineItem(
-	allOptionsConfig.ForceDisableOptionConfig,
+	allOptionsConfigInstance.ForceDisableOptionConfig,
 );
 
 /**
@@ -15,11 +17,14 @@ export const forceDisable = defineItem(
  * @description User Options
  */
 export const defaultViewBehaviorOption = defineItem(
-	allOptionsConfig.DefaultViewBehaviorOptionConfig,
+	allOptionsConfigInstance.DefaultViewBehaviorOptionConfig,
 );
 export const theaterModeBehaviorOption = defineItem(
-	allOptionsConfig.TheaterModeBehaviorOptionConfig,
+	allOptionsConfigInstance.TheaterModeBehaviorOptionConfig,
 );
 export const fullscreenBehaviorOption = defineItem(
-	allOptionsConfig.FullscreenBehaviorOptionConfig,
+	allOptionsConfigInstance.FullscreenBehaviorOptionConfig,
+);
+export const showOpenSettingsIconOption = defineItem(
+	allOptionsConfigInstance.ShowOpenSettingsIconOptionConfig,
 );

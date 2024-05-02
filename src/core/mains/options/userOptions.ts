@@ -1,43 +1,53 @@
-import type { ExtensionBehavior } from "../extensionFeatures.js";
-import type { Option } from "./options.types.js";
+import type { ExtensionBehavior } from "@/core/mains/extensionFeatures.js";
+import type { StorageItem } from "@/core/infrastructures/storage/storage.types.js";
+import { createStorageConfig } from "@/core/infrastructures/storage/index.js";
 
 const CONST_KEY = "option:USER";
 
 export interface UserOptions<CK extends string = typeof CONST_KEY> {
-	defaultViewBehaviorV1: Option<CK, ExtensionBehavior>;
-	theaterModeBehaviorV1: Option<CK, ExtensionBehavior>;
-	fullscreenBehaviorV1: Option<CK, ExtensionBehavior>;
+	defaultViewBehaviorV1: StorageItem<CK, ExtensionBehavior>;
+	theaterModeBehaviorV1: StorageItem<CK, ExtensionBehavior>;
+	fullscreenBehaviorV1: StorageItem<CK, ExtensionBehavior>;
+	showOpenSettingsIconV1: StorageItem<CK, boolean>;
 }
 
-export const DefaultViewBehaviorOptionConfig = {
+export const DefaultViewBehaviorOptionConfig = createStorageConfig({
 	storageArea: "sync",
-	storageKey: `${CONST_KEY}:defaultViewBehavior`,
+	itemKey: `${CONST_KEY}:defaultViewBehavior`,
 	version: 1,
 	defaultValue: {
 		alwaysDisplayPlayerBar: true,
 		positionPlayerBar: "outside",
 	},
 	defaultMeta: {},
-} as const satisfies UserOptions["defaultViewBehaviorV1"]["config"];
+} as const satisfies UserOptions["defaultViewBehaviorV1"]["config"]);
 
-export const TheaterModeBehaviorOptionConfig = {
+export const TheaterModeBehaviorOptionConfig = createStorageConfig({
 	storageArea: "sync",
-	storageKey: `${CONST_KEY}:theaterModeBehavior`,
+	itemKey: `${CONST_KEY}:theaterModeBehavior`,
 	version: 1,
 	defaultValue: {
 		alwaysDisplayPlayerBar: true,
 		positionPlayerBar: "outside",
 	},
 	defaultMeta: {},
-} as const satisfies UserOptions["theaterModeBehaviorV1"]["config"];
+} as const satisfies UserOptions["theaterModeBehaviorV1"]["config"]);
 
-export const FullscreenBehaviorOptionConfig = {
+export const FullscreenBehaviorOptionConfig = createStorageConfig({
 	storageArea: "sync",
-	storageKey: `${CONST_KEY}:fullscreenBehavior`,
+	itemKey: `${CONST_KEY}:fullscreenBehavior`,
 	version: 1,
 	defaultValue: {
 		alwaysDisplayPlayerBar: false,
 		positionPlayerBar: "inside",
 	},
 	defaultMeta: {},
-} as const satisfies UserOptions["fullscreenBehaviorV1"]["config"];
+} as const satisfies UserOptions["fullscreenBehaviorV1"]["config"]);
+
+export const ShowOpenSettingsIconOptionConfig = createStorageConfig({
+	storageArea: "sync",
+	itemKey: `${CONST_KEY}:showOpenSettingsIcon`,
+	version: 1,
+	defaultValue: true,
+	defaultMeta: {},
+} as const satisfies UserOptions["showOpenSettingsIconV1"]["config"]);

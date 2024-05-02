@@ -2,20 +2,15 @@ import {
 	type StorageItemOptions,
 	centralStorage,
 } from "@/core/infrastructures/storage/centralStorage.js";
-import type { allOptionsConfig } from "@/core/mains/options/index.js";
-import type { ValueOf } from "@/utils/typeUtils.js";
-
-export type AllStorageConfig = ValueOf<typeof allOptionsConfig>;
-
-export const getStorageKey = (config: AllStorageConfig) => {
-	const { storageArea, storageKey } = config;
-	return `${storageArea}:${storageKey}` as const;
-};
-
-export type AllStorageKeys = ReturnType<typeof getStorageKey>;
+import type {
+	StorageItemConfigInstance,
+	StorageItemConfigRaw,
+} from "./storage.types.js";
 
 // util hands that think about migrations
-export const defineItem = <Config extends AllStorageConfig>(
+export const defineItem = <
+	Config extends StorageItemConfigInstance<StorageItemConfigRaw>,
+>(
 	config: Config,
 	storageItemOptions?: Partial<StorageItemOptions<Config["defaultValue"]>>,
 ) => {
@@ -26,7 +21,20 @@ export const defineItem = <Config extends AllStorageConfig>(
 	};
 
 	return centralStorage.defineItem<Config["defaultValue"]>(
-		getStorageKey(config),
+		config.storageKey,
 		stoOpts,
 	);
+};
+
+export const createStorageConfig = <ConfigRaw extends StorageItemConfigRaw>(
+	configRaw: ConfigRaw,
+): StorageItemConfigInstance<ConfigRaw> => {
+	return {
+		...configRaw,
+		get storageKey() {
+			const { storageArea, itemKey } = configRaw;
+			return `${storageArea}:${itemKey}` as `${ConfigRaw["storageArea"]}:${ConfigRaw["itemKey"]}`;
+		},
+		__savedRaw: configRaw,
+	};
 };
