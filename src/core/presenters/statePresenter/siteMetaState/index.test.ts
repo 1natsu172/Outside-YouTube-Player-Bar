@@ -1,15 +1,35 @@
+// @vitest-environment happy-dom
+
 import { describe, expect, test } from "vitest";
 import {
 	judgeCurrentVideoPlayerMode,
 	convertAttrToVideoPlayerMode,
 } from "./index.js";
+import type { elementAttributes } from "@/core/mains/meta.js";
+
+function createElementWithAttr(
+	attrs: [
+		qualifiedName: ValueOf<typeof elementAttributes.playerMode>,
+		value?: string,
+	][],
+) {
+	const el = document.createElement("div");
+	for (const [qualifiedName, value = ""] of attrs) {
+		el.setAttribute(qualifiedName, value);
+	}
+	return el;
+}
 
 describe(judgeCurrentVideoPlayerMode.name, () => {
-	test.todo.each`
-		element                         | expected
-		${"TODO:ここをfakeのdomにする"} | ${"default-layout"}
-		${"theater"}                    | ${"theater"}
-		${"fullscreen"}                 | ${"fullscreen"}
+	test.each`
+		element                                                                     | expected
+		${createElementWithAttr([["default-layout"]])}                              | ${"default-layout"}
+		${createElementWithAttr([["theater"]])}                                     | ${"theater"}
+		${createElementWithAttr([["fullscreen"]])}                                  | ${"fullscreen"}
+		${createElementWithAttr([["default-layout"], ["theater"]])}                 | ${"theater"}
+		${createElementWithAttr([["theater"], ["fullscreen"]])}                     | ${"fullscreen"}
+		${createElementWithAttr([["default-layout"], ["fullscreen"]])}              | ${"fullscreen"}
+		${createElementWithAttr([["default-layout"], ["theater"], ["fullscreen"]])} | ${"fullscreen"}
 	`(
 		`${judgeCurrentVideoPlayerMode.name} returns $expected when $element`,
 		({ element, expected }) => {
