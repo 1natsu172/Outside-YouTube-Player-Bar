@@ -24,9 +24,9 @@ export const manifestJsonConfig: UserConfig["manifest"] = (_configEnv) => ({
 	name: "__MSG_appName__",
 	short_name: "__MSG_appShortName__",
 	description: "__MSG_appDescription__",
-	// FIXME あとで消す
+	// TODO: リリース前に消す（package.jsonから自動生成っぽい）
 	version: "4.0.0",
-	// FIXME firefoxがmv2っぽいので明示指定いらないっぽい あとで消す
+	// NOTE: Firefox is still mv2, so not explicitly. https://wxt.dev/guide/multiple-browsers.html#target-manifest-version
 	// manifest_version: 3,
 	default_locale: "en",
 	icons: {

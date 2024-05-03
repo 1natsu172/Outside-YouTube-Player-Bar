@@ -40,7 +40,6 @@ export type OperationState = {
 		doneInitialize: boolean;
 		oypbEnable: boolean | undefined;
 	};
-	// TODO: operationのmutexをするあるいはOperationのコレクションを抱えて逐次処理するための箱が必要になるかもしれない・あとで決める
 };
 
 /**
@@ -51,7 +50,7 @@ export type ContentScriptState = {
 	/**
 	 * This is "Current" state. Not globally behavior state(user-option storage content).
 	 * If the user changes the user-option, this state should be sync to that state.
-	 * @todo
+	 * @todo:
 	 * When the player mode changes, user can set the option to force the behavior of the default option.
 	 */
 	behavior: BehaviorState;

@@ -7,11 +7,6 @@ const __DEBUG_YT_EVENTS = createEventEffect(YT_EVENTS, (key) => (event) => {
 	logger.withTag("YT_EVENT").log(key, event);
 });
 
-const pageLoadedffect = createEventEffect(["load"], (_key) => (event) => {
-	logger.debug("page onloaded", event);
-	setNavigationState(location);
-});
-
 const pageNavigateEffect = createEventEffect(
 	["yt-navigate-finish"],
 	(_key) => (event) => {
@@ -26,8 +21,8 @@ const videoLoadedEffect = createEventEffect(
 		logger.debug("video loaded", event);
 		/**
 		 * NOTE: a.k.a initialization detect mode
+		 * Basic initialization is already done with NavigationDriven. So it may not be necessary to call it here, but do just in case.
 		 */
-		// TODO: operationStateをカッチリさせてむこうのeffectに寄せる
 		applyVideoPlayerModeToSiteMeta();
 	},
 );
@@ -59,7 +54,6 @@ export const setupEventEffects = async () => {
 	const effects = await Promise.all<EventEffect>([
 		pageNavigateEffect.observe(),
 		videoLoadedEffect.observe(),
-		pageLoadedffect.observe(),
 		...(import.meta.env.VITE_DEBUG_YT_EVENTS === "true"
 			? [__DEBUG_YT_EVENTS.observe()]
 			: []),

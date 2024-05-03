@@ -95,7 +95,6 @@ const pageManagerWatchFlexy_playerModeEffect = async () => {
 					"This mutation fires when any of the attributeFilter changes",
 				);
 				requestIdleCallback(() => {
-					// TODO: operation Stateかっちりさせてそっちに寄せる
 					applyVideoPlayerModeToSiteMeta();
 				});
 			},
