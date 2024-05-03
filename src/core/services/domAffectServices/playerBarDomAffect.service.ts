@@ -54,8 +54,8 @@ function __resolveMoveLogic<Q extends string | undefined>(
 			const pureBarEl = await waitElement(barQuery);
 			let barEl: Element = pureBarEl;
 			if (needCompatParentElement) {
-				// TODO: たぶんここplayermode切り替えたらvhrome-bottomごと消してしまう気がする
 				if (existCompatParent) {
+					// NOTE: プレイヤーモードを切り替えるたびにCompatParentが増殖していくので都度消す。barElはDOM上から一瞬消えるが、pureBarEl変数で参照保存されているためGCされないゆえに後続のinsertAdjacentElementでDOMに再挿入できる。
 					existCompatParent.remove();
 				}
 				const compatParent = document.createElement("div");

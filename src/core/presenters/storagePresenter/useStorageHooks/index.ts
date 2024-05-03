@@ -10,7 +10,6 @@ import {
 
 type Subscribe = Parameters<typeof useSyncExternalStore>[0];
 
-// TODO: centralStorageとdefineItemsで領域が違う？？？？？？？？？？
 export const useStorage = <
 	ConfigInstance extends AllStorageConfigInstance,
 	VT = ConfigInstance["defaultValue"],

@@ -22,8 +22,6 @@ export const PlayerBarButton = () => {
 		error,
 	} = useStorage(allOptionsConfigInstance.ShowOpenSettingsIconOptionConfig);
 
-	logger.info("TODO: isShowOpenSettingsIcon", isShowOpenSettingsIcon);
-
 	const toggleTooltip = useMemo(
 		() =>
 			currentBarPosition === "outside"
