@@ -20,10 +20,13 @@ export const defineItem = <
 		...storageItemOptions,
 	};
 
-	return centralStorage.defineItem<Config["defaultValue"]>(
+	const defined = centralStorage.defineItem<Config["defaultValue"]>(
 		config.storageKey,
 		stoOpts,
 	);
+	// FIXME: PATCH for bug... https://github.com/wxt-dev/wxt/issues/645
+	defined.setValue(stoOpts.defaultValue);
+	return defined;
 };
 
 export const createStorageConfig = <ConfigRaw extends StorageItemConfigRaw>(
