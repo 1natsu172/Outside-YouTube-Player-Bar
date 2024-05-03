@@ -26,7 +26,7 @@
 		"test": "pnpm run --sequential /^test:.*/",
 		"test:unit": "vitest",
 		"test:e2e": "playwright test",
-		"test:tsc": "tsc -p ./tsconfig.json --noEmit",
+		"test:types": "vitest --typecheck.only --typecheck.tsconfig .tsconfig.json",
 		"preversion": "node ./scripts/bump-manifest $npm_new_version && git add manifest.json",
 		"postversion": "git push origin v$npm_new_version",
 		"release-to-git": "node ./scripts/releaseNotesTemplate | gh release create v$npm_package_version --notes-file - && gh release view v$npm_package_version --web",

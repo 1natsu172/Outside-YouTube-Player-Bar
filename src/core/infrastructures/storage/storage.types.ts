@@ -12,7 +12,6 @@ export type StorageItemConfigRaw<
 	defaultMeta: M;
 };
 
-//TODO: 型テスト書く
 export type StorageItemConfigInstance<ConfigRaw extends StorageItemConfigRaw> =
 	ConfigRaw & {
 		get storageKey(): `${ConfigRaw["storageArea"]}:${ConfigRaw["itemKey"]}`;
