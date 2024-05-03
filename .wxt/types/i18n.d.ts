@@ -317,7 +317,7 @@ Note: You can't use this message in a manifest file.
     /**
      * always display player bar
      *
-     * "Always display player bar"
+     * "Always display player bar (only effective when outside)"
      */
     getMessage(
       messageName: "settings_userOption_alwaysDisplayPlayerBar_title",

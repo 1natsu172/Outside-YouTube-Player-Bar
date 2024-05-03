@@ -100,7 +100,7 @@
 		"description": "inside of player"
 	},
 	"settings_userOption_alwaysDisplayPlayerBar_title": {
-		"message": "常に再生バーを表示する",
+		"message": "常に再生バーを表示する（外側のときのみ有効）",
 		"description": "always display player bar"
 	},
   "settings_userOption_alwaysApplyDefaultBehaviorSettings_title": {

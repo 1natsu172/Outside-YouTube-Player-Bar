@@ -100,7 +100,7 @@
 		"description": "inside of player"
 	},
 	"settings_userOption_alwaysDisplayPlayerBar_title": {
-		"message": "Always display player bar",
+		"message": "Always display player bar (only effective when outside)",
 		"description": "always display player bar"
 	},
 	"settings_userOption_alwaysApplyDefaultBehaviorSettings_title": {
