@@ -194,5 +194,175 @@ Note: You can't use this message in a manifest file.
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;
+    /**
+     * settings page title
+     *
+     * "Settings for Outside YouTube Player Bar"
+     */
+    getMessage(
+      messageName: "settings_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Enable to DebugMode
+     *
+     * "Enable Debug Mode"
+     */
+    getMessage(
+      messageName: "settings_metaOption_debugMode_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Usually not used
+     *
+     * "Usually not used"
+     */
+    getMessage(
+      messageName: "settings_metaOption_debugMode_description",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Enable force disable mode
+     *
+     * "Force disable the extension"
+     */
+    getMessage(
+      messageName: "settings_metaOption_forceDisable_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * usecase the force disable mode
+     *
+     * "Use this feature if the extension is not working or if it is causing issues with YouTube's UI or functionality, and you want to temporarily disable it."
+     */
+    getMessage(
+      messageName: "settings_metaOption_forceDisable_description",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * settings extension behavor of the each player modes
+     *
+     * "Default settings for each player mode"
+     */
+    getMessage(
+      messageName: "settings_userOption_behaviors_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * behavior of the default-view mode
+     *
+     * "Behavior in default view"
+     */
+    getMessage(
+      messageName: "settings_userOption_defaultViewBehavior_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * behavior of the theater mode
+     *
+     * "Behavior in theater mode"
+     */
+    getMessage(
+      messageName: "settings_userOption_theaterModeBehavior_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * behavior of the fullscreen mode
+     *
+     * "Behavior in fullscreen mode"
+     */
+    getMessage(
+      messageName: "settings_userOption_fullscreenBehavior_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * position player bar
+     *
+     * "Position of the player bar"
+     */
+    getMessage(
+      messageName: "settings_userOption_positionPlayerBar_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * outside of player
+     *
+     * "Outside"
+     */
+    getMessage(
+      messageName: "settings_userOption_positionPlayerBar_outside",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * inside of player
+     *
+     * "Inside"
+     */
+    getMessage(
+      messageName: "settings_userOption_positionPlayerBar_inside",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * always display player bar
+     *
+     * "Always display player bar"
+     */
+    getMessage(
+      messageName: "settings_userOption_alwaysDisplayPlayerBar_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * always apply default behavior setting if video mode changed
+     *
+     * "Apply default settings whenever video mode changes"
+     */
+    getMessage(
+      messageName: "settings_userOption_alwaysApplyDefaultBehaviorSettings_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * example of the always apply default behavior settings
+     *
+     * "If checked: (e.g.) If the default setting is outside and you temporarily set it to inside, it will switch back to outside when you change video modes."
+     */
+    getMessage(
+      messageName: "settings_userOption_alwaysApplyDefaultBehaviorSettings_description",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Display settings icon on the playerbar
+     *
+     * "Display settings icon on the player bar"
+     */
+    getMessage(
+      messageName: "settings_userOption_showOpenSettingsIcon_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * How to re-open guide that after disabled
+     *
+     * "※ After disabling this, to re-open the settings, click the extension icon in the browser or open the options from the browser's extension management page."
+     */
+    getMessage(
+      messageName: "settings_userOption_showOpenSettingsIcon_description",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
   }
 }

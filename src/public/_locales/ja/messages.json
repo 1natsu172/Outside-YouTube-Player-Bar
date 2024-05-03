@@ -48,5 +48,75 @@
 	"popup_footerAuthor": {
 		"message": "つくっているひと",
 		"description": "popup.html's footer author lead"
+	},
+
+	"settings_title": {
+		"message": "Outside YouTube Player Barの設定",
+		"description": "settings page title"
+	},
+	"settings_metaOption_debugMode_title": {
+		"message": "デバッグモードを有効にする",
+		"description": "Enable to DebugMode"
+	},
+	"settings_metaOption_debugMode_description": {
+		"message": "通常は利用しません",
+		"description": "Usually not used"
+	},
+	"settings_metaOption_forceDisable_title": {
+		"message": "拡張機能を強制停止する",
+		"description": "Enable force disable mode"
+	},
+	"settings_metaOption_forceDisable_description": {
+		"message": "「拡張機能が機能しない」・「拡張機能のせいでYouTubeのUIや機能に不具合が出ていて一時無効化したい」といった場合に使う機能です",
+		"description": "usecase the force disable mode"
+	},
+
+  "settings_userOption_behaviors_title": {
+		"message": "プレイヤーモードごとのデフォルトの設定",
+		"description": "settings extension behavor of the each player modes"
+	},
+	"settings_userOption_defaultViewBehavior_title": {
+		"message": "デフォルトビューのときの動作",
+		"description": "behavior of the default-view mode"
+	},
+	"settings_userOption_theaterModeBehavior_title": {
+		"message": "シアターモードのときの動作",
+		"description": "behavior of the theater mode"
+	},
+	"settings_userOption_fullscreenBehavior_title": {
+		"message": "フルスクリーンモードのときの動作",
+		"description": "behavior of the fullscreen mode"
+	},
+	"settings_userOption_positionPlayerBar_title": {
+		"message": "再生バーの位置",
+		"description": "position player bar"
+	},
+	"settings_userOption_positionPlayerBar_outside": {
+		"message": "外側",
+		"description": "outside of player"
+	},
+	"settings_userOption_positionPlayerBar_inside": {
+		"message": "内側",
+		"description": "inside of player"
+	},
+	"settings_userOption_alwaysDisplayPlayerBar_title": {
+		"message": "常に再生バーを表示する",
+		"description": "always display player bar"
+	},
+  "settings_userOption_alwaysApplyDefaultBehaviorSettings_title": {
+		"message": "モードを切り替えるたびにデフォルト設定を適用する",
+		"description": "always apply default behavior setting if video mode changed"
+	},
+  "settings_userOption_alwaysApplyDefaultBehaviorSettings_description": {
+		"message": "チェックをつけた場合: (例)デフォルト設定が外側でご自身で一時的に内側にし、モードへ切り替えたら→外側になる",
+		"description": "example of the always apply default behavior settings"
+	},
+	"settings_userOption_showOpenSettingsIcon_title": {
+		"message": "再生バーのボタンに詳細設定アイコンを表示する",
+		"description": "Display settings icon on the playerbar"
+	},
+	"settings_userOption_showOpenSettingsIcon_description": {
+		"message": "※無効にしたあと詳細設定を開くにはブラウザ上の拡張機能のアイコンをクリックするか、ブラウザの拡張機能管理画面からオプションを開いてください",
+		"description": "How to re-open guide that after disabled"
 	}
 }

@@ -24,7 +24,7 @@
 		"message": "Outside player bar",
 		"description": "Tooltip text for toggle button when extension is inactive"
 	},
-  "tooltipText_openSettings": {
+	"tooltipText_openSettings": {
 		"message": "Open settings",
 		"description": "Tooltip text for open settings"
 	},
@@ -48,5 +48,75 @@
 	"popup_footerAuthor": {
 		"message": "Author",
 		"description": "popup.html's footer author lead"
+	},
+
+	"settings_title": {
+		"message": "Settings for Outside YouTube Player Bar",
+		"description": "settings page title"
+	},
+	"settings_metaOption_debugMode_title": {
+		"message": "Enable Debug Mode",
+		"description": "Enable to DebugMode"
+	},
+	"settings_metaOption_debugMode_description": {
+		"message": "Usually not used",
+		"description": "Usually not used"
+	},
+	"settings_metaOption_forceDisable_title": {
+		"message": "Force disable the extension",
+		"description": "Enable force disable mode"
+	},
+	"settings_metaOption_forceDisable_description": {
+		"message": "Use this feature if the extension is not working or if it is causing issues with YouTube's UI or functionality, and you want to temporarily disable it.",
+		"description": "usecase the force disable mode"
+	},
+
+	"settings_userOption_behaviors_title": {
+		"message": "Default settings for each player mode",
+		"description": "settings extension behavor of the each player modes"
+	},
+	"settings_userOption_defaultViewBehavior_title": {
+		"message": "Behavior in default view",
+		"description": "behavior of the default-view mode"
+	},
+	"settings_userOption_theaterModeBehavior_title": {
+		"message": "Behavior in theater mode",
+		"description": "behavior of the theater mode"
+	},
+	"settings_userOption_fullscreenBehavior_title": {
+		"message": "Behavior in fullscreen mode",
+		"description": "behavior of the fullscreen mode"
+	},
+	"settings_userOption_positionPlayerBar_title": {
+		"message": "Position of the player bar",
+		"description": "position player bar"
+	},
+	"settings_userOption_positionPlayerBar_outside": {
+		"message": "Outside",
+		"description": "outside of player"
+	},
+	"settings_userOption_positionPlayerBar_inside": {
+		"message": "Inside",
+		"description": "inside of player"
+	},
+	"settings_userOption_alwaysDisplayPlayerBar_title": {
+		"message": "Always display player bar",
+		"description": "always display player bar"
+	},
+	"settings_userOption_alwaysApplyDefaultBehaviorSettings_title": {
+		"message": "Apply default settings whenever video mode changes",
+		"description": "always apply default behavior setting if video mode changed"
+	},
+	"settings_userOption_alwaysApplyDefaultBehaviorSettings_description": {
+		"message": "If checked: (e.g.) If the default setting is outside and you temporarily set it to inside, it will switch back to outside when you change video modes.",
+		"description": "example of the always apply default behavior settings"
+	},
+	"settings_userOption_showOpenSettingsIcon_title": {
+		"message": "Display settings icon on the player bar",
+		"description": "Display settings icon on the playerbar"
+	},
+	"settings_userOption_showOpenSettingsIcon_description": {
+		"message": "※ After disabling this, to re-open the settings, click the extension icon in the browser or open the options from the browser's extension management page.",
+		"description": "How to re-open guide that after disabled"
 	}
 }
