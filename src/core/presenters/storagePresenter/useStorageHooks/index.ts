@@ -1,5 +1,4 @@
-import { centralStorage } from "@/core/infrastructures/storage/centralStorage.js";
-import type { AllStorageConfigInstance } from "@/core/repositories/repository.types.js";
+import type { DefinedItem } from "@/core/infrastructures/storage/index.js";
 import {
 	useCallback,
 	useRef,
@@ -11,12 +10,11 @@ import {
 type Subscribe = Parameters<typeof useSyncExternalStore>[0];
 
 export const useStorage = <
-	ConfigInstance extends AllStorageConfigInstance,
-	VT = ConfigInstance["defaultValue"],
+	DefinedStorageItem extends DefinedItem<VT | null>,
+	VT = DefinedStorageItem["defaultValue"],
 >(
-	storageConfigInstance: ConfigInstance,
+	definedSotorageItem: DefinedStorageItem,
 ) => {
-	const key = storageConfigInstance.storageKey;
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState();
 	const cachedV = useRef<VT | null>(null);
@@ -28,21 +26,18 @@ export const useStorage = <
 	const subscribe: Subscribe = useCallback(
 		(onStoreChange) => {
 			initOnStoreChange.current = onStoreChange;
-			const unSubscribe = centralStorage.watch<VT>(
-				key,
-				(newValue, oldValue) => {
-					if (newValue !== oldValue) {
-						cachedV.current = newValue;
-					}
-					onStoreChange();
-				},
-			);
+			const unSubscribe = definedSotorageItem.watch((newValue, oldValue) => {
+				if (newValue !== oldValue) {
+					cachedV.current = newValue;
+				}
+				onStoreChange();
+			});
 			return () => {
 				initOnStoreChange.current = fatalLog;
 				unSubscribe();
 			};
 		},
-		[key, fatalLog],
+		[definedSotorageItem, fatalLog],
 	);
 
 	// Must by sync method.
@@ -54,8 +49,8 @@ export const useStorage = <
 
 	// resolve async value for getSnapshot. Replace fake initial value(`null`) with trueth initial value(got storage value)
 	useEffect(() => {
-		centralStorage
-			.getItem<VT>(key)
+		definedSotorageItem
+			.getValue()
 			.then((value) => {
 				cachedV.current = value;
 				initOnStoreChange.current();
@@ -65,7 +60,7 @@ export const useStorage = <
 				setIsLoading(false);
 				setError(error);
 			});
-	}, [key]);
+	}, [definedSotorageItem]);
 
 	return { store, isLoading, error };
 };

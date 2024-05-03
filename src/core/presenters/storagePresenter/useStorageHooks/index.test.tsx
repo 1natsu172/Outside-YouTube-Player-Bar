@@ -15,20 +15,20 @@ describe(`${useStorage.name}`, () => {
 		defaultMeta: {},
 	});
 	const TESTING_KEY = TESTING_STORAGE_CONFIG.storageKey;
+	const TESTING_DEFINED_ITEM = centralStorage.defineItem(TESTING_KEY, {
+		defaultValue: { name: "Alice" },
+	});
 
 	beforeEach(async () => {
-		await centralStorage.setItem(TESTING_KEY, { name: "Alice" });
-
 		// cleanup
 		return async () => {
-			await centralStorage.removeItem(TESTING_KEY);
+			await TESTING_DEFINED_ITEM.removeValue();
 		};
 	});
 
 	test("test", async () => {
 		const { result, rerender } = renderHook(() =>
-			// @ts-expect-error
-			useStorage(TESTING_STORAGE_CONFIG),
+			useStorage(TESTING_DEFINED_ITEM),
 		);
 
 		expect(result.current).toEqual({

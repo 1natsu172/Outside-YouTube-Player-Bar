@@ -7,7 +7,7 @@ import { changePositionPlayerBar } from "@/core/services/behaviorServices/positi
 import type { BehaviorState } from "@/core/mains/contentScriptState.js";
 import { SettingsButton } from "../../components/parts/SettingsButton/index.js";
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
-import { allOptionsConfigInstance } from "@/core/mains/options/index.js";
+import { showOpenSettingsIconOption } from "@/core/repositories/options.repository.js";
 
 import { ProgressSpinner } from "primereact/progressspinner";
 
@@ -20,7 +20,7 @@ export const PlayerBarButton = () => {
 		store: isShowOpenSettingsIcon,
 		isLoading,
 		error,
-	} = useStorage(allOptionsConfigInstance.ShowOpenSettingsIconOptionConfig);
+	} = useStorage(showOpenSettingsIconOption);
 
 	const toggleTooltip = useMemo(
 		() =>

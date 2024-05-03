@@ -6,6 +6,7 @@ import type {
 	StorageItemConfigInstance,
 	StorageItemConfigRaw,
 } from "./storage.types.js";
+import type { WxtStorageItem } from "wxt/storage";
 
 // util hands that think about migrations
 export const defineItem = <
@@ -24,10 +25,14 @@ export const defineItem = <
 		config.storageKey,
 		stoOpts,
 	);
-	// FIXME: PATCH for bug... https://github.com/wxt-dev/wxt/issues/645
-	defined.setValue(stoOpts.defaultValue);
 	return defined;
 };
+
+export type DefinedItem<
+	TValue,
+	// biome-ignore lint/complexity/noBannedTypes: <explanation>
+	TMetadata extends Record<string, unknown> = {},
+> = WxtStorageItem<TValue, TMetadata>;
 
 export const createStorageConfig = <ConfigRaw extends StorageItemConfigRaw>(
 	configRaw: ConfigRaw,
