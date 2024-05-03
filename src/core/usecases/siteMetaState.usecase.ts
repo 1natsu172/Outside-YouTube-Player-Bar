@@ -16,3 +16,9 @@ export const setNavigationState = (location: Location) => {
 		search,
 	};
 };
+
+export const setSiteVersion = (
+	version: SiteMetaState["infoState"]["version"],
+) => {
+	siteMetaState.infoState.version = version;
+};

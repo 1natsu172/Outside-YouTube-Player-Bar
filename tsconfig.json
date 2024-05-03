@@ -1,6 +1,9 @@
 {
   "extends": "./.wxt/tsconfig.json",
   "compilerOptions": {
+    "typeRoots": [
+      "./src/types"
+    ],
     "lib": [
       "DOM",
       "DOM.Iterable",

@@ -8,7 +8,10 @@ import {
 import { setupElementEffects } from "@/core/services/elementEffectServices/elementEffects.service.js";
 import type { EventEffect } from "@/core/services/eventEffectServices/libs/eventEffect.js";
 import { StateDriven } from "@/core/mains/stateDriven/index.js";
-import { registerInitializationLocation } from "@/core/services/siteMetaServices/index.js";
+import {
+	getSiteVersion,
+	registerInitializationLocation,
+} from "@/core/services/siteMetaServices/index.js";
 
 export class Executor {
 	private stateDriven: StateDriven;
@@ -29,6 +32,7 @@ export class Executor {
 		await this.stateDriven.setup();
 		oypbEnableOperation(true);
 		registerInitializationLocation();
+		getSiteVersion();
 		doneInitializeOperation();
 		logger.debug("initialization executed.");
 	}
