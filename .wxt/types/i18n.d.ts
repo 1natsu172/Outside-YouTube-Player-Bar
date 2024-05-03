@@ -194,57 +194,5 @@ Note: You can't use this message in a manifest file.
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;
-    /**
-     * when onInstall notfications title
-     *
-     * "Outside YouTube Player Bar"
-     */
-    getMessage(
-      messageName: "notifications_install_title",
-      substitutions?: string | string[],
-      options?: GetMessageOptions,
-    ): string;
-    /**
-     * when onInstall notfications message
-     *
-     * "Welcome to Outside YouTube Player Bar!
-Enjoy YouTube life.👋"
-     */
-    getMessage(
-      messageName: "notifications_install_message",
-      substitutions?: string | string[],
-      options?: GetMessageOptions,
-    ): string;
-    /**
-     * when onUpdate notfications title
-     *
-     * "Outside YouTube Player Bar"
-     */
-    getMessage(
-      messageName: "notifications_update_title",
-      substitutions?: string | string[],
-      options?: GetMessageOptions,
-    ): string;
-    /**
-     * when onUpdate notfications message
-     *
-     * "Chrome extension updated!
-Click to check updated contents!"
-     */
-    getMessage(
-      messageName: "notifications_update_message",
-      substitutions?: string | string[],
-      options?: GetMessageOptions,
-    ): string;
-    /**
-     * If wanna write free custom message, write here.
-     *
-     * ""
-     */
-    getMessage(
-      messageName: "notifications_update_message_special",
-      substitutions?: string | string[],
-      options?: GetMessageOptions,
-    ): string;
   }
 }
