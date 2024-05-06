@@ -1,10 +1,10 @@
-import { debugMode } from "@/core/repositories/options.repository.js";
+import * as repo from "@/core/repositories/options.repository.js";
 import * as usecases from "@/core/usecases/options.usecase.js";
 import { reCreateLoggerInstance } from "@/utils/logger.js";
 
 export const initializeDebugMode = () => {
 	// Support change option reacted.
-	return debugMode.watch((current, prev) => {
+	return repo.debugMode.watch((current, prev) => {
 		if (current !== prev) {
 			reCreateLoggerInstance({ isDebug: current });
 		}
@@ -12,5 +12,5 @@ export const initializeDebugMode = () => {
 };
 
 export const switchDebugMode = async (changeTo: boolean) => {
-	await usecases.changeDebugMode(changeTo);
+	await usecases.setDebugModeOption(changeTo);
 };

@@ -14,6 +14,12 @@ importers:
 
   .:
     dependencies:
+      '@tanstack/react-form':
+        specifier: ^0.19.4
+        version: 0.19.4(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-query':
+        specifier: ^5.34.2
+        version: 5.34.2(react@18.3.1)
       consola:
         specifier: ^3.2.3
         version: 3.2.3
@@ -23,6 +29,9 @@ importers:
       mabiki:
         specifier: ^1.0.1
         version: 1.0.1
+      primeflex:
+        specifier: ^3.3.1
+        version: 3.3.1
       primereact:
         specifier: ^10.6.4
         version: 10.6.4(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -32,6 +41,9 @@ importers:
       react-dom:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
+      react-error-boundary:
+        specifier: ^4.0.13
+        version: 4.0.13(react@18.3.1)
       valtio:
         specifier: ^1.13.2
         version: 1.13.2(@types/react@18.3.1)(react@18.3.1)
@@ -821,6 +833,31 @@ packages:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
 
+  '@tanstack/form-core@0.19.4':
+    resolution: {integrity: sha512-xmmKrffth17qHBC0yb22zF2AYVQALFMYFTko7xpVJrK2B+BFKyDYwSrZlnK260nr31loTNejZOzD6ofpGTLSGA==}
+
+  '@tanstack/query-core@5.34.2':
+    resolution: {integrity: sha512-FM1UXldYcoMiWmVbpewV14EVpnr/ETBbdF84tmCktx29e2bXBFhGtAfyDHUD4X1FehaV5tC9GkXZUMZRQV3lcA==}
+
+  '@tanstack/react-form@0.19.4':
+    resolution: {integrity: sha512-WlGnRCvJmhwM0/qXaUIkD9nI9ilg1MIN3JX5HuNW1nl2AsqHzVRCFU9r/icrsrfFpc5NJ0OSF8lFi2GqAHVS1Q==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+
+  '@tanstack/react-query@5.34.2':
+    resolution: {integrity: sha512-5L9W9XQ/lRcyhlVN0xrOkPZE9PJxZWw7BdJR244j3G7sxMfSreZWvxx13DJt08M5DWn9B5VstpKgqpIIQOIJKA==}
+    peerDependencies:
+      react: ^18.0.0
+
+  '@tanstack/react-store@0.3.1':
+    resolution: {integrity: sha512-PfV271d345It6FdcX4c9gd+llKGddtvau8iJnybTAWmYVyDeFWfIIkiAJ5iNITJmI02AzqgtcV3QLNBBlpBUjA==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+
+  '@tanstack/store@0.3.1':
+    resolution: {integrity: sha512-A49KN8SpLMWaNmZGPa9K982RQ81W+m7W6iStcQVeKeVS70JZRqkF0fDwKByREPq6qz9/kS0aQFOPQ0W6wIeU5g==}
+
   '@testing-library/dom@10.0.0':
     resolution: {integrity: sha512-PmJPnogldqoVFf+EwbHvbBJ98MmqASV8kLrBYgsDNxQcFMeIS7JFL48sfyXvuMtgmWO/wMhh25odr+8VhDmn4g==}
     engines: {node: '>=18'}
@@ -1292,6 +1329,9 @@ packages:
     peerDependenciesMeta:
       supports-color:
         optional: true
+
+  decode-formdata@0.4.0:
+    resolution: {integrity: sha512-/OMUlsRLrSgHPOWCwembsFFTT4DY7Ts9GGlwK8v9yeLOyYZSPKIfn/1oOuV9UmpQ9CZi5JeyT8edunRoBOOl5g==}
 
   decompress-response@6.0.0:
     resolution: {integrity: sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==}
@@ -2382,6 +2422,9 @@ packages:
     resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
 
+  primeflex@3.3.1:
+    resolution: {integrity: sha512-zaOq3YvcOYytbAmKv3zYc+0VNS9Wg5d37dfxZnveKBFPr7vEIwfV5ydrpiouTft8MVW6qNjfkaQphHSnvgQbpQ==}
+
   primereact@10.6.4:
     resolution: {integrity: sha512-P6bJkh54p6o0UOvNjkva0n1uYRPL8YrMxkT4YEZxxNIX1B/1eWOYGpBKwvLO839+G6aWJ8re9BIeouHWgp2R2w==}
     engines: {node: '>=14.0.0'}
@@ -2447,6 +2490,11 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
+  react-error-boundary@4.0.13:
+    resolution: {integrity: sha512-b6PwbdSv8XeOSYvjt8LpgpKrZ0yGdtZokYwkwV2wlcZbxgopHX/hgPl5VgpnoVOWd868n1hktM8Qm4b+02MiLQ==}
+    peerDependencies:
+      react: '>=16.13.1'
+
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -2502,6 +2550,17 @@ packages:
   registry-url@6.0.1:
     resolution: {integrity: sha512-+crtS5QjFRqFCoQmvGduwYWEBng99ZvmFvF+cUJkGYF1L1BfU8C6Zp9T7f5vPAwyLkUExpvK+ANVZmGU49qi4Q==}
     engines: {node: '>=12'}
+
+  rehackt@0.0.3:
+    resolution: {integrity: sha512-aBRHudKhOWwsTvCbSoinzq+Lej/7R8e8UoPvLZo5HirZIIBLGAgdG7SL9QpdcBoQ7+3QYPi3lRLknAzXBlhZ7g==}
+    peerDependencies:
+      '@types/react': '*'
+      react: '*'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
 
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
@@ -3678,6 +3737,37 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
+  '@tanstack/form-core@0.19.4':
+    dependencies:
+      '@tanstack/store': 0.3.1
+
+  '@tanstack/query-core@5.34.2': {}
+
+  '@tanstack/react-form@0.19.4(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/form-core': 0.19.4
+      '@tanstack/react-store': 0.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      decode-formdata: 0.4.0
+      react: 18.3.1
+      rehackt: 0.0.3(@types/react@18.3.1)(react@18.3.1)
+    transitivePeerDependencies:
+      - '@types/react'
+      - react-dom
+
+  '@tanstack/react-query@5.34.2(react@18.3.1)':
+    dependencies:
+      '@tanstack/query-core': 5.34.2
+      react: 18.3.1
+
+  '@tanstack/react-store@0.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@tanstack/store': 0.3.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      use-sync-external-store: 1.2.0(react@18.3.1)
+
+  '@tanstack/store@0.3.1': {}
+
   '@testing-library/dom@10.0.0':
     dependencies:
       '@babel/code-frame': 7.24.2
@@ -4201,6 +4291,8 @@ snapshots:
   debug@4.3.4:
     dependencies:
       ms: 2.1.2
+
+  decode-formdata@0.4.0: {}
 
   decompress-response@6.0.0:
     dependencies:
@@ -5311,6 +5403,8 @@ snapshots:
       ansi-styles: 5.2.0
       react-is: 18.2.0
 
+  primeflex@3.3.1: {}
+
   primereact@10.6.4(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@types/react-transition-group': 4.4.10
@@ -5396,6 +5490,11 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
+  react-error-boundary@4.0.13(react@18.3.1):
+    dependencies:
+      '@babel/runtime': 7.24.4
+      react: 18.3.1
+
   react-is@16.13.1: {}
 
   react-is@17.0.2: {}
@@ -5458,6 +5557,11 @@ snapshots:
   registry-url@6.0.1:
     dependencies:
       rc: 1.2.8
+
+  rehackt@0.0.3(@types/react@18.3.1)(react@18.3.1):
+    optionalDependencies:
+      '@types/react': 18.3.1
+      react: 18.3.1
 
   require-directory@2.1.1: {}
 

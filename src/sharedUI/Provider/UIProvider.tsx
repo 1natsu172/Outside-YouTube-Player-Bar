@@ -1,5 +1,6 @@
 import { PrimeReactProvider } from "primereact/api";
-
+import "primereact/resources/themes/lara-light-cyan/theme.css";
+import "primeflex/primeflex.css";
 import type { ReactNode } from "react";
 
 type PrimeReactProviderProps = Parameters<typeof PrimeReactProvider>[0];

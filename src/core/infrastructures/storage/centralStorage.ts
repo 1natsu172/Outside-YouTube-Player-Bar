@@ -1,2 +1,5 @@
 export const centralStorage = storage;
-export { WxtStorageItemOptions as StorageItemOptions } from "wxt/storage";
+export type {
+	WxtStorageItemOptions as StorageItemOptions,
+	WxtStorageItem as StorageItem,
+} from "wxt/storage";

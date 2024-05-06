@@ -1,5 +1,5 @@
 import { setPositionPlayerBar } from "@/core/usecases/behaviorState.usecase.js";
-import { resolveBehaviorOption } from "@/core/presenters/storagePresenter/userOptions.presenter.js";
+import { resolveBehaviorOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import type {
 	BehaviorState,
 	SiteMetaState,

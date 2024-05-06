@@ -1,12 +1,19 @@
 import { Settings } from "./components/Settings/Settings.js";
 import { UIProvider } from "@/sharedUI/Provider/UIProvider.js";
+import {
+	TanstackQueryClientProvider,
+	TanstackQueryErrorResetBoundary,
+} from "@/sharedUI/Provider/TanstackQueryProvider.js";
 import "./App.css";
-import "primereact/resources/themes/lara-light-cyan/theme.css";
 
 export const App = () => {
 	return (
 		<UIProvider>
-			<Settings />
+			<TanstackQueryClientProvider>
+				<TanstackQueryErrorResetBoundary>
+					<Settings />
+				</TanstackQueryErrorResetBoundary>
+			</TanstackQueryClientProvider>
 		</UIProvider>
 	);
 };

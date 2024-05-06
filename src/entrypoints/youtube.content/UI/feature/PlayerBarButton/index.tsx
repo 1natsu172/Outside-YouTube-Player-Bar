@@ -9,7 +9,7 @@ import { SettingsButton } from "../../components/parts/SettingsButton/index.js";
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
 import { showOpenSettingsIconOption } from "@/core/repositories/options.repository.js";
 
-import { ProgressSpinner } from "primereact/progressspinner";
+import { LoadingSpinner } from "@/sharedUI/Components/parts/LoadingSpinner/index.js";
 
 type BarPosition = BehaviorState["positionPlayerBar"];
 
@@ -42,13 +42,7 @@ export const PlayerBarButton = () => {
 	}, [currentBarPosition]);
 
 	if (isLoading) {
-		return (
-			<ProgressSpinner
-				strokeWidth="8"
-				fill="var(--surface-ground)"
-				animationDuration=".5s"
-			/>
-		);
+		return <LoadingSpinner />;
 	}
 	return (
 		<div className={style["player-bar-button"]}>

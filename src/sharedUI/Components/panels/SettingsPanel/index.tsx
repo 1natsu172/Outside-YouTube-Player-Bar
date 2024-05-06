@@ -1,10 +1,10 @@
 import { Panel } from "primereact/panel";
-import { InputSwitch } from "primereact/inputswitch";
+import { SettingsForm } from "../../forms/SettingsForm/index.js";
 
 export const SettingsPanel = () => {
 	return (
 		<Panel header="Extension settings">
-			<InputSwitch checked={true} />
+			<SettingsForm />
 		</Panel>
 	);
 };

@@ -4,7 +4,6 @@ import {
 } from "@/sharedUI/Provider/UIProvider.js";
 import { PlayerBarButton } from "./feature/PlayerBarButton/index.js";
 import "./App.css";
-import "primereact/resources/themes/lara-light-cyan/theme.css";
 import { useEffect } from "react";
 
 const uiProviderConfig: UIProviderConfig = {

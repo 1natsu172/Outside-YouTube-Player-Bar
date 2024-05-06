@@ -1,30 +1,30 @@
 import {
 	type StorageItemOptions,
+	type StorageItem,
 	centralStorage,
 } from "@/core/infrastructures/storage/centralStorage.js";
 import type {
 	StorageItemConfigInstance,
 	StorageItemConfigRaw,
 } from "./storage.types.js";
-import type { WxtStorageItem } from "wxt/storage";
 
 // util hands that think about migrations
 export const defineItem = <
-	Config extends StorageItemConfigInstance<StorageItemConfigRaw>,
+	TValue,
+	Config extends StorageItemConfigInstance<
+		StorageItemConfigRaw<string, TValue>
+	> = StorageItemConfigInstance<StorageItemConfigRaw<string, TValue>>,
 >(
 	config: Config,
-	storageItemOptions?: Partial<StorageItemOptions<Config["defaultValue"]>>,
+	storageItemOptions?: Partial<StorageItemOptions<TValue>>,
 ) => {
-	const stoOpts: StorageItemOptions<Config["defaultValue"]> = {
+	const stoOpts: StorageItemOptions<TValue> = {
 		defaultValue: config.defaultValue,
 		version: config.version,
 		...storageItemOptions,
 	};
 
-	const defined = centralStorage.defineItem<Config["defaultValue"]>(
-		config.storageKey,
-		stoOpts,
-	);
+	const defined = centralStorage.defineItem<TValue>(config.storageKey, stoOpts);
 	return defined;
 };
 
@@ -32,7 +32,7 @@ export type DefinedItem<
 	TValue,
 	// biome-ignore lint/complexity/noBannedTypes: <explanation>
 	TMetadata extends Record<string, unknown> = {},
-> = WxtStorageItem<TValue, TMetadata>;
+> = StorageItem<TValue, TMetadata>;
 
 export const createStorageConfig = <ConfigRaw extends StorageItemConfigRaw>(
 	configRaw: ConfigRaw,
