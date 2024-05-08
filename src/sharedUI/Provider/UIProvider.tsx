@@ -1,14 +1,20 @@
-import { PrimeReactProvider } from "primereact/api";
-import "primereact/resources/themes/lara-light-cyan/theme.css";
-import "primeflex/primeflex.css";
+import { createTheme, MantineProvider } from "@mantine/core";
 import type { ReactNode } from "react";
 
-type PrimeReactProviderProps = Parameters<typeof PrimeReactProvider>[0];
-export type UIProviderConfig = PrimeReactProviderProps["value"];
+type MantineProviderProps = Parameters<typeof MantineProvider>[0];
+export type UIProviderConfig = MantineProviderProps;
+
+const theme = createTheme({
+	/** Put your mantine theme override here */
+});
 
 type Props = {
 	children: ReactNode;
 } & { config?: UIProviderConfig };
 export const UIProvider = ({ children, config }: Props) => {
-	return <PrimeReactProvider value={config}>{children}</PrimeReactProvider>;
+	return (
+		<MantineProvider theme={theme} {...config}>
+			{children}
+		</MantineProvider>
+	);
 };

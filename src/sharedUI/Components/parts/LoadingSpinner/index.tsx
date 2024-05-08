@@ -1,11 +1,5 @@
-import { ProgressSpinner } from "primereact/progressspinner";
+import { Loader } from "@mantine/core";
 
 export const LoadingSpinner = () => {
-	return (
-		<ProgressSpinner
-			strokeWidth="8"
-			fill="var(--surface-ground)"
-			animationDuration=".5s"
-		/>
-	);
+	return <Loader size={42} />;
 };

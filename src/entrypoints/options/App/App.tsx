@@ -5,6 +5,7 @@ import {
 	TanstackQueryErrorResetBoundary,
 } from "@/sharedUI/Provider/TanstackQueryProvider.js";
 import "./App.css";
+import "@mantine/core/styles.css";
 
 export const App = () => {
 	return (

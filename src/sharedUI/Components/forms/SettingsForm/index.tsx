@@ -15,7 +15,13 @@ const RenderFormDef = (formDef: FormDef, index: number) => {
 };
 
 const UserSettingsForm = () => {
-	return <div>{formDefs.map(RenderFormDef)}</div>;
+	return (
+		<div>
+			{Array.from(formDefs.entries()).map(([, def], index) =>
+				RenderFormDef(def, index),
+			)}
+		</div>
+	);
 };
 
 export const SettingsForm = () => {

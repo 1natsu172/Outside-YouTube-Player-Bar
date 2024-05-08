@@ -4,7 +4,7 @@ import {
 	QueryClientProvider,
 	QueryErrorResetBoundary,
 } from "@tanstack/react-query";
-import { Button } from "primereact/button";
+import { Button } from "@mantine/core";
 import { type ReactNode, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 

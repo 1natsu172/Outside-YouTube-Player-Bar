@@ -1,28 +1,33 @@
+import { Card, Group } from "@mantine/core";
 import type { ReactNode } from "react";
 import type { FormDef } from "./FormDefinition.js";
-import { Panel } from "primereact/panel";
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
 import { debugMode } from "@/core/repositories/options.repository.js";
 
-type FormItemP = {
+type FormGroupP = {
 	children?: ReactNode;
 	formDef: FormDef;
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	formState?: any;
 };
-export const FormItem = ({ children, formDef, formState }: FormItemP) => {
-	const { id, title, description } = formDef;
+export const FormGroup = ({ children, formDef, formState }: FormGroupP) => {
+	const { id } = formDef;
 	const { store: isDebug } = useStorage(debugMode);
+
 	return (
-		<div key={id}>
-			<h3>{title}</h3>
-			<p>{description}</p>
+		<Group
+			// justify="space-between"
+			// className={classes.item}
+			wrap="nowrap"
+			gap="xl"
+			key={id}
+		>
 			{children}
 			{isDebug && (
-				<Panel header="debug">
+				<Card>
 					<pre className="m-0">{JSON.stringify(formState, null, 2)}</pre>
-				</Panel>
+				</Card>
 			)}
-		</div>
+		</Group>
 	);
 };

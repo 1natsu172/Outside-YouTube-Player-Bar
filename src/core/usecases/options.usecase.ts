@@ -3,73 +3,91 @@ import type {
 	AllOptionsValues,
 	AllOptionsMeta,
 } from "@/core/mains/options/index.js";
+import type { DefinedItem } from "../infrastructures/storage/index.js";
+import { defu } from "defu";
+
+/**
+ * NOTE: WXT storageがTmetadataはRecord型かつOptionalUpdateに対応しているのでいいが、TValueはRecordではないので、_generalUpdate関数内部で更に抽象化しようとするとTValueの型が複雑になる。なのでここではTValue/Tmetadataを受け取ってstorageに流すバリアントに留めている。
+ */
+const _generalUpdate = async <
+	TValue,
+	// biome-ignore lint/complexity/noBannedTypes: <explanation>
+	TMetadata extends Record<string, unknown> = {},
+>(
+	definedItem: DefinedItem<TValue, TMetadata>,
+	tValue?: TValue,
+	tMetadata?: TMetadata,
+) => {
+	await new Promise((resolve) => {
+		setTimeout(() => {
+			resolve("");
+		}, 1000);
+	});
+	if (tValue) {
+		await definedItem.setValue(tValue);
+	}
+	if (tMetadata) {
+		await definedItem.setMeta(tMetadata);
+	}
+};
 
 //// extensionMetaOptions
+/**
+ * NOTE: wxt/storageがTMetadataはPartial<Record>で受け入れるので素通りさせてOKだが、TValueはDefinedItemごとにmergeすべき形が異なるので、各usecase内で整合させる実装にしている
+ */
 export const setDebugModeOption = async (
-	option?: AllOptionsValues["debugModeV1"],
-	meta?: AllOptionsMeta["debugModeV1"],
+	option?: Partial<AllOptionsValues["debugModeV1"]>,
+	meta?: Partial<AllOptionsMeta["debugModeV1"]>,
 ) => {
-	if (option) {
-		await repo.debugMode.setValue(option);
-	}
-	if (meta) {
-		await repo.debugMode.setMeta(meta);
-	}
+	const _repo = repo.debugMode;
+	const currentOption = await _repo.getValue();
+	const _option = option ?? currentOption;
+	await _generalUpdate(_repo, _option, meta);
 };
 export const setForceDisableOption = async (
-	option?: AllOptionsValues["forceDisableV1"],
-	meta?: AllOptionsMeta["forceDisableV1"],
+	option?: Partial<AllOptionsValues["forceDisableV1"]>,
+	meta?: Partial<AllOptionsMeta["forceDisableV1"]>,
 ) => {
-	if (option) {
-		await repo.forceDisable.setValue(option);
-	}
-	if (meta) {
-		await repo.forceDisable.setMeta(meta);
-	}
+	const _repo = repo.forceDisable;
+	const currentOption = await _repo.getValue();
+	const _option = option ?? currentOption;
+	await _generalUpdate(_repo, _option, meta);
 };
-
+//TODO: テスト書く
 //// UserOptions
 export const setDefaultViewBehaviorOption = async (
-	option?: AllOptionsValues["defaultViewBehaviorV1"],
-	meta?: AllOptionsMeta["defaultViewBehaviorV1"],
+	option?: Partial<AllOptionsValues["defaultViewBehaviorV1"]>,
+	meta?: Partial<AllOptionsMeta["defaultViewBehaviorV1"]>,
 ) => {
-	if (option) {
-		await repo.defaultViewBehaviorOption.setValue(option);
-	}
-	if (meta) {
-		await repo.defaultViewBehaviorOption.setMeta(meta);
-	}
+	const _repo = repo.defaultViewBehaviorOption;
+	const currentOption = await _repo.getValue();
+	const _option = defu(option, currentOption);
+	await _generalUpdate(_repo, _option, meta);
 };
 export const setTheaterModeBehaviorOption = async (
-	option?: AllOptionsValues["theaterModeBehaviorV1"],
-	meta?: AllOptionsMeta["theaterModeBehaviorV1"],
+	option?: Partial<AllOptionsValues["theaterModeBehaviorV1"]>,
+	meta?: Partial<AllOptionsMeta["theaterModeBehaviorV1"]>,
 ) => {
-	if (option) {
-		await repo.theaterModeBehaviorOption.setValue(option);
-	}
-	if (meta) {
-		await repo.theaterModeBehaviorOption.setMeta(meta);
-	}
+	const _repo = repo.theaterModeBehaviorOption;
+	const currentOption = await _repo.getValue();
+	const _option = defu(option, currentOption);
+	await _generalUpdate(_repo, _option, meta);
 };
 export const setFullscreenBehaviorOption = async (
-	option?: AllOptionsValues["fullscreenBehaviorV1"],
-	meta?: AllOptionsMeta["fullscreenBehaviorV1"],
+	option?: Partial<AllOptionsValues["fullscreenBehaviorV1"]>,
+	meta?: Partial<AllOptionsMeta["fullscreenBehaviorV1"]>,
 ) => {
-	if (option) {
-		await repo.fullscreenBehaviorOption.setValue(option);
-	}
-	if (meta) {
-		await repo.fullscreenBehaviorOption.setMeta(meta);
-	}
+	const _repo = repo.fullscreenBehaviorOption;
+	const currentOption = await _repo.getValue();
+	const _option = defu(option, currentOption);
+	await _generalUpdate(_repo, _option, meta);
 };
 export const setShowOpenSettingsIconOption = async (
-	option?: AllOptionsValues["showOpenSettingsIconV1"],
-	meta?: AllOptionsMeta["showOpenSettingsIconV1"],
+	option?: Partial<AllOptionsValues["showOpenSettingsIconV1"]>,
+	meta?: Partial<AllOptionsMeta["showOpenSettingsIconV1"]>,
 ) => {
-	if (option) {
-		await repo.showOpenSettingsIconOption.setValue(option);
-	}
-	if (meta) {
-		await repo.showOpenSettingsIconOption.setMeta(meta);
-	}
+	const _repo = repo.showOpenSettingsIconOption;
+	const currentOption = await _repo.getValue();
+	const _option = option ?? currentOption;
+	await _generalUpdate(_repo, _option, meta);
 };

@@ -1,10 +1,10 @@
-import { Panel } from "primereact/panel";
+import { Card } from "@mantine/core";
 import { SettingsForm } from "../../forms/SettingsForm/index.js";
 
 export const SettingsPanel = () => {
 	return (
-		<Panel header="Extension settings">
+		<Card>
 			<SettingsForm />
-		</Panel>
+		</Card>
 	);
 };
