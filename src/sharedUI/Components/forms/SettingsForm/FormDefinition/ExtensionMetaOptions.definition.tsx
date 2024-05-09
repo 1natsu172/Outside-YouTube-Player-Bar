@@ -31,7 +31,7 @@ export const ExtensionMetaOptionsSettingFormDefs: FormDefs = new Map([
 						<AutoSaveForFormField
 							option={{
 								useSuspenseQueryArgs: [
-									{ queryKey, queryFn: getDebugModeOption, staleTime: 0 },
+									{ queryKey, queryFn: getDebugModeOption },
 								],
 								useMutationArgs: [{ mutationFn: switchDebugMode }],
 							}}
