@@ -15,17 +15,10 @@ import {
 	Switch,
 	type SegmentedControlItem,
 } from "@mantine/core";
-import { FormGroup } from "./FormGroup.js";
-import { FormField } from "./FormField.js";
-import { AutoSaveForFormField } from "../utils/useAutoSaveForm.js";
-
-export interface FormDef {
-	FormElement: (props: { formId: string }) => JSX.Element;
-}
-export type FormDefs<FormID extends `Form:${string}` = `Form:${string}`> = Map<
-	FormID,
-	FormDef
->;
+import { FormGroup } from "../FormGroup.js";
+import { FormField } from "../FormField.js";
+import { AutoSaveForFormField } from "../../utils/useAutoSaveForm.js";
+import type { FormDefs } from "./formDefinition.types.js";
 
 const playerBarPisitonSelect: SegmentedControlItem[] = [
 	{
@@ -45,7 +38,7 @@ const playerBarPisitonSelect: SegmentedControlItem[] = [
 /**
  * @description Enumerate component implementations
  */
-export const SettingsFormDefs: FormDefs = new Map([
+export const UserOptionsSettingFormDefs: FormDefs = new Map([
 	[
 		"Form:DefaultViewBehavior",
 		{

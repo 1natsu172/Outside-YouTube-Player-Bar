@@ -1,8 +1,8 @@
 import { Suspense } from "react";
-import type { FormDef } from "./FormDefinition.js";
+import type { FormDef } from "./FormDefinition/formDefinition.types.js";
 import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
 import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
-import { SettingsFormDefs } from "./FormDefinition.js";
+import { UserOptionsSettingFormDefs } from "./FormDefinition/UserOptions.definition.js";
 import { Card } from "@mantine/core";
 import style from "./index.module.css";
 
@@ -20,8 +20,8 @@ const RenderFormDef = (formId: string, formDef: FormDef, index: number) => {
 const UserSettingsForm = () => {
 	return (
 		<Card withBorder radius="md" p="xl" className={style.card}>
-			{Array.from(SettingsFormDefs.entries()).map(([formId, def], index) =>
-				RenderFormDef(formId, def, index),
+			{Array.from(UserOptionsSettingFormDefs.entries()).map(
+				([formId, def], index) => RenderFormDef(formId, def, index),
 			)}
 		</Card>
 	);
