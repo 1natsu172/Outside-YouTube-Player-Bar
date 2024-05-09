@@ -17,7 +17,7 @@ export const FormGroup = ({ title, children, formState }: FormGroupProps) => {
 			<Title>{title}</Title>
 			{children}
 			{isDebug && (
-				<Card>
+				<Card withBorder radius="md">
 					<pre className="m-0">
 						{JSON.stringify({ [title]: formState }, null, 2)}
 					</pre>

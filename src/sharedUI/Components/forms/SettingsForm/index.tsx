@@ -3,6 +3,7 @@ import type { FormDef } from "./FormDefinition/formDefinition.types.js";
 import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
 import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
 import { UserOptionsSettingFormDefs } from "./FormDefinition/UserOptions.definition.js";
+import { ExtensionMetaOptionsSettingFormDefs } from "./FormDefinition/ExtensionMetaOptions.definition.js";
 import { Card } from "@mantine/core";
 import style from "./index.module.css";
 
@@ -19,11 +20,18 @@ const RenderFormDef = (formId: string, formDef: FormDef, index: number) => {
 
 const UserSettingsForm = () => {
 	return (
-		<Card withBorder radius="md" p="xl" className={style.card}>
-			{Array.from(UserOptionsSettingFormDefs.entries()).map(
-				([formId, def], index) => RenderFormDef(formId, def, index),
-			)}
-		</Card>
+		<>
+			<Card withBorder radius="lg" p="xl" mb="xl" className={style.card}>
+				{Array.from(UserOptionsSettingFormDefs.entries()).map(
+					([formId, def], index) => RenderFormDef(formId, def, index),
+				)}
+			</Card>
+			<Card withBorder radius="lg" p="xl" className={style.card}>
+				{Array.from(ExtensionMetaOptionsSettingFormDefs.entries()).map(
+					([formId, def], index) => RenderFormDef(formId, def, index),
+				)}
+			</Card>
+		</>
 	);
 };
 

@@ -98,6 +98,7 @@ export const UserOptionsSettingFormDefs: FormDefs = new Map([
 									formState={data}
 								>
 									<Switch
+										size="lg"
 										checked={data.alwaysDisplayPlayerBar}
 										onChange={(e) => {
 											mutate({ alwaysDisplayPlayerBar: e.target.checked });
@@ -172,6 +173,7 @@ export const UserOptionsSettingFormDefs: FormDefs = new Map([
 									formState={data}
 								>
 									<Switch
+										size="lg"
 										checked={data.alwaysDisplayPlayerBar}
 										onChange={(e) => {
 											mutate({ alwaysDisplayPlayerBar: e.target.checked });
@@ -246,6 +248,7 @@ export const UserOptionsSettingFormDefs: FormDefs = new Map([
 									formState={data}
 								>
 									<Switch
+										size="lg"
 										checked={data.alwaysDisplayPlayerBar}
 										onChange={(e) => {
 											mutate({ alwaysDisplayPlayerBar: e.target.checked });

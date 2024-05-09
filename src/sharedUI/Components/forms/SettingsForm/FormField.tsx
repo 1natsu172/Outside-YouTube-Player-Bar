@@ -1,4 +1,4 @@
-import { Group, Text, Title } from "@mantine/core";
+import { Card, Group, Text, Title } from "@mantine/core";
 import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
 import { debugMode } from "@/core/repositories/options.repository.js";
@@ -22,17 +22,23 @@ export const FormField = ({
 
 	return (
 		<>
-			<Group justify="space-between">
+			<Group justify="space-between" pl={"lg"}>
 				<div>
 					<Title>{title}</Title>
 					<Text size="xs" c="dimmed">
 						{description}
 					</Text>
 				</div>
-				{FormField}
+				<Group>
+					{isLoading && <LoadingSpinner />}
+					{FormField}
+				</Group>
 			</Group>
-			{isLoading && <LoadingSpinner />}
-			{isDebug && <pre>{JSON.stringify({ [title]: formState }, null, 2)}</pre>}
+			<Card withBorder radius={"md"}>
+				{isDebug && (
+					<pre>{JSON.stringify({ [title]: formState }, null, 2)}</pre>
+				)}
+			</Card>
 		</>
 	);
 };
