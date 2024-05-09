@@ -4,3 +4,11 @@ export type NestedValueOf<T> = T extends object
 	: T;
 
 export type NonUndefined<T> = T extends undefined ? never : T;
+
+export type IterableElement<TargetIterable> = TargetIterable extends Iterable<
+	infer ElementType
+>
+	? ElementType
+	: TargetIterable extends AsyncIterable<infer ElementType>
+		? ElementType
+		: never;

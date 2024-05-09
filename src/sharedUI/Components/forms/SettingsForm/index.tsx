@@ -1,14 +1,17 @@
 import { Suspense } from "react";
-import { formDefs, type FormDef } from "./FormDefinition.js";
+import type { FormDef } from "./FormDefinition.js";
 import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
 import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
+import { SettingsFormDefs } from "./FormDefinition.js";
+import { Card } from "@mantine/core";
+import style from "./index.module.css";
 
-const RenderFormDef = (formDef: FormDef, index: number) => {
+const RenderFormDef = (formId: string, formDef: FormDef, index: number) => {
 	const { FormElement } = formDef;
 	return (
 		<TanstackQueryErrorResetBoundary key={index}>
 			<Suspense fallback={<LoadingSpinner />} key={index}>
-				<FormElement formDef={formDef} />
+				<FormElement formId={formId} />
 			</Suspense>
 		</TanstackQueryErrorResetBoundary>
 	);
@@ -16,11 +19,11 @@ const RenderFormDef = (formDef: FormDef, index: number) => {
 
 const UserSettingsForm = () => {
 	return (
-		<div>
-			{Array.from(formDefs.entries()).map(([, def], index) =>
-				RenderFormDef(def, index),
+		<Card withBorder radius="md" p="xl" className={style.card}>
+			{Array.from(SettingsFormDefs.entries()).map(([formId, def], index) =>
+				RenderFormDef(formId, def, index),
 			)}
-		</div>
+		</Card>
 	);
 };
 
