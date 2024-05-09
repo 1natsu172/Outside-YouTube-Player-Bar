@@ -9,8 +9,6 @@ import { FormField } from "../FormField.js";
 import { AutoSaveForFormField } from "../../utils/useAutoSaveForm.js";
 import type { FormDefs } from "./formDefinition.types.js";
 import { getDebugModeOption } from "@/core/presenters/storagePresenter/options.presenter.js";
-import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
-import { debugMode } from "@/core/repositories/options.repository.js";
 
 /**
  * @description Enumerate component implementations
@@ -51,8 +49,6 @@ export const ExtensionMetaOptionsSettingFormDefs: FormDefs = new Map([
 										size="lg"
 										checked={data}
 										onChange={(e) => {
-											console.log(e.target.checked);
-
 											mutate(e.target.checked);
 										}}
 										offLabel="OFF"
