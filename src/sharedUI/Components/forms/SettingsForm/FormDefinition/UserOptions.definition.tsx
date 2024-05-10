@@ -394,7 +394,7 @@ export const UiEnhanceOptionsFormDefs: FormDefs = new Map([
 			FormElement: ({ formId }) => {
 				const queryKey = [formId];
 				return (
-					<FormGroup>
+					<FormGroup title="">
 						<AutoSaveForFormField
 							option={{
 								useSuspenseQueryArgs: [

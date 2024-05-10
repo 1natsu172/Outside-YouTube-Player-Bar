@@ -21,7 +21,7 @@ export const ExtensionMetaOptionsFormDefs: FormDefs = new Map([
 				const queryKey = [formId];
 
 				return (
-					<FormGroup>
+					<FormGroup title="">
 						<AutoSaveForFormField
 							option={{
 								useSuspenseQueryArgs: [
