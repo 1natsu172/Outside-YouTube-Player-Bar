@@ -139,7 +139,7 @@
 		}
 	},
 	"settings_userOption_showOpenSettingsIcon_title": {
-		"message": "再生バーのボタンに詳細設定アイコンを表示する",
+		"message": "再生バーに設定パネルを開くアイコンを表示する",
 		"description": "Display settings icon on the playerbar"
 	},
 	"settings_userOption_showOpenSettingsIcon_description": {

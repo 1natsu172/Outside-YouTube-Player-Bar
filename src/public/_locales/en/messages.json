@@ -139,8 +139,8 @@
 		}
 	},
 	"settings_userOption_showOpenSettingsIcon_title": {
-		"message": "Display settings icon on the player bar",
-		"description": "Display settings icon on the playerbar"
+		"message": "Display open settings icon on the player bar",
+		"description": "Display open settings icon on the playerbar"
 	},
 	"settings_userOption_showOpenSettingsIcon_description": {
 		"message": "※ After disabling this, to re-open the settings, click the extension icon in the browser or open the options from the browser's extension management page.",

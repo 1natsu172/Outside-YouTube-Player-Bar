@@ -385,9 +385,9 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
-     * Display settings icon on the playerbar
+     * Display open settings icon on the playerbar
      *
-     * "Display settings icon on the player bar"
+     * "Display open settings icon on the player bar"
      */
     getMessage(
       messageName: "settings_userOption_showOpenSettingsIcon_title",
