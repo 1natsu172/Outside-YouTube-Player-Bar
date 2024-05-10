@@ -4,7 +4,7 @@ import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/i
 import { debugMode } from "@/core/repositories/options.repository.js";
 
 export type FormGroupProps = {
-	title: string;
+	title?: string;
 	children?: ReactNode;
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	formState?: any;

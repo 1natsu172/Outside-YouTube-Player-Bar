@@ -2,8 +2,11 @@ import { Suspense } from "react";
 import type { FormDef } from "./FormDefinition/formDefinition.types.js";
 import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
 import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
-import { UserOptionsSettingFormDefs } from "./FormDefinition/UserOptions.definition.js";
-import { ExtensionMetaOptionsSettingFormDefs } from "./FormDefinition/ExtensionMetaOptions.definition.js";
+import {
+	ExtensionBehaviorOptionsFormDefs,
+	UiEnhanceOptionsFormDefs,
+} from "./FormDefinition/UserOptions.definition.js";
+import { ExtensionMetaOptionsFormDefs } from "./FormDefinition/ExtensionMetaOptions.definition.js";
 import { Card } from "@mantine/core";
 import style from "./index.module.css";
 
@@ -22,12 +25,17 @@ const UserSettingsForm = () => {
 	return (
 		<>
 			<Card withBorder radius="lg" p="xl" mb="xl" className={style.card}>
-				{Array.from(UserOptionsSettingFormDefs.entries()).map(
+				{Array.from(ExtensionBehaviorOptionsFormDefs.entries()).map(
+					([formId, def], index) => RenderFormDef(formId, def, index),
+				)}
+			</Card>
+			<Card withBorder radius="lg" p="xl" mb="xl" className={style.card}>
+				{Array.from(UiEnhanceOptionsFormDefs.entries()).map(
 					([formId, def], index) => RenderFormDef(formId, def, index),
 				)}
 			</Card>
 			<Card withBorder radius="lg" p="xl" className={style.card}>
-				{Array.from(ExtensionMetaOptionsSettingFormDefs.entries()).map(
+				{Array.from(ExtensionMetaOptionsFormDefs.entries()).map(
 					([formId, def], index) => RenderFormDef(formId, def, index),
 				)}
 			</Card>

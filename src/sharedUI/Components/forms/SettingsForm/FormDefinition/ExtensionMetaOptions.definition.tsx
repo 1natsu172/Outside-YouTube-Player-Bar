@@ -13,7 +13,7 @@ import { getDebugModeOption } from "@/core/presenters/storagePresenter/options.p
 /**
  * @description Enumerate component implementations
  */
-export const ExtensionMetaOptionsSettingFormDefs: FormDefs = new Map([
+export const ExtensionMetaOptionsFormDefs: FormDefs = new Map([
 	[
 		"Form:DebugMode",
 		{
@@ -21,11 +21,7 @@ export const ExtensionMetaOptionsSettingFormDefs: FormDefs = new Map([
 				const queryKey = [formId];
 
 				return (
-					<FormGroup
-						title={browser.i18n.getMessage(
-							"settings_metaOption_debugMode_title",
-						)}
-					>
+					<FormGroup>
 						<AutoSaveForFormField
 							option={{
 								useSuspenseQueryArgs: [

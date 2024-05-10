@@ -8,6 +8,7 @@ import {
 import {
 	getDefaultViewBehaviorOption,
 	getFullscreenBehaviorOption,
+	getShowOpenSettingsIconOption,
 	getTheaterModeBehaviorOption,
 } from "@/core/presenters/storagePresenter/options.presenter.js";
 import {
@@ -37,8 +38,9 @@ const playerBarPisitonSelect: SegmentedControlItem[] = [
 
 /**
  * @description Enumerate component implementations
+ * About the ExtensionBehavior
  */
-export const UserOptionsSettingFormDefs: FormDefs = new Map([
+export const ExtensionBehaviorOptionsFormDefs: FormDefs = new Map([
 	[
 		"Form:DefaultViewBehavior",
 		{
@@ -366,6 +368,59 @@ export const UserOptionsSettingFormDefs: FormDefs = new Map([
 										checked={data.alwaysDisplayPlayerBar}
 										onChange={(e) => {
 											mutate({ alwaysDisplayPlayerBar: e.target.checked });
+										}}
+										offLabel="OFF"
+										onLabel="ON"
+										disabled={isLoading || isPending}
+									/>
+								</FormField>
+							)}
+						</AutoSaveForFormField>
+					</FormGroup>
+				);
+			},
+		},
+	],
+]);
+
+/**
+ * @description Enumerate component implementations
+ * About the UIEnhanceOptions
+ */
+export const UiEnhanceOptionsFormDefs: FormDefs = new Map([
+	[
+		"Form:ShowOpenSettingsIcon",
+		{
+			FormElement: ({ formId }) => {
+				const queryKey = [formId];
+				return (
+					<FormGroup>
+						<AutoSaveForFormField
+							option={{
+								useSuspenseQueryArgs: [
+									{ queryKey, queryFn: getShowOpenSettingsIconOption },
+								],
+								useMutationArgs: [
+									{ mutationFn: setShowOpenSettingsIconOption },
+								],
+							}}
+						>
+							{([{ data, isLoading }, { mutate, isPending }]) => (
+								<FormField
+									title={browser.i18n.getMessage(
+										"settings_userOption_showOpenSettingsIcon_title",
+									)}
+									description={browser.i18n.getMessage(
+										"settings_userOption_showOpenSettingsIcon_description",
+									)}
+									isLoading={isPending}
+									formState={data}
+								>
+									<Switch
+										size="lg"
+										checked={data}
+										onChange={(e) => {
+											mutate(e.target.checked);
 										}}
 										offLabel="OFF"
 										onLabel="ON"
