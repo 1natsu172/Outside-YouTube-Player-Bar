@@ -9,8 +9,7 @@ import { defu } from "defu";
 /**
  * NOTE: WXT storageがTmetadataはRecord型かつOptionalUpdateに対応しているのでいいが、TValueはRecordではないので、_generalUpdate関数内部で更に抽象化しようとするとTValueの型が複雑になる。なのでここではTValue/Tmetadataを受け取ってstorageに流すバリアントに留めている。
  */
-// TODO: テスト書く
-const _generalUpdate = async <
+export const _generalUpdate = async <
 	TValue,
 	// biome-ignore lint/complexity/noBannedTypes: <explanation>
 	TMetadata extends Record<string, unknown> = {},
@@ -19,11 +18,6 @@ const _generalUpdate = async <
 	tValue: TValue,
 	tMetadata?: TMetadata,
 ) => {
-	await new Promise((resolve) => {
-		setTimeout(() => {
-			resolve("");
-		}, 1000);
-	});
 	await definedItem.setValue(tValue);
 
 	if (tMetadata !== undefined) {
