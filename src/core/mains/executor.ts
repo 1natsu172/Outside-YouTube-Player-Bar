@@ -12,6 +12,7 @@ import {
 	getSiteVersion,
 	registerInitializationLocation,
 } from "@/core/services/siteMetaServices/index.js";
+import { initializeDebugMode } from "@/core/services/optionsServices/extensionMetaOptions.service.js";
 
 export class Executor {
 	private stateDriven: StateDriven;
@@ -25,7 +26,7 @@ export class Executor {
 			logger.warn("oops, initialize seems to have been called multiple times!");
 			return;
 		}
-
+		await initializeDebugMode();
 		logger.debug("initialization executing.");
 		await this.setupEffects();
 		await applyCompatibilityStyles();
