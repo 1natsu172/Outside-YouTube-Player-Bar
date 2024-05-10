@@ -1,13 +1,13 @@
 import { isVideoPage } from "@/core/presenters/judgePage.js";
 import { siteMetaState } from "@/core/repositories/contentScript.repository.js";
-import { changePositionPlayerBarByUserOption } from "@/core/services/behaviorServices/positionPlayerBar.service.js";
+import { changePositionPlayerBarByChangedPlayerMode } from "@/core/services/behaviorServices/positionPlayerBar.service.js";
 import { applyVideoPlayerModeToSiteMeta } from "@/core/services/siteMetaServices/index.js";
 import { subscribeKey } from "valtio/utils";
 
 export const videoPlayerModeDriven = () => {
 	return subscribeKey(siteMetaState.videoPlayerState, "mode", (value) => {
 		logger.info("videoPlayerMode changed", value);
-		changePositionPlayerBarByUserOption({ videoPlayerMode: value });
+		changePositionPlayerBarByChangedPlayerMode({ videoPlayerMode: value });
 	});
 };
 

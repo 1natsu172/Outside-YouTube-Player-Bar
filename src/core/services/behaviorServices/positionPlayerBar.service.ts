@@ -5,7 +5,7 @@ import type {
 	SiteMetaState,
 } from "@/core/mains/contentScriptState.js";
 
-export const changePositionPlayerBarByUserOption = async ({
+export const changePositionPlayerBarByChangedPlayerMode = async ({
 	videoPlayerMode,
 }: { videoPlayerMode: SiteMetaState["videoPlayerState"]["mode"] }) => {
 	if (videoPlayerMode === "none") {
@@ -13,12 +13,14 @@ export const changePositionPlayerBarByUserOption = async ({
 	}
 
 	const userOption = await resolveBehaviorOption(videoPlayerMode);
-	logger.debug(
-		"position player bar change to",
-		userOption.positionPlayerBar,
-		"(by UserOption)",
-	);
-	setPositionPlayerBar(userOption.positionPlayerBar);
+	if (userOption.alwaysApplyDefaultBehaviorSettings) {
+		setPositionPlayerBar(userOption.positionPlayerBar);
+		logger.debug(
+			"position player bar change to",
+			userOption.positionPlayerBar,
+			"(by user setting value)",
+		);
+	}
 };
 
 export const changePositionPlayerBar = async ({
