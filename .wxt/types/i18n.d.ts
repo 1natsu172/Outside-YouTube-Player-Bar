@@ -195,6 +195,36 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
+     * the default view of the video player mode
+     *
+     * "defaultView"
+     */
+    getMessage(
+      messageName: "metawords_defaultView",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * the theater mode of the video player mode
+     *
+     * "theaterMode"
+     */
+    getMessage(
+      messageName: "metawords_theaterMode",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * the fullscreen of the video player mode
+     *
+     * "fullscreen"
+     */
+    getMessage(
+      messageName: "metawords_fullscreen",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
      * settings page title
      *
      * "Settings for Outside YouTube Player Bar"
@@ -325,9 +355,19 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
+     * always display player bar caution that cpu usage bumping
+     *
+     * "CPU usage increase due to specifications. If the browser is slow that recommended to turn OFF."
+     */
+    getMessage(
+      messageName: "settings_userOption_alwaysDisplayPlayerBar_description",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
      * always apply default behavior setting if video mode changed
      *
-     * "Apply default settings whenever video mode changes"
+     * "Apply default settings whenever video mode changes to $MODE$"
      */
     getMessage(
       messageName: "settings_userOption_alwaysApplyDefaultBehaviorSettings_title",
@@ -337,7 +377,7 @@ Note: You can't use this message in a manifest file.
     /**
      * example of the always apply default behavior settings
      *
-     * "If checked: (e.g.) If the default setting is outside and you temporarily set it to inside, it will switch back to outside when you change video modes."
+     * "(e.g.) If the position of the setting is `outside` and it is turned on: if you temporarily move the player bar inside on the video page and then switch to $MODE$ → move to `outside` of the settings."
      */
     getMessage(
       messageName: "settings_userOption_alwaysApplyDefaultBehaviorSettings_description",

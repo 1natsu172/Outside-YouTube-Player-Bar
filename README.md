@@ -29,6 +29,14 @@ Default dev browser is chrome. You can change other browser.
 - `pnpm run dev:chrome`
 - `pnpm run dev:arc`
 
+### If add new defined value to storage item
+
+If the unreleased versioning schema is changed during development, the option must be discarded once (reset to defaultValue).
+
+[![Image from Gyazo](https://i.gyazo.com/5b692ce0041c6ea10b5735cd2d65a0cc.png)](https://gyazo.com/5b692ce0041c6ea10b5735cd2d65a0cc)
+
+If you want to change a schema that has been released once, you need to migrate to a new version. (ref: https://wxt.dev/guide/storage.html#versioning)
+
 ## Release
 
 [DEPLOY.md](./DEPLOY.md)

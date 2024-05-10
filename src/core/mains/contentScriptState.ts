@@ -59,5 +59,8 @@ export type ContentScriptState = {
 	operation: OperationState;
 	siteMeta: SiteMetaState;
 
+	/**
+	 * A special ProxyState to pump context and functionality from each state and actually reflect it in the UI.
+	 */
 	__reflectFunctionality__: ReflectFunctionalityState;
 };

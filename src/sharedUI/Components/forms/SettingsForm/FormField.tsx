@@ -22,7 +22,7 @@ export const FormField = ({
 
 	return (
 		<>
-			<Group justify="space-between" pl={"lg"}>
+			<Group justify="space-between" wrap="nowrap" pl={"lg"}>
 				<div>
 					<Title>{title}</Title>
 					<Text size="xs" c="dimmed">
@@ -34,11 +34,11 @@ export const FormField = ({
 					{FormField}
 				</Group>
 			</Group>
-			<Card withBorder radius={"md"}>
-				{isDebug && (
+			{isDebug && (
+				<Card withBorder radius={"md"}>
 					<pre>{JSON.stringify({ [title]: formState }, null, 2)}</pre>
-				)}
-			</Card>
+				</Card>
+			)}
 		</>
 	);
 };

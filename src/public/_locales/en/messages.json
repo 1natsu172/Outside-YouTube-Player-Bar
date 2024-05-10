@@ -50,6 +50,19 @@
 		"description": "popup.html's footer author lead"
 	},
 
+	"metawords_defaultView": {
+		"message": "defaultView",
+		"description": "the default view of the video player mode"
+	},
+	"metawords_theaterMode": {
+		"message": "theaterMode",
+		"description": "the theater mode of the video player mode"
+	},
+	"metawords_fullscreen": {
+		"message": "fullscreen",
+		"description": "the fullscreen of the video player mode"
+	},
+
 	"settings_title": {
 		"message": "Settings for Outside YouTube Player Bar",
 		"description": "settings page title"
@@ -103,13 +116,27 @@
 		"message": "Always display player bar (only effective when outside)",
 		"description": "always display player bar"
 	},
+	"settings_userOption_alwaysDisplayPlayerBar_description": {
+		"message": "CPU usage increase due to specifications. If the browser is slow that recommended to turn OFF.",
+		"description": "always display player bar caution that cpu usage bumping"
+	},
 	"settings_userOption_alwaysApplyDefaultBehaviorSettings_title": {
-		"message": "Apply default settings whenever video mode changes",
-		"description": "always apply default behavior setting if video mode changed"
+		"message": "Apply default settings whenever video mode changes to $MODE$",
+		"description": "always apply default behavior setting if video mode changed",
+		"placeholders": {
+			"MODE": {
+				"content": "$1"
+			}
+		}
 	},
 	"settings_userOption_alwaysApplyDefaultBehaviorSettings_description": {
-		"message": "If checked: (e.g.) If the default setting is outside and you temporarily set it to inside, it will switch back to outside when you change video modes.",
-		"description": "example of the always apply default behavior settings"
+		"message": "(e.g.) If the position of the setting is `outside` and it is turned on: if you temporarily move the player bar inside on the video page and then switch to $MODE$ → move to `outside` of the settings.",
+		"description": "example of the always apply default behavior settings",
+		"placeholders": {
+			"MODE": {
+				"content": "$1"
+			}
+		}
 	},
 	"settings_userOption_showOpenSettingsIcon_title": {
 		"message": "Display settings icon on the player bar",

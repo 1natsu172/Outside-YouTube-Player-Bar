@@ -50,6 +50,19 @@
 		"description": "popup.html's footer author lead"
 	},
 
+	"metawords_defaultView": {
+		"message": "デフォルトビュー",
+		"description": "the default view of the video player mode"
+	},
+	"metawords_theaterMode": {
+		"message": "シアターモード",
+		"description": "the theater mode of the video player mode"
+	},
+	"metawords_fullscreen": {
+		"message": "フルスクリーン",
+		"description": "the fullscreen of the video player mode"
+	},
+
 	"settings_title": {
 		"message": "Outside YouTube Player Barの設定",
 		"description": "settings page title"
@@ -71,7 +84,7 @@
 		"description": "usecase the force disable mode"
 	},
 
-  "settings_userOption_behaviors_title": {
+	"settings_userOption_behaviors_title": {
 		"message": "プレイヤーモードごとのデフォルトの設定",
 		"description": "settings extension behavor of the each player modes"
 	},
@@ -103,13 +116,27 @@
 		"message": "常に再生バーを表示する（外側のときのみ有効）",
 		"description": "always display player bar"
 	},
-  "settings_userOption_alwaysApplyDefaultBehaviorSettings_title": {
-		"message": "モードを切り替えるたびにデフォルト設定を適用する",
-		"description": "always apply default behavior setting if video mode changed"
+	"settings_userOption_alwaysDisplayPlayerBar_description": {
+		"message": "仕様上CPU使用率が増加します（ブラウザが重い場合はOFFを推奨）",
+		"description": "always display player bar caution that cpu usage bumping"
 	},
-  "settings_userOption_alwaysApplyDefaultBehaviorSettings_description": {
-		"message": "チェックをつけた場合: (例)デフォルト設定が外側でご自身で一時的に内側にし、モードへ切り替えたら→外側になる",
-		"description": "example of the always apply default behavior settings"
+	"settings_userOption_alwaysApplyDefaultBehaviorSettings_title": {
+		"message": "$MODE$へ切り替えるたび再生バーをオプション設定の位置にする",
+		"description": "always apply default behavior setting if video mode changed",
+		"placeholders": {
+			"MODE": {
+				"content": "$1"
+			}
+		}
+	},
+	"settings_userOption_alwaysApplyDefaultBehaviorSettings_description": {
+		"message": "（例）オプション設定の位置が「外側」でONにした場合: 動画ページで一時的にバーを内側にしたあと$MODE$へ切り替えると → オプション設定の「外側」になる",
+		"description": "example of the always apply default behavior settings",
+		"placeholders": {
+			"MODE": {
+				"content": "$1"
+			}
+		}
 	},
 	"settings_userOption_showOpenSettingsIcon_title": {
 		"message": "再生バーのボタンに詳細設定アイコンを表示する",

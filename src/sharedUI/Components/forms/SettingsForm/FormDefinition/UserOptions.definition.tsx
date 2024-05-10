@@ -93,7 +93,45 @@ export const UserOptionsSettingFormDefs: FormDefs = new Map([
 								<FormField
 									isLoading={isPending}
 									title={browser.i18n.getMessage(
+										"settings_userOption_alwaysApplyDefaultBehaviorSettings_title",
+										browser.i18n.getMessage("metawords_defaultView"),
+									)}
+									description={browser.i18n.getMessage(
+										"settings_userOption_alwaysApplyDefaultBehaviorSettings_description",
+									)}
+									formState={data}
+								>
+									<Switch
+										size="lg"
+										checked={data.alwaysApplyDefaultBehaviorSettings}
+										onChange={(e) => {
+											mutate({
+												alwaysApplyDefaultBehaviorSettings: e.target.checked,
+											});
+										}}
+										offLabel="OFF"
+										onLabel="ON"
+										disabled={isLoading || isPending}
+									/>
+								</FormField>
+							)}
+						</AutoSaveForFormField>
+						<AutoSaveForFormField
+							option={{
+								useSuspenseQueryArgs: [
+									{ queryKey, queryFn: getDefaultViewBehaviorOption },
+								],
+								useMutationArgs: [{ mutationFn: setDefaultViewBehaviorOption }],
+							}}
+						>
+							{([{ data, isLoading }, { mutate, isPending }]) => (
+								<FormField
+									isLoading={isPending}
+									title={browser.i18n.getMessage(
 										"settings_userOption_alwaysDisplayPlayerBar_title",
+									)}
+									description={browser.i18n.getMessage(
+										"settings_userOption_alwaysDisplayPlayerBar_description",
 									)}
 									formState={data}
 								>
@@ -159,6 +197,41 @@ export const UserOptionsSettingFormDefs: FormDefs = new Map([
 						<AutoSaveForFormField
 							option={{
 								useSuspenseQueryArgs: [
+									{ queryKey, queryFn: getDefaultViewBehaviorOption },
+								],
+								useMutationArgs: [{ mutationFn: setDefaultViewBehaviorOption }],
+							}}
+						>
+							{([{ data, isLoading }, { mutate, isPending }]) => (
+								<FormField
+									isLoading={isPending}
+									title={browser.i18n.getMessage(
+										"settings_userOption_alwaysApplyDefaultBehaviorSettings_title",
+										browser.i18n.getMessage("metawords_theaterMode"),
+									)}
+									description={browser.i18n.getMessage(
+										"settings_userOption_alwaysApplyDefaultBehaviorSettings_description",
+									)}
+									formState={data}
+								>
+									<Switch
+										size="lg"
+										checked={data.alwaysApplyDefaultBehaviorSettings}
+										onChange={(e) => {
+											mutate({
+												alwaysApplyDefaultBehaviorSettings: e.target.checked,
+											});
+										}}
+										offLabel="OFF"
+										onLabel="ON"
+										disabled={isLoading || isPending}
+									/>
+								</FormField>
+							)}
+						</AutoSaveForFormField>
+						<AutoSaveForFormField
+							option={{
+								useSuspenseQueryArgs: [
 									{ queryKey, queryFn: getTheaterModeBehaviorOption },
 								],
 								useMutationArgs: [{ mutationFn: setTheaterModeBehaviorOption }],
@@ -169,6 +242,9 @@ export const UserOptionsSettingFormDefs: FormDefs = new Map([
 									isLoading={isPending}
 									title={browser.i18n.getMessage(
 										"settings_userOption_alwaysDisplayPlayerBar_title",
+									)}
+									description={browser.i18n.getMessage(
+										"settings_userOption_alwaysDisplayPlayerBar_description",
 									)}
 									formState={data}
 								>
@@ -198,7 +274,7 @@ export const UserOptionsSettingFormDefs: FormDefs = new Map([
 				return (
 					<FormGroup
 						title={browser.i18n.getMessage(
-							"settings_userOption_theaterModeBehavior_title",
+							"settings_userOption_fullscreenBehavior_title",
 						)}
 					>
 						<AutoSaveForFormField
@@ -234,6 +310,41 @@ export const UserOptionsSettingFormDefs: FormDefs = new Map([
 						<AutoSaveForFormField
 							option={{
 								useSuspenseQueryArgs: [
+									{ queryKey, queryFn: getDefaultViewBehaviorOption },
+								],
+								useMutationArgs: [{ mutationFn: setDefaultViewBehaviorOption }],
+							}}
+						>
+							{([{ data, isLoading }, { mutate, isPending }]) => (
+								<FormField
+									isLoading={isPending}
+									title={browser.i18n.getMessage(
+										"settings_userOption_alwaysApplyDefaultBehaviorSettings_title",
+										browser.i18n.getMessage("metawords_fullscreen"),
+									)}
+									description={browser.i18n.getMessage(
+										"settings_userOption_alwaysApplyDefaultBehaviorSettings_description",
+									)}
+									formState={data}
+								>
+									<Switch
+										size="lg"
+										checked={data.alwaysApplyDefaultBehaviorSettings}
+										onChange={(e) => {
+											mutate({
+												alwaysApplyDefaultBehaviorSettings: e.target.checked,
+											});
+										}}
+										offLabel="OFF"
+										onLabel="ON"
+										disabled={isLoading || isPending}
+									/>
+								</FormField>
+							)}
+						</AutoSaveForFormField>
+						<AutoSaveForFormField
+							option={{
+								useSuspenseQueryArgs: [
 									{ queryKey, queryFn: getFullscreenBehaviorOption },
 								],
 								useMutationArgs: [{ mutationFn: setFullscreenBehaviorOption }],
@@ -244,6 +355,9 @@ export const UserOptionsSettingFormDefs: FormDefs = new Map([
 									isLoading={isPending}
 									title={browser.i18n.getMessage(
 										"settings_userOption_alwaysDisplayPlayerBar_title",
+									)}
+									description={browser.i18n.getMessage(
+										"settings_userOption_alwaysDisplayPlayerBar_description",
 									)}
 									formState={data}
 								>
