@@ -10,3 +10,9 @@ export const setDoneInitialize = (
 export const setOypbEnable = (is: OperationState["flagOps"]["oypbEnable"]) => {
 	operationState.flagOps.oypbEnable = is;
 };
+
+export const setDoneIntialMovePlayerBar = (
+	is: OperationState["flagOps"]["doneIntialMovePlayerBar"],
+) => {
+	operationState.flagOps.doneIntialMovePlayerBar = is;
+};

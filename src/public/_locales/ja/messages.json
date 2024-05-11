@@ -120,18 +120,18 @@
 		"message": "仕様上CPU使用率が増加します（ブラウザが重い場合はOFFを推奨）",
 		"description": "always display player bar caution that cpu usage bumping"
 	},
-	"settings_userOption_alwaysApplyDefaultBehaviorSettings_title": {
-		"message": "$MODE$へ切り替えるたび再生バーをオプション設定の位置にする",
-		"description": "always apply default behavior setting if video mode changed",
+	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title": {
+		"message": "$MODE$へ切り替え時：切り替え前の再生バーの位置を引き継ぐ",
+		"description": "if video mode changed to $MODE$, inherit the position before switching",
 		"placeholders": {
 			"MODE": {
 				"content": "$1"
 			}
 		}
 	},
-	"settings_userOption_alwaysApplyDefaultBehaviorSettings_description": {
-		"message": "（例）オプション設定の位置が「外側」でONにした場合: 動画ページで一時的にバーを内側にしたあと$MODE$へ切り替えると → オプション設定の「外側」になる",
-		"description": "example of the always apply default behavior settings",
+	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description": {
+		"message": "ONの場合はデフォルト設置値よりも切り替え前の位置を優先します",
+		"description": "Explanation when turned ON",
 		"placeholders": {
 			"MODE": {
 				"content": "$1"

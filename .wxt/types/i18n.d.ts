@@ -370,7 +370,7 @@ Note: You can't use this message in a manifest file.
      * "Apply default settings whenever video mode changes to $MODE$"
      */
     getMessage(
-      messageName: "settings_userOption_alwaysApplyDefaultBehaviorSettings_title",
+      messageName: "settings_userOption_inheritPositionPlayerBarBeforeSwitching_title",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;
@@ -380,7 +380,7 @@ Note: You can't use this message in a manifest file.
      * "(e.g.) If the position of the setting is `outside` and it is turned on: if you temporarily move the player bar inside on the video page and then switch to $MODE$ → move to `outside` of the settings."
      */
     getMessage(
-      messageName: "settings_userOption_alwaysApplyDefaultBehaviorSettings_description",
+      messageName: "settings_userOption_inheritPositionPlayerBarBeforeSwitching_description",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;

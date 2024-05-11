@@ -120,18 +120,18 @@
 		"message": "CPU usage increase due to specifications. If the browser is slow that recommended to turn OFF.",
 		"description": "always display player bar caution that cpu usage bumping"
 	},
-	"settings_userOption_alwaysApplyDefaultBehaviorSettings_title": {
-		"message": "Apply default settings whenever video mode changes to $MODE$",
-		"description": "always apply default behavior setting if video mode changed",
+	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title": {
+		"message": "Switching to $MODE$: Inherit the position of the player bar before switching.",
+		"description": "if video mode changed to $MODE$, inherit the position before switching",
 		"placeholders": {
 			"MODE": {
 				"content": "$1"
 			}
 		}
 	},
-	"settings_userOption_alwaysApplyDefaultBehaviorSettings_description": {
-		"message": "(e.g.) If the position of the setting is `outside` and it is turned on: if you temporarily move the player bar inside on the video page and then switch to $MODE$ → move to `outside` of the settings.",
-		"description": "example of the always apply default behavior settings",
+	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description": {
+		"message": "If turned ON, prioritize the position before switching over the default setting.",
+		"description": "Explanation when turned ON",
 		"placeholders": {
 			"MODE": {
 				"content": "$1"

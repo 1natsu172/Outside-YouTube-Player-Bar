@@ -95,20 +95,22 @@ export const ExtensionBehaviorOptionsFormDefs: FormDefs = new Map([
 								<FormField
 									isLoading={isPending}
 									title={browser.i18n.getMessage(
-										"settings_userOption_alwaysApplyDefaultBehaviorSettings_title",
+										"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title",
 										browser.i18n.getMessage("metawords_defaultView"),
 									)}
 									description={browser.i18n.getMessage(
-										"settings_userOption_alwaysApplyDefaultBehaviorSettings_description",
+										"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description",
+										[browser.i18n.getMessage("metawords_defaultView")],
 									)}
 									formState={data}
 								>
 									<Switch
 										size="lg"
-										checked={data.alwaysApplyDefaultBehaviorSettings}
+										checked={data.inheritPositionPlayerBarBeforeSwitching}
 										onChange={(e) => {
 											mutate({
-												alwaysApplyDefaultBehaviorSettings: e.target.checked,
+												inheritPositionPlayerBarBeforeSwitching:
+													e.target.checked,
 											});
 										}}
 										offLabel="OFF"
@@ -199,29 +201,31 @@ export const ExtensionBehaviorOptionsFormDefs: FormDefs = new Map([
 						<AutoSaveForFormField
 							option={{
 								useSuspenseQueryArgs: [
-									{ queryKey, queryFn: getDefaultViewBehaviorOption },
+									{ queryKey, queryFn: getTheaterModeBehaviorOption },
 								],
-								useMutationArgs: [{ mutationFn: setDefaultViewBehaviorOption }],
+								useMutationArgs: [{ mutationFn: setTheaterModeBehaviorOption }],
 							}}
 						>
 							{([{ data, isLoading }, { mutate, isPending }]) => (
 								<FormField
 									isLoading={isPending}
 									title={browser.i18n.getMessage(
-										"settings_userOption_alwaysApplyDefaultBehaviorSettings_title",
+										"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title",
 										browser.i18n.getMessage("metawords_theaterMode"),
 									)}
 									description={browser.i18n.getMessage(
-										"settings_userOption_alwaysApplyDefaultBehaviorSettings_description",
+										"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description",
+										[browser.i18n.getMessage("metawords_theaterMode")],
 									)}
 									formState={data}
 								>
 									<Switch
 										size="lg"
-										checked={data.alwaysApplyDefaultBehaviorSettings}
+										checked={data.inheritPositionPlayerBarBeforeSwitching}
 										onChange={(e) => {
 											mutate({
-												alwaysApplyDefaultBehaviorSettings: e.target.checked,
+												inheritPositionPlayerBarBeforeSwitching:
+													e.target.checked,
 											});
 										}}
 										offLabel="OFF"
@@ -312,29 +316,31 @@ export const ExtensionBehaviorOptionsFormDefs: FormDefs = new Map([
 						<AutoSaveForFormField
 							option={{
 								useSuspenseQueryArgs: [
-									{ queryKey, queryFn: getDefaultViewBehaviorOption },
+									{ queryKey, queryFn: getFullscreenBehaviorOption },
 								],
-								useMutationArgs: [{ mutationFn: setDefaultViewBehaviorOption }],
+								useMutationArgs: [{ mutationFn: setFullscreenBehaviorOption }],
 							}}
 						>
 							{([{ data, isLoading }, { mutate, isPending }]) => (
 								<FormField
 									isLoading={isPending}
 									title={browser.i18n.getMessage(
-										"settings_userOption_alwaysApplyDefaultBehaviorSettings_title",
+										"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title",
 										browser.i18n.getMessage("metawords_fullscreen"),
 									)}
 									description={browser.i18n.getMessage(
-										"settings_userOption_alwaysApplyDefaultBehaviorSettings_description",
+										"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description",
+										[browser.i18n.getMessage("metawords_fullscreen")],
 									)}
 									formState={data}
 								>
 									<Switch
 										size="lg"
-										checked={data.alwaysApplyDefaultBehaviorSettings}
+										checked={data.inheritPositionPlayerBarBeforeSwitching}
 										onChange={(e) => {
 											mutate({
-												alwaysApplyDefaultBehaviorSettings: e.target.checked,
+												inheritPositionPlayerBarBeforeSwitching:
+													e.target.checked,
 											});
 										}}
 										offLabel="OFF"

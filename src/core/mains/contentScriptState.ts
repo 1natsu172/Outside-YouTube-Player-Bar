@@ -39,6 +39,7 @@ export type OperationState = {
 	flagOps: {
 		doneInitialize: boolean;
 		oypbEnable: boolean | undefined;
+		doneIntialMovePlayerBar: boolean;
 	};
 };
 

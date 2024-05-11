@@ -17,7 +17,7 @@ export const DefaultViewBehaviorOptionConfig = createStorageConfig({
 	version: 1,
 	defaultValue: {
 		alwaysDisplayPlayerBar: true,
-		alwaysApplyDefaultBehaviorSettings: true,
+		inheritPositionPlayerBarBeforeSwitching: true,
 		positionPlayerBar: "outside",
 	},
 	defaultMeta: {},
@@ -29,7 +29,7 @@ export const TheaterModeBehaviorOptionConfig = createStorageConfig({
 	version: 1,
 	defaultValue: {
 		alwaysDisplayPlayerBar: true,
-		alwaysApplyDefaultBehaviorSettings: true,
+		inheritPositionPlayerBarBeforeSwitching: true,
 		positionPlayerBar: "outside",
 	},
 	defaultMeta: {},
@@ -41,7 +41,7 @@ export const FullscreenBehaviorOptionConfig = createStorageConfig({
 	version: 1,
 	defaultValue: {
 		alwaysDisplayPlayerBar: false,
-		alwaysApplyDefaultBehaviorSettings: true,
+		inheritPositionPlayerBarBeforeSwitching: false,
 		positionPlayerBar: "inside",
 	},
 	defaultMeta: {},

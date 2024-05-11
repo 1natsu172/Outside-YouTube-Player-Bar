@@ -6,6 +6,7 @@ import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
 export const behaviorState = proxy<ContentScriptState["behavior"]>({
 	positionPlayerBar: "inside",
 	alwaysDisplayPlayerBar: false,
+	inheritPositionPlayerBarBeforeSwitching: false,
 });
 
 export const operationState = proxy<ContentScriptState["operation"]>({
@@ -18,6 +19,7 @@ export const operationState = proxy<ContentScriptState["operation"]>({
 	flagOps: {
 		doneInitialize: false,
 		oypbEnable: undefined,
+		doneIntialMovePlayerBar: false,
 	},
 });
 
