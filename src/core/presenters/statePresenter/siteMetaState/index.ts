@@ -2,10 +2,15 @@ import type { SiteMetaState } from "@/core/mains/contentScriptState.js";
 import { elementAttributes } from "@/core/mains/meta.js";
 import { siteMetaState } from "@/core/repositories/contentScript.repository.js";
 import { useSnapshot } from "valtio";
+import { snapshot } from "valtio/vanilla";
 
 export const useVideoPlayerMode = () => {
 	const state = useSnapshot(siteMetaState.videoPlayerState).mode;
 	return state;
+};
+
+export const getSiteMetaState = () => {
+	return snapshot(siteMetaState);
 };
 
 export const judgeCurrentVideoPlayerMode = (managerElement: Element) => {

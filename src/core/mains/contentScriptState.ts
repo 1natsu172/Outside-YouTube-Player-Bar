@@ -10,7 +10,10 @@ export type ReflectFunctionalityState = Readonly<{
 	};
 }>;
 
-export type BehaviorState = ExtensionBehavior;
+/**
+ * NOTE: The value of the option is not held here because it would be a double state management. This state is an object representing the current behavior of the extension, excluding side effects.
+ */
+export type BehaviorState = Pick<ExtensionBehavior, "positionPlayerBar">;
 
 export type SiteMetaState = {
 	// TODO(future): Generics by specific sites (e.g.: <VPM extends string> )

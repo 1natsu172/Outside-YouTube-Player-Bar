@@ -6,9 +6,3 @@ export const setPositionPlayerBar = (
 ) => {
 	behaviorState.positionPlayerBar = to;
 };
-
-export const setAlwaysDisplayPlayerBar = (
-	is: BehaviorState["alwaysDisplayPlayerBar"],
-) => {
-	behaviorState.alwaysDisplayPlayerBar = is;
-};

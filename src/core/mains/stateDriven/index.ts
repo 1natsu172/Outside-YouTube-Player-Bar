@@ -3,8 +3,7 @@ import {
 	operationState,
 	behaviorState,
 } from "@/core/repositories/contentScript.repository.js";
-import { snapshot, subscribe } from "valtio";
-// import {watch} from 'valtio/utils'
+import { snapshot, subscribe } from "valtio/vanilla";
 import { behaviorDriven } from "./behaviorStateDriven.js";
 import { oypbEnableDriven } from "./operationStateDriven.js";
 import {

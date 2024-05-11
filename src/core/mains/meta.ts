@@ -22,6 +22,7 @@ export const elementAttributes = {
 		IS_OUTSIDE: "data-oypb-is-outside",
 		ENABLE: "data-oypb-enable",
 		COMPAT_ELEMENT_PREFIX: "data-oypb-compat",
+		IS_ALWAYS_DISPLAY_PLAYER_BAR: "data-oypb-is-always-display-player-bar",
 	},
 	COMPAT_ELEMENT: {
 		PLAYER_BAR_PARENT_CLASSNAME: "ytp-exp-bottom-control-flexbox",

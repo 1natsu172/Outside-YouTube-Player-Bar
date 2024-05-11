@@ -51,4 +51,15 @@
   [rounded-player-large][default-layout] .ytp-right-controls::after {
     border-radius: 0 0 12px 0;
   }
+
+  /* when not always display player bar style */
+  &:not([data-oypb-is-always-display-player-bar='']) {
+    .ytp-chrome-bottom {
+      display: none;
+    }
+
+    [rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
+      border-radius: 12px 12px 12px 12px;
+    }
+  }
 }

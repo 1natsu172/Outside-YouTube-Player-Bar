@@ -2,8 +2,10 @@ import type { OperationState } from "@/core/mains/contentScriptState.js";
 import { elementAttributes } from "@/core/mains/meta.js";
 import type { NestedValueOf } from "@/utils/typeUtils.js";
 
-export const documentElementAttr = (
-	qualifiedName: NestedValueOf<typeof elementAttributes>,
+export const documentElementAttr = <
+	QualifiedName extends NestedValueOf<typeof elementAttributes>,
+>(
+	qualifiedName: QualifiedName,
 ) => {
 	return {
 		set(value?: string) {

@@ -2,42 +2,43 @@ import { waitElement } from "@1natsu/wait-element";
 import { debounce } from "mabiki";
 import { setPlayerBarHeightVar } from "@/core/usecases/cssVariables.usecase.js";
 import { elementQuery } from "@/core/mains/meta.js";
-import { createBlockAutohideFn } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
+import {
+	createBlockAutohideFn,
+	execAlwaysDisplayPlayerBar,
+} from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
 import { elementAttributes } from "@/core/mains/meta.js";
 import { applyVideoPlayerModeToSiteMeta } from "../siteMetaServices/index.js";
 
 const moviePlayerElementEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER);
 	const blockAutoHide = createBlockAutohideFn(element);
-	const debounceBlockAutohide = debounce(blockAutoHide, 1000, {
+	const debounceExecBlockAutoHide = debounce(execAlwaysDisplayPlayerBar, 300, {
 		leading: true,
 		trailing: true,
 	});
 
 	const observer = new MutationObserver(
 		debounce(
-			(mutations) => {
-				logger.debug("moviePlayerElement", "Observing effect has occurred.");
+			async (mutations) => {
+				logger.debug(
+					"moviePlayerElement",
+					"Observing effect has occurred.",
+					mutations,
+				);
 
 				for (const mutation of mutations) {
-					// const targetClassList = (mutation.target as HTMLElement).classList;
-					// const isVisiblePlayerBar =
-					// 	targetClassList.contains("paused-mode") ||
-					// 	!targetClassList.contains("ytp-autohide");
-					// logger.silent("mutation", isVisiblePlayerBar);
-					// logger.silent("mutation is", mutation);
-					// TODO: v4でもvisible状態を監視する必要があれば継続、なければ消す
-					// if (isVisiblePlayerBar) {
-					// 	interventionDOM.addVisiblePlayerBarClassName();
-					// }
-					// NOTE: activeかつ常時表示かつプレイヤーバーが非表示のとき、autohideの場合があるので解除を試みる
-					// TODO: if条件ちゃんと実装する（オプションも含めて）
-					// if (isActive() && isAlwaysDisplayPlayerBar() && !isVisiblePlayerBar) {
-					// 	mutationProps.blockAutohide();
-					// }
+					const targetClassList = (mutation.target as HTMLElement).classList;
+					const isVisiblePlayerBar =
+						targetClassList.contains("paused-mode") ||
+						!targetClassList.contains("ytp-autohide");
+
+					await debounceExecBlockAutoHide({
+						blockAutoHide,
+						isVisiblePlayerBar,
+					});
 				}
 			},
-			1000,
+			500,
 			{
 				leading: true,
 				trailing: true,

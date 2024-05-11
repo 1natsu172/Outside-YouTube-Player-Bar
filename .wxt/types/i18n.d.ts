@@ -365,9 +365,9 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
-     * always apply default behavior setting if video mode changed
+     * if video mode changed to $MODE$, inherit the position before switching
      *
-     * "Apply default settings whenever video mode changes to $MODE$"
+     * "Switching to $MODE$: Inherit the position of the player bar before switching."
      */
     getMessage(
       messageName: "settings_userOption_inheritPositionPlayerBarBeforeSwitching_title",
@@ -375,9 +375,9 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
-     * example of the always apply default behavior settings
+     * Explanation when turned ON
      *
-     * "(e.g.) If the position of the setting is `outside` and it is turned on: if you temporarily move the player bar inside on the video page and then switch to $MODE$ → move to `outside` of the settings."
+     * "If turned ON, prioritize the position before switching over the default setting."
      */
     getMessage(
       messageName: "settings_userOption_inheritPositionPlayerBarBeforeSwitching_description",
