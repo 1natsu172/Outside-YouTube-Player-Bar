@@ -63,6 +63,27 @@
 		"description": "the fullscreen of the video player mode"
 	},
 
+  "fixturewords_enabling": {
+		"message": "有効にする",
+		"description": "Enabling Button text"
+	},
+  "fixturewords_disabling": {
+		"message": "無効にする",
+		"description": "Disabling Button text"
+	},
+  "fixturewords_confirm": {
+		"message": "OK",
+		"description": "Confirm Button text"
+	},
+  "fixturewords_cancel": {
+		"message": "NO",
+		"description": "Cancel Button text"
+	},
+  "fixturewords_confirmation_title": {
+		"message": "実行の確認",
+		"description": "Confirmation title text"
+	},
+
 	"settings_title": {
 		"message": "Outside YouTube Player Barの設定",
 		"description": "settings page title"
@@ -76,36 +97,36 @@
 		"description": "Usually not used"
 	},
 	"settings_metaOption_forceDisable_title": {
-		"message": "拡張機能を強制停止する",
-		"description": "Enable force disable mode"
+		"message": "拡張機能を強制停止",
+		"description": "force disable mode"
 	},
 	"settings_metaOption_forceDisable_description": {
 		"message": "「拡張機能が機能しない」・「拡張機能のせいでYouTubeのUIや機能に不具合が出ていて一時無効化したい」といった場合に使う機能です",
 		"description": "usecase the force disable mode"
 	},
 	"settings_metaOption_forceDisable_activateAlert": {
-		"message": "拡張機能を強制停止をします（この画面は閉じられます）",
+		"message": "拡張機能を強制停止をします（この詳細設定画面も強制的に閉じられます）",
 		"description": "alert of the activate force disable"
 	},
 	"settings_metaOption_forceDisable_deactivateAlert": {
-		"message": "拡張機能を強制停止を解除するため、拡張機能が再読み込みされます（この画面は閉じられます）",
+		"message": "拡張機能を強制停止を解除するため、拡張機能が再読み込みされます（この詳細設定画面も強制的に閉じられます）",
 		"description": "alert of the deactivate force disable"
 	},
 
 	"settings_userOption_behaviors_title": {
-		"message": "プレイヤーモードごとのデフォルトの設定",
+		"message": "プレイヤーモードごとのデフォルト設定",
 		"description": "settings extension behavor of the each player modes"
 	},
 	"settings_userOption_defaultViewBehavior_title": {
-		"message": "デフォルトビューのときの動作",
+		"message": "デフォルトビューの動作",
 		"description": "behavior of the default-view mode"
 	},
 	"settings_userOption_theaterModeBehavior_title": {
-		"message": "シアターモードのときの動作",
+		"message": "シアターモードの動作",
 		"description": "behavior of the theater mode"
 	},
 	"settings_userOption_fullscreenBehavior_title": {
-		"message": "フルスクリーンモードのときの動作",
+		"message": "フルスクリーンモードの動作",
 		"description": "behavior of the fullscreen mode"
 	},
 	"settings_userOption_positionPlayerBar_title": {
@@ -121,7 +142,7 @@
 		"description": "inside of player"
 	},
 	"settings_userOption_alwaysDisplayPlayerBar_title": {
-		"message": "常に再生バーを表示する（外側のときのみ有効）",
+		"message": "常に再生バーを表示（外側のときのみ有効）",
 		"description": "always display player bar"
 	},
 	"settings_userOption_alwaysDisplayPlayerBar_description": {
@@ -147,7 +168,7 @@
 		}
 	},
 	"settings_userOption_showOpenSettingsIcon_title": {
-		"message": "再生バーに設定パネルを開くアイコンを表示する",
+		"message": "再生バーに設定パネルを開くアイコンを表示",
 		"description": "Display settings icon on the playerbar"
 	},
 	"settings_userOption_showOpenSettingsIcon_description": {

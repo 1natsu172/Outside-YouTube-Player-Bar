@@ -225,6 +225,56 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
+     * Enabling Button text
+     *
+     * "Enable"
+     */
+    getMessage(
+      messageName: "fixturewords_enabling",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Disabling Button text
+     *
+     * "Disable"
+     */
+    getMessage(
+      messageName: "fixturewords_disabling",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Confirm Button text
+     *
+     * "Confirm"
+     */
+    getMessage(
+      messageName: "fixturewords_confirm",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Cancel Button text
+     *
+     * "Cancel"
+     */
+    getMessage(
+      messageName: "fixturewords_cancel",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Confirmation title text
+     *
+     * "Please confirm your action"
+     */
+    getMessage(
+      messageName: "fixturewords_confirmation_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
      * settings page title
      *
      * "Settings for Outside YouTube Player Bar"
@@ -275,9 +325,9 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
-     * comfirm of the activate force disable
+     * alert of the activate force disable
      *
-     * "Pressing OK will also force this screen to close, as the extension is forced to disable."
+     * "Force the extension to disable (this screen will be closed)."
      */
     getMessage(
       messageName: "settings_metaOption_forceDisable_activateAlert",

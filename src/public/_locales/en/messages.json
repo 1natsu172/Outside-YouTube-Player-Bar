@@ -63,6 +63,27 @@
 		"description": "the fullscreen of the video player mode"
 	},
 
+  "fixturewords_enabling": {
+		"message": "Enable",
+		"description": "Enabling Button text"
+	},
+  "fixturewords_disabling": {
+		"message": "Disable",
+		"description": "Disabling Button text"
+	},
+  "fixturewords_confirm": {
+		"message": "Confirm",
+		"description": "Confirm Button text"
+	},
+  "fixturewords_cancel": {
+		"message": "Cancel",
+		"description": "Cancel Button text"
+	},
+  "fixturewords_confirmation_title": {
+		"message": "Please confirm your action",
+		"description": "Confirmation title text"
+	},
+
 	"settings_title": {
 		"message": "Settings for Outside YouTube Player Bar",
 		"description": "settings page title"
