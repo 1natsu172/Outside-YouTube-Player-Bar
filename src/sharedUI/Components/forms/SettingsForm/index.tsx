@@ -9,6 +9,8 @@ import {
 import { ExtensionMetaOptionsFormDefs } from "./FormDefinition/ExtensionMetaOptions.definition.js";
 import { Card } from "@mantine/core";
 import style from "./index.module.css";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { checkAboutForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
 
 const RenderFormDef = (formId: string, formDef: FormDef, index: number) => {
 	const { FormElement } = formDef;
@@ -43,6 +45,27 @@ const UserSettingsForm = () => {
 	);
 };
 
+const DeactivateForceDisableForm = () => {
+	return (
+		<Card withBorder radius="lg" p="xl" className={style.card}>
+			{RenderFormDef(
+				"Form:ForceDisable",
+				// biome-ignore lint/style/noNonNullAssertion: <explanation>
+				ExtensionMetaOptionsFormDefs.get("Form:ForceDisable")!,
+				1,
+			)}
+		</Card>
+	);
+};
+
 export const SettingsForm = () => {
+	const { data } = useSuspenseQuery({
+		queryKey: [checkAboutForceDisable.name],
+		queryFn: checkAboutForceDisable,
+	});
+
+	if (data.isDisabling) {
+		return <DeactivateForceDisableForm />;
+	}
 	return <UserSettingsForm />;
 };

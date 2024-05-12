@@ -66,6 +66,7 @@
 		"@mantine/hooks": "^7.9.0",
 		"@tanstack/react-form": "^0.19.4",
 		"@tanstack/react-query": "^5.34.2",
+		"@webext-core/messaging": "^1.4.0",
 		"consola": "^3.2.3",
 		"defu": "^6.1.4",
 		"derive-valtio": "^0.1.0",

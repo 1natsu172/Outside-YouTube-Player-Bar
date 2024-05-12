@@ -1,16 +1,12 @@
+import { onMessage } from "@/core/mains/messagings/uiSignals/index.js";
+
 export default defineBackground({
 	type: "module",
 	main: () => {
 		console.log("Hello background!", { id: browser.runtime.id });
 
-		browser.runtime.onMessage.addListener((message) => {
-			switch (message.action) {
-				case "openOptionsPage":
-					openOptionsPage();
-					break;
-				default:
-					break;
-			}
+		onMessage("openOptionsPage", () => {
+			openOptionsPage();
 		});
 	},
 });

@@ -45,6 +45,7 @@ export const ExtensionMetaOptionsFormDefs: FormDefs = new Map([
 										size="lg"
 										checked={data.value}
 										onChange={(e) => {
+											// alert modalの実装
 											mutate(e.target.checked);
 										}}
 										offLabel="OFF"

@@ -275,6 +275,26 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
+     * comfirm of the activate force disable
+     *
+     * "Pressing OK will also force this screen to close, as the extension is forced to disable."
+     */
+    getMessage(
+      messageName: "settings_metaOption_forceDisable_activateAlert",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * alert of the deactivate force disable
+     *
+     * "Reload the extension to deactivate the forced disable (this screen will be closed)."
+     */
+    getMessage(
+      messageName: "settings_metaOption_forceDisable_deactivateAlert",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
      * settings extension behavor of the each player modes
      *
      * "Default settings for each player mode"

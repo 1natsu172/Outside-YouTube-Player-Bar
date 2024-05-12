@@ -83,6 +83,14 @@
 		"message": "Use this feature if the extension is not working or if it is causing issues with YouTube's UI or functionality, and you want to temporarily disable it.",
 		"description": "usecase the force disable mode"
 	},
+  "settings_metaOption_forceDisable_activateAlert": {
+		"message": "Force the extension to disable (this screen will be closed).",
+		"description": "alert of the activate force disable"
+	},
+	"settings_metaOption_forceDisable_deactivateAlert": {
+		"message": "Reload the extension to deactivate the forced disable (this screen will be closed).",
+		"description": "alert of the deactivate force disable"
+	},
 
 	"settings_userOption_behaviors_title": {
 		"message": "Default settings for each player mode",

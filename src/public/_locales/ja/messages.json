@@ -83,6 +83,14 @@
 		"message": "「拡張機能が機能しない」・「拡張機能のせいでYouTubeのUIや機能に不具合が出ていて一時無効化したい」といった場合に使う機能です",
 		"description": "usecase the force disable mode"
 	},
+	"settings_metaOption_forceDisable_activateAlert": {
+		"message": "拡張機能を強制停止をします（この画面は閉じられます）",
+		"description": "alert of the activate force disable"
+	},
+	"settings_metaOption_forceDisable_deactivateAlert": {
+		"message": "拡張機能を強制停止を解除するため、拡張機能が再読み込みされます（この画面は閉じられます）",
+		"description": "alert of the deactivate force disable"
+	},
 
 	"settings_userOption_behaviors_title": {
 		"message": "プレイヤーモードごとのデフォルトの設定",
