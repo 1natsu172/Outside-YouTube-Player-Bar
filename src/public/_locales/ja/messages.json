@@ -117,7 +117,7 @@
 		"description": "always display player bar"
 	},
 	"settings_userOption_alwaysDisplayPlayerBar_description": {
-		"message": "仕様上CPU使用率が増加します（ブラウザが重い場合はOFFを推奨）",
+		"message": "仕様上CPU使用率が増加します（ブラウザが重くなる場合はOFFを推奨）",
 		"description": "always display player bar caution that cpu usage bumping"
 	},
 	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title": {
