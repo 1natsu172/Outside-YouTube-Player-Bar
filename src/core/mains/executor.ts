@@ -1,3 +1,4 @@
+import type { ContentScriptContext } from "wxt/client";
 import { operationState } from "@/core/repositories/contentScript.repository.js";
 import { setupEventEffects } from "@/core/services/eventEffectServices/eventEffects.service.js";
 import { applyCompatibilityStyles } from "@/core/services/styleAffectServices/applyCompatibilityStyles.service.js";
@@ -18,8 +19,12 @@ import { initializeForceDisable } from "@/core/services/optionsServices/forceDis
 export class Executor {
 	private stateDriven: StateDriven;
 
-	constructor() {
+	constructor(private ctx: ContentScriptContext) {
 		this.stateDriven = new StateDriven();
+		// NOTE: https://wxt.dev/guide/handling-updates.html#content-script-cleanup
+		this.ctx.onInvalidated(() => {
+			this.unregisterEffects();
+		});
 	}
 
 	async initialization() {

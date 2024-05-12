@@ -21,7 +21,7 @@ export default defineContentScript({
 	async main(ctx) {
 		logger.success("Content-Script execute");
 		displayInfo();
-		const executor = new Executor();
+		const executor = new Executor(ctx);
 		await Promise.all([mountUI(ctx), executor.initialization()]);
 	},
 });

@@ -32,6 +32,7 @@ const moviePlayerElementEffect = async () => {
 						targetClassList.contains("paused-mode") ||
 						!targetClassList.contains("ytp-autohide");
 
+					// FIXME: 便宜上asyncにしているが、再読込時にctx.onInvalidateになる要因になっている様子があるので、修正したほうがよい
 					await debounceExecBlockAutoHide({
 						blockAutoHide,
 						isVisiblePlayerBar,
