@@ -1,4 +1,5 @@
 import {
+	type AllOptionsMeta,
 	allOptionsConfigInstance,
 	type AllOptionsValues,
 } from "@/core/mains/options/index.js";
@@ -11,9 +12,10 @@ import { defineItem } from "@/core/infrastructures/storage/index.js";
 export const debugMode = defineItem<AllOptionsValues["debugModeV1"]>(
 	allOptionsConfigInstance.DebugModeOptionConfig,
 );
-export const forceDisable = defineItem<AllOptionsValues["forceDisableV1"]>(
-	allOptionsConfigInstance.ForceDisableOptionConfig,
-);
+export const forceDisable = defineItem<
+	AllOptionsValues["forceDisableV1"],
+	AllOptionsMeta["forceDisableV1"]
+>(allOptionsConfigInstance.ForceDisableOptionConfig);
 
 /**
  * Define Items

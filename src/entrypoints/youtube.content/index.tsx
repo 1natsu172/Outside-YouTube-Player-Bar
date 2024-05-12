@@ -1,25 +1,9 @@
-import {
-	additionalInitializationOnVideoPage,
-	initialize,
-} from "../../core/actions(oldservices)/inittialize";
-import { observeNodes } from "../../core/actions(oldservices)/observeNodes";
-import { registerListeners } from "../../core/actions(oldservices)/registerListeners";
 import { displayInfo } from "./Process/displayInfo.js";
 import { mountUI } from "./Process/mount.js";
 import { Executor } from "@/core/mains/executor.js";
 
-const initExtension = () => {
-	const { isInitializeOnVideoPage } = initialize();
-	registerListeners();
-	observeNodes();
-
-	if (isInitializeOnVideoPage) {
-		additionalInitializationOnVideoPage();
-	}
-};
-
 // -----------------------------------------
-// WXT WORLD underconstructions
+// WXT WORLD
 //------------------------------------------
 /**
  * FIXME: WXTのimport対応待ち manifestに寄せたい

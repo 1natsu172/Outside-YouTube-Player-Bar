@@ -23,7 +23,10 @@ export const getDebugModeOption = async () => {
 	return await repo.debugMode.getValue();
 };
 export const getForceDisableOption = async () => {
-	return await repo.forceDisable.getValue();
+	return {
+		value: await repo.forceDisable.getValue(),
+		meta: await repo.forceDisable.getMeta(),
+	};
 };
 export const getDefaultViewBehaviorOption = async () => {
 	return await repo.defaultViewBehaviorOption.getValue();

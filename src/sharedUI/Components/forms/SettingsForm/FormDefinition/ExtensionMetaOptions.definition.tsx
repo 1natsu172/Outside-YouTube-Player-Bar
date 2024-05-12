@@ -1,9 +1,6 @@
 import { switchDebugMode } from "@/core/services/optionsServices/extensionMetaOptions.service.js";
-import {
-	SegmentedControl,
-	Switch,
-	type SegmentedControlItem,
-} from "@mantine/core";
+import { switchForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
+import { Switch } from "@mantine/core";
 import { FormGroup } from "../FormGroup.js";
 import { FormField } from "../FormField.js";
 import { AutoSaveForFormField } from "../../utils/useAutoSaveForm.js";
@@ -12,7 +9,6 @@ import {
 	getDebugModeOption,
 	getForceDisableOption,
 } from "@/core/presenters/storagePresenter/options.presenter.js";
-import { setForceDisableOption } from "@/core/usecases/options.usecase.js";
 
 /**
  * @description Enumerate component implementations
@@ -31,7 +27,7 @@ export const ExtensionMetaOptionsFormDefs: FormDefs = new Map([
 								useSuspenseQueryArgs: [
 									{ queryKey, queryFn: getForceDisableOption },
 								],
-								useMutationArgs: [{ mutationFn: setForceDisableOption }],
+								useMutationArgs: [{ mutationFn: switchForceDisable }],
 							}}
 						>
 							{([{ data, isLoading }, { mutate, isPending }]) => (
@@ -47,7 +43,7 @@ export const ExtensionMetaOptionsFormDefs: FormDefs = new Map([
 								>
 									<Switch
 										size="lg"
-										checked={data}
+										checked={data.value}
 										onChange={(e) => {
 											mutate(e.target.checked);
 										}}

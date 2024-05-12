@@ -11,6 +11,8 @@ import type {
 // util hands that think about migrations
 export const defineItem = <
 	TValue,
+	// biome-ignore lint/complexity/noBannedTypes: <explanation>
+	TMetadata extends Record<string, unknown> = {},
 	Config extends StorageItemConfigInstance<
 		StorageItemConfigRaw<string, TValue>
 	> = StorageItemConfigInstance<StorageItemConfigRaw<string, TValue>>,
@@ -24,7 +26,10 @@ export const defineItem = <
 		...storageItemOptions,
 	};
 
-	const defined = centralStorage.defineItem<TValue>(config.storageKey, stoOpts);
+	const defined = centralStorage.defineItem<TValue, TMetadata>(
+		config.storageKey,
+		stoOpts,
+	);
 	return defined;
 };
 

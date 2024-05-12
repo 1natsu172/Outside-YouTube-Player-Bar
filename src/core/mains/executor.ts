@@ -13,6 +13,7 @@ import {
 	registerInitializationLocation,
 } from "@/core/services/siteMetaServices/index.js";
 import { initializeDebugMode } from "@/core/services/optionsServices/extensionMetaOptions.service.js";
+import { initializeForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
 
 export class Executor {
 	private stateDriven: StateDriven;
@@ -24,6 +25,14 @@ export class Executor {
 	async initialization() {
 		if (operationState.flagOps.doneInitialize) {
 			logger.warn("oops, initialize seems to have been called multiple times!");
+			return;
+		}
+		// NOTE: initializeForceDisable must be first
+		const { canProcessContinue } = await initializeForceDisable();
+		if (!canProcessContinue) {
+			logger.info(
+				"Initialization stoped. Because forceDisable option is enabling.",
+			);
 			return;
 		}
 		await initializeDebugMode();
