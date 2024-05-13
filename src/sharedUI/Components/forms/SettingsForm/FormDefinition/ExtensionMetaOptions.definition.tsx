@@ -52,6 +52,8 @@ export const ExtensionMetaOptionsFormDefs: FormDefs = new Map([
 												title={browser.i18n.getMessage(
 													"fixturewords_confirmation_title",
 												)}
+												transitionProps={{ transition: "fade" }}
+												centered
 											>
 												<Paper>
 													<Text size="sm">
