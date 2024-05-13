@@ -8,6 +8,9 @@ export default defineBackground({
 		onMessage("openOptionsPage", () => {
 			openOptionsPage();
 		});
+
+		// NOTE: Clicked on action icon (popup icon) listener.
+		browser.action.onClicked.addListener(openOptionsPage);
 	},
 });
 
