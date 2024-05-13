@@ -1,10 +1,10 @@
 // @vitest-environment happy-dom
 
 import { centralStorage } from "@/core/infrastructures/storage/centralStorage.js";
+import { createStorageConfig } from "@/core/infrastructures/storage/index.js";
 import { renderHook, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, test } from "vitest";
 import { useStorage } from "./index.js";
-import { createStorageConfig } from "@/core/infrastructures/storage/index.js";
 
 describe(`${useStorage.name}`, () => {
 	const TESTING_STORAGE_CONFIG = createStorageConfig({

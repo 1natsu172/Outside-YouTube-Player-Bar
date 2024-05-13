@@ -1,16 +1,16 @@
-import { Suspense } from "react";
-import type { FormDef } from "./FormDefinition/formDefinition.types.js";
-import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
+import { checkAboutForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
 import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
+import { Card } from "@mantine/core";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { Suspense } from "react";
+import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
+import { ExtensionMetaOptionsFormDefs } from "./FormDefinition/ExtensionMetaOptions.definition.js";
 import {
 	ExtensionBehaviorOptionsFormDefs,
 	UiEnhanceOptionsFormDefs,
 } from "./FormDefinition/UserOptions.definition.js";
-import { ExtensionMetaOptionsFormDefs } from "./FormDefinition/ExtensionMetaOptions.definition.js";
-import { Card } from "@mantine/core";
+import type { FormDef } from "./FormDefinition/formDefinition.types.js";
 import style from "./index.module.css";
-import { useSuspenseQuery } from "@tanstack/react-query";
-import { checkAboutForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
 
 const RenderFormDef = (formId: string, formDef: FormDef, index: number) => {
 	const { FormElement } = formDef;

@@ -1,9 +1,9 @@
 import { SettingsPanel } from "@/sharedUI/Components/panels/SettingsPanel/index.js";
-import { useContext } from "react";
 import {
-	ModalStateContext,
 	ModalHandlerContext,
+	ModalStateContext,
 } from "@/sharedUI/Provider/ModalProvider/index.js";
+import { useContext } from "react";
 
 import { Dialog } from "primereact/dialog";
 

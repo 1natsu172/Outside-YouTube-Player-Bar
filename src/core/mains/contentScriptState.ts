@@ -1,5 +1,5 @@
-import type { ExtensionBehavior } from "./extensionFeatures.js";
 import type { proxyWithHistory } from "valtio-history";
+import type { ExtensionBehavior } from "./extensionFeatures.js";
 
 export type ReflectFunctionalityState = Readonly<{
 	feature: {

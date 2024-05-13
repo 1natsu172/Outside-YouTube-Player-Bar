@@ -1,6 +1,6 @@
+import { getForceDisableOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import * as usecases from "@/core/usecases/options.usecase.js";
 import semver_lt from "semver/functions/lt.js";
-import { getForceDisableOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 
 export const switchForceDisable = async (activate: boolean) => {
 	await usecases.setForceDisableOption(activate, {

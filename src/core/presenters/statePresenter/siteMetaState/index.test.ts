@@ -1,11 +1,11 @@
 // @vitest-environment happy-dom
 
+import type { elementAttributes } from "@/core/mains/meta.js";
 import { describe, expect, test } from "vitest";
 import {
-	judgeCurrentVideoPlayerMode,
 	convertAttrToVideoPlayerMode,
+	judgeCurrentVideoPlayerMode,
 } from "./index.js";
-import type { elementAttributes } from "@/core/mains/meta.js";
 
 function createElementWithAttr(
 	attrs: [

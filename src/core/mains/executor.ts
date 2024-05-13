@@ -1,20 +1,20 @@
-import type { ContentScriptContext } from "wxt/client";
-import { operationState } from "@/core/repositories/contentScript.repository.js";
-import { setupEventEffects } from "@/core/services/eventEffectServices/eventEffects.service.js";
-import { applyCompatibilityStyles } from "@/core/services/styleAffectServices/applyCompatibilityStyles.service.js";
-import {
-	oypbEnableOperation,
-	doneInitializeOperation,
-} from "@/core/services/operationServices/index.js";
-import { setupElementEffects } from "@/core/services/elementEffectServices/elementEffects.service.js";
-import type { EventEffect } from "@/core/services/eventEffectServices/libs/eventEffect.js";
 import { StateDriven } from "@/core/mains/stateDriven/index.js";
+import { operationState } from "@/core/repositories/contentScript.repository.js";
+import { setupElementEffects } from "@/core/services/elementEffectServices/elementEffects.service.js";
+import { setupEventEffects } from "@/core/services/eventEffectServices/eventEffects.service.js";
+import type { EventEffect } from "@/core/services/eventEffectServices/libs/eventEffect.js";
+import {
+	doneInitializeOperation,
+	oypbEnableOperation,
+} from "@/core/services/operationServices/index.js";
+import { initializeDebugMode } from "@/core/services/optionsServices/extensionMetaOptions.service.js";
+import { initializeForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
 import {
 	getSiteVersion,
 	registerInitializationLocation,
 } from "@/core/services/siteMetaServices/index.js";
-import { initializeDebugMode } from "@/core/services/optionsServices/extensionMetaOptions.service.js";
-import { initializeForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
+import { applyCompatibilityStyles } from "@/core/services/styleAffectServices/applyCompatibilityStyles.service.js";
+import type { ContentScriptContext } from "wxt/client";
 
 export class Executor {
 	private stateDriven: StateDriven;

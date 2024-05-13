@@ -1,7 +1,7 @@
-import { Card, Group, Text, Title } from "@mantine/core";
-import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
 import { debugMode } from "@/core/repositories/options.repository.js";
+import { Card, Group, Text, Title } from "@mantine/core";
+import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
 
 export type FieldViewProps = {
 	title: string;

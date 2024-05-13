@@ -1,5 +1,5 @@
-import style from "./style.module.css";
 import { IconSettings } from "@tabler/icons-react";
+import style from "./style.module.css";
 
 type P = {
 	tooltip: string;

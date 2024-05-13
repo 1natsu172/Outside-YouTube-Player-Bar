@@ -1,15 +1,15 @@
-import { switchDebugMode } from "@/core/services/optionsServices/extensionMetaOptions.service.js";
-import { switchForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
-import { Button, Switch, Text, Modal, Paper, Group } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { FormGroup } from "../FormGroup.js";
-import { FormField } from "../FormField.js";
-import { AutoSaveForFormField } from "../../utils/useAutoSaveForm.js";
-import type { FormDefs } from "./formDefinition.types.js";
 import {
 	getDebugModeOption,
 	getForceDisableOption,
 } from "@/core/presenters/storagePresenter/options.presenter.js";
+import { switchDebugMode } from "@/core/services/optionsServices/extensionMetaOptions.service.js";
+import { switchForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
+import { Button, Group, Modal, Paper, Switch, Text } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import { AutoSaveForFormField } from "../../utils/useAutoSaveForm.js";
+import { FormField } from "../FormField.js";
+import { FormGroup } from "../FormGroup.js";
+import type { FormDefs } from "./formDefinition.types.js";
 
 /**
  * @description Enumerate component implementations

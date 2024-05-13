@@ -1,16 +1,16 @@
 import {
-	siteMetaState,
-	operationState,
 	behaviorState,
+	operationState,
+	siteMetaState,
 } from "@/core/repositories/contentScript.repository.js";
 import { snapshot, subscribe } from "valtio/vanilla";
+import { reflectFunctionality } from "./__reflectFunctionality__.js";
 import { behaviorDriven } from "./behaviorStateDriven.js";
 import { oypbEnableDriven } from "./operationStateDriven.js";
 import {
 	navigationDriven,
 	videoPlayerModeDriven,
 } from "./siteMetaStateDriven.js";
-import { reflectFunctionality } from "./__reflectFunctionality__.js";
 
 export class StateDriven {
 	async setup() {

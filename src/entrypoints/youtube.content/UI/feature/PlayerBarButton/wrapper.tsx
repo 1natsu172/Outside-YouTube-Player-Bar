@@ -1,8 +1,8 @@
-import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
-import { Suspense, type ReactNode } from "react";
-import style from "./style.module.css";
-import { IconRefreshAlert } from "@tabler/icons-react";
 import { LoadingSpinner } from "@/sharedUI/Components/parts/LoadingSpinner/index.js";
+import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
+import { IconRefreshAlert } from "@tabler/icons-react";
+import { type ReactNode, Suspense } from "react";
+import style from "./style.module.css";
 
 type P = {
 	children?: ReactNode;

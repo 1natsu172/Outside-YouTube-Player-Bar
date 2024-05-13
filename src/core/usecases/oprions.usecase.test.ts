@@ -1,9 +1,9 @@
-import { beforeEach, describe, expect, test } from "vitest";
-import { _generalUpdate } from "./options.usecase.js";
 import {
 	createStorageConfig,
 	defineItem,
 } from "@/core/infrastructures/storage/index.js";
+import { beforeEach, describe, expect, test } from "vitest";
+import { _generalUpdate } from "./options.usecase.js";
 
 const boolDefinedItem = defineItem<boolean>(
 	createStorageConfig({

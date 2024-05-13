@@ -63,23 +63,23 @@
 		"description": "the fullscreen of the video player mode"
 	},
 
-  "fixturewords_enabling": {
+	"fixturewords_enabling": {
 		"message": "有効にする",
 		"description": "Enabling Button text"
 	},
-  "fixturewords_disabling": {
+	"fixturewords_disabling": {
 		"message": "無効にする",
 		"description": "Disabling Button text"
 	},
-  "fixturewords_confirm": {
+	"fixturewords_confirm": {
 		"message": "OK",
 		"description": "Confirm Button text"
 	},
-  "fixturewords_cancel": {
+	"fixturewords_cancel": {
 		"message": "NO",
 		"description": "Cancel Button text"
 	},
-  "fixturewords_confirmation_title": {
+	"fixturewords_confirmation_title": {
 		"message": "実行の確認",
 		"description": "Confirmation title text"
 	},

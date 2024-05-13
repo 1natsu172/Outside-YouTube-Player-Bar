@@ -1,10 +1,3 @@
-import { switchDebugMode } from "@/core/services/optionsServices/extensionMetaOptions.service.js";
-import {
-	setDefaultViewBehaviorOption,
-	setTheaterModeBehaviorOption,
-	setFullscreenBehaviorOption,
-	setShowOpenSettingsIconOption,
-} from "@/core/services/optionsServices/userOptions.service.js";
 import {
 	getDefaultViewBehaviorOption,
 	getFullscreenBehaviorOption,
@@ -12,13 +5,19 @@ import {
 	getTheaterModeBehaviorOption,
 } from "@/core/presenters/storagePresenter/options.presenter.js";
 import {
+	setDefaultViewBehaviorOption,
+	setFullscreenBehaviorOption,
+	setShowOpenSettingsIconOption,
+	setTheaterModeBehaviorOption,
+} from "@/core/services/optionsServices/userOptions.service.js";
+import {
 	SegmentedControl,
-	Switch,
 	type SegmentedControlItem,
+	Switch,
 } from "@mantine/core";
-import { FormGroup } from "../FormGroup.js";
-import { FormField } from "../FormField.js";
 import { AutoSaveForFormField } from "../../utils/useAutoSaveForm.js";
+import { FormField } from "../FormField.js";
+import { FormGroup } from "../FormGroup.js";
 import type { FormDefs } from "./formDefinition.types.js";
 
 const playerBarPisitonSelect: SegmentedControlItem[] = [

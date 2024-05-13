@@ -1,7 +1,7 @@
+import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
+import { derive } from "derive-valtio";
 import { proxy } from "valtio";
 import { proxyWithHistory } from "valtio-history";
-import { derive } from "derive-valtio";
-import type { ContentScriptState } from "@/core/mains/contentScriptState.js";
 
 export const behaviorState = proxy<ContentScriptState["behavior"]>({
 	positionPlayerBar: "inside",

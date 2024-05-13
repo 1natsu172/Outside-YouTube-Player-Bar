@@ -1,11 +1,11 @@
-import { describe, test, beforeEach, expect, vi } from "vitest";
+import { forceDisable } from "@/core/repositories/options.repository.js";
+import { setForceDisableOption } from "@/core/usecases/options.usecase.js";
+import { beforeEach, describe, expect, test, vi } from "vitest";
+import { fakeBrowser } from "wxt/testing";
 import {
 	checkAboutForceDisable,
 	initializeForceDisable,
 } from "./forceDisable.service.js";
-import { forceDisable } from "@/core/repositories/options.repository.js";
-import { setForceDisableOption } from "@/core/usecases/options.usecase.js";
-import { fakeBrowser } from "wxt/testing";
 
 // NOTE: vi.mock関数へ外で作ったフェイク関数を渡す場合、上位のトップレベルにhoistしておく必要がある https://vitest.dev/api/vi.html#vi-hoisted
 const { mockGetManifest } = vi.hoisted(() => {

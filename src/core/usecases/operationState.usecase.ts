@@ -1,5 +1,5 @@
-import { operationState } from "@/core/repositories/contentScript.repository.js";
 import type { OperationState } from "@/core/mains/contentScriptState.js";
+import { operationState } from "@/core/repositories/contentScript.repository.js";
 
 export const setDoneInitialize = (
 	is: OperationState["flagOps"]["doneInitialize"],

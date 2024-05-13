@@ -1,11 +1,11 @@
+import { TanstackQueryClientProvider } from "@/sharedUI/Provider/TanstackQueryProvider.js";
 import {
 	UIProvider,
 	type UIProviderConfig,
 } from "@/sharedUI/Provider/UIProvider.js";
-import { PlayerBarButton } from "./feature/PlayerBarButton/index.js";
-import "./App.css";
 import { useEffect } from "react";
-import { TanstackQueryClientProvider } from "@/sharedUI/Provider/TanstackQueryProvider.js";
+import "./App.css";
+import { PlayerBarButton } from "./feature/PlayerBarButton/index.js";
 
 const uiProviderConfig: UIProviderConfig = {};
 

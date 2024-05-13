@@ -63,23 +63,23 @@
 		"description": "the fullscreen of the video player mode"
 	},
 
-  "fixturewords_enabling": {
+	"fixturewords_enabling": {
 		"message": "Enable",
 		"description": "Enabling Button text"
 	},
-  "fixturewords_disabling": {
+	"fixturewords_disabling": {
 		"message": "Disable",
 		"description": "Disabling Button text"
 	},
-  "fixturewords_confirm": {
+	"fixturewords_confirm": {
 		"message": "Confirm",
 		"description": "Confirm Button text"
 	},
-  "fixturewords_cancel": {
+	"fixturewords_cancel": {
 		"message": "Cancel",
 		"description": "Cancel Button text"
 	},
-  "fixturewords_confirmation_title": {
+	"fixturewords_confirmation_title": {
 		"message": "Please confirm your action",
 		"description": "Confirmation title text"
 	},
@@ -104,7 +104,7 @@
 		"message": "Use this feature if the extension is not working or if it is causing issues with YouTube's UI or functionality, and you want to temporarily disable it.",
 		"description": "usecase the force disable mode"
 	},
-  "settings_metaOption_forceDisable_activateAlert": {
+	"settings_metaOption_forceDisable_activateAlert": {
 		"message": "Force the extension to disable (this screen will be closed).",
 		"description": "alert of the activate force disable"
 	},
@@ -112,7 +112,7 @@
 		"message": "Reload the extension to deactivate the forced disable (this screen will be closed).",
 		"description": "alert of the deactivate force disable"
 	},
-  "settings_metaOption_forceDisable_activatedNow": {
+	"settings_metaOption_forceDisable_activatedNow": {
 		"message": "Force disabled now",
 		"description": "message of the activated now the force disable"
 	},

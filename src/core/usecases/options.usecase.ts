@@ -1,10 +1,10 @@
-import * as repo from "@/core/repositories/options.repository.js";
 import type {
-	AllOptionsValues,
 	AllOptionsMeta,
+	AllOptionsValues,
 } from "@/core/mains/options/index.js";
-import type { DefinedItem } from "../infrastructures/storage/index.js";
+import * as repo from "@/core/repositories/options.repository.js";
 import { defu } from "defu";
+import type { DefinedItem } from "@/core/infrastructures/storage/index.js";
 
 /**
  * NOTE: WXT storageがTmetadataはRecord型かつOptionalUpdateに対応しているのでいいが、TValueはRecordではないので、_generalUpdate関数内部で更に抽象化しようとするとTValueの型が複雑になる。なのでここではTValue/Tmetadataを受け取ってstorageに流すバリアントに留めている。

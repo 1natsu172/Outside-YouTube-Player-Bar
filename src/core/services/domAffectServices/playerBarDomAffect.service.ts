@@ -1,10 +1,10 @@
-import { elementAttributes, elementQuery } from "@/core/mains/meta.js";
-import { waitElement } from "@1natsu/wait-element";
 import type {
 	BehaviorState,
 	SiteMetaState,
 } from "@/core/mains/contentScriptState.js";
+import { elementAttributes, elementQuery } from "@/core/mains/meta.js";
 import type { NonUndefined } from "@/utils/typeUtils.js";
+import { waitElement } from "@1natsu/wait-element";
 import { documentElementAttr } from "./domMetaAffect.service.js";
 
 /**

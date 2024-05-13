@@ -1,13 +1,13 @@
-import { waitElement } from "@1natsu/wait-element";
-import { debounce } from "mabiki";
-import { setPlayerBarHeightVar } from "@/core/usecases/cssVariables.usecase.js";
 import { elementQuery } from "@/core/mains/meta.js";
+import { elementAttributes } from "@/core/mains/meta.js";
 import {
 	createBlockAutohideFn,
 	execAlwaysDisplayPlayerBar,
 } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
-import { elementAttributes } from "@/core/mains/meta.js";
-import { applyVideoPlayerModeToSiteMeta } from "../siteMetaServices/index.js";
+import { setPlayerBarHeightVar } from "@/core/usecases/cssVariables.usecase.js";
+import { waitElement } from "@1natsu/wait-element";
+import { debounce } from "mabiki";
+import { applyVideoPlayerModeToSiteMeta } from "@/core/services/siteMetaServices/index.js";
 
 const moviePlayerElementEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER);

@@ -1,7 +1,7 @@
 import { waitElement } from "@1natsu/wait-element";
 import { getForceDisplayPlayerBarIntervalId } from "../repositories/extensionState";
-import { setForceDisplayPlayerBarIntervalId } from "../usecases/behaviorState.usecase";
 import { interventionDOM } from "../usecases/__interventionDOM";
+import { setForceDisplayPlayerBarIntervalId } from "../usecases/behaviorState.usecase";
 import { moviePlayerController } from "./moviePlayerController";
 
 export async function displayPlayerBar() {

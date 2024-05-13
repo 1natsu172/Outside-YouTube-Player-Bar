@@ -1,18 +1,17 @@
-import { ToggleButton } from "../../components/parts/ToggleButton/index.js";
-import { ForceDisablingButton } from "../../components/parts/ForceDisablingButton/index.js";
-import style from "./style.module.css";
-import { useCallback, useMemo } from "react";
+import type { BehaviorState } from "@/core/mains/contentScriptState.js";
+import { sendMessage } from "@/core/mains/messagings/uiSignals/index.js";
 import { useBarPosition } from "@/core/presenters/statePresenter/behaviorState/index.js";
 import { useVideoPlayerMode } from "@/core/presenters/statePresenter/siteMetaState/index.js";
-import { changePositionPlayerBar } from "@/core/services/behaviorServices/positionPlayerBar.service.js";
-import type { BehaviorState } from "@/core/mains/contentScriptState.js";
-import { SettingsButton } from "../../components/parts/SettingsButton/index.js";
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
 import { showOpenSettingsIconOption } from "@/core/repositories/options.repository.js";
+import { changePositionPlayerBar } from "@/core/services/behaviorServices/positionPlayerBar.service.js";
+import { checkAboutForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
 import { LoadingSpinner } from "@/sharedUI/Components/parts/LoadingSpinner/index.js";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { sendMessage } from "@/core/mains/messagings/uiSignals/index.js";
-import { checkAboutForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
+import { useCallback, useMemo } from "react";
+import { ForceDisablingButton } from "../../components/parts/ForceDisablingButton/index.js";
+import { SettingsButton } from "../../components/parts/SettingsButton/index.js";
+import { ToggleButton } from "../../components/parts/ToggleButton/index.js";
 import { PlayerBarButtonWrapper } from "./wrapper.js";
 
 type BarPosition = BehaviorState["positionPlayerBar"];

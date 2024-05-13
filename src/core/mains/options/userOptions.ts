@@ -1,6 +1,6 @@
-import type { ExtensionBehavior } from "@/core/mains/extensionFeatures.js";
-import type { StorageItem } from "@/core/infrastructures/storage/storage.types.js";
 import { createStorageConfig } from "@/core/infrastructures/storage/index.js";
+import type { StorageItem } from "@/core/infrastructures/storage/storage.types.js";
+import type { ExtensionBehavior } from "@/core/mains/extensionFeatures.js";
 
 const CONST_KEY = "option:USER";
 

@@ -1,10 +1,10 @@
+import { Button } from "@mantine/core";
 import {
 	QueryClient,
 	type QueryClientConfig,
 	QueryClientProvider,
 	QueryErrorResetBoundary,
 } from "@tanstack/react-query";
-import { Button } from "@mantine/core";
 import { type ReactNode, useState } from "react";
 import { ErrorBoundary, type FallbackProps } from "react-error-boundary";
 

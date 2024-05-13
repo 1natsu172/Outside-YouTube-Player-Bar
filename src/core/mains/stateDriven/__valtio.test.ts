@@ -1,6 +1,6 @@
 import { proxy } from "valtio";
 import { watch } from "valtio/utils";
-import { describe, test, expect } from "vitest";
+import { describe, expect, test } from "vitest";
 
 const a = proxy({
 	aoo: 1,

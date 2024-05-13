@@ -1,4 +1,4 @@
-import { createTheme, MantineProvider } from "@mantine/core";
+import { MantineProvider, createTheme } from "@mantine/core";
 import type { ReactNode } from "react";
 
 type MantineProviderProps = Parameters<typeof MantineProvider>[0];

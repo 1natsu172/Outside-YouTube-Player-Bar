@@ -1,12 +1,12 @@
-import { setPositionPlayerBar } from "@/core/usecases/behaviorState.usecase.js";
-import { resolveBehaviorOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import type {
 	BehaviorState,
 	SiteMetaState,
 } from "@/core/mains/contentScriptState.js";
-import { getFlagOps } from "@/core/presenters/statePresenter/operationState/index.js";
-import { setDoneIntialMovePlayerBar } from "@/core/usecases/operationState.usecase.js";
 import { getBehaviorState } from "@/core/presenters/statePresenter/behaviorState/index.js";
+import { getFlagOps } from "@/core/presenters/statePresenter/operationState/index.js";
+import { resolveBehaviorOption } from "@/core/presenters/storagePresenter/options.presenter.js";
+import { setPositionPlayerBar } from "@/core/usecases/behaviorState.usecase.js";
+import { setDoneIntialMovePlayerBar } from "@/core/usecases/operationState.usecase.js";
 
 /**
  * @todo: テスト書く

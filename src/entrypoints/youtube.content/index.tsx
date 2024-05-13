@@ -1,6 +1,6 @@
+import { Executor } from "@/core/mains/executor.js";
 import { displayInfo } from "./Process/displayInfo.js";
 import { mountUI } from "./Process/mount.js";
-import { Executor } from "@/core/mains/executor.js";
 
 // -----------------------------------------
 // WXT WORLD

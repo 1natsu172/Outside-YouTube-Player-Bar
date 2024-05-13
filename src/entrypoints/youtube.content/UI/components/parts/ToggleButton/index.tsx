@@ -1,8 +1,8 @@
-import { IconTransitionBottom, IconTransitionTop } from "@tabler/icons-react";
-import style from "./style.module.css";
-import type { ExtensionBehavior } from "@/core/mains/extensionFeatures.js";
 import type { SiteMetaState } from "@/core/mains/contentScriptState.js";
+import type { ExtensionBehavior } from "@/core/mains/extensionFeatures.js";
+import { IconTransitionBottom, IconTransitionTop } from "@tabler/icons-react";
 import { useMemo } from "react";
+import style from "./style.module.css";
 
 type P = {
 	currentBarPosition: ExtensionBehavior["positionPlayerBar"];

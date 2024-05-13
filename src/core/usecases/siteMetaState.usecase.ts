@@ -1,5 +1,5 @@
-import { siteMetaState } from "@/core/repositories/contentScript.repository.js";
 import type { SiteMetaState } from "@/core/mains/contentScriptState.js";
+import { siteMetaState } from "@/core/repositories/contentScript.repository.js";
 
 export const setVideoPlayerMode = (
 	mode: SiteMetaState["videoPlayerState"]["mode"],
