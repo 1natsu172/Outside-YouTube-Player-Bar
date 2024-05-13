@@ -34,7 +34,7 @@ const videoLoadedEffect = createEventEffect(
  * https://developer.mozilla.org/ja/docs/Web/API/Document/fullscreenchange_event
  * https://developer.mozilla.org/ja/docs/Web/API/Document/fullscreenElement
  */
-const fullscreenEffect = createEventEffect(
+const _fullscreenEffect = createEventEffect(
 	["fullscreenchange", "webkitfullscreenchange"],
 	(_key) => (event) => {
 		logger.debug("fullscreen event detected", event);

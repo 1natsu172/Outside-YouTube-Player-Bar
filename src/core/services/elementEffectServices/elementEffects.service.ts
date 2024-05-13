@@ -4,10 +4,10 @@ import {
 	createBlockAutohideFn,
 	execAlwaysDisplayPlayerBar,
 } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
+import { applyVideoPlayerModeToSiteMeta } from "@/core/services/siteMetaServices/index.js";
 import { setPlayerBarHeightVar } from "@/core/usecases/cssVariables.usecase.js";
 import { waitElement } from "@1natsu/wait-element";
 import { debounce } from "mabiki";
-import { applyVideoPlayerModeToSiteMeta } from "@/core/services/siteMetaServices/index.js";
 
 const moviePlayerElementEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER);

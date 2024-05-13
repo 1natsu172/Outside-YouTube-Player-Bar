@@ -1,6 +1,6 @@
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
 import { debugMode } from "@/core/repositories/options.repository.js";
-import { Card, Text, Title } from "@mantine/core";
+import { Card, Title } from "@mantine/core";
 import type { ReactNode } from "react";
 
 export type FormGroupProps = {

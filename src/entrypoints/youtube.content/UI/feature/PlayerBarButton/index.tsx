@@ -20,11 +20,9 @@ const PlayerBarButtonContainer = () => {
 	//// hooks
 	const currentBarPosition = useBarPosition();
 	const videoPlayerMode = useVideoPlayerMode();
-	const {
-		store: isShowOpenSettingsIcon,
-		isLoading,
-		error,
-	} = useStorage(showOpenSettingsIconOption);
+	const { store: isShowOpenSettingsIcon, isLoading } = useStorage(
+		showOpenSettingsIconOption,
+	);
 	const { data: aboutForceDisable } = useSuspenseQuery({
 		queryKey: [checkAboutForceDisable.name],
 		queryFn: checkAboutForceDisable,

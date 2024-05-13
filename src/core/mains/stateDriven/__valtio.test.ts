@@ -11,7 +11,7 @@ const a = proxy({
 	},
 });
 
-const b = proxy({
+const _b = proxy({
 	boo: 1,
 	boo2: 2,
 });
@@ -29,7 +29,7 @@ describe("valtio check behavior", () => {
 			console.log("log1", n);
 		});
 		watch((get) => {
-			const n = get(a);
+			const _n = get(a);
 			const _b = get(a);
 			const _c = get(c);
 			console.log("log2", a.aoo, a.aoo2, c);
