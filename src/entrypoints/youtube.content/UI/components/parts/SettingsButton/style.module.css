@@ -1,15 +1,12 @@
-.settings-button {
+.button {
   position: absolute;
-  width: 16px;
-  height: 16px;
-  right: 1px;
-  bottom: 7px;
-  fill: #fff;
-}
+  top: 3px;
+  right: 0px;
 
-.settings-button--is-outside {
-  right: 3px;
-  top: 5px;
+  >svg {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 .tooltip {
@@ -32,7 +29,7 @@
   transition: opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
 }
 
-.settings-button:hover+.tooltip {
+.button:hover+.tooltip {
   visibility: visible;
   opacity: 1;
 }

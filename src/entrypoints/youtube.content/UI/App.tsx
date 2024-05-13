@@ -5,6 +5,7 @@ import {
 import { PlayerBarButton } from "./feature/PlayerBarButton/index.js";
 import "./App.css";
 import { useEffect } from "react";
+import { TanstackQueryClientProvider } from "@/sharedUI/Provider/TanstackQueryProvider.js";
 
 const uiProviderConfig: UIProviderConfig = {};
 
@@ -15,7 +16,9 @@ export const App = () => {
 
 	return (
 		<UIProvider config={uiProviderConfig}>
-			<PlayerBarButton />
+			<TanstackQueryClientProvider>
+				<PlayerBarButton />
+			</TanstackQueryClientProvider>
 		</UIProvider>
 	);
 };

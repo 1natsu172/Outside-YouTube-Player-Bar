@@ -345,6 +345,36 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
+     * message of the activated now the force disable
+     *
+     * "Force disabled now"
+     */
+    getMessage(
+      messageName: "settings_metaOption_forceDisable_activatedNow",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * notification of the available deactivate the force disable
+     *
+     * "There was an update"
+     */
+    getMessage(
+      messageName: "settings_metaOption_forceDisable_availableDeactivate_short",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * notification of the available deactivate the force disable
+     *
+     * "There has been an update since the extension was force disabled."
+     */
+    getMessage(
+      messageName: "settings_metaOption_forceDisable_availableDeactivate_long",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
      * settings extension behavor of the each player modes
      *
      * "Default settings for each player mode"

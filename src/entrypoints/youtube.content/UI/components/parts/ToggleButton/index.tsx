@@ -1,8 +1,8 @@
-/// <reference types="vite-plugin-svgr/client" />
-import ToggleIcon from "@/public/images/oypb-toggle.svg?react";
+import { IconTransitionBottom, IconTransitionTop } from "@tabler/icons-react";
 import style from "./style.module.css";
 import type { ExtensionBehavior } from "@/core/mains/extensionFeatures.js";
 import type { SiteMetaState } from "@/core/mains/contentScriptState.js";
+import { useMemo } from "react";
 
 type P = {
 	currentBarPosition: ExtensionBehavior["positionPlayerBar"];
@@ -14,6 +14,14 @@ type P = {
 export const ToggleButton = (props: P) => {
 	const { currentBarPosition, videoPlayerMode, tooltip, onToggle } = props;
 
+	const ToggleIcon = useMemo(
+		() =>
+			currentBarPosition === "inside"
+				? IconTransitionBottom
+				: IconTransitionTop,
+		[currentBarPosition],
+	);
+
 	return (
 		<>
 			<button
@@ -24,7 +32,7 @@ export const ToggleButton = (props: P) => {
 				data-video-player-mode={videoPlayerMode}
 				onClick={onToggle}
 			>
-				<ToggleIcon />
+				<ToggleIcon stroke={2.5} color="var(--oypb-player-bar-icon-color)" />
 			</button>
 			<span className={style.tooltip}>{tooltip}</span>
 		</>

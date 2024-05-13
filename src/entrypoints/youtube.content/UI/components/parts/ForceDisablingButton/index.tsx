@@ -1,11 +1,11 @@
 import style from "./style.module.css";
-import { IconSettings } from "@tabler/icons-react";
+import { IconPuzzleOff } from "@tabler/icons-react";
 
 type P = {
 	tooltip: string;
 	openSettings: () => Promise<void>;
 };
-export const SettingsButton = (props: P) => {
+export const ForceDisablingButton = (props: P) => {
 	const { tooltip, openSettings } = props;
 
 	return (
@@ -15,10 +15,7 @@ export const SettingsButton = (props: P) => {
 				className={`${style.button}`}
 				onClick={openSettings}
 			>
-				<IconSettings
-					strokeWidth={2.5}
-					color="var(--oypb-player-bar-icon-color)"
-				/>
+				<IconPuzzleOff strokeWidth={2.5} color="#fff" />
 			</button>
 			<span className={style.tooltip}>{tooltip}</span>
 		</>

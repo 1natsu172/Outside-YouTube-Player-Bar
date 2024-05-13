@@ -112,6 +112,18 @@
 		"message": "拡張機能を強制停止を解除するため、拡張機能が再読み込みされます（この詳細設定画面も強制的に閉じられます）",
 		"description": "alert of the deactivate force disable"
 	},
+	"settings_metaOption_forceDisable_activatedNow": {
+		"message": "強制停止中",
+		"description": "message of the activated now the force disable"
+	},
+	"settings_metaOption_forceDisable_availableDeactivate_short": {
+		"message": "強制停止後の更新がありました",
+		"description": "notification of the available deactivate the force disable"
+	},
+	"settings_metaOption_forceDisable_availableDeactivate_long": {
+		"message": "拡張機能の強制停止をされてからアップデートがありました",
+		"description": "notification of the available deactivate the force disable"
+	},
 
 	"settings_userOption_behaviors_title": {
 		"message": "プレイヤーモードごとのデフォルト設定",

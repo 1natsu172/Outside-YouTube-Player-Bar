@@ -32,6 +32,8 @@ export class Executor {
 			logger.warn("oops, initialize seems to have been called multiple times!");
 			return;
 		}
+		logger.debug("initialization executing.");
+
 		// NOTE: initializeForceDisable must be first
 		const { canProcessContinue } = await initializeForceDisable();
 		if (!canProcessContinue) {
@@ -41,7 +43,6 @@ export class Executor {
 			return;
 		}
 		await initializeDebugMode();
-		logger.debug("initialization executing.");
 		await this.setupEffects();
 		await applyCompatibilityStyles();
 		await this.stateDriven.setup();
