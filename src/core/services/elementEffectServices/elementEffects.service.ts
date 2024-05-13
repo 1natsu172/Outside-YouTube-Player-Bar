@@ -37,6 +37,7 @@ const moviePlayerElementEffect = async () => {
 						blockAutoHide,
 						isVisiblePlayerBar,
 					});
+					// FIXME: fullscreenにしたときにautohideが解除されないので内側にしているとずっとバーが出ている。movie-playerをクリックしたら解除されるので、DisbleBlockAutoHideの開発が必要。
 				}
 			},
 			500,
