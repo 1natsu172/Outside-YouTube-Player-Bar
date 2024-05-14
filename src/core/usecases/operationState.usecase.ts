@@ -16,3 +16,9 @@ export const setDoneIntialMovePlayerBar = (
 ) => {
 	operationState.flagOps.doneIntialMovePlayerBar = is;
 };
+
+export const setPlayerBarIntersection = (
+	state: OperationState["uiOps"]["playerBarIntersection"],
+) => {
+	operationState.uiOps.playerBarIntersection = state;
+};

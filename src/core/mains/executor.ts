@@ -1,6 +1,9 @@
 import { StateDriven } from "@/core/mains/stateDriven/index.js";
 import { operationState } from "@/core/repositories/contentScript.repository.js";
-import { setupElementEffects } from "@/core/services/elementEffectServices/elementEffects.service.js";
+import {
+	type ElementEffect,
+	setupElementEffects,
+} from "@/core/services/elementEffectServices/elementEffects.service.js";
 import { setupEventEffects } from "@/core/services/eventEffectServices/eventEffects.service.js";
 import type { EventEffect } from "@/core/services/eventEffectServices/libs/eventEffect.js";
 import {
@@ -53,11 +56,7 @@ export class Executor {
 		logger.debug("initialization executed.");
 	}
 
-	public __registeredEffects: (
-		| EventEffect
-		| MutationObserver
-		| ResizeObserver
-	)[][] = [];
+	public __registeredEffects: (EventEffect | ElementEffect)[][] = [];
 
 	private async setupEffects() {
 		const registeredEffects = await Promise.all([

@@ -1,4 +1,5 @@
 import { operationState } from "@/core/repositories/contentScript.repository.js";
+import { useSnapshot } from "valtio";
 import { snapshot } from "valtio/vanilla";
 
 export const getOperationState = () => {
@@ -10,4 +11,8 @@ export const getFlagOps = () => {
 };
 export const getUiOps = () => {
 	return getOperationState().uiOps;
+};
+
+export const usePlayerBarIntersectionInfo = () => {
+	return useSnapshot(operationState.uiOps.playerBarIntersection);
 };

@@ -10,6 +10,10 @@ export const behaviorState = proxy<ContentScriptState["behavior"]>({
 export const operationState = proxy<ContentScriptState["operation"]>({
 	uiOps: {
 		mount: "unmount",
+		playerBarIntersection: {
+			shouldRestoreToOutside: false,
+			shouldHidePlayerBarButton: false,
+		},
 	},
 	processOps: {
 		scriptStatus: "standByVideoPage",

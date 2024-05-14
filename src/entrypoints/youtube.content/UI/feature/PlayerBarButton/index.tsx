@@ -1,6 +1,7 @@
 import type { BehaviorState } from "@/core/mains/contentScriptState.js";
 import { sendMessage } from "@/core/mains/messagings/uiSignals/index.js";
 import { useBarPosition } from "@/core/presenters/statePresenter/behaviorState/index.js";
+import { usePlayerBarIntersectionInfo } from "@/core/presenters/statePresenter/operationState/index.js";
 import { useVideoPlayerMode } from "@/core/presenters/statePresenter/siteMetaState/index.js";
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
 import { showOpenSettingsIconOption } from "@/core/repositories/options.repository.js";
@@ -20,6 +21,7 @@ const PlayerBarButtonContainer = () => {
 	//// hooks
 	const currentBarPosition = useBarPosition();
 	const videoPlayerMode = useVideoPlayerMode();
+	const { shouldHidePlayerBarButton } = usePlayerBarIntersectionInfo();
 	const { store: isShowOpenSettingsIcon, isLoading } = useStorage(
 		showOpenSettingsIconOption,
 	);
@@ -64,6 +66,9 @@ const PlayerBarButtonContainer = () => {
 	}, [currentBarPosition]);
 
 	//// return components
+	if (shouldHidePlayerBarButton) {
+		return null;
+	}
 	if (isLoading) {
 		return <LoadingSpinner />;
 	}

@@ -34,6 +34,10 @@ export type SiteMetaState = {
 export type OperationState = {
 	uiOps: {
 		mount: "mounted" | "unmount" | "failed";
+		playerBarIntersection: {
+			shouldRestoreToOutside: boolean;
+			shouldHidePlayerBarButton: boolean;
+		};
 	};
 	processOps: {
 		// TODO: 本当にいる？

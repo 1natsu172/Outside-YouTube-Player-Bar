@@ -4,6 +4,7 @@ import {
 	createBlockAutohideFn,
 	execAlwaysDisplayPlayerBar,
 } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
+import { playerBarIntersectionOperation } from "@/core/services/operationServices/index.js";
 import { applyVideoPlayerModeToSiteMeta } from "@/core/services/siteMetaServices/index.js";
 import { setPlayerBarHeightVar } from "@/core/usecases/cssVariables.usecase.js";
 import { waitElement } from "@1natsu/wait-element";
@@ -38,6 +39,7 @@ const moviePlayerElementEffect = async () => {
 						isVisiblePlayerBar,
 					});
 					// FIXME: fullscreenにしたときにautohideが解除されないので内側にしているとずっとバーが出ている。movie-playerをクリックしたら解除されるので、DisbleBlockAutoHideの開発が必要。
+					// FIXME: scrollで一時的にinsideにしたときもDisableBlockAutoHideが必要。
 				}
 			},
 			500,
@@ -117,12 +119,50 @@ const pageManagerWatchFlexy_playerModeEffect = async () => {
 	return observer;
 };
 
+/**
+ * NOTE: The interest itself is a player bar, but the parent container is actually a targetElement in order to consider both inside and outside.
+ */
+const playerBarIntersectionEffect = async () => {
+	const element = await waitElement(elementQuery.MOVIE_PLAYER_CONTAINER);
+	const observer = new IntersectionObserver(
+		(entries) => {
+			for (const entry of entries) {
+				// When fully disappeared
+				if (entry.intersectionRatio === 0) {
+					requestIdleCallback(() => {
+						logger.debug("playerbar intersect => fully disappeared");
+						playerBarIntersectionOperation({ intersect: "disappeared" });
+					});
+				}
+				// When little appeared
+				if (entry.intersectionRatio > 0) {
+					requestIdleCallback(() => {
+						logger.debug("playerbar intersect => little appeared");
+						playerBarIntersectionOperation({ intersect: "littleAppeared" });
+					});
+				}
+			}
+		},
+		{
+			threshold: [0, 0.1],
+			rootMargin: "-56px 0px 0px 0px", //NOTE: Consider header height.
+		},
+	);
+	observer.observe(element);
+	return observer;
+};
+
 ///////////////////////////////////////////
+export type ElementEffect =
+	| ResizeObserver
+	| MutationObserver
+	| IntersectionObserver;
 export const setupElementEffects = async () => {
-	const effects = await Promise.all<ResizeObserver | MutationObserver>([
+	const effects = await Promise.all<ElementEffect>([
 		playerBarElementEffect(),
 		moviePlayerElementEffect(),
 		pageManagerWatchFlexy_playerModeEffect(),
+		playerBarIntersectionEffect(),
 	]);
 	return effects;
 };
