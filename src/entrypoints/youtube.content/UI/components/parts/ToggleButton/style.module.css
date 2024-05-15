@@ -40,3 +40,11 @@
   visibility: visible;
   opacity: 1;
 }
+
+.notificationCircle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 8px;
+  right: 8px;
+}

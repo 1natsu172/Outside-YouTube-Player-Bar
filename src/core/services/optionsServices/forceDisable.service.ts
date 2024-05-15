@@ -4,35 +4,77 @@ import semver_lt from "semver/functions/lt.js";
 
 export const switchForceDisable = async (activate: boolean) => {
 	await usecases.setForceDisableOption(activate, {
-		extensionVersion: browser.runtime.getManifest().version,
+		disabledExtensionVersion: activate
+			? browser.runtime.getManifest().version
+			: undefined,
+		continueForceDisableForNow: undefined,
 	});
 	browser.runtime.reload();
 };
 
+export const switchContinueForceDisableForNow = async ({
+	isContinue,
+}: { isContinue: boolean }) => {
+	const continueForceDisableForNow = isContinue
+		? {
+				isContinue: true,
+				continueChoosedExtensionVersion: browser.runtime.getManifest().version,
+			}
+		: ({ isContinue: false } as const);
+	await usecases.setForceDisableOption(undefined, {
+		continueForceDisableForNow,
+	});
+};
+
 export const checkAboutForceDisable = async (): Promise<{
 	isDisabling: boolean;
-	canDeactivateForceDisable: boolean;
+	hasBeenUpdateAfterForceDisable: boolean;
+	choosingToContinue: boolean;
+	hasBeenUpdateAfterContinueChoosed: boolean;
+	isShowUpdateRed: boolean;
 }> => {
 	const {
 		value: isDisabling,
-		meta: { extensionVersion: prevDisabledVersion },
+		meta: { disabledExtensionVersion, continueForceDisableForNow },
 	} = await getForceDisableOption();
 
 	const shouldCheckVersion =
-		isDisabling && typeof prevDisabledVersion === "string";
+		isDisabling && typeof disabledExtensionVersion === "string";
 
-	let canDeactivateForceDisable = false;
+	let hasBeenUpdateAfterForceDisable = false;
 
 	if (shouldCheckVersion) {
-		canDeactivateForceDisable = semver_lt(
-			prevDisabledVersion,
+		hasBeenUpdateAfterForceDisable = semver_lt(
+			disabledExtensionVersion,
 			browser.runtime.getManifest().version,
 		);
 	}
 
+	let hasBeenUpdateAfterContinueChoosed = false;
+
+	if (
+		shouldCheckVersion &&
+		continueForceDisableForNow?.isContinue &&
+		continueForceDisableForNow.continueChoosedExtensionVersion
+	) {
+		hasBeenUpdateAfterContinueChoosed = semver_lt(
+			continueForceDisableForNow.continueChoosedExtensionVersion,
+			browser.runtime.getManifest().version,
+		);
+	}
+
+	const choosingToContinue = !!continueForceDisableForNow?.isContinue;
+
+	const isShowUpdateRed =
+		(isDisabling && choosingToContinue && hasBeenUpdateAfterContinueChoosed) ||
+		(isDisabling && !choosingToContinue && hasBeenUpdateAfterForceDisable);
+
 	return {
 		isDisabling,
-		canDeactivateForceDisable,
+		hasBeenUpdateAfterForceDisable,
+		choosingToContinue,
+		hasBeenUpdateAfterContinueChoosed,
+		isShowUpdateRed,
 	};
 };
 

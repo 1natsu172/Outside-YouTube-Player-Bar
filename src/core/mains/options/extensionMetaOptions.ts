@@ -9,7 +9,15 @@ export type ExtensionMetaOptions<CK extends string = typeof CONST_KEY> = {
 		CK,
 		boolean,
 		{
-			extensionVersion: string | null;
+			disabledExtensionVersion?: string;
+			continueForceDisableForNow?:
+				| {
+						isContinue: true;
+						continueChoosedExtensionVersion: string;
+				  }
+				| {
+						isContinue: false;
+				  };
 		}
 	>;
 };
@@ -27,7 +35,5 @@ export const ForceDisableOptionConfig = createStorageConfig({
 	itemKey: `${CONST_KEY}:forceDisable`,
 	version: 1,
 	defaultValue: false,
-	defaultMeta: {
-		extensionVersion: null,
-	},
+	defaultMeta: {},
 } as const satisfies ExtensionMetaOptions["forceDisableV1"]["config"]);

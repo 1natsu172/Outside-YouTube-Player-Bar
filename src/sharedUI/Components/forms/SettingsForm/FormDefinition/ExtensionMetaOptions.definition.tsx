@@ -3,8 +3,19 @@ import {
 	getForceDisableOption,
 } from "@/core/presenters/storagePresenter/options.presenter.js";
 import { switchDebugMode } from "@/core/services/optionsServices/extensionMetaOptions.service.js";
-import { switchForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
-import { Button, Group, Modal, Paper, Switch, Text } from "@mantine/core";
+import {
+	switchContinueForceDisableForNow,
+	switchForceDisable,
+} from "@/core/services/optionsServices/forceDisable.service.js";
+import {
+	Button,
+	Checkbox,
+	Group,
+	Modal,
+	Paper,
+	Switch,
+	Text,
+} from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { AutoSaveForFormField } from "../../utils/useAutoSaveForm.js";
 import { FormField } from "../FormField.js";
@@ -90,6 +101,56 @@ export const ExtensionMetaOptionsFormDefs: FormDefs = new Map([
 													: browser.i18n.getMessage("fixturewords_disabling")}
 											</Button>
 										</>
+									</FormField>
+								);
+							}}
+						</AutoSaveForFormField>
+						<AutoSaveForFormField
+							option={{
+								useSuspenseQueryArgs: [
+									// TODO: serviceのほうに差し替える
+									{ queryKey, queryFn: getForceDisableOption },
+								],
+								useMutationArgs: [
+									{ mutationFn: switchContinueForceDisableForNow },
+								],
+							}}
+						>
+							{([{ data, isLoading }, { mutate, isPending }]) => {
+								// TODO: コンポーネントの作り全面的に途中
+								const isSwitchToActivate = data.value === false;
+								return (
+									<FormField
+										title={browser.i18n.getMessage(
+											"settings_metaOption_forceDisable_title",
+										)}
+										description={browser.i18n.getMessage(
+											"settings_metaOption_forceDisable_description",
+										)}
+										isLoading={isPending}
+										formState={{ data }}
+									>
+										<Paper>
+											<Text size="sm">
+												{isSwitchToActivate
+													? browser.i18n.getMessage(
+															"settings_metaOption_forceDisable_activateAlert",
+														)
+													: browser.i18n.getMessage(
+															"settings_metaOption_forceDisable_deactivateAlert",
+														)}
+											</Text>
+											<Group justify="flex-end">
+												<Checkbox
+													// TODO: i18n
+													label="無視する"
+													onChange={(event) =>
+														mutate({ isContinue: event.currentTarget.checked })
+													}
+													disabled={isLoading || isPending}
+												/>
+											</Group>
+										</Paper>
 									</FormField>
 								);
 							}}

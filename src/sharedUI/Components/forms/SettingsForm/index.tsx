@@ -59,6 +59,7 @@ const DeactivateForceDisableForm = () => {
 };
 
 export const SettingsForm = () => {
+	// TODO: AutoSavedFormでもこれ使うようにしないと、mutateによる更新がかからないので合わせる
 	const { data } = useSuspenseQuery({
 		queryKey: [checkAboutForceDisable.name],
 		queryFn: checkAboutForceDisable,

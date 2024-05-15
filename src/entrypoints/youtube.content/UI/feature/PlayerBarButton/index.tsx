@@ -44,8 +44,7 @@ const PlayerBarButtonContainer = () => {
 	);
 	const forceDisablingTooltip = useMemo(
 		() =>
-			aboutForceDisable.isDisabling &&
-			aboutForceDisable.canDeactivateForceDisable
+			aboutForceDisable.isShowUpdateRed
 				? browser.i18n.getMessage(
 						"settings_metaOption_forceDisable_availableDeactivate_short",
 					)
@@ -77,6 +76,7 @@ const PlayerBarButtonContainer = () => {
 			<ForceDisablingButton
 				tooltip={forceDisablingTooltip}
 				openSettings={openSettings}
+				showUpdateRed={aboutForceDisable.isShowUpdateRed}
 			/>
 		);
 	}
@@ -87,6 +87,7 @@ const PlayerBarButtonContainer = () => {
 				currentBarPosition={currentBarPosition}
 				videoPlayerMode={videoPlayerMode}
 				tooltip={toggleTooltip}
+				showUpdateRed={aboutForceDisable.isShowUpdateRed}
 			/>
 			{isShowOpenSettingsIcon && (
 				<SettingsButton

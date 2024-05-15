@@ -1,5 +1,6 @@
 import type { SiteMetaState } from "@/core/mains/contentScriptState.js";
 import type { ExtensionBehavior } from "@/core/mains/extensionFeatures.js";
+import { NotificationCircle } from "@/sharedUI/Components/parts/NotificationCircle/index.js";
 import { IconTransitionBottom, IconTransitionTop } from "@tabler/icons-react";
 import { useMemo } from "react";
 import style from "./style.module.css";
@@ -8,11 +9,18 @@ type P = {
 	currentBarPosition: ExtensionBehavior["positionPlayerBar"];
 	videoPlayerMode: SiteMetaState["videoPlayerState"]["mode"];
 	tooltip: string;
+	showUpdateRed: boolean;
 	onToggle: () => void;
 };
 
 export const ToggleButton = (props: P) => {
-	const { currentBarPosition, videoPlayerMode, tooltip, onToggle } = props;
+	const {
+		currentBarPosition,
+		videoPlayerMode,
+		tooltip,
+		showUpdateRed,
+		onToggle,
+	} = props;
 
 	const ToggleIcon = useMemo(
 		() =>
@@ -35,6 +43,11 @@ export const ToggleButton = (props: P) => {
 				<ToggleIcon stroke={2.5} color="var(--oypb-player-bar-icon-color)" />
 			</button>
 			<span className={style.tooltip}>{tooltip}</span>
+			{showUpdateRed && (
+				<span className={style.notificationCircle}>
+					<NotificationCircle />
+				</span>
+			)}
 		</>
 	);
 };
