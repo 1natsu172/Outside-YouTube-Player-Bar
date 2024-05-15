@@ -11,8 +11,8 @@ import {
 } from "./forceDisable.service.js";
 
 // NOTE: vi.mock関数へ外で作ったフェイク関数を渡す場合、上位のトップレベルにhoistしておく必要がある https://vitest.dev/api/vi.html#vi-hoisted
-const { mockGetManifest } = vi.hoisted(() => {
-	return { mockGetManifest: vi.fn() };
+const { mockGetManifest, mockReload } = vi.hoisted(() => {
+	return { mockGetManifest: vi.fn(), mockReload: vi.fn() };
 });
 
 /**
@@ -29,7 +29,7 @@ vi.mock("wxt/testing", async (importOriginal) => {
 			runtime: {
 				...original.fakeBrowser.runtime,
 				getManifest: mockGetManifest,
-				reload: vi.fn(),
+				reload: mockReload,
 			},
 		},
 	};
@@ -259,6 +259,14 @@ describe(switchForceDisable.name, () => {
 			value: false,
 			meta: {},
 		});
+	});
+
+	test("should call with `browser.runtime.reload`", async () => {
+		mockGetManifest.mockReturnValue({ version: "4.0.0" });
+		await switchForceDisable(true);
+		expect(mockReload).toHaveBeenCalledTimes(1);
+		await switchForceDisable(false);
+		expect(mockReload).toHaveBeenCalledTimes(2);
 	});
 });
 
