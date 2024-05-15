@@ -1,4 +1,3 @@
-import { getForceDisableOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import {
 	checkAboutForceDisable,
 	switchForceDisable,

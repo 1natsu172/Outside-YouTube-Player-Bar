@@ -1,9 +1,8 @@
-import { getForceDisableOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import {
 	checkAboutForceDisable,
 	switchContinueForceDisableForNow,
 } from "@/core/services/optionsServices/forceDisable.service.js";
-import { Checkbox, Group, Paper, Text } from "@mantine/core";
+import { Checkbox, Group, Paper } from "@mantine/core";
 import type { QueryKey } from "@tanstack/react-query";
 import { AutoSaveForFormField } from "../../../utils/useAutoSaveForm.js";
 import { FormField } from "../../FormField.js";
