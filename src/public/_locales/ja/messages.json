@@ -112,8 +112,12 @@
 		"message": "拡張機能を強制停止を解除するため、拡張機能が再読み込みされます（この詳細設定画面も強制的に閉じられます）",
 		"description": "alert of the deactivate force disable"
 	},
-	"settings_metaOption_forceDisable_activatedNow": {
+	"settings_metaOption_forceDisable_activatedNow_short": {
 		"message": "強制停止中",
+		"description": "message of the activated now the force disable"
+	},
+	"settings_metaOption_forceDisable_activatedNow_long": {
+		"message": "拡張機能は強制停止しています",
 		"description": "message of the activated now the force disable"
 	},
 	"settings_metaOption_forceDisable_availableDeactivate_short": {
@@ -123,6 +127,10 @@
 	"settings_metaOption_forceDisable_availableDeactivate_long": {
 		"message": "拡張機能の強制停止をされてからアップデートがありました",
 		"description": "notification of the available deactivate the force disable"
+	},
+	"settings_metaOption_forceDisable_continue_currently_label": {
+		"message": "今はまだ強制停止を継続する",
+		"description": "label of the continue currently the version"
 	},
 
 	"settings_userOption_behaviors_title": {

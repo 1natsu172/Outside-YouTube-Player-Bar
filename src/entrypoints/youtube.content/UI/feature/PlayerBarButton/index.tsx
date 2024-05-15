@@ -49,7 +49,7 @@ const PlayerBarButtonContainer = () => {
 						"settings_metaOption_forceDisable_availableDeactivate_short",
 					)
 				: browser.i18n.getMessage(
-						"settings_metaOption_forceDisable_activatedNow",
+						"settings_metaOption_forceDisable_activatedNow_short",
 					),
 		[aboutForceDisable],
 	);

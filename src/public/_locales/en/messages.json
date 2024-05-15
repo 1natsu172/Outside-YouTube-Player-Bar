@@ -112,8 +112,12 @@
 		"message": "Reload the extension to deactivate the forced disable (this screen will be closed).",
 		"description": "alert of the deactivate force disable"
 	},
-	"settings_metaOption_forceDisable_activatedNow": {
+	"settings_metaOption_forceDisable_activatedNow_short": {
 		"message": "Force disabled now",
+		"description": "message of the activated now the force disable"
+	},
+  "settings_metaOption_forceDisable_activatedNow_long": {
+		"message": "Extension is currently force disabled.",
 		"description": "message of the activated now the force disable"
 	},
 	"settings_metaOption_forceDisable_availableDeactivate_short": {
@@ -123,6 +127,10 @@
 	"settings_metaOption_forceDisable_availableDeactivate_long": {
 		"message": "There has been an update since the extension was force disabled.",
 		"description": "notification of the available deactivate the force disable"
+	},
+  "settings_metaOption_forceDisable_continue_currently_label": {
+		"message": "For now, still continue with the force disable.",
+		"description": "label of the continue currently the version"
 	},
 
 	"settings_userOption_behaviors_title": {

@@ -350,7 +350,17 @@ Note: You can't use this message in a manifest file.
      * "Force disabled now"
      */
     getMessage(
-      messageName: "settings_metaOption_forceDisable_activatedNow",
+      messageName: "settings_metaOption_forceDisable_activatedNow_short",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * message of the activated now the force disable
+     *
+     * "Extension is currently force disabled."
+     */
+    getMessage(
+      messageName: "settings_metaOption_forceDisable_activatedNow_long",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;
@@ -371,6 +381,16 @@ Note: You can't use this message in a manifest file.
      */
     getMessage(
       messageName: "settings_metaOption_forceDisable_availableDeactivate_long",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * label of the continue currently the version
+     *
+     * "For now, still continue with the force disable."
+     */
+    getMessage(
+      messageName: "settings_metaOption_forceDisable_continue_currently_label",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;
