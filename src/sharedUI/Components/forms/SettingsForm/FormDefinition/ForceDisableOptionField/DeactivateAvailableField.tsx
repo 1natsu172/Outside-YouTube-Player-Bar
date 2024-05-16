@@ -32,6 +32,7 @@ export const DeactivateAvailableField = ({
 									label={browser.i18n.getMessage(
 										"settings_metaOption_forceDisable_continue_currently_label",
 									)}
+									labelPosition="left"
 									onChange={(event) =>
 										mutate({ isContinue: event.currentTarget.checked })
 									}

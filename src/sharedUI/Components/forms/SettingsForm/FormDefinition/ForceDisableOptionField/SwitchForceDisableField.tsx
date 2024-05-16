@@ -1,13 +1,14 @@
+import { getForceDisableOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import {
 	checkAboutForceDisable,
 	switchForceDisable,
 } from "@/core/services/optionsServices/forceDisable.service.js";
 import { Button, Group, Modal, Paper, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { useQuery, type QueryKey } from "@tanstack/react-query";
+import { type QueryKey, useQuery } from "@tanstack/react-query";
 import { AutoSaveForFormField } from "../../../utils/useAutoSaveForm.js";
 import { FormField } from "../../FormField.js";
-import { getForceDisableOption } from "@/core/presenters/storagePresenter/options.presenter.js";
+import { DeactivateAvailableField } from "./DeactivateAvailableField.js";
 
 export const SwitchForceDisableField = ({
 	queryKey,
@@ -22,10 +23,10 @@ export const SwitchForceDisableField = ({
 			{([{ data, isLoading }, { mutate, isPending }]) => {
 				const canSwitchToActivate = data.isDisabling === false;
 				const [opened, { open, close }] = useDisclosure(false);
-        const {data:debugRawValues} = useQuery({
-          queryKey:[getForceDisableOption.name],
-          queryFn: getForceDisableOption
-        })
+				const { data: debugRawValues } = useQuery({
+					queryKey: [getForceDisableOption.name],
+					queryFn: getForceDisableOption,
+				});
 				return (
 					<FormField
 						title={browser.i18n.getMessage(
@@ -35,7 +36,7 @@ export const SwitchForceDisableField = ({
 							"settings_metaOption_forceDisable_description",
 						)}
 						isLoading={isPending}
-						formState={{ data,debugRawValues }}
+						formState={{ data, debugRawValues }}
 					>
 						<>
 							<Modal
@@ -81,6 +82,11 @@ export const SwitchForceDisableField = ({
 									? browser.i18n.getMessage("fixturewords_enabling")
 									: browser.i18n.getMessage("fixturewords_disabling")}
 							</Button>
+							{data.isShowUpdateRed && (
+								<Paper>
+									<DeactivateAvailableField queryKey={queryKey} />
+								</Paper>
+							)}
 						</>
 					</FormField>
 				);
