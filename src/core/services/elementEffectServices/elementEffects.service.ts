@@ -56,7 +56,7 @@ const moviePlayerElementEffect = async () => {
 	return observer;
 };
 
-const playerBarElementEffect = async () => {
+const playerBarElementResizeEffect = async () => {
 	const element = await waitElement(elementQuery.PLAYER_BAR);
 	// const debounceSetPlayerBarHeightVar = debounce(setPlayerBarHeightVar, 500, {
 	// 	leading: true,
@@ -159,7 +159,7 @@ export type ElementEffect =
 	| IntersectionObserver;
 export const setupElementEffects = async () => {
 	const effects = await Promise.all<ElementEffect>([
-		playerBarElementEffect(),
+		playerBarElementResizeEffect(),
 		moviePlayerElementEffect(),
 		pageManagerWatchFlexy_playerModeEffect(),
 		playerBarIntersectionEffect(),
