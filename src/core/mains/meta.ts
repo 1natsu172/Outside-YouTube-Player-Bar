@@ -1,5 +1,6 @@
 export const extensionNameSymbol = "OYPB";
-export const extensionNameCustomElementName = `${extensionNameSymbol}-app`;
+export const extensionNameLowerSymbol = extensionNameSymbol.toLowerCase();
+export const extensionNameCustomElementName = `${extensionNameLowerSymbol}-app`;
 
 /**
  * @description DOM meta
