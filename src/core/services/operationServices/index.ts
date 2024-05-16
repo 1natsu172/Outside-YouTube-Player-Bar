@@ -15,7 +15,6 @@ export const oypbEnableOperation = (is: boolean) => {
 	setOypbEnable(is);
 };
 
-// TODO: テスト書く
 export const playerBarIntersectionOperation = ({
 	intersect,
 }: { intersect: "appeared" | "disappeared" | "littleAppeared" }) => {
