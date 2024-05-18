@@ -38,7 +38,6 @@ const moviePlayerElementEffect = async () => {
 						isVisiblePlayerBar,
 					});
 					// FIXME: fullscreenにしたときにautohideが解除されないので内側にしているとずっとバーが出ている。movie-playerをクリックしたら解除されるので、DisbleBlockAutoHideの開発が必要。
-					// FIXME: scrollで一時的にinsideにしたときもDisableBlockAutoHideが必要。
 				}
 			},
 			950,
@@ -118,6 +117,8 @@ const pageManagerWatchFlexy_playerModeEffect = async () => {
  */
 const playerBarIntersectionEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER_CONTAINER);
+	const moviePlayer = await waitElement(elementQuery.MOVIE_PLAYER);
+	const { deactivateBlockAutoHide } = createPlayerHackEventFn(moviePlayer);
 	const observer = new IntersectionObserver(
 		(entries) => {
 			for (const entry of entries) {
@@ -125,7 +126,10 @@ const playerBarIntersectionEffect = async () => {
 				if (entry.intersectionRatio === 0) {
 					requestIdleCallback(() => {
 						logger.debug("playerbar intersect => fully disappeared");
-						playerBarIntersectionOperation({ intersect: "disappeared" });
+						playerBarIntersectionOperation({
+							intersect: "disappeared",
+							deactivateBlockAutoHide,
+						});
 					});
 				}
 				// When little appeared
