@@ -45,6 +45,7 @@
   }
 
   /* compat hack the default-view player rounded style */
+  /* FIXME(NOTE): overflow: hidden;にradiusの一部をかけるとブラウザのバグなのか動画の色彩が濃くなるが、どうしようもない */
   [rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
     border-radius: 12px 12px 0 0;
   }
