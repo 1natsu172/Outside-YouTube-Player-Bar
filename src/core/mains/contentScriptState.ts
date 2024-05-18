@@ -38,6 +38,9 @@ export type OperationState = {
 			shouldRestoreToOutside: boolean;
 			shouldHidePlayerBarButton: boolean;
 		};
+		moviePlayerContext: {
+			hoveringMouse: boolean;
+		};
 	};
 	processOps: {
 		// TODO: 本当にいる？

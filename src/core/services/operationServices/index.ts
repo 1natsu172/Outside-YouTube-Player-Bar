@@ -2,6 +2,7 @@ import { getBehaviorState } from "@/core/presenters/statePresenter/behaviorState
 import { getUiOps } from "@/core/presenters/statePresenter/operationState/index.js";
 import {
 	setDoneInitialize,
+	setMoviePlayerContext,
 	setOypbEnable,
 	setPlayerBarIntersection,
 } from "@/core/usecases/operationState.usecase.js";
@@ -40,4 +41,11 @@ export const playerBarIntersectionOperation = ({
 			}
 		}
 	}
+};
+
+export const moviePlayerHoveringOperation = (is: boolean) => {
+	const current = getUiOps().moviePlayerContext;
+	const state = { ...current, hoveringMouse: is };
+	setMoviePlayerContext(state);
+	logger.debug("moviePlayer hovering operation changed", state);
 };

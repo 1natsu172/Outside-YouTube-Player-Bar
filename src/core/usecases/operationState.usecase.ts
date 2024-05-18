@@ -22,3 +22,9 @@ export const setPlayerBarIntersection = (
 ) => {
 	operationState.uiOps.playerBarIntersection = state;
 };
+
+export const setMoviePlayerContext = (
+	state: OperationState["uiOps"]["moviePlayerContext"],
+) => {
+	operationState.uiOps.moviePlayerContext = state;
+};

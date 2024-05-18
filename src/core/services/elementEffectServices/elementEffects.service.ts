@@ -1,8 +1,9 @@
 import { elementQuery } from "@/core/mains/meta.js";
 import { elementAttributes } from "@/core/mains/meta.js";
 import {
-	createBlockAutohideFn,
+	createPlayerHackEventFn,
 	execAlwaysDisplayPlayerBar,
+	judgeMoviePlayerCondition,
 } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
 import { playerBarIntersectionOperation } from "@/core/services/operationServices/index.js";
 import { applyVideoPlayerModeToSiteMeta } from "@/core/services/siteMetaServices/index.js";
@@ -12,15 +13,16 @@ import { debounce } from "mabiki";
 
 const moviePlayerElementEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER);
-	const blockAutoHide = createBlockAutohideFn(element);
-	const debounceExecBlockAutoHide = debounce(execAlwaysDisplayPlayerBar, 300, {
+	const { activateBlockAutoHide } = createPlayerHackEventFn(element);
+	// NOTE: If longer than 1sec(1000ms), the time bar is delayed, so it was decided to 950.
+	const debounceExecBlockAutoHide = debounce(execAlwaysDisplayPlayerBar, 950, {
 		leading: true,
 		trailing: true,
 	});
 
 	const observer = new MutationObserver(
 		debounce(
-			async (mutations) => {
+			(mutations) => {
 				logger.debug(
 					"moviePlayerElement",
 					"Observing effect has occurred.",
@@ -28,21 +30,18 @@ const moviePlayerElementEffect = async () => {
 				);
 
 				for (const mutation of mutations) {
-					const targetClassList = (mutation.target as HTMLElement).classList;
-					const isVisiblePlayerBar =
-						targetClassList.contains("paused-mode") ||
-						!targetClassList.contains("ytp-autohide");
+					const moviePlayer = mutation.target as Element;
+					const { isVisiblePlayerBar } = judgeMoviePlayerCondition(moviePlayer);
 
-					// FIXME: 便宜上asyncにしているが、再読込時にctx.onInvalidateになる要因になっている様子があるので、修正したほうがよい
-					await debounceExecBlockAutoHide({
-						blockAutoHide,
+					debounceExecBlockAutoHide({
+						blockAutoHide: activateBlockAutoHide,
 						isVisiblePlayerBar,
 					});
 					// FIXME: fullscreenにしたときにautohideが解除されないので内側にしているとずっとバーが出ている。movie-playerをクリックしたら解除されるので、DisbleBlockAutoHideの開発が必要。
 					// FIXME: scrollで一時的にinsideにしたときもDisableBlockAutoHideが必要。
 				}
 			},
-			500,
+			950,
 			{
 				leading: true,
 				trailing: true,
@@ -58,11 +57,6 @@ const moviePlayerElementEffect = async () => {
 
 const playerBarElementResizeEffect = async () => {
 	const element = await waitElement(elementQuery.PLAYER_BAR);
-	// const debounceSetPlayerBarHeightVar = debounce(setPlayerBarHeightVar, 500, {
-	// 	leading: true,
-	// 	trailing: true,
-	// });
-
 	const observer = new ResizeObserver(
 		debounce<ResizeObserverCallback>(
 			(entries) => {
@@ -105,7 +99,7 @@ const pageManagerWatchFlexy_playerModeEffect = async () => {
 			},
 			500,
 			{
-				leading: false,
+				leading: true,
 				trailing: true,
 			},
 		),

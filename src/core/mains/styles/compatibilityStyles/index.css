@@ -15,6 +15,11 @@
     transform: translate3d(0, calc(1 * var(--oypb-player-bar-height)), 0) !important
   }
 
+  /* remove gradient bottom shadow */
+  .ytp-gradient-bottom {
+    visibility: hidden;
+  }
+
   /* Fill the both sides of player bar */
   .ytp-left-controls::before {
     content: '';
@@ -39,7 +44,7 @@
 
   }
 
-  /* compat hack the rounded style */
+  /* compat hack the default-view player rounded style */
   [rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
     border-radius: 12px 12px 0 0;
   }
