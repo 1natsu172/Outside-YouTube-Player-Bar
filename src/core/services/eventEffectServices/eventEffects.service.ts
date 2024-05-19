@@ -1,16 +1,13 @@
 import { elementQuery } from "@/core/mains/meta.js";
-import { createPlayerHackEventFn } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
-import { moviePlayerHoveringOperation } from "@/core/services/operationServices/index.js";
+import {
+	createPlayerHackEventFn,
+	pseudoReproducePlayerMouseHover,
+} from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
 import { applyVideoPlayerModeToSiteMeta } from "@/core/services/siteMetaServices/index.js";
 import { setNavigationState } from "@/core/usecases/siteMetaState.usecase.js";
 import { waitElement } from "@1natsu/wait-element";
 import { YT_EVENTS } from "./libs/YT_EVENTS.js";
 import { type EventEffect, createEventEffect } from "./libs/eventEffect.js";
-import {
-	isElementTheTarget,
-	isMouseEvent,
-	mouseleaveJudge,
-} from "./libs/mouseEventJudge.js";
 
 const __DEBUG_YT_EVENTS = createEventEffect(YT_EVENTS, (key) => (event) => {
 	logger.withTag("YT_EVENT").log(key, event);
@@ -52,22 +49,10 @@ const moviePlayerHoverEffect = async () => {
 	const moviePlayerEffect = createEventEffect(
 		["mouseenter", "mouseleave"],
 		(_key) => (event) => {
-			if (event.type === "mouseenter") {
-				moviePlayerHoveringOperation(true);
-			}
-			if (event.type === "mouseleave") {
-				if (isMouseEvent(event) && isElementTheTarget(event.target)) {
-					const { isLeaveFromBottomEdge } = mouseleaveJudge({
-						targetElement: event.target,
-						event,
-					});
-					// equal leave from the 3 edges → ┏━━━━━━━┓
-					if (!isLeaveFromBottomEdge) {
-						moviePlayerHoveringOperation(false);
-						// NOTE: ここでdeactivateBlockAutoHideを呼ぶとイベントが無限ループするので`maximum call stack size exceeded`になるので注意
-					}
-				}
-			}
+			pseudoReproducePlayerMouseHover({
+				event,
+				eventFrom: elementQuery.MOVIE_PLAYER,
+			});
 		},
 		{
 			targetElement: moviePlayer,
@@ -77,17 +62,11 @@ const moviePlayerHoverEffect = async () => {
 	const playerBarEffect = createEventEffect(
 		["mouseleave"],
 		(_key) => (event) => {
-			if (isMouseEvent(event) && isElementTheTarget(event.target)) {
-				const { isLeaveFromTopEdge } = mouseleaveJudge({
-					targetElement: event.target,
-					event,
-				});
-				// equal leave from the 3 edges → ┗━━━━━━━┛
-				if (!isLeaveFromTopEdge) {
-					moviePlayerHoveringOperation(false);
-					deactivateBlockAutoHide();
-				}
-			}
+			pseudoReproducePlayerMouseHover({
+				event,
+				eventFrom: elementQuery.PLAYER_BAR,
+				deactivateBlockAutoHide,
+			});
 		},
 		{
 			targetElement: playerBar,
