@@ -1,3 +1,4 @@
+import type { VideoPlayerMode } from "@/core/mains/contentScriptState.js";
 import {
 	getDefaultViewBehaviorOption,
 	getFullscreenBehaviorOption,
@@ -11,6 +12,7 @@ import {
 	setTheaterModeBehaviorOption,
 } from "@/core/services/optionsServices/userOptions.service.js";
 import {
+	MultiSelect,
 	SegmentedControl,
 	type SegmentedControlItem,
 	Switch,
@@ -18,6 +20,7 @@ import {
 import { AutoSaveForFormField } from "../../utils/useAutoSaveForm.js";
 import { FormField } from "../FormField.js";
 import { FormGroup } from "../FormGroup.js";
+import { createInheritablePositionPlayerBarSelect } from "./InheritPositionPlayerBarBeforeSwitchingField/fieldLibs.js";
 import type { FormDefs } from "./formDefinition.types.js";
 
 const playerBarPisitonSelect: SegmentedControlItem[] = [
@@ -45,6 +48,7 @@ export const ExtensionBehaviorOptionsFormDefs: FormDefs = new Map([
 		{
 			FormElement: ({ formId }) => {
 				const queryKey = [formId];
+				const videoModeKey: VideoPlayerMode = "defaultView";
 				return (
 					<FormGroup
 						title={browser.i18n.getMessage(
@@ -95,26 +99,36 @@ export const ExtensionBehaviorOptionsFormDefs: FormDefs = new Map([
 									isLoading={isPending}
 									title={browser.i18n.getMessage(
 										"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title",
-										browser.i18n.getMessage("metawords_defaultView"),
 									)}
 									description={browser.i18n.getMessage(
 										"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description",
-										[browser.i18n.getMessage("metawords_defaultView")],
 									)}
 									formState={data}
 								>
-									<Switch
-										size="lg"
-										checked={data.inheritPositionPlayerBarBeforeSwitching}
+									<MultiSelect
+										defaultValue={data.inheritPositionPlayerBarBeforeSwitching}
+										checkIconPosition="right"
+										dropdownOpened
+										placeholder="Pick value"
+										data={createInheritablePositionPlayerBarSelect(
+											videoModeKey,
+										)}
 										onChange={(e) => {
+											// FIXME: TODOl 壊れている
+											const v = [
+												...new Set([
+													...data.inheritPositionPlayerBarBeforeSwitching,
+													...e,
+												]),
+											];
+											console.log(v);
+
 											mutate({
 												inheritPositionPlayerBarBeforeSwitching:
-													e.target.checked,
+													// FIXME: contributeする
+													v as Exclude<VideoPlayerMode, "none">[],
 											});
 										}}
-										offLabel="OFF"
-										onLabel="ON"
-										disabled={isLoading || isPending}
 									/>
 								</FormField>
 							)}
@@ -161,6 +175,7 @@ export const ExtensionBehaviorOptionsFormDefs: FormDefs = new Map([
 		{
 			FormElement: ({ formId }) => {
 				const queryKey = [formId];
+				const videoModeKey: VideoPlayerMode = "theaterMode";
 				return (
 					<FormGroup
 						title={browser.i18n.getMessage(
@@ -210,26 +225,27 @@ export const ExtensionBehaviorOptionsFormDefs: FormDefs = new Map([
 									isLoading={isPending}
 									title={browser.i18n.getMessage(
 										"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title",
-										browser.i18n.getMessage("metawords_theaterMode"),
 									)}
 									description={browser.i18n.getMessage(
 										"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description",
-										[browser.i18n.getMessage("metawords_theaterMode")],
 									)}
 									formState={data}
 								>
-									<Switch
-										size="lg"
-										checked={data.inheritPositionPlayerBarBeforeSwitching}
+									<MultiSelect
+										defaultValue={data.inheritPositionPlayerBarBeforeSwitching}
+										checkIconPosition="right"
+										dropdownOpened
+										placeholder="Pick value"
+										data={createInheritablePositionPlayerBarSelect(
+											videoModeKey,
+										)}
 										onChange={(e) => {
 											mutate({
 												inheritPositionPlayerBarBeforeSwitching:
-													e.target.checked,
+													// FIXME: contributeする
+													e as Exclude<VideoPlayerMode, "none">[],
 											});
 										}}
-										offLabel="OFF"
-										onLabel="ON"
-										disabled={isLoading || isPending}
 									/>
 								</FormField>
 							)}
@@ -276,6 +292,7 @@ export const ExtensionBehaviorOptionsFormDefs: FormDefs = new Map([
 		{
 			FormElement: ({ formId }) => {
 				const queryKey = [formId];
+				const videoModeKey: VideoPlayerMode = "fullscreen";
 				return (
 					<FormGroup
 						title={browser.i18n.getMessage(
@@ -325,26 +342,27 @@ export const ExtensionBehaviorOptionsFormDefs: FormDefs = new Map([
 									isLoading={isPending}
 									title={browser.i18n.getMessage(
 										"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title",
-										browser.i18n.getMessage("metawords_fullscreen"),
 									)}
 									description={browser.i18n.getMessage(
 										"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description",
-										[browser.i18n.getMessage("metawords_fullscreen")],
 									)}
 									formState={data}
 								>
-									<Switch
-										size="lg"
-										checked={data.inheritPositionPlayerBarBeforeSwitching}
+									<MultiSelect
+										defaultValue={data.inheritPositionPlayerBarBeforeSwitching}
+										checkIconPosition="right"
+										dropdownOpened
+										placeholder="Pick value"
+										data={createInheritablePositionPlayerBarSelect(
+											videoModeKey,
+										)}
 										onChange={(e) => {
 											mutate({
 												inheritPositionPlayerBarBeforeSwitching:
-													e.target.checked,
+													// FIXME: contributeする
+													e as Exclude<VideoPlayerMode, "none">[],
 											});
 										}}
-										offLabel="OFF"
-										onLabel="ON"
-										disabled={isLoading || isPending}
 									/>
 								</FormField>
 							)}

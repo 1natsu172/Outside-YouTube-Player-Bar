@@ -4,7 +4,10 @@ import type {
 } from "@/core/mains/contentScriptState.js";
 import { getBehaviorState } from "@/core/presenters/statePresenter/behaviorState/index.js";
 import { getFlagOps } from "@/core/presenters/statePresenter/operationState/index.js";
-import { resolveBehaviorOption } from "@/core/presenters/storagePresenter/options.presenter.js";
+import {
+	resolveBehaviorOption,
+	resolveInheritPositionPlayerBar,
+} from "@/core/presenters/storagePresenter/options.presenter.js";
 import { setPositionPlayerBar } from "@/core/usecases/behaviorState.usecase.js";
 import { setDoneIntialMovePlayerBar } from "@/core/usecases/operationState.usecase.js";
 
@@ -13,12 +16,17 @@ import { setDoneIntialMovePlayerBar } from "@/core/usecases/operationState.useca
  */
 export const changePositionPlayerBarByChangedPlayerMode = async ({
 	videoPlayerMode,
-}: { videoPlayerMode: SiteMetaState["videoPlayerState"]["mode"] }) => {
-	if (videoPlayerMode === "none") {
+}: {
+	videoPlayerMode: {
+		prev: SiteMetaState["videoPlayerState"]["mode"];
+		curr: SiteMetaState["videoPlayerState"]["mode"];
+	};
+}) => {
+	if (videoPlayerMode.curr === "none") {
 		return;
 	}
 
-	const userOption = await resolveBehaviorOption(videoPlayerMode);
+	const userOption = await resolveBehaviorOption(videoPlayerMode.curr);
 	const { doneIntialMovePlayerBar } = getFlagOps();
 	// First time that try move player bar (use default option setting)
 	if (!doneIntialMovePlayerBar) {
@@ -31,8 +39,13 @@ export const changePositionPlayerBarByChangedPlayerMode = async ({
 	}
 	// After the second time, move player bar if the user always want to apply it.
 	if (doneIntialMovePlayerBar) {
+		const shouldInheritPositionPlayerBar = resolveInheritPositionPlayerBar({
+			inheritPositionSetting:
+				userOption.inheritPositionPlayerBarBeforeSwitching,
+			fromPosition: videoPlayerMode.prev,
+		});
 		// inherit previous bar position of video mode (do not use default option setting)
-		if (userOption.inheritPositionPlayerBarBeforeSwitching) {
+		if (shouldInheritPositionPlayerBar) {
 			const { positionPlayerBar } = getBehaviorState();
 			setPositionPlayerBar(positionPlayerBar);
 			logger.debug(

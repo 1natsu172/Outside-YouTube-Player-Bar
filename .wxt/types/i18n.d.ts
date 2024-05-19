@@ -275,6 +275,16 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
+     * Multi selectable
+     *
+     * "Multi selectable"
+     */
+    getMessage(
+      messageName: "fixturewords_available_multiselect",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
      * settings page title
      *
      * "Settings for Outside YouTube Player Bar"
@@ -487,7 +497,7 @@ Note: You can't use this message in a manifest file.
     /**
      * if video mode changed to $MODE$, inherit the position before switching
      *
-     * "Switching to $MODE$: Inherit the position of the player bar before switching."
+     * "Inherit the position before switching view mode"
      */
     getMessage(
       messageName: "settings_userOption_inheritPositionPlayerBarBeforeSwitching_title",
@@ -497,7 +507,7 @@ Note: You can't use this message in a manifest file.
     /**
      * Explanation when turned ON
      *
-     * "If turned ON, prioritize the position before switching over the default setting."
+     * "For the selected pattern, the position before switching is inherited."
      */
     getMessage(
       messageName: "settings_userOption_inheritPositionPlayerBarBeforeSwitching_description",

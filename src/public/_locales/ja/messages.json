@@ -29,27 +29,6 @@
 		"description": "設定パネルアクセスのツールチップテキスト"
 	},
 
-	"popup_title": {
-		"message": "Outside YouTube Player Barへようこそ！",
-		"description": "popup.html's title"
-	},
-	"popup_description": {
-		"message": "この拡張機能についてのご連絡は GitHub Issue へお願いします。メンテナンスはベストエフォート対応です。",
-		"description": "popup.html's description"
-	},
-	"popup_pleaseReview": {
-		"message": "もしよろしければレビューもお願いします",
-		"description": "popup.html's please review message"
-	},
-	"popup_pleaseReviewLink": {
-		"message": "Chromeウェブストアでレビューする",
-		"description": "popup.html's Please review link"
-	},
-	"popup_footerAuthor": {
-		"message": "つくっているひと",
-		"description": "popup.html's footer author lead"
-	},
-
 	"metawords_defaultView": {
 		"message": "デフォルトビュー",
 		"description": "the default view of the video player mode"
@@ -82,6 +61,10 @@
 	"fixturewords_confirmation_title": {
 		"message": "実行の確認",
 		"description": "Confirmation title text"
+	},
+	"fixturewords_available_multiselect": {
+		"message": "複数選択可",
+		"description": "Multi selectable"
 	},
 
 	"settings_title": {
@@ -170,22 +153,12 @@
 		"description": "always display player bar caution that cpu usage bumping"
 	},
 	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title": {
-		"message": "$MODE$へ切り替え時：切り替え前の再生バーの位置を引き継ぐ",
-		"description": "if video mode changed to $MODE$, inherit the position before switching",
-		"placeholders": {
-			"MODE": {
-				"content": "$1"
-			}
-		}
+		"message": "ビューモード切り替え前の位置を引き継ぐ",
+		"description": "if video mode changed to $MODE$, inherit the position before switching"
 	},
 	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description": {
-		"message": "ONの場合はデフォルト設置値よりも切り替え前の位置を優先します",
-		"description": "Explanation when turned ON",
-		"placeholders": {
-			"MODE": {
-				"content": "$1"
-			}
-		}
+		"message": "選択したパターンのときは、切り替え前の位置を引き継ぎます",
+		"description": "Explanation when turned ON"
 	},
 	"settings_userOption_showOpenSettingsIcon_title": {
 		"message": "再生バーに設定パネルを開くアイコンを表示",

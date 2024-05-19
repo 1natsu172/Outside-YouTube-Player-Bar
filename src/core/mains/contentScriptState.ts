@@ -30,6 +30,7 @@ export type SiteMetaState = {
 		>
 	>;
 };
+export type VideoPlayerMode = SiteMetaState["videoPlayerState"]["mode"];
 
 export type OperationState = {
 	uiOps: {

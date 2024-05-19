@@ -83,6 +83,10 @@
 		"message": "Please confirm your action",
 		"description": "Confirmation title text"
 	},
+  "fixturewords_available_multiselect": {
+		"message": "Multi selectable",
+		"description": "Multi selectable"
+	},
 
 	"settings_title": {
 		"message": "Settings for Outside YouTube Player Bar",
@@ -170,22 +174,12 @@
 		"description": "always display player bar caution that cpu usage bumping"
 	},
 	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title": {
-		"message": "Switching to $MODE$: Inherit the position of the player bar before switching.",
-		"description": "if video mode changed to $MODE$, inherit the position before switching",
-		"placeholders": {
-			"MODE": {
-				"content": "$1"
-			}
-		}
+		"message": "Inherit the position before switching view mode",
+		"description": "if video mode changed to $MODE$, inherit the position before switching"
 	},
 	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description": {
-		"message": "If turned ON, prioritize the position before switching over the default setting.",
-		"description": "Explanation when turned ON",
-		"placeholders": {
-			"MODE": {
-				"content": "$1"
-			}
-		}
+		"message": "For the selected pattern, the position before switching is inherited.",
+		"description": "Explanation when turned ON"
 	},
 	"settings_userOption_showOpenSettingsIcon_title": {
 		"message": "Display open settings icon on the player bar",

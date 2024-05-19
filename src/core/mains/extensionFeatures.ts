@@ -1,3 +1,5 @@
+import type { VideoPlayerMode } from "@/core/mains/contentScriptState.js";
+
 export type ExtensionBehavior = {
 	positionPlayerBar: "inside" | "outside";
 	alwaysDisplayPlayerBar: boolean;
@@ -9,5 +11,5 @@ export type ExtensionBehavior = {
 	 * theater ← fullscreen
 	 * のようにセレクトボックス型にするべき
 	 */
-	inheritPositionPlayerBarBeforeSwitching: boolean;
+	inheritPositionPlayerBarBeforeSwitching: Exclude<VideoPlayerMode, "none">[];
 };

@@ -1,9 +1,8 @@
-import type { SiteMetaState } from "@/core/mains/contentScriptState.js";
+import type { VideoPlayerMode } from "@/core/mains/contentScriptState.js";
+import type { ExtensionBehavior } from "@/core/mains/extensionFeatures.js";
 import * as repo from "@/core/repositories/options.repository.js";
 
-export async function resolveBehaviorOption(
-	videoPlayerMode: SiteMetaState["videoPlayerState"]["mode"],
-) {
+export async function resolveBehaviorOption(videoPlayerMode: VideoPlayerMode) {
 	switch (videoPlayerMode) {
 		case "defaultView":
 			return await repo.defaultViewBehaviorOption.getValue();
@@ -17,6 +16,31 @@ export async function resolveBehaviorOption(
 			throw Error(...err);
 		}
 	}
+}
+
+export function resolveInheritPositionPlayerBar({
+	inheritPositionSetting,
+	fromPosition,
+}: {
+	inheritPositionSetting: ExtensionBehavior["inheritPositionPlayerBarBeforeSwitching"];
+	fromPosition: VideoPlayerMode;
+}): boolean {
+	if (fromPosition === "none") {
+		return false;
+	}
+	return inheritPositionSetting.includes(fromPosition);
+}
+
+export function createInheritablePositionPlayerBarData(
+	mode: Exclude<VideoPlayerMode, "none">,
+) {
+	const DATA_SET = new Set<Exclude<VideoPlayerMode, "none">>([
+		"defaultView",
+		"theaterMode",
+		"fullscreen",
+	]);
+	DATA_SET.delete(mode);
+	return [...DATA_SET];
 }
 
 export const getDebugModeOption = async () => {
