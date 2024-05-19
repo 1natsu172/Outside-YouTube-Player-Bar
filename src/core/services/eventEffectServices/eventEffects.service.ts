@@ -39,7 +39,7 @@ const videoLoadedEffect = createEventEffect(
  * 2. then move cursor to the playerBar
  * 3. `mouseleave` from the moviePlayer that equal `autohide`
  * 4. so while hovering the playerBar, need to the blockAutoHide
- * ![impl image](https://github.com/1natsu172/Outside-YouTube-Player-Bar/assets/7282145/dfac5e0a-2429-40a2-a84a-7d2fec8a3375)
+ * ![impl image](https://github.com/1natsu172/Outside-YouTube-Player-Bar/assets/7282145/59b6e200-6690-4237-ba02-ea00f5317180)
  */
 const moviePlayerHoverEffect = async () => {
 	const playerBar = await waitElement(elementQuery.PLAYER_BAR);
