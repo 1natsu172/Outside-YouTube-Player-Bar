@@ -117,8 +117,6 @@ const pageManagerWatchFlexy_playerModeEffect = async () => {
  */
 const playerBarIntersectionEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER_CONTAINER);
-	const moviePlayer = await waitElement(elementQuery.MOVIE_PLAYER);
-	const { deactivateBlockAutoHide } = createPlayerHackEventFn(moviePlayer);
 	const observer = new IntersectionObserver(
 		(entries) => {
 			for (const entry of entries) {
@@ -128,7 +126,6 @@ const playerBarIntersectionEffect = async () => {
 						logger.debug("playerbar intersect => fully disappeared");
 						playerBarIntersectionOperation({
 							intersect: "disappeared",
-							deactivateBlockAutoHide,
 						});
 					});
 				}

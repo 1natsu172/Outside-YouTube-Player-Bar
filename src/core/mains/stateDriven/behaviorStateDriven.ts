@@ -1,10 +1,20 @@
 import { behaviorState } from "@/core/repositories/contentScript.repository.js";
-import { watch } from "valtio/utils";
+import { createPlayerHackEventFn } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
+import { waitElement } from "@1natsu/wait-element";
+import { subscribe } from "valtio/vanilla";
+import { elementQuery } from "../meta.js";
 
 export const behaviorDriven = () => {
-	return watch(async (get) => {
-		const state = get(behaviorState);
-		logger.info("behaviorState reacted", state);
-		// TODO(feature): behaviorDrivenの実装が必要ならここに実装
+	return subscribe(behaviorState, async (ops) => {
+		logger.info("behaviorState reacted", ops);
+		const moviePlayer = await waitElement(elementQuery.MOVIE_PLAYER);
+		const { deactivateBlockAutoHide } = createPlayerHackEventFn(moviePlayer);
+		const [[, , next, prev]] = ops;
+		if (prev === "outside" && next === "inside") {
+			deactivateBlockAutoHide();
+			logger.debug(
+				`${deactivateBlockAutoHide.name} executed because state change ${prev} to ${next}`,
+			);
+		}
 	});
 };

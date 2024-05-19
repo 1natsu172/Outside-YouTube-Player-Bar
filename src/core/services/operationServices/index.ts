@@ -18,10 +18,8 @@ export const oypbEnableOperation = (is: boolean) => {
 
 export const playerBarIntersectionOperation = ({
 	intersect,
-	deactivateBlockAutoHide,
 }: {
 	intersect: "appeared" | "disappeared" | "littleAppeared";
-	deactivateBlockAutoHide?: () => void;
 }) => {
 	const barPosition = getBehaviorState().positionPlayerBar;
 	const { shouldRestoreToOutside } = getUiOps().playerBarIntersection;
@@ -31,7 +29,6 @@ export const playerBarIntersectionOperation = ({
 				shouldRestoreToOutside: true,
 				shouldHidePlayerBarButton: true,
 			});
-			deactivateBlockAutoHide?.();
 			changePositionPlayerBar({ to: "inside" });
 		}
 	}
