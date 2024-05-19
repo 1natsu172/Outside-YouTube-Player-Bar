@@ -15,6 +15,22 @@
     transform: translate3d(0, calc(1 * var(--oypb-player-bar-height)), 0) !important
   }
 
+  /* https://i.gyazo.com/faf54b23f6c1e6a9f75b7fc08d46639c.png */
+  .ytp-settings-menu {
+    transform: translate3d(0, calc(1 * var(--oypb-player-bar-height)), 0)
+  }
+
+  /* FIXME: レイヤーコンテキストの再生成で子要素のz-indexが消えるせいで描画されないものがでてくるので、対応を後回しにしている。z値30とかつけると対象のものが表示されるものの、子要素のz値をすべて把握できない。 */
+  /* https://i.gyazo.com/9f78d49778e5d75dcc2ad3f35ed42622.png */
+  /* .ytp-player-content {
+    transform: translate3d(0, calc(1 * var(--oypb-player-bar-height)), 30)
+  } */
+
+  /* https://i.gyazo.com/61e1bc0abadebf784fc492f230639bdf.png */
+  .caption-window.ytp-caption-window-bottom {
+    transform: translate3d(0, calc(1 * var(--oypb-player-bar-height)), 0)
+  }
+
   /* remove gradient bottom shadow */
   .ytp-gradient-bottom {
     visibility: hidden;
