@@ -114,19 +114,10 @@ export const ExtensionBehaviorOptionsFormDefs: FormDefs = new Map([
 											videoModeKey,
 										)}
 										onChange={(e) => {
-											// FIXME: TODOl 壊れている
-											const v = [
-												...new Set([
-													...data.inheritPositionPlayerBarBeforeSwitching,
-													...e,
-												]),
-											];
-											console.log(v);
-
 											mutate({
 												inheritPositionPlayerBarBeforeSwitching:
 													// FIXME: contributeする
-													v as Exclude<VideoPlayerMode, "none">[],
+													e as Exclude<VideoPlayerMode, "none">[],
 											});
 										}}
 									/>

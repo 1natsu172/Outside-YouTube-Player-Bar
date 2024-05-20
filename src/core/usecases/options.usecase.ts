@@ -4,7 +4,7 @@ import type {
 	AllOptionsValues,
 } from "@/core/mains/options/index.js";
 import * as repo from "@/core/repositories/options.repository.js";
-import { defu } from "defu";
+import { defuArrayFn } from "defu";
 
 /**
  * NOTE: WXT storageがTmetadataはRecord型かつOptionalUpdateに対応しているのでいいが、TValueはRecordではないので、_generalUpdate関数内部で更に抽象化しようとするとTValueの型が複雑になる。なのでここではTValue/Tmetadataを受け取ってstorageに流すバリアントに留めている。
@@ -47,7 +47,7 @@ export const setForceDisableOption = async (
 	const _option = option ?? currentOption;
 	await _generalUpdate(_repo, _option, meta);
 };
-//TODO: テスト書く
+
 //// UserOptions
 export const setDefaultViewBehaviorOption = async (
 	option?: Partial<AllOptionsValues["defaultViewBehaviorV1"]>,
@@ -55,7 +55,20 @@ export const setDefaultViewBehaviorOption = async (
 ) => {
 	const _repo = repo.defaultViewBehaviorOption;
 	const currentOption = await _repo.getValue();
-	const _option = defu(option, currentOption);
+	const _option = defuArrayFn(
+		{
+			...option,
+			// NOTE: make unique values with merging
+			// @ts-expect-error
+			inheritPositionPlayerBarBeforeSwitching: (curr) => [
+				...new Set([
+					...curr,
+					...(option?.inheritPositionPlayerBarBeforeSwitching ?? []),
+				]),
+			],
+		},
+		currentOption,
+	);
 	await _generalUpdate(_repo, _option, meta);
 };
 export const setTheaterModeBehaviorOption = async (
@@ -64,7 +77,20 @@ export const setTheaterModeBehaviorOption = async (
 ) => {
 	const _repo = repo.theaterModeBehaviorOption;
 	const currentOption = await _repo.getValue();
-	const _option = defu(option, currentOption);
+	const _option = defuArrayFn(
+		{
+			...option,
+			// NOTE: make unique values with merging
+			// @ts-expect-error
+			inheritPositionPlayerBarBeforeSwitching: (curr) => [
+				...new Set([
+					...curr,
+					...(option?.inheritPositionPlayerBarBeforeSwitching ?? []),
+				]),
+			],
+		},
+		currentOption,
+	);
 	await _generalUpdate(_repo, _option, meta);
 };
 export const setFullscreenBehaviorOption = async (
@@ -73,7 +99,20 @@ export const setFullscreenBehaviorOption = async (
 ) => {
 	const _repo = repo.fullscreenBehaviorOption;
 	const currentOption = await _repo.getValue();
-	const _option = defu(option, currentOption);
+	const _option = defuArrayFn(
+		{
+			...option,
+			// NOTE: make unique values with merging
+			// @ts-expect-error
+			inheritPositionPlayerBarBeforeSwitching: (curr) => [
+				...new Set([
+					...curr,
+					...(option?.inheritPositionPlayerBarBeforeSwitching ?? []),
+				]),
+			],
+		},
+		currentOption,
+	);
 	await _generalUpdate(_repo, _option, meta);
 };
 export const setShowOpenSettingsIconOption = async (

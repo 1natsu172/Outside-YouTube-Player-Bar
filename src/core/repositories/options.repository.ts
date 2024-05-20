@@ -24,16 +24,12 @@ export const forceDisable = defineItem<
 export const defaultViewBehaviorOption = defineItem<
 	AllOptionsValues["defaultViewBehaviorV1"]
 >(allOptionsConfigInstance.DefaultViewBehaviorOptionConfig);
-// FIXME: わすれず。
-defaultViewBehaviorOption.removeValue();
 export const theaterModeBehaviorOption = defineItem<
 	AllOptionsValues["theaterModeBehaviorV1"]
 >(allOptionsConfigInstance.TheaterModeBehaviorOptionConfig);
-theaterModeBehaviorOption.removeValue();
 export const fullscreenBehaviorOption = defineItem<
 	AllOptionsValues["fullscreenBehaviorV1"]
 >(allOptionsConfigInstance.FullscreenBehaviorOptionConfig);
-fullscreenBehaviorOption.removeValue();
 export const showOpenSettingsIconOption = defineItem<
 	AllOptionsValues["showOpenSettingsIconV1"]
 >(allOptionsConfigInstance.ShowOpenSettingsIconOptionConfig);
