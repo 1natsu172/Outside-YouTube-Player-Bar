@@ -58,14 +58,10 @@ export const setDefaultViewBehaviorOption = async (
 	const _option = defuArrayFn(
 		{
 			...option,
-			// NOTE: make unique values with merging
+			// NOTE: inheritPositionPlayerBarBeforeSwitching is always overwrite
 			// @ts-expect-error
-			inheritPositionPlayerBarBeforeSwitching: (curr) => [
-				...new Set([
-					...curr,
-					...(option?.inheritPositionPlayerBarBeforeSwitching ?? []),
-				]),
-			],
+			inheritPositionPlayerBarBeforeSwitching: (curr) =>
+				option?.inheritPositionPlayerBarBeforeSwitching ?? curr,
 		},
 		currentOption,
 	);
@@ -80,14 +76,10 @@ export const setTheaterModeBehaviorOption = async (
 	const _option = defuArrayFn(
 		{
 			...option,
-			// NOTE: make unique values with merging
+			// NOTE: inheritPositionPlayerBarBeforeSwitching is always overwrite
 			// @ts-expect-error
-			inheritPositionPlayerBarBeforeSwitching: (curr) => [
-				...new Set([
-					...curr,
-					...(option?.inheritPositionPlayerBarBeforeSwitching ?? []),
-				]),
-			],
+			inheritPositionPlayerBarBeforeSwitching: (curr) =>
+				option?.inheritPositionPlayerBarBeforeSwitching ?? curr,
 		},
 		currentOption,
 	);
@@ -102,14 +94,10 @@ export const setFullscreenBehaviorOption = async (
 	const _option = defuArrayFn(
 		{
 			...option,
-			// NOTE: make unique values with merging
+			// NOTE: inheritPositionPlayerBarBeforeSwitching is always overwrite
 			// @ts-expect-error
-			inheritPositionPlayerBarBeforeSwitching: (curr) => [
-				...new Set([
-					...curr,
-					...(option?.inheritPositionPlayerBarBeforeSwitching ?? []),
-				]),
-			],
+			inheritPositionPlayerBarBeforeSwitching: (curr) =>
+				option?.inheritPositionPlayerBarBeforeSwitching ?? curr,
 		},
 		currentOption,
 	);

@@ -109,12 +109,36 @@ describe("BehaviorOptions", () => {
 			});
 			await setDefaultViewBehaviorOption({
 				alwaysDisplayPlayerBar: false,
-				inheritPositionPlayerBarBeforeSwitching: ["theaterMode", "fullscreen"],
+				inheritPositionPlayerBarBeforeSwitching: ["fullscreen"],
 			});
 			expect(await getDefaultViewBehaviorOption()).toStrictEqual({
 				positionPlayerBar: "outside",
 				alwaysDisplayPlayerBar: false,
-				inheritPositionPlayerBarBeforeSwitching: ["theaterMode", "fullscreen"],
+				inheritPositionPlayerBarBeforeSwitching: ["fullscreen"],
+			});
+		});
+		test("should inheritPositionPlayerBarBeforeSwitching value always overwrite", async () => {
+			expect(await getDefaultViewBehaviorOption()).toStrictEqual({
+				positionPlayerBar: "outside",
+				alwaysDisplayPlayerBar: true,
+				inheritPositionPlayerBarBeforeSwitching: ["theaterMode"],
+			});
+			await setDefaultViewBehaviorOption({
+				alwaysDisplayPlayerBar: false,
+				inheritPositionPlayerBarBeforeSwitching: [
+					"defaultView",
+					"theaterMode",
+					"fullscreen",
+				],
+			});
+			expect(await getDefaultViewBehaviorOption()).toStrictEqual({
+				positionPlayerBar: "outside",
+				alwaysDisplayPlayerBar: false,
+				inheritPositionPlayerBarBeforeSwitching: [
+					"defaultView",
+					"theaterMode",
+					"fullscreen",
+				],
 			});
 		});
 	});
@@ -133,7 +157,31 @@ describe("BehaviorOptions", () => {
 			expect(await getTheaterModeBehaviorOption()).toStrictEqual({
 				positionPlayerBar: "outside",
 				alwaysDisplayPlayerBar: false,
-				inheritPositionPlayerBarBeforeSwitching: ["defaultView", "fullscreen"],
+				inheritPositionPlayerBarBeforeSwitching: ["fullscreen"],
+			});
+		});
+		test("should inheritPositionPlayerBarBeforeSwitching value always overwrite", async () => {
+			expect(await getTheaterModeBehaviorOption()).toStrictEqual({
+				positionPlayerBar: "outside",
+				alwaysDisplayPlayerBar: true,
+				inheritPositionPlayerBarBeforeSwitching: ["defaultView"],
+			});
+			await setTheaterModeBehaviorOption({
+				alwaysDisplayPlayerBar: false,
+				inheritPositionPlayerBarBeforeSwitching: [
+					"defaultView",
+					"theaterMode",
+					"fullscreen",
+				],
+			});
+			expect(await getTheaterModeBehaviorOption()).toStrictEqual({
+				positionPlayerBar: "outside",
+				alwaysDisplayPlayerBar: false,
+				inheritPositionPlayerBarBeforeSwitching: [
+					"defaultView",
+					"theaterMode",
+					"fullscreen",
+				],
 			});
 		});
 	});
@@ -154,6 +202,38 @@ describe("BehaviorOptions", () => {
 				alwaysDisplayPlayerBar: false,
 				inheritPositionPlayerBarBeforeSwitching: ["theaterMode"],
 			});
+		});
+	});
+	test("should inheritPositionPlayerBarBeforeSwitching value always overwrite", async () => {
+		expect(await getFullscreenBehaviorOption()).toStrictEqual({
+			positionPlayerBar: "inside",
+			alwaysDisplayPlayerBar: false,
+			inheritPositionPlayerBarBeforeSwitching: [],
+		});
+		await setFullscreenBehaviorOption({
+			alwaysDisplayPlayerBar: true,
+			inheritPositionPlayerBarBeforeSwitching: [
+				"defaultView",
+				"theaterMode",
+				"fullscreen",
+			],
+		});
+		expect(await getFullscreenBehaviorOption()).toStrictEqual({
+			positionPlayerBar: "inside",
+			alwaysDisplayPlayerBar: true,
+			inheritPositionPlayerBarBeforeSwitching: [
+				"defaultView",
+				"theaterMode",
+				"fullscreen",
+			],
+		});
+		await setFullscreenBehaviorOption({
+			inheritPositionPlayerBarBeforeSwitching: ["theaterMode"],
+		});
+		expect(await getFullscreenBehaviorOption()).toStrictEqual({
+			positionPlayerBar: "inside",
+			alwaysDisplayPlayerBar: true,
+			inheritPositionPlayerBarBeforeSwitching: ["theaterMode"],
 		});
 	});
 });
