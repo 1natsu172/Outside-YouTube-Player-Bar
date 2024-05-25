@@ -40,7 +40,7 @@ export const FullscreenBehaviorOptionConfig = createStorageConfig({
 	itemKey: `${CONST_KEY}:fullscreenBehavior`,
 	version: 1,
 	defaultValue: {
-		alwaysDisplayPlayerBar: false,
+		alwaysDisplayPlayerBar: true,
 		inheritPositionPlayerBarBeforeSwitching: [],
 		positionPlayerBar: "inside",
 	},
