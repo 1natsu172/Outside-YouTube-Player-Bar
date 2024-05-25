@@ -6,8 +6,8 @@ import {
 import { Button, Group, Modal, Paper, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { type QueryKey, useQuery } from "@tanstack/react-query";
+import { FormField } from "../../../layouts/FormField.js";
 import { AutoSaveForFormField } from "../../../utils/useAutoSaveForm.js";
-import { FormField } from "../../FormField.js";
 import { DeactivateAvailableField } from "./DeactivateAvailableField.js";
 
 export const SwitchForceDisableField = ({

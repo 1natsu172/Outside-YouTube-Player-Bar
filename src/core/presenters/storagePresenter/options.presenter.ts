@@ -1,6 +1,10 @@
-import type { VideoPlayerMode } from "@/core/mains/contentScriptState.js";
+import type {
+	VideoPlayerMode,
+	VideoPlayerModeWithoutNone,
+} from "@/core/mains/contentScriptState.js";
 import type { ExtensionBehavior } from "@/core/mains/extensionFeatures.js";
 import * as repo from "@/core/repositories/options.repository.js";
+import { videoPlayerModeKeysWithoutNone } from "../statePresenter/siteMetaState/index.js";
 
 export async function resolveBehaviorOption(videoPlayerMode: VideoPlayerMode) {
 	switch (videoPlayerMode) {
@@ -32,13 +36,9 @@ export function resolveInheritPositionPlayerBar({
 }
 
 export function createInheritablePositionPlayerBarData(
-	mode: Exclude<VideoPlayerMode, "none">,
+	mode: VideoPlayerModeWithoutNone,
 ) {
-	const DATA_SET = new Set<Exclude<VideoPlayerMode, "none">>([
-		"defaultView",
-		"theaterMode",
-		"fullscreen",
-	]);
+	const DATA_SET = videoPlayerModeKeysWithoutNone();
 	DATA_SET.delete(mode);
 	return [...DATA_SET];
 }

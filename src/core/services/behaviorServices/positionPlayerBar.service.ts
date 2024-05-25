@@ -1,6 +1,6 @@
 import type {
 	BehaviorState,
-	SiteMetaState,
+	VideoPlayerMode,
 } from "@/core/mains/contentScriptState.js";
 import { getBehaviorState } from "@/core/presenters/statePresenter/behaviorState/index.js";
 import { getFlagOps } from "@/core/presenters/statePresenter/operationState/index.js";
@@ -18,8 +18,8 @@ export const changePositionPlayerBarByChangedPlayerMode = async ({
 	videoPlayerMode,
 }: {
 	videoPlayerMode: {
-		prev: SiteMetaState["videoPlayerState"]["mode"];
-		curr: SiteMetaState["videoPlayerState"]["mode"];
+		prev: VideoPlayerMode;
+		curr: VideoPlayerMode;
 	};
 }) => {
 	if (videoPlayerMode.curr === "none") {

@@ -1,4 +1,4 @@
-import { FormGroup } from "../FormGroup.js";
+import { FormGroup } from "../../layouts/FormGroup.js";
 import { SwitchDebugModeField } from "./DebugModeOptionField/SwitchDebugModeField.js";
 import { SwitchForceDisableField } from "./ForceDisableOptionField/SwitchForceDisableField.js";
 import type { FormDefs } from "./formDefinition.types.js";

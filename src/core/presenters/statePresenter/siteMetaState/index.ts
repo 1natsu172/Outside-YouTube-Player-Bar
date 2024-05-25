@@ -1,4 +1,7 @@
-import type { SiteMetaState } from "@/core/mains/contentScriptState.js";
+import type {
+	VideoPlayerMode,
+	VideoPlayerModeWithoutNone,
+} from "@/core/mains/contentScriptState.js";
 import { elementAttributes } from "@/core/mains/meta.js";
 import { siteMetaState } from "@/core/repositories/contentScript.repository.js";
 import { useSnapshot } from "valtio";
@@ -26,9 +29,23 @@ export const judgeCurrentVideoPlayerMode = (managerElement: Element) => {
 	}
 };
 
+export const videoPlayerModeKeys = () =>
+	new Set<VideoPlayerMode>([
+		"defaultView",
+		"theaterMode",
+		"fullscreen",
+		"none",
+	]);
+export const videoPlayerModeKeysWithoutNone = () =>
+	new Set<VideoPlayerModeWithoutNone>([
+		"defaultView",
+		"theaterMode",
+		"fullscreen",
+	]);
+
 export const convertAttrToVideoPlayerMode = (
 	attr: ValueOf<typeof elementAttributes.playerMode> | undefined,
-): SiteMetaState["videoPlayerState"]["mode"] => {
+): VideoPlayerMode => {
 	switch (attr) {
 		case "default-layout":
 			return "defaultView";

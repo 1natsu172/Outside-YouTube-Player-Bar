@@ -30,7 +30,6 @@ export type SiteMetaState = {
 		>
 	>;
 };
-export type VideoPlayerMode = SiteMetaState["videoPlayerState"]["mode"];
 
 export type OperationState = {
 	uiOps: {
@@ -74,3 +73,9 @@ export type ContentScriptState = {
 	 */
 	__reflectFunctionality__: ReflectFunctionalityState;
 };
+
+export type VideoPlayerMode = SiteMetaState["videoPlayerState"]["mode"];
+export type VideoPlayerModeWithoutNone = Exclude<
+	SiteMetaState["videoPlayerState"]["mode"],
+	"none"
+>;

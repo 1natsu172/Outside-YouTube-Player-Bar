@@ -1,4 +1,4 @@
-import type { SiteMetaState } from "@/core/mains/contentScriptState.js";
+import type { VideoPlayerMode } from "@/core/mains/contentScriptState.js";
 import type { ExtensionBehavior } from "@/core/mains/extensionFeatures.js";
 import { NotificationCircle } from "@/sharedUI/Components/parts/NotificationCircle/index.js";
 import { IconTransitionBottom, IconTransitionTop } from "@tabler/icons-react";
@@ -7,7 +7,7 @@ import style from "./style.module.css";
 
 type P = {
 	currentBarPosition: ExtensionBehavior["positionPlayerBar"];
-	videoPlayerMode: SiteMetaState["videoPlayerState"]["mode"];
+	videoPlayerMode: VideoPlayerMode;
 	tooltip: string;
 	showUpdateRed: boolean;
 	onToggle: () => void;

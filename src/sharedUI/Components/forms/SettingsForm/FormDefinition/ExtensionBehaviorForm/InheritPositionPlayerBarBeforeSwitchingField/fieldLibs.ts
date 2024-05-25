@@ -1,9 +1,9 @@
-import type { VideoPlayerMode } from "@/core/mains/contentScriptState.js";
+import type { VideoPlayerModeWithoutNone } from "@/core/mains/contentScriptState.js";
 import { createInheritablePositionPlayerBarData } from "@/core/presenters/storagePresenter/options.presenter.js";
 import type { ComboboxData } from "@mantine/core";
 
 export function createInheritablePositionPlayerBarSelect(
-	mode: Exclude<VideoPlayerMode, "none">,
+	mode: VideoPlayerModeWithoutNone,
 ) {
 	const dataset = createInheritablePositionPlayerBarData(mode);
 

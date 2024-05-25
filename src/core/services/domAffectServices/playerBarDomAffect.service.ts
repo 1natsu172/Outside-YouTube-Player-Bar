@@ -1,6 +1,6 @@
 import type {
 	BehaviorState,
-	SiteMetaState,
+	VideoPlayerMode,
 } from "@/core/mains/contentScriptState.js";
 import { elementAttributes, elementQuery } from "@/core/mains/meta.js";
 import type { NonUndefined } from "@/utils/typeUtils.js";
@@ -24,7 +24,7 @@ type ElementQueryMap<Q extends string | undefined> = {
 	needCompatParentElement: boolean;
 };
 type ElementQueries<Q extends string | undefined = string | undefined> = Record<
-	SiteMetaState["videoPlayerState"]["mode"],
+	VideoPlayerMode,
 	{
 		/**
 		 * "inside" means "origin"
@@ -113,7 +113,7 @@ function __resolveMoveLogic<Q extends string | undefined>(
  */
 export const movePlayerBarElement = async (props: {
 	direction: BehaviorState["positionPlayerBar"];
-	playerMode: SiteMetaState["videoPlayerState"]["mode"];
+	playerMode: VideoPlayerMode;
 }) => {
 	const { direction, playerMode } = props;
 	const query = {
