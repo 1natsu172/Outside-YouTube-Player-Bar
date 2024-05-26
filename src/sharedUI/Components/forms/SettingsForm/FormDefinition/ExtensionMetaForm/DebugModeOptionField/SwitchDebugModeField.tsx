@@ -1,15 +1,16 @@
 import { getDebugModeOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import { switchDebugMode } from "@/core/services/optionsServices/extensionMetaOptions.service.js";
 import { Switch } from "@mantine/core";
-import type { QueryKey } from "@tanstack/react-query";
-import { FormField } from "../../../layouts/FormField.js";
-import { AutoSaveForFormField } from "../../../utils/useAutoSaveForm.js";
+import { FormField } from "../../../../layouts/FormField.js";
+import { AutoSaveForFormField } from "../../../../utils/useAutoSaveForm.js";
 
-export const SwitchDebugModeField = ({ queryKey }: { queryKey: QueryKey }) => {
+export const SwitchDebugModeField = () => {
 	return (
 		<AutoSaveForFormField
 			option={{
-				useSuspenseQueryArgs: [{ queryKey, queryFn: getDebugModeOption }],
+				useSuspenseQueryArgs: [
+					{ queryKey: [getDebugModeOption.name], queryFn: getDebugModeOption },
+				],
 				useMutationArgs: [{ mutationFn: switchDebugMode }],
 			}}
 		>

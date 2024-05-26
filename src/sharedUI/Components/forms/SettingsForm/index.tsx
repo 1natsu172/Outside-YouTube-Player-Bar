@@ -26,35 +26,29 @@ const RenderFormDef = (formId: string, formDef: FormDef, index: number) => {
 const UserSettingsForm = () => {
 	return (
 		<>
-			<Card withBorder radius="lg" p="xl" mb="xl" className={style.card}>
-				{Array.from(ExtensionBehaviorOptionsFormDefs.entries()).map(
-					([formId, def], index) => RenderFormDef(formId, def, index),
-				)}
-			</Card>
-			<Card withBorder radius="lg" p="xl" mb="xl" className={style.card}>
-				{Array.from(UiEnhanceOptionsFormDefs.entries()).map(
-					([formId, def], index) => RenderFormDef(formId, def, index),
-				)}
-			</Card>
-			<Card withBorder radius="lg" p="xl" className={style.card}>
-				{Array.from(ExtensionMetaOptionsFormDefs.entries()).map(
-					([formId, def], index) => RenderFormDef(formId, def, index),
-				)}
-			</Card>
+			{Array.from(ExtensionBehaviorOptionsFormDefs.entries()).map(
+				([formId, def], index) => RenderFormDef(formId, def, index),
+			)}
+			{Array.from(UiEnhanceOptionsFormDefs.entries()).map(
+				([formId, def], index) => RenderFormDef(formId, def, index),
+			)}
+			{Array.from(ExtensionMetaOptionsFormDefs.entries()).map(
+				([formId, def], index) => RenderFormDef(formId, def, index),
+			)}
 		</>
 	);
 };
 
 const DeactivateForceDisableForm = () => {
 	return (
-		<Card withBorder radius="lg" p="xl" className={style.card}>
+		<>
 			{RenderFormDef(
-				"Form:ForceDisable",
+				"Form:DeactivateForceDisable",
 				// biome-ignore lint/style/noNonNullAssertion: <explanation>
-				ExtensionMetaOptionsFormDefs.get("Form:ForceDisable")!,
+				ExtensionMetaOptionsFormDefs.get("Form:ExtensionMeta")!,
 				1,
 			)}
-		</Card>
+		</>
 	);
 };
 
@@ -64,8 +58,9 @@ export const SettingsForm = () => {
 		queryFn: checkAboutForceDisable,
 	});
 
-	if (data.isDisabling) {
-		return <DeactivateForceDisableForm />;
-	}
-	return <UserSettingsForm />;
+	return (
+		<Card withBorder radius="lg" p="xl" mb="xl" className={style.card}>
+			{data.isDisabling ? <DeactivateForceDisableForm /> : <UserSettingsForm />}
+		</Card>
+	);
 };

@@ -1,38 +1,16 @@
-import { FormGroup } from "../../layouts/FormGroup.js";
-import { SwitchDebugModeField } from "./DebugModeOptionField/SwitchDebugModeField.js";
-import { SwitchForceDisableField } from "./ForceDisableOptionField/SwitchForceDisableField.js";
+import { ExtensionMetaForm } from "./ExtensionMetaForm/index.js";
 import type { FormDefs } from "./formDefinition.types.js";
 
 /**
  * @description Enumerate component implementations
  */
-export const ExtensionMetaOptionsFormDefs: FormDefs = new Map([
+export const ExtensionMetaOptionsFormDefs = new Map([
 	[
-		"Form:ForceDisable",
+		"Form:ExtensionMeta",
 		{
-			FormElement: ({ formId }) => {
-				const queryKey = [formId];
-
-				return (
-					<FormGroup title="">
-						<SwitchForceDisableField queryKey={queryKey} />
-					</FormGroup>
-				);
+			FormElement: () => {
+				return <ExtensionMetaForm />;
 			},
 		},
 	],
-	[
-		"Form:DebugMode",
-		{
-			FormElement: ({ formId }) => {
-				const queryKey = [formId];
-
-				return (
-					<FormGroup title="">
-						<SwitchDebugModeField queryKey={queryKey} />
-					</FormGroup>
-				);
-			},
-		},
-	],
-]);
+]) satisfies FormDefs;

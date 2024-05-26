@@ -1,6 +1,6 @@
 import { videoPlayerModeKeysWithoutNone } from "@/core/presenters/statePresenter/siteMetaState/index.js";
 import { ExtensionBehaviorForm } from "./ExtensionBehaviorForm/index.js";
-import { ShowOpenSettingsIconForm } from "./ShowOpenSettingsIconForm/index.js";
+import { UiEnhanceOptionsForm } from "./UiEnhanceOptionsForm/index.js";
 import type { FormDefs } from "./formDefinition.types.js";
 
 /**
@@ -26,10 +26,10 @@ export const ExtensionBehaviorOptionsFormDefs = new Map(
  */
 export const UiEnhanceOptionsFormDefs = new Map([
 	[
-		"Form:ShowOpenSettingsIcon",
+		"Form:UiEnhanceOptions",
 		{
 			FormElement: () => {
-				return <ShowOpenSettingsIconForm />;
+				return <UiEnhanceOptionsForm />;
 			},
 		},
 	],

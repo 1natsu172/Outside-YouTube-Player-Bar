@@ -3,17 +3,19 @@ import {
 	switchContinueForceDisableForNow,
 } from "@/core/services/optionsServices/forceDisable.service.js";
 import { Checkbox, Group, Paper } from "@mantine/core";
-import type { QueryKey } from "@tanstack/react-query";
-import { FormField } from "../../../layouts/FormField.js";
-import { AutoSaveForFormField } from "../../../utils/useAutoSaveForm.js";
+import { FormField } from "../../../../layouts/FormField.js";
+import { AutoSaveForFormField } from "../../../../utils/useAutoSaveForm.js";
 
-export const DeactivateAvailableField = ({
-	queryKey,
-}: { queryKey: QueryKey }) => {
+export const DeactivateAvailableField = () => {
 	return (
 		<AutoSaveForFormField
 			option={{
-				useSuspenseQueryArgs: [{ queryKey, queryFn: checkAboutForceDisable }],
+				useSuspenseQueryArgs: [
+					{
+						queryKey: [checkAboutForceDisable.name],
+						queryFn: checkAboutForceDisable,
+					},
+				],
 				useMutationArgs: [{ mutationFn: switchContinueForceDisableForNow }],
 			}}
 		>

@@ -1,5 +1,5 @@
 import type { VideoPlayerModeWithoutNone } from "@/core/mains/contentScriptState.js";
-import { FormGroup } from "../../../layouts/FormGroup.js";
+import { FormGroup } from "@/sharedUI/Components/forms/layouts/FormGroup.js";
 import { AlwaysDisplayPlayerBarField } from "./AlwaysDisplayPlayerBarField/index.js";
 import { createInheritablePositionPlayerBarSelect } from "./InheritPositionPlayerBarBeforeSwitchingField/fieldLibs.js";
 import { InheritPositionPlayerBarBeforeSwitching } from "./InheritPositionPlayerBarBeforeSwitchingField/index.js";
