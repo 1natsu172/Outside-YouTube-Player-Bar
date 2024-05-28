@@ -1,7 +1,6 @@
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
 import { debugMode } from "@/core/repositories/options.repository.js";
 import { Card, Flex, Group, Text } from "@mantine/core";
-import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
 import style from "./FormField.module.css";
 
 export type FieldViewProps = {
@@ -39,14 +38,13 @@ export const FormField = ({
 					{description}
 				</Text>
 			</Flex>
-			<Flex direction={"column"}>
-				<Group justify="flex-end">
-					{isLoading && <LoadingSpinner />}
-					{FieldKnob}
-				</Group>
+			<Flex direction={"column"} maw={"100%"} flex={1}>
+				<Group justify="flex-end">{FieldKnob}</Group>
 				{isDebug && (
 					<Card withBorder radius={"md"} mt={"md"}>
-						<pre>{JSON.stringify({ [title]: formState }, null, 2)}</pre>
+						<pre className={style.pre}>
+							{JSON.stringify({ [title]: formState }, null, 2)}
+						</pre>
 					</Card>
 				)}
 			</Flex>

@@ -528,7 +528,7 @@ CPU usage increase due to specifications."
     /**
      * How to re-open guide that after disabled
      *
-     * "※ After disabling this, to re-open the settings, click the extension icon in the browser or open the options from the browser's extension management page."
+     * "※ After OFF this, to re-open the settings, click the extension icon in the browser or open the options from the browser's extension management page."
      */
     getMessage(
       messageName: "settings_userOption_showOpenSettingsIcon_description",

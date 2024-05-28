@@ -38,6 +38,7 @@ export const InheritPositionPlayerBarBeforeSwitching = ({
 				}}
 				checkIconPosition="right"
 				className={style.multiselect}
+				w={"100%"}
 			/>
 		</FormField>
 	);
