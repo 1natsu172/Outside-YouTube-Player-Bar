@@ -1,6 +1,7 @@
 import { type ComboboxData, MultiSelect } from "@mantine/core";
 import { FormField } from "../../../../layouts/FormField.js";
 import type { FormLogic } from "../formLogic.js";
+import style from "./index.module.css";
 
 export const InheritPositionPlayerBarBeforeSwitching = ({
 	comboboxData,
@@ -24,7 +25,7 @@ export const InheritPositionPlayerBarBeforeSwitching = ({
 			formState={data}
 		>
 			<MultiSelect
-				placeholder="Pick value"
+				placeholder="Pick pattern"
 				defaultValue={data.inheritPositionPlayerBarBeforeSwitching}
 				data={comboboxData}
 				disabled={_isLoading}
@@ -36,7 +37,7 @@ export const InheritPositionPlayerBarBeforeSwitching = ({
 					});
 				}}
 				checkIconPosition="right"
-				dropdownOpened
+				className={style.multiselect}
 			/>
 		</FormField>
 	);

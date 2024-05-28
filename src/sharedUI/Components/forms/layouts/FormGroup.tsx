@@ -13,16 +13,16 @@ export const FormGroup = ({ title, children, formState }: FormGroupProps) => {
 	const { store: isDebug } = useStorage(debugMode);
 
 	return (
-		<div>
-			<Title>{title}</Title>
+		<Card withBorder radius="lg" mb={"md"}>
+			<Title order={2} mb={"md"}>
+				{title}
+			</Title>
 			{children}
 			{isDebug && (
-				<Card withBorder radius="md">
-					<pre className="m-0">
-						{JSON.stringify({ [title]: formState }, null, 2)}
-					</pre>
-				</Card>
+				<Card.Section withBorder>
+					<pre>{JSON.stringify({ [title]: formState }, null, 2)}</pre>
+				</Card.Section>
 			)}
-		</div>
+		</Card>
 	);
 };

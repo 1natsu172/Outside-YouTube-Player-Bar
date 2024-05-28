@@ -121,15 +121,15 @@
 		"description": "settings extension behavor of the each player modes"
 	},
 	"settings_userOption_defaultViewBehavior_title": {
-		"message": "デフォルトビューの動作",
+		"message": "デフォルトビュー",
 		"description": "behavior of the default-view mode"
 	},
 	"settings_userOption_theaterModeBehavior_title": {
-		"message": "シアターモードの動作",
+		"message": "シアターモード",
 		"description": "behavior of the theater mode"
 	},
 	"settings_userOption_fullscreenBehavior_title": {
-		"message": "フルスクリーンモードの動作",
+		"message": "フルスクリーンモード",
 		"description": "behavior of the fullscreen mode"
 	},
 	"settings_userOption_positionPlayerBar_title": {
@@ -145,15 +145,15 @@
 		"description": "inside of player"
 	},
 	"settings_userOption_alwaysDisplayPlayerBar_title": {
-		"message": "常に再生バーを表示（外側のときのみ有効）",
+		"message": "常に再生バーを表示",
 		"description": "always display player bar"
 	},
 	"settings_userOption_alwaysDisplayPlayerBar_description": {
-		"message": "仕様上CPU使用率が増加します（ブラウザが重くなる場合はOFFを推奨）",
+		"message": "外側のときのみ有効\n仕様上CPU使用率が増加します",
 		"description": "always display player bar caution that cpu usage bumping"
 	},
 	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title": {
-		"message": "ビューモード切り替え前の位置を引き継ぐ",
+		"message": "モード切り替え前の位置を引き継ぐ",
 		"description": "if video mode changed to $MODE$, inherit the position before switching"
 	},
 	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description": {
@@ -165,7 +165,7 @@
 		"description": "Display settings icon on the playerbar"
 	},
 	"settings_userOption_showOpenSettingsIcon_description": {
-		"message": "※無効にしたあと詳細設定を開くにはブラウザ上の拡張機能のアイコンをクリックするか、ブラウザの拡張機能管理画面からオプションを開いてください",
+		"message": "※OFFにしたあと設定パネルを開くにはブラウザの拡張機能アイコンをクリックするか、拡張機能管理画面からオプションを開いてください",
 		"description": "How to re-open guide that after disabled"
 	}
 }

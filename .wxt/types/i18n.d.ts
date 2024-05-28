@@ -417,7 +417,7 @@ Note: You can't use this message in a manifest file.
     /**
      * behavior of the default-view mode
      *
-     * "Behavior in default view"
+     * "default view"
      */
     getMessage(
       messageName: "settings_userOption_defaultViewBehavior_title",
@@ -427,7 +427,7 @@ Note: You can't use this message in a manifest file.
     /**
      * behavior of the theater mode
      *
-     * "Behavior in theater mode"
+     * "theater mode"
      */
     getMessage(
       messageName: "settings_userOption_theaterModeBehavior_title",
@@ -437,7 +437,7 @@ Note: You can't use this message in a manifest file.
     /**
      * behavior of the fullscreen mode
      *
-     * "Behavior in fullscreen mode"
+     * "fullscreen mode"
      */
     getMessage(
       messageName: "settings_userOption_fullscreenBehavior_title",
@@ -477,7 +477,7 @@ Note: You can't use this message in a manifest file.
     /**
      * always display player bar
      *
-     * "Always display player bar (only effective when outside)"
+     * "Always display player bar"
      */
     getMessage(
       messageName: "settings_userOption_alwaysDisplayPlayerBar_title",
@@ -487,7 +487,8 @@ Note: You can't use this message in a manifest file.
     /**
      * always display player bar caution that cpu usage bumping
      *
-     * "CPU usage increase due to specifications. If the browser is slow that recommended to turn OFF."
+     * "Only when outside.
+CPU usage increase due to specifications."
      */
     getMessage(
       messageName: "settings_userOption_alwaysDisplayPlayerBar_description",
@@ -497,7 +498,7 @@ Note: You can't use this message in a manifest file.
     /**
      * if video mode changed to $MODE$, inherit the position before switching
      *
-     * "Inherit the position before switching view mode"
+     * "Inherit the position before switching mode"
      */
     getMessage(
       messageName: "settings_userOption_inheritPositionPlayerBarBeforeSwitching_title",

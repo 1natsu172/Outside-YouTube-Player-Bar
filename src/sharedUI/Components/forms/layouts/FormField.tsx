@@ -1,7 +1,8 @@
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
 import { debugMode } from "@/core/repositories/options.repository.js";
-import { Card, Group, Text, Title } from "@mantine/core";
+import { Card, Flex, Group, Text } from "@mantine/core";
 import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
+import style from "./FormField.module.css";
 
 export type FieldViewProps = {
 	title: string;
@@ -12,7 +13,7 @@ export type FieldViewProps = {
 	formState?: any;
 };
 export const FormField = ({
-	children: FormField,
+	children: FieldKnob,
 	isLoading,
 	title,
 	description,
@@ -21,24 +22,34 @@ export const FormField = ({
 	const { store: isDebug } = useStorage(debugMode);
 
 	return (
-		<>
-			<Group justify="space-between" wrap="nowrap" pl={"lg"}>
-				<div>
-					<Title>{title}</Title>
-					<Text size="xs" c="dimmed">
-						{description}
-					</Text>
-				</div>
-				<Group>
+		<Flex
+			align="center"
+			justify="space-between"
+			wrap="wrap"
+			pl={"lg"}
+			mb={"xl"}
+			columnGap={"xl"}
+			rowGap={"md"}
+		>
+			<Flex direction={"column"}>
+				<Text fz={"h3"} fw={"bold"}>
+					{title}
+				</Text>
+				<Text size="md" c="dimmed" className={style.description}>
+					{description}
+				</Text>
+			</Flex>
+			<Flex direction={"column"}>
+				<Group justify="flex-end">
 					{isLoading && <LoadingSpinner />}
-					{FormField}
+					{FieldKnob}
 				</Group>
-			</Group>
-			{isDebug && (
-				<Card withBorder radius={"md"}>
-					<pre>{JSON.stringify({ [title]: formState }, null, 2)}</pre>
-				</Card>
-			)}
-		</>
+				{isDebug && (
+					<Card withBorder radius={"md"} mt={"md"}>
+						<pre>{JSON.stringify({ [title]: formState }, null, 2)}</pre>
+					</Card>
+				)}
+			</Flex>
+		</Flex>
 	);
 };

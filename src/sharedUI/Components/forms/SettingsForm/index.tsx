@@ -1,9 +1,10 @@
 import { checkAboutForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
 import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
-import { Card } from "@mantine/core";
+import { Group, Paper } from "@mantine/core";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Suspense } from "react";
 import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
+import { FormGroup } from "../layouts/FormGroup.js";
 import { ExtensionMetaOptionsFormDefs } from "./FormDefinition/ExtensionMetaOptions.definition.js";
 import {
 	ExtensionBehaviorOptionsFormDefs,
@@ -26,15 +27,23 @@ const RenderFormDef = (formId: string, formDef: FormDef, index: number) => {
 const UserSettingsForm = () => {
 	return (
 		<>
-			{Array.from(ExtensionBehaviorOptionsFormDefs.entries()).map(
-				([formId, def], index) => RenderFormDef(formId, def, index),
-			)}
-			{Array.from(UiEnhanceOptionsFormDefs.entries()).map(
-				([formId, def], index) => RenderFormDef(formId, def, index),
-			)}
-			{Array.from(ExtensionMetaOptionsFormDefs.entries()).map(
-				([formId, def], index) => RenderFormDef(formId, def, index),
-			)}
+			<FormGroup title="Features">
+				<Group grow wrap="nowrap" align="stretch">
+					{Array.from(ExtensionBehaviorOptionsFormDefs.entries()).map(
+						([formId, def], index) => RenderFormDef(formId, def, index),
+					)}
+				</Group>
+			</FormGroup>
+			<FormGroup title="UI">
+				{Array.from(UiEnhanceOptionsFormDefs.entries()).map(
+					([formId, def], index) => RenderFormDef(formId, def, index),
+				)}
+			</FormGroup>
+			<FormGroup title="Misc">
+				{Array.from(ExtensionMetaOptionsFormDefs.entries()).map(
+					([formId, def], index) => RenderFormDef(formId, def, index),
+				)}
+			</FormGroup>
 		</>
 	);
 };
@@ -59,8 +68,8 @@ export const SettingsForm = () => {
 	});
 
 	return (
-		<Card withBorder radius="lg" p="xl" mb="xl" className={style.card}>
+		<Paper mb="xl" className={style.card}>
 			{data.isDisabling ? <DeactivateForceDisableForm /> : <UserSettingsForm />}
-		</Card>
+		</Paper>
 	);
 };

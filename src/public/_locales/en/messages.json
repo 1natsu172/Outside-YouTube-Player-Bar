@@ -142,15 +142,15 @@
 		"description": "settings extension behavor of the each player modes"
 	},
 	"settings_userOption_defaultViewBehavior_title": {
-		"message": "Behavior in default view",
+		"message": "default view",
 		"description": "behavior of the default-view mode"
 	},
 	"settings_userOption_theaterModeBehavior_title": {
-		"message": "Behavior in theater mode",
+		"message": "theater mode",
 		"description": "behavior of the theater mode"
 	},
 	"settings_userOption_fullscreenBehavior_title": {
-		"message": "Behavior in fullscreen mode",
+		"message": "fullscreen mode",
 		"description": "behavior of the fullscreen mode"
 	},
 	"settings_userOption_positionPlayerBar_title": {
@@ -166,15 +166,15 @@
 		"description": "inside of player"
 	},
 	"settings_userOption_alwaysDisplayPlayerBar_title": {
-		"message": "Always display player bar (only effective when outside)",
+		"message": "Always display player bar",
 		"description": "always display player bar"
 	},
 	"settings_userOption_alwaysDisplayPlayerBar_description": {
-		"message": "CPU usage increase due to specifications. If the browser is slow that recommended to turn OFF.",
+		"message": "Only when outside.\nCPU usage increase due to specifications.",
 		"description": "always display player bar caution that cpu usage bumping"
 	},
 	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title": {
-		"message": "Inherit the position before switching view mode",
+		"message": "Inherit the position before switching mode",
 		"description": "if video mode changed to $MODE$, inherit the position before switching"
 	},
 	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description": {
@@ -186,7 +186,7 @@
 		"description": "Display open settings icon on the playerbar"
 	},
 	"settings_userOption_showOpenSettingsIcon_description": {
-		"message": "※ After disabling this, to re-open the settings, click the extension icon in the browser or open the options from the browser's extension management page.",
+		"message": "※ After OFF this, to re-open the settings, click the extension icon in the browser or open the options from the browser's extension management page.",
 		"description": "How to re-open guide that after disabled"
 	}
 }

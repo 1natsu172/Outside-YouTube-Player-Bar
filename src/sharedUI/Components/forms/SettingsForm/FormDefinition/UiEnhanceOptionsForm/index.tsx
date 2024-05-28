@@ -1,10 +1,10 @@
-import { FormGroup } from "@/sharedUI/Components/forms/layouts/FormGroup.js";
+import { FormFieldsSection } from "../../../layouts/FormSection.js";
 import { ShowOpenSettingsIconField } from "./ShowOpenSettingsIconField/index.js";
 
 export const UiEnhanceOptionsForm = () => {
 	return (
-		<FormGroup title="">
+		<FormFieldsSection title="">
 			<ShowOpenSettingsIconField />
-		</FormGroup>
+		</FormFieldsSection>
 	);
 };

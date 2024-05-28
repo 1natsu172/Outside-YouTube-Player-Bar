@@ -1,5 +1,5 @@
 import type { VideoPlayerModeWithoutNone } from "@/core/mains/contentScriptState.js";
-import { FormGroup } from "@/sharedUI/Components/forms/layouts/FormGroup.js";
+import { FormFieldsCard } from "../../../layouts/FormSection.js";
 import { AlwaysDisplayPlayerBarField } from "./AlwaysDisplayPlayerBarField/index.js";
 import { createInheritablePositionPlayerBarSelect } from "./InheritPositionPlayerBarBeforeSwitchingField/fieldLibs.js";
 import { InheritPositionPlayerBarBeforeSwitching } from "./InheritPositionPlayerBarBeforeSwitchingField/index.js";
@@ -15,16 +15,16 @@ export const ExtensionBehaviorForm = ({ videoModeKey }: P) => {
 	const formLogic = useExtensionBehaviorForm(videoModeKey);
 	const formTitle = useFormTitle(videoModeKey);
 	return (
-		<FormGroup title={formTitle}>
+		<FormFieldsCard title={formTitle}>
 			<PositionPlayerBar
 				formLogic={formLogic}
 				segmentedControlItems={createPlayerBarPisitonSelect()}
 			/>
+			<AlwaysDisplayPlayerBarField formLogic={formLogic} />
 			<InheritPositionPlayerBarBeforeSwitching
 				formLogic={formLogic}
 				comboboxData={createInheritablePositionPlayerBarSelect(videoModeKey)}
 			/>
-			<AlwaysDisplayPlayerBarField formLogic={formLogic} />
-		</FormGroup>
+		</FormFieldsCard>
 	);
 };
