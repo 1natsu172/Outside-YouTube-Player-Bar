@@ -1,6 +1,11 @@
 import { checkAboutForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
 import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
 import { Group, Paper } from "@mantine/core";
+import {
+	IconAdjustmentsHorizontal,
+	IconBalloon,
+	IconFlask,
+} from "@tabler/icons-react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Suspense } from "react";
 import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
@@ -27,19 +32,19 @@ const RenderFormDef = (formId: string, formDef: FormDef, index: number) => {
 const UserSettingsForm = () => {
 	return (
 		<>
-			<FormGroup title="Features">
+			<FormGroup title="Features" Icon={IconAdjustmentsHorizontal}>
 				<Group grow wrap="nowrap" align="stretch">
 					{Array.from(ExtensionBehaviorOptionsFormDefs.entries()).map(
 						([formId, def], index) => RenderFormDef(formId, def, index),
 					)}
 				</Group>
 			</FormGroup>
-			<FormGroup title="UI">
+			<FormGroup title="UI" Icon={IconBalloon}>
 				{Array.from(UiEnhanceOptionsFormDefs.entries()).map(
 					([formId, def], index) => RenderFormDef(formId, def, index),
 				)}
 			</FormGroup>
-			<FormGroup title="Misc">
+			<FormGroup title="Misc" Icon={IconFlask}>
 				{Array.from(ExtensionMetaOptionsFormDefs.entries()).map(
 					([formId, def], index) => RenderFormDef(formId, def, index),
 				)}

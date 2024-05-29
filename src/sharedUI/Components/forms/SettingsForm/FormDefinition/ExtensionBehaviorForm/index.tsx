@@ -15,7 +15,7 @@ export const ExtensionBehaviorForm = ({ videoModeKey }: P) => {
 	const formLogic = useExtensionBehaviorForm(videoModeKey);
 	const formTitle = useFormTitle(videoModeKey);
 	return (
-		<FormFieldsCard title={formTitle}>
+		<FormFieldsCard title={formTitle.title} Icon={formTitle.icon}>
 			<PositionPlayerBar
 				formLogic={formLogic}
 				segmentedControlItems={createPlayerBarPisitonSelect()}

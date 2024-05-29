@@ -13,7 +13,6 @@ export type FieldViewProps = {
 };
 export const FormField = ({
 	children: FieldKnob,
-	isLoading,
 	title,
 	description,
 	formState,
@@ -25,7 +24,7 @@ export const FormField = ({
 			align="center"
 			justify="space-between"
 			wrap="wrap"
-			pl={"lg"}
+			p={"sm"}
 			mb={"xl"}
 			columnGap={"xl"}
 			rowGap={"md"}

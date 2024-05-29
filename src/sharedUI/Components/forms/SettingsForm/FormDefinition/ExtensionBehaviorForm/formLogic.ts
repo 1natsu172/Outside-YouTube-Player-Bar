@@ -1,5 +1,6 @@
 import type { VideoPlayerModeWithoutNone } from "@/core/mains/contentScriptState.js";
 import { resolveBehaviorOptionHandlers } from "@/core/services/optionsServices/userOptions.service.js";
+import { IconAppWindow, IconCrop169, IconMaximize } from "@tabler/icons-react";
 import { useAutoSaveForm } from "../../../utils/useAutoSaveForm.js";
 
 export function useExtensionBehaviorForm(mode: VideoPlayerModeWithoutNone) {
@@ -18,19 +19,28 @@ export type FormLogic = ReturnType<typeof useExtensionBehaviorForm>;
 export function useFormTitle(params: VideoPlayerModeWithoutNone) {
 	switch (params) {
 		case "defaultView": {
-			return browser.i18n.getMessage(
-				"settings_userOption_defaultViewBehavior_title",
-			);
+			return {
+				title: browser.i18n.getMessage(
+					"settings_userOption_defaultViewBehavior_title",
+				),
+				icon: IconAppWindow,
+			};
 		}
 		case "theaterMode": {
-			return browser.i18n.getMessage(
-				"settings_userOption_theaterModeBehavior_title",
-			);
+			return {
+				title: browser.i18n.getMessage(
+					"settings_userOption_theaterModeBehavior_title",
+				),
+				icon: IconCrop169,
+			};
 		}
 		case "fullscreen": {
-			return browser.i18n.getMessage(
-				"settings_userOption_fullscreenBehavior_title",
-			);
+			return {
+				title: browser.i18n.getMessage(
+					"settings_userOption_fullscreenBehavior_title",
+				),
+				icon: IconMaximize,
+			};
 		}
 	}
 }
