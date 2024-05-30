@@ -31,7 +31,7 @@ export const FormFieldsCard = ({
 }) => {
 	return (
 		<Card withBorder p={"md"} radius={"md"}>
-			<Group gap={"5"}>
+			<Group gap={5}>
 				<ThemeIcon
 					variant="gradient"
 					size="lg"

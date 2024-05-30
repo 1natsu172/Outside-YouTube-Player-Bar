@@ -165,7 +165,7 @@
 		"description": "Display settings icon on the playerbar"
 	},
 	"settings_userOption_showOpenSettingsIcon_description": {
-		"message": "※OFFにしたあと設定パネルを開くにはブラウザの拡張機能アイコンをクリックするか、拡張機能管理画面からオプションを開いてください",
+		"message": "※OFFにしたあと設定パネルを開くには、ブラウザ上のアイコンか拡張機能管理パネルからオプションを開いてください",
 		"description": "How to re-open guide that after disabled"
 	}
 }
