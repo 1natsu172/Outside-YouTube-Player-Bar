@@ -11,8 +11,6 @@ declare module "wxt/browser" {
     | "/images/icon-16.png"
     | "/images/icon-32.png"
     | "/images/icon-48.png"
-    | "/images/oypb-toggle.svg"
-    | "/images/settings.svg"
     | "/options.html"
   type HtmlPublicPath = Extract<PublicPath, `${string}.html`>
   export interface WxtRuntime extends Runtime.Static {

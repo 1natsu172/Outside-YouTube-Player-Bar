@@ -7,6 +7,7 @@ import {
 } from "@tabler/icons-react";
 
 const links = [
+	// TODO: url
 	{ url: "", icon: IconBrandChrome },
 	{ url: "", icon: IconBrandEdge },
 	{ url: "", icon: IconBrandFirefox },
