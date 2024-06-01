@@ -22,7 +22,7 @@ export const developConfig: UserConfig = {
  * @description manifest.json config
  * @returns Some explicit configuration of manifest.json
  */
-export const manifestJsonConfig: UserConfig["manifest"] = (_configEnv) => ({
+export const manifestJsonConfig: UserConfig["manifest"] = (configEnv) => ({
 	name: "__MSG_appName__",
 	short_name: "__MSG_appShortName__",
 	description: "__MSG_appDescription__",
@@ -47,6 +47,16 @@ export const manifestJsonConfig: UserConfig["manifest"] = (_configEnv) => ({
 		default_title: "__MSG_browserActionTitle__",
 	},
 	permissions: ["declarativeContent", "notifications", "storage"],
+	// NOTE: must need id for use storage API etc, https://extensionworkshop.com/documentation/develop/extensions-and-the-add-on-id/
+	browser_specific_settings:
+		configEnv.browser === "firefox"
+			? {
+					gecko: {
+						id: "{6c3b7240-7017-430b-b03c-432e61ee3a82}",
+						strict_min_version: "42.0",
+					},
+				}
+			: undefined,
 });
 
 // polymer config
