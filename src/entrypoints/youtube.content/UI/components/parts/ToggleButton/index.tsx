@@ -42,7 +42,9 @@ export const ToggleButton = (props: P) => {
 			>
 				<ToggleIcon stroke={2.5} color="var(--oypb-player-bar-icon-color)" />
 			</button>
-			<span className={style.tooltip}>{tooltip}</span>
+			<span className={style.tooltip} data-video-player-mode={videoPlayerMode}>
+				{tooltip}
+			</span>
 			{showUpdateRed && (
 				<span className={style.notificationCircle}>
 					<NotificationCircle />

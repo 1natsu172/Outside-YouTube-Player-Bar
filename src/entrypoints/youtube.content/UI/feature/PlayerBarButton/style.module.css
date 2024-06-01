@@ -15,4 +15,9 @@
     opacity: 1;
     transition: opacity .1s cubic-bezier(0, 0, .2, 1);
   }
+
+  &[data-video-player-mode="fullscreen"] {
+    width: 54px;
+    height: 54px;
+  }
 }

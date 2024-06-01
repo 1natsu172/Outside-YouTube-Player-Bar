@@ -34,6 +34,10 @@
   line-height: 15px;
   white-space: nowrap;
   transition: opacity .1s cubic-bezier(0.4, 0.0, 1, 1);
+
+  &[data-video-player-mode="fullscreen"] {
+    line-height: 22px;
+  }
 }
 
 .button:hover+.tooltip {

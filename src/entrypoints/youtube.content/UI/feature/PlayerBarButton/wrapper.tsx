@@ -1,3 +1,4 @@
+import { useVideoPlayerMode } from "@/core/presenters/statePresenter/siteMetaState/index.js";
 import { LoadingSpinner } from "@/sharedUI/Components/parts/LoadingSpinner/index.js";
 import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
 import { IconRefreshAlert } from "@tabler/icons-react";
@@ -9,8 +10,13 @@ type P = {
 };
 
 export const PlayerBarButtonWrapper = ({ children }: P) => {
+	const videoPlayerMode = useVideoPlayerMode();
+
 	return (
-		<div className={style["player-bar-button-wrapper"]}>
+		<div
+			className={style["player-bar-button-wrapper"]}
+			data-video-player-mode={videoPlayerMode}
+		>
 			<TanstackQueryErrorResetBoundary
 				fallbackRender={({ resetErrorBoundary }) => (
 					<IconRefreshAlert onClick={resetErrorBoundary} />
