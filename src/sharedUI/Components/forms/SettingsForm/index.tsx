@@ -54,14 +54,14 @@ const UserSettingsForm = () => {
 
 const DeactivateForceDisableForm = () => {
 	return (
-		<>
+		<FormGroup title="Misc" Icon={IconFlask}>
 			{RenderFormDef(
 				"Form:DeactivateForceDisable",
 				// biome-ignore lint/style/noNonNullAssertion: <explanation>
 				ExtensionMetaOptionsFormDefs.get("Form:ExtensionMeta")!,
 				1,
 			)}
-		</>
+		</FormGroup>
 	);
 };
 
