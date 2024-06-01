@@ -1,6 +1,6 @@
 import { checkAboutForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
 import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
-import { Group, Paper } from "@mantine/core";
+import { Group } from "@mantine/core";
 import {
 	IconAdjustmentsHorizontal,
 	IconBalloon,
@@ -16,7 +16,6 @@ import {
 	UiEnhanceOptionsFormDefs,
 } from "./FormDefinition/UserOptions.definition.js";
 import type { FormDef } from "./FormDefinition/formDefinition.types.js";
-import style from "./index.module.css";
 
 const RenderFormDef = (formId: string, formDef: FormDef, index: number) => {
 	const { FormElement } = formDef;
@@ -73,8 +72,8 @@ export const SettingsForm = () => {
 	});
 
 	return (
-		<Paper mb="xl" className={style.card}>
+		<>
 			{data.isDisabling ? <DeactivateForceDisableForm /> : <UserSettingsForm />}
-		</Paper>
+		</>
 	);
 };

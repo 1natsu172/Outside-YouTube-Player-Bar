@@ -1,5 +1,6 @@
 .container {
   position: relative;
+  margin-block: calc(var(--mantine-spacing-xl) * 4);
 }
 
 .inner {

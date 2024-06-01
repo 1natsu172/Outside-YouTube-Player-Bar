@@ -33,7 +33,7 @@ const EmbedKofi = () => {
 };
 
 export const KoFi = () => (
-	<Container size="lg" className={style.container}>
+	<Container size="xl" className={style.container}>
 		<Appearances />
 		<div className={style.inner}>
 			<div className={style.content}>
