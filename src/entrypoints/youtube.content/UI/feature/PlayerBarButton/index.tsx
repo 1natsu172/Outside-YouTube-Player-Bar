@@ -93,6 +93,7 @@ const PlayerBarButtonContainer = () => {
 				<SettingsButton
 					tooltip={openSettingsTooltip}
 					openSettings={openSettings}
+					videoPlayerMode={videoPlayerMode}
 				/>
 			)}
 		</>
