@@ -8,7 +8,6 @@ overrides:
   semver@>=7.0.0 <7.5.2: '>=7.5.2'
   semver@<5.7.2: '>=5.7.2'
   semver@>=6.0.0 <6.3.1: '>=6.3.1'
-  minimatch@<3.0.5: '>=3.0.5'
 
 importers:
 
@@ -5045,7 +5044,7 @@ snapshots:
     dependencies:
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 9.0.4
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
     optional: true
@@ -5055,7 +5054,7 @@ snapshots:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 9.0.4
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
 
@@ -5516,7 +5515,7 @@ snapshots:
       '@types/minimatch': 3.0.5
       array-differ: 4.0.0
       array-union: 3.0.1
-      minimatch: 9.0.4
+      minimatch: 3.1.2
 
   mv@2.1.1:
     dependencies:

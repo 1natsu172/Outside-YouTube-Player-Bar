@@ -7,6 +7,7 @@ export const developConfig: UserConfig = {
 	entrypointsDir: "entrypoints", // src/entrypoints
 	publicDir: "public", // src/public,
 	runner: {
+		disabled: false,
 		binaries: {
 			arc: "/Applications/Arc.app/Contents/MacOS/Arc",
 			edge: "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
@@ -16,6 +17,7 @@ export const developConfig: UserConfig = {
 	},
 	vite: () => viteConfig,
 };
+
 /**
  * @description manifest.json config
  * @returns Some explicit configuration of manifest.json
