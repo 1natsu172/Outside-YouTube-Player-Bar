@@ -337,7 +337,7 @@ Note: You can't use this message in a manifest file.
     /**
      * alert of the activate force disable
      *
-     * "Force the extension to disable (this screen will be closed)."
+     * "Force the extension to disable (YouTube tabs will reloaded)."
      */
     getMessage(
       messageName: "settings_metaOption_forceDisable_activateAlert",
@@ -347,7 +347,7 @@ Note: You can't use this message in a manifest file.
     /**
      * alert of the deactivate force disable
      *
-     * "Reload the extension to deactivate the forced disable (this screen will be closed)."
+     * "Deactivate the extenstion forced disable (YouTube tab will reload)."
      */
     getMessage(
       messageName: "settings_metaOption_forceDisable_deactivateAlert",

@@ -1,3 +1,4 @@
+import { extMetaSignals } from "@/core/mains/messagings/extensionMetaSignals/index.js";
 import { getForceDisableOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import * as usecases from "@/core/usecases/options.usecase.js";
 import semver_lt from "semver/functions/lt.js";
@@ -9,7 +10,8 @@ export const switchForceDisable = async (activate: boolean) => {
 			: undefined,
 		continueForceDisableForNow: undefined,
 	});
-	browser.runtime.reload();
+
+	extMetaSignals.sendMessage("reloadYouTubeTabs", undefined);
 };
 
 export const switchContinueForceDisableForNow = async ({

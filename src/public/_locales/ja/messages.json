@@ -88,11 +88,11 @@
 		"description": "usecase the force disable mode"
 	},
 	"settings_metaOption_forceDisable_activateAlert": {
-		"message": "拡張機能を強制停止をします（この詳細設定画面も強制的に閉じられます）",
+		"message": "拡張機能を強制停止するため、YouTubeのタブが再読み込みされます",
 		"description": "alert of the activate force disable"
 	},
 	"settings_metaOption_forceDisable_deactivateAlert": {
-		"message": "拡張機能を強制停止を解除するため、拡張機能が再読み込みされます（この詳細設定画面も強制的に閉じられます）",
+		"message": "拡張機能の強制停止を解除するため、YouTubeのタブが再読み込みされます",
 		"description": "alert of the deactivate force disable"
 	},
 	"settings_metaOption_forceDisable_activatedNow_short": {

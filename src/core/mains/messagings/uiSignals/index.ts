@@ -4,5 +4,4 @@ interface ProtocolMap {
 	openOptionsPage: () => void;
 }
 
-export const { sendMessage, onMessage } =
-	defineExtensionMessaging<ProtocolMap>();
+export const uiSignals = defineExtensionMessaging<ProtocolMap>();

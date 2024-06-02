@@ -109,11 +109,11 @@
 		"description": "usecase the force disable mode"
 	},
 	"settings_metaOption_forceDisable_activateAlert": {
-		"message": "Force the extension to disable (this screen will be closed).",
+		"message": "Force the extension to disable (YouTube tabs will reloaded).",
 		"description": "alert of the activate force disable"
 	},
 	"settings_metaOption_forceDisable_deactivateAlert": {
-		"message": "Reload the extension to deactivate the forced disable (this screen will be closed).",
+		"message": "Deactivate the extenstion forced disable (YouTube tab will reload).",
 		"description": "alert of the deactivate force disable"
 	},
 	"settings_metaOption_forceDisable_activatedNow_short": {

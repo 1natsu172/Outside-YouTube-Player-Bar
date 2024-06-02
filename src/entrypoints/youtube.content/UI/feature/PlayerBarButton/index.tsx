@@ -1,5 +1,5 @@
 import type { BehaviorState } from "@/core/mains/contentScriptState.js";
-import { sendMessage } from "@/core/mains/messagings/uiSignals/index.js";
+import { uiSignals } from "@/core/mains/messagings/uiSignals/index.js";
 import { useBarPosition } from "@/core/presenters/statePresenter/behaviorState/index.js";
 import { usePlayerBarIntersectionInfo } from "@/core/presenters/statePresenter/operationState/index.js";
 import { useVideoPlayerMode } from "@/core/presenters/statePresenter/siteMetaState/index.js";
@@ -56,7 +56,7 @@ const PlayerBarButtonContainer = () => {
 
 	//// handlers
 	const openSettings = useCallback(async () => {
-		await sendMessage("openOptionsPage", undefined);
+		await uiSignals.sendMessage("openOptionsPage", undefined);
 	}, []);
 	const onToggle = useCallback(() => {
 		const to: BarPosition =
