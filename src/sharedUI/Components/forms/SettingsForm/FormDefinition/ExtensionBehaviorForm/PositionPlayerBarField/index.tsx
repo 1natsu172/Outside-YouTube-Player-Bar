@@ -28,6 +28,8 @@ export const PositionPlayerBar = ({
 						positionPlayerBar: e as typeof data.positionPlayerBar,
 					});
 				}}
+				size="sm"
+				color={"myColor.6"}
 				fullWidth
 				disabled={_isLoading}
 			/>

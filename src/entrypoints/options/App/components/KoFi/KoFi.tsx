@@ -42,7 +42,7 @@ export const KoFi = () => (
 					highlight={"tip"}
 					className={style.title}
 					highlightStyles={{
-						backgroundColor: "var(--mantine-color-blue-light)",
+						backgroundColor: "var(--mantine-color-myColor-1)",
 						borderRadius: "var(--mantine-radius-sm)",
 					}}
 				>
@@ -59,14 +59,24 @@ export const KoFi = () => (
 					spacing="sm"
 					size="lg"
 					icon={
-						<ThemeIcon size={"xl"} radius="xl">
+						<ThemeIcon
+							size={"xl"}
+							radius="xl"
+							color="myColor.3"
+							autoContrast={false}
+						>
 							<IconCheck stroke={2} />
 						</ThemeIcon>
 					}
 				>
 					<List.Item
 						icon={
-							<ThemeIcon size={"xl"} radius="xl">
+							<ThemeIcon
+								size={"xl"}
+								radius="xl"
+								color="myColor.3"
+								autoContrast={false}
+							>
 								<IconMoneybag stroke={2} />
 							</ThemeIcon>
 						}
@@ -79,7 +89,12 @@ export const KoFi = () => (
 					</List.Item>
 					<List.Item
 						icon={
-							<ThemeIcon size={"xl"} radius="xl" color="yellow">
+							<ThemeIcon
+								size={"xl"}
+								radius="xl"
+								color="yellow"
+								autoContrast={false}
+							>
 								<IconAlertTriangle stroke={2} />
 							</ThemeIcon>
 						}

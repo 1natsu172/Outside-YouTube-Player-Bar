@@ -23,12 +23,6 @@
   font-weight: 900;
 }
 
-.highlight {
-  position: relative;
-  background-color: var(--mantine-color-blue-light);
-  border-radius: var(--mantine-radius-sm);
-}
-
 .links {
   height: 110px;
 

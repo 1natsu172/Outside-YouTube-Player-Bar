@@ -62,7 +62,7 @@ export const SwitchForceDisableField = () => {
 								{browser.i18n.getMessage("fixturewords_cancel")}
 							</Button>
 							<Button
-								color={canSwitchToActivate ? "red" : "blue"}
+								color={canSwitchToActivate ? "yellow" : "blue"}
 								onClick={() => {
 									mutate(!data.isDisabling);
 								}}
@@ -74,7 +74,8 @@ export const SwitchForceDisableField = () => {
 				</Modal>
 				<Button
 					onClick={open}
-					color={canSwitchToActivate ? "red" : "blue"}
+					color={canSwitchToActivate ? "yellow" : "blue"}
+					autoContrast={false}
 					disabled={isLoading || isPending}
 				>
 					{canSwitchToActivate

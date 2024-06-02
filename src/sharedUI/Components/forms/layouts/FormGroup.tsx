@@ -30,7 +30,7 @@ export const FormGroup = ({
 					variant="gradient"
 					size="lg"
 					aria-label="Gradient action icon"
-					gradient={{ from: "blue", to: "cyan", deg: 90 }}
+					gradient={{ from: "myColor.5", to: "myColor.7", deg: 90 }}
 				>
 					<Icon />
 				</ThemeIcon>
