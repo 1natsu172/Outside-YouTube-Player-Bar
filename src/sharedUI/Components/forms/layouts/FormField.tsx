@@ -1,6 +1,6 @@
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
 import { debugMode } from "@/core/repositories/options.repository.js";
-import { Card, Flex, Group, Text } from "@mantine/core";
+import { Card, Flex, Text } from "@mantine/core";
 import style from "./FormField.module.css";
 
 export type FieldViewProps = {
@@ -29,7 +29,7 @@ export const FormField = ({
 			columnGap={"xl"}
 			rowGap={"md"}
 		>
-			<Flex direction={"column"}>
+			<Flex direction={"column"} flex={6} miw={200} maw={"100%"}>
 				<Text fz={"h3"} fw={"bold"}>
 					{title}
 				</Text>
@@ -37,10 +37,10 @@ export const FormField = ({
 					{description}
 				</Text>
 			</Flex>
-			<Flex direction={"column"} maw={"100%"} flex={1}>
-				<Group justify="flex-end">{FieldKnob}</Group>
+			<Flex direction={"column"} flex={4} maw={"100%"} align={"flex-end"}>
+				{FieldKnob}
 				{isDebug && (
-					<Card withBorder radius={"md"} mt={"md"}>
+					<Card withBorder radius={"md"} mt={"md"} maw={"100%"}>
 						<pre className={style.pre}>
 							{JSON.stringify({ [title]: formState }, null, 2)}
 						</pre>

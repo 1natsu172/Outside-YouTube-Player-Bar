@@ -4,9 +4,13 @@ import { SwitchForceDisableField } from "./ForceDisableOptionField/SwitchForceDi
 
 export const ExtensionMetaForm = () => {
 	return (
-		<FormFieldsSection title="">
-			<SwitchForceDisableField />
-			<SwitchDebugModeField />
-		</FormFieldsSection>
+		<>
+			<FormFieldsSection title="">
+				<SwitchForceDisableField />
+			</FormFieldsSection>
+			<FormFieldsSection title="">
+				<SwitchDebugModeField />
+			</FormFieldsSection>
+		</>
 	);
 };

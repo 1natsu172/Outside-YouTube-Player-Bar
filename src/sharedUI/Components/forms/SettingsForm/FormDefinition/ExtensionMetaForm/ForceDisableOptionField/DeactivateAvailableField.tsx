@@ -2,8 +2,7 @@ import {
 	checkAboutForceDisable,
 	switchContinueForceDisableForNow,
 } from "@/core/services/optionsServices/forceDisable.service.js";
-import { Checkbox, Group, Paper } from "@mantine/core";
-import { FormField } from "../../../../layouts/FormField.js";
+import { Checkbox, Flex, Text } from "@mantine/core";
 import { AutoSaveForFormField } from "../../../../utils/useAutoSaveForm.js";
 
 export const DeactivateAvailableField = () => {
@@ -19,30 +18,25 @@ export const DeactivateAvailableField = () => {
 				useMutationArgs: [{ mutationFn: switchContinueForceDisableForNow }],
 			}}
 		>
-			{([{ data, isLoading }, { mutate, isPending }]) => {
+			{([{ isLoading }, { mutate, isPending }]) => {
 				return (
-					<FormField
-						title={browser.i18n.getMessage(
-							"settings_metaOption_forceDisable_availableDeactivate_long",
-						)}
-						isLoading={isPending}
-						formState={{ data }}
-					>
-						<Paper>
-							<Group justify="flex-end">
-								<Checkbox
-									label={browser.i18n.getMessage(
-										"settings_metaOption_forceDisable_continue_currently_label",
-									)}
-									labelPosition="left"
-									onChange={(event) =>
-										mutate({ isContinue: event.currentTarget.checked })
-									}
-									disabled={isLoading || isPending}
-								/>
-							</Group>
-						</Paper>
-					</FormField>
+					<Flex direction="column" mt={5} gap={5} align={"center"}>
+						<Text fz={"h5"} fw={"bold"} c={"myColor.3"}>
+							{browser.i18n.getMessage(
+								"settings_metaOption_forceDisable_availableDeactivate_long",
+							)}
+						</Text>
+						<Checkbox
+							label={browser.i18n.getMessage(
+								"settings_metaOption_forceDisable_continue_currently_label",
+							)}
+							labelPosition="left"
+							onChange={(event) =>
+								mutate({ isContinue: event.currentTarget.checked })
+							}
+							disabled={isLoading || isPending}
+						/>
+					</Flex>
 				);
 			}}
 		</AutoSaveForFormField>

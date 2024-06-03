@@ -4,7 +4,7 @@ import {
 	switchForceDisable,
 } from "@/core/services/optionsServices/forceDisable.service.js";
 import { FormField } from "@/sharedUI/Components/forms/layouts/FormField.js";
-import { Button, Group, Modal, Paper, Text } from "@mantine/core";
+import { Button, Flex, Group, Modal, Paper, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { useQuery } from "@tanstack/react-query";
 import { useAutoSaveForm } from "../../../../utils/useAutoSaveForm.js";
@@ -72,21 +72,19 @@ export const SwitchForceDisableField = () => {
 						</Group>
 					</Paper>
 				</Modal>
-				<Button
-					onClick={open}
-					color={canSwitchToActivate ? "yellow" : "blue"}
-					autoContrast={false}
-					disabled={isLoading || isPending}
-				>
-					{canSwitchToActivate
-						? browser.i18n.getMessage("fixturewords_enabling")
-						: browser.i18n.getMessage("fixturewords_disabling")}
-				</Button>
-				{data.isShowUpdateRed && (
-					<Paper>
-						<DeactivateAvailableField />
-					</Paper>
-				)}
+				<Flex direction="column">
+					<Button
+						onClick={open}
+						color={canSwitchToActivate ? "yellow" : "blue"}
+						autoContrast={false}
+						disabled={isLoading || isPending}
+					>
+						{canSwitchToActivate
+							? browser.i18n.getMessage("fixturewords_enabling")
+							: browser.i18n.getMessage("fixturewords_disabling")}
+					</Button>
+					{data.isShowUpdateRed && <DeactivateAvailableField />}
+				</Flex>
 			</>
 		</FormField>
 	);
