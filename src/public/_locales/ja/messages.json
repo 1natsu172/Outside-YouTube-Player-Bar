@@ -29,6 +29,39 @@
 		"description": "設定パネルアクセスのツールチップテキスト"
 	},
 
+  "kofi_title": {
+		"message": "作者に投げ銭をする",
+		"description": "Ko-fi"
+	},
+	"kofi_description": {
+		"message": "これをメンテナンスしているあいだYouTubeを見る暇がなくなるという矛盾を抱えたまま7年以上が経過しました。投げ銭があるとぶっちゃけ嬉しい！",
+		"description": "Ko-fi"
+	},
+	"kofi_underPrice": {
+		"message": "$$1.00から",
+		"description": "Ko-fi"
+	},
+	"kofi_underPrice_description": {
+		"message": "でも正直、多ければ多いほど嬉しいです 😉",
+		"description": "Ko-fi"
+	},
+	"kofi_paymentMethod": {
+		"message": "支払い方法",
+		"description": "Ko-fi"
+	},
+	"kofi_paymentMethod_description": {
+		"message": "Ko-fiが提供する支払い方法が使えます。クレジットカード・ApplePay・GooglePay…",
+		"description": "Ko-fi"
+	},
+	"kofi_tipCaution": {
+		"message": "仕事の発注ではありません",
+		"description": "Ko-fi"
+	},
+	"kofi_tipCaution_description": {
+		"message": "あくまで投げ銭なので優先サポートや開発依頼ではありません",
+		"description": "Ko-fi"
+	},
+
 	"metawords_defaultView": {
 		"message": "デフォルトビュー",
 		"description": "the default view of the video player mode"

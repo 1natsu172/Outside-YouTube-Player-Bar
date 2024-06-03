@@ -46,12 +46,10 @@ export const KoFi = () => (
 						borderRadius: "var(--mantine-radius-sm)",
 					}}
 				>
-					Send tip to the author
+					{browser.i18n.getMessage("kofi_title")}
 				</Highlight>
 				<Text c="dimmed" mt="md">
-					I develop and publish this extension for free. I have taken a lot of
-					time into this...over 7 years...no compensation. I would be happy with
-					a tip to be honest!
+					{browser.i18n.getMessage("kofi_description")}
 				</Text>
 
 				<List
@@ -81,11 +79,12 @@ export const KoFi = () => (
 							</ThemeIcon>
 						}
 					>
-						<b>From $1.00</b> – But the more money, be happy 😉
+						<b>{browser.i18n.getMessage("kofi_underPrice")}</b>
+						{` – ${browser.i18n.getMessage("kofi_underPrice_description")}`}
 					</List.Item>
 					<List.Item>
-						<b>Payment Method</b> – You can pay with what Ko-Fi provides. Credit
-						card, ApplePay, GooglePay…
+						<b>{browser.i18n.getMessage("kofi_paymentMethod")}</b>
+						{` – ${browser.i18n.getMessage("kofi_paymentMethod_description")}`}
 					</List.Item>
 					<List.Item
 						icon={
@@ -99,8 +98,8 @@ export const KoFi = () => (
 							</ThemeIcon>
 						}
 					>
-						<b>Not a work order</b> – Tipping is not a request for priority
-						support or custom-made development.
+						<b>{browser.i18n.getMessage("kofi_tipCaution")}</b>
+						{` – ${browser.i18n.getMessage("kofi_tipCaution_description")}`}
 					</List.Item>
 				</List>
 

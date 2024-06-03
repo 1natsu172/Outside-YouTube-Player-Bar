@@ -145,52 +145,82 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
-     * popup.html's title
+     * Ko-fi
      *
-     * "Welcome to Outside YouTube Player Bar!"
+     * "Send tip to the author"
      */
     getMessage(
-      messageName: "popup_title",
+      messageName: "kofi_title",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;
     /**
-     * popup.html's description
+     * Ko-fi
      *
-     * "Please contact GitHub Issue about this extension. Maintenance is handled on a best-effort basis."
+     * "I develop and publish this extension for free. I have taken a lot of time into this...over 7 years...no compensation. I would be happy with a tip to be honest!"
      */
     getMessage(
-      messageName: "popup_description",
+      messageName: "kofi_description",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;
     /**
-     * popup.html's please review message
+     * Ko-fi
      *
-     * "Please review if you don't mind."
+     * "From $1.00"
      */
     getMessage(
-      messageName: "popup_pleaseReview",
+      messageName: "kofi_underPrice",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;
     /**
-     * popup.html's Please review link
+     * Ko-fi
      *
-     * "Write a review at the chrome web store"
+     * "But the more money, be happy 😉"
      */
     getMessage(
-      messageName: "popup_pleaseReviewLink",
+      messageName: "kofi_underPrice_description",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;
     /**
-     * popup.html's footer author lead
+     * Ko-fi
      *
-     * "Author"
+     * "Payment Method"
      */
     getMessage(
-      messageName: "popup_footerAuthor",
+      messageName: "kofi_paymentMethod",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Ko-fi
+     *
+     * "You can pay with what Ko-Fi provides. Credit card, ApplePay, GooglePay…"
+     */
+    getMessage(
+      messageName: "kofi_paymentMethod_description",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Ko-fi
+     *
+     * "Not a work order"
+     */
+    getMessage(
+      messageName: "kofi_tipCaution",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Ko-fi
+     *
+     * "Tipping is not a request for priority support or custom-made development."
+     */
+    getMessage(
+      messageName: "kofi_tipCaution_description",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;

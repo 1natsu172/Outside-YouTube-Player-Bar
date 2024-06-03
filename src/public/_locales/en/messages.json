@@ -29,25 +29,37 @@
 		"description": "Tooltip text for open settings"
 	},
 
-	"popup_title": {
-		"message": "Welcome to Outside YouTube Player Bar!",
-		"description": "popup.html's title"
+	"kofi_title": {
+		"message": "Send tip to the author",
+		"description": "Ko-fi"
 	},
-	"popup_description": {
-		"message": "Please contact GitHub Issue about this extension. Maintenance is handled on a best-effort basis.",
-		"description": "popup.html's description"
+	"kofi_description": {
+		"message": "I develop and publish this extension for free. I have taken a lot of time into this...over 7 years...no compensation. I would be happy with a tip to be honest!",
+		"description": "Ko-fi"
 	},
-	"popup_pleaseReview": {
-		"message": "Please review if you don't mind.",
-		"description": "popup.html's please review message"
+	"kofi_underPrice": {
+		"message": "From $$1.00",
+		"description": "Ko-fi"
 	},
-	"popup_pleaseReviewLink": {
-		"message": "Write a review at the chrome web store",
-		"description": "popup.html's Please review link"
+	"kofi_underPrice_description": {
+		"message": "But the more money, be happy 😉",
+		"description": "Ko-fi"
 	},
-	"popup_footerAuthor": {
-		"message": "Author",
-		"description": "popup.html's footer author lead"
+	"kofi_paymentMethod": {
+		"message": "Payment Method",
+		"description": "Ko-fi"
+	},
+	"kofi_paymentMethod_description": {
+		"message": "You can pay with what Ko-Fi provides. Credit card, ApplePay, GooglePay…",
+		"description": "Ko-fi"
+	},
+	"kofi_tipCaution": {
+		"message": "Not a work order",
+		"description": "Ko-fi"
+	},
+	"kofi_tipCaution_description": {
+		"message": "Tipping is not a request for priority support or custom-made development.",
+		"description": "Ko-fi"
 	},
 
 	"metawords_defaultView": {
