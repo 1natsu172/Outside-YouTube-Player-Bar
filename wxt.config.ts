@@ -26,8 +26,8 @@ export const manifestJsonConfig: UserConfig["manifest"] = (configEnv) => ({
 	name: "__MSG_appName__",
 	short_name: "__MSG_appShortName__",
 	description: "__MSG_appDescription__",
-	// TODO: リリース前に消す（package.jsonから自動生成っぽい）
-	version: "4.0.0",
+	// NOTE: auto generate by package.json semver
+	// version: "4.0.0",
 	// NOTE: Firefox is still mv2, so not explicitly. https://wxt.dev/guide/multiple-browsers.html#target-manifest-version
 	// manifest_version: 3,
 	default_locale: "en",
