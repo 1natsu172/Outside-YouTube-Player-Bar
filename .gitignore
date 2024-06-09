@@ -36,3 +36,4 @@ tmp/*
 stats.html
 stats-*.json
 web-ext.config.ts
+playwright-report

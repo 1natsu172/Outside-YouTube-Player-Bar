@@ -1,4 +1,5 @@
-import path from "path";
+import path from "node:path";
+
 /**
  * reference from WXT-example playeright
  * @description https://github.com/wxt-dev/wxt-examples/tree/main/examples/vanilla-playwright#readme
@@ -11,6 +12,7 @@ export const test = base.extend<{
 	context: BrowserContext;
 	extensionId: string;
 }>({
+	// biome-ignore lint/correctness/noEmptyPattern: <explanation>
 	context: async ({}, use) => {
 		const context = await chromium.launchPersistentContext("", {
 			headless: false,
@@ -38,3 +40,11 @@ export const test = base.extend<{
 	},
 });
 export const expect = test.expect;
+
+export const URLS = {
+	top: "https://www.youtube.com",
+	videos: ["https://www.youtube.com/watch?v=_BfI8PFZqUE"],
+	get sampleVideo() {
+		return this.videos[0];
+	},
+};
