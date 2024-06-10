@@ -19,11 +19,16 @@ export const ExtensionBehaviorForm = ({ videoModeKey }: P) => {
 			<PositionPlayerBar
 				formLogic={formLogic}
 				segmentedControlItems={createPlayerBarPisitonSelect()}
+				videoModeKey={videoModeKey}
 			/>
-			<AlwaysDisplayPlayerBarField formLogic={formLogic} />
+			<AlwaysDisplayPlayerBarField
+				formLogic={formLogic}
+				videoModeKey={videoModeKey}
+			/>
 			<InheritPositionPlayerBarBeforeSwitching
 				formLogic={formLogic}
 				comboboxData={createInheritablePositionPlayerBarSelect(videoModeKey)}
+				videoModeKey={videoModeKey}
 			/>
 		</FormFieldsCard>
 	);

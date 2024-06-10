@@ -13,27 +13,24 @@ export async function openYouTube(
 	page: Page,
 	{ url }: Context = { url: URLS.top },
 ) {
-	await page.goto(url);
-
-	await page.waitForSelector(elementQuery.PLAYER_BAR);
-
 	const _ = {
 		playVideoPlayer: async () => {
 			const player = await _.getMoviePlayer();
-			await player.click();
+			if (await player.getAttribute("paused-mode")) {
+				await player.click();
+			}
+			// NOTE: mute for testing. ref(mute option not provide yet): https://github.com/microsoft/playwright/issues/19534
+			_.getMuteButton().click();
 		},
-		getMoviePlayer: () => page.waitForSelector(elementQuery.MOVIE_PLAYER),
-		getOypbButton: () => page.waitForSelector(extensionNameCustomElementName),
-		getOpenSettingsButton: () =>
-			page.waitForSelector(extensionNameCustomElementName),
-		clickOypbButton: async () => {
-			const counter = await _.getOypbButton();
-			await counter.click();
-		},
-		clickOpenSettingsButton: async () => {
-			const counter = await _.getOpenSettingsButton();
-			await counter.click();
-		},
+		getMoviePlayer: () => page.locator(elementQuery.MOVIE_PLAYER),
+		getPlayerBar: () => page.locator(elementQuery.PLAYER_BAR),
+		getOypbButton: () => page.locator(extensionNameCustomElementName),
+		getOpenSettingsButton: () => page.locator(extensionNameCustomElementName),
+		getMuteButton: () => page.locator(".ytp-mute-button"),
 	};
+
+	await page.goto(url);
+	await _.getMoviePlayer().waitFor();
+
 	return _;
 }

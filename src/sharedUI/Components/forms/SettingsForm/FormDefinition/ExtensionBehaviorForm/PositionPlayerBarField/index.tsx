@@ -1,3 +1,4 @@
+import type { VideoPlayerModeWithoutNone } from "@/core/mains/contentScriptState.js";
 import { SegmentedControl, type SegmentedControlItem } from "@mantine/core";
 import { FormField } from "../../../../layouts/FormField.js";
 import type { FormLogic } from "../formLogic.js";
@@ -5,9 +6,11 @@ import type { FormLogic } from "../formLogic.js";
 export const PositionPlayerBar = ({
 	formLogic,
 	segmentedControlItems,
+	videoModeKey,
 }: {
 	segmentedControlItems: SegmentedControlItem[];
 	formLogic: FormLogic;
+	videoModeKey: VideoPlayerModeWithoutNone;
 }) => {
 	const [{ data, isLoading }, { mutate, isPending }] = formLogic;
 	const _isLoading = isLoading || isPending;
@@ -32,6 +35,7 @@ export const PositionPlayerBar = ({
 				color={"myColor.6"}
 				fullWidth
 				disabled={_isLoading}
+				data-testid={`${videoModeKey}-positionPlayerBar`}
 			/>
 		</FormField>
 	);

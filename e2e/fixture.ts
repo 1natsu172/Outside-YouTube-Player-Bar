@@ -20,6 +20,7 @@ export const test = base.extend<{
 				`--disable-extensions-except=${pathToExtension}`,
 				`--load-extension=${pathToExtension}`,
 			],
+			ignoreDefaultArgs: ["--mute-audio"],
 		});
 		await use(context);
 		await context.close();
@@ -39,6 +40,7 @@ export const test = base.extend<{
 		await use(extensionId);
 	},
 });
+
 export const expect = test.expect;
 
 export const URLS = {

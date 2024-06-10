@@ -1,3 +1,4 @@
+import type { VideoPlayerModeWithoutNone } from "@/core/mains/contentScriptState.js";
 import { type ComboboxData, MultiSelect } from "@mantine/core";
 import { FormField } from "../../../../layouts/FormField.js";
 import type { FormLogic } from "../formLogic.js";
@@ -6,9 +7,11 @@ import style from "./index.module.css";
 export const InheritPositionPlayerBarBeforeSwitching = ({
 	comboboxData,
 	formLogic,
+	videoModeKey,
 }: {
 	comboboxData: ComboboxData;
 	formLogic: FormLogic;
+	videoModeKey: VideoPlayerModeWithoutNone;
 }) => {
 	const [{ data, isLoading }, { mutate, isPending }] = formLogic;
 	const _isLoading = isLoading || isPending;
@@ -38,6 +41,7 @@ export const InheritPositionPlayerBarBeforeSwitching = ({
 				}}
 				checkIconPosition="right"
 				className={style.multiselect}
+				data-testid={`${videoModeKey}-inheritPositionPlayerBarBeforeSwitching`}
 				w={"100%"}
 			/>
 		</FormField>
