@@ -4,6 +4,7 @@ import type {
 } from "@/core/mains/contentScriptState.js";
 import { elementAttributes } from "@/core/mains/meta.js";
 import { siteMetaState } from "@/core/repositories/contentScript.repository.js";
+import type { NamedNodeMapLike } from "@/utils/domUtils/attr.js";
 import { useSnapshot } from "valtio";
 import { snapshot } from "valtio/vanilla";
 
@@ -16,14 +17,16 @@ export const getSiteMetaState = () => {
 	return snapshot(siteMetaState);
 };
 
-export const judgeCurrentVideoPlayerMode = (managerElement: Element) => {
+export const judgeCurrentVideoPlayerMode = (
+	namedNodeMapLike: NamedNodeMapLike,
+) => {
 	const { defaultView, fullscreen, theater } = elementAttributes.playerMode;
 	/**
 	 * fullscreenはtheaterを併用するためこの順番で判定する必要がある
 	 */
 	const order = [fullscreen, theater, defaultView];
 	for (const attr of order) {
-		if (managerElement.hasAttribute(attr)) {
+		if (Object.hasOwn(namedNodeMapLike, attr)) {
 			return attr;
 		}
 	}

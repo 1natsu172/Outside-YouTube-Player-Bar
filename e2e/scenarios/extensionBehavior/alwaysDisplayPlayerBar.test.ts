@@ -1,5 +1,4 @@
-import type { VideoPlayerModeWithoutNone } from "@/core/mains/contentScriptState.js";
-import { URLS, expect, test } from "@@/e2e/fixture.js";
+import { URLS, expect, test, videoPlayerModes } from "@@/e2e/fixture.js";
 import { openOptions } from "@@/e2e/flightUtils/optionsPage.js";
 import {
 	waitForCumulativeLayoutShift,
@@ -7,32 +6,33 @@ import {
 } from "@@/e2e/flightUtils/waitFor.js";
 import { openYouTube } from "@@/e2e/flightUtils/youtube.js";
 
-const videoPlayerModes: VideoPlayerModeWithoutNone[] = [
-	"defaultView",
-	"theaterMode",
-	"fullscreen",
-];
-
+/**
+ * FIXME: disableのfullscreenのシナリオがとにかく不安定
+ */
 for (const videoPlayerMode of videoPlayerModes) {
 	test.describe(videoPlayerMode, () => {
 		test("enable: alwaysDisplayPlayerBar", async ({ page, extensionId }) => {
-			const { getAlwaysDisplayPlayerBar } = await openOptions(page, {
-				extensionId,
-				videoPlayerMode,
-			});
+			const { getAlwaysDisplayPlayerBar, getPositionPlayerBar } =
+				await openOptions(page, {
+					extensionId,
+					videoPlayerMode,
+				});
 
 			const setting = await getAlwaysDisplayPlayerBar();
-
 			await expect(setting.input).toBeChecked();
+
+			const positionPlayerBarSetting = await getPositionPlayerBar();
+			await positionPlayerBarSetting.outside.inputHandle.click();
+			await expect(positionPlayerBarSetting.outside.input).toBeChecked();
 
 			const { playVideoPlayer, getPlayerBar, getTargetVideoPlayerModeButton } =
 				await openYouTube(page, {
 					url: URLS.sampleVideo,
 				});
 
-			await playVideoPlayer();
-
 			await waitForCumulativeLayoutShift(page);
+
+			await playVideoPlayer();
 
 			const changeToTargetVideoMode =
 				await getTargetVideoPlayerModeButton(videoPlayerMode);
@@ -48,23 +48,28 @@ for (const videoPlayerMode of videoPlayerModes) {
 		});
 
 		test("disable: alwaysDisplayPlayerBar", async ({ page, extensionId }) => {
-			const { getAlwaysDisplayPlayerBar } = await openOptions(page, {
-				extensionId,
-				videoPlayerMode,
-			});
+			const { getAlwaysDisplayPlayerBar, getPositionPlayerBar } =
+				await openOptions(page, {
+					extensionId,
+					videoPlayerMode,
+				});
 
 			const setting = await getAlwaysDisplayPlayerBar();
 			await setting.inputParent.click();
 			await expect(setting.input).toBeChecked({ checked: false });
+
+			const positionPlayerBarSetting = await getPositionPlayerBar();
+			await positionPlayerBarSetting.outside.inputHandle.click();
+			await expect(positionPlayerBarSetting.outside.input).toBeChecked();
 
 			const { playVideoPlayer, getPlayerBar, getTargetVideoPlayerModeButton } =
 				await openYouTube(page, {
 					url: URLS.sampleVideo,
 				});
 
-			await playVideoPlayer();
-
 			await waitForCumulativeLayoutShift(page);
+
+			await playVideoPlayer();
 
 			const videoPlayerModeButton =
 				await getTargetVideoPlayerModeButton(videoPlayerMode);
@@ -74,7 +79,7 @@ for (const videoPlayerMode of videoPlayerModes) {
 				page,
 				locator: getPlayerBar(),
 				expect,
-				expectType: "hidden",
+				expectType: "hidden", // NOTE: oypbでoutsideにするときは独自のcssでdisplay:noneしているのでhiddenのアサーションで正しい
 				timeout: 5000,
 			});
 		});

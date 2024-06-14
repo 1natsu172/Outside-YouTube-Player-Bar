@@ -8,11 +8,14 @@ import {
 	setSiteVersion,
 	setVideoPlayerMode,
 } from "@/core/usecases/siteMetaState.usecase.js";
+import { convertToNamedNodeMapLike } from "@/utils/domUtils/attr.js";
 import { waitElement } from "@1natsu/wait-element";
 
 export const applyVideoPlayerModeToSiteMeta = async () => {
 	const element = await waitElement(elementQuery.YTD_PAGE_MANAGER);
-	const currentMode = judgeCurrentVideoPlayerMode(element);
+	const currentMode = judgeCurrentVideoPlayerMode(
+		convertToNamedNodeMapLike(element.attributes),
+	);
 	const convertedValue = convertAttrToVideoPlayerMode(currentMode);
 
 	setVideoPlayerMode(convertedValue);

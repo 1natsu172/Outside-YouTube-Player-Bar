@@ -1,6 +1,6 @@
 import type { Expect, Locator, Page } from "@playwright/test";
 
-type ExpectType = "visible" | "hidden";
+type ExpectType = "visible" | "hidden" | "opacity-zero";
 
 export async function waitForElementAfterTimeout({
 	page,
@@ -23,6 +23,13 @@ export async function waitForElementAfterTimeout({
 			case "hidden":
 				await expect(locator).toBeHidden();
 				break;
+			case "opacity-zero": {
+				const isOpacity0 = await locator.evaluate((el) => {
+					return window.getComputedStyle(el).opacity === "0";
+				});
+				expect(isOpacity0).toBe(true);
+				break;
+			}
 			default:
 				console.error("something is wrong.");
 				break;

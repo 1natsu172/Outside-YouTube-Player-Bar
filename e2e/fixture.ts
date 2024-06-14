@@ -1,5 +1,6 @@
 import path from "node:path";
 
+import type { VideoPlayerModeWithoutNone } from "@/core/mains/contentScriptState.js";
 /**
  * reference from WXT-example playeright
  * @description https://github.com/wxt-dev/wxt-examples/tree/main/examples/vanilla-playwright#readme
@@ -45,8 +46,17 @@ export const expect = test.expect;
 
 export const URLS = {
 	top: "https://www.youtube.com",
-	videos: ["https://www.youtube.com/watch?v=_BfI8PFZqUE"],
+	videos: [
+		"https://www.youtube.com/watch?v=-ne0OoE-Y2E",
+		"https://www.youtube.com/watch?v=uTLC3rWuzfg",
+		"https://www.youtube.com/watch?v=l7kmA3_HIKc",
+	],
 	get sampleVideo() {
 		return this.videos[0];
 	},
 };
+export const videoPlayerModes: VideoPlayerModeWithoutNone[] = [
+	"defaultView",
+	"theaterMode",
+	"fullscreen",
+];

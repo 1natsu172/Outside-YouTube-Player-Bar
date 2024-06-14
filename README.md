@@ -55,3 +55,17 @@ Put on your locale files.
 
 * List of languages supported by Chrome
     * [https://developer.chrome.com/webstore/i18n?csw=1#localeTable](https://developer.chrome.com/webstore/i18n?csw=1#localeTable)
+
+## Testing
+
+### e2e
+
+#### debug locator
+
+To debug locator in a single scenario, use grep option in cli. (https://playwright.dev/docs/test-cli#reference)
+
+```
+pnpm run test:e2e --grep "defaultView outside" --debug
+```
+
+> grep example: "<describe-grep><space><test-title-grep>"

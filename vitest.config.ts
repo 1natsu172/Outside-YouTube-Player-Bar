@@ -4,7 +4,7 @@
  */
 console.log("vitest.config.ts");
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vitest/config";
+import { defaultExclude, defineConfig } from "vitest/config";
 import { WxtVitest } from "wxt/testing";
 
 export default defineConfig({
@@ -15,6 +15,7 @@ export default defineConfig({
 		env: {
 			RUN_ON_TESTING: "true",
 		},
+		exclude: [...defaultExclude, "**/e2e/**"],
 	},
 	// This is the line that matters!
 	plugins: [WxtVitest(), react()],

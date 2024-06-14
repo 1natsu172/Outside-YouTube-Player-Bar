@@ -1,6 +1,7 @@
 // @vitest-environment happy-dom
 
 import type { elementAttributes } from "@/core/mains/meta.js";
+import { convertToNamedNodeMapLike } from "@/utils/domUtils/attr.js";
 import { describe, expect, test } from "vitest";
 import {
 	convertAttrToVideoPlayerMode,
@@ -33,7 +34,11 @@ describe(judgeCurrentVideoPlayerMode.name, () => {
 	`(
 		`${judgeCurrentVideoPlayerMode.name} returns $expected when $element`,
 		({ element, expected }) => {
-			expect(judgeCurrentVideoPlayerMode(element)).toBe(expected);
+			expect(
+				judgeCurrentVideoPlayerMode(
+					convertToNamedNodeMapLike(element.attributes),
+				),
+			).toBe(expected);
 		},
 	);
 });
