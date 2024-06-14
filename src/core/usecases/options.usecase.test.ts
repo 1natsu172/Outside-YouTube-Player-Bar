@@ -190,16 +190,16 @@ describe("BehaviorOptions", () => {
 		test("should update with merged current values", async () => {
 			expect(await getFullscreenBehaviorOption()).toStrictEqual({
 				positionPlayerBar: "inside",
-				alwaysDisplayPlayerBar: false,
+				alwaysDisplayPlayerBar: true,
 				inheritPositionPlayerBarBeforeSwitching: [],
 			});
 			await setFullscreenBehaviorOption({
-				alwaysDisplayPlayerBar: false,
+				alwaysDisplayPlayerBar: true,
 				inheritPositionPlayerBarBeforeSwitching: ["theaterMode"],
 			});
 			expect(await getFullscreenBehaviorOption()).toStrictEqual({
 				positionPlayerBar: "inside",
-				alwaysDisplayPlayerBar: false,
+				alwaysDisplayPlayerBar: true,
 				inheritPositionPlayerBarBeforeSwitching: ["theaterMode"],
 			});
 		});
@@ -207,11 +207,11 @@ describe("BehaviorOptions", () => {
 	test("should inheritPositionPlayerBarBeforeSwitching value always overwrite", async () => {
 		expect(await getFullscreenBehaviorOption()).toStrictEqual({
 			positionPlayerBar: "inside",
-			alwaysDisplayPlayerBar: false,
+			alwaysDisplayPlayerBar: true,
 			inheritPositionPlayerBarBeforeSwitching: [],
 		});
 		await setFullscreenBehaviorOption({
-			alwaysDisplayPlayerBar: true,
+			alwaysDisplayPlayerBar: false,
 			inheritPositionPlayerBarBeforeSwitching: [
 				"defaultView",
 				"theaterMode",
@@ -220,7 +220,7 @@ describe("BehaviorOptions", () => {
 		});
 		expect(await getFullscreenBehaviorOption()).toStrictEqual({
 			positionPlayerBar: "inside",
-			alwaysDisplayPlayerBar: true,
+			alwaysDisplayPlayerBar: false,
 			inheritPositionPlayerBarBeforeSwitching: [
 				"defaultView",
 				"theaterMode",
@@ -232,7 +232,7 @@ describe("BehaviorOptions", () => {
 		});
 		expect(await getFullscreenBehaviorOption()).toStrictEqual({
 			positionPlayerBar: "inside",
-			alwaysDisplayPlayerBar: true,
+			alwaysDisplayPlayerBar: false,
 			inheritPositionPlayerBarBeforeSwitching: ["theaterMode"],
 		});
 	});

@@ -21,7 +21,7 @@ export default defineConfig({
 	plugins: [WxtVitest(), react()],
 	// If any dependencies rely on webextension-polyfill, add them here to the `ssr.noExternal` option.
 	// Example:
-	// ssr: {
-	//   noExternal: ['@webext-core/storage'],
-	// },
+	ssr: {
+		noExternal: ["@webext-core/storage", "@webext-core/messaging"],
+	},
 });

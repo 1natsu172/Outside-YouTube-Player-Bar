@@ -11,7 +11,7 @@ export const switchForceDisable = async (activate: boolean) => {
 		continueForceDisableForNow: undefined,
 	});
 
-	extMetaSignals.sendMessage("reloadYouTubeTabs", undefined);
+	await extMetaSignals.sendMessage("reloadYouTubeTabs", undefined);
 };
 
 export const switchContinueForceDisableForNow = async ({

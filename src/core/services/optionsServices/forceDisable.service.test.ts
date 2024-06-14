@@ -11,8 +11,12 @@ import {
 } from "./forceDisable.service.js";
 
 // NOTE: vi.mock関数へ外で作ったフェイク関数を渡す場合、上位のトップレベルにhoistしておく必要がある https://vitest.dev/api/vi.html#vi-hoisted
-const { mockGetManifest, mockReload } = vi.hoisted(() => {
-	return { mockGetManifest: vi.fn(), mockReload: vi.fn() };
+const { mockRuntimeOnMessage, mockGetManifest, mockReload } = vi.hoisted(() => {
+	return {
+		mockGetManifest: vi.fn(),
+		mockReload: vi.fn(),
+		mockRuntimeOnMessage: vi.fn(),
+	};
 });
 
 /**
@@ -29,7 +33,6 @@ vi.mock("wxt/testing", async (importOriginal) => {
 			runtime: {
 				...original.fakeBrowser.runtime,
 				getManifest: mockGetManifest,
-				reload: mockReload,
 			},
 		},
 	};
@@ -38,6 +41,10 @@ vi.mock("wxt/testing", async (importOriginal) => {
 beforeEach(async () => {
 	fakeBrowser.reset();
 	await forceDisable.removeValue({ removeMeta: true });
+	// NOTE: In the unit test, background.js does not exist, so the onMessage listener is set to 0 and fakeBrowser's mock does not work correctly. To work around this problem.
+	fakeBrowser.runtime.onMessage.addListener(
+		mockRuntimeOnMessage.mockImplementation((res) => ({ res })),
+	);
 });
 
 describe(checkAboutForceDisable.name, () => {
@@ -261,7 +268,14 @@ describe(switchForceDisable.name, () => {
 		});
 	});
 
-	test("should call with `browser.runtime.reload`", async () => {
+	test("should call with `sendMessage` with `reloadYouTubeTabs` type", async () => {
+		// NOTE: Mock that the reload request is sent with sendMessage
+		fakeBrowser.runtime.onMessage.addListener((data) => {
+			if (data.type === "reloadYouTubeTabs") {
+				mockReload();
+			}
+		});
+
 		mockGetManifest.mockReturnValue({ version: "4.0.0" });
 		await switchForceDisable(true);
 		expect(mockReload).toHaveBeenCalledTimes(1);
