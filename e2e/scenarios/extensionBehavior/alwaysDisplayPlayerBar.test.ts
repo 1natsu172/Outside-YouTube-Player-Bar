@@ -21,6 +21,7 @@ for (const videoPlayerMode of videoPlayerModes) {
 			const setting = await getAlwaysDisplayPlayerBar();
 			await expect(setting.input).toBeChecked();
 
+			// ポジションのデフォルトオプションを外側にする
 			const positionPlayerBarSetting = await getPositionPlayerBar();
 			await positionPlayerBarSetting.outside.inputHandle.click();
 			await expect(positionPlayerBarSetting.outside.input).toBeChecked();
@@ -58,6 +59,7 @@ for (const videoPlayerMode of videoPlayerModes) {
 			await setting.inputParent.click();
 			await expect(setting.input).toBeChecked({ checked: false });
 
+			// ポジションのデフォルトオプションを外側にする
 			const positionPlayerBarSetting = await getPositionPlayerBar();
 			await positionPlayerBarSetting.outside.inputHandle.click();
 			await expect(positionPlayerBarSetting.outside.input).toBeChecked();
