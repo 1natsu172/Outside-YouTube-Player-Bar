@@ -10,6 +10,7 @@
 	"description": "Display YouTube's control bar outside the video.",
 	"scripts": {
 		"postinstall": "wxt prepare",
+		"biome": "biome check --apply ./src",
 		"dev": "wxt",
 		"dev:arc": "wxt -b arc -c ./wxt.config.arc.ts",
 		"dev:chrome": "wxt -b chrome",
@@ -27,11 +28,12 @@
 		"test:unit": "vitest",
 		"test:e2e": "playwright test",
 		"test:types": "vitest --typecheck.only --typecheck.tsconfig .tsconfig.json",
-		"preversion": "node ./scripts/bump-manifest $npm_new_version && git add manifest.json",
 		"postversion": "git push origin v$npm_new_version",
-		"release-to-git": "node ./scripts/releaseNotesTemplate | gh release create v$npm_package_version --notes-file - && gh release view v$npm_package_version --web",
-		"delivery": "pnpm dlx chrome-webstore-upload-cli@3 upload --source dist.zip --auto-publish",
-		"biome": "biome check --apply ./src"
+		"release-to-git": "node ./scripts/releaseNotesTemplate.mjs | gh release create v$npm_package_version --notes-file - && gh release view v$npm_package_version --web",
+		"delivery": "pnpm run --sequential /^delivery:.*/",
+		"delivery:chrome": "wxt submit --chrome-zip .output/*-chrome.zip",
+		"delivery:edge": "wxt submit --edge-zip .output/*-chrome.zip",
+		"delivery:firefox": "wxt submit --firefox-zip .output/*-firefox.zip --firefox-sources-zip .output/*-sources.zip"
 	},
 	"devDependencies": {
 		"@1natsu/wait-element": "^3.0.0",
@@ -45,8 +47,7 @@
 		"@types/semver": "^7.5.8",
 		"@vitejs/plugin-react": "^4.2.1",
 		"chrome-webstore-upload-cli": "^3.1.0",
-		"fs-extra": "^11.2.0",
-		"git-semver-tags": "^7.0.1",
+		"git-semver-tags": "^8.0.0",
 		"happy-dom": "^14.11.0",
 		"playwright": "^1.44.0",
 		"postcss-import": "^16.1.0",
