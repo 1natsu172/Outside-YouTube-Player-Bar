@@ -27,7 +27,7 @@
 		"test": "pnpm run --sequential /^test:.*/",
 		"test:unit": "vitest",
 		"test:e2e": "playwright test",
-		"test:types": "echo \"FIXME: This command is currently broken. vitestがtypecheck時に独自のtmpなtsconfigを元のtsconfigのdirに生成してテスト実行するせいで、extends元のtsconfigとpathが全部ずれる。そのせいでWXTのauto-importの型が解決できなくなるため大量のエラーが発生する\" && vitest --typecheck.only --typecheck.tsconfig tsconfig.json",
+		"test:types": "echo \"NOTE: must use ignoreSourceErrors because vitest use generated temp-tsconfig at root. This causes path-shift b/w .wxt's tsconfig and root tsconfig.\" && vitest --typecheck.only --typecheck.tsconfig tsconfig.json --typecheck.ignoreSourceErrors",
 		"preversion": "CI=true pnpm run test",
 		"postversion": "git push origin v$npm_new_version",
 		"release-to-git": "node ./scripts/releaseNotesTemplate.mjs | gh release create v$npm_package_version --notes-file - && gh release view v$npm_package_version --web",
