@@ -27,6 +27,8 @@ export const elementAttributes = {
 		IS_ALWAYS_DISPLAY_PLAYER_BAR: "data-oypb-is-always-display-player-bar",
 	},
 	COMPAT_ELEMENT: {
-		PLAYER_BAR_PARENT_CLASSNAME: "ytp-exp-bottom-control-flexbox",
+		VALUE: {
+			PLAYER_BAR_PARENT: "playerBarParent",
+		},
 	},
 } as const;

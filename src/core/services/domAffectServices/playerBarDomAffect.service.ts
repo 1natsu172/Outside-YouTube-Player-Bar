@@ -45,8 +45,8 @@ function __resolveMoveLogic<Q extends string | undefined>(
 		return async () => {
 			const [targetQuery, position] = insertInfo;
 			const { COMPAT_ELEMENT_PREFIX } = elementAttributes.oypb;
-			const { PLAYER_BAR_PARENT_CLASSNAME } = elementAttributes.COMPAT_ELEMENT;
-			const COMPAT_ELEMENT_DATA_VALUE = "playerBarParentForStyle";
+			const { PLAYER_BAR_PARENT } = elementAttributes.COMPAT_ELEMENT.VALUE;
+			const COMPAT_ELEMENT_DATA_VALUE = PLAYER_BAR_PARENT;
 			const existCompatParent = document.querySelector(
 				`[${COMPAT_ELEMENT_PREFIX}=${COMPAT_ELEMENT_DATA_VALUE}]`,
 			);
@@ -64,7 +64,6 @@ function __resolveMoveLogic<Q extends string | undefined>(
 					COMPAT_ELEMENT_DATA_VALUE,
 				);
 
-				compatParent.className = PLAYER_BAR_PARENT_CLASSNAME; // this ytp style is exist at origin player contaier.
 				compatParent.appendChild(pureBarEl);
 				barEl = compatParent;
 			}

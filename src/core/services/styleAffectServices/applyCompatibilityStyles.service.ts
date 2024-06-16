@@ -1,3 +1,4 @@
+import { elementAttributes } from "@/core/mains/meta.js";
 import { injectStyle } from "@/core/usecases/injectStyle.usecase.js";
 
 let appliedFlag = false;
@@ -25,3 +26,36 @@ export const applyCompatibilityStyles = async () => {
 
 	logger.success("Side effect loaded compatibility styles.", compatStyle);
 };
+
+/**
+ * Sync the movie-player classNames to compat elements. For style compatibility, e.g. scrubing-play function
+ */
+export function syncMoviePlayerAttributes({
+	moviePlayerEl,
+}: {
+	moviePlayerEl: Element;
+}) {
+	const EXCLUDE_SYNC_CLASSNAMES = [
+		"html5-video-player",
+		"ytp-autohide",
+		"ytp-autohide-active",
+	];
+	const { COMPAT_ELEMENT_PREFIX } = elementAttributes.oypb;
+	const { PLAYER_BAR_PARENT } = elementAttributes.COMPAT_ELEMENT.VALUE;
+	const compatEl = document.querySelector(
+		`[${COMPAT_ELEMENT_PREFIX}=${PLAYER_BAR_PARENT}]`,
+	);
+
+	if (compatEl) {
+		const syncClassNames = Array.from(moviePlayerEl.classList).filter(
+			(className) => !EXCLUDE_SYNC_CLASSNAMES.includes(className),
+		);
+		const defferenceClassNames = Array.from(compatEl.classList).filter(
+			(className) => !moviePlayerEl.classList.contains(className),
+		);
+
+		compatEl.classList.add(...syncClassNames);
+		compatEl.classList.remove(...defferenceClassNames);
+		logger.debug("movie-player classNames synced to compat element.");
+	}
+}

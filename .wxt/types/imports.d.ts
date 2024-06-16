@@ -13,6 +13,7 @@ declare global {
   const defineConfig: typeof import('wxt')['defineConfig']
   const defineContentScript: typeof import('wxt/sandbox')['defineContentScript']
   const defineUnlistedScript: typeof import('wxt/sandbox')['defineUnlistedScript']
+  const defineWxtPlugin: typeof import('wxt/sandbox')['defineWxtPlugin']
   const fakeBrowser: typeof import('wxt/testing')['fakeBrowser']
   const logger: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger')['logger']
   const reCreateLoggerInstance: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger')['reCreateLoggerInstance']

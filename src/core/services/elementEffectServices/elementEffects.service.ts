@@ -7,6 +7,7 @@ import {
 } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
 import { playerBarIntersectionOperation } from "@/core/services/operationServices/index.js";
 import { applyVideoPlayerModeToSiteMeta } from "@/core/services/siteMetaServices/index.js";
+import { syncMoviePlayerAttributes } from "@/core/services/styleAffectServices/applyCompatibilityStyles.service.js";
 import { setPlayerBarHeightVar } from "@/core/usecases/cssVariables.usecase.js";
 import { waitElement } from "@1natsu/wait-element";
 import { debounce } from "mabiki";
@@ -14,14 +15,22 @@ import { debounce } from "mabiki";
 const moviePlayerElementEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER);
 	const { activateBlockAutoHide } = createPlayerHackEventFn(element);
-	// NOTE: If longer than 1sec(1000ms), the time bar is delayed, so it was decided to 950.
+	// NOTE: If longer than 1sec(1000ms), the play-video-time of bar is delayed, so it was decided to 950.
 	const debounceExecBlockAutoHide = debounce(execAlwaysDisplayPlayerBar, 950, {
 		leading: true,
 		trailing: true,
 	});
+	const debounceSyncMoviePlayerAttributes = debounce(
+		syncMoviePlayerAttributes,
+		950,
+		{
+			leading: true,
+			trailing: true,
+		},
+	);
 
 	const observer = new MutationObserver(
-		debounce(
+		debounce<MutationCallback>(
 			(mutations) => {
 				logger.debug(
 					"moviePlayerElement",
@@ -37,6 +46,8 @@ const moviePlayerElementEffect = async () => {
 						blockAutoHide: activateBlockAutoHide,
 						isVisiblePlayerBar,
 					});
+
+					debounceSyncMoviePlayerAttributes({ moviePlayerEl: moviePlayer });
 				}
 			},
 			950,
