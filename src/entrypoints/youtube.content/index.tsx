@@ -7,7 +7,7 @@ import { mountUI } from "./Process/mount.js";
 //------------------------------------------
 /**
  * FIXME: WXTのimport対応待ち manifestに寄せたい
- * https://wxt.dev/guide/entrypoints.html#side-effects
+ * https://wxt.dev/guide/go-further/entrypoint-side-effects.html
  * https://github.com/wxt-dev/wxt/issues/336
  */
 export const YOUTUBE_MATCHES = ["https://*.youtube.com/*"];
