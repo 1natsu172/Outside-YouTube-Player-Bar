@@ -25,7 +25,7 @@
 		"zip:chrome": "wxt zip -b chrome",
 		"zip:edge": "wxt zip -b edge",
 		"zip:firefox": "wxt zip -b firefox",
-		"test": "pnpm run --sequential /^test:.*/",
+		"test": "echo \"NOTE: ignore run e2e\" && pnpm run --sequential /^test:\\(?!e2e$\\).*/",
 		"test:unit": "vitest",
 		"test:e2e": "playwright test",
 		"test:types": "echo \"NOTE: must use ignoreSourceErrors because vitest use generated temp-tsconfig at root. This causes path-shift b/w .wxt's tsconfig and root tsconfig.\" && vitest --typecheck.only --typecheck.tsconfig tsconfig.json --typecheck.ignoreSourceErrors",
