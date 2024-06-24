@@ -46,7 +46,7 @@ export const manifestJsonConfig: UserConfig["manifest"] = (configEnv) => ({
 		},
 		default_title: "__MSG_browserActionTitle__",
 	},
-	permissions: ["declarativeContent", "notifications", "storage"],
+	permissions: ["storage"],
 	// NOTE: must need id for use storage API etc, https://extensionworkshop.com/documentation/develop/extensions-and-the-add-on-id/
 	browser_specific_settings:
 		configEnv.browser === "firefox"
