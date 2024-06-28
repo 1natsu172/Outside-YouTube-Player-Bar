@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   pull_request:
 
+env:
+  # Use as process.env.SENTRY_AUTH_TOKEN with sentry-vite-plugin
+  SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+
 jobs:
   test:
     runs-on: ubuntu-latest

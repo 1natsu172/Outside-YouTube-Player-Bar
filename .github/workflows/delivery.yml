@@ -11,6 +11,10 @@ on:
     tags:
       - v*
 
+env:
+  # Use as process.env.SENTRY_AUTH_TOKEN with sentry-vite-plugin
+  SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+
 jobs:
   delivery:
     runs-on: ubuntu-latest
