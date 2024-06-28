@@ -1,4 +1,4 @@
-import { Button } from "@mantine/core";
+import { ErrorBoundary } from "@/sharedUI/libs/ErrorBoundary.js";
 import {
 	QueryClient,
 	type QueryClientConfig,
@@ -6,7 +6,7 @@ import {
 	QueryErrorResetBoundary,
 } from "@tanstack/react-query";
 import { type ReactNode, useState } from "react";
-import { ErrorBoundary, type FallbackProps } from "react-error-boundary";
+import type { FallbackProps } from "react-error-boundary";
 
 export const TanstackQueryClientProvider = (props: {
 	children: React.ReactNode;
@@ -28,7 +28,7 @@ export const TanstackQueryErrorResetBoundary = ({
 	children?: ReactNode;
 	fallbackRender?: (props: FallbackProps) => JSX.Element;
 }) => {
-	const fallbackElement = fallbackRender ?? _defaultFallbackRender;
+	const fallbackElement = fallbackRender;
 	return (
 		<QueryErrorResetBoundary>
 			{({ reset }) => (
@@ -39,12 +39,3 @@ export const TanstackQueryErrorResetBoundary = ({
 		</QueryErrorResetBoundary>
 	);
 };
-
-function _defaultFallbackRender({ resetErrorBoundary }: FallbackProps) {
-	return (
-		<div>
-			There was an error!
-			<Button onClick={() => resetErrorBoundary()}>Try again</Button>
-		</div>
-	);
-}

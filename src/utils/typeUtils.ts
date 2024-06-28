@@ -12,3 +12,6 @@ export type IterableElement<TargetIterable> = TargetIterable extends Iterable<
 	: TargetIterable extends AsyncIterable<infer ElementType>
 		? ElementType
 		: never;
+
+export type SetOptional<T, K extends keyof T> = Omit<T, K> &
+	Partial<Pick<T, K>>;

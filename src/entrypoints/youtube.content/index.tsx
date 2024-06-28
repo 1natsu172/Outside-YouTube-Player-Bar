@@ -1,4 +1,5 @@
 import { Executor } from "@/core/mains/executor.js";
+import { browserCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
 import { displayInfo } from "./Process/displayInfo.js";
 import { mountUI } from "./Process/mount.js";
 
@@ -19,9 +20,13 @@ export default defineContentScript({
 	 */
 	cssInjectionMode: "ui",
 	async main(ctx) {
-		logger.success("Content-Script execute");
-		displayInfo();
-		const executor = new Executor(ctx);
-		await Promise.all([mountUI(ctx), executor.initialization()]);
+		try {
+			logger.success("Content-Script execute");
+			displayInfo();
+			const executor = new Executor(ctx);
+			await Promise.all([mountUI(ctx), executor.initialization()]);
+		} catch (error) {
+			browserCaptureClient.captureException(error);
+		}
 	},
 });

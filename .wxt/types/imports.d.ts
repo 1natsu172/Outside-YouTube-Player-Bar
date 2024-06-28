@@ -25,6 +25,6 @@ declare global {
   export type { Logger } from '/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger'
   import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger')
   // @ts-ignore
-  export type { ValueOf, NestedValueOf, NonUndefined, IterableElement } from '/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/typeUtils'
+  export type { ValueOf, NestedValueOf, NonUndefined, IterableElement, SetOptional } from '/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/typeUtils'
   import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/typeUtils')
 }

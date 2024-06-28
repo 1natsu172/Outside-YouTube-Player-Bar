@@ -1,5 +1,6 @@
 import { elementQuery } from "@/core/mains/meta.js";
 import { elementAttributes } from "@/core/mains/meta.js";
+import { browserCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
 import {
 	createPlayerHackEventFn,
 	execAlwaysDisplayPlayerBar,
@@ -32,22 +33,27 @@ const moviePlayerElementEffect = async () => {
 	const observer = new MutationObserver(
 		debounce<MutationCallback>(
 			(mutations) => {
-				logger.debug(
-					"moviePlayerElement",
-					"Observing effect has occurred.",
-					mutations,
-				);
+				try {
+					logger.debug(
+						"moviePlayerElement",
+						"Observing effect has occurred.",
+						mutations,
+					);
 
-				for (const mutation of mutations) {
-					const moviePlayer = mutation.target as Element;
-					const { isVisiblePlayerBar } = judgeMoviePlayerCondition(moviePlayer);
+					for (const mutation of mutations) {
+						const moviePlayer = mutation.target as Element;
+						const { isVisiblePlayerBar } =
+							judgeMoviePlayerCondition(moviePlayer);
 
-					debounceExecBlockAutoHide({
-						blockAutoHide: activateBlockAutoHide,
-						isVisiblePlayerBar,
-					});
+						debounceExecBlockAutoHide({
+							blockAutoHide: activateBlockAutoHide,
+							isVisiblePlayerBar,
+						});
 
-					debounceSyncMoviePlayerAttributes({ moviePlayerEl: moviePlayer });
+						debounceSyncMoviePlayerAttributes({ moviePlayerEl: moviePlayer });
+					}
+				} catch (error) {
+					browserCaptureClient.captureException(error);
 				}
 			},
 			950,
@@ -69,13 +75,17 @@ const playerBarElementResizeEffect = async () => {
 	const observer = new ResizeObserver(
 		debounce<ResizeObserverCallback>(
 			(entries) => {
-				logger.debug("playerBarElement", "Observing effect has occurred.");
-				for (const entry of entries) {
-					const { borderBoxSize } = entry;
+				try {
+					logger.debug("playerBarElement", "Observing effect has occurred.");
+					for (const entry of entries) {
+						const { borderBoxSize } = entry;
 
-					const [size] = borderBoxSize;
-					const height = `${size.blockSize}px`;
-					setPlayerBarHeightVar(height);
+						const [size] = borderBoxSize;
+						const height = `${size.blockSize}px`;
+						setPlayerBarHeightVar(height);
+					}
+				} catch (error) {
+					browserCaptureClient.captureException(error);
 				}
 			},
 			500,
@@ -97,14 +107,18 @@ const pageManagerWatchFlexy_playerModeEffect = async () => {
 	const observer = new MutationObserver(
 		debounce<MutationCallback>(
 			(_mutations) => {
-				logger.debug(
-					"pageManagerWatchFlexy_playerModeEffect",
-					"Observing effect has occurred.",
-					"This mutation fires when any of the attributeFilter changes",
-				);
-				requestIdleCallback(() => {
-					applyVideoPlayerModeToSiteMeta();
-				});
+				try {
+					logger.debug(
+						"pageManagerWatchFlexy_playerModeEffect",
+						"Observing effect has occurred.",
+						"This mutation fires when any of the attributeFilter changes",
+					);
+					requestIdleCallback(() => {
+						applyVideoPlayerModeToSiteMeta();
+					});
+				} catch (error) {
+					browserCaptureClient.captureException(error);
+				}
 			},
 			500,
 			{
@@ -129,23 +143,27 @@ const playerBarIntersectionEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER_CONTAINER);
 	const observer = new IntersectionObserver(
 		(entries) => {
-			for (const entry of entries) {
-				// When fully disappeared
-				if (entry.intersectionRatio === 0) {
-					requestIdleCallback(() => {
-						logger.debug("playerbar intersect => fully disappeared");
-						playerBarIntersectionOperation({
-							intersect: "disappeared",
+			try {
+				for (const entry of entries) {
+					// When fully disappeared
+					if (entry.intersectionRatio === 0) {
+						requestIdleCallback(() => {
+							logger.debug("playerbar intersect => fully disappeared");
+							playerBarIntersectionOperation({
+								intersect: "disappeared",
+							});
 						});
-					});
+					}
+					// When little appeared
+					if (entry.intersectionRatio > 0) {
+						requestIdleCallback(() => {
+							logger.debug("playerbar intersect => little appeared");
+							playerBarIntersectionOperation({ intersect: "littleAppeared" });
+						});
+					}
 				}
-				// When little appeared
-				if (entry.intersectionRatio > 0) {
-					requestIdleCallback(() => {
-						logger.debug("playerbar intersect => little appeared");
-						playerBarIntersectionOperation({ intersect: "littleAppeared" });
-					});
-				}
+			} catch (error) {
+				browserCaptureClient.captureException(error);
 			}
 		},
 		{
