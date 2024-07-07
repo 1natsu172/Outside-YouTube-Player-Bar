@@ -2,6 +2,7 @@ import { Executor } from "@/core/mains/executor.js";
 import { browserCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
 import { displayInfo } from "./Process/displayInfo.js";
 import { mountUI } from "./Process/mount.js";
+import { setupGlobalCaptureError } from "./Process/setupGlobalCaptureError.js";
 
 // -----------------------------------------
 // WXT WORLD
@@ -22,6 +23,7 @@ export default defineContentScript({
 	async main(ctx) {
 		try {
 			logger.success("Content-Script execute");
+			setupGlobalCaptureError();
 			displayInfo();
 			const executor = new Executor(ctx);
 			await Promise.all([mountUI(ctx), executor.initialization()]);

@@ -3,6 +3,8 @@ import {
 	browserCaptureSdk,
 	reactCaptureClient,
 	reactCaptureSdk,
+	serviceWorkerCaptureClient,
+	serviceWorkerCaptureSdk,
 } from "@/core/repositories/observabilities/captureClient.repository.js";
 
 export {
@@ -10,4 +12,6 @@ export {
 	browserCaptureSdk,
 	reactCaptureClient,
 	reactCaptureSdk,
+	serviceWorkerCaptureClient,
+	serviceWorkerCaptureSdk,
 };

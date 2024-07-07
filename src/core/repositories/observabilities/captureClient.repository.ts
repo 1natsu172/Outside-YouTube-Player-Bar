@@ -65,4 +65,10 @@ export const reactCaptureClient = createScopedClient({
 	tags: { clientName: "reactCapture" },
 }).client;
 
+export const serviceWorkerCaptureClient = createScopedClient({
+	sdk: browserCaptureSdk,
+	tags: { clientName: "serviceWorkerCapture" },
+}).client;
+
 export { browserCaptureSdk, reactCaptureSdk };
+export { browserCaptureSdk as serviceWorkerCaptureSdk };
