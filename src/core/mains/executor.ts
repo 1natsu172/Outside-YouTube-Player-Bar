@@ -7,6 +7,10 @@ import {
 import { setupEventEffects } from "@/core/services/eventEffectServices/eventEffects.service.js";
 import type { EventEffect } from "@/core/services/eventEffectServices/libs/eventEffect.js";
 import {
+	type ObservabilityObserver,
+	setupObservabilityObservers,
+} from "@/core/services/observabilities/index.js";
+import {
 	doneInitializeOperation,
 	oypbEnableOperation,
 } from "@/core/services/operationServices/index.js";
@@ -56,12 +60,17 @@ export class Executor {
 		logger.debug("initialization executed.");
 	}
 
-	public __registeredEffects: (EventEffect | ElementEffect)[][] = [];
+	public __registeredEffects: (
+		| EventEffect
+		| ElementEffect
+		| ObservabilityObserver
+	)[][] = [];
 
 	private async setupEffects() {
 		const registeredEffects = await Promise.all([
 			setupEventEffects(),
 			setupElementEffects(),
+			setupObservabilityObservers(),
 		]);
 		this.__registeredEffects = registeredEffects;
 	}
