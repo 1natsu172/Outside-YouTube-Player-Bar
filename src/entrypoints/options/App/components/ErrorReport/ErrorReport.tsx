@@ -15,23 +15,24 @@ export const ErrorReport = () => {
 		<Paper className={style.wrapper}>
 			<Container size={"md"}>
 				<Flex justify={"center"} align={"center"} direction={"column"}>
-					<Title order={3} size={"h1"} mb={"xs"}>
+					<Title order={3} size={"h1"} mb={"lg"}>
 						{browser.i18n.getMessage("report_announce_title")}
 					</Title>
-					<Group mb={"lg"} gap={5} c={"dimmed"}>
-						<IconExclamationCircle />
-						<Text>{browser.i18n.getMessage("report_announce_caution")}</Text>
-					</Group>
 					<Button
 						component="a"
 						href="https://oypb.canny.io/report"
 						rightSection={<IconExternalLink />}
 						size="lg"
+						mb={"lg"}
 						variant="gradient"
 						gradient={{ from: "myColor.5", to: "myColor.7", deg: 90 }}
 					>
 						{browser.i18n.getMessage("report_announce_description")}
 					</Button>
+					<Group mt={"xs"} gap={5} c={"dimmed"}>
+						<IconExclamationCircle />
+						<Text>{browser.i18n.getMessage("report_announce_caution")}</Text>
+					</Group>
 				</Flex>
 			</Container>
 		</Paper>
