@@ -6,6 +6,7 @@ import { UIProvider } from "@/sharedUI/Provider/UIProvider.js";
 import "@mantine/core/styles.css";
 import "./App.css";
 import { ErrorBoundary } from "@/sharedUI/libs/ErrorBoundary.js";
+import { ErrorReport } from "./components/ErrorReport/ErrorReport.js";
 import { Footer } from "./components/Footer/Footer.js";
 import { Header } from "./components/Header/Header.js";
 import { KoFi } from "./components/KoFi/KoFi.js";
@@ -19,6 +20,7 @@ export const App = () => {
 					<TanstackQueryErrorResetBoundary>
 						<Header />
 						<Settings />
+						<ErrorReport />
 						<KoFi />
 						<Footer />
 					</TanstackQueryErrorResetBoundary>

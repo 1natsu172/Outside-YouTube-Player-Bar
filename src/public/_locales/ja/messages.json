@@ -33,6 +33,10 @@
 		"message": "作者に投げ銭をする",
 		"description": "Ko-fi"
 	},
+  "kofi_title_highlight": {
+		"message": "投げ銭",
+		"description": "Ko-fi"
+	},
 	"kofi_description": {
 		"message": "これをメンテナンスしているあいだYouTubeを見る暇がなくなるという矛盾を抱えたまま7年以上が経過しました。投げ銭があると嬉しいです！",
 		"description": "Ko-fi"
@@ -60,6 +64,19 @@
 	"kofi_tipCaution_description": {
 		"message": "あくまで投げ銭なので優先サポートや開発依頼ではありません",
 		"description": "Ko-fi"
+	},
+
+	"report_announce_title": {
+		"message": "バグがありますか？",
+		"description": "report announce section title"
+	},
+	"report_announce_description": {
+		"message": "バグを報告する",
+		"description": "report announce section desc"
+	},
+	"report_announce_caution": {
+		"message": "各ストアのレビューやフィードバックでのバグ報告はご遠慮ください",
+		"description": "report announce section caution"
 	},
 
 	"metawords_defaultView": {

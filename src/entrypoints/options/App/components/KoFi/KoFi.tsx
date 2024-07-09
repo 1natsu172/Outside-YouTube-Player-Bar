@@ -39,7 +39,7 @@ export const KoFi = () => (
 			<div className={style.content}>
 				<Highlight
 					component={Title}
-					highlight={"tip"}
+					highlight={browser.i18n.getMessage("kofi_title_highlight")}
 					className={style.title}
 					highlightStyles={{
 						backgroundColor: "var(--mantine-color-myColor-1)",

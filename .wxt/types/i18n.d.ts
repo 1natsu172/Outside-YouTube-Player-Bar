@@ -157,6 +157,16 @@ Note: You can't use this message in a manifest file.
     /**
      * Ko-fi
      *
+     * "tip"
+     */
+    getMessage(
+      messageName: "kofi_title_highlight",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * Ko-fi
+     *
      * "I develop and publish this extension for free. I have taken a lot of time into this...over 7 years...no compensation. I would be happy with a tip to be honest!"
      */
     getMessage(
@@ -221,6 +231,36 @@ Note: You can't use this message in a manifest file.
      */
     getMessage(
       messageName: "kofi_tipCaution_description",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * report announce section title
+     *
+     * "Are there any bugs?"
+     */
+    getMessage(
+      messageName: "report_announce_title",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * report announce section desc
+     *
+     * "Report a bug"
+     */
+    getMessage(
+      messageName: "report_announce_description",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    /**
+     * report announce section caution
+     *
+     * "Please do not report bugs in reviews or feedback on each store."
+     */
+    getMessage(
+      messageName: "report_announce_caution",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;

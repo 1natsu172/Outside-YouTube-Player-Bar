@@ -33,6 +33,10 @@
 		"message": "Send tip to the author",
 		"description": "Ko-fi"
 	},
+  "kofi_title_highlight": {
+		"message": "tip",
+		"description": "Ko-fi"
+	},
 	"kofi_description": {
 		"message": "I develop and publish this extension for free. I have taken a lot of time into this...over 7 years...no compensation. I would be happy with a tip to be honest!",
 		"description": "Ko-fi"
@@ -60,6 +64,19 @@
 	"kofi_tipCaution_description": {
 		"message": "Tipping is not a request for priority support or custom-made development.",
 		"description": "Ko-fi"
+	},
+
+  "report_announce_title": {
+		"message": "Are there any bugs?",
+		"description": "report announce section title"
+	},
+	"report_announce_description": {
+		"message": "Report a bug",
+		"description": "report announce section desc"
+	},
+	"report_announce_caution": {
+		"message": "Please do not report bugs in reviews or feedback on each store.",
+		"description": "report announce section caution"
 	},
 
 	"metawords_defaultView": {
