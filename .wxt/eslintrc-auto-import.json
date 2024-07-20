@@ -1,0 +1,29 @@
+{
+  "globals": {
+    "ContentScriptContext": true,
+    "InvalidMatchPattern": true,
+    "IterableElement": true,
+    "Logger": true,
+    "MatchPattern": true,
+    "NestedValueOf": true,
+    "NonUndefined": true,
+    "SetOptional": true,
+    "ValueOf": true,
+    "browser": true,
+    "createIframeUi": true,
+    "createIntegratedUi": true,
+    "createLogger": true,
+    "createShadowRootUi": true,
+    "defineAppConfig": true,
+    "defineBackground": true,
+    "defineConfig": true,
+    "defineContentScript": true,
+    "defineUnlistedScript": true,
+    "defineWxtPlugin": true,
+    "fakeBrowser": true,
+    "logger": true,
+    "reCreateLoggerInstance": true,
+    "storage": true,
+    "useAppConfig": true
+  }
+}

@@ -40,9 +40,9 @@
 	"devDependencies": {
 		"@1natsu/wait-element": "^3.0.0",
 		"@biomejs/biome": "1.8.2",
-		"@playwright/test": "^1.44.1",
+		"@playwright/test": "^1.45.2",
 		"@testing-library/react": "^16.0.0",
-		"@types/node": "^20.14.6",
+		"@types/node": "^20.14.11",
 		"@types/postcss-import": "^14.0.3",
 		"@types/react": "^18.3.3",
 		"@types/react-dom": "^18.3.0",
@@ -50,15 +50,15 @@
 		"@vitejs/plugin-react": "^4.3.1",
 		"git-semver-tags": "^8.0.0",
 		"happy-css-modules": "^3.1.1",
-		"happy-dom": "^14.12.0",
-		"playwright": "^1.44.1",
+		"happy-dom": "^14.12.3",
+		"playwright": "^1.45.2",
 		"postcss-import": "^16.1.0",
 		"postcss-nesting": "^12.1.5",
 		"rollup-preserve-directives": "^1.1.1",
-		"typescript": "^5.4.5",
+		"typescript": "^5.5.3",
 		"vite-plugin-svgr": "^4.2.0",
-		"vitest": "^1.6.0",
-		"wxt": "^0.18.7"
+		"vitest": "^2.0.3",
+		"wxt": "^0.18.14"
 	},
 	"dependencies": {
 		"@mantine/core": "^7.10.2",

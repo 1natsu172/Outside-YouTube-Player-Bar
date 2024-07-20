@@ -9,6 +9,7 @@ declare global {
   const createIntegratedUi: typeof import('wxt/client')['createIntegratedUi']
   const createLogger: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger')['createLogger']
   const createShadowRootUi: typeof import('wxt/client')['createShadowRootUi']
+  const defineAppConfig: typeof import('wxt/sandbox')['defineAppConfig']
   const defineBackground: typeof import('wxt/sandbox')['defineBackground']
   const defineConfig: typeof import('wxt')['defineConfig']
   const defineContentScript: typeof import('wxt/sandbox')['defineContentScript']
@@ -18,6 +19,7 @@ declare global {
   const logger: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger')['logger']
   const reCreateLoggerInstance: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger')['reCreateLoggerInstance']
   const storage: typeof import('wxt/storage')['storage']
+  const useAppConfig: typeof import('wxt/client')['useAppConfig']
 }
 // for type re-export
 declare global {
