@@ -16,8 +16,13 @@ env:
   SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
 
 jobs:
+  testing:
+    uses: ./.github/workflows/testing.yml
+    secrets: inherit
+
   delivery:
     runs-on: ubuntu-latest
+    needs: [testing]
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
