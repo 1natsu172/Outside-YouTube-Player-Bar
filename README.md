@@ -69,3 +69,13 @@ pnpm run test:e2e --grep "defaultView outside" --debug
 ```
 
 > grep example: "<describe-grep><space><test-title-grep>"
+
+#### update snapshots
+
+Use update flag via cli. (https://playwright.dev/docs/test-snapshots#updating-screenshots)
+
+Below is an example of updating only a specific test scenario.
+
+```
+pnpm run test:e2e --grep "fullscreen .*: positionPlayerBar" --update-snapshots
+```
