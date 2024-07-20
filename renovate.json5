@@ -7,9 +7,8 @@
     // https://biomejs.dev/recipes/renovate/
     "customManagers:biomeVersions"
   ],
-  // FIXME: v4マージ後にdevelopブランチへ変更する
   "baseBranches": [
-    "v4"
+    "develop"
   ],
   "labels": [
     "renovate"

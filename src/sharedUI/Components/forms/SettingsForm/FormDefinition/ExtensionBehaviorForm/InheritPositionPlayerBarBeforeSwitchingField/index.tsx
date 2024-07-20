@@ -35,7 +35,6 @@ export const InheritPositionPlayerBarBeforeSwitching = ({
 				onChange={(e) => {
 					mutate({
 						inheritPositionPlayerBarBeforeSwitching:
-							// FIXME: mantineにcontributeする
 							e as typeof data.inheritPositionPlayerBarBeforeSwitching,
 					});
 				}}
