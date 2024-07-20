@@ -1,0 +1,46 @@
+// Follow best practices: https://docs.renovatebot.com/upgrade-best-practices/
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    // https://docs.renovatebot.com/presets-config/#configbest-practices
+    "config:best-practices",
+    // https://biomejs.dev/recipes/renovate/
+    "customManagers:biomeVersions"
+  ],
+  // FIXME: v4マージ後にdevelopブランチへ変更する
+  "baseBranches": [
+    "v4"
+  ],
+  "labels": [
+    "renovate"
+  ],
+  "separateMajorMinor": true,
+  "separateMultipleMajor": true,
+  "postUpdateOptions": [
+    "npmDedupe",
+    "pnpmDedupe",
+    "yarnDedupeHighest"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin"
+      ],
+      "automerge": true
+    }
+  ],
+  "timezone": "Asia/Tokyo",
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 10,
+  "schedule": [
+    "every weekend"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 5am on saturday"
+    ]
+  }
+}

@@ -28,7 +28,16 @@ test/_dist/*
 .env
 .envrc
 
-# Management of empty directory.
 dist/*
 dist.zip
 !.gitkeep
+tmp/*
+.output
+stats.html
+stats-*.json
+web-ext.config.ts
+playwright-report
+test-results
+
+# Sentry Config File
+.env.sentry-build-plugin

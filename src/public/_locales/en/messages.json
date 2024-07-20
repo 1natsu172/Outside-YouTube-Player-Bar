@@ -1,0 +1,221 @@
+{
+	"appName": {
+		"message": "Outside YouTube Player Bar",
+		"description": "The name of the application"
+	},
+	"appShortName": {
+		"message": "oypb",
+		"description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+	},
+	"appDescription": {
+		"message": "Display YouTube's player bar outside the video.",
+		"description": "The description of the application"
+	},
+	"browserActionTitle": {
+		"message": "Outside YouTube Player Bar",
+		"description": "The title of the browser action button"
+	},
+
+	"tooltipText_toInside": {
+		"message": "Inside player bar",
+		"description": "Tooltip text for toggle button when extension is active"
+	},
+	"tooltipText_toOutside": {
+		"message": "Outside player bar",
+		"description": "Tooltip text for toggle button when extension is inactive"
+	},
+	"tooltipText_openSettings": {
+		"message": "Open settings",
+		"description": "Tooltip text for open settings"
+	},
+
+	"kofi_title": {
+		"message": "Send tip to the author",
+		"description": "Ko-fi"
+	},
+  "kofi_title_highlight": {
+		"message": "tip",
+		"description": "Ko-fi"
+	},
+	"kofi_description": {
+		"message": "I develop and publish this extension for free. I have taken a lot of time into this...over 7 years...no compensation. I would be happy with a tip to be honest!",
+		"description": "Ko-fi"
+	},
+	"kofi_underPrice": {
+		"message": "From $$1.00",
+		"description": "Ko-fi"
+	},
+	"kofi_underPrice_description": {
+		"message": "But the more money, be happy 😉",
+		"description": "Ko-fi"
+	},
+	"kofi_paymentMethod": {
+		"message": "Payment Method",
+		"description": "Ko-fi"
+	},
+	"kofi_paymentMethod_description": {
+		"message": "You can pay with what Ko-Fi provides. Credit card, ApplePay, GooglePay…",
+		"description": "Ko-fi"
+	},
+	"kofi_tipCaution": {
+		"message": "Not a work order",
+		"description": "Ko-fi"
+	},
+	"kofi_tipCaution_description": {
+		"message": "Tipping is not a request for priority support or custom-made development.",
+		"description": "Ko-fi"
+	},
+
+  "report_announce_title": {
+		"message": "Are there any bugs?",
+		"description": "report announce section title"
+	},
+	"report_announce_description": {
+		"message": "Report a bug",
+		"description": "report announce section desc"
+	},
+	"report_announce_caution": {
+		"message": "Please do not report bugs in reviews or feedback on each store.",
+		"description": "report announce section caution"
+	},
+
+	"metawords_defaultView": {
+		"message": "defaultView",
+		"description": "the default view of the video player mode"
+	},
+	"metawords_theaterMode": {
+		"message": "theaterMode",
+		"description": "the theater mode of the video player mode"
+	},
+	"metawords_fullscreen": {
+		"message": "fullscreen",
+		"description": "the fullscreen of the video player mode"
+	},
+
+	"fixturewords_enabling": {
+		"message": "Enable",
+		"description": "Enabling Button text"
+	},
+	"fixturewords_disabling": {
+		"message": "Disable",
+		"description": "Disabling Button text"
+	},
+	"fixturewords_confirm": {
+		"message": "Confirm",
+		"description": "Confirm Button text"
+	},
+	"fixturewords_cancel": {
+		"message": "Cancel",
+		"description": "Cancel Button text"
+	},
+	"fixturewords_confirmation_title": {
+		"message": "Please confirm your action",
+		"description": "Confirmation title text"
+	},
+  "fixturewords_available_multiselect": {
+		"message": "Multi selectable",
+		"description": "Multi selectable"
+	},
+
+	"settings_title": {
+		"message": "Settings for Outside YouTube Player Bar",
+		"description": "settings page title"
+	},
+	"settings_metaOption_debugMode_title": {
+		"message": "Enable Debug Mode",
+		"description": "Enable to DebugMode"
+	},
+	"settings_metaOption_debugMode_description": {
+		"message": "Usually not used",
+		"description": "Usually not used"
+	},
+	"settings_metaOption_forceDisable_title": {
+		"message": "Force disable the extension",
+		"description": "Enable force disable mode"
+	},
+	"settings_metaOption_forceDisable_description": {
+		"message": "Use this feature if the extension is not working or if it is causing issues with YouTube's UI or functionality, and you want to temporarily disable it.",
+		"description": "usecase the force disable mode"
+	},
+	"settings_metaOption_forceDisable_activateAlert": {
+		"message": "Force the extension to disable (YouTube tabs will reloaded).",
+		"description": "alert of the activate force disable"
+	},
+	"settings_metaOption_forceDisable_deactivateAlert": {
+		"message": "Deactivate the extenstion forced disable (YouTube tab will reload).",
+		"description": "alert of the deactivate force disable"
+	},
+	"settings_metaOption_forceDisable_activatedNow_short": {
+		"message": "Force disabled now",
+		"description": "message of the activated now the force disable"
+	},
+	"settings_metaOption_forceDisable_activatedNow_long": {
+		"message": "Extension is currently force disabled.",
+		"description": "message of the activated now the force disable"
+	},
+	"settings_metaOption_forceDisable_availableDeactivate_short": {
+		"message": "There was an update",
+		"description": "notification of the available deactivate the force disable"
+	},
+	"settings_metaOption_forceDisable_availableDeactivate_long": {
+		"message": "There has been an update since the extension was force disabled.",
+		"description": "notification of the available deactivate the force disable"
+	},
+	"settings_metaOption_forceDisable_continue_currently_label": {
+		"message": "For now, still continue with the force disable.",
+		"description": "label of the continue currently the version"
+	},
+
+	"settings_userOption_behaviors_title": {
+		"message": "Default settings for each player mode",
+		"description": "settings extension behavor of the each player modes"
+	},
+	"settings_userOption_defaultViewBehavior_title": {
+		"message": "default view",
+		"description": "behavior of the default-view mode"
+	},
+	"settings_userOption_theaterModeBehavior_title": {
+		"message": "theater mode",
+		"description": "behavior of the theater mode"
+	},
+	"settings_userOption_fullscreenBehavior_title": {
+		"message": "fullscreen mode",
+		"description": "behavior of the fullscreen mode"
+	},
+	"settings_userOption_positionPlayerBar_title": {
+		"message": "Position of the player bar",
+		"description": "position player bar"
+	},
+	"settings_userOption_positionPlayerBar_outside": {
+		"message": "Outside",
+		"description": "outside of player"
+	},
+	"settings_userOption_positionPlayerBar_inside": {
+		"message": "Inside",
+		"description": "inside of player"
+	},
+	"settings_userOption_alwaysDisplayPlayerBar_title": {
+		"message": "Always display player bar",
+		"description": "always display player bar"
+	},
+	"settings_userOption_alwaysDisplayPlayerBar_description": {
+		"message": "Only when outside.\nCPU usage increase due to specifications.",
+		"description": "always display player bar caution that cpu usage bumping"
+	},
+	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title": {
+		"message": "Inherit the position before switching mode",
+		"description": "if video mode changed to $MODE$, inherit the position before switching"
+	},
+	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description": {
+		"message": "For the selected pattern, the position before switching is inherited.",
+		"description": "Explanation when turned ON"
+	},
+	"settings_userOption_showOpenSettingsIcon_title": {
+		"message": "Display open settings icon on the player bar",
+		"description": "Display open settings icon on the playerbar"
+	},
+	"settings_userOption_showOpenSettingsIcon_description": {
+		"message": "※ After OFF this, to re-open the settings, click the extension icon in the browser or open the options from the browser's extension management page.",
+		"description": "How to re-open guide that after disabled"
+	}
+}

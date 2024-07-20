@@ -1,0 +1,10 @@
+.circle {
+  background-color: var(--yt-spec-static-overlay-background-brand, #e03131);
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+
+  &[data-circle-fill] {
+    background-color: var(--circle-fill);
+  }
+}

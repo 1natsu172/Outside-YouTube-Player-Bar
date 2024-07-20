@@ -1,13 +1,28 @@
 name: Delivery
 
 on:
+  workflow_dispatch:
+    inputs:
+      dryRun:
+        default: false
+        type: boolean
+        description: Skip submission and perform a dry run
   push:
     tags:
       - v*
 
+env:
+  # Use as process.env.SENTRY_AUTH_TOKEN with sentry-vite-plugin
+  SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+
 jobs:
+  testing:
+    uses: ./.github/workflows/testing.yml
+    secrets: inherit
+
   delivery:
     runs-on: ubuntu-latest
+    needs: [testing]
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v3
@@ -15,11 +30,23 @@ jobs:
         with:
           node-version-file: '.tool-versions'
           cache: pnpm
-      - run: pnpm install
-      - run: pnpm run build
-      - run: pnpm run delivery
+      - name: Install deps
+        run: pnpm install
+      - name: Create each zips
+        run: pnpm run zip
+      - name: Submit to stores
+        run: pnpm run delivery
         env:
-          EXTENSION_ID: ${{ secrets.GOOGLE_WEBSTORE_EXTENSION_ID }}
-          CLIENT_ID: ${{ secrets.GOOGLE_WEBSTORE_CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.GOOGLE_WEBSTORE_CLIENT_SECRET }}
-          REFRESH_TOKEN: ${{ secrets.GOOGLE_WEBSTORE_REFRESH_TOKEN }}
+          DRY_RUN: ${{ inputs.dryRun }}
+          CHROME_EXTENSION_ID: ${{ secrets.GOOGLE_WEBSTORE_EXTENSION_ID }}
+          CHROME_CLIENT_ID: ${{ secrets.GOOGLE_WEBSTORE_CLIENT_ID }}
+          CHROME_CLIENT_SECRET: ${{ secrets.GOOGLE_WEBSTORE_CLIENT_SECRET }}
+          CHROME_REFRESH_TOKEN: ${{ secrets.GOOGLE_WEBSTORE_REFRESH_TOKEN }}
+          # TODO: wxt submit initしたあと整える
+          FIREFOX_EXTENSION_ID: ${{ secrets.FIREFOX_EXTENSION_ID }}
+          FIREFOX_JWT_ISSUER: ${{ secrets.FIREFOX_JWT_ISSUER }}
+          FIREFOX_JWT_SECRET: ${{ secrets.FIREFOX_JWT_SECRET }}
+          EDGE_PRODUCT_ID: ${{ secrets.EDGE_PRODUCT_ID }}
+          EDGE_CLIENT_ID: ${{ secrets.EDGE_CLIENT_ID }}
+          EDGE_CLIENT_SECRET: ${{ secrets.EDGE_CLIENT_SECRET }}
+          EDGE_ACCESS_TOKEN_URL: ${{ secrets.EDGE_ACCESS_TOKEN_URL }}

@@ -1,0 +1,27 @@
+name: Run Tests
+
+on:
+  workflow_call:
+  workflow_dispatch:
+  pull_request:
+
+env:
+  # Use as process.env.SENTRY_AUTH_TOKEN with sentry-vite-plugin
+  SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.tool-versions'
+          cache: pnpm
+      - name: Install deps
+        run: pnpm install
+      - name: Check to build passed
+        run: pnpm run build
+      - name: Check to test passed
+        run: pnpm run test

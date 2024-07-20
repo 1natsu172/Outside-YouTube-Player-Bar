@@ -1,0 +1,221 @@
+{
+	"appName": {
+		"message": "Outside YouTube Player Bar - YouTubeの再生バーを動画の外側に表示",
+		"description": "The name of the application"
+	},
+	"appShortName": {
+		"message": "oypb",
+		"description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+	},
+	"appDescription": {
+		"message": "YouTubeに再生バーを動画の外側に表示する機能を追加します",
+		"description": "The description of the application"
+	},
+	"browserActionTitle": {
+		"message": "Outside YouTube Player Bar",
+		"description": "The title of the browser action button"
+	},
+
+	"tooltipText_toInside": {
+		"message": "再生バーを内側にする",
+		"description": "トグルボタンのツールチップテキスト(拡張機能がアクティブ状態のとき)"
+	},
+	"tooltipText_toOutside": {
+		"message": "再生バーを外側にする",
+		"description": "トグルボタンのツールチップテキスト(拡張機能が非アクティブ状態のとき)"
+	},
+	"tooltipText_openSettings": {
+		"message": "設定パネルを開く",
+		"description": "設定パネルアクセスのツールチップテキスト"
+	},
+
+  "kofi_title": {
+		"message": "作者に投げ銭をする",
+		"description": "Ko-fi"
+	},
+  "kofi_title_highlight": {
+		"message": "投げ銭",
+		"description": "Ko-fi"
+	},
+	"kofi_description": {
+		"message": "これをメンテナンスしているあいだYouTubeを見る暇がなくなるという矛盾を抱えたまま7年以上が経過しました。投げ銭があると嬉しいです！",
+		"description": "Ko-fi"
+	},
+	"kofi_underPrice": {
+		"message": "$$1.00から",
+		"description": "Ko-fi"
+	},
+	"kofi_underPrice_description": {
+		"message": "でも正直、多ければ多いほど嬉しいです 😉",
+		"description": "Ko-fi"
+	},
+	"kofi_paymentMethod": {
+		"message": "支払い方法",
+		"description": "Ko-fi"
+	},
+	"kofi_paymentMethod_description": {
+		"message": "Ko-fiが提供する支払い方法が使えます。クレジットカード・ApplePay・GooglePay…",
+		"description": "Ko-fi"
+	},
+	"kofi_tipCaution": {
+		"message": "仕事の発注ではありません",
+		"description": "Ko-fi"
+	},
+	"kofi_tipCaution_description": {
+		"message": "あくまで投げ銭なので優先サポートや開発依頼ではありません",
+		"description": "Ko-fi"
+	},
+
+	"report_announce_title": {
+		"message": "バグがありますか？",
+		"description": "report announce section title"
+	},
+	"report_announce_description": {
+		"message": "バグを報告する",
+		"description": "report announce section desc"
+	},
+	"report_announce_caution": {
+		"message": "各ストアのレビューやフィードバックでのバグ報告はご遠慮ください",
+		"description": "report announce section caution"
+	},
+
+	"metawords_defaultView": {
+		"message": "デフォルトビュー",
+		"description": "the default view of the video player mode"
+	},
+	"metawords_theaterMode": {
+		"message": "シアターモード",
+		"description": "the theater mode of the video player mode"
+	},
+	"metawords_fullscreen": {
+		"message": "フルスクリーン",
+		"description": "the fullscreen of the video player mode"
+	},
+
+	"fixturewords_enabling": {
+		"message": "有効にする",
+		"description": "Enabling Button text"
+	},
+	"fixturewords_disabling": {
+		"message": "無効にする",
+		"description": "Disabling Button text"
+	},
+	"fixturewords_confirm": {
+		"message": "OK",
+		"description": "Confirm Button text"
+	},
+	"fixturewords_cancel": {
+		"message": "NO",
+		"description": "Cancel Button text"
+	},
+	"fixturewords_confirmation_title": {
+		"message": "実行の確認",
+		"description": "Confirmation title text"
+	},
+	"fixturewords_available_multiselect": {
+		"message": "複数選択可",
+		"description": "Multi selectable"
+	},
+
+	"settings_title": {
+		"message": "Outside YouTube Player Barの設定",
+		"description": "settings page title"
+	},
+	"settings_metaOption_debugMode_title": {
+		"message": "デバッグモードを有効にする",
+		"description": "Enable to DebugMode"
+	},
+	"settings_metaOption_debugMode_description": {
+		"message": "通常は利用しません",
+		"description": "Usually not used"
+	},
+	"settings_metaOption_forceDisable_title": {
+		"message": "拡張機能を強制停止",
+		"description": "force disable mode"
+	},
+	"settings_metaOption_forceDisable_description": {
+		"message": "「拡張機能が機能しない」・「拡張機能のせいでYouTubeのUIや機能に不具合が出ていて一時無効化したい」といった場合に使う機能です",
+		"description": "usecase the force disable mode"
+	},
+	"settings_metaOption_forceDisable_activateAlert": {
+		"message": "拡張機能を強制停止するため、YouTubeのタブが再読み込みされます",
+		"description": "alert of the activate force disable"
+	},
+	"settings_metaOption_forceDisable_deactivateAlert": {
+		"message": "拡張機能の強制停止を解除するため、YouTubeのタブが再読み込みされます",
+		"description": "alert of the deactivate force disable"
+	},
+	"settings_metaOption_forceDisable_activatedNow_short": {
+		"message": "強制停止中",
+		"description": "message of the activated now the force disable"
+	},
+	"settings_metaOption_forceDisable_activatedNow_long": {
+		"message": "拡張機能は強制停止しています",
+		"description": "message of the activated now the force disable"
+	},
+	"settings_metaOption_forceDisable_availableDeactivate_short": {
+		"message": "強制停止後の更新がありました",
+		"description": "notification of the available deactivate the force disable"
+	},
+	"settings_metaOption_forceDisable_availableDeactivate_long": {
+		"message": "拡張機能の強制停止をされてからアップデートがありました",
+		"description": "notification of the available deactivate the force disable"
+	},
+	"settings_metaOption_forceDisable_continue_currently_label": {
+		"message": "今はまだ強制停止を継続する",
+		"description": "label of the continue currently the version"
+	},
+
+	"settings_userOption_behaviors_title": {
+		"message": "プレイヤーモードごとのデフォルト設定",
+		"description": "settings extension behavor of the each player modes"
+	},
+	"settings_userOption_defaultViewBehavior_title": {
+		"message": "デフォルトビュー",
+		"description": "behavior of the default-view mode"
+	},
+	"settings_userOption_theaterModeBehavior_title": {
+		"message": "シアターモード",
+		"description": "behavior of the theater mode"
+	},
+	"settings_userOption_fullscreenBehavior_title": {
+		"message": "フルスクリーンモード",
+		"description": "behavior of the fullscreen mode"
+	},
+	"settings_userOption_positionPlayerBar_title": {
+		"message": "再生バーの位置",
+		"description": "position player bar"
+	},
+	"settings_userOption_positionPlayerBar_outside": {
+		"message": "外側",
+		"description": "outside of player"
+	},
+	"settings_userOption_positionPlayerBar_inside": {
+		"message": "内側",
+		"description": "inside of player"
+	},
+	"settings_userOption_alwaysDisplayPlayerBar_title": {
+		"message": "常に再生バーを表示",
+		"description": "always display player bar"
+	},
+	"settings_userOption_alwaysDisplayPlayerBar_description": {
+		"message": "外側のときのみ有効\n仕様上CPU使用率が増加します",
+		"description": "always display player bar caution that cpu usage bumping"
+	},
+	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_title": {
+		"message": "モード切り替え前の位置を引き継ぐ",
+		"description": "if video mode changed to $MODE$, inherit the position before switching"
+	},
+	"settings_userOption_inheritPositionPlayerBarBeforeSwitching_description": {
+		"message": "選択したパターンのときは、切り替え前の位置を引き継ぎます",
+		"description": "Explanation when turned ON"
+	},
+	"settings_userOption_showOpenSettingsIcon_title": {
+		"message": "再生バーに設定パネルを開くアイコンを表示",
+		"description": "Display settings icon on the playerbar"
+	},
+	"settings_userOption_showOpenSettingsIcon_description": {
+		"message": "※OFFにしたあと設定パネルを開くには、ブラウザ上のアイコンか拡張機能管理パネルからオプションを開いてください",
+		"description": "How to re-open guide that after disabled"
+	}
+}

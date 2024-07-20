@@ -1,0 +1,9 @@
+@import "../../../sharedUI/libs/normalize.css";
+@import "../../../sharedUI/libs/additionalReset.css";
+
+/* custom element style */
+/* <oypb-app> */
+:host {
+  display: inline-block;
+  vertical-align: top;
+}

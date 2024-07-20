@@ -1,0 +1,87 @@
+/**
+ * for style compatibility
+ */
+
+@import "../_vars/_oypbVars.css";
+
+[data-oypb-enable][data-oypb-is-outside] {
+  .ytp-chrome-bottom {
+    background-color: var(--oypb-player-bar-color);
+    color: var(--oypb-player-bar-font-color);
+    position: relative;
+  }
+
+  .ytp-tooltip {
+    transform: translate3d(0, calc(1 * var(--oypb-player-bar-height)), 0) !important
+  }
+
+  /* https://i.gyazo.com/faf54b23f6c1e6a9f75b7fc08d46639c.png */
+  .ytp-settings-menu {
+    transform: translate3d(0, calc(1 * var(--oypb-player-bar-height)), 0)
+  }
+
+  /* FIXME: レイヤーコンテキストの再生成で子要素のz-indexが消えるせいで描画されないものがでてくるので、対応を後回しにしている。z値30とかつけると対象のものが表示されるものの、子要素のz値をすべて把握できない。 */
+  /* https://i.gyazo.com/9f78d49778e5d75dcc2ad3f35ed42622.png */
+  /* .ytp-player-content {
+    transform: translate3d(0, calc(1 * var(--oypb-player-bar-height)), 30)
+  } */
+
+  /* https://i.gyazo.com/61e1bc0abadebf784fc492f230639bdf.png */
+  .caption-window.ytp-caption-window-bottom {
+    transform: translate3d(0, calc(1 * var(--oypb-player-bar-height)), 0)
+  }
+
+  /* remove gradient bottom shadow */
+  .ytp-gradient-bottom {
+    visibility: hidden;
+  }
+
+  /* Fill the both sides of player bar */
+  .ytp-left-controls::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: var(--oypb-player-bar-fill-lr-gap-size);
+    position: absolute;
+    top: 0;
+    background-color: var(--oypb-player-bar-color);
+    left: calc(-1 * var(--oypb-player-bar-fill-lr-gap-size));
+  }
+
+  .ytp-right-controls::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: var(--oypb-player-bar-fill-lr-gap-size);
+    position: absolute;
+    top: 0;
+    background-color: var(--oypb-player-bar-color);
+    right: calc(-1 * var(--oypb-player-bar-fill-lr-gap-size));
+
+  }
+
+  /* compat hack the default-view player rounded style */
+  /* FIXME(NOTE): overflow: hidden;にradiusの一部をかけるとブラウザのバグなのか動画の色彩が濃くなるが、どうしようもない */
+  [rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
+    border-radius: 12px 12px 0 0;
+  }
+
+  [rounded-player-large][default-layout] .ytp-left-controls::before {
+    border-radius: 0 0 0 12px;
+  }
+
+  [rounded-player-large][default-layout] .ytp-right-controls::after {
+    border-radius: 0 0 12px 0;
+  }
+
+  /* when not always display player bar style */
+  &:not([data-oypb-is-always-display-player-bar='']) {
+    .ytp-chrome-bottom {
+      display: none;
+    }
+
+    [rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
+      border-radius: 12px 12px 12px 12px;
+    }
+  }
+}
