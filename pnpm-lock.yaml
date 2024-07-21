@@ -129,8 +129,8 @@ importers:
         specifier: 2.0.3
         version: 2.0.3(@types/node@20.14.11)(happy-dom@14.12.3)(less@4.2.0)(sass@1.77.8)(stylus@0.63.0)(sugarss@4.0.1(postcss@8.4.39))
       wxt:
-        specifier: 0.18.14
-        version: 0.18.14(@types/node@20.14.11)(less@4.2.0)(rollup@4.19.0)(sass@1.77.8)(stylus@0.63.0)(sugarss@4.0.1(postcss@8.4.39))
+        specifier: 0.18.15
+        version: 0.18.15(@types/node@20.14.11)(less@4.2.0)(rollup@4.19.0)(sass@1.77.8)(stylus@0.63.0)(sugarss@4.0.1(postcss@8.4.39))
 
 packages:
 
@@ -3468,8 +3468,8 @@ packages:
       utf-8-validate:
         optional: true
 
-  wxt@0.18.14:
-    resolution: {integrity: sha512-Oij2yaJAd34V+jCh/B2CGjnfR5LFod1HOmtT4ctsn7JmCmd0YTNQpIBFvxooWhWKV5V+zK+gK+r18M62iweVSQ==}
+  wxt@0.18.15:
+    resolution: {integrity: sha512-rzFLinUyugBsoC+mJZFMIQILrA4OUk/XG0mAW30zF3pqegIwawrEx5JXFXg/D1XW6//uew/FLTm12t3mcpbw+Q==}
     hasBin: true
 
   xdg-basedir@5.1.0:
@@ -6861,7 +6861,7 @@ snapshots:
 
   ws@8.18.0: {}
 
-  wxt@0.18.14(@types/node@20.14.11)(less@4.2.0)(rollup@4.19.0)(sass@1.77.8)(stylus@0.63.0)(sugarss@4.0.1(postcss@8.4.39)):
+  wxt@0.18.15(@types/node@20.14.11)(less@4.2.0)(rollup@4.19.0)(sass@1.77.8)(stylus@0.63.0)(sugarss@4.0.1(postcss@8.4.39)):
     dependencies:
       '@aklinker1/rollup-plugin-visualizer': 5.12.0(rollup@4.19.0)
       '@types/webextension-polyfill': 0.10.7
