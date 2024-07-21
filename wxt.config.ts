@@ -53,7 +53,7 @@ export const manifestJsonConfig: UserConfig["manifest"] = (configEnv) => ({
 			? {
 					gecko: {
 						id: "{6c3b7240-7017-430b-b03c-432e61ee3a82}",
-						strict_min_version: "42.0",
+						strict_min_version: "58.0",
 					},
 				}
 			: undefined,
