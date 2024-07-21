@@ -15,3 +15,9 @@ when develop complete.
 
 1. uploaded to devconsole via CD
 2. check console.
+
+# Dev console links
+
+- Chrome Web Store Developer Dashboard: https://chrome.google.com/webstore/devconsole
+- Mozilla add-on developer hub: https://addons.mozilla.org/en-US/developers/
+- Microsoft Partner Center Edge dashboard: https://partner.microsoft.com/en-us/dashboard/microsoftedge/overview

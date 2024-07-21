@@ -73,8 +73,6 @@ If you want to change a schema that has been released once, you need to migrate 
 
 [DEPLOY.md](./DEPLOY.md)
 
-SEE chrome devconsole: https://chrome.google.com/webstore/devconsole
-
 ## i18n localization by translation
 
 ### Guide
