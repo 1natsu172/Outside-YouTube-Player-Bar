@@ -66,7 +66,7 @@ importers:
         version: 1.13.2(@types/react@18.3.3)(react@18.3.1)
       valtio-history:
         specifier: ^0.3.3
-        version: 0.3.3(valtio@1.13.2(@types/react@18.3.3)(react@18.3.1))
+        version: 0.3.5(valtio@1.13.2(@types/react@18.3.3)(react@18.3.1))
     devDependencies:
       '@1natsu/wait-element':
         specifier: 3.0.0
@@ -3291,8 +3291,8 @@ packages:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
 
-  valtio-history@0.3.3:
-    resolution: {integrity: sha512-Jg+cvMt6BY1w0Rwf4TQDhOnqHIjdUgzv0ad3OKUxjusY3PWpRdFgJfCi5G5tcijpp1IscJJASrThBT7/LbKPXg==}
+  valtio-history@0.3.5:
+    resolution: {integrity: sha512-qAV8vpFV3uLfRQsRfBJ22sGH4EsARnedFEq4WGMIuwNfiEC5fMvcZfp8Fc8wDP4W9aDchM2bBgx8uhVQ8/3iBw==}
     peerDependencies:
       valtio: '>=1.0.0'
 
@@ -6646,7 +6646,7 @@ snapshots:
 
   uuid@8.3.2: {}
 
-  valtio-history@0.3.3(valtio@1.13.2(@types/react@18.3.3)(react@18.3.1)):
+  valtio-history@0.3.5(valtio@1.13.2(@types/react@18.3.3)(react@18.3.1)):
     dependencies:
       tslib: 2.6.3
       valtio: 1.13.2(@types/react@18.3.3)(react@18.3.1)
