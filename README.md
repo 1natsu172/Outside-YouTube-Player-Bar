@@ -16,10 +16,27 @@ Display YouTube's player bar outside the video.
 
 # FOR DEVELOPER GUIDE
 
-## Installation & dev
+## Requirements
+
+- Node.js
+  - Version info in `./.tool-versions`
+- pnpm
+  - Version info in `packageManager` field of `./package.json`
+
+## Setup
+
+You must use pnpm. At the first, `corepack enable`.
+
+Ready for use the pnpm, then install dependencies.
 
 ```
-pnpm install && pnpm run dev
+pnpm install
+```
+
+## Start development
+
+```
+pnpm run dev
 ```
 
 Default dev browser is chrome. You can change other browser.
@@ -28,6 +45,21 @@ Default dev browser is chrome. You can change other browser.
 - `pnpm run dev:edge`
 - `pnpm run dev:chrome`
 - `pnpm run dev:arc`
+
+## Create release build and zip
+
+- `pnpm run build`
+  - Builds for all browsers. Outputs to the `.output` dir.
+- `pnpm run zip`
+  - Zips for all browsers. Outputs to the `.output` dir.
+
+### Specific browser target
+
+You can add `:<browser>` suffix to the script commands.
+
+- `pnpm run build:firefox`
+- `pnpm run zip:firefox`
+- …… other browsers
 
 ### If add new defined value to storage item
 
