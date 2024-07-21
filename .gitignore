@@ -26,6 +26,8 @@ dist-ssr
 .cache/*
 test/_dist/*
 .env
+.env.*
+!.env.development
 .envrc
 
 dist/*
@@ -38,6 +40,3 @@ stats-*.json
 web-ext.config.ts
 playwright-report
 test-results
-
-# Sentry Config File
-.env.sentry-build-plugin
