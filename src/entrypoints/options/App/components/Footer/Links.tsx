@@ -8,10 +8,19 @@ import {
 
 const links = [
 	// TODO: url
-	{ url: "", icon: IconBrandChrome },
+	{
+		url: "https://chromewebstore.google.com/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde",
+		icon: IconBrandChrome,
+	},
 	{ url: "", icon: IconBrandEdge },
-	{ url: "", icon: IconBrandFirefox },
-	{ url: "", icon: IconBrandGithub },
+	{
+		url: "https://addons.mozilla.org/firefox/addon/outside-youtube-player-bar/",
+		icon: IconBrandFirefox,
+	},
+	{
+		url: "https://github.com/1natsu172/Outside-YouTube-Player-Bar",
+		icon: IconBrandGithub,
+	},
 ];
 
 export const Links = () => {

@@ -6,11 +6,24 @@ Display YouTube's player bar outside the video.
 
 ## DOWNLOAD ON THE 
 
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/gmlbhbdkhnfhhmhdjopdbcfliajcafde.svg?style=for-the-badge)](https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/users/gmlbhbdkhnfhhmhdjopdbcfliajcafde.svg?style=for-the-badge)](https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde)
-[![Chrome Web Store](https://img.shields.io/chrome-web-store/stars/gmlbhbdkhnfhhmhdjopdbcfliajcafde.svg?style=for-the-badge)](https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde)
+### Chrome
+[![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/gmlbhbdkhnfhhmhdjopdbcfliajcafde.svg?style=for-the-badge)](https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde)
+[![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/gmlbhbdkhnfhhmhdjopdbcfliajcafde.svg?style=for-the-badge)](https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde)
+[![Chrome Web Store Rating](https://img.shields.io/chrome-web-store/stars/gmlbhbdkhnfhhmhdjopdbcfliajcafde.svg?style=for-the-badge)](https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde)
 
-[![Chrome Web Store](https://user-images.githubusercontent.com/7282145/43437359-9cef5c20-94c3-11e8-8b77-4e5f818ff6b3.png)](https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde)
+[![Chrome Web Store](./promo/Chrome-Web-Store-available-in-the.png)](https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde)
+
+
+### Mozilla Firefox
+![Mozilla Add-on Version](https://img.shields.io/amo/v/%7B6c3b7240-7017-430b-b03c-432e61ee3a82%7D?style=for-the-badge)
+[![Mozilla Add-on Users](https://img.shields.io/amo/users/%7B6c3b7240-7017-430b-b03c-432e61ee3a82%7D?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/outside-youtube-player-bar)
+[![Mozilla Add-on Rating](https://img.shields.io/amo/rating/%7B6c3b7240-7017-430b-b03c-432e61ee3a82%7D?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/outside-youtube-player-bar)
+[![Mozilla Add-on Stars](https://img.shields.io/amo/stars/%7B6c3b7240-7017-430b-b03c-432e61ee3a82%7D?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/outside-youtube-player-bar)
+
+[![Mozilla GET THE ADD-ON](./promo/Firefox-get-the-addon.svg)](https://addons.mozilla.org/firefox/addon/outside-youtube-player-bar)
+
+### Microsoft Edge
+[![Edge add-ons](./promo/Microsoft-get-it-from.svg)]()
 
 ***
 
