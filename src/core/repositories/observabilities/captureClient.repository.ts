@@ -43,6 +43,7 @@ function createScopedClient<
 		stackParser: defaultStackParser,
 		integrations: integrations,
 		release: browser.runtime.getManifest().version,
+		ignoreErrors: ["Extension context invalidated"],
 	});
 
 	const scope = new Scope();
