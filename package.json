@@ -80,7 +80,7 @@
 		"valtio": "^1.13.2",
 		"valtio-history": "^0.3.3"
 	},
-	"packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
+	"packageManager": "pnpm@9.6.0+sha256.dae0f7e822c56b20979bb5965e3b73b8bdabb6b8b8ef121da6d857508599ca35",
 	"pnpm": {
 		"overrides": {
 			"semver@>=7.0.0 <7.5.2": ">=7.5.2",
