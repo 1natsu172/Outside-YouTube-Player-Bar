@@ -7,6 +7,10 @@ export const setupGlobalCaptureError = () => {
 	});
 	window.addEventListener("unhandledrejection", (error) => {
 		logger.error("error unhandled", error);
-		browserCaptureClient.captureException(error);
+		browserCaptureClient.captureException(error, {
+			captureContext: {
+				contexts: { reason: error.reason },
+			},
+		});
 	});
 };

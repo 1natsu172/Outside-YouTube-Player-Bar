@@ -55,6 +55,10 @@ function setupGlobalCaptureError() {
 	});
 	self.addEventListener("unhandledrejection", (error) => {
 		logger.error("error unhandled", error);
-		serviceWorkerCaptureClient.captureException(error);
+		serviceWorkerCaptureClient.captureException(error, {
+			captureContext: {
+				contexts: { reason: error.reason },
+			},
+		});
 	});
 }
