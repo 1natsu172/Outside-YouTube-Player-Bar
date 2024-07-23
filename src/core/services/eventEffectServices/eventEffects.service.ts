@@ -6,6 +6,7 @@ import {
 import { applyVideoPlayerModeToSiteMeta } from "@/core/services/siteMetaServices/index.js";
 import { setNavigationState } from "@/core/usecases/siteMetaState.usecase.js";
 import { waitElement } from "@1natsu/wait-element";
+import { debounce } from "mabiki";
 import { YT_EVENTS } from "./libs/YT_EVENTS.js";
 import { type EventEffect, createEventEffect } from "./libs/eventEffect.js";
 
@@ -76,6 +77,33 @@ const moviePlayerHoverEffect = async () => {
 	return [moviePlayerEffect, playerBarEffect];
 };
 
+/**
+ * NOTE: For alwaysDisplayPlayerBar user's effect.
+ *
+ */
+const moviePlayerMousemoveEffect = async () => {
+	const moviePlayer = await waitElement(elementQuery.MOVIE_PLAYER);
+	const { hideCursor, undoHideCursor } = createPlayerHackEventFn(moviePlayer);
+	const debounceHideCursor = debounce(hideCursor, 3000, {
+		leading: false,
+		trailing: true,
+	});
+
+	const moviePlayerEffect = createEventEffect(
+		["mousemove"],
+		(_key) => (_event) => {
+			undoHideCursor();
+			// Executed only once, 3 seconds after the last event fires
+			debounceHideCursor();
+		},
+		{
+			targetElement: moviePlayer,
+		},
+	);
+
+	return [moviePlayerEffect];
+};
+
 ///////////////////////////////////////////
 /**
  * setup event driven functions
@@ -85,6 +113,7 @@ export const setupEventEffects = async () => {
 		pageNavigateEffect.observe(),
 		videoLoadedEffect.observe(),
 		...(await moviePlayerHoverEffect()).map((effect) => effect.observe()),
+		...(await moviePlayerMousemoveEffect()).map((effect) => effect.observe()),
 		...(import.meta.env.VITE_DEBUG_YT_EVENTS === "true"
 			? [__DEBUG_YT_EVENTS.observe()]
 			: []),
