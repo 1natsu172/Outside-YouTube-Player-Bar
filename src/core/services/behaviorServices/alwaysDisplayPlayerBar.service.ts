@@ -56,15 +56,32 @@ export const createPlayerHackEventFn = (moviePlayer: Element) => {
 		logger.debug("enableAutoHide function fired.");
 	}
 
-	return { activateBlockAutoHide, deactivateBlockAutoHide };
+	function hideCursor() {
+		(moviePlayer as HTMLElement).style.cursor = "none";
+		logger.debug("hide mouse cursor on player.");
+	}
+
+	function undoHideCursor() {
+		(moviePlayer as HTMLElement).style.cursor = "auto";
+		logger.debug("undo-hide mouse cursor on player.");
+	}
+
+	return {
+		activateBlockAutoHide,
+		deactivateBlockAutoHide,
+		hideCursor,
+		undoHideCursor,
+	};
 };
 
 export const execAlwaysDisplayPlayerBar = async ({
 	isVisiblePlayerBar,
 	blockAutoHide,
+	hideCursor,
 }: {
 	isVisiblePlayerBar: boolean;
 	blockAutoHide: () => void;
+	hideCursor: () => void;
 }) => {
 	const dataAttrIsAlwaysDisplayBar = documentElementAttr(
 		elementAttributes.oypb.IS_ALWAYS_DISPLAY_PLAYER_BAR,
@@ -95,9 +112,12 @@ export const execAlwaysDisplayPlayerBar = async ({
 	]);
 
 	// NOTE: For "alwaysDisplayPlayerBar" option user scope
-	if (isOutside && alwaysDisplayPlayerBar && !isVisiblePlayerBar) {
-		blockAutoHide();
-		dataAttrIsAlwaysDisplayBar.set();
+	if (isOutside && alwaysDisplayPlayerBar) {
+		if (!isVisiblePlayerBar) {
+			blockAutoHide();
+			dataAttrIsAlwaysDisplayBar.set();
+			hideCursor();
+		}
 	}
 
 	// NOTE: For "is not alwaysDisplayPlayerBar" option user scope
@@ -110,6 +130,10 @@ export const execAlwaysDisplayPlayerBar = async ({
 			// NOTE: This is effectively the `hide()` method.
 			dataAttrIsAlwaysDisplayBar.remove();
 		}
+	}
+
+	if (!isOutside) {
+		dataAttrIsAlwaysDisplayBar.remove();
 	}
 };
 

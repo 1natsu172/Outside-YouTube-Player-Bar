@@ -15,7 +15,7 @@ export const developConfig: UserConfig = {
 		},
 		openConsole: true,
 	},
-	vite: () => viteConfig,
+	vite: (configEnv) => viteConfig(configEnv),
 };
 
 /**

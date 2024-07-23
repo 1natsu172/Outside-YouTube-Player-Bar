@@ -84,4 +84,17 @@
       border-radius: 12px 12px 12px 12px;
     }
   }
+
+  /* Fix side effects of mouse hacks(#111) */
+  &[data-oypb-is-always-display-player-bar] {
+    .playing-mode {
+      .ytp-chrome-top {
+        display: none;
+      }
+
+      .ytp-gradient-top {
+        display: none;
+      }
+    }
+  }
 }

@@ -15,7 +15,8 @@ import { debounce } from "mabiki";
 
 const moviePlayerElementEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER);
-	const { activateBlockAutoHide } = createPlayerHackEventFn(element);
+	const { activateBlockAutoHide, hideCursor } =
+		createPlayerHackEventFn(element);
 	// NOTE: If longer than 1sec(1000ms), the play-video-time of bar is delayed, so it was decided to 950.
 	const debounceExecBlockAutoHide = debounce(execAlwaysDisplayPlayerBar, 950, {
 		leading: true,
@@ -47,6 +48,7 @@ const moviePlayerElementEffect = async () => {
 
 						debounceExecBlockAutoHide({
 							blockAutoHide: activateBlockAutoHide,
+							hideCursor,
 							isVisiblePlayerBar,
 						});
 
