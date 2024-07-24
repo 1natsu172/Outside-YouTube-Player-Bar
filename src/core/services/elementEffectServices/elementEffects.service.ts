@@ -58,7 +58,7 @@ const moviePlayerElementEffect = async () => {
 					browserCaptureClient.captureException(error);
 				}
 			},
-			950,
+			600,
 			{
 				leading: true,
 				trailing: true,
@@ -74,6 +74,7 @@ const moviePlayerElementEffect = async () => {
 
 const playerBarElementResizeEffect = async () => {
 	const element = await waitElement(elementQuery.PLAYER_BAR);
+	let memoHeight = "0px";
 	const observer = new ResizeObserver(
 		debounce<ResizeObserverCallback>(
 			(entries) => {
@@ -84,7 +85,13 @@ const playerBarElementResizeEffect = async () => {
 
 						const [size] = borderBoxSize;
 						const height = `${size.blockSize}px`;
+
+						if (memoHeight === height || height === "0px") {
+							return;
+						}
+
 						setPlayerBarHeightVar(height);
+						memoHeight = height;
 					}
 				} catch (error) {
 					browserCaptureClient.captureException(error);
