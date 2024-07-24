@@ -113,9 +113,10 @@ export const execAlwaysDisplayPlayerBar = async ({
 
 	// NOTE: For "alwaysDisplayPlayerBar" option user scope
 	if (isOutside && alwaysDisplayPlayerBar) {
+		dataAttrIsAlwaysDisplayBar.set();
+
 		if (!isVisiblePlayerBar) {
 			blockAutoHide();
-			dataAttrIsAlwaysDisplayBar.set();
 			hideCursor();
 		}
 	}
@@ -130,10 +131,6 @@ export const execAlwaysDisplayPlayerBar = async ({
 			// NOTE: This is effectively the `hide()` method.
 			dataAttrIsAlwaysDisplayBar.remove();
 		}
-	}
-
-	if (!isOutside) {
-		dataAttrIsAlwaysDisplayBar.remove();
 	}
 };
 
