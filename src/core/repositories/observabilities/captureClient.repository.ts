@@ -50,7 +50,7 @@ function createScopedClient<
 			if (originalException) {
 				const errorMessage: string | undefined =
 					// @ts-expect-error cuz unknown
-					originalException?.reason ?? originalException?.message;
+					originalException?.reason?.message ?? originalException?.message;
 
 				if (errorMessage) {
 					const shouldIgnore = ignoreErrors.some((pattern) => {
