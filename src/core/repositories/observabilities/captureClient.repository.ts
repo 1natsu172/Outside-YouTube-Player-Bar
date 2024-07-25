@@ -6,7 +6,8 @@ import {
 	browserCaptureSdk,
 	reactCaptureSdk,
 } from "@/core/infrastructures/observabilities/index.js";
-import { SENTRY_PUB_DSN } from "./constants.js";
+import { isMatchingPhrasePattern } from "@/utils/validateUtils/matchPattern.js";
+import { SENTRY_PUB_DSN, ignoreErrors } from "./constants.js";
 
 function createScopedClient<
 	SDK extends typeof browserCaptureSdk | typeof reactCaptureSdk,
@@ -43,7 +44,26 @@ function createScopedClient<
 		stackParser: defaultStackParser,
 		integrations: integrations,
 		release: browser.runtime.getManifest().version,
-		ignoreErrors: ["Extension context invalidated"],
+		ignoreErrors: ignoreErrors,
+		beforeSend: (event, hint) => {
+			const { originalException } = hint;
+			if (originalException) {
+				const errorMessage: string | undefined =
+					// @ts-expect-error cuz unknown
+					originalException?.reason ?? originalException?.message;
+
+				if (errorMessage) {
+					const shouldIgnore = ignoreErrors.some((pattern) => {
+						return isMatchingPhrasePattern(errorMessage, pattern);
+					});
+
+					if (shouldIgnore) {
+						return null;
+					}
+				}
+			}
+			return event;
+		},
 	});
 
 	const scope = new Scope();
