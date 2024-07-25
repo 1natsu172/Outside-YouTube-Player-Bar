@@ -23,7 +23,7 @@ Display YouTube's player bar outside the video.
 [![Mozilla GET THE ADD-ON](./promo/Firefox-get-the-addon.svg)](https://addons.mozilla.org/firefox/addon/outside-youtube-player-bar)
 
 ### Microsoft Edge
-[![Edge add-ons](./promo/Microsoft-get-it-from.svg)]()
+[![Edge add-ons](./promo/Microsoft-get-it-from.svg)](https://microsoftedge.microsoft.com/addons/detail/cgmpfcjkhpmpcomcbpapfpdcalmpgjgb)
 
 ***
 

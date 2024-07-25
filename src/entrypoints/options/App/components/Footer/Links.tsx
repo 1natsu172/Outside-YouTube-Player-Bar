@@ -12,7 +12,10 @@ const links = [
 		url: "https://chromewebstore.google.com/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde",
 		icon: IconBrandChrome,
 	},
-	{ url: "", icon: IconBrandEdge },
+	{
+		url: "https://microsoftedge.microsoft.com/addons/detail/cgmpfcjkhpmpcomcbpapfpdcalmpgjgb",
+		icon: IconBrandEdge,
+	},
 	{
 		url: "https://addons.mozilla.org/firefox/addon/outside-youtube-player-bar/",
 		icon: IconBrandFirefox,
