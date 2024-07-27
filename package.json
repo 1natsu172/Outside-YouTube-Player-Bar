@@ -35,7 +35,7 @@
 		"delivery": "pnpm run --sequential /^delivery:.*/",
 		"delivery:chrome": "wxt submit --chrome-zip .output/*-$npm_package_version-chrome.zip",
 		"delivery:firefox": "wxt submit --firefox-zip .output/*-$npm_package_version-firefox.zip --firefox-sources-zip .output/*-$npm_package_version-sources.zip",
-		"delivery:edge": "wxt submit --edge-zip .output/*-$npm_package_version-edge.zip",
+		"delivery:edge": "wxt submit --edge-zip .output/*-$npm_package_version-edge.zip"
 	},
 	"devDependencies": {
 		"@1natsu/wait-element": "3.0.0",
