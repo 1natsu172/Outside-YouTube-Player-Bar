@@ -5,4 +5,5 @@ export const SENTRY_PUB_DSN =
 export const ignoreErrors: (string | RegExp)[] = [
 	"Extension context invalidated",
 	"ResizeObserver loop completed with undelivered notifications",
+	"ResizeObserver loop limit exceeded",
 ];
