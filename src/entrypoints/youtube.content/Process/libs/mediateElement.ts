@@ -1,4 +1,3 @@
-import { logger } from "@/utils/logger.js";
 import { waitElement } from "@1natsu/wait-element";
 
 export const waitMountUITarget = async (): Promise<Element> => {

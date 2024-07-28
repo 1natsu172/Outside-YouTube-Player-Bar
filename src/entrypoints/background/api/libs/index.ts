@@ -1,6 +1,5 @@
 import { serviceWorkerCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
 import { YOUTUBE_MATCHES } from "@/utils/constants.js";
-import { logger } from "@/utils/logger.js";
 
 export function openOptionsPage() {
 	browser.runtime.openOptionsPage();
