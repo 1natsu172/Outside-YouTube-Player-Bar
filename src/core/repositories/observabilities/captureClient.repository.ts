@@ -6,6 +6,7 @@ import {
 	browserCaptureSdk,
 	reactCaptureSdk,
 } from "@/core/infrastructures/observabilities/index.js";
+import { logger } from "@/utils/logger.js";
 import { isMatchingPhrasePattern } from "@/utils/validateUtils/matchPattern.js";
 import { SENTRY_PUB_DSN, ignoreErrors } from "./constants.js";
 
@@ -27,6 +28,12 @@ function createScopedClient<
 		makeFetchTransport,
 	} = sdk;
 
+	if (!__APP_VERSION__) {
+		throw Error("not defined __APP_VERSION__");
+	}
+
+	logger.info("__APP_VERSION__ is", __APP_VERSION__);
+
 	// filter integrations that use the global variable
 	// https://docs.sentry.io/platforms/javascript/configuration/integrations/
 	const integrations = getDefaultIntegrations({}).filter(
@@ -43,7 +50,7 @@ function createScopedClient<
 		transport: makeFetchTransport,
 		stackParser: defaultStackParser,
 		integrations: integrations,
-		release: browser.runtime.getManifest().version,
+		release: __APP_VERSION__,
 		ignoreErrors: ignoreErrors,
 		beforeSend: (event, hint) => {
 			const { originalException } = hint;
@@ -71,7 +78,7 @@ function createScopedClient<
 	scope.setClient(client);
 	client.init(); // initializing has to be done after setting the client on the scope
 	scope.setTags(tags);
-	logger.debug(`${tags}scoped capture client instance created.`);
+	logger.debug(tags, " scoped capture client instance created.");
 
 	return { client: scope } as const;
 }

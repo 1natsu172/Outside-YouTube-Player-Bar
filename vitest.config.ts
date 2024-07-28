@@ -6,6 +6,7 @@ console.log("vitest.config.ts");
 import react from "@vitejs/plugin-react";
 import { defaultExclude, defineConfig } from "vitest/config";
 import { WxtVitest } from "wxt/testing";
+import { noExternal } from "./vite.config.js";
 
 export default defineConfig({
 	// Configure test behavior however you like
@@ -22,6 +23,6 @@ export default defineConfig({
 	// If any dependencies rely on webextension-polyfill, add them here to the `ssr.noExternal` option.
 	// Example:
 	ssr: {
-		noExternal: ["@webext-core/storage", "@webext-core/messaging"],
+		noExternal,
 	},
 });

@@ -1,18 +1,10 @@
 import { Executor } from "@/core/mains/executor.js";
 import { browserCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
+import { YOUTUBE_MATCHES } from "@/utils/constants.js";
 import { displayInfo } from "./Process/displayInfo.js";
 import { mountUI } from "./Process/mount.js";
 import { setupGlobalCaptureError } from "./Process/setupGlobalCaptureError.js";
 
-// -----------------------------------------
-// WXT WORLD
-//------------------------------------------
-/**
- * FIXME: WXTのimport対応待ち manifestに寄せたい
- * https://wxt.dev/guide/go-further/entrypoint-side-effects.html
- * https://github.com/wxt-dev/wxt/issues/336
- */
-export const YOUTUBE_MATCHES = ["https://*.youtube.com/*"];
 export default defineContentScript({
 	matches: YOUTUBE_MATCHES,
 	/**

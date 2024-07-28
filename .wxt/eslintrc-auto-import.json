@@ -9,6 +9,7 @@
     "NonUndefined": true,
     "SetOptional": true,
     "ValueOf": true,
+    "YOUTUBE_MATCHES": true,
     "browser": true,
     "createIframeUi": true,
     "createIntegratedUi": true,

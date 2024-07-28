@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { sentryVitePlugin } from "@sentry/vite-plugin";
 import react from "@vitejs/plugin-react";
 import postcssImport from "postcss-import";
@@ -8,9 +9,16 @@ import reactSvgr from "vite-plugin-svgr";
 // NOTE: WXTがviteをラップしているのでviteのdefineConfigの型を引っ張るためだけにwxtからimportしている（config置き場を分置しておきたいがため）
 import type { ConfigEnv as WxtConfigEnv, WxtViteConfig } from "wxt";
 
+export const noExternal = ["@webext-core/storage", "@webext-core/messaging"];
+
+const packageJson = JSON.parse(readFileSync("./package.json", "utf-8"));
+
 // NOTE(FIXME(future)): vite.config.tsで関数exportは本来defineConfigするが、WXTでラップして使う以上WXT前提の関数となっている。WXTを剥がす場合気をつける。
-export default (_: WxtConfigEnv) => {
+export default (configEnv: WxtConfigEnv) => {
 	return {
+		define: {
+			__APP_VERSION__: JSON.stringify(packageJson.version),
+		},
 		build: {
 			sourcemap: true, // Source map generation must be turned on (for Sentry)
 		},
@@ -18,20 +26,21 @@ export default (_: WxtConfigEnv) => {
 			react(),
 			reactSvgr(),
 			preserveDirectives(),
-			{
-				//NOTE: For Source Maps - Need put the Sentry vite plugin after all other plugins.
-				...sentryVitePlugin({
-					authToken: process.env.SENTRY_AUTH_TOKEN,
-					org: "4d5e926a0e43",
-					project: "oypb",
-				}),
-				apply: "build", // Only apply build https://ja.vitejs.dev/guide/api-plugin.html#%E6%9D%A1%E4%BB%B6%E4%BB%98%E3%81%8D%E3%81%AE%E9%81%A9%E7%94%A8
-			},
+			//NOTE: For Source Maps - Need put the Sentry vite plugin after all other plugins.
+			sentryVitePlugin({
+				authToken: process.env.SENTRY_AUTH_TOKEN,
+				org: "4d5e926a0e43",
+				project: "oypb",
+				disable: configEnv.mode === "development",
+			}),
 		],
 		css: {
 			postcss: {
 				plugins: [postcssNesting, postcssImport()],
 			},
+		},
+		ssr: {
+			noExternal,
 		},
 	} as const satisfies WxtViteConfig;
 };
