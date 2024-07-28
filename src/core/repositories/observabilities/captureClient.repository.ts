@@ -6,7 +6,6 @@ import {
 	browserCaptureSdk,
 	reactCaptureSdk,
 } from "@/core/infrastructures/observabilities/index.js";
-import { logger } from "@/utils/logger.js";
 import { isMatchingPhrasePattern } from "@/utils/validateUtils/matchPattern.js";
 import { SENTRY_PUB_DSN, ignoreErrors } from "./constants.js";
 

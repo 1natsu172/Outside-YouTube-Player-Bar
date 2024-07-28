@@ -1,7 +1,6 @@
 import { extMetaSignals } from "@/core/mains/messagings/extensionMetaSignals/index.js";
 import { uiSignals } from "@/core/mains/messagings/uiSignals/index.js";
 import { serviceWorkerCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
-import { logger } from "@/utils/logger.js";
 import {
 	openOptionsPage,
 	reloadYouTubeTabs,
