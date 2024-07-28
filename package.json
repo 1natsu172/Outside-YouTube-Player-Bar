@@ -58,7 +58,7 @@
 		"typescript": "5.5.4",
 		"vite-plugin-svgr": "4.2.0",
 		"vitest": "2.0.4",
-		"wxt": "0.19.1"
+		"wxt": "0.19.2"
 	},
 	"dependencies": {
 		"@mantine/core": "^7.10.2",
