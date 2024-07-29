@@ -74,6 +74,8 @@ You can add `:<browser>` suffix to the script commands.
 - `pnpm run zip:firefox`
 - …… other browsers
 
+## About the storage
+
 ### If add new defined value to storage item
 
 If the unreleased versioning schema is changed during development, the option must be discarded once (reset to defaultValue).

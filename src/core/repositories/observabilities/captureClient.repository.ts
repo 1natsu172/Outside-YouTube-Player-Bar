@@ -3,19 +3,18 @@
  * ref: https://docs.sentry.io/platforms/javascript/best-practices/shared-environments/
  */
 import {
+	type SDK,
 	browserCaptureSdk,
 	reactCaptureSdk,
 } from "@/core/infrastructures/observabilities/index.js";
 import { isMatchingPhrasePattern } from "@/utils/validateUtils/matchPattern.js";
 import { SENTRY_PUB_DSN, ignoreErrors } from "./constants.js";
 
-function createScopedClient<
-	SDK extends typeof browserCaptureSdk | typeof reactCaptureSdk,
->({
+function createScopedClient<_SDK extends SDK>({
 	sdk,
 	tags,
 }: {
-	sdk: SDK;
+	sdk: _SDK;
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	tags: Record<string, any>;
 }) {
@@ -82,20 +81,36 @@ function createScopedClient<
 	return { client: scope } as const;
 }
 
-export const browserCaptureClient = createScopedClient({
-	sdk: browserCaptureSdk,
-	tags: { clientName: "browserCapture" },
-}).client;
+class CaptureClientRepo<_SDK extends SDK> {
+	private _client: ReturnType<typeof createScopedClient> | null = null;
 
-export const reactCaptureClient = createScopedClient({
-	sdk: reactCaptureSdk,
-	tags: { clientName: "reactCapture" },
-}).client;
+	constructor(
+		public sdk: _SDK,
+		public clientName: string,
+	) {}
 
-export const serviceWorkerCaptureClient = createScopedClient({
-	sdk: browserCaptureSdk,
-	tags: { clientName: "serviceWorkerCapture" },
-}).client;
+	public get client(): ReturnType<typeof createScopedClient>["client"] {
+		if (!this._client) {
+			this._client = createScopedClient({
+				sdk: this.sdk,
+				tags: { clientName: this.clientName },
+			});
+		}
+		return this._client.client;
+	}
+}
 
-export { browserCaptureSdk, reactCaptureSdk };
-export { browserCaptureSdk as serviceWorkerCaptureSdk };
+export const browserCaptureClientRepo = new CaptureClientRepo(
+	browserCaptureSdk,
+	"browserCapture",
+);
+
+export const reactCaptureClientRepo = new CaptureClientRepo(
+	reactCaptureSdk,
+	"reactCapture",
+);
+
+export const serviceWorkerCaptureClientRepo = new CaptureClientRepo(
+	browserCaptureSdk,
+	"serviceWorkerCapture",
+);

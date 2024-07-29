@@ -1,19 +1,16 @@
 import { extMetaSignals } from "@/core/mains/messagings/extensionMetaSignals/index.js";
 import { uiSignals } from "@/core/mains/messagings/uiSignals/index.js";
 import { serviceWorkerCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
-import {
-	openOptionsPage,
-	reloadYouTubeTabs,
-	setupGlobalCaptureError,
-} from "./api/libs/index.js";
+import { setupGlobalCaptureError } from "@/utils/captureUtils/captureErrors/globalCapture.js";
+import { openOptionsPage, reloadYouTubeTabs } from "./api/libs/index.js";
 
 export default defineBackground({
 	type: "module",
 	main: () => {
 		try {
-			logger.log("Hello background!", { id: browser.runtime.id });
+			setupGlobalCaptureError(serviceWorkerCaptureClient);
 
-			setupGlobalCaptureError();
+			logger.log("Hello background!", { id: browser.runtime.id });
 
 			uiSignals.onMessage("openOptionsPage", () => {
 				try {
