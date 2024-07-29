@@ -1,4 +1,3 @@
-import { serviceWorkerCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
 import { YOUTUBE_MATCHES } from "@/utils/constants.js";
 
 export function openOptionsPage() {
@@ -10,21 +9,4 @@ export async function reloadYouTubeTabs() {
 	for (const tab of tabs) {
 		browser.tabs.reload(tab.id);
 	}
-}
-
-export function setupGlobalCaptureError() {
-	logger.log("setupGlobalCaptureError", self);
-
-	self.addEventListener("error", (error) => {
-		logger.error("error", error);
-		serviceWorkerCaptureClient.captureException(error);
-	});
-	self.addEventListener("unhandledrejection", (error) => {
-		logger.error("error unhandled", error);
-		serviceWorkerCaptureClient.captureException(error, {
-			captureContext: {
-				contexts: { reason: error.reason },
-			},
-		});
-	});
 }

@@ -1,9 +1,9 @@
 import { Executor } from "@/core/mains/executor.js";
 import { browserCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
+import { setupGlobalCaptureError } from "@/utils/captureUtils/captureErrors/globalCapture.js";
 import { YOUTUBE_MATCHES } from "@/utils/constants.js";
 import { displayInfo } from "./Process/displayInfo.js";
 import { mountUI } from "./Process/mount.js";
-import { setupGlobalCaptureError } from "./Process/setupGlobalCaptureError.js";
 
 export default defineContentScript({
 	matches: YOUTUBE_MATCHES,
@@ -15,7 +15,7 @@ export default defineContentScript({
 	async main(ctx) {
 		try {
 			logger.success("Content-Script execute");
-			setupGlobalCaptureError();
+			setupGlobalCaptureError(browserCaptureClient);
 			displayInfo();
 			const executor = new Executor(ctx);
 			await Promise.all([mountUI(ctx), executor.initialization()]);
