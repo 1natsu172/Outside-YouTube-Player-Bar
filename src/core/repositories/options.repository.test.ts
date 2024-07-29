@@ -7,9 +7,9 @@ describe("repository", () => {
 	});
 
 	test("should get/set storage item value", async () => {
-		await expect(debugMode.getValue()).resolves.toBe(debugMode.defaultValue);
-		await debugMode.setValue(!debugMode.defaultValue);
-		await expect(debugMode.getValue()).resolves.toBe(!debugMode.defaultValue);
+		await expect(debugMode.getValue()).resolves.toBe(debugMode.fallback);
+		await debugMode.setValue(!debugMode.fallback);
+		await expect(debugMode.getValue()).resolves.toBe(!debugMode.fallback);
 	});
 
 	test("should get/set storage item meta", async () => {

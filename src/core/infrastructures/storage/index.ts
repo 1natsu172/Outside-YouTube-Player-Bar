@@ -21,7 +21,7 @@ export const defineItem = <
 	storageItemOptions?: Partial<StorageItemOptions<TValue>>,
 ) => {
 	const stoOpts: StorageItemOptions<TValue> = {
-		defaultValue: config.defaultValue,
+		fallback: config.defaultValue,
 		version: config.version,
 		...storageItemOptions,
 	};
