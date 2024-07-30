@@ -80,6 +80,11 @@
       display: none;
     }
 
+    /* Fix where the caption goes under the frame(#138) https://i.gyazo.com/f7ba2f11136ab275b0ae5efb863f55df.png */
+    .caption-window.ytp-caption-window-bottom {
+      transform: none;
+    }
+
     [rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
       border-radius: 12px 12px 12px 12px;
     }
