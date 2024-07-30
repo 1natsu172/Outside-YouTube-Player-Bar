@@ -116,6 +116,9 @@ importers:
       playwright:
         specifier: 1.45.3
         version: 1.45.3
+      postcss:
+        specifier: 8.4.40
+        version: 8.4.40
       postcss-import:
         specifier: 16.1.0
         version: 16.1.0(postcss@8.4.40)
