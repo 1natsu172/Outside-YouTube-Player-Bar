@@ -78,10 +78,10 @@ importers:
         specifier: 1.45.3
         version: 1.45.3
       '@sentry/types':
-        specifier: ^8.20.0
+        specifier: 8.20.0
         version: 8.20.0
       '@sentry/utils':
-        specifier: ^8.20.0
+        specifier: 8.20.0
         version: 8.20.0
       '@testing-library/react':
         specifier: 16.0.0
