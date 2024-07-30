@@ -11,7 +11,7 @@
 	"scripts": {
 		"postinstall": "wxt prepare",
 		"biome": "biome check --apply ./src",
-		"predev": "echo \"FIXME: support concurrently exec watch\" && hcm 'src/**/*.module.css' --cache=false",
+		"predev": "echo \"FIXME: support concurrently exec watch\" && hcm 'src/**/*.module.css' --cache=true",
 		"dev": "wxt",
 		"dev:arc": "pnpm run dev -b arc -c ./wxt.config.arc.ts",
 		"dev:chrome": "pnpm run dev -b chrome",
@@ -54,6 +54,7 @@
 		"happy-css-modules": "3.1.1",
 		"happy-dom": "14.12.3",
 		"playwright": "1.45.3",
+		"postcss": "8.4.40",
 		"postcss-import": "16.1.0",
 		"postcss-nesting": "12.1.5",
 		"rollup-preserve-directives": "1.1.1",
