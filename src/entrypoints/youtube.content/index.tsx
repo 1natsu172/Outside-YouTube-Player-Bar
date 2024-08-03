@@ -1,7 +1,7 @@
 import { Executor } from "@/core/mains/executor.js";
 import { browserCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
 import { setupGlobalCaptureError } from "@/utils/captureUtils/captureErrors/globalCapture.js";
-import { YOUTUBE_MATCHES } from "@/utils/constants.js";
+import { YOUTUBE_MATCHES, setupOYPBGlobal } from "@/utils/constants.js";
 import { displayInfo } from "./Process/displayInfo.js";
 import { mountUI } from "./Process/mount.js";
 
@@ -15,6 +15,7 @@ export default defineContentScript({
 	async main(ctx) {
 		try {
 			logger.success("Content-Script execute");
+			setupOYPBGlobal({ ctx });
 			setupGlobalCaptureError(browserCaptureClient);
 			displayInfo();
 			const executor = new Executor(ctx);

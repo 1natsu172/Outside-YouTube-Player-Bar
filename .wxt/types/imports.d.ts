@@ -19,6 +19,7 @@ declare global {
   const fakeBrowser: typeof import('wxt/testing')['fakeBrowser']
   const logger: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger')['logger']
   const reCreateLoggerInstance: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger')['reCreateLoggerInstance']
+  const setupOYPBGlobal: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/constants')['setupOYPBGlobal']
   const storage: typeof import('wxt/storage')['storage']
   const useAppConfig: typeof import('wxt/client')['useAppConfig']
 }
