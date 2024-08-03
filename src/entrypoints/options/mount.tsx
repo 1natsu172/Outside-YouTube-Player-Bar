@@ -6,12 +6,16 @@ import { createRoot } from "react-dom/client";
 import { App } from "./App/App.js";
 
 (async () => {
-	setupGlobalCaptureError(reactCaptureClient);
-	const mountTarget = await waitElement("#root");
+	try {
+		setupGlobalCaptureError(reactCaptureClient);
+		const mountTarget = await waitElement("#root");
 
-	const root = createRoot(mountTarget, {
-		onRecoverableError: reactErrorHandler(),
-		// TODO: React19になったらハンドラを足す
-	});
-	root.render(<App />);
+		const root = createRoot(mountTarget, {
+			onRecoverableError: reactErrorHandler(),
+			// TODO: React19になったらハンドラを足す
+		});
+		root.render(<App />);
+	} catch (error) {
+		reactCaptureClient.captureException(error);
+	}
 })();

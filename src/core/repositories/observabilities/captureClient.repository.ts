@@ -8,15 +8,23 @@ import {
 	reactCaptureSdk,
 } from "@/core/infrastructures/observabilities/index.js";
 import { isMatchingPhrasePattern } from "@/utils/validateUtils/matchPattern.js";
+import type { Integration } from "@sentry/types";
 import { SENTRY_PUB_DSN, ignoreErrors } from "./constants.js";
 
 function createScopedClient<_SDK extends SDK>({
 	sdk,
 	tags,
+	ignoreIntegrations = ["BrowserApiErrors", "Breadcrumbs", "GlobalHandlers"],
+	additionalIntegrations = [],
 }: {
 	sdk: _SDK;
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	tags: Record<string, any>;
+	/**
+	 * @description when pass undefined that use best practice ignore pattern
+	 */
+	ignoreIntegrations?: string[];
+	additionalIntegrations?: Integration[];
 }) {
 	const {
 		BrowserClient,
@@ -34,14 +42,15 @@ function createScopedClient<_SDK extends SDK>({
 
 	// filter integrations that use the global variable
 	// https://docs.sentry.io/platforms/javascript/configuration/integrations/
-	const integrations = getDefaultIntegrations({}).filter(
-		(defaultIntegration) => {
-			// logger.info("defaultIntegration", defaultIntegration);
-			return !["BrowserApiErrors", "Breadcrumbs", "GlobalHandlers"].includes(
-				defaultIntegration.name,
-			);
-		},
-	);
+	const integrations = [
+		...getDefaultIntegrations({}),
+		...additionalIntegrations,
+	].filter((defaultIntegration) => {
+		// logger.info("defaultIntegration", defaultIntegration);
+		return !ignoreIntegrations.includes(defaultIntegration.name);
+	});
+
+	logger.info("integrations", integrations);
 
 	const client = new BrowserClient({
 		dsn: SENTRY_PUB_DSN,
@@ -87,6 +96,14 @@ class CaptureClientRepo<_SDK extends SDK> {
 	constructor(
 		public sdk: _SDK,
 		public clientName: string,
+
+		public options?: {
+			/**
+			 * @description when pass undefined that use best practice ignore pattern
+			 */
+			ignoreIntegrations?: string[];
+			additionalIntegrations?: Integration[];
+		},
 	) {}
 
 	public get client(): ReturnType<typeof createScopedClient>["client"] {
@@ -94,6 +111,8 @@ class CaptureClientRepo<_SDK extends SDK> {
 			this._client = createScopedClient({
 				sdk: this.sdk,
 				tags: { clientName: this.clientName },
+				ignoreIntegrations: this.options?.ignoreIntegrations,
+				additionalIntegrations: this.options?.additionalIntegrations,
 			});
 		}
 		return this._client.client;
