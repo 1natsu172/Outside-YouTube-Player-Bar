@@ -83,6 +83,10 @@ export const execAlwaysDisplayPlayerBar = async ({
 	blockAutoHide: () => void;
 	hideCursor: () => void;
 }) => {
+	if (globalThis.__OYPB__?.ctx?.isInvalid) {
+		return;
+	}
+
 	const dataAttrIsAlwaysDisplayBar = documentElementAttr(
 		elementAttributes.oypb.IS_ALWAYS_DISPLAY_PLAYER_BAR,
 	);

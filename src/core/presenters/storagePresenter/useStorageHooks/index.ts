@@ -32,9 +32,14 @@ export const useStorage = <
 				}
 				onStoreChange();
 			});
+			globalThis.__OYPB__?.ctx?.onInvalidated(() => {
+				unSubscribe();
+			});
 			return () => {
 				initOnStoreChange.current = fatalLog;
-				unSubscribe();
+				if (globalThis.__OYPB__?.ctx?.isValid) {
+					unSubscribe();
+				}
 			};
 		},
 		[definedSotorageItem, fatalLog],

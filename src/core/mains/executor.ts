@@ -31,6 +31,7 @@ export class Executor {
 		// NOTE: https://wxt.dev/guide/handling-updates.html#content-script-cleanup
 		this.ctx.onInvalidated(() => {
 			this.unregisterEffects();
+			this.stateDriven.unsubscribeDrivens();
 		});
 	}
 
@@ -49,7 +50,9 @@ export class Executor {
 			);
 			return;
 		}
-		await initializeDebugMode();
+		await initializeDebugMode().then((unwatch) => {
+			this.__registeredEffects.push([unwatch]);
+		});
 		await this.setupEffects();
 		await applyCompatibilityStyles();
 		await this.stateDriven.setup();
@@ -64,6 +67,7 @@ export class Executor {
 		| EventEffect
 		| ElementEffect
 		| ObservabilityObserver
+		| (() => void)
 	)[][] = [];
 
 	private async setupEffects() {
@@ -72,7 +76,10 @@ export class Executor {
 			setupElementEffects(),
 			setupObservabilityObservers(),
 		]);
-		this.__registeredEffects = registeredEffects;
+		this.__registeredEffects = [
+			...this.__registeredEffects,
+			...registeredEffects,
+		];
 	}
 
 	public unregisterEffects() {
@@ -80,8 +87,10 @@ export class Executor {
 			for (const effect of __effects) {
 				if ("dispose" in effect) {
 					effect.dispose();
-				} else {
+				} else if ("disconnect" in effect) {
 					effect.disconnect();
+				} else if (typeof effect === "function") {
+					effect();
 				}
 			}
 		}
