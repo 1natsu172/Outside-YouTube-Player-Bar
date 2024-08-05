@@ -5,5 +5,7 @@ export const injectStyle = async (css: string) => {
 	styleElement.textContent = css;
 
 	const head = await waitElement("head");
-	requestIdleCallback(() => head.appendChild(styleElement));
+	const ricId = requestIdleCallback(() => head.appendChild(styleElement));
+
+	globalThis.__OYPB__?.ctx?.onInvalidated(() => cancelIdleCallback(ricId));
 };

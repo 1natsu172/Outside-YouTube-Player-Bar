@@ -25,11 +25,12 @@ export const mountUI = async (ctx: ContentScriptContext) => {
 			});
 
 			root.render(<App />);
-			return root;
+			return { root, app };
 		},
-		onRemove: (root) => {
+		onRemove: (elements) => {
 			// Unmount the root when the UI is removed
-			root?.unmount();
+			elements?.root?.unmount();
+			elements?.app.remove();
 			logger.info("UI unmounted.");
 		},
 	});

@@ -7,37 +7,33 @@ import { openOptionsPage, reloadYouTubeTabs } from "./api/libs/index.js";
 export default defineBackground({
 	type: "module",
 	main: () => {
-		try {
-			setupGlobalCaptureError(serviceWorkerCaptureClient);
+		const regist = async () => {
+			try {
+				setupGlobalCaptureError(serviceWorkerCaptureClient);
 
-			logger.log("Hello background!", { id: browser.runtime.id });
+				logger.log("Hello background!", { id: browser.runtime.id });
 
-			uiSignals.onMessage("openOptionsPage", () => {
-				try {
+				await uiSignals.onMessage("openOptionsPage", () => {
 					openOptionsPage();
-				} catch (error) {
-					serviceWorkerCaptureClient.captureException(error);
-				}
-			});
+				});
 
-			extMetaSignals.onMessage("reloadYouTubeTabs", async () => {
-				try {
+				await extMetaSignals.onMessage("reloadYouTubeTabs", async () => {
 					await reloadYouTubeTabs();
-				} catch (error) {
-					serviceWorkerCaptureClient.captureException(error);
-				}
-			});
+				});
 
-			// NOTE: Clicked on action icon (popup icon) listener.
-			(browser.action ?? browser.browserAction).onClicked.addListener(() => {
-				try {
-					openOptionsPage();
-				} catch (error) {
-					serviceWorkerCaptureClient.captureException(error);
-				}
-			});
-		} catch (error) {
-			serviceWorkerCaptureClient.captureException(error);
-		}
+				// NOTE: Clicked on action icon (popup icon) listener.
+				(browser.action ?? browser.browserAction).onClicked.addListener(() => {
+					try {
+						openOptionsPage();
+					} catch (error) {
+						serviceWorkerCaptureClient.captureException(error);
+					}
+				});
+			} catch (error) {
+				serviceWorkerCaptureClient.captureException(error);
+			}
+		};
+
+		regist();
 	},
 });

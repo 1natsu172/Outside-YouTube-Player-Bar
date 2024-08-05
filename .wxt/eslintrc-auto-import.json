@@ -24,6 +24,7 @@
     "fakeBrowser": true,
     "logger": true,
     "reCreateLoggerInstance": true,
+    "setupOYPBGlobal": true,
     "storage": true,
     "useAppConfig": true
   }

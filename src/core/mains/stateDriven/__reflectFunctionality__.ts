@@ -3,7 +3,7 @@ import { movePlayerBarElement } from "@/core/services/domAffectServices/playerBa
 import { snapshot, subscribe } from "valtio/vanilla";
 
 export const reflectFunctionality = () => {
-	subscribe(__reflectFunctionalityState__, async (op) => {
+	return subscribe(__reflectFunctionalityState__, async (op) => {
 		const feature = snapshot(__reflectFunctionalityState__.feature);
 		const context = snapshot(__reflectFunctionalityState__.context);
 

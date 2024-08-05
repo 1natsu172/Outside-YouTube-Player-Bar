@@ -34,7 +34,9 @@ export const useStorage = <
 			});
 			return () => {
 				initOnStoreChange.current = fatalLog;
-				unSubscribe();
+				if (globalThis.__OYPB__?.ctx?.isValid) {
+					unSubscribe();
+				}
 			};
 		},
 		[definedSotorageItem, fatalLog],

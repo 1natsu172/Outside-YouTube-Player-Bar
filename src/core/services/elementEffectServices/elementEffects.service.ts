@@ -122,9 +122,12 @@ const pageManagerWatchFlexy_playerModeEffect = async () => {
 						"Observing effect has occurred.",
 						"This mutation fires when any of the attributeFilter changes",
 					);
-					requestIdleCallback(() => {
+					const ricId = requestIdleCallback(() => {
 						applyVideoPlayerModeToSiteMeta();
 					});
+					globalThis.__OYPB__?.ctx?.onInvalidated(() =>
+						cancelIdleCallback(ricId),
+					);
 				} catch (error) {
 					browserCaptureClient.captureException(error);
 				}
@@ -156,19 +159,25 @@ const playerBarIntersectionEffect = async () => {
 				for (const entry of entries) {
 					// When fully disappeared
 					if (entry.intersectionRatio === 0) {
-						requestIdleCallback(() => {
+						const ricId = requestIdleCallback(() => {
 							logger.debug("playerbar intersect => fully disappeared");
 							playerBarIntersectionOperation({
 								intersect: "disappeared",
 							});
 						});
+						globalThis.__OYPB__?.ctx?.onInvalidated(() =>
+							cancelIdleCallback(ricId),
+						);
 					}
 					// When little appeared
 					if (entry.intersectionRatio > 0) {
-						requestIdleCallback(() => {
+						const ricId = requestIdleCallback(() => {
 							logger.debug("playerbar intersect => little appeared");
 							playerBarIntersectionOperation({ intersect: "littleAppeared" });
 						});
+						globalThis.__OYPB__?.ctx?.onInvalidated(() =>
+							cancelIdleCallback(ricId),
+						);
 					}
 				}
 			} catch (error) {

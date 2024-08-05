@@ -13,30 +13,60 @@ import {
 } from "./siteMetaStateDriven.js";
 
 export class StateDriven {
-	async setup() {
-		logger.debug("StateDriven initialization.");
+	public async setup() {
+		logger.debug("Start StateDriven setup.");
 		this.debugState();
-		behaviorDriven();
-		videoPlayerModeDriven();
-		navigationDriven();
-		oypbEnableDriven();
-		reflectFunctionality();
+		this.start();
+		logger.debug("Done StateDriven setup.", {
+			cleanupFunctions: this.#cleanupFunctions,
+		});
 	}
 
-	debugState() {
+	private subscriveDrivens(drivens: (() => () => void)[]) {
+		for (const driven of drivens) {
+			this.#cleanupFunctions.push(driven());
+		}
+	}
+
+	private start() {
+		const drivens = [
+			behaviorDriven,
+			videoPlayerModeDriven,
+			navigationDriven,
+			oypbEnableDriven,
+			reflectFunctionality,
+		];
+
+		this.subscriveDrivens(drivens);
+	}
+
+	private debugState() {
 		if (import.meta.env.VITE_DEBUG_STATE_LOG === "true") {
-			subscribe(siteMetaState, (op) => {
-				const s = snapshot(siteMetaState);
-				logger.debug("siteMetaState is mutated", s, op);
-			});
-			subscribe(behaviorState, (op) => {
-				const s = snapshot(behaviorState);
-				logger.debug("behaviorState is mutated", s, op);
-			});
-			subscribe(operationState, (op) => {
-				const s = snapshot(operationState);
-				logger.debug("operationState is mutated", s, op);
-			});
+			this.subscriveDrivens([
+				() =>
+					subscribe(siteMetaState, (op) => {
+						const s = snapshot(siteMetaState);
+						logger.debug("siteMetaState is mutated", s, op);
+					}),
+				() =>
+					subscribe(behaviorState, (op) => {
+						const s = snapshot(behaviorState);
+						logger.debug("behaviorState is mutated", s, op);
+					}),
+				() =>
+					subscribe(operationState, (op) => {
+						const s = snapshot(operationState);
+						logger.debug("operationState is mutated", s, op);
+					}),
+			]);
+		}
+	}
+
+	#cleanupFunctions: (() => void)[] = [];
+
+	public unsubscribeDrivens() {
+		for (const cleanup of this.#cleanupFunctions) {
+			cleanup();
 		}
 	}
 }
