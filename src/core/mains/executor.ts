@@ -50,6 +50,7 @@ export class Executor {
 			);
 			return;
 		}
+		// FIXME: implement the storage driven
 		await initializeDebugMode().then((unwatch) => {
 			this.__registeredEffects.push([unwatch]);
 		});
@@ -90,7 +91,9 @@ export class Executor {
 				} else if ("disconnect" in effect) {
 					effect.disconnect();
 				} else if (typeof effect === "function") {
-					effect();
+					if (this.ctx.isValid) {
+						effect();
+					}
 				}
 			}
 		}
