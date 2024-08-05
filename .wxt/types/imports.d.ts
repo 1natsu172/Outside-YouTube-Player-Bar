@@ -17,6 +17,7 @@ declare global {
   const defineUnlistedScript: typeof import('wxt/sandbox')['defineUnlistedScript']
   const defineWxtPlugin: typeof import('wxt/sandbox')['defineWxtPlugin']
   const fakeBrowser: typeof import('wxt/testing')['fakeBrowser']
+  const injectScript: typeof import('wxt/client')['injectScript']
   const logger: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger')['logger']
   const reCreateLoggerInstance: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger')['reCreateLoggerInstance']
   const setupOYPBGlobal: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/constants')['setupOYPBGlobal']
