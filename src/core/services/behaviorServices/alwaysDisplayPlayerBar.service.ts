@@ -83,8 +83,9 @@ export const execAlwaysDisplayPlayerBar = async ({
 	blockAutoHide: () => void;
 	hideCursor: () => void;
 }) => {
-	if (globalThis.__OYPB__?.ctx?.isInvalid) {
-		return;
+	// Guard the `Extension context invalidated.` Intent checking runtime.id
+	if (browser.runtime.id == null) {
+		return globalThis.__OYPB__?.ctx?.block();
 	}
 
 	const dataAttrIsAlwaysDisplayBar = documentElementAttr(
