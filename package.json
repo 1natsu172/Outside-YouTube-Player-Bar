@@ -40,7 +40,7 @@
 	"devDependencies": {
 		"@1natsu/wait-element": "3.0.0",
 		"@biomejs/biome": "1.8.3",
-		"@playwright/test": "1.45.3",
+		"@playwright/test": "1.46.0",
 		"@sentry/types": "8.25.0",
 		"@sentry/utils": "8.25.0",
 		"@testing-library/react": "16.0.0",
@@ -53,7 +53,7 @@
 		"git-semver-tags": "8.0.0",
 		"happy-css-modules": "3.1.1",
 		"happy-dom": "14.12.3",
-		"playwright": "1.45.3",
+		"playwright": "1.46.0",
 		"postcss": "8.4.40",
 		"postcss-import": "16.1.0",
 		"postcss-nesting": "13.0.0",
