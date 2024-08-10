@@ -54,7 +54,7 @@
 		"happy-css-modules": "3.1.1",
 		"happy-dom": "14.12.3",
 		"playwright": "1.46.0",
-		"postcss": "8.4.40",
+		"postcss": "8.4.41",
 		"postcss-import": "16.1.0",
 		"postcss-nesting": "13.0.0",
 		"rollup-preserve-directives": "1.1.1",
