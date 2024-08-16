@@ -27,7 +27,7 @@ importers:
         version: 8.25.0(react@18.3.1)
       '@sentry/vite-plugin':
         specifier: ^2.20.1
-        version: 2.22.0
+        version: 2.22.2
       '@tabler/icons-react':
         specifier: ^3.6.0
         version: 3.12.0(react@18.3.1)
@@ -828,16 +828,16 @@ packages:
     resolution: {integrity: sha512-3f7x8EYthyj157uV9V8vBjun+1gJnHhh2+i0qxYLhMGx7N2Fq0J3Bvvo1rosSg+fYh5HzPNZDufwIRdg5C/MQw==}
     engines: {node: '>=14.18'}
 
-  '@sentry/babel-plugin-component-annotate@2.22.0':
-    resolution: {integrity: sha512-UzH+NNhgnOo6UFku3C4TEz+pO/yDcIA5FKTJvLbJ7lQwAjsqLs3DZWm4cCA08skICb8mULArF6S/dn5/butVCA==}
+  '@sentry/babel-plugin-component-annotate@2.22.2':
+    resolution: {integrity: sha512-6kFAHGcs0npIC4HTt4ULs8uOfEucvMI7VW4hoyk17jhRaW8CbxzxfWCfIeRbDkE8pYwnARaq83tu025Hrk2zgA==}
     engines: {node: '>= 14'}
 
   '@sentry/browser@8.25.0':
     resolution: {integrity: sha512-51bdVGXjyooqVGzaSGsnExqRTt9NvZ1zGFsxbbCSXi5UoEFN6zdMUz6jKYsL2K80eeELP2VKOVlobHlEzeJQfw==}
     engines: {node: '>=14.18'}
 
-  '@sentry/bundler-plugin-core@2.22.0':
-    resolution: {integrity: sha512-/xXN8o7565WMsewBnQFfjm0E5wqhYsegg++HJ5RjrY/cTM4qcd/ven44GEMxqGFJitZizvkk3NHszaHylzcRUw==}
+  '@sentry/bundler-plugin-core@2.22.2':
+    resolution: {integrity: sha512-TwEEW4FeEJ5Mamp4fGnktfVjzN77KAW0xFQsEPuxZtOAPG17zX/PGvdyRX/TE1jkZWhTzqUDIdgzqlNLjyEnUw==}
     engines: {node: '>= 14'}
 
   '@sentry/cli-darwin@2.33.1':
@@ -904,8 +904,8 @@ packages:
     resolution: {integrity: sha512-mVlkV7S62ZZ2jM38/kOwWx2xoW8fUv2cjw2IwFKoAIPyLBh3mo1WJtvfdtN/rXGjQWZJBKW53EWaWnD00rkjyA==}
     engines: {node: '>=14.18'}
 
-  '@sentry/vite-plugin@2.22.0':
-    resolution: {integrity: sha512-U1dWldo3gb1oDqERgiSM7zexMwAuqiXO/YUO3xVSpWmhoHz2AqxOcfIX1SygW02NF7Ss3ay4qMAta8PbvdsrnQ==}
+  '@sentry/vite-plugin@2.22.2':
+    resolution: {integrity: sha512-LJSNTw75UJq77v2jCan8cRh0w1u6W30jxQsbqF7YyyhhfjPTyFUXYday9RDDe84qDEnspbZmgeTSWTvaTGsBRg==}
     engines: {node: '>= 14'}
 
   '@sindresorhus/is@5.6.0':
@@ -3170,8 +3170,8 @@ packages:
   unplugin@1.0.1:
     resolution: {integrity: sha512-aqrHaVBWW1JVKBHmGo33T5TxeL0qWzfvjWokObHA9bYmN7eNDkwOxmLjhioHl9878qDFMAaT51XNroRyuz7WxA==}
 
-  unplugin@1.12.1:
-    resolution: {integrity: sha512-aXEH9c5qi3uYZHo0niUtxDlT9ylG/luMW/dZslSCkbtC31wCyFkmM0kyoBBh+Grhn7CL+/kvKLfN61/EdxPxMQ==}
+  unplugin@1.12.2:
+    resolution: {integrity: sha512-bEqQxeC7rxtxPZ3M5V4Djcc4lQqKPgGe3mAWZvxcSmX5jhGxll19NliaRzQSQPrk4xJZSGniK3puLWpRuZN7VQ==}
     engines: {node: '>=14.0.0'}
 
   untildify@4.0.0:
@@ -4034,7 +4034,7 @@ snapshots:
       '@sentry/types': 8.25.0
       '@sentry/utils': 8.25.0
 
-  '@sentry/babel-plugin-component-annotate@2.22.0': {}
+  '@sentry/babel-plugin-component-annotate@2.22.2': {}
 
   '@sentry/browser@8.25.0':
     dependencies:
@@ -4046,10 +4046,10 @@ snapshots:
       '@sentry/types': 8.25.0
       '@sentry/utils': 8.25.0
 
-  '@sentry/bundler-plugin-core@2.22.0':
+  '@sentry/bundler-plugin-core@2.22.2':
     dependencies:
       '@babel/core': 7.25.2
-      '@sentry/babel-plugin-component-annotate': 2.22.0
+      '@sentry/babel-plugin-component-annotate': 2.22.2
       '@sentry/cli': 2.33.1
       dotenv: 16.4.5
       find-up: 5.0.0
@@ -4120,9 +4120,9 @@ snapshots:
     dependencies:
       '@sentry/types': 8.25.0
 
-  '@sentry/vite-plugin@2.22.0':
+  '@sentry/vite-plugin@2.22.2':
     dependencies:
-      '@sentry/bundler-plugin-core': 2.22.0
+      '@sentry/bundler-plugin-core': 2.22.2
       unplugin: 1.0.1
     transitivePeerDependencies:
       - encoding
@@ -6414,7 +6414,7 @@ snapshots:
       pkg-types: 1.1.3
       scule: 1.3.0
       strip-literal: 2.1.0
-      unplugin: 1.12.1
+      unplugin: 1.12.2
     transitivePeerDependencies:
       - rollup
 
@@ -6433,7 +6433,7 @@ snapshots:
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.5.0
 
-  unplugin@1.12.1:
+  unplugin@1.12.2:
     dependencies:
       acorn: 8.12.1
       chokidar: 3.6.0
