@@ -15,7 +15,7 @@ declare module "wxt/browser" {
   export interface WxtI18n extends I18n.Static {
     /**
      * The extension or app ID; you might use this string to construct URLs for resources inside the extension. Even unlocalized extensions can use this message.
-Note: You can't use this message in a manifest file.
+     * Note: You can't use this message in a manifest file.
      *
      * "<browser.runtime.id>"
      */
@@ -25,8 +25,6 @@ Note: You can't use this message in a manifest file.
       options?: GetMessageOptions,
     ): string;
     /**
-     * No message description.
-     *
      * "<browser.i18n.getUiLocale()>"
      */
     getMessage(
@@ -602,6 +600,11 @@ CPU usage increase due to specifications."
      */
     getMessage(
       messageName: "settings_userOption_showOpenSettingsIcon_description",
+      substitutions?: string | string[],
+      options?: GetMessageOptions,
+    ): string;
+    getMessage(
+      messageName: "@@extension_id" | "@@ui_locale" | "@@bidi_dir" | "@@bidi_reversed_dir" | "@@bidi_start_edge" | "@@bidi_end_edge" | "appName" | "appShortName" | "appDescription" | "browserActionTitle" | "tooltipText_toInside" | "tooltipText_toOutside" | "tooltipText_openSettings" | "kofi_title" | "kofi_title_highlight" | "kofi_description" | "kofi_underPrice" | "kofi_underPrice_description" | "kofi_paymentMethod" | "kofi_paymentMethod_description" | "kofi_tipCaution" | "kofi_tipCaution_description" | "report_announce_title" | "report_announce_description" | "report_announce_caution" | "metawords_defaultView" | "metawords_theaterMode" | "metawords_fullscreen" | "fixturewords_enabling" | "fixturewords_disabling" | "fixturewords_confirm" | "fixturewords_cancel" | "fixturewords_confirmation_title" | "fixturewords_available_multiselect" | "settings_title" | "settings_metaOption_debugMode_title" | "settings_metaOption_debugMode_description" | "settings_metaOption_forceDisable_title" | "settings_metaOption_forceDisable_description" | "settings_metaOption_forceDisable_activateAlert" | "settings_metaOption_forceDisable_deactivateAlert" | "settings_metaOption_forceDisable_activatedNow_short" | "settings_metaOption_forceDisable_activatedNow_long" | "settings_metaOption_forceDisable_availableDeactivate_short" | "settings_metaOption_forceDisable_availableDeactivate_long" | "settings_metaOption_forceDisable_continue_currently_label" | "settings_userOption_behaviors_title" | "settings_userOption_defaultViewBehavior_title" | "settings_userOption_theaterModeBehavior_title" | "settings_userOption_fullscreenBehavior_title" | "settings_userOption_positionPlayerBar_title" | "settings_userOption_positionPlayerBar_outside" | "settings_userOption_positionPlayerBar_inside" | "settings_userOption_alwaysDisplayPlayerBar_title" | "settings_userOption_alwaysDisplayPlayerBar_description" | "settings_userOption_inheritPositionPlayerBarBeforeSwitching_title" | "settings_userOption_inheritPositionPlayerBarBeforeSwitching_description" | "settings_userOption_showOpenSettingsIcon_title" | "settings_userOption_showOpenSettingsIcon_description",
       substitutions?: string | string[],
       options?: GetMessageOptions,
     ): string;
