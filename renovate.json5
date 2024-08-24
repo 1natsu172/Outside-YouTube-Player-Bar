@@ -28,6 +28,20 @@
         "pin"
       ],
       "automerge": true
+    },
+    {
+      "groupName": "Node.js",
+      "matchPaths": [
+        ".tool-versions"
+      ],
+      "matchPackageNames": [
+        "@types/node"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ]
     }
   ],
   "timezone": "Asia/Tokyo",
