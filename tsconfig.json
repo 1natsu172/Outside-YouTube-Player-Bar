@@ -7,6 +7,10 @@
       "ESNext"
     ],
     "jsx": "react-jsx",
-    // "types": ["react/canary", "react-dom/canary"], // use canary version
+    // https://www.typescriptlang.org/ja/tsconfig/#types
+    "types": [
+      // "react/canary", // use canary version
+      // "react-dom/canary" // use canary version
+    ],
   }
 }
