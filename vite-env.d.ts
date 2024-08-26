@@ -1,5 +1,3 @@
-/// <reference types="vite/client" />
-
 /**
  * @references
  * https://vitejs.dev/guide/env-and-mode.html#env-files
