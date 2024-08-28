@@ -7,12 +7,13 @@ export default defineWxtModule({
 	setup: (wxt) => {
 		const { mode } = wxt.config;
 
-		wxt.hooks.hook("ready", () => {
-			wxt.config.outDir = wxt.config.outDir.replace(
-				wxt.config.outDir,
-				`${wxt.config.outDir}/${mode}`,
-			);
-		});
+		// FIXME: wxtのバグがなおったら戻す
+		// wxt.hooks.hook("ready", () => {
+		// 	wxt.config.outDir = wxt.config.outDir.replace(
+		// 		wxt.config.outDir,
+		// 		`${wxt.config.outDir}/${mode}`,
+		// 	);
+		// });
 
 		wxt.hooks.hook("build:manifestGenerated", (_, manifest) => {
 			if (mode === "development") {
