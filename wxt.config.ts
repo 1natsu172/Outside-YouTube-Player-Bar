@@ -6,6 +6,7 @@ export const developConfig: UserConfig = {
 	srcDir: "src",
 	entrypointsDir: "entrypoints", // src/entrypoints
 	publicDir: "public", // src/public,
+	modulesDir: "wxtModules",
 	runner: {
 		disabled: false,
 		binaries: {
