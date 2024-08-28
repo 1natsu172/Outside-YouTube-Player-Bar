@@ -38,7 +38,6 @@
 		"delivery:edge": "wxt submit --edge-zip .output/*-$npm_package_version-edge.zip"
 	},
 	"devDependencies": {
-		"@1natsu/wait-element": "3.0.0",
 		"@biomejs/biome": "1.8.3",
 		"@playwright/test": "1.46.1",
 		"@sentry/types": "8.26.0",
@@ -64,6 +63,7 @@
 		"wxt": "0.19.7"
 	},
 	"dependencies": {
+		"@1natsu/wait-element": "4.0.0",
 		"@mantine/core": "^7.10.2",
 		"@mantine/hooks": "^7.10.2",
 		"@sentry/browser": "^8.11.0",
