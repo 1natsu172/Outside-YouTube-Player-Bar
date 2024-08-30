@@ -1,10 +1,10 @@
 import { elementQuery } from "@/core/mains/meta.js";
+import { YOUTUBE_MATCHES } from "@/utils/constants.js";
 import { waitElement } from "@1natsu/wait-element";
 
 export default defineContentScript({
 	world: "MAIN",
-	// FIXME: CJSのせいでbrowserが紛れ込んできてクラッシュする
-	matches: ["https://*.youtube.com/*"],
+	matches: YOUTUBE_MATCHES,
 	async main() {
 		const player = (await waitElement(elementQuery.MOVIE_PLAYER)) as Record<
 			string,
