@@ -11,7 +11,7 @@ Display YouTube's player bar outside the video.
 [![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/gmlbhbdkhnfhhmhdjopdbcfliajcafde.svg?style=for-the-badge)](https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde)
 [![Chrome Web Store Rating](https://img.shields.io/chrome-web-store/stars/gmlbhbdkhnfhhmhdjopdbcfliajcafde.svg?style=for-the-badge)](https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde)
 
-[![Chrome Web Store](./promo/Chrome-Web-Store-available-in-the.png)](https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde)
+<a href="https://chrome.google.com/webstore/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde" target="_blank"><img src="./promo/Chrome-Web-Store-available-in-the.png" alt="Chrome Web Store" width=490/></a>
 
 
 ### Mozilla Firefox
@@ -20,10 +20,10 @@ Display YouTube's player bar outside the video.
 [![Mozilla Add-on Rating](https://img.shields.io/amo/rating/%7B6c3b7240-7017-430b-b03c-432e61ee3a82%7D?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/outside-youtube-player-bar)
 [![Mozilla Add-on Stars](https://img.shields.io/amo/stars/%7B6c3b7240-7017-430b-b03c-432e61ee3a82%7D?style=for-the-badge)](https://addons.mozilla.org/firefox/addon/outside-youtube-player-bar)
 
-[![Mozilla GET THE ADD-ON](./promo/Firefox-get-the-addon.svg)](https://addons.mozilla.org/firefox/addon/outside-youtube-player-bar)
+<a href="https://addons.mozilla.org/firefox/addon/outside-youtube-player-bar" target="_blank"><img src="./promo/Firefox-get-the-addon.svg" alt="Mozilla GET THE ADD-ON" width=490/></a>
 
 ### Microsoft Edge
-[![Edge add-ons](./promo/Microsoft-get-it-from.svg)](https://microsoftedge.microsoft.com/addons/detail/cgmpfcjkhpmpcomcbpapfpdcalmpgjgb)
+<a href="https://microsoftedge.microsoft.com/addons/detail/cgmpfcjkhpmpcomcbpapfpdcalmpgjgb" target="_blank"><img src="./promo/Microsoft-get-it-from.svg" alt="Edge add-ons" width=490/></a>
 
 ***
 
