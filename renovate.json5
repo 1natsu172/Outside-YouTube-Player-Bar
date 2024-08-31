@@ -42,6 +42,19 @@
         "minor",
         "patch"
       ]
+    },
+    {
+      "groupName": "Valtio",
+      "matchPackageNames": [
+        "valtio",
+        "valtio-history",
+        "derive-valtio"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ]
     }
   ],
   "timezone": "Asia/Tokyo",
