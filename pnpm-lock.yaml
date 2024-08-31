@@ -47,8 +47,8 @@ importers:
         specifier: ^6.1.4
         version: 6.1.4
       derive-valtio:
-        specifier: ^0.1.0
-        version: 0.1.0(valtio@1.13.2(@types/react@18.3.5)(react@18.3.1))
+        specifier: ^0.2.0
+        version: 0.2.0(valtio@1.13.2(@types/react@18.3.5)(react@18.3.1))
       mabiki:
         specifier: ^1.0.1
         version: 1.0.1
@@ -1546,6 +1546,11 @@ packages:
     resolution: {integrity: sha512-OCg2UsLbXK7GmmpzMXhYkdO64vhJ1ROUUGaTFyHjVwEdMEcTTRj7W1TxLbSBxdY8QLBPCcp66MTyaSy0RpO17A==}
     peerDependencies:
       valtio: '*'
+
+  derive-valtio@0.2.0:
+    resolution: {integrity: sha512-6slhaFHtfaL3t5dLYaQt6s4G2xZymhu0Ktdl7OMeVk8+46RgR8ft6FL0Tr4F31W+yPH03nJe1SSP4JFy2hSMRA==}
+    peerDependencies:
+      valtio: '>=2.0.0-rc.0'
 
   destr@2.0.3:
     resolution: {integrity: sha512-2N3BOUU4gYMpTP24s5rF5iP7BDr7uNTCs4ozw3kf/eKfvWSIu93GEBi5m427YoyJoeOzQ5smuu4nNAPGb8idSQ==}
@@ -4822,6 +4827,10 @@ snapshots:
   dequal@2.0.3: {}
 
   derive-valtio@0.1.0(valtio@1.13.2(@types/react@18.3.5)(react@18.3.1)):
+    dependencies:
+      valtio: 1.13.2(@types/react@18.3.5)(react@18.3.1)
+
+  derive-valtio@0.2.0(valtio@1.13.2(@types/react@18.3.5)(react@18.3.1)):
     dependencies:
       valtio: 1.13.2(@types/react@18.3.5)(react@18.3.1)
 
