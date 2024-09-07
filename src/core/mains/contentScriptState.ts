@@ -41,6 +41,9 @@ export type OperationState = {
 		moviePlayerContext: {
 			hoveringMouse: boolean;
 		};
+		alwaysDisplayPlayerBarContext: {
+			intervalTimerId: NodeJS.Timeout | undefined;
+		};
 	};
 	processOps: {
 		// TODO: 本当にいる？
@@ -50,6 +53,9 @@ export type OperationState = {
 		doneInitialize: boolean;
 		oypbEnable: boolean | undefined;
 		doneIntialMovePlayerBar: boolean;
+		mainWorld: {
+			scriptReady: boolean;
+		};
 	};
 };
 

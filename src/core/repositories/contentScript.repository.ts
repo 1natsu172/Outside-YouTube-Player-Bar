@@ -17,6 +17,9 @@ export const operationState = proxy<ContentScriptState["operation"]>({
 		moviePlayerContext: {
 			hoveringMouse: false,
 		},
+		alwaysDisplayPlayerBarContext: {
+			intervalTimerId: undefined,
+		},
 	},
 	processOps: {
 		scriptStatus: "standByVideoPage",
@@ -25,6 +28,9 @@ export const operationState = proxy<ContentScriptState["operation"]>({
 		doneInitialize: false,
 		oypbEnable: undefined,
 		doneIntialMovePlayerBar: false,
+		mainWorld: {
+			scriptReady: false,
+		},
 	},
 });
 

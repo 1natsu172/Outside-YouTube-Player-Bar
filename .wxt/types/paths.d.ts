@@ -6,13 +6,13 @@ declare module "wxt/browser" {
     | "/_locales/en/messages.json"
     | "/_locales/ja/messages.json"
     | "/background.js"
-    | "/content-scripts/youtube-mainworld.js"
     | "/content-scripts/youtube.js"
     | "/images/icon-128.png"
     | "/images/icon-16.png"
     | "/images/icon-32.png"
     | "/images/icon-48.png"
     | "/options.html"
+    | "/youtube-mainworld.js"
   type HtmlPublicPath = Extract<PublicPath, `${string}.html`>
   export interface WxtRuntime {
     getURL(path: PublicPath): string;

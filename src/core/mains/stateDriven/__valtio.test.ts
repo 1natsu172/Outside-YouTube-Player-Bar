@@ -1,5 +1,6 @@
 import { proxy } from "valtio";
 import { watch } from "valtio/utils";
+import { subscribe } from "valtio/vanilla";
 import { describe, expect, test } from "vitest";
 
 const a = proxy({
@@ -42,5 +43,32 @@ describe("valtio check behavior", () => {
 
 		a.aoo = 1;
 		expect(1).toBe(1);
+	});
+
+	test("partial update", () => {
+		const hoge = proxy({ a: 1, b: 2, c: 3 });
+		hoge.a = 100;
+
+		expect(hoge).toStrictEqual({ a: 100, b: 2, c: 3 });
+
+		hoge.b = 200;
+
+		expect(hoge).toStrictEqual({ a: 100, b: 200, c: 3 });
+	});
+
+	test("partial update with multiple prop", () => {
+		const hoge = proxy({ testObj1: { a: 1, b: 2, c: 3 } });
+
+		subscribe(hoge, () => {
+			console.log("a", hoge.testObj1.a);
+		});
+
+		const contentObj = { a: 100, b: 200 };
+
+		hoge.testObj1 = { ...hoge.testObj1, ...contentObj };
+
+		expect(hoge).toStrictEqual({ testObj1: { a: 100, b: 200, c: 3 } });
+
+		hoge.testObj1.a = 1000;
 	});
 });
