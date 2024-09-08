@@ -11,13 +11,14 @@ export default defineUnlistedScript({
 
 		logger.debug("player APIs", Object.keys(player));
 
-		mainWorldSignals.onMessage("wakeUpPlayerBar", (ev) => {
-			console.log("aaa", ev);
-
+		// TODO: メッセージングを再実装する
+		mainWorldSignals.onMessage("wakeUpPlayerBar", () => {
+			logger.debug("receive wakeUpPlayerBar");
 			player.wakeUpControls();
 		});
 
 		mainWorldSignals.onMessage("hidePlayerBar", () => {
+			logger.debug("receive hidePlayerBar");
 			player.hideControls();
 		});
 

@@ -1,6 +1,6 @@
 import { proxy } from "valtio";
 import { watch } from "valtio/utils";
-import { subscribe } from "valtio/vanilla";
+import { snapshot, subscribe } from "valtio/vanilla";
 import { describe, expect, test } from "vitest";
 
 const a = proxy({
@@ -70,5 +70,22 @@ describe("valtio check behavior", () => {
 		expect(hoge).toStrictEqual({ testObj1: { a: 100, b: 200, c: 3 } });
 
 		hoge.testObj1.a = 1000;
+	});
+
+	test("snapshot reactive", () => {
+		const hoge = proxy({ testObj1: { a: 1, b: 2, c: 3 } });
+
+		const snap = snapshot(hoge);
+
+		expect(snap).toStrictEqual(hoge);
+
+		const contentObj = { a: 100, b: 200 };
+
+		hoge.testObj1 = { ...hoge.testObj1, ...contentObj };
+
+		expect(hoge).toStrictEqual({ testObj1: { a: 100, b: 200, c: 3 } });
+
+		// not reactive
+		expect(snap).toStrictEqual({ testObj1: { a: 1, b: 2, c: 3 } });
 	});
 });

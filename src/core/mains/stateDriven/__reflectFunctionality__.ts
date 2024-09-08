@@ -1,4 +1,5 @@
 import { __reflectFunctionalityState__ } from "@/core/repositories/contentScript.repository.js";
+import { execAlwaysDisplayPlayerBar2 } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
 import { movePlayerBarElement } from "@/core/services/domAffectServices/playerBarDomAffect.service.js";
 import { snapshot, subscribe } from "valtio/vanilla";
 
@@ -9,9 +10,14 @@ export const reflectFunctionality = () => {
 
 		logger.info("reflectFunctionality", { feature, context, op });
 
-		await movePlayerBarElement({
-			direction: feature.behavior.positionPlayerBar,
-			playerMode: context.videoPlayerState.mode,
-		});
+		await Promise.allSettled([
+			movePlayerBarElement({
+				direction: feature.behavior.positionPlayerBar,
+				playerMode: context.videoPlayerState.mode,
+			}),
+			execAlwaysDisplayPlayerBar2({
+				position: feature.behavior.positionPlayerBar,
+			}),
+		]);
 	});
 };

@@ -1,6 +1,10 @@
+import type { BehaviorState } from "@/core/mains/contentScriptState.js";
 import { elementAttributes, elementQuery } from "@/core/mains/meta.js";
 import { getBehaviorState } from "@/core/presenters/statePresenter/behaviorState/index.js";
-import { getUiOps } from "@/core/presenters/statePresenter/operationState/index.js";
+import {
+	getFlagOps,
+	getUiOps,
+} from "@/core/presenters/statePresenter/operationState/index.js";
 import { getSiteMetaState } from "@/core/presenters/statePresenter/siteMetaState/index.js";
 import { resolveBehaviorOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import { moviePlayerHoveringOperation } from "@/core/services//operationServices/index.js";
@@ -10,6 +14,7 @@ import {
 	isMouseEvent,
 	mouseleaveJudge,
 } from "@/core/services/eventEffectServices/libs/mouseEventJudge.js";
+import { setAlwaysDisplayPlayerBarContext } from "@/core/usecases/operationState.usecase.js";
 
 // TODO: テスト書く
 export function judgeMoviePlayerCondition(moviePlayer: Element) {
@@ -72,6 +77,73 @@ export const createPlayerHackEventFn = (moviePlayer: Element) => {
 		hideCursor,
 		undoHideCursor,
 	};
+};
+
+export const execAlwaysDisplayPlayerBar2 = async ({
+	position,
+}: {
+	position: BehaviorState["positionPlayerBar"];
+}) => {
+	if (position === "inside") {
+		return;
+	}
+
+	const {
+		alwaysDisplayPlayerBarContext: { intervalTimerId },
+	} = getUiOps();
+	const {
+		mainWorld: { scriptReady: readyMainWorld },
+	} = getFlagOps();
+
+	if (!readyMainWorld) {
+		if (intervalTimerId) {
+			logger.debug("Stop interval because main world is down.");
+			clearInterval(intervalTimerId);
+		}
+		logger.debug("Not ready main world script yet.");
+		return;
+	}
+
+	if (intervalTimerId) {
+		logger.debug(
+			"Guard execAlwaysDisplayPlayerBar because already exist intervalTimerId.",
+		);
+		return;
+	}
+
+	const dataAttrIsAlwaysDisplayBar = documentElementAttr(
+		elementAttributes.oypb.IS_ALWAYS_DISPLAY_PLAYER_BAR,
+	);
+
+	const { positionPlayerBar } = getBehaviorState();
+	const isOutside = positionPlayerBar === "outside";
+
+	const {
+		videoPlayerState: { mode },
+	} = getSiteMetaState();
+
+	if (mode === "none") {
+		return;
+	}
+
+	const { alwaysDisplayPlayerBar } = await resolveBehaviorOption(mode);
+
+	const handleAlwaysDisplay = async () => {
+		if (isOutside && alwaysDisplayPlayerBar) {
+			dataAttrIsAlwaysDisplayBar.set();
+			// TODO: ここでメッセージング
+			logger.debug("request wakeUpPlayerBar");
+		} // TODO: is-not alwaysの処理
+	};
+
+	// registering phase
+	const timerId = setInterval(handleAlwaysDisplay, 950);
+
+	globalThis.__OYPB__?.ctx?.onInvalidated(() => clearInterval(timerId));
+
+	setAlwaysDisplayPlayerBarContext({
+		intervalTimerId: timerId,
+	});
 };
 
 export const execAlwaysDisplayPlayerBar = async ({
