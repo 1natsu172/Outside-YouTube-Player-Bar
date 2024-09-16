@@ -32,9 +32,10 @@ export class Executor {
 		this.stateDriven = new StateDriven();
 		this.mainWorldBridge = new MainWorldBridge();
 		// NOTE: https://wxt.dev/guide/handling-updates.html#content-script-cleanup
-		this.ctx.onInvalidated(() => {
+		this.ctx.onInvalidated(async () => {
 			this.unregisterEffects();
 			this.stateDriven.unsubscribeDrivens();
+			await this.mainWorldBridge.cleanup();
 		});
 	}
 

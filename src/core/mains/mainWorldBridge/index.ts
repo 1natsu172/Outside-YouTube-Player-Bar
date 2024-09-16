@@ -18,4 +18,8 @@ export class MainWorldBridge {
 			});
 		});
 	}
+
+	public async cleanup() {
+		await mainWorldSignals.sendMessage("clearWakeUpPlayerBar", undefined);
+	}
 }

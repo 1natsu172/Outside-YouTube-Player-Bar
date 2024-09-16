@@ -1,5 +1,5 @@
 import { __reflectFunctionalityState__ } from "@/core/repositories/contentScript.repository.js";
-import { execAlwaysDisplayPlayerBar2 } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
+import { manageAlwaysDisplayPlayerBar } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
 import { movePlayerBarElement } from "@/core/services/domAffectServices/playerBarDomAffect.service.js";
 import { snapshot, subscribe } from "valtio/vanilla";
 
@@ -15,7 +15,7 @@ export const reflectFunctionality = () => {
 				direction: feature.behavior.positionPlayerBar,
 				playerMode: context.videoPlayerState.mode,
 			}),
-			execAlwaysDisplayPlayerBar2({
+			manageAlwaysDisplayPlayerBar({
 				position: feature.behavior.positionPlayerBar,
 			}),
 		]);

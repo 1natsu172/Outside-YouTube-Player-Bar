@@ -1,16 +1,24 @@
 import { extensionMainWorldScriptName } from "@/core/mains/meta.js";
 import { defineCustomEventMessaging } from "@webext-core/messaging/page";
 
+type SimpleRes = {
+	result: "ok" | "ng";
+	error?: Error;
+};
+
 interface MainWorldSignals {
 	scriptReady(is: boolean): void;
-	wakeUpPlayerBar(data: unknown): void;
-	hidePlayerBar(data: unknown): void;
+	wakeUpPlayerBar(): SimpleRes;
+	wakeUpPlayerBarOnce(): SimpleRes;
+	clearWakeUpPlayerBar(): SimpleRes;
+	hidePlayerBar(): SimpleRes;
 }
 
 /**
  * Signals communicating with MAIN world script.
  * communicating: MAIN world script ⇔ ISOLATED content-script
  */
+// TODO: retry汎用化をする
 export const mainWorldSignals = defineCustomEventMessaging<MainWorldSignals>({
 	namespace: extensionMainWorldScriptName,
 	logger: logger.withTag(extensionMainWorldScriptName),

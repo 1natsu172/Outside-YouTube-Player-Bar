@@ -41,9 +41,7 @@ export type OperationState = {
 		moviePlayerContext: {
 			hoveringMouse: boolean;
 		};
-		alwaysDisplayPlayerBarContext: {
-			intervalTimerId: NodeJS.Timeout | undefined;
-		};
+		alwaysDisplayPlayerBarContext: {};
 	};
 	processOps: {
 		// TODO: 本当にいる？
