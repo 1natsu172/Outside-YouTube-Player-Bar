@@ -10,13 +10,14 @@ interface MainWorldSignals {
 /**
  * Signals communicating with MAIN world script.
  * communicating: MAIN world script ⇔ ISOLATED content-script
- * @deprecated https://github.com/aklinker1/webext-core/issues/57 のMAIN WORLDとの通信に問題があるのが解消されるあでフリーズする。直ったらこれを使うようにする
  */
 export const mainWorldSignals = defineCustomEventMessaging<MainWorldSignals>({
 	namespace: extensionMainWorldScriptName,
 	logger: logger.withTag(extensionMainWorldScriptName),
 });
 
+// -------------------
+// NOTE: CS ⇔ BGのメッセージングが必要になったら戻す
 // type MainWorldAgencySignals = {};
 
 // /**

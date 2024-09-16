@@ -132,7 +132,7 @@ export const execAlwaysDisplayPlayerBar2 = async ({
 		if (isOutside && alwaysDisplayPlayerBar) {
 			dataAttrIsAlwaysDisplayBar.set();
 			// TODO: ここでメッセージング
-			logger.debug("request wakeUpPlayerBar");
+			logger.debug("request wakeUpPlayerBar", Date.now());
 		} // TODO: is-not alwaysの処理
 	};
 

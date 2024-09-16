@@ -6,7 +6,6 @@ import { elementAttributes } from "@/core/mains/meta.js";
 import { siteMetaState } from "@/core/repositories/contentScript.repository.js";
 import type { NamedNodeMapLike } from "@/utils/domUtils/attr.js";
 import { useSnapshot } from "valtio";
-import { snapshot } from "valtio/vanilla";
 
 export const useVideoPlayerMode = () => {
 	const state = useSnapshot(siteMetaState.videoPlayerState).mode;
@@ -14,7 +13,7 @@ export const useVideoPlayerMode = () => {
 };
 
 export const getSiteMetaState = () => {
-	return snapshot(siteMetaState);
+	return siteMetaState;
 };
 
 export const judgeCurrentVideoPlayerMode = (

@@ -11,7 +11,6 @@ export default defineUnlistedScript({
 
 		logger.debug("player APIs", Object.keys(player));
 
-		// TODO: メッセージングを再実装する
 		mainWorldSignals.onMessage("wakeUpPlayerBar", () => {
 			logger.debug("receive wakeUpPlayerBar");
 			player.wakeUpControls();
@@ -22,12 +21,6 @@ export default defineUnlistedScript({
 			player.hideControls();
 		});
 
-		mainWorldSignals.onMessage("scriptReady", (message) => {
-			void logger.warn(
-				"FIXME: WORKAROUND FOR GUARD RECEIVING SENDER OWN MESSAGE https://github.com/aklinker1/webext-core/issues/57",
-				message,
-			);
-		});
 		await mainWorldSignals.sendMessage("scriptReady", true);
 	},
 });

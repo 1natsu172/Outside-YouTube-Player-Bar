@@ -38,8 +38,8 @@ importers:
         specifier: ^5.45.1
         version: 5.54.1(react@18.3.1)
       '@webext-core/messaging':
-        specifier: ^1.4.0
-        version: 1.4.0
+        specifier: link:/Users/1natsu/ghq/github.com/1natsu172/webext-core.worktrees/main/packages/messaging
+        version: link:../webext-core.worktrees/main/packages/messaging
       consola:
         specifier: ^3.2.3
         version: 3.2.3
@@ -1118,9 +1118,6 @@ packages:
 
   '@webext-core/match-patterns@1.0.3':
     resolution: {integrity: sha512-NY39ACqCxdKBmHgw361M9pfJma8e4AZo20w9AY+5ZjIj1W2dvXC8J31G5fjfOGbulW9w4WKpT8fPooi0mLkn9A==}
-
-  '@webext-core/messaging@1.4.0':
-    resolution: {integrity: sha512-gzXQ13HfKR3Yrn9TnrvTC/5seA7uPFvaqxqNFBsFOOdSZa5LyXt58Rhym8BYXarkWUGp+fh8f6AYM3RYuNbS+A==}
 
   acorn@8.12.1:
     resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
@@ -2954,10 +2951,6 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  serialize-error@11.0.3:
-    resolution: {integrity: sha512-2G2y++21dhj2R7iHAdd0FIzjGwuKZld+7Pl/bTU6YIkrC2ZMbVUjm+luj6A6V34Rv9XfKJDKpTWu9W4Gse1D9g==}
-    engines: {node: '>=14.16'}
-
   set-value@4.1.0:
     resolution: {integrity: sha512-zTEg4HL0RwVrqcWs3ztF+x1vkxfm0lP+MQQFPiMJTKVceBwEV0A569Ou8l9IYQG8jOZdMVI1hGsc0tmeD2o/Lw==}
     engines: {node: '>=11.0'}
@@ -3392,9 +3385,6 @@ packages:
   web-ext-run@0.2.1:
     resolution: {integrity: sha512-5D11VcjdGkA1/xax5UWL0YeAbDySKHzWFe6EpsoPNUMw5Uk9tKk9p6GUOfcaI5N7sINKfBMZYNsTBiu5dzJB9A==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
-
-  webextension-polyfill@0.10.0:
-    resolution: {integrity: sha512-c5s35LgVa5tFaHhrZDnr3FpQpjj1BB+RXhLTYUxGqBVN460HkbM8TBtEqdXWbpTKfzwCcjAZVF7zXCYSKtcp9g==}
 
   webextension-polyfill@0.12.0:
     resolution: {integrity: sha512-97TBmpoWJEE+3nFBQ4VocyCdLKfw54rFaJ6EVQYLBCXqCIpLSZkwGgASpv4oPt9gdKCJ80RJlcmNzNn008Ag6Q==}
@@ -4425,11 +4415,6 @@ snapshots:
       is-potential-custom-element-name: 1.0.1
 
   '@webext-core/match-patterns@1.0.3': {}
-
-  '@webext-core/messaging@1.4.0':
-    dependencies:
-      serialize-error: 11.0.3
-      webextension-polyfill: 0.10.0
 
   acorn@8.12.1: {}
 
@@ -6302,10 +6287,6 @@ snapshots:
 
   semver@7.6.3: {}
 
-  serialize-error@11.0.3:
-    dependencies:
-      type-fest: 2.19.0
-
   set-value@4.1.0:
     dependencies:
       is-plain-object: 2.0.4
@@ -6738,8 +6719,6 @@ snapshots:
       - bufferutil
       - supports-color
       - utf-8-validate
-
-  webextension-polyfill@0.10.0: {}
 
   webextension-polyfill@0.12.0: {}
 
