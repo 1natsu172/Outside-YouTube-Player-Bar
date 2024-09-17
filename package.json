@@ -76,6 +76,7 @@
 		"defu": "^6.1.4",
 		"derive-valtio": "^0.1.0",
 		"mabiki": "^1.0.1",
+		"p-retry": "^6.2.0",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"react-error-boundary": "^4.0.13",

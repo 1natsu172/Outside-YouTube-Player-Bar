@@ -41,6 +41,7 @@ export type OperationState = {
 		moviePlayerContext: {
 			hoveringMouse: boolean;
 		};
+		// biome-ignore lint/complexity/noBannedTypes: TODO: 一旦残す
 		alwaysDisplayPlayerBarContext: {};
 	};
 	processOps: {

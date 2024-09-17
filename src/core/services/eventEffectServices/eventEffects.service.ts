@@ -81,7 +81,6 @@ const moviePlayerHoverEffect = async () => {
  * NOTE: For alwaysDisplayPlayerBar user's effect.
  *
  */
-// TODO: maybe can remove this that if implements MAIN world methods
 const moviePlayerMousemoveEffect = async () => {
 	const moviePlayer = await waitElement(elementQuery.MOVIE_PLAYER);
 	const { hideCursor, undoHideCursor } = createPlayerHackEventFn(moviePlayer);

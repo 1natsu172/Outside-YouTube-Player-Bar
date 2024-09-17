@@ -1,5 +1,6 @@
 import { extensionMainWorldScriptName } from "@/core/mains/meta.js";
 import { defineCustomEventMessaging } from "@webext-core/messaging/page";
+import pRetry from "p-retry";
 
 type SimpleRes = {
 	result: "ok" | "ng";
@@ -18,11 +19,16 @@ interface MainWorldSignals {
  * Signals communicating with MAIN world script.
  * communicating: MAIN world script ⇔ ISOLATED content-script
  */
-// TODO: retry汎用化をする
-export const mainWorldSignals = defineCustomEventMessaging<MainWorldSignals>({
+const _mainWorldSignals = defineCustomEventMessaging<MainWorldSignals>({
 	namespace: extensionMainWorldScriptName,
 	logger: logger.withTag(extensionMainWorldScriptName),
 });
+export const mainWorldSignals = {
+	..._mainWorldSignals,
+	sendMessage(...args: Parameters<(typeof _mainWorldSignals)["sendMessage"]>) {
+		return pRetry(() => _mainWorldSignals.sendMessage(...args));
+	},
+};
 
 // -------------------
 // NOTE: CS ⇔ BGのメッセージングが必要になったら戻す

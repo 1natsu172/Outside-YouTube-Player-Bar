@@ -84,8 +84,6 @@ export const manageAlwaysDisplayPlayerBar = async ({
 }: {
 	position: BehaviorState["positionPlayerBar"];
 }) => {
-	console.log("OI!!!!!!!!!!");
-
 	const {
 		mainWorld: { scriptReady: readyMainWorld },
 	} = getFlagOps();

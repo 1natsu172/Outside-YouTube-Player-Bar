@@ -1,11 +1,6 @@
 import { elementQuery } from "@/core/mains/meta.js";
 import { elementAttributes } from "@/core/mains/meta.js";
 import { browserCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
-import {
-	createPlayerHackEventFn,
-	execAlwaysDisplayPlayerBar,
-	judgeMoviePlayerCondition,
-} from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
 import { playerBarIntersectionOperation } from "@/core/services/operationServices/index.js";
 import { applyVideoPlayerModeToSiteMeta } from "@/core/services/siteMetaServices/index.js";
 import { syncMoviePlayerAttributes } from "@/core/services/styleAffectServices/applyCompatibilityStyles.service.js";
@@ -15,13 +10,6 @@ import { debounce } from "mabiki";
 
 const moviePlayerElementEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER);
-	const { activateBlockAutoHide, hideCursor } =
-		createPlayerHackEventFn(element);
-	// NOTE: If longer than 1sec(1000ms), the play-video-time of bar is delayed, so it was decided to 950.
-	const debounceExecBlockAutoHide = debounce(execAlwaysDisplayPlayerBar, 950, {
-		leading: true,
-		trailing: true,
-	});
 	const debounceSyncMoviePlayerAttributes = debounce(
 		syncMoviePlayerAttributes,
 		950,
@@ -43,15 +31,6 @@ const moviePlayerElementEffect = async () => {
 
 					for (const mutation of mutations) {
 						const moviePlayer = mutation.target as Element;
-						const { isVisiblePlayerBar } =
-							judgeMoviePlayerCondition(moviePlayer);
-
-						debounceExecBlockAutoHide({
-							blockAutoHide: activateBlockAutoHide,
-							hideCursor,
-							isVisiblePlayerBar,
-						});
-
 						debounceSyncMoviePlayerAttributes({ moviePlayerEl: moviePlayer });
 					}
 				} catch (error) {
