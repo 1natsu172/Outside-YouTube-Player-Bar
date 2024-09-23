@@ -1,3 +1,4 @@
+import { MainWorldBridge } from "@/core/mains/mainWorldBridge/index.js";
 import { StateDriven } from "@/core/mains/stateDriven/index.js";
 import { operationState } from "@/core/repositories/contentScript.repository.js";
 import {
@@ -25,13 +26,16 @@ import type { ContentScriptContext } from "wxt/client";
 
 export class Executor {
 	private stateDriven: StateDriven;
+	private mainWorldBridge: MainWorldBridge;
 
 	constructor(private ctx: ContentScriptContext) {
 		this.stateDriven = new StateDriven();
+		this.mainWorldBridge = new MainWorldBridge();
 		// NOTE: https://wxt.dev/guide/handling-updates.html#content-script-cleanup
-		this.ctx.onInvalidated(() => {
+		this.ctx.onInvalidated(async () => {
 			this.unregisterEffects();
 			this.stateDriven.unsubscribeDrivens();
+			await this.mainWorldBridge.cleanup();
 		});
 	}
 
@@ -54,6 +58,7 @@ export class Executor {
 		await initializeDebugMode().then((unwatch) => {
 			this.__registeredEffects.push([unwatch]);
 		});
+		await this.mainWorldBridge.init();
 		await this.setupEffects();
 		await applyCompatibilityStyles();
 		await this.stateDriven.setup();

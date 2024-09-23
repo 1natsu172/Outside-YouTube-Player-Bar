@@ -1,5 +1,6 @@
 import { defineConfig } from "wxt";
 import type { UserConfig } from "wxt";
+import { YOUTUBE_MATCHES } from "./src/utils/constants.js";
 import viteConfig from "./vite.config.js";
 
 export const developConfig: UserConfig = {
@@ -49,6 +50,12 @@ export const manifestJsonConfig: UserConfig["manifest"] = (configEnv) => ({
 		default_title: "__MSG_browserActionTitle__",
 	},
 	permissions: ["storage", "tabs"],
+	web_accessible_resources: [
+		{
+			resources: ["youtube-mainworld.js"],
+			matches: YOUTUBE_MATCHES,
+		},
+	],
 	// NOTE: must need id for use storage API etc, https://extensionworkshop.com/documentation/develop/extensions-and-the-add-on-id/
 	browser_specific_settings:
 		configEnv.browser === "firefox"

@@ -12,6 +12,7 @@ declare module "wxt/browser" {
     | "/images/icon-32.png"
     | "/images/icon-48.png"
     | "/options.html"
+    | "/youtube-mainworld.js"
   type HtmlPublicPath = Extract<PublicPath, `${string}.html`>
   export interface WxtRuntime {
     getURL(path: PublicPath): string;

@@ -7,7 +7,6 @@ import {
 } from "@tabler/icons-react";
 
 const links = [
-	// TODO: url
 	{
 		url: "https://chromewebstore.google.com/detail/outside-youtube-player-ba/gmlbhbdkhnfhhmhdjopdbcfliajcafde",
 		icon: IconBrandChrome,

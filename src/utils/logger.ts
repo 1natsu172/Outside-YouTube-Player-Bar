@@ -1,8 +1,7 @@
 import { extensionNameSymbol } from "@/core/mains/meta.js";
-import { debugMode } from "@/core/repositories/options.repository.js";
 import { LogLevels, consola } from "consola/browser";
 
-export let logger = createLogger({ isDebug: debugMode.fallback });
+export let logger = createLogger({ isDebug: import.meta.env.DEV });
 export type Logger = typeof logger;
 
 type LoggerSettings = {

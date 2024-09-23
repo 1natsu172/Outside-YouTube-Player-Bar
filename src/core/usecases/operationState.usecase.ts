@@ -17,6 +17,15 @@ export const setDoneIntialMovePlayerBar = (
 	operationState.flagOps.doneIntialMovePlayerBar = is;
 };
 
+export const setMainWorldFlag = (
+	flag: Partial<OperationState["flagOps"]["mainWorld"]>,
+) => {
+	operationState.flagOps.mainWorld = {
+		...operationState.flagOps.mainWorld,
+		...flag,
+	};
+};
+
 export const setPlayerBarIntersection = (
 	state: OperationState["uiOps"]["playerBarIntersection"],
 ) => {
@@ -27,4 +36,13 @@ export const setMoviePlayerContext = (
 	state: OperationState["uiOps"]["moviePlayerContext"],
 ) => {
 	operationState.uiOps.moviePlayerContext = state;
+};
+
+export const setAlwaysDisplayPlayerBarContext = (
+	state: Partial<OperationState["uiOps"]["alwaysDisplayPlayerBarContext"]>,
+) => {
+	operationState.uiOps.alwaysDisplayPlayerBarContext = {
+		...operationState.uiOps.alwaysDisplayPlayerBarContext,
+		...state,
+	};
 };

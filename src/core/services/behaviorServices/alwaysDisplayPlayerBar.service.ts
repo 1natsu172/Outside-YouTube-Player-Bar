@@ -1,6 +1,14 @@
+import type {
+	BehaviorState,
+	OperationState,
+} from "@/core/mains/contentScriptState.js";
+import { mainWorldSignals } from "@/core/mains/messagings/mainWorldSignals/index.js";
 import { elementAttributes, elementQuery } from "@/core/mains/meta.js";
 import { getBehaviorState } from "@/core/presenters/statePresenter/behaviorState/index.js";
-import { getUiOps } from "@/core/presenters/statePresenter/operationState/index.js";
+import {
+	getFlagOps,
+	getUiOps,
+} from "@/core/presenters/statePresenter/operationState/index.js";
 import { getSiteMetaState } from "@/core/presenters/statePresenter/siteMetaState/index.js";
 import { resolveBehaviorOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import { moviePlayerHoveringOperation } from "@/core/services//operationServices/index.js";
@@ -74,6 +82,60 @@ export const createPlayerHackEventFn = (moviePlayer: Element) => {
 	};
 };
 
+export const manageAlwaysDisplayPlayerBar = async ({
+	position,
+	moviePlayerContext,
+}: {
+	position: BehaviorState["positionPlayerBar"];
+	moviePlayerContext: OperationState["uiOps"]["moviePlayerContext"];
+}) => {
+	const {
+		mainWorld: { scriptReady: readyMainWorld },
+	} = getFlagOps();
+
+	if (!readyMainWorld) {
+		await mainWorldSignals.sendMessage("clearWakeUpPlayerBar", undefined);
+		logger.debug("Not ready main world script yet. OR main world is down.");
+		return;
+	}
+
+	const dataAttrIsAlwaysDisplayBar = documentElementAttr(
+		elementAttributes.oypb.IS_ALWAYS_DISPLAY_PLAYER_BAR,
+	);
+
+	if (position === "inside") {
+		dataAttrIsAlwaysDisplayBar.remove();
+		await mainWorldSignals.sendMessage("resetControlState", undefined);
+		return;
+	}
+
+	const {
+		videoPlayerState: { mode },
+	} = getSiteMetaState();
+
+	const { alwaysDisplayPlayerBar } = await resolveBehaviorOption(mode);
+
+	if (position === "outside" && alwaysDisplayPlayerBar) {
+		dataAttrIsAlwaysDisplayBar.set();
+		logger.debug("request alwaysDisplayPlayerBar");
+		await mainWorldSignals.sendMessage("wakeUpPlayerBar", undefined);
+	}
+
+	if (position === "outside" && !alwaysDisplayPlayerBar) {
+		if (moviePlayerContext.hoveringMouse) {
+			dataAttrIsAlwaysDisplayBar.set();
+			await mainWorldSignals.sendMessage("wakeUpPlayerBar", undefined);
+		} else {
+			// NOTE: This is effectively the `hide()` method.
+			dataAttrIsAlwaysDisplayBar.remove();
+			await mainWorldSignals.sendMessage("resetControlState", undefined);
+		}
+	}
+};
+
+/**
+ * @deprecated
+ */
 export const execAlwaysDisplayPlayerBar = async ({
 	isVisiblePlayerBar,
 	blockAutoHide,
@@ -145,11 +207,9 @@ export const execAlwaysDisplayPlayerBar = async ({
 export const pseudoReproducePlayerMouseHover = async ({
 	event,
 	eventFrom,
-	deactivateBlockAutoHide,
 }: {
 	event: Event;
 	eventFrom: typeof elementQuery.MOVIE_PLAYER | typeof elementQuery.PLAYER_BAR;
-	deactivateBlockAutoHide?: () => void;
 }) => {
 	const { positionPlayerBar } = getBehaviorState();
 	const isOutside = positionPlayerBar === "outside";
@@ -199,7 +259,6 @@ export const pseudoReproducePlayerMouseHover = async ({
 				// equal leave from the 3 edges → ┗━━━━━━━┛
 				if (!isLeaveFromTopEdge) {
 					moviePlayerHoveringOperation(false);
-					deactivateBlockAutoHide?.();
 				}
 				break;
 			}

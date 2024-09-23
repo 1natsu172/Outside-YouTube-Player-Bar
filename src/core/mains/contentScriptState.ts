@@ -7,6 +7,7 @@ export type ReflectFunctionalityState = Readonly<{
 	};
 	context: {
 		videoPlayerState: SiteMetaState["videoPlayerState"];
+		moviePlayerContext: OperationState["uiOps"]["moviePlayerContext"];
 	};
 }>;
 
@@ -41,6 +42,8 @@ export type OperationState = {
 		moviePlayerContext: {
 			hoveringMouse: boolean;
 		};
+		// biome-ignore lint/complexity/noBannedTypes: TODO: 一旦残す
+		alwaysDisplayPlayerBarContext: {};
 	};
 	processOps: {
 		// TODO: 本当にいる？
@@ -50,6 +53,9 @@ export type OperationState = {
 		doneInitialize: boolean;
 		oypbEnable: boolean | undefined;
 		doneIntialMovePlayerBar: boolean;
+		mainWorld: {
+			scriptReady: boolean;
+		};
 	};
 };
 
