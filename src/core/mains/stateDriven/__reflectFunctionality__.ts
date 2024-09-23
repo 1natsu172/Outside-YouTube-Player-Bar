@@ -3,6 +3,10 @@ import { manageAlwaysDisplayPlayerBar } from "@/core/services/behaviorServices/a
 import { movePlayerBarElement } from "@/core/services/domAffectServices/playerBarDomAffect.service.js";
 import { snapshot, subscribe } from "valtio/vanilla";
 
+import { Mutex } from "async-mutex";
+
+const mutex = new Mutex();
+
 export const reflectFunctionality = () => {
 	return subscribe(__reflectFunctionalityState__, async (op) => {
 		const feature = snapshot(__reflectFunctionalityState__.feature);
@@ -10,15 +14,17 @@ export const reflectFunctionality = () => {
 
 		logger.info("reflectFunctionality", { feature, context, op });
 
-		await Promise.allSettled([
-			movePlayerBarElement({
-				direction: feature.behavior.positionPlayerBar,
-				playerMode: context.videoPlayerState.mode,
-			}),
-			manageAlwaysDisplayPlayerBar({
-				position: feature.behavior.positionPlayerBar,
-				moviePlayerContext: context.moviePlayerContext,
-			}),
-		]);
+		await mutex.runExclusive(async () => {
+			await Promise.allSettled([
+				movePlayerBarElement({
+					direction: feature.behavior.positionPlayerBar,
+					playerMode: context.videoPlayerState.mode,
+				}),
+				manageAlwaysDisplayPlayerBar({
+					position: feature.behavior.positionPlayerBar,
+					moviePlayerContext: context.moviePlayerContext,
+				}),
+			]);
+		});
 	});
 };

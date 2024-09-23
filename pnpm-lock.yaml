@@ -40,6 +40,9 @@ importers:
       '@webext-core/messaging':
         specifier: link:/Users/1natsu/ghq/github.com/1natsu172/webext-core.worktrees/main/packages/messaging
         version: link:../webext-core.worktrees/main/packages/messaging
+      async-mutex:
+        specifier: ^0.5.0
+        version: 0.5.0
       consola:
         specifier: ^3.2.3
         version: 3.2.3
