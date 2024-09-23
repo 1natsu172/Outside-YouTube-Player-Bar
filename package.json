@@ -57,7 +57,7 @@
 		"postcss-import": "16.1.0",
 		"postcss-nesting": "13.0.0",
 		"rollup-preserve-directives": "1.1.1",
-		"typescript": "5.5.4",
+		"typescript": "5.6.2",
 		"vite-plugin-svgr": "4.2.0",
 		"vitest": "2.0.5",
 		"wxt": "0.19.9"
