@@ -12,7 +12,7 @@ const moviePlayerElementEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER);
 	const debounceSyncMoviePlayerAttributes = debounce(
 		syncMoviePlayerAttributes,
-		950,
+		200,
 		{
 			leading: true,
 			trailing: true,
@@ -37,7 +37,7 @@ const moviePlayerElementEffect = async () => {
 					browserCaptureClient.captureException(error);
 				}
 			},
-			600,
+			200,
 			{
 				leading: true,
 				trailing: true,
