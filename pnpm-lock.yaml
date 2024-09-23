@@ -38,8 +38,8 @@ importers:
         specifier: ^5.45.1
         version: 5.54.1(react@18.3.1)
       '@webext-core/messaging':
-        specifier: link:/Users/1natsu/ghq/github.com/1natsu172/webext-core.worktrees/main/packages/messaging
-        version: link:../webext-core.worktrees/main/packages/messaging
+        specifier: https://github.com/1natsu172/webext-core/releases/download/patch-mixed-up/webext-core-messaging-1.4.0.tgz
+        version: https://github.com/1natsu172/webext-core/releases/download/patch-mixed-up/webext-core-messaging-1.4.0.tgz
       async-mutex:
         specifier: ^0.5.0
         version: 0.5.0
@@ -684,6 +684,10 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
+  '@lukeed/csprng@1.1.0':
+    resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==}
+    engines: {node: '>=8'}
+
   '@mantine/core@7.12.2':
     resolution: {integrity: sha512-FrMHOKq4s3CiPIxqZ9xnVX7H4PEGNmbtHMvWO/0YlfPgoV0Er/N/DNJOFW1ys4WSnidPTayYeB41riyxxGOpRQ==}
     peerDependencies:
@@ -1127,6 +1131,10 @@ packages:
 
   '@webext-core/match-patterns@1.0.3':
     resolution: {integrity: sha512-NY39ACqCxdKBmHgw361M9pfJma8e4AZo20w9AY+5ZjIj1W2dvXC8J31G5fjfOGbulW9w4WKpT8fPooi0mLkn9A==}
+
+  '@webext-core/messaging@https://github.com/1natsu172/webext-core/releases/download/patch-mixed-up/webext-core-messaging-1.4.0.tgz':
+    resolution: {tarball: https://github.com/1natsu172/webext-core/releases/download/patch-mixed-up/webext-core-messaging-1.4.0.tgz}
+    version: 1.4.0
 
   acorn@8.12.1:
     resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
@@ -2972,6 +2980,10 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  serialize-error@11.0.3:
+    resolution: {integrity: sha512-2G2y++21dhj2R7iHAdd0FIzjGwuKZld+7Pl/bTU6YIkrC2ZMbVUjm+luj6A6V34Rv9XfKJDKpTWu9W4Gse1D9g==}
+    engines: {node: '>=14.16'}
+
   set-value@4.1.0:
     resolution: {integrity: sha512-zTEg4HL0RwVrqcWs3ztF+x1vkxfm0lP+MQQFPiMJTKVceBwEV0A569Ou8l9IYQG8jOZdMVI1hGsc0tmeD2o/Lw==}
     engines: {node: '>=11.0'}
@@ -3214,6 +3226,10 @@ packages:
   uhyphen@0.2.0:
     resolution: {integrity: sha512-qz3o9CHXmJJPGBdqzab7qAYuW8kQGKNEuoHFYrBwV6hWIMcpAmxDLXojcHfFr9US1Pe6zUswEIJIbLI610fuqA==}
 
+  uid@2.0.2:
+    resolution: {integrity: sha512-u3xV3X7uzvi5b1MncmZo3i2Aw222Zk1keqLA1YkHldREkAhAqi65wuPfe7lHx8H/Wzy+8CE7S7uS3jekIM5s8g==}
+    engines: {node: '>=8'}
+
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
@@ -3406,6 +3422,9 @@ packages:
   web-ext-run@0.2.1:
     resolution: {integrity: sha512-5D11VcjdGkA1/xax5UWL0YeAbDySKHzWFe6EpsoPNUMw5Uk9tKk9p6GUOfcaI5N7sINKfBMZYNsTBiu5dzJB9A==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
+
+  webextension-polyfill@0.10.0:
+    resolution: {integrity: sha512-c5s35LgVa5tFaHhrZDnr3FpQpjj1BB+RXhLTYUxGqBVN460HkbM8TBtEqdXWbpTKfzwCcjAZVF7zXCYSKtcp9g==}
 
   webextension-polyfill@0.12.0:
     resolution: {integrity: sha512-97TBmpoWJEE+3nFBQ4VocyCdLKfw54rFaJ6EVQYLBCXqCIpLSZkwGgASpv4oPt9gdKCJ80RJlcmNzNn008Ag6Q==}
@@ -3973,6 +3992,8 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
+  '@lukeed/csprng@1.1.0': {}
+
   '@mantine/core@7.12.2(@mantine/hooks@7.12.2(react@18.3.1))(@types/react@18.3.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/react': 0.26.23(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4438,6 +4459,12 @@ snapshots:
       is-potential-custom-element-name: 1.0.1
 
   '@webext-core/match-patterns@1.0.3': {}
+
+  '@webext-core/messaging@https://github.com/1natsu172/webext-core/releases/download/patch-mixed-up/webext-core-messaging-1.4.0.tgz':
+    dependencies:
+      serialize-error: 11.0.3
+      uid: 2.0.2
+      webextension-polyfill: 0.10.0
 
   acorn@8.12.1: {}
 
@@ -6320,6 +6347,10 @@ snapshots:
 
   semver@7.6.3: {}
 
+  serialize-error@11.0.3:
+    dependencies:
+      type-fest: 2.19.0
+
   set-value@4.1.0:
     dependencies:
       is-plain-object: 2.0.4
@@ -6518,6 +6549,10 @@ snapshots:
   ufo@1.5.4: {}
 
   uhyphen@0.2.0: {}
+
+  uid@2.0.2:
+    dependencies:
+      '@lukeed/csprng': 1.1.0
 
   undici-types@6.19.8: {}
 
@@ -6752,6 +6787,8 @@ snapshots:
       - bufferutil
       - supports-color
       - utf-8-validate
+
+  webextension-polyfill@0.10.0: {}
 
   webextension-polyfill@0.12.0: {}
 
