@@ -12,6 +12,7 @@ interface MainWorldSignals {
 	wakeUpPlayerBar(): SimpleRes;
 	wakeUpPlayerBarOnce(): SimpleRes;
 	clearWakeUpPlayerBar(): SimpleRes;
+	resetControlState(): SimpleRes;
 	hidePlayerBar(): SimpleRes;
 }
 

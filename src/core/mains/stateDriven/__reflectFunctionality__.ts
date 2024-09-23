@@ -17,6 +17,7 @@ export const reflectFunctionality = () => {
 			}),
 			manageAlwaysDisplayPlayerBar({
 				position: feature.behavior.positionPlayerBar,
+				moviePlayerContext: context.moviePlayerContext,
 			}),
 		]);
 	});

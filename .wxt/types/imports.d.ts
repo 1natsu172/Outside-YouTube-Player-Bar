@@ -5,7 +5,7 @@ declare global {
   const InvalidMatchPattern: typeof import('wxt/sandbox')['InvalidMatchPattern']
   const MatchPattern: typeof import('wxt/sandbox')['MatchPattern']
   const YOUTUBE_MATCHES: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/constants')['YOUTUBE_MATCHES']
-  const browser: typeof import('wxt/browser/chrome')['browser']
+  const browser: typeof import('wxt/browser')['browser']
   const createIframeUi: typeof import('wxt/client')['createIframeUi']
   const createIntegratedUi: typeof import('wxt/client')['createIntegratedUi']
   const createLogger: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger')['createLogger']

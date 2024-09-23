@@ -7,6 +7,7 @@ export type ReflectFunctionalityState = Readonly<{
 	};
 	context: {
 		videoPlayerState: SiteMetaState["videoPlayerState"];
+		moviePlayerContext: OperationState["uiOps"]["moviePlayerContext"];
 	};
 }>;
 

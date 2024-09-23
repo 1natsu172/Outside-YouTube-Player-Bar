@@ -1,10 +1,20 @@
 import { mainWorldSignals } from "@/core/mains/messagings/mainWorldSignals/index.js";
 
-type MainWorldPlayer = Record<
-	"hideControls" | "wakeUpControls",
-	() => unknown
-> &
-	Element;
+type MainWorldPlayer = {
+	/**
+	 * @description Display the actual bar.
+	 */
+	wakeUpControls: () => unknown;
+	/**
+	 * @description Hide the actual bar with `display: none` in `ytp-chrome-bottom`.
+	 */
+	hideControls: () => unknown;
+
+	/**
+	 * @description Actually, this is revert `hideControls`. Remove `display: none` in `ytp-chrome-bottom`.
+	 */
+	showControls: () => unknown;
+} & Element;
 
 let wakeUpIntervalTimer: NodeJS.Timeout | undefined = undefined;
 
@@ -25,10 +35,16 @@ export const playerBarControll = async (player: MainWorldPlayer) => {
 		player.wakeUpControls();
 	});
 
+	mainWorldSignals.onMessage("resetControlState", () => {
+		logger.debug("Once requesting wakeUpPlayerBar");
+		player.showControls();
+		clearWakeUpInterval();
+	});
+
 	mainWorldSignals.onMessage("hidePlayerBar", () => {
 		logger.debug("requesting hide playerBar");
 		if (wakeUpIntervalTimer) {
-			clearWakeUpInterval;
+			clearWakeUpInterval();
 		}
 		player.hideControls();
 	});

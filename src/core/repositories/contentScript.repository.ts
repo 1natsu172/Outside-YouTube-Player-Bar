@@ -55,5 +55,8 @@ export const __reflectFunctionalityState__ = derive<
 	ContentScriptState["__reflectFunctionality__"]
 >({
 	feature: (get) => ({ behavior: get(behaviorState) }),
-	context: (get) => ({ videoPlayerState: get(siteMetaState.videoPlayerState) }),
+	context: (get) => ({
+		videoPlayerState: get(siteMetaState.videoPlayerState),
+		moviePlayerContext: get(operationState.uiOps).moviePlayerContext,
+	}),
 });
