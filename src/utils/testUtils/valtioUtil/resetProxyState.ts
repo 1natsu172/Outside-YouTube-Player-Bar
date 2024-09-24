@@ -1,6 +1,9 @@
 import { deepClone } from "valtio/utils";
 import { snapshot } from "valtio/vanilla";
 
+/**
+ * @link https://github.com/pmndrs/valtio/blob/2587214212792cb51c6cac521e461a6f92be4989/docs/how-tos/how-to-reset-state.mdx
+ */
 export function resetProxyState(
 	/**
 	 * targetObj must be valtio proxy object
