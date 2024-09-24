@@ -1,22 +1,22 @@
 :root {
-  /* Initial value: change dynamic from JS */
-  --oypb-player-bar-height: 51px;
+	/* Initial value: change dynamic from JS */
+	--oypb-player-bar-height: 51px;
 
-  /* // player bar color of Default theme. */
-  --oypb-player-bar-color: rgb(15, 15, 15);
-  --oypb-player-bar-font-color: #eee;
-  --oypb-player-bar-icon-color: #fff;
+	/* // player bar color of Default theme. */
+	--oypb-player-bar-color: rgb(15, 15, 15);
+	--oypb-player-bar-font-color: #eee;
+	--oypb-player-bar-icon-color: #fff;
 
-  /* // size of fillthe left and right gap of player bar. */
-  --oypb-player-bar-fill-lr-gap-size: 12px;
+	/* // size of fillthe left and right gap of player bar. */
+	--oypb-player-bar-fill-lr-gap-size: 12px;
 
-  /* // when fullscreen mode */
-  [fullscreen] {
-    --oypb-player-bar-fill-lr-gap-size: 24px;
-  }
+	/* // when fullscreen mode */
+	[fullscreen] {
+		--oypb-player-bar-fill-lr-gap-size: 24px;
+	}
 
-  /* // when dark theme */
-  &[dark] {
-    --oypb-player-bar-color: var(--yt-spec-base-background, rgb(15, 15, 15));
-  }
+	/* // when dark theme */
+	&[dark] {
+		--oypb-player-bar-color: var(--yt-spec-base-background, rgb(15, 15, 15));
+	}
 }

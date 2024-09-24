@@ -1,7 +1,7 @@
 .description {
-  white-space: break-spaces;
+	white-space: break-spaces;
 }
 
 .pre {
-  overflow-x: scroll;
+	overflow-x: scroll;
 }
