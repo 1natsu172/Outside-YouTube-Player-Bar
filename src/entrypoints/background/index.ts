@@ -13,11 +13,11 @@ export default defineBackground({
 
 				logger.log("Hello background!", { id: browser.runtime.id });
 
-				await uiSignals.onMessage("openOptionsPage", () => {
+				uiSignals.onMessage("openOptionsPage", () => {
 					openOptionsPage();
 				});
 
-				await extMetaSignals.onMessage("reloadYouTubeTabs", async () => {
+				extMetaSignals.onMessage("reloadYouTubeTabs", async () => {
 					await reloadYouTubeTabs();
 				});
 
