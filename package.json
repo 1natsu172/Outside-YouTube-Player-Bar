@@ -10,7 +10,7 @@
 	"description": "Display YouTube's control bar outside the video.",
 	"scripts": {
 		"postinstall": "wxt prepare",
-		"biome": "biome check --write ./src",
+		"formatlint": "biome check --write ./src",
 		"predev": "echo \"FIXME: support concurrently exec watch\" && hcm 'src/**/*.module.css' --cache=true",
 		"dev": "wxt",
 		"dev:arc": "pnpm run dev -b arc -c ./wxt.config.arc.ts",
