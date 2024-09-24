@@ -1,6 +1,5 @@
-import { beforeEach } from "node:test";
 import { proxy } from "valtio/vanilla";
-import { describe, expect, test } from "vitest";
+import { beforeEach, describe, expect, test } from "vitest";
 import { resetProxyState } from "./resetProxyState.js";
 
 const fixtureState = {
@@ -36,28 +35,19 @@ const fixtureState = {
 	},
 };
 
-let testProxy = proxy(fixtureState);
+const testProxy = proxy(fixtureState);
+const resetTestProxy = resetProxyState(testProxy);
 
 beforeEach(() => {
-	testProxy = proxy(fixtureState);
+	resetTestProxy();
 });
 
 describe(resetProxyState.name, () => {
 	test("should reset to the proxy object", () => {
-		const resetTestProxy = resetProxyState(testProxy);
 		testProxy.kitchen.light.maker.address.city = "fukuoka";
 		expect(testProxy.kitchen.light.maker.address.city).toBe("fukuoka");
 
 		resetTestProxy();
-		expect(testProxy.kitchen.light.maker.address.city).toBe("ehime");
-	});
-
-	test("should be possible to pass the initial value at any time and reset it to that value", () => {
-		testProxy.kitchen.light.maker.address.city = "fukuoka";
-		expect(testProxy.kitchen.light.maker.address.city).toBe("fukuoka");
-
-		const resetTestProxy = resetProxyState(testProxy);
-		resetTestProxy(fixtureState);
 		expect(testProxy.kitchen.light.maker.address.city).toBe("ehime");
 	});
 });

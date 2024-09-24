@@ -74,8 +74,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(@types/react@18.3.5)(react@18.3.1)
       valtio-history:
-        specifier: ^0.3.3
-        version: 0.3.5(valtio@2.0.0(@types/react@18.3.5)(react@18.3.1))
+        specifier: ^1.0.0
+        version: 1.0.0(valtio@2.0.0(@types/react@18.3.5)(react@18.3.1))
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.2
@@ -3339,10 +3339,10 @@ packages:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
 
-  valtio-history@0.3.5:
-    resolution: {integrity: sha512-qAV8vpFV3uLfRQsRfBJ22sGH4EsARnedFEq4WGMIuwNfiEC5fMvcZfp8Fc8wDP4W9aDchM2bBgx8uhVQ8/3iBw==}
+  valtio-history@1.0.0:
+    resolution: {integrity: sha512-jx1yjUeRGUHDkvt6oOjJDVB636aX/YmRdMh4XVdDYvfsYRGrZwUawisvTRdU77V6NoXnF3s00LkMwo3+5C7TvA==}
     peerDependencies:
-      valtio: '>=1.0.0'
+      valtio: '>=2.0.0-rc.2'
 
   valtio@2.0.0:
     resolution: {integrity: sha512-SzUU5UUK/vBRfHWXihwkJE55YNj8zhOkzxPOexcz0xIIT6Oux5VLynCmzyME2bYuEWcktW2NTaaLbpUydEsHiw==}
@@ -6677,7 +6677,7 @@ snapshots:
 
   uuid@8.3.2: {}
 
-  valtio-history@0.3.5(valtio@2.0.0(@types/react@18.3.5)(react@18.3.1)):
+  valtio-history@1.0.0(valtio@2.0.0(@types/react@18.3.5)(react@18.3.1)):
     dependencies:
       tslib: 2.7.0
       valtio: 2.0.0(@types/react@18.3.5)(react@18.3.1)

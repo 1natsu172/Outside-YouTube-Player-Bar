@@ -1,5 +1,5 @@
 import { proxy } from "valtio";
-import { watch } from "valtio/utils";
+import { deepClone, watch } from "valtio/utils";
 import { snapshot, subscribe } from "valtio/vanilla";
 import { describe, expect, test } from "vitest";
 
@@ -87,5 +87,37 @@ describe("valtio check behavior", () => {
 
 		// not reactive
 		expect(snap).toStrictEqual({ testObj1: { a: 1, b: 2, c: 3 } });
+	});
+
+	test("reset proxy state", () => {
+		const initialObj = {
+			text: "hello",
+			arr: [1, 2, 3],
+			obj: { a: "b", x: { y: { z: { foo: "ok", bar: "ng" } } } },
+		};
+
+		// Must use deepClone initial for reset.
+		const state = proxy(deepClone(initialObj));
+
+		const reset = () => {
+			const resetObj = deepClone(initialObj);
+			for (const key of Object.keys(resetObj)) {
+				// @ts-expect-error
+				state[key] = resetObj[key];
+			}
+		};
+
+		state.obj.a = "c";
+
+		expect(state.obj.a).toBe("c");
+
+		state.obj.x.y.z = { foo: "?", bar: "??" };
+
+		expect(state.obj.x.y.z).toStrictEqual({ foo: "?", bar: "??" });
+
+		reset();
+
+		expect(state.obj.a).toBe("b");
+		expect(state.obj.x.y.z).toStrictEqual({ foo: "ok", bar: "ng" });
 	});
 });
