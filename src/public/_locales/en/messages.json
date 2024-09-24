@@ -33,7 +33,7 @@
 		"message": "Send tip to the author",
 		"description": "Ko-fi"
 	},
-  "kofi_title_highlight": {
+	"kofi_title_highlight": {
 		"message": "tip",
 		"description": "Ko-fi"
 	},
@@ -66,7 +66,7 @@
 		"description": "Ko-fi"
 	},
 
-  "report_announce_title": {
+	"report_announce_title": {
 		"message": "Are there any bugs?",
 		"description": "report announce section title"
 	},
@@ -112,7 +112,7 @@
 		"message": "Please confirm your action",
 		"description": "Confirmation title text"
 	},
-  "fixturewords_available_multiselect": {
+	"fixturewords_available_multiselect": {
 		"message": "Multi selectable",
 		"description": "Multi selectable"
 	},

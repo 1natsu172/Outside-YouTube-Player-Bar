@@ -1,23 +1,23 @@
 .player-bar-button-wrapper {
-  opacity: .9;
-  width: 48px;
-  height: 48px;
-  padding: 0 2px;
-  transition: opacity .1s cubic-bezier(.4, 0, 1, 1);
+	opacity: 0.9;
+	width: 48px;
+	height: 48px;
+	padding: 0 2px;
+	transition: opacity .1s cubic-bezier(0.4, 0, 1, 1);
 
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 
-  &:hover {
-    opacity: 1;
-    transition: opacity .1s cubic-bezier(0, 0, .2, 1);
-  }
+	&:hover {
+		opacity: 1;
+		transition: opacity .1s cubic-bezier(0, 0, 0.2, 1);
+	}
 
-  &[data-video-player-mode="fullscreen"] {
-    width: 54px;
-    height: 54px;
-  }
+	&[data-video-player-mode="fullscreen"] {
+		width: 54px;
+		height: 54px;
+	}
 }

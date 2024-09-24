@@ -4,6 +4,6 @@
 /* custom element style */
 /* <oypb-app> */
 :host {
-  display: inline-block;
-  vertical-align: top;
+	display: inline-block;
+	vertical-align: top;
 }

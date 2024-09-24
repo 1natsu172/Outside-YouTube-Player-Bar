@@ -29,11 +29,11 @@
 		"description": "設定パネルアクセスのツールチップテキスト"
 	},
 
-  "kofi_title": {
+	"kofi_title": {
 		"message": "作者に投げ銭をする",
 		"description": "Ko-fi"
 	},
-  "kofi_title_highlight": {
+	"kofi_title_highlight": {
 		"message": "投げ銭",
 		"description": "Ko-fi"
 	},

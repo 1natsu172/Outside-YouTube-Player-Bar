@@ -12,5 +12,8 @@
 				"noUnusedVariables": "warn"
 			}
 		}
-	}
+	},
+  "formatter":{
+    "ignore": ["*.css.*"]
+  }
 }
