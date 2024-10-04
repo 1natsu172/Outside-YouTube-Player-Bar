@@ -59,7 +59,7 @@
 		"rollup-preserve-directives": "1.1.1",
 		"typescript": "5.6.2",
 		"vite-plugin-svgr": "4.2.0",
-		"vitest": "2.1.1",
+		"vitest": "2.1.2",
 		"wxt": "0.19.10"
 	},
 	"dependencies": {
