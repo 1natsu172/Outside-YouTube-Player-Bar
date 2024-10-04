@@ -27,12 +27,12 @@ export default (configEnv: WxtConfigEnv) => {
 			reactSvgr(),
 			preserveDirectives(),
 			//NOTE: For Source Maps - Need put the Sentry vite plugin after all other plugins.
-			sentryVitePlugin({
-				authToken: process.env.SENTRY_AUTH_TOKEN,
-				org: "4d5e926a0e43",
-				project: "oypb",
-				disable: configEnv.mode === "development",
-			}),
+			configEnv.mode === "production" &&
+				sentryVitePlugin({
+					authToken: process.env.SENTRY_AUTH_TOKEN,
+					org: "4d5e926a0e43",
+					project: "oypb",
+				}),
 		],
 		css: {
 			postcss: {
