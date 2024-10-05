@@ -132,8 +132,8 @@ importers:
         specifier: 13.0.0
         version: 13.0.0(postcss@8.4.47)
       rollup-preserve-directives:
-        specifier: 1.1.1
-        version: 1.1.1(rollup@4.22.4)
+        specifier: 1.1.2
+        version: 1.1.2(rollup@4.22.4)
       typescript:
         specifier: 5.6.2
         version: 5.6.2
@@ -2947,8 +2947,8 @@ packages:
     deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
-  rollup-preserve-directives@1.1.1:
-    resolution: {integrity: sha512-+eQafbuEfDPfxQ9hQPlwaROfin4yiVRxap8hnrvvvcSGoukv1tTiYpAW9mvm3uR8J+fe4xd8FdVd5rz9q7jZ+Q==}
+  rollup-preserve-directives@1.1.2:
+    resolution: {integrity: sha512-OOaYh4zO0Dcd/eVWGB8H69CgTiohl+jJqc2TLtjLENVIQaV2rxO3OW6RILzCQOdDvPT+/rzwRp+97OXhem895Q==}
     peerDependencies:
       rollup: ^2.0.0 || ^3.0.0 || ^4.0.0
 
@@ -6322,7 +6322,7 @@ snapshots:
       glob: 6.0.4
     optional: true
 
-  rollup-preserve-directives@1.1.1(rollup@4.22.4):
+  rollup-preserve-directives@1.1.2(rollup@4.22.4):
     dependencies:
       magic-string: 0.30.11
       rollup: 4.22.4
