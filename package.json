@@ -43,7 +43,7 @@
 		"@sentry/types": "8.34.0",
 		"@sentry/utils": "8.34.0",
 		"@testing-library/react": "16.0.1",
-		"@types/node": "22.7.4",
+		"@types/node": "22.7.5",
 		"@types/postcss-import": "14.0.3",
 		"@types/react": "18.3.11",
 		"@types/react-dom": "18.3.1",
