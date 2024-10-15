@@ -36,7 +36,7 @@ importers:
         version: 3.19.0(react@18.3.1)
       '@tanstack/react-query':
         specifier: ^5.45.1
-        version: 5.59.0(react@18.3.1)
+        version: 5.59.14(react@18.3.1)
       '@webext-core/messaging':
         specifier: https://github.com/1natsu172/webext-core/releases/download/patch-mixed-up/webext-core-messaging-1.4.0.tgz
         version: https://github.com/1natsu172/webext-core/releases/download/patch-mixed-up/webext-core-messaging-1.4.0.tgz
@@ -1009,11 +1009,11 @@ packages:
   '@tabler/icons@3.19.0':
     resolution: {integrity: sha512-A4WEWqpdbTfnpFEtwXqwAe9qf9sp1yRPvzppqAuwcoF0q5YInqB+JkJtSFToCyBpPVeLxJUxxkapLvt2qQgnag==}
 
-  '@tanstack/query-core@5.59.0':
-    resolution: {integrity: sha512-WGD8uIhX6/deH/tkZqPNcRyAhDUqs729bWKoByYHSogcshXfFbppOdTER5+qY7mFvu8KEFJwT0nxr8RfPTVh0Q==}
+  '@tanstack/query-core@5.59.13':
+    resolution: {integrity: sha512-Oou0bBu/P8+oYjXsJQ11j+gcpLAMpqW42UlokQYEz4dE7+hOtVO9rVuolJKgEccqzvyFzqX4/zZWY+R/v1wVsQ==}
 
-  '@tanstack/react-query@5.59.0':
-    resolution: {integrity: sha512-YDXp3OORbYR+8HNQx+lf4F73NoiCmCcSvZvgxE29OifmQFk0sBlO26NWLHpcNERo92tVk3w+JQ53/vkcRUY1hA==}
+  '@tanstack/react-query@5.59.14':
+    resolution: {integrity: sha512-2cM4x3Ka4Thl7/wnjf++EMGA2Is/RgPynn83D4kfGiJOGSjb5T2D3EEOlC8Nt6U2htLS3imOXjOSMEjC3K7JNg==}
     peerDependencies:
       react: ^18 || ^19
 
@@ -4327,11 +4327,11 @@ snapshots:
 
   '@tabler/icons@3.19.0': {}
 
-  '@tanstack/query-core@5.59.0': {}
+  '@tanstack/query-core@5.59.13': {}
 
-  '@tanstack/react-query@5.59.0(react@18.3.1)':
+  '@tanstack/react-query@5.59.14(react@18.3.1)':
     dependencies:
-      '@tanstack/query-core': 5.59.0
+      '@tanstack/query-core': 5.59.13
       react: 18.3.1
 
   '@testing-library/dom@10.4.0':
