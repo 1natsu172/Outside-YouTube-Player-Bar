@@ -38,7 +38,7 @@
 		"delivery:edge": "wxt submit --edge-zip .output/*-$npm_package_version-edge.zip"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.9.3",
+		"@biomejs/biome": "1.9.4",
 		"@playwright/test": "1.48.0",
 		"@sentry/types": "8.34.0",
 		"@sentry/utils": "8.34.0",
