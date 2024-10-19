@@ -38,8 +38,8 @@ importers:
         specifier: ^5.45.1
         version: 5.59.15(react@18.3.1)
       '@webext-core/messaging':
-        specifier: https://github.com/1natsu172/webext-core/releases/download/patch-mixed-up/webext-core-messaging-1.4.0.tgz
-        version: https://github.com/1natsu172/webext-core/releases/download/patch-mixed-up/webext-core-messaging-1.4.0.tgz
+        specifier: ^2.0.1
+        version: 2.0.1
       async-mutex:
         specifier: ^0.5.0
         version: 0.5.0
@@ -1147,9 +1147,8 @@ packages:
   '@webext-core/match-patterns@1.0.3':
     resolution: {integrity: sha512-NY39ACqCxdKBmHgw361M9pfJma8e4AZo20w9AY+5ZjIj1W2dvXC8J31G5fjfOGbulW9w4WKpT8fPooi0mLkn9A==}
 
-  '@webext-core/messaging@https://github.com/1natsu172/webext-core/releases/download/patch-mixed-up/webext-core-messaging-1.4.0.tgz':
-    resolution: {tarball: https://github.com/1natsu172/webext-core/releases/download/patch-mixed-up/webext-core-messaging-1.4.0.tgz}
-    version: 1.4.0
+  '@webext-core/messaging@2.0.1':
+    resolution: {integrity: sha512-8XY00NXkWNL+dU+RmzTKWXu5NO9RPtsU2MMjqDuNSnttc+gb/BwSWNf+kafReDep397WZXMZoAlQYXKiNHWiyw==}
 
   acorn@8.13.0:
     resolution: {integrity: sha512-8zSiw54Oxrdym50NlZ9sUusyO1Z1ZchgRLWRaK6c86XJFClyCgFKetdowBg5bKxyp/u+CDBJG4Mpp0m3HLZl9w==}
@@ -1867,7 +1866,6 @@ packages:
 
   glob@6.0.4:
     resolution: {integrity: sha512-MKZeRNyYZAVVVG1oZeLaWie1uweH40m9AZwIwxyPbTSX4hHrVYSzLg0Ro5Z5R7XKkIX+Cc6oD1rqeDJnwsB8/A==}
-    deprecated: Glob versions prior to v9 are no longer supported
 
   glob@9.3.5:
     resolution: {integrity: sha512-e1LleDykUz2Iu+MTYdkSsuWX8lvAjAcs0Xef0lNIu0S2wOAzuTxCJtcd9S3cijlwYF18EsU3rzb8jPVobxDh9Q==}
@@ -2002,7 +2000,6 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
-    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -2944,7 +2941,6 @@ packages:
 
   rimraf@2.4.5:
     resolution: {integrity: sha512-J5xnxTyqaiw06JjMftq7L9ouA448dw/E7dKghkP9WpKNuwmARNNg+Gk8/u5ryb9N/Yo2+z3MCwuqFK/+qPOPfQ==}
-    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rollup-preserve-directives@1.1.2:
@@ -4490,7 +4486,7 @@ snapshots:
 
   '@webext-core/match-patterns@1.0.3': {}
 
-  '@webext-core/messaging@https://github.com/1natsu172/webext-core/releases/download/patch-mixed-up/webext-core-messaging-1.4.0.tgz':
+  '@webext-core/messaging@2.0.1':
     dependencies:
       serialize-error: 11.0.3
       uid: 2.0.2
