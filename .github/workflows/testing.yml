@@ -21,7 +21,6 @@ jobs:
           cache: pnpm
       - name: Install deps
         run: |
-          pnpm install --fix-lockfile
           pnpm install
       - name: Check to build passed
         run: pnpm run build
