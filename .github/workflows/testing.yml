@@ -20,7 +20,9 @@ jobs:
           node-version-file: '.tool-versions'
           cache: pnpm
       - name: Install deps
-        run: pnpm install
+        run: |
+          pnpm install --fix-lockfile
+          pnpm install
       - name: Check to build passed
         run: pnpm run build
       - name: Check to test passed
