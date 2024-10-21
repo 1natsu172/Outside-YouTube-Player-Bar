@@ -108,8 +108,8 @@ importers:
         specifier: 7.5.8
         version: 7.5.8
       '@vitejs/plugin-react':
-        specifier: 4.3.2
-        version: 4.3.2(vite@5.4.8(@types/node@22.7.7))
+        specifier: 4.3.3
+        version: 4.3.3(vite@5.4.8(@types/node@22.7.7))
       git-semver-tags:
         specifier: 8.0.0
         version: 8.0.0
@@ -951,8 +951,8 @@ packages:
   '@types/yauzl@2.10.3':
     resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
 
-  '@vitejs/plugin-react@4.3.2':
-    resolution: {integrity: sha512-hieu+o05v4glEBucTcKMK3dlES0OeJlD9YVOAPraVMOInBCwzumaIFiUjr4bHK7NPgnAHgiskUoceKercrN8vg==}
+  '@vitejs/plugin-react@4.3.3':
+    resolution: {integrity: sha512-NooDe9GpHGqNns1i8XDERg0Vsg5SSYRhRxxyTGogUdkdNt47jal+fbuYi+Yfq6pzRCKXyoPcWisfxE6RIM3GKA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0
@@ -4149,7 +4149,7 @@ snapshots:
       '@types/node': 22.7.7
     optional: true
 
-  '@vitejs/plugin-react@4.3.2(vite@5.4.8(@types/node@22.7.7))':
+  '@vitejs/plugin-react@4.3.3(vite@5.4.8(@types/node@22.7.7))':
     dependencies:
       '@babel/core': 7.25.8
       '@babel/plugin-transform-react-jsx-self': 7.24.7(@babel/core@7.25.8)
