@@ -8,6 +8,7 @@ export const developConfig: UserConfig = {
 	entrypointsDir: "entrypoints", // src/entrypoints
 	publicDir: "public", // src/public,
 	modulesDir: "wxtModules",
+	outDirTemplate: "{{browser}}-mv{{manifestVersion}}-{{mode}}",
 	runner: {
 		disabled: false,
 		binaries: {
