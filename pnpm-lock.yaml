@@ -50,8 +50,8 @@ importers:
         specifier: ^6.1.4
         version: 6.1.4
       derive-valtio:
-        specifier: ^0.1.0
-        version: 0.1.0(valtio@2.0.0(@types/react@18.3.11)(react@18.3.1))
+        specifier: ^0.2.0
+        version: 0.2.0(valtio@2.1.0(@types/react@18.3.11)(react@18.3.1))
       mabiki:
         specifier: ^1.0.1
         version: 1.0.1
@@ -72,10 +72,10 @@ importers:
         version: 7.6.3
       valtio:
         specifier: ^2.0.0
-        version: 2.0.0(@types/react@18.3.11)(react@18.3.1)
+        version: 2.1.0(@types/react@18.3.11)(react@18.3.1)
       valtio-history:
         specifier: ^1.0.0
-        version: 1.0.0(valtio@2.0.0(@types/react@18.3.11)(react@18.3.1))
+        version: 1.0.0(valtio@2.1.0(@types/react@18.3.11)(react@18.3.1))
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.4
@@ -1431,10 +1431,10 @@ packages:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
 
-  derive-valtio@0.1.0:
-    resolution: {integrity: sha512-OCg2UsLbXK7GmmpzMXhYkdO64vhJ1ROUUGaTFyHjVwEdMEcTTRj7W1TxLbSBxdY8QLBPCcp66MTyaSy0RpO17A==}
+  derive-valtio@0.2.0:
+    resolution: {integrity: sha512-6slhaFHtfaL3t5dLYaQt6s4G2xZymhu0Ktdl7OMeVk8+46RgR8ft6FL0Tr4F31W+yPH03nJe1SSP4JFy2hSMRA==}
     peerDependencies:
-      valtio: '*'
+      valtio: '>=2.0.0-rc.0'
 
   destr@2.0.3:
     resolution: {integrity: sha512-2N3BOUU4gYMpTP24s5rF5iP7BDr7uNTCs4ozw3kf/eKfvWSIu93GEBi5m427YoyJoeOzQ5smuu4nNAPGb8idSQ==}
@@ -3155,8 +3155,8 @@ packages:
     peerDependencies:
       valtio: '>=2.0.0-rc.2'
 
-  valtio@2.0.0:
-    resolution: {integrity: sha512-SzUU5UUK/vBRfHWXihwkJE55YNj8zhOkzxPOexcz0xIIT6Oux5VLynCmzyME2bYuEWcktW2NTaaLbpUydEsHiw==}
+  valtio@2.1.0:
+    resolution: {integrity: sha512-UryxkWilm5huamW8vNAvj7KLodPgSN5EVWcetwzcy8pVyc27tQ+RqSRmJ0zx/Cq219O7yqaNl12GcCSujoLDUw==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=18.0.0'
@@ -4631,9 +4631,9 @@ snapshots:
 
   dequal@2.0.3: {}
 
-  derive-valtio@0.1.0(valtio@2.0.0(@types/react@18.3.11)(react@18.3.1)):
+  derive-valtio@0.2.0(valtio@2.1.0(@types/react@18.3.11)(react@18.3.1)):
     dependencies:
-      valtio: 2.0.0(@types/react@18.3.11)(react@18.3.1)
+      valtio: 2.1.0(@types/react@18.3.11)(react@18.3.1)
 
   destr@2.0.3: {}
 
@@ -6345,12 +6345,12 @@ snapshots:
 
   uuid@8.3.2: {}
 
-  valtio-history@1.0.0(valtio@2.0.0(@types/react@18.3.11)(react@18.3.1)):
+  valtio-history@1.0.0(valtio@2.1.0(@types/react@18.3.11)(react@18.3.1)):
     dependencies:
       tslib: 2.8.0
-      valtio: 2.0.0(@types/react@18.3.11)(react@18.3.1)
+      valtio: 2.1.0(@types/react@18.3.11)(react@18.3.1)
 
-  valtio@2.0.0(@types/react@18.3.11)(react@18.3.1):
+  valtio@2.1.0(@types/react@18.3.11)(react@18.3.1):
     dependencies:
       proxy-compare: 3.0.0
     optionalDependencies:
