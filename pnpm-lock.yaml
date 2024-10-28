@@ -144,8 +144,8 @@ importers:
         specifier: 2.1.3
         version: 2.1.3(@types/node@22.8.1)(happy-dom@15.7.4)
       wxt:
-        specifier: 0.19.12
-        version: 0.19.12(@types/node@22.8.1)(rollup@4.22.4)(webpack-sources@3.2.3)
+        specifier: 0.19.13
+        version: 0.19.13(@types/node@22.8.1)(rollup@4.22.4)(webpack-sources@3.2.3)
 
 packages:
 
@@ -3332,8 +3332,8 @@ packages:
       utf-8-validate:
         optional: true
 
-  wxt@0.19.12:
-    resolution: {integrity: sha512-2O11MsNNrYOTkDPXoyLGc+KzN9Al0wUh9uGaYtDSr/h6zZYusGolb94pGJQUIQuhoxupCqoNlQET7Q/++VZVWg==}
+  wxt@0.19.13:
+    resolution: {integrity: sha512-iWtMkCo6Puy3UsxQ7x0HQSYqxOz6Vu2vZ/BB/lzKMCrkrmlXj4IUAEqjEcQCdBRTkiGTx0f8qFtrA+o9QtUe7w==}
     hasBin: true
 
   xdg-basedir@5.1.0:
@@ -6550,7 +6550,7 @@ snapshots:
 
   ws@8.18.0: {}
 
-  wxt@0.19.12(@types/node@22.8.1)(rollup@4.22.4)(webpack-sources@3.2.3):
+  wxt@0.19.13(@types/node@22.8.1)(rollup@4.22.4)(webpack-sources@3.2.3):
     dependencies:
       '@aklinker1/rollup-plugin-visualizer': 5.12.0(rollup@4.22.4)
       '@types/chrome': 0.0.269
