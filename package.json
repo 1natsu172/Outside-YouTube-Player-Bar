@@ -40,8 +40,8 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@playwright/test": "1.48.2",
-		"@sentry/types": "8.34.0",
-		"@sentry/utils": "8.34.0",
+		"@sentry/types": "8.35.0",
+		"@sentry/utils": "8.35.0",
 		"@testing-library/react": "16.0.1",
 		"@types/node": "22.8.1",
 		"@types/postcss-import": "14.0.3",
