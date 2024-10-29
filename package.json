@@ -75,7 +75,7 @@
 		"async-mutex": "^0.5.0",
 		"consola": "^3.2.3",
 		"defu": "^6.1.4",
-		"derive-valtio": "^0.1.0",
+		"derive-valtio": "^0.2.0",
 		"mabiki": "^1.0.1",
 		"p-retry": "^6.2.0",
 		"react": "^18.3.1",
