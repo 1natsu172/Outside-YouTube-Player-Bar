@@ -12,19 +12,29 @@ export const reflectFunctionality = () => {
 		const feature = snapshot(__reflectFunctionalityState__.feature);
 		const context = snapshot(__reflectFunctionalityState__.context);
 
-		logger.info("reflectFunctionality", { feature, context, op });
+		logger.info(
+			"reflectFunctionality",
+			{ feature, context, op },
+			{ mutex: { isLocked: mutex.isLocked() } },
+		);
 
-		await mutex.runExclusive(async () => {
-			await Promise.allSettled([
-				movePlayerBarElement({
-					direction: feature.behavior.positionPlayerBar,
-					playerMode: context.videoPlayerState.mode,
-				}),
-				manageAlwaysDisplayPlayerBar({
-					position: feature.behavior.positionPlayerBar,
-					moviePlayerContext: context.moviePlayerContext,
-				}),
-			]);
-		});
+		await mutex
+			.runExclusive(async () => {
+				await Promise.allSettled([
+					movePlayerBarElement({
+						direction: feature.behavior.positionPlayerBar,
+						playerMode: context.videoPlayerState.mode,
+					}),
+					manageAlwaysDisplayPlayerBar({
+						position: feature.behavior.positionPlayerBar,
+						moviePlayerContext: context.moviePlayerContext,
+					}),
+				]).catch((e) => {
+					logger.error("functionality settled error", e);
+				});
+			})
+			.catch((e) => {
+				logger.error("mutex error", e);
+			});
 	});
 };
