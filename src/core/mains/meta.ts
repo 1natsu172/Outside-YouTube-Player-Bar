@@ -12,8 +12,8 @@ export const extensionMainWorldScriptName =
 export const elementQuery = {
 	MOVIE_PLAYER: "#movie_player",
 	MOVIE_PLAYER_CONTAINER: "#player-container.ytd-watch-flexy",
-	PLAYER_BAR: ".ytp-chrome-bottom",
-	PLAYER_BAR_RIGHT_CTRL: ".ytp-right-controls",
+	PLAYER_BAR: `#page-manager > ytd-watch-flexy.ytd-page-manager:not(:has(ytd-browse[page-subtype="channels"])) .ytp-chrome-bottom`,
+	PLAYER_BAR_RIGHT_CTRL: `#page-manager > ytd-watch-flexy.ytd-page-manager:not(:has(ytd-browse[page-subtype="channels"])) .ytp-right-controls`,
 	YTD_PAGE_MANAGER: "#page-manager > ytd-watch-flexy.ytd-page-manager",
 	YTD_APP_CONTAINER: "ytd-app",
 } as const;

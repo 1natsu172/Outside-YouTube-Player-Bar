@@ -58,10 +58,10 @@ export class Executor {
 		await initializeDebugMode().then((unwatch) => {
 			this.__registeredEffects.push([unwatch]);
 		});
+		await this.stateDriven.setup();
 		await this.mainWorldBridge.init();
 		await this.setupEffects();
 		await applyCompatibilityStyles();
-		await this.stateDriven.setup();
 		oypbEnableOperation(true);
 		registerInitializationLocation();
 		getSiteVersion();
