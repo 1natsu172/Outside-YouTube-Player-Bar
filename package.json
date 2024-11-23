@@ -63,7 +63,7 @@
 		"wxt": "0.19.16"
 	},
 	"dependencies": {
-		"@1natsu/wait-element": "4.1.0",
+		"@1natsu/wait-element": "4.1.1",
 		"@mantine/core": "^7.10.2",
 		"@mantine/hooks": "^7.10.2",
 		"@sentry/browser": "^8.11.0",

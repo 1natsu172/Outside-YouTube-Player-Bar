@@ -14,8 +14,8 @@ importers:
   .:
     dependencies:
       '@1natsu/wait-element':
-        specifier: 4.1.0
-        version: 4.1.0
+        specifier: 4.1.1
+        version: 4.1.1
       '@mantine/core':
         specifier: ^7.10.2
         version: 7.14.1(@mantine/hooks@7.14.1(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -149,8 +149,8 @@ importers:
 
 packages:
 
-  '@1natsu/wait-element@4.1.0':
-    resolution: {integrity: sha512-fw7BFAHFTADD4FBcfrQ+0SWLOKO7p7yP/SQoK5Pmu9waIHvqv3IPSUYtnosUTnaTTZ467vx4H4NOTzOZpxpUQA==}
+  '@1natsu/wait-element@4.1.1':
+    resolution: {integrity: sha512-uKM/fRcdTHhajQjlxj1/ShKd3iYcLJ3191/IE+GDili1oVq8m94JO4UNADoemK2z0buPu12jT8ozvl+zLy7Hzg==}
 
   '@aklinker1/rollup-plugin-visualizer@5.12.0':
     resolution: {integrity: sha512-X24LvEGw6UFmy0lpGJDmXsMyBD58XmX1bbwsaMLhNoM+UMQfQ3b2RtC+nz4b/NoRK5r6QJSKJHBNVeUdwqybaQ==}
@@ -3378,7 +3378,7 @@ packages:
 
 snapshots:
 
-  '@1natsu/wait-element@4.1.0':
+  '@1natsu/wait-element@4.1.1':
     dependencies:
       defu: 6.1.4
       many-keys-map: 2.0.1
