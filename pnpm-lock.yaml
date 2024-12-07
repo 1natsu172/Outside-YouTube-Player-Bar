@@ -144,8 +144,8 @@ importers:
         specifier: 2.1.8
         version: 2.1.8(@types/node@22.10.1)(happy-dom@15.11.7)
       wxt:
-        specifier: 0.19.17
-        version: 0.19.17(@types/node@22.10.1)(rollup@4.28.0)(yaml@2.6.1)
+        specifier: 0.19.19
+        version: 0.19.19(@types/node@22.10.1)(rollup@4.28.0)(yaml@2.6.1)
 
 packages:
 
@@ -3506,8 +3506,8 @@ packages:
       utf-8-validate:
         optional: true
 
-  wxt@0.19.17:
-    resolution: {integrity: sha512-yM02qn+8F3QpJTTTDhmCUPTl6EnPwVpkCV1XFj5Ol2oUM5OIy4puwg/IdAz6QtK/3XMZzN1E8va73NtZu8WiBQ==}
+  wxt@0.19.19:
+    resolution: {integrity: sha512-m/ejGRvM7ZxlvNMHfy9pO//6qCLZmIQIt55p78MaLM4wqN5DYZIcqfr5ynnR9HmISNspMFDq54eGtkAsxT4YhA==}
     hasBin: true
 
   xdg-basedir@5.1.0:
@@ -6810,7 +6810,7 @@ snapshots:
 
   ws@8.18.0: {}
 
-  wxt@0.19.17(@types/node@22.10.1)(rollup@4.28.0)(yaml@2.6.1):
+  wxt@0.19.19(@types/node@22.10.1)(rollup@4.28.0)(yaml@2.6.1):
     dependencies:
       '@aklinker1/rollup-plugin-visualizer': 5.12.0(rollup@4.28.0)
       '@types/chrome': 0.0.280
