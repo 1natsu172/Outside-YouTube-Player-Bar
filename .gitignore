@@ -40,3 +40,4 @@ stats-*.json
 web-ext.config.ts
 playwright-report
 test-results
+*.css.d.ts.map
