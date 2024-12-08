@@ -1,10 +1,10 @@
 /**
- * Copied by https://github.com/getsentry/sentry-javascript/blob/9a8e910c11add924cb319624cf58815c857d66c7/packages/react/src/error.ts
+ * Copied by https://github.com/getsentry/sentry-javascript/blob/51e015cd34b636a37a5c548a7d8338017c9c2af5/packages/react/src/error.ts
  * REASON: For inject to Scoped Client (Best practice is https://docs.sentry.io/platforms/javascript/best-practices/shared-environments/ but provided utils are not support scoped client.)
  */
 import { reactCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
-import type { EventHint } from "@sentry/types";
-import { isError } from "@sentry/utils";
+import { isError } from "@sentry/core";
+import type { EventHint } from "@sentry/core";
 import { version } from "react";
 import type { ErrorInfo } from "react";
 

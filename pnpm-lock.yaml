@@ -25,9 +25,15 @@ importers:
       '@sentry/browser':
         specifier: ^8.11.0
         version: 8.42.0
+      '@sentry/core':
+        specifier: ^8.42.0
+        version: 8.42.0
       '@sentry/react':
         specifier: ^8.12.0
         version: 8.42.0(react@19.0.0)
+      '@sentry/utils':
+        specifier: ^8.42.0
+        version: 8.42.0
       '@sentry/vite-plugin':
         specifier: ^2.20.1
         version: 2.22.7
@@ -84,9 +90,6 @@ importers:
         specifier: 1.49.0
         version: 1.49.0
       '@sentry/types':
-        specifier: 8.42.0
-        version: 8.42.0
-      '@sentry/utils':
         specifier: 8.42.0
         version: 8.42.0
       '@testing-library/react':
