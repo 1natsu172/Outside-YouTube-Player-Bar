@@ -9,13 +9,13 @@ import {
 } from "@/core/infrastructures/observabilities/index.js";
 import { isMatchingPhrasePattern } from "@/utils/validateUtils/matchPattern.js";
 import type { Integration } from "@sentry/types";
+import defu from "defu";
 import { SENTRY_PUB_DSN, ignoreErrors } from "./constants.js";
 
 function createScopedClient<_SDK extends SDK>({
 	sdk,
 	tags,
-	ignoreIntegrations = ["BrowserApiErrors", "Breadcrumbs", "GlobalHandlers"],
-	additionalIntegrations = [],
+	options,
 }: {
 	sdk: _SDK;
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
@@ -23,9 +23,19 @@ function createScopedClient<_SDK extends SDK>({
 	/**
 	 * @description when pass undefined that use best practice ignore pattern
 	 */
-	ignoreIntegrations?: string[];
-	additionalIntegrations?: Integration[];
+	options?: {
+		ignoreIntegrations?: string[];
+		additionalIntegrations?: Integration[];
+	};
 }) {
+	const mergedOptions = defu<
+		Exclude<Required<typeof options>, undefined>,
+		[Exclude<typeof options, undefined>]
+	>(options, {
+		ignoreIntegrations: ["BrowserApiErrors", "Breadcrumbs", "GlobalHandlers"],
+		additionalIntegrations: [],
+	});
+
 	const {
 		BrowserClient,
 		Scope,
@@ -44,10 +54,10 @@ function createScopedClient<_SDK extends SDK>({
 	// https://docs.sentry.io/platforms/javascript/configuration/integrations/
 	const integrations = [
 		...getDefaultIntegrations({}),
-		...additionalIntegrations,
+		...mergedOptions.additionalIntegrations,
 	].filter((defaultIntegration) => {
 		// logger.info("defaultIntegration", defaultIntegration);
-		return !ignoreIntegrations.includes(defaultIntegration.name);
+		return !mergedOptions.ignoreIntegrations.includes(defaultIntegration.name);
 	});
 
 	logger.info("integrations", integrations);
@@ -90,46 +100,34 @@ function createScopedClient<_SDK extends SDK>({
 	return { client: scope } as const;
 }
 
-class CaptureClientRepo<_SDK extends SDK> {
-	private _client: ReturnType<typeof createScopedClient> | null = null;
+// TODO(feature): アプリケーションエントリーポイントで早期Initしたくなったらinitプロパティを生やして明示的createInstanceをできるようにする
+function createCaptureClientRepo(
+	initParams: Parameters<typeof createScopedClient>[number],
+) {
+	let clientInstance: ReturnType<typeof createScopedClient>["client"] | null =
+		null;
 
-	constructor(
-		public sdk: _SDK,
-		public clientName: string,
-
-		public options?: {
-			/**
-			 * @description when pass undefined that use best practice ignore pattern
-			 */
-			ignoreIntegrations?: string[];
-			additionalIntegrations?: Integration[];
+	return new Proxy({} as ReturnType<typeof createScopedClient>["client"], {
+		get(_, prop, receiver) {
+			if (!clientInstance) {
+				clientInstance = createScopedClient(initParams).client;
+			}
+			return Reflect.get(clientInstance, prop, receiver);
 		},
-	) {}
-
-	public get client(): ReturnType<typeof createScopedClient>["client"] {
-		if (!this._client) {
-			this._client = createScopedClient({
-				sdk: this.sdk,
-				tags: { clientName: this.clientName },
-				ignoreIntegrations: this.options?.ignoreIntegrations,
-				additionalIntegrations: this.options?.additionalIntegrations,
-			});
-		}
-		return this._client.client;
-	}
+	});
 }
 
-export const browserCaptureClientRepo = new CaptureClientRepo(
-	browserCaptureSdk,
-	"browserCapture",
-);
+export const browserCaptureClientRepo = createCaptureClientRepo({
+	sdk: browserCaptureSdk,
+	tags: { clientName: "browserCapture" },
+});
 
-export const reactCaptureClientRepo = new CaptureClientRepo(
-	reactCaptureSdk,
-	"reactCapture",
-);
+export const reactCaptureClientRepo = createCaptureClientRepo({
+	sdk: reactCaptureSdk,
+	tags: { clientName: "reactCapture" },
+});
 
-export const serviceWorkerCaptureClientRepo = new CaptureClientRepo(
-	browserCaptureSdk,
-	"serviceWorkerCapture",
-);
+export const serviceWorkerCaptureClientRepo = createCaptureClientRepo({
+	sdk: browserCaptureSdk,
+	tags: { clientName: "serviceWorkerCapture" },
+});
