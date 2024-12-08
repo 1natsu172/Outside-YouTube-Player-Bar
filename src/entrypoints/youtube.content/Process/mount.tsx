@@ -21,7 +21,14 @@ export const mountUI = async (ctx: ContentScriptContext) => {
 			// Create a root on the UI container and render a component
 			const root = createRoot(app, {
 				onRecoverableError: reactErrorHandler(),
-				// TODO: React19になったらハンドラを足す
+				onCaughtError: reactErrorHandler(),
+				onUncaughtError: reactErrorHandler((error, errorInfo) => {
+					logger.error(
+						"react onUncaughtError",
+						error,
+						errorInfo.componentStack,
+					);
+				}),
 			});
 
 			root.render(<App />);
