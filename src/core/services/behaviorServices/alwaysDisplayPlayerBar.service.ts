@@ -103,10 +103,8 @@ export const manageAlwaysDisplayPlayerBar = async ({
 	);
 
 	if (position === "inside") {
-		logger.log("A2", readyMainWorld);
 		dataAttrIsAlwaysDisplayBar.remove();
 		await mainWorldSignals.sendMessage("resetControlState", undefined);
-		logger.log("A2 done");
 
 		return;
 	}
@@ -115,11 +113,7 @@ export const manageAlwaysDisplayPlayerBar = async ({
 		videoPlayerState: { mode },
 	} = getSiteMetaState();
 
-	logger.log("A3", mode);
-
 	const { alwaysDisplayPlayerBar } = await resolveBehaviorOption(mode);
-
-	logger.log("A4", position, alwaysDisplayPlayerBar);
 
 	if (position === "outside" && alwaysDisplayPlayerBar) {
 		dataAttrIsAlwaysDisplayBar.set();
