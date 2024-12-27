@@ -1,9 +1,9 @@
+import { waitMainWorldReady } from "@/core/mains/stateDriven/operationStateDriven.js";
 import { __reflectFunctionalityState__ } from "@/core/repositories/contentScript.repository.js";
 import { manageAlwaysDisplayPlayerBar } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
 import { movePlayerBarElement } from "@/core/services/domAffectServices/playerBarDomAffect.service.js";
-import { snapshot, subscribe } from "valtio/vanilla";
-
 import { Mutex } from "async-mutex";
+import { snapshot, subscribe } from "valtio/vanilla";
 
 const mutex = new Mutex();
 
@@ -20,6 +20,7 @@ export const reflectFunctionality = () => {
 
 		await mutex
 			.runExclusive(async () => {
+				await waitMainWorldReady();
 				await Promise.allSettled([
 					movePlayerBarElement({
 						direction: feature.behavior.positionPlayerBar,
