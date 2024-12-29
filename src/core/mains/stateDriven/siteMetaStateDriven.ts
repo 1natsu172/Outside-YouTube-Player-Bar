@@ -18,6 +18,9 @@ export const videoPlayerModeDriven = () => {
 	});
 };
 
+/**
+ * FIXME(future): Change implement to the Navigation-API
+ */
 export const navigationDriven = () => {
 	return subscribeKey(siteMetaState.navigationState, "value", (value) => {
 		logger.info("navigationState changed", value);

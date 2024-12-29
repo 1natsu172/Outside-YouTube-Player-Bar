@@ -1,4 +1,6 @@
 import { waitMainWorldReady } from "@/core/mains/stateDriven/operationStateDriven.js";
+import { isVideoPage } from "@/core/presenters/judgePage.js";
+import { getCurrentLocation } from "@/core/presenters/navigationPresenter/index.js";
 import { __reflectFunctionalityState__ } from "@/core/repositories/contentScript.repository.js";
 import { manageAlwaysDisplayPlayerBar } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
 import { movePlayerBarElement } from "@/core/services/domAffectServices/playerBarDomAffect.service.js";
@@ -17,6 +19,11 @@ export const reflectFunctionality = () => {
 			{ feature, context, op },
 			{ mutex: { isLocked: mutex.isLocked() } },
 		);
+
+		if (!isVideoPage(getCurrentLocation().pathname)) {
+			logger.warn("reflectFunctionality but is not video page.");
+			return;
+		}
 
 		await mutex
 			.runExclusive(async () => {
