@@ -9,7 +9,6 @@ import {
 	resolveInheritPositionPlayerBar,
 } from "@/core/presenters/storagePresenter/options.presenter.js";
 import { setPositionPlayerBar } from "@/core/usecases/behaviorState.usecase.js";
-import { setDoneIntialMovePlayerBar } from "@/core/usecases/operationState.usecase.js";
 
 /**
  * @todo: テスト書く
@@ -31,7 +30,6 @@ export const changePositionPlayerBarByChangedPlayerMode = async ({
 	// First time that try move player bar (use default option setting)
 	if (!doneIntialMovePlayerBar) {
 		setPositionPlayerBar(userOption.positionPlayerBar);
-		setDoneIntialMovePlayerBar(true);
 		logger.debug(
 			"tried position player bar change at the first time",
 			userOption.positionPlayerBar,
