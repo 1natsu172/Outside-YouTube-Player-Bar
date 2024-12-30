@@ -1,7 +1,12 @@
 import { waitMainWorldReady } from "@/core/mains/stateDriven/operationStateDriven.js";
+import { isVideoPage } from "@/core/presenters/judgePage.js";
+import { getCurrentLocation } from "@/core/presenters/navigationPresenter/index.js";
+import { getFlagOps } from "@/core/presenters/statePresenter/operationState/index.js";
 import { __reflectFunctionalityState__ } from "@/core/repositories/contentScript.repository.js";
 import { manageAlwaysDisplayPlayerBar } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
 import { movePlayerBarElement } from "@/core/services/domAffectServices/playerBarDomAffect.service.js";
+import { waitForStableChildList } from "@/utils/domUtils/waitForStableDom.js";
+import { waitElement } from "@1natsu/wait-element";
 import { Mutex } from "async-mutex";
 import { snapshot, subscribe } from "valtio/vanilla";
 
@@ -18,9 +23,22 @@ export const reflectFunctionality = () => {
 			{ mutex: { isLocked: mutex.isLocked() } },
 		);
 
+		if (!isVideoPage(getCurrentLocation().pathname)) {
+			logger.warn("reflectFunctionality but is not video page.");
+			return;
+		}
+
 		await mutex
 			.runExclusive(async () => {
+				const { doneIntialMovePlayerBar } = getFlagOps();
+
 				await waitMainWorldReady();
+
+				if (!doneIntialMovePlayerBar) {
+					const target = await waitElement(".ytp-chrome-controls");
+					await waitForStableChildList(target, 300, 1000);
+				}
+
 				await Promise.allSettled([
 					movePlayerBarElement({
 						direction: feature.behavior.positionPlayerBar,

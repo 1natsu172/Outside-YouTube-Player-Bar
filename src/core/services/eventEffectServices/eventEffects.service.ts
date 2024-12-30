@@ -14,6 +14,9 @@ const __DEBUG_YT_EVENTS = createEventEffect(YT_EVENTS, (key) => (event) => {
 	logger.withTag("YT_EVENT").log(key, event);
 });
 
+/**
+ * TODO(future): when compatible with Firefox, use navigation-API. Or change implement to the background messaging. https://stackoverflow.com/questions/34077641/how-to-detect-page-navigation-on-youtube-and-modify-its-appearance-seamlessly/45956628#45956628
+ */
 const pageNavigateEffect = createEventEffect(
 	["yt-navigate-finish"],
 	(_key) => (event) => {

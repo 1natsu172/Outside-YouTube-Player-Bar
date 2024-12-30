@@ -3,6 +3,8 @@ import type {
 	VideoPlayerMode,
 } from "@/core/mains/contentScriptState.js";
 import { elementAttributes, elementQuery } from "@/core/mains/meta.js";
+import { getFlagOps } from "@/core/presenters/statePresenter/operationState/index.js";
+import { setDoneIntialMovePlayerBar } from "@/core/usecases/operationState.usecase.js";
 import type { NonUndefined } from "@/utils/typeUtils.js";
 import { waitElement } from "@1natsu/wait-element";
 import { documentElementAttr } from "./domMetaAffect.service.js";
@@ -196,4 +198,9 @@ export const movePlayerBarElement = async (props: {
 
 	const movedElement = await execMove(playerMode, direction);
 	movedElement && direction === "outside" ? execAttr.set() : execAttr.remove();
+
+	const { doneIntialMovePlayerBar } = getFlagOps();
+	if (!doneIntialMovePlayerBar) {
+		setDoneIntialMovePlayerBar(true);
+	}
 };
