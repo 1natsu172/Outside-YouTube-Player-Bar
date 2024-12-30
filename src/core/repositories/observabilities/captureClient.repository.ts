@@ -1,6 +1,8 @@
 /**
  * NOTE: Browser extension capture must be scoped.
  * ref: https://docs.sentry.io/platforms/javascript/best-practices/shared-environments/
+ * FIXME(future): rollupがdestructuringのtree-shakingに対応していない＆複数のSDKをimportしてclient生成を抽象化しているためnamed-importもしにくい。そのため必要なプロパティを型定義してSDKに対してプロパティアクセスする冗長な実装になってしまっている。事の発端は`lazyLoadIntegration`のためのコードがバンドル成果物に入り込み審査時にremote-codeにみなされるためtree-shakingが必須になったことに由来している。 https://github.com/getsentry/sentry-javascript/issues/14010
+ * * rollupが賢くなったら冗長な実装を剥がしたい。
  */
 import {
 	type SDK,
@@ -8,16 +10,22 @@ import {
 	reactCaptureSdk,
 } from "@/core/infrastructures/observabilities/index.js";
 import { isMatchingPhrasePattern } from "@/utils/validateUtils/matchPattern.js";
-import type { Integration } from "@sentry/types";
+import type { Integration } from "@sentry/core";
 import defu from "defu";
 import { SENTRY_PUB_DSN, ignoreErrors } from "./constants.js";
 
 function createScopedClient<_SDK extends SDK>({
-	sdk,
+	sdkApi,
 	tags,
 	options,
 }: {
-	sdk: _SDK;
+	sdkApi: {
+		BrowserClient: _SDK["BrowserClient"];
+		Scope: _SDK["Scope"];
+		defaultStackParser: _SDK["defaultStackParser"];
+		getDefaultIntegrations: _SDK["getDefaultIntegrations"];
+		makeFetchTransport: _SDK["makeFetchTransport"];
+	};
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	tags: Record<string, any>;
 	/**
@@ -42,7 +50,7 @@ function createScopedClient<_SDK extends SDK>({
 		defaultStackParser,
 		getDefaultIntegrations,
 		makeFetchTransport,
-	} = sdk;
+	} = sdkApi;
 
 	if (!__APP_VERSION__) {
 		throw Error("not defined __APP_VERSION__");
@@ -118,16 +126,34 @@ function createCaptureClientRepo(
 }
 
 export const browserCaptureClientRepo = createCaptureClientRepo({
-	sdk: browserCaptureSdk,
+	sdkApi: {
+		BrowserClient: browserCaptureSdk.BrowserClient,
+		Scope: browserCaptureSdk.Scope,
+		defaultStackParser: browserCaptureSdk.defaultStackParser,
+		getDefaultIntegrations: browserCaptureSdk.getDefaultIntegrations,
+		makeFetchTransport: browserCaptureSdk.makeFetchTransport,
+	},
 	tags: { clientName: "browserCapture" },
 });
 
 export const reactCaptureClientRepo = createCaptureClientRepo({
-	sdk: reactCaptureSdk,
+	sdkApi: {
+		BrowserClient: reactCaptureSdk.BrowserClient,
+		Scope: reactCaptureSdk.Scope,
+		defaultStackParser: reactCaptureSdk.defaultStackParser,
+		getDefaultIntegrations: reactCaptureSdk.getDefaultIntegrations,
+		makeFetchTransport: reactCaptureSdk.makeFetchTransport,
+	},
 	tags: { clientName: "reactCapture" },
 });
 
 export const serviceWorkerCaptureClientRepo = createCaptureClientRepo({
-	sdk: browserCaptureSdk,
+	sdkApi: {
+		BrowserClient: browserCaptureSdk.BrowserClient,
+		Scope: browserCaptureSdk.Scope,
+		defaultStackParser: browserCaptureSdk.defaultStackParser,
+		getDefaultIntegrations: browserCaptureSdk.getDefaultIntegrations,
+		makeFetchTransport: browserCaptureSdk.makeFetchTransport,
+	},
 	tags: { clientName: "serviceWorkerCapture" },
 });

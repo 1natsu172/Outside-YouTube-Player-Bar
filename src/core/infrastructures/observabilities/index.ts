@@ -1,6 +1,7 @@
-import * as SentryBrowser from "@sentry/browser";
-import * as SentryReact from "@sentry/react";
-export const browserCaptureSdk = SentryBrowser;
-export const reactCaptureSdk = SentryReact;
+import type * as browserCaptureSdk from "@sentry/browser";
+import type * as reactCaptureSdk from "@sentry/react";
 
 export type SDK = typeof browserCaptureSdk | typeof reactCaptureSdk;
+
+export * as browserCaptureSdk from "@sentry/browser";
+export * as reactCaptureSdk from "@sentry/react";
