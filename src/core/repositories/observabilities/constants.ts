@@ -6,4 +6,5 @@ export const ignoreErrors: (string | RegExp)[] = [
 	"Extension context invalidated",
 	"ResizeObserver loop completed with undelivered notifications",
 	"ResizeObserver loop limit exceeded",
+	"'wxt/storage' must be loaded in a web extension environment",
 ];
