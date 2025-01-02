@@ -7,9 +7,9 @@ export const setupGlobalCaptureError = (captureClient: CaptureClient) => {
 	});
 	globalThis.addEventListener("unhandledrejection", (error) => {
 		logger.error("error unhandled", error);
-		captureClient.captureException(error, {
+		captureClient.captureException(error.reason, {
 			captureContext: {
-				contexts: { reason: error.reason },
+				contexts: { errorEvent: { ...error } },
 			},
 		});
 	});
