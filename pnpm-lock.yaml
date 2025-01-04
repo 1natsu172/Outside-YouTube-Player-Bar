@@ -120,8 +120,8 @@ importers:
         specifier: 3.2.0
         version: 3.2.0(jiti@1.21.6)(postcss@8.4.49)
       happy-dom:
-        specifier: 16.0.1
-        version: 16.0.1
+        specifier: 16.3.0
+        version: 16.3.0
       playwright:
         specifier: 1.49.1
         version: 1.49.1
@@ -145,7 +145,7 @@ importers:
         version: 4.3.0(rollup@4.28.0)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.5))
       vitest:
         specifier: 2.1.8
-        version: 2.1.8(@types/node@22.10.5)(happy-dom@16.0.1)
+        version: 2.1.8(@types/node@22.10.5)(happy-dom@16.3.0)
       wxt:
         specifier: 0.19.23
         version: 0.19.23(@types/node@22.10.5)(rollup@4.28.0)(yaml@2.6.1)
@@ -1896,8 +1896,8 @@ packages:
       sass:
         optional: true
 
-  happy-dom@16.0.1:
-    resolution: {integrity: sha512-cqbqvutE6XAIMe4nM93TkbW5SDFtLkU/6nsQfJBJ2KSlaT+My2kmnYsCFXrvEzvmP7s1xGJ6Xt4D9LNJIJHMbA==}
+  happy-dom@16.3.0:
+    resolution: {integrity: sha512-Q71RaIhyS21vhW17Tpa5W36yqQXIlE1TZ0A0Gguts8PShUSQE/7fBgxYGxgm3+5y0gF6afdlAVHLQqgrIcfRzg==}
     engines: {node: '>=18.0.0'}
 
   has-flag@4.0.0:
@@ -5265,7 +5265,7 @@ snapshots:
       - jiti
       - tsx
 
-  happy-dom@16.0.1:
+  happy-dom@16.3.0:
     dependencies:
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
@@ -6651,7 +6651,7 @@ snapshots:
       jiti: 1.21.6
       yaml: 2.6.1
 
-  vitest@2.1.8(@types/node@22.10.5)(happy-dom@16.0.1):
+  vitest@2.1.8(@types/node@22.10.5)(happy-dom@16.3.0):
     dependencies:
       '@vitest/expect': 2.1.8
       '@vitest/mocker': 2.1.8(vite@5.4.11(@types/node@22.10.5))
@@ -6675,7 +6675,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.10.5
-      happy-dom: 16.0.1
+      happy-dom: 16.3.0
     transitivePeerDependencies:
       - less
       - lightningcss
