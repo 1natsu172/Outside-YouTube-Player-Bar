@@ -45,7 +45,7 @@ importers:
         version: 5.64.0(react@19.0.0)
       '@webext-core/messaging':
         specifier: ^2.0.2
-        version: 2.1.0
+        version: 2.2.0
       async-mutex:
         specifier: ^0.5.0
         version: 0.5.0
@@ -1140,8 +1140,8 @@ packages:
   '@webext-core/match-patterns@1.0.3':
     resolution: {integrity: sha512-NY39ACqCxdKBmHgw361M9pfJma8e4AZo20w9AY+5ZjIj1W2dvXC8J31G5fjfOGbulW9w4WKpT8fPooi0mLkn9A==}
 
-  '@webext-core/messaging@2.1.0':
-    resolution: {integrity: sha512-1Bwr97HDMRQJ+XFwvhAvE4fdHK7Ge1o3NHxr/Cyv5yYCDAfz6cSzQaopeGZkkW/kN5eBRb1g3yonVwXC5ZXt8w==}
+  '@webext-core/messaging@2.2.0':
+    resolution: {integrity: sha512-CRKFSH8ZAp55QpzfseOO/RlW6fAVSGWYNJK1j23khB855Ba9wHu8PB3uuqMVZtfEAwAmsw/2U8HIkony5adFBQ==}
 
   '@wxt-dev/storage@1.0.1':
     resolution: {integrity: sha512-05fzQrr4z0WhdJ0rMQGmjCNTWAC7vrCtvlmu6ZWAKbxdc7k0+T9ui5qPIdF+PxcKPRavIY6ebowBy5KV9lRY0w==}
@@ -4442,7 +4442,7 @@ snapshots:
 
   '@webext-core/match-patterns@1.0.3': {}
 
-  '@webext-core/messaging@2.1.0':
+  '@webext-core/messaging@2.2.0':
     dependencies:
       serialize-error: 11.0.3
       uid: 2.0.2
