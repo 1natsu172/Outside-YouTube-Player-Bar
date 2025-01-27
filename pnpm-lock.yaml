@@ -147,8 +147,8 @@ importers:
         specifier: 2.1.8
         version: 2.1.8(@types/node@22.10.10)(happy-dom@16.5.3)
       wxt:
-        specifier: 0.19.24
-        version: 0.19.24(@types/node@22.10.10)(rollup@4.28.0)(yaml@2.6.1)
+        specifier: 0.19.25
+        version: 0.19.25(@types/node@22.10.10)(rollup@4.28.0)(yaml@2.6.1)
 
 packages:
 
@@ -3514,8 +3514,8 @@ packages:
       utf-8-validate:
         optional: true
 
-  wxt@0.19.24:
-    resolution: {integrity: sha512-sOoVjGuGo9QOl1c2XgjEv4e5x5ga45hfeiwRa1PLWx7oXQe6a4bOaXirv4GO6tT+WZW7L5aV2pKfNou5jgQQ/Q==}
+  wxt@0.19.25:
+    resolution: {integrity: sha512-oG0Xsj3kZB8eknV0UjaoqFnTm683lS9Hf+u6D6Et+0JtHYMLgAzxCSu8F8iKJS4A03ULW2YR92BxUfSnVUD9uw==}
     hasBin: true
 
   xdg-basedir@5.1.0:
@@ -6799,7 +6799,7 @@ snapshots:
 
   ws@8.18.0: {}
 
-  wxt@0.19.24(@types/node@22.10.10)(rollup@4.28.0)(yaml@2.6.1):
+  wxt@0.19.25(@types/node@22.10.10)(rollup@4.28.0)(yaml@2.6.1):
     dependencies:
       '@1natsu/wait-element': 4.1.2
       '@aklinker1/rollup-plugin-visualizer': 5.12.0(rollup@4.28.0)
