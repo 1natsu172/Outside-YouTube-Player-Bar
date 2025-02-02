@@ -118,7 +118,7 @@ importers:
         version: 8.0.0
       happy-css-modules:
         specifier: 3.2.0
-        version: 3.2.0(jiti@1.21.6)(postcss@8.4.49)
+        version: 3.2.0(jiti@1.21.6)(postcss@8.5.1)
       happy-dom:
         specifier: 16.8.1
         version: 16.8.1
@@ -126,14 +126,14 @@ importers:
         specifier: 1.49.1
         version: 1.49.1
       postcss:
-        specifier: 8.4.49
-        version: 8.4.49
+        specifier: 8.5.1
+        version: 8.5.1
       postcss-import:
         specifier: 16.1.0
-        version: 16.1.0(postcss@8.4.49)
+        version: 16.1.0(postcss@8.5.1)
       postcss-nesting:
         specifier: 13.0.1
-        version: 13.0.1(postcss@8.4.49)
+        version: 13.0.1(postcss@8.5.1)
       rollup-preserve-directives:
         specifier: 1.1.3
         version: 1.1.3(rollup@4.28.0)
@@ -2714,8 +2714,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.4.49:
-    resolution: {integrity: sha512-OCVPnIObs4N29kxTjzLfUryOkvZEq+pf8jTF0lg8E7uETuWHA+v7j3c/xJmiqpX450191LlmZfUKkXxkTry7nA==}
+  postcss@8.5.1:
+    resolution: {integrity: sha512-6oz2beyjc5VMn/KV1pPw8fliQkhBXrVn1Z3TVyqZxU8kZpzEKhBdmCFqI6ZbmGtamQvQGuU1sgPTk8ZrXDD7jQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   pretty-format@27.5.1:
@@ -4360,7 +4360,7 @@ snapshots:
 
   '@types/postcss-import@14.0.3':
     dependencies:
-      postcss: 8.4.49
+      postcss: 8.5.1
 
   '@types/react-dom@19.0.3(@types/react@19.0.8)':
     dependencies:
@@ -5242,7 +5242,7 @@ snapshots:
 
   growly@1.3.0: {}
 
-  happy-css-modules@3.2.0(jiti@1.21.6)(postcss@8.4.49):
+  happy-css-modules@3.2.0(jiti@1.21.6)(postcss@8.5.1):
     dependencies:
       '@file-cache/core': 2.0.0
       '@file-cache/npm': 2.0.0
@@ -5254,9 +5254,9 @@ snapshots:
       glob: 10.4.5
       import-meta-resolve: 4.1.0
       minimatch: 9.0.5
-      postcss: 8.4.49
-      postcss-load-config: 5.1.0(jiti@1.21.6)(postcss@8.4.49)
-      postcss-modules: 6.0.1(postcss@8.4.49)
+      postcss: 8.5.1
+      postcss-load-config: 5.1.0(jiti@1.21.6)(postcss@8.5.1)
+      postcss-modules: 6.0.1(postcss@8.5.1)
       postcss-selector-parser: 6.1.2
       postcss-value-parser: 4.2.0
       source-map: 0.7.4
@@ -5315,9 +5315,9 @@ snapshots:
 
   human-signals@5.0.0: {}
 
-  icss-utils@5.1.0(postcss@8.4.49):
+  icss-utils@5.1.0(postcss@8.5.1):
     dependencies:
-      postcss: 8.4.49
+      postcss: 8.5.1
 
   ieee754@1.2.1: {}
 
@@ -5947,59 +5947,59 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.2
 
-  postcss-import@16.1.0(postcss@8.4.49):
+  postcss-import@16.1.0(postcss@8.5.1):
     dependencies:
-      postcss: 8.4.49
+      postcss: 8.5.1
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
 
-  postcss-load-config@5.1.0(jiti@1.21.6)(postcss@8.4.49):
+  postcss-load-config@5.1.0(jiti@1.21.6)(postcss@8.5.1):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.6.1
     optionalDependencies:
       jiti: 1.21.6
-      postcss: 8.4.49
+      postcss: 8.5.1
 
-  postcss-modules-extract-imports@3.1.0(postcss@8.4.49):
+  postcss-modules-extract-imports@3.1.0(postcss@8.5.1):
     dependencies:
-      postcss: 8.4.49
+      postcss: 8.5.1
 
-  postcss-modules-local-by-default@4.1.0(postcss@8.4.49):
+  postcss-modules-local-by-default@4.1.0(postcss@8.5.1):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.49)
-      postcss: 8.4.49
+      icss-utils: 5.1.0(postcss@8.5.1)
+      postcss: 8.5.1
       postcss-selector-parser: 7.0.0
       postcss-value-parser: 4.2.0
 
-  postcss-modules-scope@3.2.1(postcss@8.4.49):
+  postcss-modules-scope@3.2.1(postcss@8.5.1):
     dependencies:
-      postcss: 8.4.49
+      postcss: 8.5.1
       postcss-selector-parser: 7.0.0
 
-  postcss-modules-values@4.0.0(postcss@8.4.49):
+  postcss-modules-values@4.0.0(postcss@8.5.1):
     dependencies:
-      icss-utils: 5.1.0(postcss@8.4.49)
-      postcss: 8.4.49
+      icss-utils: 5.1.0(postcss@8.5.1)
+      postcss: 8.5.1
 
-  postcss-modules@6.0.1(postcss@8.4.49):
+  postcss-modules@6.0.1(postcss@8.5.1):
     dependencies:
       generic-names: 4.0.0
-      icss-utils: 5.1.0(postcss@8.4.49)
+      icss-utils: 5.1.0(postcss@8.5.1)
       lodash.camelcase: 4.3.0
-      postcss: 8.4.49
-      postcss-modules-extract-imports: 3.1.0(postcss@8.4.49)
-      postcss-modules-local-by-default: 4.1.0(postcss@8.4.49)
-      postcss-modules-scope: 3.2.1(postcss@8.4.49)
-      postcss-modules-values: 4.0.0(postcss@8.4.49)
+      postcss: 8.5.1
+      postcss-modules-extract-imports: 3.1.0(postcss@8.5.1)
+      postcss-modules-local-by-default: 4.1.0(postcss@8.5.1)
+      postcss-modules-scope: 3.2.1(postcss@8.5.1)
+      postcss-modules-values: 4.0.0(postcss@8.5.1)
       string-hash: 1.1.3
 
-  postcss-nesting@13.0.1(postcss@8.4.49):
+  postcss-nesting@13.0.1(postcss@8.5.1):
     dependencies:
       '@csstools/selector-resolve-nested': 3.0.0(postcss-selector-parser@7.0.0)
       '@csstools/selector-specificity': 5.0.0(postcss-selector-parser@7.0.0)
-      postcss: 8.4.49
+      postcss: 8.5.1
       postcss-selector-parser: 7.0.0
 
   postcss-selector-parser@6.1.2:
@@ -6014,7 +6014,7 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.4.49:
+  postcss@8.5.1:
     dependencies:
       nanoid: 3.3.8
       picocolors: 1.1.1
@@ -6634,7 +6634,7 @@ snapshots:
   vite@5.4.11(@types/node@22.13.0):
     dependencies:
       esbuild: 0.21.5
-      postcss: 8.4.49
+      postcss: 8.5.1
       rollup: 4.28.0
     optionalDependencies:
       '@types/node': 22.13.0
@@ -6643,7 +6643,7 @@ snapshots:
   vite@6.0.1(@types/node@22.13.0)(jiti@1.21.6)(yaml@2.6.1):
     dependencies:
       esbuild: 0.24.0
-      postcss: 8.4.49
+      postcss: 8.5.1
       rollup: 4.28.0
     optionalDependencies:
       '@types/node': 22.13.0
