@@ -50,7 +50,7 @@
 		"@vitejs/plugin-react": "4.3.4",
 		"git-semver-tags": "8.0.0",
 		"happy-css-modules": "3.2.0",
-		"happy-dom": "17.1.0",
+		"happy-dom": "17.1.2",
 		"playwright": "1.50.1",
 		"postcss": "8.5.2",
 		"postcss-import": "16.1.0",
