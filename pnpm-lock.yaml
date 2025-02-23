@@ -36,7 +36,7 @@ importers:
         version: 8.55.0
       '@sentry/vite-plugin':
         specifier: ^3.0.0
-        version: 3.1.2
+        version: 3.2.0
       '@tabler/icons-react':
         specifier: ^3.6.0
         version: 3.30.0(react@19.0.0)
@@ -177,12 +177,12 @@ packages:
     resolution: {integrity: sha512-oH5UPLMWR3L2wEFLnFJ1TZXqHufiTKAiLfqw5zkhS4dKXLJ10yVztfil/twG8EDTA4F/tvVNw9nOl4ZMslB8rQ==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/core@7.26.8':
-    resolution: {integrity: sha512-l+lkXCHS6tQEc5oUpK28xBOZ6+HwaH7YwoYQbLFiYb4nS2/l1tKnZEtEWkD0GuiYdvArf9qBS0XlQGXzPMsNqQ==}
+  '@babel/core@7.26.9':
+    resolution: {integrity: sha512-lWBYIrF7qK5+GjY5Uy+/hEgp8OJWOD/rpy74GplYRhEauvbHDeFB8t5hPOZxCZ0Oxf4Cc36tK51/l3ymJysrKw==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/generator@7.26.8':
-    resolution: {integrity: sha512-ef383X5++iZHWAXX0SXQR6ZyQhw/0KtTkrTz61WXRhFM6dhpHulO/RJz79L8S6ugZHJkOOkUrUdxgdF2YiPFnA==}
+  '@babel/generator@7.26.9':
+    resolution: {integrity: sha512-kEWdzjOAUMW4hAyrzJ0ZaTOu9OmpyDIQicIh0zg0EEcEkYXZb2TjtBhnHi2ViX7PKwZqF4xwqfAm299/QMP3lg==}
     engines: {node: '>=6.9.0'}
 
   '@babel/helper-compilation-targets@7.26.5':
@@ -215,12 +215,12 @@ packages:
     resolution: {integrity: sha512-e/zv1co8pp55dNdEcCynfj9X7nyUKUXoUEwfXqaZt0omVOmDe9oOTdKStH4GmAw6zxMFs50ZayuMfHDKlO7Tfw==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/helpers@7.26.7':
-    resolution: {integrity: sha512-8NHiL98vsi0mbPQmYAGWwfcFaOy4j2HY49fXJCfuDcdE7fMIsH9a7GdaeXpIBsbT7307WU8KCMp5pUVDNL4f9A==}
+  '@babel/helpers@7.26.9':
+    resolution: {integrity: sha512-Mz/4+y8udxBKdmzt/UjPACs4G3j5SshJJEFFKxlCGPydG4JAHXxjWjAwjd09tf6oINvl1VfMJo+nB7H2YKQ0dA==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/parser@7.26.8':
-    resolution: {integrity: sha512-TZIQ25pkSoaKEYYaHbbxkfL36GNsQ6iFiBbeuzAkLnXayKR1yP1zFe+NxuZWWsUyvt8icPU9CCq0sgWGXR1GEw==}
+  '@babel/parser@7.26.9':
+    resolution: {integrity: sha512-81NWa1njQblgZbQHxWHpxxCzNsa3ZwvFqpUg7P+NNUU6f3UU2jBEg4OlF/J6rl8+PQGh1q6/zWScd001YwcA5A==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -244,16 +244,16 @@ packages:
     resolution: {integrity: sha512-aA63XwOkcl4xxQa3HjPMqOP6LiK0ZDv3mUPYEFXkpHbaFjtGggE1A61FjFzJnB+p7/oy2gA8E+rcBNl/zC1tMg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/template@7.26.8':
-    resolution: {integrity: sha512-iNKaX3ZebKIsCvJ+0jd6embf+Aulaa3vNBqZ41kM7iTWjx5qzWKXGHiJUW3+nTpQ18SG11hdF8OAzKrpXkb96Q==}
+  '@babel/template@7.26.9':
+    resolution: {integrity: sha512-qyRplbeIpNZhmzOysF/wFMuP9sctmh2cFzRAZOn1YapxBsE1i9bJIY586R/WBLfLcmcBlM8ROBiQURnnNy+zfA==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/traverse@7.26.8':
-    resolution: {integrity: sha512-nic9tRkjYH0oB2dzr/JoGIm+4Q6SuYeLEiIiZDwBscRMYFJ+tMAz98fuel9ZnbXViA2I0HVSSRRK8DW5fjXStA==}
+  '@babel/traverse@7.26.9':
+    resolution: {integrity: sha512-ZYW7L+pL8ahU5fXmNbPF+iZFHCv5scFak7MZ9bwaRPLUhHh7QQEMjZUg0HevihoqCM5iSYHN61EyCoZvqC+bxg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.26.8':
-    resolution: {integrity: sha512-eUuWapzEGWFEpHFxgEaBG8e3n6S8L3MSu0oda755rOfabWPnh0Our1AozNFVUxGFIhbKgd1ksprsoDGMinTOTA==}
+  '@babel/types@7.26.9':
+    resolution: {integrity: sha512-Y3IR1cRnOxOCDvMmNiym7XpXQ93iGDDPHx+Zj+NM+rg0fBaShfQLkg+hKPaZCEvg5N/LeCo4+Rj/i3FuJsIQaw==}
     engines: {node: '>=6.9.0'}
 
   '@biomejs/biome@1.9.4':
@@ -843,16 +843,16 @@ packages:
     resolution: {integrity: sha512-E2xrUoms90qvm0BVOuaZ8QfkMoTUEgoIW/35uOeaqNcL7uOIj8c5cSEQQKit2Dr7CL6W+Ci5c6Khdyd5C0NL5w==}
     engines: {node: '>=18'}
 
-  '@sentry/babel-plugin-component-annotate@3.1.2':
-    resolution: {integrity: sha512-5h2WXRJ6swKA0TwxHHryC8M2QyOfS9QhTAL6ElPfkEYe9HhJieXmxsDpyspbqAa26ccnCUcmwE5vL34jAjt4sQ==}
+  '@sentry/babel-plugin-component-annotate@3.2.0':
+    resolution: {integrity: sha512-Sg7nLRP1yiJYl/KdGGxYGbjvLq5rswyeB5yESgfWX34XUNZaFgmNvw4pU/QEKVeYgcPyOulgJ+y80ewujyffTA==}
     engines: {node: '>= 14'}
 
   '@sentry/browser@9.1.0':
     resolution: {integrity: sha512-G55e5j77DqRW3LkalJLAjRRfuyKrjHaKTnwIYXa6ycO+Q1+l14pEUxu+eK5Abu2rtSdViwRSb5/G6a/miSUlYA==}
     engines: {node: '>=18'}
 
-  '@sentry/bundler-plugin-core@3.1.2':
-    resolution: {integrity: sha512-lqOCvmOPzKiQenIMhmm5/mwCntwFy0dPZbVD28Dnr3MXpT1rIBg1HXjfnqQWFlMRbL9haSsWiY/TQyR/6b30YA==}
+  '@sentry/bundler-plugin-core@3.2.0':
+    resolution: {integrity: sha512-Q/ogVylue3XaFawyIxzuiic+7Dp4w63eJtRtVH8VBebNURyJ/re4GVoP1QNGccE1R243tXY1y2GiwqiJkAONOg==}
     engines: {node: '>= 14'}
 
   '@sentry/cli-darwin@2.41.1':
@@ -923,8 +923,8 @@ packages:
     resolution: {integrity: sha512-cYcl39+xcOivBpN9d8ZKbALl+DxZKo/8H0nueJZ0PO4JA+MJGhSm6oHakXxLPaiMoNLTX7yor8ndnQIuFg+vmQ==}
     engines: {node: '>=14.18'}
 
-  '@sentry/vite-plugin@3.1.2':
-    resolution: {integrity: sha512-a927sabQKviA4PAs9cM3rFONHiVdfEHHkypmub+hFwJNL0sbeg/8uht0WyqDT5WjVT5pbyvLaKLDjGdwrRBY6Q==}
+  '@sentry/vite-plugin@3.2.0':
+    resolution: {integrity: sha512-IVBoAzZmpoX9+mnmIMq2ndxlFPoWMuYSE5Mek5zOWpYh+GbPxvkrxvM+vg0HeLH4r5v9Tm0FWcEZDgDIZqtoSg==}
     engines: {node: '>= 14'}
 
   '@sindresorhus/is@5.6.0':
@@ -1064,9 +1064,6 @@ packages:
 
   '@types/filewriter@0.0.33':
     resolution: {integrity: sha512-xFU8ZXTw4gd358lb2jw25nxY9QAgqn2+bKKjKOYfNCzN4DKCFetK7sPtrlpg66Ywe3vWY9FNxprZawAh9wfJ3g==}
-
-  '@types/gensync@1.0.4':
-    resolution: {integrity: sha512-C3YYeRQWp2fmq9OryX+FoDy8nXS6scQ7dPptD8LnFDAUNcKWJjXQKDNJD3HVm+kOUsXhTOkpi69vI4EuAr95bA==}
 
   '@types/har-format@1.2.16':
     resolution: {integrity: sha512-fluxdy7ryD3MV6h8pTfTYpy/xQzCFC7m89nOH9y94cNqJ1mDIDPut7MnRHI3F6qRmh/cT2fUjG1MLdCNb4hE9A==}
@@ -3589,19 +3586,18 @@ snapshots:
 
   '@babel/compat-data@7.26.8': {}
 
-  '@babel/core@7.26.8':
+  '@babel/core@7.26.9':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@babel/code-frame': 7.26.2
-      '@babel/generator': 7.26.8
+      '@babel/generator': 7.26.9
       '@babel/helper-compilation-targets': 7.26.5
-      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.8)
-      '@babel/helpers': 7.26.7
-      '@babel/parser': 7.26.8
-      '@babel/template': 7.26.8
-      '@babel/traverse': 7.26.8
-      '@babel/types': 7.26.8
-      '@types/gensync': 1.0.4
+      '@babel/helper-module-transforms': 7.26.0(@babel/core@7.26.9)
+      '@babel/helpers': 7.26.9
+      '@babel/parser': 7.26.9
+      '@babel/template': 7.26.9
+      '@babel/traverse': 7.26.9
+      '@babel/types': 7.26.9
       convert-source-map: 2.0.0
       debug: 4.4.0
       gensync: 1.0.0-beta.2
@@ -3610,10 +3606,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/generator@7.26.8':
+  '@babel/generator@7.26.9':
     dependencies:
-      '@babel/parser': 7.26.8
-      '@babel/types': 7.26.8
+      '@babel/parser': 7.26.9
+      '@babel/types': 7.26.9
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
       jsesc: 3.1.0
@@ -3628,17 +3624,17 @@ snapshots:
 
   '@babel/helper-module-imports@7.25.9':
     dependencies:
-      '@babel/traverse': 7.26.8
-      '@babel/types': 7.26.8
+      '@babel/traverse': 7.26.9
+      '@babel/types': 7.26.9
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/helper-module-transforms@7.26.0(@babel/core@7.26.8)':
+  '@babel/helper-module-transforms@7.26.0(@babel/core@7.26.9)':
     dependencies:
-      '@babel/core': 7.26.8
+      '@babel/core': 7.26.9
       '@babel/helper-module-imports': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
-      '@babel/traverse': 7.26.8
+      '@babel/traverse': 7.26.9
     transitivePeerDependencies:
       - supports-color
 
@@ -3650,23 +3646,23 @@ snapshots:
 
   '@babel/helper-validator-option@7.25.9': {}
 
-  '@babel/helpers@7.26.7':
+  '@babel/helpers@7.26.9':
     dependencies:
-      '@babel/template': 7.26.8
-      '@babel/types': 7.26.8
+      '@babel/template': 7.26.9
+      '@babel/types': 7.26.9
 
-  '@babel/parser@7.26.8':
+  '@babel/parser@7.26.9':
     dependencies:
-      '@babel/types': 7.26.8
+      '@babel/types': 7.26.9
 
-  '@babel/plugin-transform-react-jsx-self@7.25.9(@babel/core@7.26.8)':
+  '@babel/plugin-transform-react-jsx-self@7.25.9(@babel/core@7.26.9)':
     dependencies:
-      '@babel/core': 7.26.8
+      '@babel/core': 7.26.9
       '@babel/helper-plugin-utils': 7.25.9
 
-  '@babel/plugin-transform-react-jsx-source@7.25.9(@babel/core@7.26.8)':
+  '@babel/plugin-transform-react-jsx-source@7.25.9(@babel/core@7.26.9)':
     dependencies:
-      '@babel/core': 7.26.8
+      '@babel/core': 7.26.9
       '@babel/helper-plugin-utils': 7.25.9
 
   '@babel/runtime@7.24.7':
@@ -3677,25 +3673,25 @@ snapshots:
     dependencies:
       regenerator-runtime: 0.14.1
 
-  '@babel/template@7.26.8':
+  '@babel/template@7.26.9':
     dependencies:
       '@babel/code-frame': 7.26.2
-      '@babel/parser': 7.26.8
-      '@babel/types': 7.26.8
+      '@babel/parser': 7.26.9
+      '@babel/types': 7.26.9
 
-  '@babel/traverse@7.26.8':
+  '@babel/traverse@7.26.9':
     dependencies:
       '@babel/code-frame': 7.26.2
-      '@babel/generator': 7.26.8
-      '@babel/parser': 7.26.8
-      '@babel/template': 7.26.8
-      '@babel/types': 7.26.8
+      '@babel/generator': 7.26.9
+      '@babel/parser': 7.26.9
+      '@babel/template': 7.26.9
+      '@babel/types': 7.26.9
       debug: 4.4.0
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/types@7.26.8':
+  '@babel/types@7.26.9':
     dependencies:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
@@ -4095,7 +4091,7 @@ snapshots:
       '@sentry-internal/browser-utils': 9.1.0
       '@sentry/core': 9.1.0
 
-  '@sentry/babel-plugin-component-annotate@3.1.2': {}
+  '@sentry/babel-plugin-component-annotate@3.2.0': {}
 
   '@sentry/browser@9.1.0':
     dependencies:
@@ -4105,10 +4101,10 @@ snapshots:
       '@sentry-internal/replay-canvas': 9.1.0
       '@sentry/core': 9.1.0
 
-  '@sentry/bundler-plugin-core@3.1.2':
+  '@sentry/bundler-plugin-core@3.2.0':
     dependencies:
-      '@babel/core': 7.26.8
-      '@sentry/babel-plugin-component-annotate': 3.1.2
+      '@babel/core': 7.26.9
+      '@sentry/babel-plugin-component-annotate': 3.2.0
       '@sentry/cli': 2.41.1
       dotenv: 16.4.7
       find-up: 5.0.0
@@ -4178,9 +4174,9 @@ snapshots:
     dependencies:
       '@sentry/core': 8.55.0
 
-  '@sentry/vite-plugin@3.1.2':
+  '@sentry/vite-plugin@3.2.0':
     dependencies:
-      '@sentry/bundler-plugin-core': 3.1.2
+      '@sentry/bundler-plugin-core': 3.2.0
       unplugin: 1.0.1
     transitivePeerDependencies:
       - encoding
@@ -4188,54 +4184,54 @@ snapshots:
 
   '@sindresorhus/is@5.6.0': {}
 
-  '@svgr/babel-plugin-add-jsx-attribute@8.0.0(@babel/core@7.26.8)':
+  '@svgr/babel-plugin-add-jsx-attribute@8.0.0(@babel/core@7.26.9)':
     dependencies:
-      '@babel/core': 7.26.8
+      '@babel/core': 7.26.9
 
-  '@svgr/babel-plugin-remove-jsx-attribute@8.0.0(@babel/core@7.26.8)':
+  '@svgr/babel-plugin-remove-jsx-attribute@8.0.0(@babel/core@7.26.9)':
     dependencies:
-      '@babel/core': 7.26.8
+      '@babel/core': 7.26.9
 
-  '@svgr/babel-plugin-remove-jsx-empty-expression@8.0.0(@babel/core@7.26.8)':
+  '@svgr/babel-plugin-remove-jsx-empty-expression@8.0.0(@babel/core@7.26.9)':
     dependencies:
-      '@babel/core': 7.26.8
+      '@babel/core': 7.26.9
 
-  '@svgr/babel-plugin-replace-jsx-attribute-value@8.0.0(@babel/core@7.26.8)':
+  '@svgr/babel-plugin-replace-jsx-attribute-value@8.0.0(@babel/core@7.26.9)':
     dependencies:
-      '@babel/core': 7.26.8
+      '@babel/core': 7.26.9
 
-  '@svgr/babel-plugin-svg-dynamic-title@8.0.0(@babel/core@7.26.8)':
+  '@svgr/babel-plugin-svg-dynamic-title@8.0.0(@babel/core@7.26.9)':
     dependencies:
-      '@babel/core': 7.26.8
+      '@babel/core': 7.26.9
 
-  '@svgr/babel-plugin-svg-em-dimensions@8.0.0(@babel/core@7.26.8)':
+  '@svgr/babel-plugin-svg-em-dimensions@8.0.0(@babel/core@7.26.9)':
     dependencies:
-      '@babel/core': 7.26.8
+      '@babel/core': 7.26.9
 
-  '@svgr/babel-plugin-transform-react-native-svg@8.1.0(@babel/core@7.26.8)':
+  '@svgr/babel-plugin-transform-react-native-svg@8.1.0(@babel/core@7.26.9)':
     dependencies:
-      '@babel/core': 7.26.8
+      '@babel/core': 7.26.9
 
-  '@svgr/babel-plugin-transform-svg-component@8.0.0(@babel/core@7.26.8)':
+  '@svgr/babel-plugin-transform-svg-component@8.0.0(@babel/core@7.26.9)':
     dependencies:
-      '@babel/core': 7.26.8
+      '@babel/core': 7.26.9
 
-  '@svgr/babel-preset@8.1.0(@babel/core@7.26.8)':
+  '@svgr/babel-preset@8.1.0(@babel/core@7.26.9)':
     dependencies:
-      '@babel/core': 7.26.8
-      '@svgr/babel-plugin-add-jsx-attribute': 8.0.0(@babel/core@7.26.8)
-      '@svgr/babel-plugin-remove-jsx-attribute': 8.0.0(@babel/core@7.26.8)
-      '@svgr/babel-plugin-remove-jsx-empty-expression': 8.0.0(@babel/core@7.26.8)
-      '@svgr/babel-plugin-replace-jsx-attribute-value': 8.0.0(@babel/core@7.26.8)
-      '@svgr/babel-plugin-svg-dynamic-title': 8.0.0(@babel/core@7.26.8)
-      '@svgr/babel-plugin-svg-em-dimensions': 8.0.0(@babel/core@7.26.8)
-      '@svgr/babel-plugin-transform-react-native-svg': 8.1.0(@babel/core@7.26.8)
-      '@svgr/babel-plugin-transform-svg-component': 8.0.0(@babel/core@7.26.8)
+      '@babel/core': 7.26.9
+      '@svgr/babel-plugin-add-jsx-attribute': 8.0.0(@babel/core@7.26.9)
+      '@svgr/babel-plugin-remove-jsx-attribute': 8.0.0(@babel/core@7.26.9)
+      '@svgr/babel-plugin-remove-jsx-empty-expression': 8.0.0(@babel/core@7.26.9)
+      '@svgr/babel-plugin-replace-jsx-attribute-value': 8.0.0(@babel/core@7.26.9)
+      '@svgr/babel-plugin-svg-dynamic-title': 8.0.0(@babel/core@7.26.9)
+      '@svgr/babel-plugin-svg-em-dimensions': 8.0.0(@babel/core@7.26.9)
+      '@svgr/babel-plugin-transform-react-native-svg': 8.1.0(@babel/core@7.26.9)
+      '@svgr/babel-plugin-transform-svg-component': 8.0.0(@babel/core@7.26.9)
 
   '@svgr/core@8.1.0(typescript@5.7.3)':
     dependencies:
-      '@babel/core': 7.26.8
-      '@svgr/babel-preset': 8.1.0(@babel/core@7.26.8)
+      '@babel/core': 7.26.9
+      '@svgr/babel-preset': 8.1.0(@babel/core@7.26.9)
       camelcase: 6.3.0
       cosmiconfig: 8.3.6(typescript@5.7.3)
       snake-case: 3.0.4
@@ -4245,13 +4241,13 @@ snapshots:
 
   '@svgr/hast-util-to-babel-ast@8.0.0':
     dependencies:
-      '@babel/types': 7.26.8
+      '@babel/types': 7.26.9
       entities: 4.5.0
 
   '@svgr/plugin-jsx@8.1.0(@svgr/core@8.1.0(typescript@5.7.3))':
     dependencies:
-      '@babel/core': 7.26.8
-      '@svgr/babel-preset': 8.1.0(@babel/core@7.26.8)
+      '@babel/core': 7.26.9
+      '@svgr/babel-preset': 8.1.0(@babel/core@7.26.9)
       '@svgr/core': 8.1.0(typescript@5.7.3)
       '@svgr/hast-util-to-babel-ast': 8.0.0
       svg-parser: 2.0.4
@@ -4301,24 +4297,24 @@ snapshots:
 
   '@types/babel__core@7.20.5':
     dependencies:
-      '@babel/parser': 7.26.8
-      '@babel/types': 7.26.8
+      '@babel/parser': 7.26.9
+      '@babel/types': 7.26.9
       '@types/babel__generator': 7.6.8
       '@types/babel__template': 7.4.4
       '@types/babel__traverse': 7.20.6
 
   '@types/babel__generator@7.6.8':
     dependencies:
-      '@babel/types': 7.26.8
+      '@babel/types': 7.26.9
 
   '@types/babel__template@7.4.4':
     dependencies:
-      '@babel/parser': 7.26.8
-      '@babel/types': 7.26.8
+      '@babel/parser': 7.26.9
+      '@babel/types': 7.26.9
 
   '@types/babel__traverse@7.20.6':
     dependencies:
-      '@babel/types': 7.26.8
+      '@babel/types': 7.26.9
 
   '@types/chrome@0.0.280':
     dependencies:
@@ -4332,8 +4328,6 @@ snapshots:
       '@types/filewriter': 0.0.33
 
   '@types/filewriter@0.0.33': {}
-
-  '@types/gensync@1.0.4': {}
 
   '@types/har-format@1.2.16': {}
 
@@ -4370,9 +4364,9 @@ snapshots:
 
   '@vitejs/plugin-react@4.3.4(vite@6.0.1(@types/node@22.13.5)(jiti@1.21.6)(yaml@2.6.1))':
     dependencies:
-      '@babel/core': 7.26.8
-      '@babel/plugin-transform-react-jsx-self': 7.25.9(@babel/core@7.26.8)
-      '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.8)
+      '@babel/core': 7.26.9
+      '@babel/plugin-transform-react-jsx-self': 7.25.9(@babel/core@7.26.9)
+      '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.9)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
       vite: 6.0.1(@types/node@22.13.5)(jiti@1.21.6)(yaml@2.6.1)
@@ -5580,8 +5574,8 @@ snapshots:
 
   magicast@0.3.5:
     dependencies:
-      '@babel/parser': 7.26.8
-      '@babel/types': 7.26.8
+      '@babel/parser': 7.26.9
+      '@babel/types': 7.26.9
       source-map-js: 1.2.1
 
   make-error@1.3.6: {}
