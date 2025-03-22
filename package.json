@@ -44,7 +44,7 @@
 		"@testing-library/react": "16.2.0",
 		"@types/node": "22.13.11",
 		"@types/postcss-import": "14.0.3",
-		"@types/react": "19.0.10",
+		"@types/react": "19.0.12",
 		"@types/react-dom": "19.0.4",
 		"@types/semver": "7.5.8",
 		"@vitejs/plugin-react": "4.3.4",
