@@ -6,10 +6,10 @@ import viteConfig from "./vite.config.js";
 export const developConfig: UserConfig = {
 	srcDir: "src",
 	entrypointsDir: "entrypoints", // src/entrypoints
-	publicDir: "public", // src/public,
-	modulesDir: "wxtModules",
+	publicDir: "src/public",
+	modulesDir: "src/wxtModules",
 	outDirTemplate: "{{browser}}-mv{{manifestVersion}}-{{mode}}",
-	runner: {
+	webExt: {
 		disabled: false,
 		binaries: {
 			arc: "/Applications/Arc.app/Contents/MacOS/Arc",
