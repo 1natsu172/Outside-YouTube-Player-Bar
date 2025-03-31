@@ -22,7 +22,7 @@ import {
 	registerInitializationLocation,
 } from "@/core/services/siteMetaServices/index.js";
 import { applyCompatibilityStyles } from "@/core/services/styleAffectServices/applyCompatibilityStyles.service.js";
-import type { ContentScriptContext } from "wxt/client";
+import type { ContentScriptContext } from "#imports";
 
 export class Executor {
 	private stateDriven: StateDriven;

@@ -1,7 +1,7 @@
 import { extensionNameCustomElementName } from "@/core/mains/meta.js";
 import { reactErrorHandler } from "@/utils/captureUtils/captureErrors/react/reactErrors.js";
 import { createRoot } from "react-dom/client";
-import type { ContentScriptContext } from "wxt/client";
+import type { ContentScriptContext } from "#imports";
 import { App } from "../UI/App.js";
 import { waitMountUITarget } from "./libs/mediateElement.js";
 
@@ -14,6 +14,7 @@ export const mountUI = async (ctx: ContentScriptContext) => {
 		anchor: targetElement,
 		append: "first",
 		position: "inline",
+		inheritStyles: true,
 		onMount: (container) => {
 			// Container is a body, and React warns when creating a root on the body, so create a wrapper div
 			const app = document.createElement("div");

@@ -1,4 +1,4 @@
-import type { ContentScriptContext } from "wxt/client";
+import type { ContentScriptContext } from "#imports";
 declare global {
 	interface Window {
 		yt: unknown;

@@ -1,4 +1,4 @@
-import type { ContentScriptContext } from "wxt/client";
+import type { ContentScriptContext } from "#imports";
 
 export const YOUTUBE_MATCHES = ["https://*.youtube.com/*"];
 
