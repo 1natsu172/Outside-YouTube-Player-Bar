@@ -49,7 +49,7 @@
 		"@types/semver": "7.7.0",
 		"@vitejs/plugin-react": "4.4.1",
 		"git-semver-tags": "8.0.0",
-		"happy-css-modules": "3.2.0",
+		"happy-css-modules": "4.0.0",
 		"happy-dom": "17.4.4",
 		"playwright": "1.52.0",
 		"postcss": "8.5.3",
