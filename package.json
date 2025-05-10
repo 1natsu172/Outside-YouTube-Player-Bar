@@ -63,8 +63,8 @@
 	},
 	"dependencies": {
 		"@1natsu/wait-element": "4.1.2",
-		"@mantine/core": "^7.10.2",
-		"@mantine/hooks": "^7.10.2",
+		"@mantine/core": "^8.0.0",
+		"@mantine/hooks": "^8.0.0",
 		"@sentry/browser": "^9.0.0",
 		"@sentry/core": "^9.0.0",
 		"@sentry/react": "^9.0.0",
