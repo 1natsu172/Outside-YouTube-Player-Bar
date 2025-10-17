@@ -57,7 +57,7 @@ importers:
         version: 6.1.4
       derive-valtio:
         specifier: ^0.2.0
-        version: 0.2.0(valtio@2.1.5(@types/react@19.1.8)(react@19.1.0))
+        version: 0.2.0(valtio@2.1.8(@types/react@19.1.8)(react@19.1.0))
       mabiki:
         specifier: ^1.0.1
         version: 1.0.1
@@ -78,10 +78,10 @@ importers:
         version: 7.7.2
       valtio:
         specifier: ^2.0.0
-        version: 2.1.5(@types/react@19.1.8)(react@19.1.0)
+        version: 2.1.8(@types/react@19.1.8)(react@19.1.0)
       valtio-history:
         specifier: ^1.0.0
-        version: 1.0.0(valtio@2.1.5(@types/react@19.1.8)(react@19.1.0))
+        version: 1.0.0(valtio@2.1.8(@types/react@19.1.8)(react@19.1.0))
     devDependencies:
       '@biomejs/biome':
         specifier: 2.2.6
@@ -3332,8 +3332,8 @@ packages:
     peerDependencies:
       valtio: '>=2.0.0-rc.2'
 
-  valtio@2.1.5:
-    resolution: {integrity: sha512-vsh1Ixu5mT0pJFZm+Jspvhga5GzHUTYv0/+Th203pLfh3/wbHwxhu/Z2OkZDXIgHfjnjBns7SN9HNcbDvPmaGw==}
+  valtio@2.1.8:
+    resolution: {integrity: sha512-fjTPbJyKEmfVBZUOh3V0OtMHoFUGr4+4XpejjxhNJE/IS2l8rDbyJuzi3w/fZWBDyk7BJOpG+lmvTK5iiVhXuQ==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=18.0.0'
@@ -4872,9 +4872,9 @@ snapshots:
 
   dequal@2.0.3: {}
 
-  derive-valtio@0.2.0(valtio@2.1.5(@types/react@19.1.8)(react@19.1.0)):
+  derive-valtio@0.2.0(valtio@2.1.8(@types/react@19.1.8)(react@19.1.0)):
     dependencies:
-      valtio: 2.1.5(@types/react@19.1.8)(react@19.1.0)
+      valtio: 2.1.8(@types/react@19.1.8)(react@19.1.0)
 
   destr@2.0.3: {}
 
@@ -6611,12 +6611,12 @@ snapshots:
 
   uuid@8.3.2: {}
 
-  valtio-history@1.0.0(valtio@2.1.5(@types/react@19.1.8)(react@19.1.0)):
+  valtio-history@1.0.0(valtio@2.1.8(@types/react@19.1.8)(react@19.1.0)):
     dependencies:
       tslib: 2.8.1
-      valtio: 2.1.5(@types/react@19.1.8)(react@19.1.0)
+      valtio: 2.1.8(@types/react@19.1.8)(react@19.1.0)
 
-  valtio@2.1.5(@types/react@19.1.8)(react@19.1.0):
+  valtio@2.1.8(@types/react@19.1.8)(react@19.1.0):
     dependencies:
       proxy-compare: 3.0.1
     optionalDependencies:
