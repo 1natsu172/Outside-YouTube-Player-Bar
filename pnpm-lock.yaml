@@ -108,8 +108,8 @@ importers:
         specifier: 19.1.6
         version: 19.1.6(@types/react@19.1.8)
       '@types/semver':
-        specifier: 7.7.0
-        version: 7.7.0
+        specifier: 7.7.1
+        version: 7.7.1
       '@vitejs/plugin-react':
         specifier: 4.5.2
         version: 4.5.2(vite@6.0.1(@types/node@22.18.11)(jiti@2.4.2)(yaml@2.6.1))
@@ -1112,8 +1112,8 @@ packages:
   '@types/retry@0.12.2':
     resolution: {integrity: sha512-XISRgDJ2Tc5q4TRqvgJtzsRkFYNJzZrhTdtMoGVBttwzzQJkPnS3WWTFc7kuDRoPtPakl+T+OfdEUjYJj7Jbow==}
 
-  '@types/semver@7.7.0':
-    resolution: {integrity: sha512-k107IF4+Xr7UHjwDc7Cfd6PRQfbdkiRabXGRjo07b4WyPahFBZCZ1sE+BNxYIJPPg73UkfOsVOLwqVc/6ETrIA==}
+  '@types/semver@7.7.1':
+    resolution: {integrity: sha512-FmgJfu+MOcQ370SD0ev7EI8TlCAfKYU+B4m5T3yXc1CiRN94g/SZPtsCkk506aUDtlMnFZvasDwHHUcZUEaYuA==}
 
   '@types/whatwg-mimetype@3.0.2':
     resolution: {integrity: sha512-c2AKvDT8ToxLIOUlN51gTiHXflsfIFisS4pO7pDPoKouJCESkhZnEy623gwP9laCy5lnLDAw1vAzu2vM2YLOrA==}
@@ -3745,7 +3745,7 @@ snapshots:
 
   '@conventional-changelog/git-client@1.0.1':
     dependencies:
-      '@types/semver': 7.7.0
+      '@types/semver': 7.7.1
       semver: 7.7.2
 
   '@csstools/selector-resolve-nested@3.1.0(postcss-selector-parser@7.0.0)':
@@ -4378,7 +4378,7 @@ snapshots:
 
   '@types/retry@0.12.2': {}
 
-  '@types/semver@7.7.0': {}
+  '@types/semver@7.7.1': {}
 
   '@types/whatwg-mimetype@3.0.2': {}
 
