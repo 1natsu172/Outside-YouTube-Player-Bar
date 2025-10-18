@@ -3,6 +3,7 @@ import "wxt/browser";
 
 declare module "wxt/browser" {
   export type PublicPath =
+    | ""
     | "/"
     | "/_locales/en/messages.json"
     | "/_locales/ja/messages.json"
