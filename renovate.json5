@@ -13,6 +13,7 @@
   "labels": [
     "renovate"
   ],
+  "minimumReleaseAge": "14 days",
   "separateMajorMinor": true,
   "separateMultipleMajor": true,
   "postUpdateOptions": [
@@ -25,8 +26,10 @@
       "matchUpdateTypes": [
         "minor",
         "patch",
-        "pin"
+        "pin",
+        "digest"
       ],
+      "matchCurrentVersion": "!/^0/",
       "automerge": true
     },
     {
