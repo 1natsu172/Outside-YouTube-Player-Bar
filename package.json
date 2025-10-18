@@ -59,7 +59,7 @@
 		"typescript": "5.9.3",
 		"vite-plugin-svgr": "4.5.0",
 		"vitest": "3.2.4",
-		"wxt": "0.20.0"
+		"wxt": "0.20.11"
 	},
 	"dependencies": {
 		"@1natsu/wait-element": "4.1.2",
