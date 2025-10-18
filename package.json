@@ -40,7 +40,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.2.6",
 		"@playwright/test": "1.56.1",
-		"@sentry/types": "10.17.0",
+		"@sentry/types": "10.20.0",
 		"@testing-library/react": "16.3.0",
 		"@types/node": "22.18.11",
 		"@types/postcss-import": "14.0.3",
