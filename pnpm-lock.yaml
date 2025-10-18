@@ -18,7 +18,7 @@ importers:
         version: 4.1.2
       '@mantine/core':
         specifier: ^8.0.0
-        version: 8.3.5(@mantine/hooks@8.3.5(react@19.2.0))(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 8.3.5(@mantine/hooks@8.3.5(react@19.2.0))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@mantine/hooks':
         specifier: ^8.0.0
         version: 8.3.5(react@19.2.0)
@@ -57,7 +57,7 @@ importers:
         version: 6.1.4
       derive-valtio:
         specifier: ^0.2.0
-        version: 0.2.0(valtio@2.1.8(@types/react@19.2.0)(react@19.2.0))
+        version: 0.2.0(valtio@2.1.8(@types/react@19.2.2)(react@19.2.0))
       mabiki:
         specifier: ^1.0.1
         version: 1.0.1
@@ -78,10 +78,10 @@ importers:
         version: 7.7.3
       valtio:
         specifier: ^2.0.0
-        version: 2.1.8(@types/react@19.2.0)(react@19.2.0)
+        version: 2.1.8(@types/react@19.2.2)(react@19.2.0)
       valtio-history:
         specifier: ^1.0.0
-        version: 1.0.0(valtio@2.1.8(@types/react@19.2.0)(react@19.2.0))
+        version: 1.0.0(valtio@2.1.8(@types/react@19.2.2)(react@19.2.0))
     devDependencies:
       '@biomejs/biome':
         specifier: 2.2.6
@@ -94,7 +94,7 @@ importers:
         version: 10.17.0
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.0(@types/react@19.2.0))(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@types/node':
         specifier: 22.18.11
         version: 22.18.11
@@ -102,11 +102,11 @@ importers:
         specifier: 14.0.3
         version: 14.0.3
       '@types/react':
-        specifier: 19.2.0
-        version: 19.2.0
+        specifier: 19.2.2
+        version: 19.2.2
       '@types/react-dom':
-        specifier: 19.2.0
-        version: 19.2.0(@types/react@19.2.0)
+        specifier: 19.2.2
+        version: 19.2.2(@types/react@19.2.2)
       '@types/semver':
         specifier: 7.7.1
         version: 7.7.1
@@ -1109,13 +1109,13 @@ packages:
   '@types/postcss-import@14.0.3':
     resolution: {integrity: sha512-raZhRVTf6Vw5+QbmQ7LOHSDML71A5rj4+EqDzAbrZPfxfoGzFxMHRCq16VlddGIZpHELw0BG4G0YE2ANkdZiIQ==}
 
-  '@types/react-dom@19.2.0':
-    resolution: {integrity: sha512-brtBs0MnE9SMx7px208g39lRmC5uHZs96caOJfTjFcYSLHNamvaSMfJNagChVNkup2SdtOxKX1FDBkRSJe1ZAg==}
+  '@types/react-dom@19.2.2':
+    resolution: {integrity: sha512-9KQPoO6mZCi7jcIStSnlOWn2nEF3mNmyr3rIAsGnAbQKYbRLyqmeSc39EVgtxXVia+LMT8j3knZLAZAh+xLmrw==}
     peerDependencies:
       '@types/react': ^19.2.0
 
-  '@types/react@19.2.0':
-    resolution: {integrity: sha512-1LOH8xovvsKsCBq1wnT4ntDUdCJKmnEakhsuoUSy6ExlHCkGP2hqnatagYTgFk6oeL0VU31u7SNjunPN+GchtA==}
+  '@types/react@19.2.2':
+    resolution: {integrity: sha512-6mDvHUFSjyT2B2yeNx2nUgMxh9LtOWvkhIU3uePn2I2oyNymUAX1NIsdgviM4CH+JSrp2D2hsMvJOkxY+0wNRA==}
 
   '@types/semver@7.7.1':
     resolution: {integrity: sha512-FmgJfu+MOcQ370SD0ev7EI8TlCAfKYU+B4m5T3yXc1CiRN94g/SZPtsCkk506aUDtlMnFZvasDwHHUcZUEaYuA==}
@@ -3976,7 +3976,7 @@ snapshots:
 
   '@lukeed/csprng@1.1.0': {}
 
-  '@mantine/core@8.3.5(@mantine/hooks@8.3.5(react@19.2.0))(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@mantine/core@8.3.5(@mantine/hooks@8.3.5(react@19.2.0))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@floating-ui/react': 0.27.16(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@mantine/hooks': 8.3.5(react@19.2.0)
@@ -3984,8 +3984,8 @@ snapshots:
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
       react-number-format: 5.4.4(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-      react-remove-scroll: 2.7.1(@types/react@19.2.0)(react@19.2.0)
-      react-textarea-autosize: 8.5.9(@types/react@19.2.0)(react@19.2.0)
+      react-remove-scroll: 2.7.1(@types/react@19.2.2)(react@19.2.0)
+      react-textarea-autosize: 8.5.9(@types/react@19.2.2)(react@19.2.0)
       type-fest: 4.41.0
     transitivePeerDependencies:
       - '@types/react'
@@ -4305,15 +4305,15 @@ snapshots:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
-  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.0(@types/react@19.2.0))(@types/react@19.2.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@babel/runtime': 7.28.4
       '@testing-library/dom': 10.4.0
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
     optionalDependencies:
-      '@types/react': 19.2.0
-      '@types/react-dom': 19.2.0(@types/react@19.2.0)
+      '@types/react': 19.2.2
+      '@types/react-dom': 19.2.2(@types/react@19.2.2)
 
   '@types/aria-query@5.0.4': {}
 
@@ -4370,11 +4370,11 @@ snapshots:
     dependencies:
       postcss: 8.5.6
 
-  '@types/react-dom@19.2.0(@types/react@19.2.0)':
+  '@types/react-dom@19.2.2(@types/react@19.2.2)':
     dependencies:
-      '@types/react': 19.2.0
+      '@types/react': 19.2.2
 
-  '@types/react@19.2.0':
+  '@types/react@19.2.2':
     dependencies:
       csstype: 3.1.3
 
@@ -4872,9 +4872,9 @@ snapshots:
 
   dequal@2.0.3: {}
 
-  derive-valtio@0.2.0(valtio@2.1.8(@types/react@19.2.0)(react@19.2.0)):
+  derive-valtio@0.2.0(valtio@2.1.8(@types/react@19.2.2)(react@19.2.0)):
     dependencies:
-      valtio: 2.1.8(@types/react@19.2.0)(react@19.2.0)
+      valtio: 2.1.8(@types/react@19.2.2)(react@19.2.0)
 
   destr@2.0.3: {}
 
@@ -6131,39 +6131,39 @@ snapshots:
 
   react-refresh@0.17.0: {}
 
-  react-remove-scroll-bar@2.3.8(@types/react@19.2.0)(react@19.2.0):
+  react-remove-scroll-bar@2.3.8(@types/react@19.2.2)(react@19.2.0):
     dependencies:
       react: 19.2.0
-      react-style-singleton: 2.2.3(@types/react@19.2.0)(react@19.2.0)
+      react-style-singleton: 2.2.3(@types/react@19.2.2)(react@19.2.0)
       tslib: 2.8.1
     optionalDependencies:
-      '@types/react': 19.2.0
+      '@types/react': 19.2.2
 
-  react-remove-scroll@2.7.1(@types/react@19.2.0)(react@19.2.0):
+  react-remove-scroll@2.7.1(@types/react@19.2.2)(react@19.2.0):
     dependencies:
       react: 19.2.0
-      react-remove-scroll-bar: 2.3.8(@types/react@19.2.0)(react@19.2.0)
-      react-style-singleton: 2.2.3(@types/react@19.2.0)(react@19.2.0)
+      react-remove-scroll-bar: 2.3.8(@types/react@19.2.2)(react@19.2.0)
+      react-style-singleton: 2.2.3(@types/react@19.2.2)(react@19.2.0)
       tslib: 2.8.1
-      use-callback-ref: 1.3.3(@types/react@19.2.0)(react@19.2.0)
-      use-sidecar: 1.1.3(@types/react@19.2.0)(react@19.2.0)
+      use-callback-ref: 1.3.3(@types/react@19.2.2)(react@19.2.0)
+      use-sidecar: 1.1.3(@types/react@19.2.2)(react@19.2.0)
     optionalDependencies:
-      '@types/react': 19.2.0
+      '@types/react': 19.2.2
 
-  react-style-singleton@2.2.3(@types/react@19.2.0)(react@19.2.0):
+  react-style-singleton@2.2.3(@types/react@19.2.2)(react@19.2.0):
     dependencies:
       get-nonce: 1.0.1
       react: 19.2.0
       tslib: 2.8.1
     optionalDependencies:
-      '@types/react': 19.2.0
+      '@types/react': 19.2.2
 
-  react-textarea-autosize@8.5.9(@types/react@19.2.0)(react@19.2.0):
+  react-textarea-autosize@8.5.9(@types/react@19.2.2)(react@19.2.0):
     dependencies:
       '@babel/runtime': 7.28.4
       react: 19.2.0
-      use-composed-ref: 1.4.0(@types/react@19.2.0)(react@19.2.0)
-      use-latest: 1.3.0(@types/react@19.2.0)(react@19.2.0)
+      use-composed-ref: 1.4.0(@types/react@19.2.2)(react@19.2.0)
+      use-latest: 1.3.0(@types/react@19.2.2)(react@19.2.0)
     transitivePeerDependencies:
       - '@types/react'
 
@@ -6567,54 +6567,54 @@ snapshots:
       semver-diff: 4.0.0
       xdg-basedir: 5.1.0
 
-  use-callback-ref@1.3.3(@types/react@19.2.0)(react@19.2.0):
+  use-callback-ref@1.3.3(@types/react@19.2.2)(react@19.2.0):
     dependencies:
       react: 19.2.0
       tslib: 2.8.1
     optionalDependencies:
-      '@types/react': 19.2.0
+      '@types/react': 19.2.2
 
-  use-composed-ref@1.4.0(@types/react@19.2.0)(react@19.2.0):
+  use-composed-ref@1.4.0(@types/react@19.2.2)(react@19.2.0):
     dependencies:
       react: 19.2.0
     optionalDependencies:
-      '@types/react': 19.2.0
+      '@types/react': 19.2.2
 
-  use-isomorphic-layout-effect@1.2.1(@types/react@19.2.0)(react@19.2.0):
+  use-isomorphic-layout-effect@1.2.1(@types/react@19.2.2)(react@19.2.0):
     dependencies:
       react: 19.2.0
     optionalDependencies:
-      '@types/react': 19.2.0
+      '@types/react': 19.2.2
 
-  use-latest@1.3.0(@types/react@19.2.0)(react@19.2.0):
+  use-latest@1.3.0(@types/react@19.2.2)(react@19.2.0):
     dependencies:
       react: 19.2.0
-      use-isomorphic-layout-effect: 1.2.1(@types/react@19.2.0)(react@19.2.0)
+      use-isomorphic-layout-effect: 1.2.1(@types/react@19.2.2)(react@19.2.0)
     optionalDependencies:
-      '@types/react': 19.2.0
+      '@types/react': 19.2.2
 
-  use-sidecar@1.1.3(@types/react@19.2.0)(react@19.2.0):
+  use-sidecar@1.1.3(@types/react@19.2.2)(react@19.2.0):
     dependencies:
       detect-node-es: 1.1.0
       react: 19.2.0
       tslib: 2.8.1
     optionalDependencies:
-      '@types/react': 19.2.0
+      '@types/react': 19.2.2
 
   util-deprecate@1.0.2: {}
 
   uuid@8.3.2: {}
 
-  valtio-history@1.0.0(valtio@2.1.8(@types/react@19.2.0)(react@19.2.0)):
+  valtio-history@1.0.0(valtio@2.1.8(@types/react@19.2.2)(react@19.2.0)):
     dependencies:
       tslib: 2.8.1
-      valtio: 2.1.8(@types/react@19.2.0)(react@19.2.0)
+      valtio: 2.1.8(@types/react@19.2.2)(react@19.2.0)
 
-  valtio@2.1.8(@types/react@19.2.0)(react@19.2.0):
+  valtio@2.1.8(@types/react@19.2.2)(react@19.2.0):
     dependencies:
       proxy-compare: 3.0.1
     optionalDependencies:
-      '@types/react': 19.2.0
+      '@types/react': 19.2.2
       react: 19.2.0
 
   vite-node@3.2.4(@types/node@22.18.11)(jiti@2.4.2)(yaml@2.6.1):
