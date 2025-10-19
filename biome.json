@@ -1,7 +1,9 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
+	"files": {
+		"includes": ["**", "!**/*.css.d.ts", "!**/*.css.d.ts.map"]
+	},
 	"linter": {
-		"enabled": true,
 		"rules": {
 			"recommended": true,
 			"correctness": {
