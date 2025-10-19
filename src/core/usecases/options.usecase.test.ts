@@ -3,6 +3,7 @@ import {
 	defineItem,
 } from "@/core/infrastructures/storage/index.js";
 import * as repo from "@/core/repositories/options.repository.js";
+import { toDesirialized } from "@/utils/testUtils/assertUtils/toDesirialized.js";
 import { beforeEach, describe, expect, test } from "vitest";
 import {
 	getDefaultViewBehaviorOption,
@@ -50,7 +51,7 @@ describe(_generalUpdate.name, () => {
 		const m = { updatedAt: new Date() };
 		await _generalUpdate(objectDefinedItem, v, m);
 		expect(await objectDefinedItem.getValue()).toStrictEqual(v);
-		expect(await objectDefinedItem.getMeta()).toStrictEqual(m);
+		expect(await objectDefinedItem.getMeta()).toStrictEqual(toDesirialized(m));
 	});
 
 	test("should update value w/o meta", async () => {
@@ -58,14 +59,14 @@ describe(_generalUpdate.name, () => {
 		const m = undefined;
 		await _generalUpdate(objectDefinedItem, v, m);
 		expect(await objectDefinedItem.getValue()).toStrictEqual(v);
-		expect(await objectDefinedItem.getMeta()).toStrictEqual({});
+		expect(await objectDefinedItem.getMeta()).toStrictEqual(toDesirialized({}));
 	});
 
 	test("should update meta w/o value", async () => {
 		const v = undefined;
 		const m = { desc: "w/o TValue" };
 		await _generalUpdate(objectDefinedItem, v, m);
-		expect(await objectDefinedItem.getMeta()).toStrictEqual(m);
+		expect(await objectDefinedItem.getMeta()).toStrictEqual(toDesirialized(m));
 	});
 
 	test("should 'not' update value when TValue is undefined OR null", async () => {
