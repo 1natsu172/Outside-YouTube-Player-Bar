@@ -1,5 +1,3 @@
-import { checkAboutForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
-import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
 import { Group } from "@mantine/core";
 import {
 	IconAdjustmentsHorizontal,
@@ -8,14 +6,16 @@ import {
 } from "@tabler/icons-react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Suspense } from "react";
+import { checkAboutForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
+import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
 import { LoadingSpinner } from "../../parts/LoadingSpinner/index.js";
 import { FormGroup } from "../layouts/FormGroup.js";
 import { ExtensionMetaOptionsFormDefs } from "./FormDefinition/ExtensionMetaOptions.definition.js";
+import type { FormDef } from "./FormDefinition/formDefinition.types.js";
 import {
 	ExtensionBehaviorOptionsFormDefs,
 	UiEnhanceOptionsFormDefs,
 } from "./FormDefinition/UserOptions.definition.js";
-import type { FormDef } from "./FormDefinition/formDefinition.types.js";
 
 const RenderFormDef = (formId: string, formDef: FormDef, index: number) => {
 	const { FormElement } = formDef;

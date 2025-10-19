@@ -1,3 +1,4 @@
+import { waitElement } from "@1natsu/wait-element";
 import { elementQuery } from "@/core/mains/meta.js";
 import {
 	convertAttrToVideoPlayerMode,
@@ -9,7 +10,6 @@ import {
 	setVideoPlayerMode,
 } from "@/core/usecases/siteMetaState.usecase.js";
 import { convertToNamedNodeMapLike } from "@/utils/domUtils/attr.js";
-import { waitElement } from "@1natsu/wait-element";
 
 export const applyVideoPlayerModeToSiteMeta = async () => {
 	const element = await waitElement(elementQuery.YTD_PAGE_MANAGER);

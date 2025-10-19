@@ -9,7 +9,10 @@ import type {
 export const FormFieldsSection = ({
 	children,
 	title,
-}: { children?: ReactNode; title: string }) => {
+}: {
+	children?: ReactNode;
+	title: string;
+}) => {
 	return (
 		<Card.Section withBorder p={"md"}>
 			<Text fz={"h3"} fw={"bold"} mb={"md"}>

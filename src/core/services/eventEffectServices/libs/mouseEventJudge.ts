@@ -1,7 +1,10 @@
 export function mouseleaveJudge({
 	event,
 	targetElement,
-}: { targetElement: Element; event: MouseEvent }) {
+}: {
+	targetElement: Element;
+	event: MouseEvent;
+}) {
 	const elementRect = targetElement.getBoundingClientRect();
 	// FIXME: 本来clientYなのだが、MoviePlayer→Barへbottom方向へmouseleaveしたときにclientYの値が期待値よりなぜが小さくなってしまう（おそらくシークバーのhoverでDOMが変わるから副作用が起こっている）。そのためビューポート起点のclientYではなく暫定的にスクリーン起点のscreenYを使っているが、あまりよくはない。
 	// const mouseY = event.clientY

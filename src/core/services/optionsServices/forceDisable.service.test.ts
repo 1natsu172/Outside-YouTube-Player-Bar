@@ -1,8 +1,8 @@
+import { beforeEach, describe, expect, test, vi } from "vitest";
+import { fakeBrowser } from "wxt/testing";
 import { getForceDisableOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import { forceDisable } from "@/core/repositories/options.repository.js";
 import { setForceDisableOption } from "@/core/usecases/options.usecase.js";
-import { beforeEach, describe, expect, test, vi } from "vitest";
-import { fakeBrowser } from "wxt/testing";
 import {
 	checkAboutForceDisable,
 	initializeForceDisable,

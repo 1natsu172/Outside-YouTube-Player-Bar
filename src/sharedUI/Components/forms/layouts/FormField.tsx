@@ -1,9 +1,9 @@
+import { Card, Flex, Text } from "@mantine/core";
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
 import { debugMode } from "@/core/repositories/options.repository.js";
-import { Card, Flex, Text } from "@mantine/core";
 import style from "./FormField.module.css";
 
-export type FieldViewProps = {
+type FieldViewProps = {
 	title: string;
 	description?: string;
 	isLoading: boolean;

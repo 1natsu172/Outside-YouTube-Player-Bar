@@ -1,3 +1,5 @@
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { useCallback, useMemo } from "react";
 import type { BehaviorState } from "@/core/mains/contentScriptState.js";
 import { uiSignals } from "@/core/mains/messagings/uiSignals/index.js";
 import { useBarPosition } from "@/core/presenters/statePresenter/behaviorState/index.js";
@@ -8,8 +10,6 @@ import { showOpenSettingsIconOption } from "@/core/repositories/options.reposito
 import { changePositionPlayerBar } from "@/core/services/behaviorServices/positionPlayerBar.service.js";
 import { checkAboutForceDisable } from "@/core/services/optionsServices/forceDisable.service.js";
 import { LoadingSpinner } from "@/sharedUI/Components/parts/LoadingSpinner/index.js";
-import { useSuspenseQuery } from "@tanstack/react-query";
-import { useCallback, useMemo } from "react";
 import { ForceDisablingButton } from "../../components/parts/ForceDisablingButton/index.js";
 import { SettingsButton } from "../../components/parts/SettingsButton/index.js";
 import { ToggleButton } from "../../components/parts/ToggleButton/index.js";

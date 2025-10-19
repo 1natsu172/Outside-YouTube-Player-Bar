@@ -1,4 +1,3 @@
-import { ErrorBoundary } from "@/sharedUI/libs/ErrorBoundary.js";
 import {
 	QueryClient,
 	type QueryClientConfig,
@@ -7,6 +6,7 @@ import {
 } from "@tanstack/react-query";
 import { type ReactNode, useState } from "react";
 import type { FallbackProps } from "react-error-boundary";
+import { ErrorBoundary } from "@/sharedUI/libs/ErrorBoundary.js";
 
 export const TanstackQueryClientProvider = (props: {
 	children: React.ReactNode;

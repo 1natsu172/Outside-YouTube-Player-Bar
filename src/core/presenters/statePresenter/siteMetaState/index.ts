@@ -1,3 +1,4 @@
+import { useSnapshot } from "valtio";
 import type {
 	VideoPlayerMode,
 	VideoPlayerModeWithoutNone,
@@ -5,7 +6,6 @@ import type {
 import { elementAttributes } from "@/core/mains/meta.js";
 import { siteMetaState } from "@/core/repositories/contentScript.repository.js";
 import type { NamedNodeMapLike } from "@/utils/domUtils/attr.js";
-import { useSnapshot } from "valtio";
 
 export const useVideoPlayerMode = () => {
 	const state = useSnapshot(siteMetaState.videoPlayerState).mode;
@@ -31,13 +31,6 @@ export const judgeCurrentVideoPlayerMode = (
 	}
 };
 
-export const videoPlayerModeKeys = () =>
-	new Set<VideoPlayerMode>([
-		"defaultView",
-		"theaterMode",
-		"fullscreen",
-		"none",
-	]);
 export const videoPlayerModeKeysWithoutNone = () =>
 	new Set<VideoPlayerModeWithoutNone>([
 		"defaultView",

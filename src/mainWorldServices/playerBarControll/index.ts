@@ -16,7 +16,7 @@ type MainWorldPlayer = {
 	showControls: () => unknown;
 } & Element;
 
-let wakeUpIntervalTimer: NodeJS.Timeout | undefined = undefined;
+let wakeUpIntervalTimer: NodeJS.Timeout | undefined;
 
 export const playerBarControll = async (player: MainWorldPlayer) => {
 	mainWorldSignals.onMessage("wakeUpPlayerBar", () => {

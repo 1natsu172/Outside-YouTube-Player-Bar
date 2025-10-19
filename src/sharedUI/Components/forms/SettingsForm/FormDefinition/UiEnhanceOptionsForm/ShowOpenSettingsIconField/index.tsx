@@ -1,6 +1,6 @@
+import { Switch } from "@mantine/core";
 import { getShowOpenSettingsIconOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import { setShowOpenSettingsIconOption } from "@/core/services/optionsServices/userOptions.service.js";
-import { Switch } from "@mantine/core";
 import { FormField } from "../../../../layouts/FormField.js";
 import { useAutoSaveForm } from "../../../../utils/useAutoSaveForm.js";
 

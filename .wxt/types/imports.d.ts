@@ -8,7 +8,6 @@ declare global {
   const browser: typeof import('wxt/browser')['browser']
   const createIframeUi: typeof import('wxt/utils/content-script-ui/iframe')['createIframeUi']
   const createIntegratedUi: typeof import('wxt/utils/content-script-ui/integrated')['createIntegratedUi']
-  const createLogger: typeof import('/Users/1natsu/ghq/github.com/1natsu172/Outside-YouTube-Player-Bar/src/utils/logger')['createLogger']
   const createShadowRootUi: typeof import('wxt/utils/content-script-ui/shadow-root')['createShadowRootUi']
   const defineAppConfig: typeof import('wxt/utils/define-app-config')['defineAppConfig']
   const defineBackground: typeof import('wxt/utils/define-background')['defineBackground']

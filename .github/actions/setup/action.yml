@@ -1,0 +1,14 @@
+name: Setup environment
+description: Setup environment with dependencies (requires checkout to be done before calling this action)
+
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
+    - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
+      with:
+        node-version-file: .tool-versions
+        cache: pnpm
+    - name: Install dependencies
+      run: pnpm install
+      shell: bash

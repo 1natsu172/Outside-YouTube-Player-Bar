@@ -1,7 +1,8 @@
+import { consola, LogLevels } from "consola/browser";
 import { extensionNameSymbol } from "@/core/mains/meta.js";
-import { LogLevels, consola } from "consola/browser";
 
 export let logger = createLogger({ isDebug: import.meta.env.DEV });
+/** @public */
 export type Logger = typeof logger;
 
 type LoggerSettings = {
@@ -9,7 +10,7 @@ type LoggerSettings = {
 	tag?: string;
 };
 
-export function createLogger({ isDebug, tag }: LoggerSettings) {
+function createLogger({ isDebug, tag }: LoggerSettings) {
 	const IS_RUN_ON_TESTING = import.meta.env.RUN_ON_TESTING;
 
 	const _logger = consola.withTag(tag || extensionNameSymbol);

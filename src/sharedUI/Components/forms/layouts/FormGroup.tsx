@@ -1,5 +1,3 @@
-import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
-import { debugMode } from "@/core/repositories/options.repository.js";
 import { Card, Group, ThemeIcon, Title } from "@mantine/core";
 import type { Icon, IconProps } from "@tabler/icons-react";
 import type {
@@ -7,8 +5,10 @@ import type {
 	ReactNode,
 	RefAttributes,
 } from "react";
+import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
+import { debugMode } from "@/core/repositories/options.repository.js";
 
-export type FormGroupProps = {
+type FormGroupProps = {
 	title: string;
 	Icon: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;
 	children?: ReactNode;

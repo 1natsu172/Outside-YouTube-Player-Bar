@@ -6,11 +6,7 @@ interface Props extends React.ComponentPropsWithoutRef<"div"> {
 	rorate?: string;
 }
 
-export const Appearance = ({
-	size = "50px",
-	rorate = "25deg",
-	...others
-}: Props) => {
+const Appearance = ({ size = "50px", rorate = "25deg", ...others }: Props) => {
 	return (
 		<div
 			className={style.appearance}

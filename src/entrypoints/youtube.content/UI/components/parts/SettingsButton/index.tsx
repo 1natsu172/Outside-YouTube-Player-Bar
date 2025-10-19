@@ -1,5 +1,5 @@
-import type { VideoPlayerMode } from "@/core/mains/contentScriptState.js";
 import { IconSettings } from "@tabler/icons-react";
+import type { VideoPlayerMode } from "@/core/mains/contentScriptState.js";
 import style from "./style.module.css";
 
 type P = {

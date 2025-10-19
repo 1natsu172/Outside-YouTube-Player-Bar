@@ -1,8 +1,8 @@
 // @vitest-environment happy-dom
 
-import { centralStorage } from "@/core/infrastructures/storage/centralStorage.js";
 import { act, render, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, test } from "vitest";
+import { centralStorage } from "@/core/infrastructures/storage/centralStorage.js";
 import { TestComponent } from "./forTest.suspense.js";
 import { useStorage } from "./index.suspense.js";
 

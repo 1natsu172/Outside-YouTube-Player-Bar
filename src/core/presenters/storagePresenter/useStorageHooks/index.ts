@@ -1,4 +1,3 @@
-import type { DefinedItem } from "@/core/infrastructures/storage/index.js";
 import {
 	useCallback,
 	useEffect,
@@ -6,6 +5,7 @@ import {
 	useState,
 	useSyncExternalStore,
 } from "react";
+import type { DefinedItem } from "@/core/infrastructures/storage/index.js";
 
 type Subscribe = Parameters<typeof useSyncExternalStore>[0];
 

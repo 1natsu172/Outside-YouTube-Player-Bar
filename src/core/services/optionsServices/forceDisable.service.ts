@@ -1,7 +1,7 @@
+import semver_lt from "semver/functions/lt.js";
 import { extMetaSignals } from "@/core/mains/messagings/extensionMetaSignals/index.js";
 import { getForceDisableOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import * as usecases from "@/core/usecases/options.usecase.js";
-import semver_lt from "semver/functions/lt.js";
 
 export const switchForceDisable = async (activate: boolean) => {
 	await usecases.setForceDisableOption(activate, {
@@ -16,7 +16,9 @@ export const switchForceDisable = async (activate: boolean) => {
 
 export const switchContinueForceDisableForNow = async ({
 	isContinue,
-}: { isContinue: boolean }) => {
+}: {
+	isContinue: boolean;
+}) => {
 	const continueForceDisableForNow = isContinue
 		? {
 				isContinue: true,

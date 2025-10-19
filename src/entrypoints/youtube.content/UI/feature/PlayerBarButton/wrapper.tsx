@@ -1,8 +1,8 @@
+import { IconRefreshAlert } from "@tabler/icons-react";
+import { type ReactNode, Suspense } from "react";
 import { useVideoPlayerMode } from "@/core/presenters/statePresenter/siteMetaState/index.js";
 import { LoadingSpinner } from "@/sharedUI/Components/parts/LoadingSpinner/index.js";
 import { TanstackQueryErrorResetBoundary } from "@/sharedUI/Provider/TanstackQueryProvider.js";
-import { IconRefreshAlert } from "@tabler/icons-react";
-import { type ReactNode, Suspense } from "react";
 import style from "./style.module.css";
 
 type P = {

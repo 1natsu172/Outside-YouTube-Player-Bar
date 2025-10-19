@@ -1,10 +1,10 @@
+import { beforeEach, describe, expect, test } from "vitest";
 import {
 	behaviorState,
 	operationState,
 } from "@/core/repositories/contentScript.repository.js";
 import { setPlayerBarIntersection } from "@/core/usecases/operationState.usecase.js";
 import { resetProxyState } from "@/utils/testUtils/valtioUtil/resetProxyState.js";
-import { beforeEach, describe, expect, test } from "vitest";
 import { changePositionPlayerBar } from "../behaviorServices/positionPlayerBar.service.js";
 import { playerBarIntersectionOperation } from "./index.js";
 

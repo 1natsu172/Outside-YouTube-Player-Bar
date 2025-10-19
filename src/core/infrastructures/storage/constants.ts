@@ -1,6 +1,6 @@
 import type { ValueOf } from "@/utils/typeUtils.js";
 
-export const STORAGE_AREA_KEY = {
+const STORAGE_AREA_KEY = {
 	LOCAL: "local",
 	SESSION: "session",
 	MANAGED: "managed",

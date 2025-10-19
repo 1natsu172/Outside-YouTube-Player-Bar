@@ -1,5 +1,5 @@
-import { elementQuery } from "@/core/mains/meta.js";
 import { waitElement } from "@1natsu/wait-element";
+import { elementQuery } from "@/core/mains/meta.js";
 
 export const waitMountUITarget = async (): Promise<Element> => {
 	logger.debug("waiting for target of inject target");

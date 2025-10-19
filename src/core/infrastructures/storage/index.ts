@@ -1,7 +1,7 @@
 import {
+	centralStorage,
 	type StorageItem,
 	type StorageItemOptions,
-	centralStorage,
 } from "@/core/infrastructures/storage/centralStorage.js";
 import type {
 	StorageItemConfigInstance,

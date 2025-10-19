@@ -5,6 +5,7 @@ export type NestedValueOf<T> = T extends object
 
 export type NonUndefined<T> = T extends undefined ? never : T;
 
+/** @public */
 export type IterableElement<TargetIterable> = TargetIterable extends Iterable<
 	infer ElementType
 >

@@ -1,7 +1,7 @@
 import { videoPlayerModeKeysWithoutNone } from "@/core/presenters/statePresenter/siteMetaState/index.js";
 import { ExtensionBehaviorForm } from "./ExtensionBehaviorForm/index.js";
-import { UiEnhanceOptionsForm } from "./UiEnhanceOptionsForm/index.js";
 import type { FormDefs } from "./formDefinition.types.js";
+import { UiEnhanceOptionsForm } from "./UiEnhanceOptionsForm/index.js";
 
 /**
  * @description Enumerate component implementations

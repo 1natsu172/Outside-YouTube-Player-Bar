@@ -1,7 +1,5 @@
 /// <reference types="vite-plugin-svgr/client" />
 
-import qrImage from "@/assets/images/Kofi_brand_asset/Kofi_QR/qrcode.png";
-import KofiBadge from "@/assets/images/Kofi_brand_asset/Kofi_badge/SVG/kofi_s_tag_white.svg?react";
 import {
 	Card,
 	Container,
@@ -17,6 +15,8 @@ import {
 	IconCheck,
 	IconMoneybag,
 } from "@tabler/icons-react";
+import KofiBadge from "@/assets/images/Kofi_brand_asset/Kofi_badge/SVG/kofi_s_tag_white.svg?react";
+import qrImage from "@/assets/images/Kofi_brand_asset/Kofi_QR/qrcode.png";
 import { Appearances } from "./Appearance.js";
 import style from "./KoFi.module.css";
 

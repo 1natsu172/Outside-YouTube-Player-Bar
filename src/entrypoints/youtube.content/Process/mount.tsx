@@ -1,7 +1,7 @@
-import { extensionNameCustomElementName } from "@/core/mains/meta.js";
-import { reactErrorHandler } from "@/utils/captureUtils/captureErrors/react/reactErrors.js";
 import { createRoot } from "react-dom/client";
 import type { ContentScriptContext } from "#imports";
+import { extensionNameCustomElementName } from "@/core/mains/meta.js";
+import { reactErrorHandler } from "@/utils/captureUtils/captureErrors/react/reactErrors.js";
 import { App } from "../UI/App.js";
 import { waitMountUITarget } from "./libs/mediateElement.js";
 

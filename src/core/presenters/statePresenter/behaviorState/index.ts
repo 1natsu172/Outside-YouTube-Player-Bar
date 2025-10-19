@@ -1,7 +1,7 @@
-import { behaviorState } from "@/core/repositories/contentScript.repository.js";
 import { useSnapshot } from "valtio";
+import { behaviorState } from "@/core/repositories/contentScript.repository.js";
 
-export const useBehaviorState = () => {
+const useBehaviorState = () => {
 	return useSnapshot(behaviorState);
 };
 

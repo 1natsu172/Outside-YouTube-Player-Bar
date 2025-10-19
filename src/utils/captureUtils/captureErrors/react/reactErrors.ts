@@ -2,16 +2,17 @@
  * Copied by https://github.com/getsentry/sentry-javascript/blob/51e015cd34b636a37a5c548a7d8338017c9c2af5/packages/react/src/error.ts
  * REASON: For inject to Scoped Client (Best practice is https://docs.sentry.io/platforms/javascript/best-practices/shared-environments/ but provided utils are not support scoped client.)
  */
-import { reactCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
-import { isError } from "@sentry/core";
+
 import type { EventHint } from "@sentry/core";
-import { version } from "react";
+import { isError } from "@sentry/core";
 import type { ErrorInfo } from "react";
+import { version } from "react";
+import { reactCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
 
 /**
  * See if React major version is 17+ by parsing version string.
  */
-export function isAtLeastReact17(reactVersion: string): boolean {
+function isAtLeastReact17(reactVersion: string): boolean {
 	const reactMajor = reactVersion.match(/^([^.]+)/);
 	return reactMajor !== null && Number.parseInt(reactMajor[0]) >= 17;
 }
@@ -19,7 +20,7 @@ export function isAtLeastReact17(reactVersion: string): boolean {
 /**
  * Recurse through `error.cause` chain to set cause on an error.
  */
-export function setCause(error: Error & { cause?: Error }, cause: Error): void {
+function setCause(error: Error & { cause?: Error }, cause: Error): void {
 	const seenErrors = new WeakSet();
 
 	function recurse(error: Error & { cause?: Error }, cause: Error): void {
@@ -30,7 +31,7 @@ export function setCause(error: Error & { cause?: Error }, cause: Error): void {
 		}
 		if (error.cause) {
 			seenErrors.add(error);
-			// @ts-ignore
+			// @ts-expect-error
 			// biome-ignore lint/correctness/noVoidTypeReturn: <explanation>
 			return recurse(error.cause, cause);
 		}
@@ -68,7 +69,7 @@ export function captureReactException(
 		errorBoundaryError.stack = componentStack;
 
 		// Using the `LinkedErrors` integration to link the errors together.
-		// @ts-ignore
+		// @ts-expect-error
 		setCause(error, errorBoundaryError);
 	}
 
