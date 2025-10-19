@@ -28,6 +28,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - uses: ./.github/actions/setup
       - name: Build
         run: pnpm run build
@@ -36,6 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - uses: ./.github/actions/setup
       - name: Run tests
         run: pnpm run test
@@ -43,6 +45,7 @@ jobs:
   formatlint:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - uses: ./.github/actions/setup
       - name: Run formatlint
         run: pnpm run formatlint
@@ -51,6 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
       - uses: ./.github/actions/setup
       - name: Run Knip (development)
         if: inputs.production != 'true'
