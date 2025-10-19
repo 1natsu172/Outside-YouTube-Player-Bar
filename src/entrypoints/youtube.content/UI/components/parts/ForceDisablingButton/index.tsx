@@ -1,5 +1,5 @@
-import { NotificationCircle } from "@/sharedUI/Components/parts/NotificationCircle/index.js";
 import { IconPuzzleOff } from "@tabler/icons-react";
+import { NotificationCircle } from "@/sharedUI/Components/parts/NotificationCircle/index.js";
 import style from "./style.module.css";
 
 type P = {

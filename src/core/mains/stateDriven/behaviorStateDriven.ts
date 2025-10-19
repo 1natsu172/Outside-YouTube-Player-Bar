@@ -1,5 +1,5 @@
-import { behaviorState } from "@/core/repositories/contentScript.repository.js";
 import { subscribe } from "valtio/vanilla";
+import { behaviorState } from "@/core/repositories/contentScript.repository.js";
 
 export const behaviorDriven = () => {
 	return subscribe(behaviorState, async (ops) => {

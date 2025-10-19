@@ -1,5 +1,5 @@
-import { SettingsPanel } from "@/sharedUI/Components/panels/SettingsPanel/index.js";
 import { Container, Paper } from "@mantine/core";
+import { SettingsPanel } from "@/sharedUI/Components/panels/SettingsPanel/index.js";
 import style from "./Settings.module.css";
 
 export const Settings = () => {

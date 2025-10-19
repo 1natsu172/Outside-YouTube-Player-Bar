@@ -1,6 +1,5 @@
 export const extensionNameSymbol = "OYPB";
-const extensionNameLowerSymbol =
-	extensionNameSymbol.toLowerCase() as "oypb";
+const extensionNameLowerSymbol = extensionNameSymbol.toLowerCase() as "oypb";
 export const extensionNameCustomElementName =
 	`${extensionNameLowerSymbol}-app` as const;
 export const extensionMainWorldScriptName =

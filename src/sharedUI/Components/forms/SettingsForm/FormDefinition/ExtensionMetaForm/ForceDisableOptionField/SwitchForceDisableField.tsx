@@ -1,12 +1,12 @@
+import { Button, Flex, Group, Modal, Paper, Text } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import { useQuery } from "@tanstack/react-query";
 import { getForceDisableOption } from "@/core/presenters/storagePresenter/options.presenter.js";
 import {
 	checkAboutForceDisable,
 	switchForceDisable,
 } from "@/core/services/optionsServices/forceDisable.service.js";
 import { FormField } from "@/sharedUI/Components/forms/layouts/FormField.js";
-import { Button, Flex, Group, Modal, Paper, Text } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { useQuery } from "@tanstack/react-query";
 import { useAutoSaveForm } from "../../../../utils/useAutoSaveForm.js";
 import { DeactivateAvailableField } from "./DeactivateAvailableField.js";
 

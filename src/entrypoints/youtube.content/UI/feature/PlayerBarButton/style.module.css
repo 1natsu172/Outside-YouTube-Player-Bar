@@ -3,7 +3,7 @@
 	width: 48px;
 	height: 48px;
 	padding: 0 2px;
-	transition: opacity .1s cubic-bezier(0.4, 0, 1, 1);
+	transition: opacity 0.1s cubic-bezier(0.4, 0, 1, 1);
 
 	cursor: pointer;
 	display: flex;
@@ -13,7 +13,7 @@
 
 	&:hover {
 		opacity: 1;
-		transition: opacity .1s cubic-bezier(0, 0, 0.2, 1);
+		transition: opacity 0.1s cubic-bezier(0, 0, 0.2, 1);
 	}
 
 	&[data-video-player-mode="fullscreen"] {

@@ -1,6 +1,6 @@
-import { extensionMainWorldScriptName } from "@/core/mains/meta.js";
 import { defineCustomEventMessaging } from "@webext-core/messaging/page";
 import pRetry from "p-retry";
+import { extensionMainWorldScriptName } from "@/core/mains/meta.js";
 
 type SimpleRes = {
 	result: "ok" | "ng";

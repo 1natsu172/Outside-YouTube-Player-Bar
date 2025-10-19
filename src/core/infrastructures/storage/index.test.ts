@@ -1,5 +1,5 @@
-import { allOptionsConfigInstance } from "@/core/mains/options/index.js";
 import { expect, test } from "vitest";
+import { allOptionsConfigInstance } from "@/core/mains/options/index.js";
 import { createStorageConfig } from "./index.js";
 
 test(createStorageConfig.name, () => {

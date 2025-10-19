@@ -1,5 +1,5 @@
-import { behaviorState } from "@/core/repositories/contentScript.repository.js";
 import { useSnapshot } from "valtio";
+import { behaviorState } from "@/core/repositories/contentScript.repository.js";
 
 const useBehaviorState = () => {
 	return useSnapshot(behaviorState);

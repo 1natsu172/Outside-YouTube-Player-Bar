@@ -1,12 +1,12 @@
-import { captureReactException } from "@/utils/captureUtils/captureErrors/react/reactErrors.js";
-import type { SetOptional } from "@/utils/typeUtils.js";
 import { Button } from "@mantine/core";
 import {
+	ErrorBoundary as _ErrorBoundary,
 	type ErrorBoundaryProps,
 	type ErrorBoundaryPropsWithRender,
 	type FallbackProps,
-	ErrorBoundary as _ErrorBoundary,
 } from "react-error-boundary";
+import { captureReactException } from "@/utils/captureUtils/captureErrors/react/reactErrors.js";
+import type { SetOptional } from "@/utils/typeUtils.js";
 
 function _defaultFallbackRender({ resetErrorBoundary }: FallbackProps) {
 	return (

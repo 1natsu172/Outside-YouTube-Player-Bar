@@ -1,9 +1,9 @@
+import { snapshot, subscribe } from "valtio/vanilla";
 import {
 	behaviorState,
 	operationState,
 	siteMetaState,
 } from "@/core/repositories/contentScript.repository.js";
-import { snapshot, subscribe } from "valtio/vanilla";
 import { reflectFunctionality } from "./__reflectFunctionality__.js";
 import { behaviorDriven } from "./behaviorStateDriven.js";
 import { oypbEnableDriven } from "./operationStateDriven.js";

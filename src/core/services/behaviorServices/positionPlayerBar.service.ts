@@ -66,7 +66,9 @@ export const changePositionPlayerBarByChangedPlayerMode = async ({
 
 export const changePositionPlayerBar = async ({
 	to,
-}: { to: BehaviorState["positionPlayerBar"] }) => {
+}: {
+	to: BehaviorState["positionPlayerBar"];
+}) => {
 	logger.debug("position player bar change to", to);
 	setPositionPlayerBar(to);
 };

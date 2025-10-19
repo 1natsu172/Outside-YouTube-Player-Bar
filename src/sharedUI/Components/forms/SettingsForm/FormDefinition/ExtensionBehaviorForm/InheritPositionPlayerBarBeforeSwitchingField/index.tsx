@@ -1,5 +1,5 @@
-import type { VideoPlayerModeWithoutNone } from "@/core/mains/contentScriptState.js";
 import { type ComboboxData, MultiSelect } from "@mantine/core";
+import type { VideoPlayerModeWithoutNone } from "@/core/mains/contentScriptState.js";
 import { FormField } from "../../../../layouts/FormField.js";
 import type { FormLogic } from "../formLogic.js";
 import style from "./index.module.css";

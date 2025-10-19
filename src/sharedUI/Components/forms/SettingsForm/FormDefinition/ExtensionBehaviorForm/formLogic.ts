@@ -1,6 +1,6 @@
+import { IconAppWindow, IconCrop169, IconMaximize } from "@tabler/icons-react";
 import type { VideoPlayerModeWithoutNone } from "@/core/mains/contentScriptState.js";
 import { resolveBehaviorOptionHandlers } from "@/core/services/optionsServices/userOptions.service.js";
-import { IconAppWindow, IconCrop169, IconMaximize } from "@tabler/icons-react";
 import { useAutoSaveForm } from "../../../utils/useAutoSaveForm.js";
 
 export function useExtensionBehaviorForm(mode: VideoPlayerModeWithoutNone) {

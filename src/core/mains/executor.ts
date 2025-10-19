@@ -1,3 +1,4 @@
+import type { ContentScriptContext } from "#imports";
 import { MainWorldBridge } from "@/core/mains/mainWorldBridge/index.js";
 import { StateDriven } from "@/core/mains/stateDriven/index.js";
 import { operationState } from "@/core/repositories/contentScript.repository.js";
@@ -22,7 +23,6 @@ import {
 	registerInitializationLocation,
 } from "@/core/services/siteMetaServices/index.js";
 import { applyCompatibilityStyles } from "@/core/services/styleAffectServices/applyCompatibilityStyles.service.js";
-import type { ContentScriptContext } from "#imports";
 
 export class Executor {
 	private stateDriven: StateDriven;

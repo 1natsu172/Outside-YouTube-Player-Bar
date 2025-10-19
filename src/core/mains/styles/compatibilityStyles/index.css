@@ -12,7 +12,11 @@
 	}
 
 	.ytp-tooltip {
-		transform: translate3d(0, calc(1 * var(--oypb-player-bar-height)), 0) !important;
+		transform: translate3d(
+			0,
+			calc(1 * var(--oypb-player-bar-height)),
+			0
+		) !important;
 	}
 
 	/* https://i.gyazo.com/faf54b23f6c1e6a9f75b7fc08d46639c.png */

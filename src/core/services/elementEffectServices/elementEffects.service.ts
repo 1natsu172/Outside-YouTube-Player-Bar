@@ -1,12 +1,11 @@
-import { elementQuery } from "@/core/mains/meta.js";
-import { elementAttributes } from "@/core/mains/meta.js";
+import { waitElement } from "@1natsu/wait-element";
+import { debounce } from "mabiki";
+import { elementAttributes, elementQuery } from "@/core/mains/meta.js";
 import { browserCaptureClient } from "@/core/presenters/observabilities/captureClient.presenter.js";
 import { playerBarIntersectionOperation } from "@/core/services/operationServices/index.js";
 import { applyVideoPlayerModeToSiteMeta } from "@/core/services/siteMetaServices/index.js";
 import { syncMoviePlayerAttributes } from "@/core/services/styleAffectServices/applyCompatibilityStyles.service.js";
 import { setPlayerBarHeightVar } from "@/core/usecases/cssVariables.usecase.js";
-import { waitElement } from "@1natsu/wait-element";
-import { debounce } from "mabiki";
 
 const moviePlayerElementEffect = async () => {
 	const element = await waitElement(elementQuery.MOVIE_PLAYER);

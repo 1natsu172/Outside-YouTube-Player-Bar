@@ -4,15 +4,16 @@
  * FIXME(future): rollupがdestructuringのtree-shakingに対応していない＆複数のSDKをimportしてclient生成を抽象化しているためnamed-importもしにくい。そのため必要なプロパティを型定義してSDKに対してプロパティアクセスする冗長な実装になってしまっている。事の発端は`lazyLoadIntegration`のためのコードがバンドル成果物に入り込み審査時にremote-codeにみなされるためtree-shakingが必須になったことに由来している。 https://github.com/getsentry/sentry-javascript/issues/14010
  * * rollupが賢くなったら冗長な実装を剥がしたい。
  */
-import {
-	type SDK,
-	browserCaptureSdk,
-	reactCaptureSdk,
-} from "@/core/infrastructures/observabilities/index.js";
-import { isMatchingPhrasePattern } from "@/utils/validateUtils/matchPattern.js";
+
 import type { Integration } from "@sentry/core";
 import defu from "defu";
-import { SENTRY_PUB_DSN, ignoreErrors } from "./constants.js";
+import {
+	browserCaptureSdk,
+	reactCaptureSdk,
+	type SDK,
+} from "@/core/infrastructures/observabilities/index.js";
+import { isMatchingPhrasePattern } from "@/utils/validateUtils/matchPattern.js";
+import { ignoreErrors, SENTRY_PUB_DSN } from "./constants.js";
 
 function createScopedClient<_SDK extends SDK>({
 	sdkApi,

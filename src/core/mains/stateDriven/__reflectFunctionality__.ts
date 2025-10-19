@@ -1,3 +1,6 @@
+import { waitElement } from "@1natsu/wait-element";
+import { Mutex } from "async-mutex";
+import { snapshot, subscribe } from "valtio/vanilla";
 import { waitMainWorldReady } from "@/core/mains/stateDriven/operationStateDriven.js";
 import { isVideoPage } from "@/core/presenters/judgePage.js";
 import { getCurrentLocation } from "@/core/presenters/navigationPresenter/index.js";
@@ -6,9 +9,6 @@ import { __reflectFunctionalityState__ } from "@/core/repositories/contentScript
 import { manageAlwaysDisplayPlayerBar } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
 import { movePlayerBarElement } from "@/core/services/domAffectServices/playerBarDomAffect.service.js";
 import { waitForStableChildList } from "@/utils/domUtils/waitForStableDom.js";
-import { waitElement } from "@1natsu/wait-element";
-import { Mutex } from "async-mutex";
-import { snapshot, subscribe } from "valtio/vanilla";
 
 const mutex = new Mutex();
 

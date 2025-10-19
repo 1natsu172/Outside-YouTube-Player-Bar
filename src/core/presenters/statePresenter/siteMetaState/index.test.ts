@@ -1,8 +1,8 @@
 // @vitest-environment happy-dom
 
+import { describe, expect, test } from "vitest";
 import type { elementAttributes } from "@/core/mains/meta.js";
 import { convertToNamedNodeMapLike } from "@/utils/domUtils/attr.js";
-import { describe, expect, test } from "vitest";
 import {
 	convertAttrToVideoPlayerMode,
 	judgeCurrentVideoPlayerMode,

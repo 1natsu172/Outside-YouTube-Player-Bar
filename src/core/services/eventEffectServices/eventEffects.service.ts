@@ -1,3 +1,5 @@
+import { waitElement } from "@1natsu/wait-element";
+import { debounce } from "mabiki";
 import { elementQuery } from "@/core/mains/meta.js";
 import {
 	createPlayerHackEventFn,
@@ -5,10 +7,8 @@ import {
 } from "@/core/services/behaviorServices/alwaysDisplayPlayerBar.service.js";
 import { applyVideoPlayerModeToSiteMeta } from "@/core/services/siteMetaServices/index.js";
 import { setNavigationState } from "@/core/usecases/siteMetaState.usecase.js";
-import { waitElement } from "@1natsu/wait-element";
-import { debounce } from "mabiki";
+import { createEventEffect, type EventEffect } from "./libs/eventEffect.js";
 import { YT_EVENTS } from "./libs/YT_EVENTS.js";
-import { type EventEffect, createEventEffect } from "./libs/eventEffect.js";
 
 const __DEBUG_YT_EVENTS = createEventEffect(YT_EVENTS, (key) => (event) => {
 	logger.withTag("YT_EVENT").log(key, event);

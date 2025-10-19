@@ -1,8 +1,8 @@
+import { Checkbox, Flex, Text } from "@mantine/core";
 import {
 	checkAboutForceDisable,
 	switchContinueForceDisableForNow,
 } from "@/core/services/optionsServices/forceDisable.service.js";
-import { Checkbox, Flex, Text } from "@mantine/core";
 import { AutoSaveForFormField } from "../../../../utils/useAutoSaveForm.js";
 
 export const DeactivateAvailableField = () => {

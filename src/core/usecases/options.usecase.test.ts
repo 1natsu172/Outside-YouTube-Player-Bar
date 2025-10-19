@@ -1,10 +1,10 @@
+import { beforeEach, describe, expect, test } from "vitest";
 import {
 	createStorageConfig,
 	defineItem,
 } from "@/core/infrastructures/storage/index.js";
 import * as repo from "@/core/repositories/options.repository.js";
 import { toDesirialized } from "@/utils/testUtils/assertUtils/toDesirialized.js";
-import { beforeEach, describe, expect, test } from "vitest";
 import {
 	getDefaultViewBehaviorOption,
 	getFullscreenBehaviorOption,

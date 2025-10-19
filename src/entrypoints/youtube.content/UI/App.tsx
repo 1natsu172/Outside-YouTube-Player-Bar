@@ -1,9 +1,9 @@
+import { useEffect } from "react";
 import { TanstackQueryClientProvider } from "@/sharedUI/Provider/TanstackQueryProvider.js";
 import {
 	UIProvider,
 	type UIProviderConfig,
 } from "@/sharedUI/Provider/UIProvider.js";
-import { useEffect } from "react";
 import "./App.css";
 import { ErrorBoundary } from "@/sharedUI/libs/ErrorBoundary.js";
 import { PlayerBarButton } from "./feature/PlayerBarButton/index.js";
