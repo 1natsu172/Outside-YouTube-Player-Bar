@@ -24,6 +24,9 @@ env:
   # Use as process.env.SENTRY_AUTH_TOKEN with sentry-vite-plugin
   SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
