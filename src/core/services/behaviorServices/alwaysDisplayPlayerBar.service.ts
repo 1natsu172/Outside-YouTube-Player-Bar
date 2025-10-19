@@ -20,6 +20,7 @@ import {
 } from "@/core/services/eventEffectServices/libs/mouseEventJudge.js";
 
 // TODO: テスト書く
+/** @knip-ignore */
 export function judgeMoviePlayerCondition(moviePlayer: Element) {
 	const isPlayingMode = moviePlayer.classList.contains("playing-mode");
 	const isPausedMode = moviePlayer.classList.contains("paused-mode");
@@ -135,6 +136,7 @@ export const manageAlwaysDisplayPlayerBar = async ({
 
 /**
  * @deprecated
+ * @knip-ignore
  */
 export const execAlwaysDisplayPlayerBar = async ({
 	isVisiblePlayerBar,

@@ -38,6 +38,7 @@ export const setMoviePlayerContext = (
 	operationState.uiOps.moviePlayerContext = state;
 };
 
+/** @knip-ignore */
 export const setAlwaysDisplayPlayerBarContext = (
 	state: Partial<OperationState["uiOps"]["alwaysDisplayPlayerBarContext"]>,
 ) => {

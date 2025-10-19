@@ -31,9 +31,6 @@ importers:
       '@sentry/react':
         specifier: ^10.0.0
         version: 10.20.0(react@19.2.0)
-      '@sentry/utils':
-        specifier: ^8.42.0
-        version: 8.55.0
       '@sentry/vite-plugin':
         specifier: ^4.0.0
         version: 4.4.0
@@ -89,9 +86,6 @@ importers:
       '@playwright/test':
         specifier: 1.56.1
         version: 1.56.1
-      '@sentry/types':
-        specifier: 10.20.0
-        version: 10.20.0
       '@testing-library/react':
         specifier: 16.3.0
         version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.2(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -918,23 +912,11 @@ packages:
     resolution: {integrity: sha512-S291KihnOIB8i7mVJIJBVHBMcCfIoY/KDJBHEfBoHY9M56g2An4FVhM9+/xR85+IoMkTySdXN08k9LEyQz4FpQ==}
     engines: {node: '>=18'}
 
-  '@sentry/core@8.55.0':
-    resolution: {integrity: sha512-6g7jpbefjHYs821Z+EBJ8r4Z7LT5h80YSWRJaylGS4nW5W5Z2KXzpdnyFarv37O7QjauzVC2E+PABmpkw5/JGA==}
-    engines: {node: '>=14.18'}
-
   '@sentry/react@10.20.0':
     resolution: {integrity: sha512-8W+gMkMxQhqlGHCW7kjLhcLgBJ/YSHbLhVd36s0GRudxjXh61K8rdCaAXToD8akgZ76DtLbx5PPQ5fLfQCOnpw==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^16.14.0 || 17.x || 18.x || 19.x
-
-  '@sentry/types@10.20.0':
-    resolution: {integrity: sha512-9pGtoiYBvw0SpHayBlQ6/9F4wP/KwlS8KZg1iBsZSR8h8WjLRGbER/TjKcAdg07HPd0APVajbT2YyL30+9Oi8Q==}
-    engines: {node: '>=18'}
-
-  '@sentry/utils@8.55.0':
-    resolution: {integrity: sha512-cYcl39+xcOivBpN9d8ZKbALl+DxZKo/8H0nueJZ0PO4JA+MJGhSm6oHakXxLPaiMoNLTX7yor8ndnQIuFg+vmQ==}
-    engines: {node: '>=14.18'}
 
   '@sentry/vite-plugin@4.4.0':
     resolution: {integrity: sha512-sOq1xJj5URIa/c4fSJomjOjp7l0ljk4WWRjol6ERwJ5wntOKDrw5Y7T1ZbyiDGD8/ndzQnn4Od03Z+jSvpqwog==}
@@ -3982,22 +3964,12 @@ snapshots:
 
   '@sentry/core@10.20.0': {}
 
-  '@sentry/core@8.55.0': {}
-
   '@sentry/react@10.20.0(react@19.2.0)':
     dependencies:
       '@sentry/browser': 10.20.0
       '@sentry/core': 10.20.0
       hoist-non-react-statics: 3.3.2
       react: 19.2.0
-
-  '@sentry/types@10.20.0':
-    dependencies:
-      '@sentry/core': 10.20.0
-
-  '@sentry/utils@8.55.0':
-    dependencies:
-      '@sentry/core': 8.55.0
 
   '@sentry/vite-plugin@4.4.0':
     dependencies:

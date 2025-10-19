@@ -4,6 +4,7 @@ const config = async (): Promise<KnipConfig> => {
 	const isProduction = process.argv.includes("--production");
 
 	return {
+		tags: ["@knip-ignore", "@knip-public"],
 		/**
 		 * @ref https://knip.dev/reference/configuration#paths
 		 */

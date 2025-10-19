@@ -1,7 +1,7 @@
-export function isRegExp(value: unknown) {
+function isRegExp(value: unknown) {
 	return value instanceof RegExp;
 }
-export function isString(value: unknown) {
+function isString(value: unknown) {
 	return typeof value === "string";
 }
 

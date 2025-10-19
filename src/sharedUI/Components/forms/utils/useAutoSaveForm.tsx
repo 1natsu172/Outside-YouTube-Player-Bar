@@ -9,7 +9,7 @@ import {
 } from "@tanstack/react-query";
 import { type ReactNode, useMemo } from "react";
 
-export type UseAutoSaveFormOption<
+type UseAutoSaveFormOption<
 	TQueryFnData,
 	TQueryError,
 	TQueryData,

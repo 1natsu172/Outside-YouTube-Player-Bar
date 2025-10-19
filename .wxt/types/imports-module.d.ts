@@ -18,6 +18,6 @@ declare module '#imports' {
   export { InvalidMatchPattern, MatchPattern } from 'wxt/utils/match-patterns';
   export { fakeBrowser } from 'wxt/testing';
   export { YOUTUBE_MATCHES, setupOYPBGlobal } from '../src/utils/constants';
-  export { logger, createLogger, reCreateLoggerInstance, Logger } from '../src/utils/logger';
+  export { logger, reCreateLoggerInstance, Logger } from '../src/utils/logger';
   export { ValueOf, NestedValueOf, NonUndefined, IterableElement, SetOptional } from '../src/utils/typeUtils';
 }

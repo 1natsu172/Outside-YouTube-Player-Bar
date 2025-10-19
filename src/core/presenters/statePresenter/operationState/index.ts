@@ -1,7 +1,7 @@
 import { operationState } from "@/core/repositories/contentScript.repository.js";
 import { useSnapshot } from "valtio";
 
-export const getOperationState = () => {
+const getOperationState = () => {
 	return operationState;
 };
 

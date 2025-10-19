@@ -8,7 +8,7 @@ import type {
 	RefAttributes,
 } from "react";
 
-export type FormGroupProps = {
+type FormGroupProps = {
 	title: string;
 	Icon: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;
 	children?: ReactNode;
