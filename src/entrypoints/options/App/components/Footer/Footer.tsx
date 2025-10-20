@@ -10,7 +10,7 @@ export function Footer() {
 				<div className={style.logo}>
 					<img src={OypbLogo} alt="outside-youtube-player-bar-logo" />
 				</div>
-				<Group gap={0} className={style.links} justify="flex-end" wrap="nowrap">
+				<Group gap={0} justify="flex-end" wrap="nowrap">
 					<Links />
 				</Group>
 			</Container>

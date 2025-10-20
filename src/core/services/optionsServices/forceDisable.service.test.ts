@@ -270,7 +270,7 @@ describe(switchForceDisable.name, () => {
 
 	test("should call with `sendMessage` with `reloadYouTubeTabs` type", async () => {
 		// NOTE: Mock that the reload request is sent with sendMessage
-		fakeBrowser.runtime.onMessage.addListener((data) => {
+		fakeBrowser.runtime.onMessage.addListener((data: { type: string }) => {
 			if (data.type === "reloadYouTubeTabs") {
 				mockReload();
 			}

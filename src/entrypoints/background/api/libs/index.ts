@@ -7,6 +7,8 @@ export function openOptionsPage() {
 export async function reloadYouTubeTabs() {
 	const tabs = await browser.tabs.query({ url: YOUTUBE_MATCHES });
 	for (const tab of tabs) {
-		browser.tabs.reload(tab.id);
+		if (tab.id !== undefined) {
+			browser.tabs.reload(tab.id);
+		}
 	}
 }

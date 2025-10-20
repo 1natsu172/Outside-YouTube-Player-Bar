@@ -1,4 +1,5 @@
 import { Card, Flex, Text } from "@mantine/core";
+import type React from "react";
 import { useStorage } from "@/core/presenters/storagePresenter/useStorageHooks/index.js";
 import { debugMode } from "@/core/repositories/options.repository.js";
 import style from "./FormField.module.css";
@@ -7,7 +8,7 @@ type FieldViewProps = {
 	title: string;
 	description?: string;
 	isLoading: boolean;
-	children?: JSX.Element;
+	children?: React.JSX.Element;
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	formState?: any;
 };
