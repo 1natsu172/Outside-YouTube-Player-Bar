@@ -56,6 +56,9 @@ export function syncMoviePlayerAttributes({
 
 		compatEl.classList.add(...syncClassNames);
 		compatEl.classList.remove(...defferenceClassNames);
+		(compatEl as HTMLElement).style.cssText = (
+			moviePlayerEl as HTMLElement
+		).style.cssText;
 		logger.debug("movie-player classNames synced to compat element.");
 	}
 }

@@ -5,10 +5,20 @@
 @import "../_vars/_oypbVars.css";
 
 [data-oypb-enable][data-oypb-is-outside] {
-	.ytp-chrome-bottom {
+	[data-oypb-compat="playerBarParent"] {
 		background-color: var(--oypb-player-bar-color);
 		color: var(--oypb-player-bar-font-color);
 		position: relative;
+		height: var(--oypb-player-bar-height);
+	}
+
+	.ytp-chrome-bottom {
+		position: relative;
+
+		/* NOTE(delhi-modern): 外側に出していることで再生終了画面で .ytp-delhi-modern.ytp-fullscreen-grid-active:not(.html5-video-player.ended-mode):not(.ytp-grid-scrolling) .ytp-chrome-bottom　 に対するOfficialの display:none; が誤適用されるため打ち消す */
+		.ended-mode & {
+			display: block !important;
+		}
 	}
 
 	.ytp-tooltip {
@@ -40,41 +50,14 @@
 		visibility: hidden;
 	}
 
-	/* Fill the both sides of player bar */
-	.ytp-left-controls::before {
-		content: "";
-		display: block;
-		height: 100%;
-		width: var(--oypb-player-bar-fill-lr-gap-size);
-		position: absolute;
-		top: 0;
-		background-color: var(--oypb-player-bar-color);
-		left: calc(-1 * var(--oypb-player-bar-fill-lr-gap-size));
-	}
-
-	.ytp-right-controls::after {
-		content: "";
-		display: block;
-		height: 100%;
-		width: var(--oypb-player-bar-fill-lr-gap-size);
-		position: absolute;
-		top: 0;
-		background-color: var(--oypb-player-bar-color);
-		right: calc(-1 * var(--oypb-player-bar-fill-lr-gap-size));
-	}
-
 	/* compat hack the default-view player rounded style */
 	/* FIXME(NOTE): overflow: hidden;にradiusの一部をかけるとブラウザのバグなのか動画の色彩が濃くなるが、どうしようもない */
-	[rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
+	[rounded-player][default-layout] #ytd-player.ytd-watch-flexy {
 		border-radius: 12px 12px 0 0;
 	}
 
-	[rounded-player-large][default-layout] .ytp-left-controls::before {
-		border-radius: 0 0 0 12px;
-	}
-
-	[rounded-player-large][default-layout] .ytp-right-controls::after {
-		border-radius: 0 0 12px 0;
+	[rounded-player][default-layout] [data-oypb-compat="playerBarParent"] {
+		border-radius: 0 0 12px 12px;
 	}
 
 	/* when not always display player bar style */
@@ -88,7 +71,7 @@
 			transform: none;
 		}
 
-		[rounded-player-large][default-layout] #ytd-player.ytd-watch-flexy {
+		[rounded-player][default-layout] #ytd-player.ytd-watch-flexy {
 			border-radius: 12px 12px 12px 12px;
 		}
 	}

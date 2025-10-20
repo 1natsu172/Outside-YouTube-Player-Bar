@@ -14,6 +14,30 @@
 			height: 25px;
 		}
 	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		display: block;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		border-radius: 40px;
+		background-color: transparent;
+		pointer-events: none;
+		width: 48px;
+		height: calc(var(--yt-delhi-pill-height, 48px) - 8px);
+	}
+	&:hover::before {
+		background-color: var(
+			--yt-spec-overlay-button-secondary,
+			rgba(255, 255, 255, 0.1)
+		);
+		-webkit-transition: background-color 0.2s cubic-bezier(0.05, 0, 0, 1);
+		transition: background-color 0.2s cubic-bezier(0.05, 0, 0, 1);
+	}
 }
 
 .tooltip {
@@ -21,12 +45,16 @@
 	opacity: 0;
 	display: block;
 	position: absolute;
-	top: -38px;
+	top: calc(-1 * (var(--oypb-player-bar-height) - 31px));
 	left: 50%;
 	transform: translateX(-50%);
 	color: #eee;
-	background-color: rgba(28, 28, 28, 0.9);
-	border-radius: 4px;
+	background-color: var(
+		--yt-spec-overlay-background-medium-light,
+		rgba(0, 0, 0, 0.3)
+	);
+	-webkit-font-smoothing: antialiased;
+	border-radius: 8px;
 	padding: 5px 9px;
 	overflow: visible;
 	font-size: 118%;
@@ -35,8 +63,8 @@
 	white-space: nowrap;
 	transition: opacity 0.1s cubic-bezier(0.4, 0, 1, 1);
 
-	&[data-video-player-mode="fullscreen"] {
-		top: -40px;
+	&[data-video-player-mode="theaterMode"],
+	[data-video-player-mode="fullscreen"] {
 		line-height: 22px;
 	}
 }

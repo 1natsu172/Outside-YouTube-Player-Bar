@@ -165,7 +165,7 @@ export const movePlayerBarElement = async (props: {
 			outside: {
 				playerBar: elementQuery.PLAYER_BAR,
 				parentElement: [undefined, undefined],
-				siblingElement: ["#full-bleed-container.ytd-watch-flexy", "afterend"], // theater container is island element, so must move to sibling
+				siblingElement: [".ytp-fullscreen-grid-main-content", "beforebegin"], // fullscreen main content is an island element, so must move to sibling
 				needCompatParentElement: true,
 			},
 		},
