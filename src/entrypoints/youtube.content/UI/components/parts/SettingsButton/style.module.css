@@ -15,14 +15,7 @@
 	display: block;
 	position: absolute;
 	/* -43pxがベースだが、シアターモードでバーの高さがより大きくなる分だけ追加で上にずらす必要がある */
-	top: calc(
-		-1 *
-		calc(
-			43px +
-			var(--oypb-player-bar-height) -
-			var(--oypb-player-bar-default-layout-static-height)
-		)
-	);
+	top: calc(-1 * calc(var(--oypb-player-bar-height) - 31px));
 	left: 50%;
 	transform: translateX(-50%);
 	color: #eee;
@@ -40,7 +33,8 @@
 	white-space: nowrap;
 	transition: opacity 0.1s cubic-bezier(0.4, 0, 1, 1);
 
-	&[data-video-player-mode="fullscreen"] {
+	&[data-video-player-mode="theaterMode"],
+	[data-video-player-mode="fullscreen"] {
 		line-height: 22px;
 	}
 }

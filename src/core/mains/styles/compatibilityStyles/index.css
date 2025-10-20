@@ -9,6 +9,7 @@
 		background-color: var(--oypb-player-bar-color);
 		color: var(--oypb-player-bar-font-color);
 		position: relative;
+		height: var(--oypb-player-bar-height);
 	}
 
 	.ytp-chrome-bottom {

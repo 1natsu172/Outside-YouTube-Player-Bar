@@ -2,10 +2,6 @@
 	/* Initial value: change dynamic from JS */
 	--oypb-player-bar-height: 75px;
 
-	/* static var for css calc */
-	--oypb-player-bar-default-layout-static-height: 75px;
-	--oypb-player-bar-theater-static-height: 96px;
-
 	/* // player bar color of Default theme. */
 	--oypb-player-bar-color: rgb(15, 15, 15);
 	--oypb-player-bar-font-color: #eee;
