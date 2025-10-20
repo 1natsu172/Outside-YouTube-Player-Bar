@@ -13,6 +13,11 @@
 
 	.ytp-chrome-bottom {
 		position: relative;
+
+		/* NOTE(delhi-modern): 外側に出していることで再生終了画面で .ytp-delhi-modern.ytp-fullscreen-grid-active:not(.html5-video-player.ended-mode):not(.ytp-grid-scrolling) .ytp-chrome-bottom　 に対するOfficialの display:none; が誤適用されるため打ち消す */
+		.ended-mode & {
+			display: block !important;
+		}
 	}
 
 	.ytp-tooltip {
