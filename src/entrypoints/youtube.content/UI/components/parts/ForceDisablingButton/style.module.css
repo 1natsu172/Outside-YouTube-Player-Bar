@@ -21,8 +21,7 @@
 	opacity: 0;
 	display: block;
 	position: absolute;
-	/* -43pxがベースだが、シアターモードでバーの高さがより大きくなる分だけ追加で上にずらす必要がある */
-	top: calc(-1 * calc(var(--oypb-player-bar-height) - 31px));
+	top: calc(-1 * (var(--oypb-player-bar-height) - 31px));
 	left: 50%;
 	transform: translateX(-50%);
 	color: #eee;
