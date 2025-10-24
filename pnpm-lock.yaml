@@ -120,7 +120,7 @@ importers:
         specifier: 20.0.5
         version: 20.0.5
       knip:
-        specifier: ^5.66.0
+        specifier: 5.66.0
         version: 5.66.0(@types/node@22.18.11)(typescript@5.9.3)
       playwright:
         specifier: 1.56.1
