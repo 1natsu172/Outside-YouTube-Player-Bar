@@ -53,7 +53,7 @@
 		"git-semver-tags": "8.0.0",
 		"happy-css-modules": "4.0.0",
 		"happy-dom": "20.0.8",
-		"knip": "5.66.0",
+		"knip": "5.66.2",
 		"playwright": "1.56.1",
 		"postcss": "8.5.6",
 		"postcss-import": "16.1.1",
