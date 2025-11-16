@@ -88,7 +88,7 @@
 		"valtio": "^2.0.0",
 		"valtio-history": "^1.0.0"
 	},
-	"packageManager": "pnpm@10.19.0",
+	"packageManager": "pnpm@10.20.0",
 	"pnpm": {
 		"overrides": {
 			"semver@>=7.0.0 <7.5.2": ">=7.5.2",
