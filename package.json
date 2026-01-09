@@ -40,7 +40,7 @@
 		"knip": "knip"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.10",
+		"@biomejs/biome": "2.3.11",
 		"@playwright/test": "1.57.0",
 		"@testing-library/react": "16.3.1",
 		"@types/node": "24.10.4",
