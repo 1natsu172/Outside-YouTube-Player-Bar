@@ -52,7 +52,7 @@
 		"@vitejs/plugin-react": "5.1.3",
 		"git-semver-tags": "8.0.0",
 		"happy-css-modules": "4.0.0",
-		"happy-dom": "20.4.0",
+		"happy-dom": "20.5.0",
 		"knip": "5.82.1",
 		"playwright": "1.58.1",
 		"postcss": "8.5.6",
