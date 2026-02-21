@@ -117,8 +117,8 @@ importers:
         specifier: 4.0.0
         version: 4.0.0(jiti@2.6.1)(postcss@8.5.6)
       happy-dom:
-        specifier: 20.6.1
-        version: 20.6.1
+        specifier: 20.6.2
+        version: 20.6.2
       knip:
         specifier: 5.83.1
         version: 5.83.1(@types/node@24.10.13)(typescript@5.9.3)
@@ -145,7 +145,7 @@ importers:
         version: 4.5.0(rollup@4.52.5)(typescript@5.9.3)(vite@7.1.10(@types/node@24.10.13)(jiti@2.6.1)(yaml@2.6.1))
       vitest:
         specifier: 4.0.18
-        version: 4.0.18(@types/node@24.10.13)(happy-dom@20.6.1)(jiti@2.6.1)(yaml@2.6.1)
+        version: 4.0.18(@types/node@24.10.13)(happy-dom@20.6.2)(jiti@2.6.1)(yaml@2.6.1)
       wxt:
         specifier: 0.20.11
         version: 0.20.11(@types/node@24.10.13)(jiti@2.6.1)(rollup@4.52.5)(yaml@2.6.1)
@@ -1661,6 +1661,10 @@ packages:
     resolution: {integrity: sha512-aN97NXWF6AWBTahfVOIrB/NShkzi5H7F9r1s9mD3cDj4Ko5f2qhhVoYMibXF7GlLveb/D2ioWay8lxI97Ven3g==}
     engines: {node: '>=0.12'}
 
+  entities@7.0.1:
+    resolution: {integrity: sha512-TWrgLOFUQTH994YUyl1yT4uyavY5nNB5muff+RtWaqNVCAK408b5ZnnbNAUEWLTCpum9w6arT70i1XdQ4UeOPA==}
+    engines: {node: '>=0.12'}
+
   environment@1.1.0:
     resolution: {integrity: sha512-xUtoPkMggbz0MPyPiIWr1Kp4aeWJjDZ6SMvURhimjdZgsRuDplF5/s9hcgGhyXMhs+6vpnuoiZ2kFiu3FMnS8Q==}
     engines: {node: '>=18'}
@@ -1878,8 +1882,8 @@ packages:
       sass:
         optional: true
 
-  happy-dom@20.6.1:
-    resolution: {integrity: sha512-+0vhESXXhFwkdjZnJ5DlmJIfUYGgIEEjzIjB+aKJbFuqlvvKyOi+XkI1fYbgYR9QCxG5T08koxsQ6HrQfa5gCQ==}
+  happy-dom@20.6.2:
+    resolution: {integrity: sha512-Xk/Y0cuq9ngN/my8uvK4gKoyDl6sBKkIl8A/hJ0IabZVH7E5SJLHNE7uKRPVmSrQbhJaLIHTEcvTct4GgNtsRA==}
     engines: {node: '>=20.0.0'}
 
   has-flag@4.0.0:
@@ -4734,6 +4738,8 @@ snapshots:
 
   entities@6.0.1: {}
 
+  entities@7.0.1: {}
+
   environment@1.1.0: {}
 
   error-ex@1.3.2:
@@ -4976,12 +4982,12 @@ snapshots:
       - jiti
       - tsx
 
-  happy-dom@20.6.1:
+  happy-dom@20.6.2:
     dependencies:
       '@types/node': 24.10.13
       '@types/whatwg-mimetype': 3.0.2
       '@types/ws': 8.18.1
-      entities: 6.0.1
+      entities: 7.0.1
       whatwg-mimetype: 3.0.0
       ws: 8.19.0
     transitivePeerDependencies:
@@ -6270,7 +6276,7 @@ snapshots:
       jiti: 2.6.1
       yaml: 2.6.1
 
-  vitest@4.0.18(@types/node@24.10.13)(happy-dom@20.6.1)(jiti@2.6.1)(yaml@2.6.1):
+  vitest@4.0.18(@types/node@24.10.13)(happy-dom@20.6.2)(jiti@2.6.1)(yaml@2.6.1):
     dependencies:
       '@vitest/expect': 4.0.18
       '@vitest/mocker': 4.0.18(vite@7.1.10(@types/node@24.10.13)(jiti@2.6.1)(yaml@2.6.1))
@@ -6294,7 +6300,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.10.13
-      happy-dom: 20.6.1
+      happy-dom: 20.6.2
     transitivePeerDependencies:
       - jiti
       - less
