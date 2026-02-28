@@ -120,8 +120,8 @@ importers:
         specifier: 20.7.0
         version: 20.7.0
       knip:
-        specifier: 5.84.1
-        version: 5.84.1(@types/node@24.10.13)(typescript@5.9.3)
+        specifier: 5.85.0
+        version: 5.85.0(@types/node@24.10.13)(typescript@5.9.3)
       playwright:
         specifier: 1.58.2
         version: 1.58.2
@@ -2110,8 +2110,8 @@ packages:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
 
-  knip@5.84.1:
-    resolution: {integrity: sha512-F1+yACEsSapAwmQLzfD4i9uPsnI82P4p5ABpNQ9pcc4fpQtjHEX34XDtNl5863I4O6SCECpymylcWDHI3ouhQQ==}
+  knip@5.85.0:
+    resolution: {integrity: sha512-V2kyON+DZiYdNNdY6GALseiNCwX7dYdpz9Pv85AUn69Gk0UKCts+glOKWfe5KmaMByRjM9q17Mzj/KinTVOyxg==}
     engines: {node: '>=18.18.0'}
     hasBin: true
     peerDependencies:
@@ -5165,7 +5165,7 @@ snapshots:
 
   kleur@3.0.3: {}
 
-  knip@5.84.1(@types/node@24.10.13)(typescript@5.9.3):
+  knip@5.85.0(@types/node@24.10.13)(typescript@5.9.3):
     dependencies:
       '@nodelib/fs.walk': 1.2.8
       '@types/node': 24.10.13
