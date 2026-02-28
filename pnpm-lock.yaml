@@ -117,8 +117,8 @@ importers:
         specifier: 4.0.0
         version: 4.0.0(jiti@2.6.1)(postcss@8.5.6)
       happy-dom:
-        specifier: 20.6.3
-        version: 20.6.3
+        specifier: 20.7.0
+        version: 20.7.0
       knip:
         specifier: 5.84.1
         version: 5.84.1(@types/node@24.10.13)(typescript@5.9.3)
@@ -145,7 +145,7 @@ importers:
         version: 4.5.0(rollup@4.52.5)(typescript@5.9.3)(vite@7.1.10(@types/node@24.10.13)(jiti@2.6.1)(yaml@2.6.1))
       vitest:
         specifier: 4.0.18
-        version: 4.0.18(@types/node@24.10.13)(happy-dom@20.6.3)(jiti@2.6.1)(yaml@2.6.1)
+        version: 4.0.18(@types/node@24.10.13)(happy-dom@20.7.0)(jiti@2.6.1)(yaml@2.6.1)
       wxt:
         specifier: 0.20.11
         version: 0.20.11(@types/node@24.10.13)(jiti@2.6.1)(rollup@4.52.5)(yaml@2.6.1)
@@ -1882,8 +1882,8 @@ packages:
       sass:
         optional: true
 
-  happy-dom@20.6.3:
-    resolution: {integrity: sha512-QAMY7d228dHs8gb9NG4SJ3OxQo4r+NGN8pOXGZ3SGfQf/XYuuYubrtZ25QVY2WoUQdskhRXSXb4R4mcRk+hV1w==}
+  happy-dom@20.7.0:
+    resolution: {integrity: sha512-hR/uLYQdngTyEfxnOoa+e6KTcfBFyc1hgFj/Cc144A5JJUuHFYqIEBDcD4FeGqUeKLRZqJ9eN9u7/GDjYEgS1g==}
     engines: {node: '>=20.0.0'}
 
   has-flag@4.0.0:
@@ -4982,7 +4982,7 @@ snapshots:
       - jiti
       - tsx
 
-  happy-dom@20.6.3:
+  happy-dom@20.7.0:
     dependencies:
       '@types/node': 24.10.13
       '@types/whatwg-mimetype': 3.0.2
@@ -6276,7 +6276,7 @@ snapshots:
       jiti: 2.6.1
       yaml: 2.6.1
 
-  vitest@4.0.18(@types/node@24.10.13)(happy-dom@20.6.3)(jiti@2.6.1)(yaml@2.6.1):
+  vitest@4.0.18(@types/node@24.10.13)(happy-dom@20.7.0)(jiti@2.6.1)(yaml@2.6.1):
     dependencies:
       '@vitest/expect': 4.0.18
       '@vitest/mocker': 4.0.18(vite@7.1.10(@types/node@24.10.13)(jiti@2.6.1)(yaml@2.6.1))
@@ -6300,7 +6300,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.10.13
-      happy-dom: 20.6.3
+      happy-dom: 20.7.0
     transitivePeerDependencies:
       - jiti
       - less
