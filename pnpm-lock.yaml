@@ -54,7 +54,7 @@ importers:
         version: 6.1.4
       derive-valtio:
         specifier: ^0.2.0
-        version: 0.2.0(valtio@2.3.0(@types/react@19.2.14)(react@19.2.4))
+        version: 0.2.0(valtio@2.3.1(@types/react@19.2.14)(react@19.2.4))
       mabiki:
         specifier: ^1.0.1
         version: 1.0.1
@@ -75,10 +75,10 @@ importers:
         version: 7.7.4
       valtio:
         specifier: ^2.0.0
-        version: 2.3.0(@types/react@19.2.14)(react@19.2.4)
+        version: 2.3.1(@types/react@19.2.14)(react@19.2.4)
       valtio-history:
         specifier: ^1.0.0
-        version: 1.0.1(valtio@2.3.0(@types/react@19.2.14)(react@19.2.4))
+        version: 1.0.1(valtio@2.3.1(@types/react@19.2.14)(react@19.2.4))
     devDependencies:
       '@biomejs/biome':
         specifier: 2.4.5
@@ -3135,8 +3135,8 @@ packages:
     peerDependencies:
       valtio: '>=2.0.0-rc.2'
 
-  valtio@2.3.0:
-    resolution: {integrity: sha512-1MfKNcmOIdBSatiJsYgw420n6jnD+jeoI0V+RkOQbCB0ElLh6GKUfPr0hc9uq/KBGeghivDEarRsKFFdSQQnKw==}
+  valtio@2.3.1:
+    resolution: {integrity: sha512-ZsOaOEn0U9IJ96cAj3CZ3GjwpN3EJdjsi1PT4PREuB+Pcqfsczu16isT5DT1UrmHbk4PtLjk8kwNEHuR2CX56w==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=18.0.0'
@@ -4685,9 +4685,9 @@ snapshots:
 
   dequal@2.0.3: {}
 
-  derive-valtio@0.2.0(valtio@2.3.0(@types/react@19.2.14)(react@19.2.4)):
+  derive-valtio@0.2.0(valtio@2.3.1(@types/react@19.2.14)(react@19.2.4)):
     dependencies:
-      valtio: 2.3.0(@types/react@19.2.14)(react@19.2.4)
+      valtio: 2.3.1(@types/react@19.2.14)(react@19.2.4)
 
   destr@2.0.3: {}
 
@@ -6233,12 +6233,12 @@ snapshots:
 
   uuid@8.3.2: {}
 
-  valtio-history@1.0.1(valtio@2.3.0(@types/react@19.2.14)(react@19.2.4)):
+  valtio-history@1.0.1(valtio@2.3.1(@types/react@19.2.14)(react@19.2.4)):
     dependencies:
       tslib: 2.8.1
-      valtio: 2.3.0(@types/react@19.2.14)(react@19.2.4)
+      valtio: 2.3.1(@types/react@19.2.14)(react@19.2.4)
 
-  valtio@2.3.0(@types/react@19.2.14)(react@19.2.4):
+  valtio@2.3.1(@types/react@19.2.14)(react@19.2.4):
     dependencies:
       proxy-compare: 3.0.1
     optionalDependencies:
