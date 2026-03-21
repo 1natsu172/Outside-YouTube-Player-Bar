@@ -117,8 +117,8 @@ importers:
         specifier: 4.0.0
         version: 4.0.0(jiti@2.6.1)(postcss@8.5.8)
       happy-dom:
-        specifier: 20.8.3
-        version: 20.8.3
+        specifier: 20.8.4
+        version: 20.8.4
       knip:
         specifier: 5.86.0
         version: 5.86.0(@types/node@24.12.0)(typescript@5.9.3)
@@ -145,7 +145,7 @@ importers:
         version: 4.5.0(rollup@4.52.5)(typescript@5.9.3)(vite@7.1.10(@types/node@24.12.0)(jiti@2.6.1)(yaml@2.8.2))
       vitest:
         specifier: 4.0.18
-        version: 4.0.18(@types/node@24.12.0)(happy-dom@20.8.3)(jiti@2.6.1)(yaml@2.8.2)
+        version: 4.0.18(@types/node@24.12.0)(happy-dom@20.8.4)(jiti@2.6.1)(yaml@2.8.2)
       wxt:
         specifier: 0.20.11
         version: 0.20.11(@types/node@24.12.0)(jiti@2.6.1)(rollup@4.52.5)(yaml@2.8.2)
@@ -1890,8 +1890,8 @@ packages:
       sass:
         optional: true
 
-  happy-dom@20.8.3:
-    resolution: {integrity: sha512-lMHQRRwIPyJ70HV0kkFT7jH/gXzSI7yDkQFe07E2flwmNDFoWUTRMKpW2sglsnpeA7b6S2TJPp98EbQxai8eaQ==}
+  happy-dom@20.8.4:
+    resolution: {integrity: sha512-GKhjq4OQCYB4VLFBzv8mmccUadwlAusOZOI7hC1D9xDIT5HhzkJK17c4el2f6R6C715P9xB4uiMxeKUa2nHMwQ==}
     engines: {node: '>=20.0.0'}
 
   has-flag@4.0.0:
@@ -5001,7 +5001,7 @@ snapshots:
       - jiti
       - tsx
 
-  happy-dom@20.8.3:
+  happy-dom@20.8.4:
     dependencies:
       '@types/node': 24.12.0
       '@types/whatwg-mimetype': 3.0.2
@@ -6298,7 +6298,7 @@ snapshots:
       jiti: 2.6.1
       yaml: 2.8.2
 
-  vitest@4.0.18(@types/node@24.12.0)(happy-dom@20.8.3)(jiti@2.6.1)(yaml@2.8.2):
+  vitest@4.0.18(@types/node@24.12.0)(happy-dom@20.8.4)(jiti@2.6.1)(yaml@2.8.2):
     dependencies:
       '@vitest/expect': 4.0.18
       '@vitest/mocker': 4.0.18(vite@7.1.10(@types/node@24.12.0)(jiti@2.6.1)(yaml@2.8.2))
@@ -6322,7 +6322,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.12.0
-      happy-dom: 20.8.3
+      happy-dom: 20.8.4
     transitivePeerDependencies:
       - jiti
       - less
