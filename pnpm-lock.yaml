@@ -108,8 +108,8 @@ importers:
         specifier: 7.0.0-dev.20260318.1
         version: 7.0.0-dev.20260318.1
       '@vitejs/plugin-react':
-        specifier: 5.1.4
-        version: 5.1.4(vite@7.1.10(@types/node@24.12.0)(jiti@2.6.1)(yaml@2.8.2))
+        specifier: 5.2.0
+        version: 5.2.0(vite@7.1.10(@types/node@24.12.0)(jiti@2.6.1)(yaml@2.8.2))
       git-semver-tags:
         specifier: 8.0.1
         version: 8.0.1
@@ -1171,11 +1171,11 @@ packages:
     resolution: {integrity: sha512-/7LF/2x29K++k147445omxNixPANTmwJl9p/IIzK8NbOeqVOFv1Gj1GQyOQqRdT4j/X6YDwO/p400/JKE+cBOw==}
     hasBin: true
 
-  '@vitejs/plugin-react@5.1.4':
-    resolution: {integrity: sha512-VIcFLdRi/VYRU8OL/puL7QXMYafHmqOnwTZY50U1JPlCNj30PxCMx65c494b1K9be9hX83KVt0+gTEwTWLqToA==}
+  '@vitejs/plugin-react@5.2.0':
+    resolution: {integrity: sha512-YmKkfhOAi3wsB1PhJq5Scj3GXMn3WvtQ/JC0xoopuHoXSdmtdStOpFrYaT1kie2YgFBcIe64ROzMYRjCrYOdYw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
-      vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+      vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
 
   '@vitest/expect@4.0.18':
     resolution: {integrity: sha512-8sCWUyckXXYvx4opfzVY03EOiYVxyNrHS5QxX3DAIi5dpJAAkyJezHCP77VMX4HKA2LDT/Jpfo8i2r5BE3GnQQ==}
@@ -4267,7 +4267,7 @@ snapshots:
       '@typescript/native-preview-win32-arm64': 7.0.0-dev.20260318.1
       '@typescript/native-preview-win32-x64': 7.0.0-dev.20260318.1
 
-  '@vitejs/plugin-react@5.1.4(vite@7.1.10(@types/node@24.12.0)(jiti@2.6.1)(yaml@2.8.2))':
+  '@vitejs/plugin-react@5.2.0(vite@7.1.10(@types/node@24.12.0)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.29.0)
