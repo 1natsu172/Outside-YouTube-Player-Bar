@@ -48,7 +48,7 @@
 		"@types/react": "19.2.14",
 		"@types/react-dom": "19.2.3",
 		"@types/semver": "7.7.1",
-		"@typescript/native-preview": "7.0.0-dev.20260331.1",
+		"@typescript/native-preview": "7.0.0-dev.20260401.1",
 		"@vitejs/plugin-react": "5.2.0",
 		"git-semver-tags": "8.0.1",
 		"happy-css-modules": "4.0.0",
