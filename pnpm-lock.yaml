@@ -54,7 +54,7 @@ importers:
         version: 6.1.4
       derive-valtio:
         specifier: ^0.2.0
-        version: 0.2.0(valtio@2.3.1(@types/react@19.2.18)(react@19.2.8))
+        version: 0.2.0(valtio@2.3.2(@types/react@19.2.18)(react@19.2.8))
       mabiki:
         specifier: ^1.0.1
         version: 1.0.1
@@ -75,10 +75,10 @@ importers:
         version: 7.7.4
       valtio:
         specifier: ^2.0.0
-        version: 2.3.1(@types/react@19.2.18)(react@19.2.8)
+        version: 2.3.2(@types/react@19.2.18)(react@19.2.8)
       valtio-history:
         specifier: ^1.0.0
-        version: 1.0.1(valtio@2.3.1(@types/react@19.2.18)(react@19.2.8))
+        version: 1.1.2(valtio@2.3.2(@types/react@19.2.18)(react@19.2.8))
     devDependencies:
       '@biomejs/biome':
         specifier: 2.4.10
@@ -3151,13 +3151,13 @@ packages:
     deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
 
-  valtio-history@1.0.1:
-    resolution: {integrity: sha512-42rag9AUAvEIs/3lXLQ2m5wGxsJQrtuYrUhYfEjeCCIoG44WpjyZMj1LTtl6+hoECGpN2cbS09DqkUbBu62sow==}
+  valtio-history@1.1.2:
+    resolution: {integrity: sha512-z88ruFz/0UWfiR/eUdVReIVammw21nR+EnDHzOjMwF6gOCl1xVHYM8ahwACYCPwPrKHIORxuRpIdCDQrt/ennw==}
     peerDependencies:
       valtio: '>=2.0.0-rc.2'
 
-  valtio@2.3.1:
-    resolution: {integrity: sha512-ZsOaOEn0U9IJ96cAj3CZ3GjwpN3EJdjsi1PT4PREuB+Pcqfsczu16isT5DT1UrmHbk4PtLjk8kwNEHuR2CX56w==}
+  valtio@2.3.2:
+    resolution: {integrity: sha512-YXhWQei9IN/ZDce9rhL3trCq9+vVq8M1gWmKVdP3YSZ2gxsmmNWVbxXwf9yG6ffu/dAvAD91nevg8xirGr4Dhg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=18.0.0'
@@ -4715,9 +4715,9 @@ snapshots:
 
   dequal@2.0.3: {}
 
-  derive-valtio@0.2.0(valtio@2.3.1(@types/react@19.2.18)(react@19.2.8)):
+  derive-valtio@0.2.0(valtio@2.3.2(@types/react@19.2.18)(react@19.2.8)):
     dependencies:
-      valtio: 2.3.1(@types/react@19.2.18)(react@19.2.8)
+      valtio: 2.3.2(@types/react@19.2.18)(react@19.2.8)
 
   destr@2.0.3: {}
 
@@ -6270,12 +6270,12 @@ snapshots:
 
   uuid@8.3.2: {}
 
-  valtio-history@1.0.1(valtio@2.3.1(@types/react@19.2.18)(react@19.2.8)):
+  valtio-history@1.1.2(valtio@2.3.2(@types/react@19.2.18)(react@19.2.8)):
     dependencies:
       tslib: 2.8.1
-      valtio: 2.3.1(@types/react@19.2.18)(react@19.2.8)
+      valtio: 2.3.2(@types/react@19.2.18)(react@19.2.8)
 
-  valtio@2.3.1(@types/react@19.2.18)(react@19.2.8):
+  valtio@2.3.2(@types/react@19.2.18)(react@19.2.8):
     dependencies:
       proxy-compare: 3.0.1
     optionalDependencies:
