@@ -51,7 +51,7 @@ importers:
         version: 3.4.2
       defu:
         specifier: ^6.1.4
-        version: 6.1.4
+        version: 6.1.5
       derive-valtio:
         specifier: ^0.2.0
         version: 0.2.0(valtio@2.3.2(@types/react@19.2.18)(react@19.2.8))
@@ -1594,8 +1594,8 @@ packages:
     resolution: {integrity: sha512-N+MeXYoqr3pOgn8xfyRPREN7gHakLYjhsHhWGT3fWAiL4IkAt0iDw14QiiEm2bE30c5XX5q0FtAA3CK5f9/BUg==}
     engines: {node: '>=12'}
 
-  defu@6.1.4:
-    resolution: {integrity: sha512-mEQCMmwJu317oSz8CwdIOdwf3xMif1ttiM8LTufzc3g6kR+9Pe236twL8j3IYT1F7GfRgGcW6MWxzZjLIkuHIg==}
+  defu@6.1.5:
+    resolution: {integrity: sha512-pwdBJxJuJXmqrLO6s0VBmfbRz+G7FUzkjldAsdi9Yrv86mPyzq0ll1o8+8gB4Gsr6GJHbK1Lh3ngllgTInDCjA==}
 
   dequal@2.0.3:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
@@ -3423,7 +3423,7 @@ snapshots:
 
   '@1natsu/wait-element@4.1.2':
     dependencies:
-      defu: 6.1.4
+      defu: 6.1.5
       many-keys-map: 2.0.1
 
   '@aklinker1/rollup-plugin-visualizer@5.12.0(rollup@4.52.5)':
@@ -4497,7 +4497,7 @@ snapshots:
     dependencies:
       chokidar: 4.0.3
       confbox: 0.2.2
-      defu: 6.1.4
+      defu: 6.1.5
       dotenv: 17.2.3
       exsolve: 1.0.7
       giget: 2.0.0
@@ -4711,7 +4711,7 @@ snapshots:
 
   define-lazy-prop@3.0.0: {}
 
-  defu@6.1.4: {}
+  defu@6.1.5: {}
 
   dequal@2.0.3: {}
 
@@ -4966,7 +4966,7 @@ snapshots:
     dependencies:
       citty: 0.1.6
       consola: 3.4.2
-      defu: 6.1.4
+      defu: 6.1.5
       node-fetch-native: 1.6.6
       nypm: 0.6.2
       pathe: 2.0.3
@@ -5796,7 +5796,7 @@ snapshots:
 
   rc9@2.1.2:
     dependencies:
-      defu: 6.1.4
+      defu: 6.1.5
       destr: 2.0.3
 
   rc@1.2.8:
@@ -6474,7 +6474,7 @@ snapshots:
       chokidar: 4.0.3
       ci-info: 4.3.1
       consola: 3.4.2
-      defu: 6.1.4
+      defu: 6.1.5
       dotenv: 17.2.3
       dotenv-expand: 12.0.3
       esbuild: 0.25.0
