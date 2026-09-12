@@ -90,8 +90,8 @@ importers:
         specifier: 16.3.3
         version: 16.3.3(@testing-library/dom@10.4.0)(@types/react-dom@19.2.7(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@types/node':
-        specifier: 24.13.3
-        version: 24.13.3
+        specifier: 24.13.4
+        version: 24.13.4
       '@types/postcss-import':
         specifier: 14.0.3
         version: 14.0.3
@@ -109,7 +109,7 @@ importers:
         version: 7.0.0-dev.20260707.2
       '@vitejs/plugin-react':
         specifier: 5.2.0
-        version: 5.2.0(vite@7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2))
+        version: 5.2.0(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2))
       git-semver-tags:
         specifier: 8.0.1
         version: 8.0.1
@@ -121,7 +121,7 @@ importers:
         version: 20.14.0
       knip:
         specifier: 5.88.1
-        version: 5.88.1(@types/node@24.13.3)(typescript@5.9.3)
+        version: 5.88.1(@types/node@24.13.4)(typescript@5.9.3)
       playwright:
         specifier: 1.63.0
         version: 1.63.0
@@ -142,13 +142,13 @@ importers:
         version: 5.9.3
       vite-plugin-svgr:
         specifier: 4.5.0
-        version: 4.5.0(rollup@4.52.5)(typescript@5.9.3)(vite@7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.5.0(rollup@4.52.5)(typescript@5.9.3)(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2))
       vitest:
         specifier: 4.1.11
-        version: 4.1.11(@types/node@24.13.3)(happy-dom@20.14.0)(vite@7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.11(@types/node@24.13.4)(happy-dom@20.14.0)(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2))
       wxt:
         specifier: 0.20.11
-        version: 0.20.11(@types/node@24.13.3)(jiti@2.6.1)(rollup@4.52.5)(yaml@2.8.2)
+        version: 0.20.11(@types/node@24.13.4)(jiti@2.6.1)(rollup@4.52.5)(yaml@2.8.2)
 
 packages:
 
@@ -1106,8 +1106,8 @@ packages:
   '@types/minimatch@3.0.5':
     resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
 
-  '@types/node@24.13.3':
-    resolution: {integrity: sha512-Dh8vAsV36ig5wa9OX4pXvMc9D3Veibfw2wix0CUwYODLD8nkj9UsLjASr49nPg+2eKzxhBV+v7L8pXvT4e639Q==}
+  '@types/node@24.13.4':
+    resolution: {integrity: sha512-YJ7EqCstVTzIr0fMr7qul/977en+pQHrfmuKIo6Zr9i75Be21dr3MovcfvGtyvi2HAUrRerWps5sMO9I7WaxDw==}
 
   '@types/postcss-import@14.0.3':
     resolution: {integrity: sha512-raZhRVTf6Vw5+QbmQ7LOHSDML71A5rj4+EqDzAbrZPfxfoGzFxMHRCq16VlddGIZpHELw0BG4G0YE2ANkdZiIQ==}
@@ -4230,7 +4230,7 @@ snapshots:
 
   '@types/minimatch@3.0.5': {}
 
-  '@types/node@24.13.3':
+  '@types/node@24.13.4':
     dependencies:
       undici-types: 7.18.2
 
@@ -4252,11 +4252,11 @@ snapshots:
 
   '@types/ws@8.18.1':
     dependencies:
-      '@types/node': 24.13.3
+      '@types/node': 24.13.4
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 24.13.3
+      '@types/node': 24.13.4
     optional: true
 
   '@typescript/native-preview-darwin-arm64@7.0.0-dev.20260707.2':
@@ -4290,7 +4290,7 @@ snapshots:
       '@typescript/native-preview-win32-arm64': 7.0.0-dev.20260707.2
       '@typescript/native-preview-win32-x64': 7.0.0-dev.20260707.2
 
-  '@vitejs/plugin-react@5.2.0(vite@7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2))':
+  '@vitejs/plugin-react@5.2.0(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.29.0)
@@ -4298,7 +4298,7 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-rc.3
       '@types/babel__core': 7.20.5
       react-refresh: 0.18.0
-      vite: 7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -4311,13 +4311,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.11(vite@7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2))':
+  '@vitest/mocker@4.1.11(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2))':
     dependencies:
       '@vitest/spy': 4.1.11
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2)
 
   '@vitest/pretty-format@4.1.11':
     dependencies:
@@ -4485,7 +4485,7 @@ snapshots:
 
   buffer-image-size@0.6.4:
     dependencies:
-      '@types/node': 24.13.3
+      '@types/node': 24.13.4
 
   buffer@6.0.3:
     dependencies:
@@ -4550,7 +4550,7 @@ snapshots:
 
   chrome-launcher@1.2.0:
     dependencies:
-      '@types/node': 24.13.3
+      '@types/node': 24.13.4
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 2.0.1
@@ -5031,7 +5031,7 @@ snapshots:
 
   happy-dom@20.14.0:
     dependencies:
-      '@types/node': 24.13.3
+      '@types/node': 24.13.4
       '@types/whatwg-mimetype': 3.0.2
       '@types/ws': 8.18.1
       buffer-image-size: 0.6.4
@@ -5213,10 +5213,10 @@ snapshots:
 
   kleur@3.0.3: {}
 
-  knip@5.88.1(@types/node@24.13.3)(typescript@5.9.3):
+  knip@5.88.1(@types/node@24.13.4)(typescript@5.9.3):
     dependencies:
       '@nodelib/fs.walk': 1.2.8
-      '@types/node': 24.13.3
+      '@types/node': 24.13.4
       fast-glob: 3.3.3
       formatly: 0.3.0
       jiti: 2.6.1
@@ -6281,13 +6281,13 @@ snapshots:
       '@types/react': 19.2.18
       react: 19.2.8
 
-  vite-node@3.2.4(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2):
+  vite-node@3.2.4(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2):
     dependencies:
       cac: 6.7.14
       debug: 4.4.3
       es-module-lexer: 1.7.0
       pathe: 2.0.3
-      vite: 7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -6302,18 +6302,18 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-svgr@4.5.0(rollup@4.52.5)(typescript@5.9.3)(vite@7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2)):
+  vite-plugin-svgr@4.5.0(rollup@4.52.5)(typescript@5.9.3)(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2)):
     dependencies:
       '@rollup/pluginutils': 5.3.0(rollup@4.52.5)
       '@svgr/core': 8.1.0(typescript@5.9.3)
       '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.9.3))
-      vite: 7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2)
     transitivePeerDependencies:
       - rollup
       - supports-color
       - typescript
 
-  vite@7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2):
+  vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2):
     dependencies:
       esbuild: 0.25.0
       fdir: 6.5.0(picomatch@4.0.3)
@@ -6322,15 +6322,15 @@ snapshots:
       rollup: 4.52.5
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 24.13.3
+      '@types/node': 24.13.4
       fsevents: 2.3.3
       jiti: 2.6.1
       yaml: 2.8.2
 
-  vitest@4.1.11(@types/node@24.13.3)(happy-dom@20.14.0)(vite@7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2)):
+  vitest@4.1.11(@types/node@24.13.4)(happy-dom@20.14.0)(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2)):
     dependencies:
       '@vitest/expect': 4.1.11
-      '@vitest/mocker': 4.1.11(vite@7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2))
+      '@vitest/mocker': 4.1.11(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2))
       '@vitest/pretty-format': 4.1.11
       '@vitest/runner': 4.1.11
       '@vitest/snapshot': 4.1.11
@@ -6347,10 +6347,10 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.1.0
-      vite: 7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 24.13.3
+      '@types/node': 24.13.4
       happy-dom: 20.14.0
     transitivePeerDependencies:
       - msw
@@ -6458,7 +6458,7 @@ snapshots:
     dependencies:
       is-wsl: 3.1.0
 
-  wxt@0.20.11(@types/node@24.13.3)(jiti@2.6.1)(rollup@4.52.5)(yaml@2.8.2):
+  wxt@0.20.11(@types/node@24.13.4)(jiti@2.6.1)(rollup@4.52.5)(yaml@2.8.2):
     dependencies:
       '@1natsu/wait-element': 4.1.2
       '@aklinker1/rollup-plugin-visualizer': 5.12.0(rollup@4.52.5)
@@ -6502,8 +6502,8 @@ snapshots:
       publish-browser-extension: 3.0.2
       scule: 1.3.0
       unimport: 3.14.2(rollup@4.52.5)
-      vite: 7.1.10(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2)
-      vite-node: 3.2.4(@types/node@24.13.3)(jiti@2.6.1)(yaml@2.8.2)
+      vite: 7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2)
+      vite-node: 3.2.4(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2)
       web-ext-run: 0.2.4
     transitivePeerDependencies:
       - '@types/node'
