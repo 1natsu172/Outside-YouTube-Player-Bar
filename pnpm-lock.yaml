@@ -117,8 +117,8 @@ importers:
         specifier: 4.0.0
         version: 4.0.0(jiti@2.6.1)(postcss@8.5.28)
       happy-dom:
-        specifier: 20.14.3
-        version: 20.14.3
+        specifier: 20.14.5
+        version: 20.14.5
       knip:
         specifier: 5.88.1
         version: 5.88.1(@types/node@24.13.4)(typescript@5.9.3)
@@ -145,7 +145,7 @@ importers:
         version: 4.5.0(rollup@4.52.5)(typescript@5.9.3)(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2))
       vitest:
         specifier: 4.1.11
-        version: 4.1.11(@types/node@24.13.4)(happy-dom@20.14.3)(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2))
+        version: 4.1.11(@types/node@24.13.4)(happy-dom@20.14.5)(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2))
       wxt:
         specifier: 0.20.11
         version: 0.20.11(@types/node@24.13.4)(jiti@2.6.1)(rollup@4.52.5)(yaml@2.8.2)
@@ -1905,8 +1905,8 @@ packages:
       sass:
         optional: true
 
-  happy-dom@20.14.3:
-    resolution: {integrity: sha512-0KMb/Eh8rsd+aMNkOk5h8LkAjo9Na1aksnEGmsuZf+GXl6UkAdIi0VbUHU7d59lXhNmawODgwwuCMiZpCxwwCw==}
+  happy-dom@20.14.5:
+    resolution: {integrity: sha512-x/RzkpWO40bTjIoT30iQtt64FLLmH/iRcUCN2X//bLx7H3ifkdfPXyqsro/OYtqzIAhiLMMA7mmiOR9C3NOKjQ==}
     engines: {node: '>=20.0.0'}
 
   has-flag@4.0.0:
@@ -5040,7 +5040,7 @@ snapshots:
       - jiti
       - tsx
 
-  happy-dom@20.14.3:
+  happy-dom@20.14.5:
     dependencies:
       '@types/node': 24.13.4
       '@types/whatwg-mimetype': 3.0.2
@@ -6338,7 +6338,7 @@ snapshots:
       jiti: 2.6.1
       yaml: 2.8.2
 
-  vitest@4.1.11(@types/node@24.13.4)(happy-dom@20.14.3)(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2)):
+  vitest@4.1.11(@types/node@24.13.4)(happy-dom@20.14.5)(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2)):
     dependencies:
       '@vitest/expect': 4.1.11
       '@vitest/mocker': 4.1.11(vite@7.1.10(@types/node@24.13.4)(jiti@2.6.1)(yaml@2.8.2))
@@ -6362,7 +6362,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.13.4
-      happy-dom: 20.14.3
+      happy-dom: 20.14.5
     transitivePeerDependencies:
       - msw
 
