@@ -55,7 +55,7 @@
 		"happy-dom": "20.14.6",
 		"knip": "5.88.1",
 		"playwright": "1.64.1",
-		"postcss": "8.5.30",
+		"postcss": "8.5.31",
 		"postcss-import": "16.2.0",
 		"postcss-nesting": "13.0.2",
 		"rollup-preserve-directives": "1.1.3",
